@@ -11,6 +11,7 @@ font-family: Arial, sans-serif;
 margin: 0;
 padding: 0;
 background: #f5f5f5;
+color: #222;
 }
 
 header {
@@ -18,6 +19,12 @@ background: #111;
 color: white;
 padding: 20px;
 text-align: center;
+}
+
+header p {
+margin: 4px 0 0;
+font-size: 0.9em;
+color: #aaa;
 }
 
 nav {
@@ -30,17 +37,80 @@ nav a {
 color: white;
 margin: 0 15px;
 text-decoration: none;
+font-size: 0.95em;
 }
 
-section {
-padding: 40px;
+nav a:hover {
+text-decoration: underline;
+}
+
+.page-content {
 max-width: 800px;
 margin: 0 auto;
+padding: 48px 40px;
+}
+
+.intro {
+font-size: 1.05em;
+line-height: 1.8;
+margin-bottom: 40px;
+color: #444;
+}
+
+.block {
+background: white;
+border-radius: 8px;
+padding: 28px 32px;
+margin-bottom: 24px;
+box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+}
+
+.block h3 {
+margin-top: 0;
+font-size: 1.05em;
+border-left: 4px solid #111;
+padding-left: 12px;
+}
+
+.block ul {
+margin: 12px 0 0;
+padding-left: 20px;
+line-height: 2;
+}
+
+.contact-block {
+background: #111;
+color: white;
+border-radius: 8px;
+padding: 32px;
+text-align: center;
+margin-top: 40px;
+}
+
+.contact-block p {
+margin: 0 0 16px;
+font-size: 0.95em;
+color: #ccc;
+}
+
+.contact-block a {
+display: inline-block;
+padding: 10px 28px;
+background: white;
+color: #111;
+border-radius: 4px;
+text-decoration: none;
+font-weight: bold;
+font-size: 0.95em;
+}
+
+.contact-block a:hover {
+background: #eee;
 }
 
 .back-link {
 display: inline-block;
-margin-top: 30px;
+margin-top: 32px;
 padding: 8px 20px;
 background: #111;
 color: white;
@@ -70,20 +140,41 @@ background: #333;
 <a href="academy.html">Dreamin' Spiral Academy</a>
 </nav>
 
-<section>
-<h2>企業型DC導入支援</h2>
-<p>企業型確定拠出年金（企業型DC）の導入から運用まで、トータルでサポートします。従業員の資産形成を支援し、福利厚生の充実を図ります。</p>
+<div class="page-content">
 
-<h3>サービス内容</h3>
-<ul>
-<li>企業型DC導入コンサルティング</li>
-<li>制度設計・規約策定支援</li>
-<li>従業員向け投資教育</li>
-<li>運用後のフォローアップ</li>
-</ul>
+  <p class="intro">
+    企業型確定拠出年金（企業型DC）は、従業員の老後資産形成を会社として支援する制度です。<br>
+    B8Eは導入検討から制度設計、従業員への教育まで、スムーズな運用を一貫してサポートします。
+  </p>
 
-<a href="index.html" class="back-link">← TOPへ戻る</a>
-</section>
+  <div class="block">
+    <h3>提供価値</h3>
+    <ul>
+      <li>企業の状況に合わせた制度設計・規約策定の支援</li>
+      <li>導入に必要な手続き・スケジュールの整理</li>
+      <li>従業員向けの投資教育・わかりやすい説明資料の提供</li>
+      <li>導入後の運用フォローと継続的なサポート</li>
+    </ul>
+  </div>
+
+  <div class="block">
+    <h3>こんな方に向いています</h3>
+    <ul>
+      <li>福利厚生を強化し、採用・定着力を高めたい</li>
+      <li>企業型DCの導入を検討しているが何から始めればいいかわからない</li>
+      <li>従業員に資産形成の機会を提供したい</li>
+      <li>既存の退職金制度を見直したい</li>
+    </ul>
+  </div>
+
+  <div class="contact-block">
+    <p>企業型DCの導入について、まずはお気軽にご相談ください。</p>
+    <a href="index.html">お問い合わせはTOPから</a>
+  </div>
+
+  <a href="index.html" class="back-link">← TOPへ戻る</a>
+
+</div>
 
 </body>
 </html>
