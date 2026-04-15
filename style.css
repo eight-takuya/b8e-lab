@@ -31,7 +31,7 @@ body {
   background-color: #f7f6f4;
   color: #2a2a2a;
   line-height: 1.9;
-  letter-spacing: 0.01em;
+  letter-spacing: 0.02em;
 }
 
 
@@ -173,7 +173,7 @@ a:hover {
    ------------------------------------------------------------ */
 
 .hero {
-  background-color: #1a1a1a;
+  background: linear-gradient(160deg, #1e1e1e 0%, #141414 100%);
   color: #f7f6f4;
   padding: 88px 40px;
   text-align: center;
@@ -181,7 +181,7 @@ a:hover {
 
 .hero-copy {
   font-size: 1.45rem;
-  font-weight: 400;
+  font-weight: 300;
   line-height: 2.0;
   color: #f0eeeb;
   letter-spacing: 0.04em;
@@ -214,7 +214,7 @@ a:hover {
    ------------------------------------------------------------ */
 
 .philosophy {
-  background-color: #ffffff;
+  background-color: #faf9f7;
   padding: 64px 40px;
 }
 
@@ -266,7 +266,7 @@ a:hover {
 
 .question-block {
   padding: 32px 0;
-  border-top: 1px solid #ddd;
+  border-top: 1px solid #e6e4e1;
 }
 
 .question-block .label {
@@ -312,7 +312,7 @@ a:hover {
    ------------------------------------------------------------ */
 
 .paths {
-  background-color: #ffffff;
+  background-color: #faf9f7;
   padding: 64px 40px;
 }
 
@@ -335,7 +335,7 @@ a:hover {
 
 .path-card {
   padding: 28px 0;
-  border-top: 1px solid #e0e0e0;
+  border-top: 1px solid #e6e4e1;
 }
 
 .path-card h3 {
@@ -381,12 +381,12 @@ a:hover {
 
 .section-block {
   padding-top: 48px;
-  border-top: 1px solid #e8e6e3;
+  border-top: 1px solid #e6e4e1;
 }
 
 .section-block h3 {
   font-size: 0.78rem;
-  font-weight: 600;
+  font-weight: 400;
   color: #aaa;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -410,12 +410,12 @@ a:hover {
 
 .resonance-questions {
   padding-top: 48px;
-  border-top: 1px solid #e8e6e3;
+  border-top: 1px solid #e6e4e1;
 }
 
 .resonance-questions h3 {
   font-size: 0.78rem;
-  font-weight: 600;
+  font-weight: 400;
   color: #aaa;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -439,7 +439,7 @@ a:hover {
 
 .quiet-cta {
   padding-top: 64px;
-  border-top: 1px solid #e8e6e3;
+  border-top: 1px solid #e6e4e1;
   text-align: left;
 }
 
@@ -453,16 +453,16 @@ a:hover {
   display: inline-block;
   margin-top: 20px;
   font-size: 0.88rem;
-  color: #888;
-  border-bottom: 1px solid #ccc;
+  color: #9b7b5c;
+  border-bottom: 1px solid #c9a882;
   padding-bottom: 2px;
   letter-spacing: 0.03em;
   transition: color 0.2s ease, border-color 0.2s ease;
 }
 
 .quiet-cta .cta-link:hover {
-  color: #2a2a2a;
-  border-color: #888;
+  color: #7a5f44;
+  border-color: #9b7b5c;
   text-decoration: none;
 }
 
@@ -501,7 +501,7 @@ a:hover {
 }
 
 .back-link:hover {
-  color: #555;
+  color: #9b7b5c;
   text-decoration: none;
 }
 

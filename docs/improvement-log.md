@@ -128,3 +128,32 @@ The harness encodes the B8E Philosophy Layer as a non-negotiable constraint in e
 [ ] No — pending
 
 ---
+
+## 2026-04-15 — Visual tone refinement (style.css only)
+
+**Scope:** `style.css` — visual only, no HTML or content changes
+**Triggered by:** Reader analysis of visual inconsistencies; full Reader → Designer → Guardian → Implementer pipeline
+**Mode used:** Reader → Designer → Guardian → Implementer
+
+### Changes
+
+- `body letter-spacing`: `0.01em` → `0.02em` — Japanese body text breathes more
+- `.hero background`: flat `#1a1a1a` → `linear-gradient(160deg, #1e1e1e 0%, #141414 100%)` — barely perceptible depth; removes flatness
+- `.hero-copy font-weight`: `400` → `300` — lighter opening line; more space around the first words
+- `.philosophy background-color`: `#ffffff` → `#faf9f7` — warms the white panel; unifies with body palette
+- `.paths background-color`: `#ffffff` → `#faf9f7` — same; removes competing neutral
+- Borders unified: `#ddd`, `#e0e0e0`, `#e8e6e3` → single value `#e6e4e1` across `.question-block`, `.path-card`, `.section-block`, `.resonance-questions`, `.quiet-cta`
+- `.section-block h3 font-weight`: `600` → `400` — uppercase labels at 0.78rem read cleaner at regular weight
+- `.resonance-questions h3 font-weight`: `600` → `400` — same
+- Accent color `#9b7b5c` introduced — muted warm amber, used exclusively in:
+  - `.quiet-cta .cta-link` color + border (default and hover)
+  - `.back-link:hover` color
+
+### Philosophy notes
+The accent color appears only at moments of invitation — the CTA link and the back link on hover. It gives warmth to the reader's choice without decorating the surrounding space. The white panel unification and border consolidation removed the last sources of visual inconsistency in the palette.
+
+### Deployed
+[ ] Yes — commit: (pending)
+[x] No — local
+
+---
