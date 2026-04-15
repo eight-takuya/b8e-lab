@@ -1,180 +1,194 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>企業型DC | B8E AI Website Lab</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>企業型DC | B8E</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* DC-specific overrides */
+    .dc-hero {
+      background-color: #1a1a1a;
+      color: #f7f6f4;
+      padding: 96px 40px;
+      text-align: center;
+    }
 
-<style>
-body {
-font-family: Arial, sans-serif;
-margin: 0;
-padding: 0;
-background: #f5f5f5;
-color: #222;
-}
+    .dc-hero .hero-label {
+      display: block;
+      margin-bottom: 28px;
+      font-size: 0.72rem;
+      color: #666;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
 
-header {
-background: #111;
-color: white;
-padding: 20px;
-text-align: center;
-}
+    .dc-hero .hero-copy {
+      font-size: 1.25rem;
+      font-weight: 300;
+      line-height: 2.1;
+      color: #e8e5e1;
+      letter-spacing: 0.04em;
+      max-width: 480px;
+      margin: 0 auto;
+    }
 
-header p {
-margin: 4px 0 0;
-font-size: 0.9em;
-color: #aaa;
-}
+    .dc-note {
+      margin-top: 20px;
+      padding: 20px 24px;
+      background-color: #f0eeeb;
+      border-radius: 4px;
+      font-size: 0.85rem;
+      color: #888;
+      line-height: 1.9;
+    }
 
-nav {
-background: #333;
-padding: 10px;
-text-align: center;
-}
-
-nav a {
-color: white;
-margin: 0 15px;
-text-decoration: none;
-font-size: 0.95em;
-}
-
-nav a:hover {
-text-decoration: underline;
-}
-
-.page-content {
-max-width: 800px;
-margin: 0 auto;
-padding: 48px 40px;
-}
-
-.intro {
-font-size: 1.05em;
-line-height: 1.8;
-margin-bottom: 40px;
-color: #444;
-}
-
-.block {
-background: white;
-border-radius: 8px;
-padding: 28px 32px;
-margin-bottom: 24px;
-box-shadow: 0 2px 8px rgba(0,0,0,0.07);
-}
-
-.block h3 {
-margin-top: 0;
-font-size: 1.05em;
-border-left: 4px solid #111;
-padding-left: 12px;
-}
-
-.block ul {
-margin: 12px 0 0;
-padding-left: 20px;
-line-height: 2;
-}
-
-.contact-block {
-background: #111;
-color: white;
-border-radius: 8px;
-padding: 32px;
-text-align: center;
-margin-top: 40px;
-}
-
-.contact-block p {
-margin: 0 0 16px;
-font-size: 0.95em;
-color: #ccc;
-}
-
-.contact-block a {
-display: inline-block;
-padding: 10px 28px;
-background: white;
-color: #111;
-border-radius: 4px;
-text-decoration: none;
-font-weight: bold;
-font-size: 0.95em;
-}
-
-.contact-block a:hover {
-background: #eee;
-}
-
-.back-link {
-display: inline-block;
-margin-top: 32px;
-padding: 8px 20px;
-background: #111;
-color: white;
-border-radius: 4px;
-text-decoration: none;
-font-size: 0.9em;
-}
-
-.back-link:hover {
-background: #333;
-}
-</style>
-
+    @media (max-width: 600px) {
+      .dc-hero {
+        padding: 64px 24px;
+      }
+      .dc-hero .hero-copy {
+        font-size: 1.1rem;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<header>
-<h1>企業型DC</h1>
-<p>B8E AI Website Lab</p>
-</header>
+  <!-- Header -->
+  <header class="site-header">
+    <h1>B8E</h1>
+    <p class="tagline">BEAT EIGHT EMOTION</p>
+  </header>
 
-<nav>
-<a href="index.html">TOP</a>
-<a href="dx.html">DX支援</a>
-<a href="dc.html">企業型DC</a>
-<a href="academy.html">Dreamin' Spiral Academy</a>
-</nav>
+  <!-- Navigation -->
+  <nav class="site-nav">
+    <a href="index.html">TOP</a>
+    <a href="dx.html">DX支援</a>
+    <a href="dc.html" class="current">企業型DC</a>
+    <a href="academy.html">Dreamin' Spiral Academy</a>
+    <a href="about.html">About</a>
+  </nav>
 
-<div class="page-content">
+  <main>
 
-  <p class="intro">
-    企業型確定拠出年金（企業型DC）は、従業員の老後資産形成を会社として支援する制度です。<br>
-    B8Eは導入検討から制度設計、従業員への教育まで、スムーズな運用を一貫してサポートします。
-  </p>
+    <!-- Hero -->
+    <section class="dc-hero">
+      <span class="hero-label">企業型DC</span>
+      <p class="hero-copy">
+        制度より先に、<br>
+        人のことを考える。
+      </p>
+    </section>
 
-  <div class="block">
-    <h3>提供価値</h3>
-    <ul>
-      <li>企業の状況に合わせた制度設計・規約策定の支援</li>
-      <li>導入に必要な手続き・スケジュールの整理</li>
-      <li>従業員向けの投資教育・わかりやすい説明資料の提供</li>
-      <li>導入後の運用フォローと継続的なサポート</li>
-    </ul>
-  </div>
+    <div class="page-content">
 
-  <div class="block">
-    <h3>こんな方に向いています</h3>
-    <ul>
-      <li>福利厚生を強化し、採用・定着力を高めたい</li>
-      <li>企業型DCの導入を検討しているが何から始めればいいかわからない</li>
-      <li>従業員に資産形成の機会を提供したい</li>
-      <li>既存の退職金制度を見直したい</li>
-    </ul>
-  </div>
+      <!-- Human question first -->
+      <div class="page-intro">
+        <p>
+          社員に、安心して長く働いてもらいたい。<br>
+          将来のことも、一緒に考えたい。
+        </p>
+        <p>
+          そういう思いを持ち始めた時が、<br>
+          企業型DCを考える自然な出発点です。
+        </p>
+        <p>
+          制度の詳細は、あとから一緒に理解できます。<br>
+          まず必要なのは、その思いと、話せる相手です。
+        </p>
+      </div>
 
-  <div class="contact-block">
-    <p>企業型DCの導入について、まずはお気軽にご相談ください。</p>
-    <a href="index.html">お問い合わせはTOPから</a>
-  </div>
+      <!-- What DC is — plain, brief -->
+      <div class="section-block">
+        <h3>企業型DCとは</h3>
+        <p>
+          企業型確定拠出年金（企業型DC）は、<br>
+          会社が社員の老後資産形成を支援する制度です。
+        </p>
+        <p>
+          会社が掛金を拠出し、社員が自分で運用先を選びます。<br>
+          社員一人ひとりが、自分の将来に主体的に関われる仕組みです。
+        </p>
+        <p>
+          会社にとっては福利厚生の充実、<br>
+          社員にとっては資産形成の機会。
+        </p>
+        <div class="dc-note">
+          企業型DCの導入には規約策定や届出など、一定の手続きが必要です。
+          B8Eは、その全体像を最初から一緒に整理していきます。
+        </div>
+      </div>
 
-  <a href="index.html" class="back-link">← TOPへ戻る</a>
+      <!-- How B8E walks alongside -->
+      <div class="section-block">
+        <h3>B8Eの関わり方</h3>
+        <p>
+          制度を売ることが、私たちの仕事ではありません。
+        </p>
+        <p>
+          まず、会社の状況と社員の状態を一緒に確認します。<br>
+          その上で、自社に合った制度の形を考えます。<br>
+          導入後も、社員が制度を自分のものとして使いこなせるよう、<br>
+          教育とフォローを続けます。
+        </p>
+        <p>
+          「導入した」で終わりにしない。<br>
+          それが、B8Eの関わり方です。
+        </p>
+      </div>
 
-</div>
+      <!-- Resonance Questions -->
+      <div class="resonance-questions">
+        <h3>こんな思いを、持ったことはありますか</h3>
+        <p>社員に長く、安心して働いてもらいたい。</p>
+        <p>福利厚生を整えたいが、何から手をつければいいかわからない。</p>
+        <p>制度の名前は知っているが、自社に合うかどうかわからない。</p>
+        <p>詳しい人が社内にいないまま、時間だけが過ぎている。</p>
+      </div>
+
+      <!-- Quiet CTA -->
+      <div class="quiet-cta">
+        <p>
+          まだ決めていなくていい。<br>
+          まず、話すところから始められます。
+        </p>
+        <a href="mailto:contact@b8e.co.jp" class="cta-link">話してみたいと思ったら</a>
+      </div>
+
+      <a href="index.html" class="back-link">← TOP</a>
+
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="site-footer-inner">
+
+      <div class="footer-brand">
+        <span class="brand-name">BEAT EIGHT EMOTION株式会社</span>
+        <p>
+          テクノロジーと人間の内側が交わる場所で、<br>
+          変容を共にする。
+        </p>
+      </div>
+
+      <nav class="footer-links">
+        <a href="index.html">TOP</a>
+        <a href="dx.html">DX支援</a>
+        <a href="dc.html">企業型DC</a>
+        <a href="academy.html">Dreamin' Spiral Academy</a>
+        <a href="about.html">About</a>
+        <a href="mailto:contact@b8e.co.jp">お問い合わせ</a>
+      </nav>
+
+    </div>
+    <div class="footer-bottom">
+      © 2025 BEAT EIGHT EMOTION株式会社
+    </div>
+  </footer>
 
 </body>
 </html>

@@ -1,180 +1,185 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>DX支援 | B8E AI Website Lab</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DX支援 | B8E</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* DX-specific overrides */
+    .dx-hero {
+      background-color: #1a1a1a;
+      color: #f7f6f4;
+      padding: 96px 40px;
+      text-align: center;
+    }
 
-<style>
-body {
-font-family: Arial, sans-serif;
-margin: 0;
-padding: 0;
-background: #f5f5f5;
-color: #222;
-}
+    .dx-hero .hero-label {
+      display: block;
+      margin-bottom: 28px;
+      font-size: 0.72rem;
+      color: #666;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
 
-header {
-background: #111;
-color: white;
-padding: 20px;
-text-align: center;
-}
+    .dx-hero .hero-copy {
+      font-size: 1.25rem;
+      font-weight: 300;
+      line-height: 2.1;
+      color: #e8e5e1;
+      letter-spacing: 0.04em;
+      max-width: 520px;
+      margin: 0 auto;
+    }
 
-header p {
-margin: 4px 0 0;
-font-size: 0.9em;
-color: #aaa;
-}
-
-nav {
-background: #333;
-padding: 10px;
-text-align: center;
-}
-
-nav a {
-color: white;
-margin: 0 15px;
-text-decoration: none;
-font-size: 0.95em;
-}
-
-nav a:hover {
-text-decoration: underline;
-}
-
-.page-content {
-max-width: 800px;
-margin: 0 auto;
-padding: 48px 40px;
-}
-
-.intro {
-font-size: 1.05em;
-line-height: 1.8;
-margin-bottom: 40px;
-color: #444;
-}
-
-.block {
-background: white;
-border-radius: 8px;
-padding: 28px 32px;
-margin-bottom: 24px;
-box-shadow: 0 2px 8px rgba(0,0,0,0.07);
-}
-
-.block h3 {
-margin-top: 0;
-font-size: 1.05em;
-border-left: 4px solid #111;
-padding-left: 12px;
-}
-
-.block ul {
-margin: 12px 0 0;
-padding-left: 20px;
-line-height: 2;
-}
-
-.contact-block {
-background: #111;
-color: white;
-border-radius: 8px;
-padding: 32px;
-text-align: center;
-margin-top: 40px;
-}
-
-.contact-block p {
-margin: 0 0 16px;
-font-size: 0.95em;
-color: #ccc;
-}
-
-.contact-block a {
-display: inline-block;
-padding: 10px 28px;
-background: white;
-color: #111;
-border-radius: 4px;
-text-decoration: none;
-font-weight: bold;
-font-size: 0.95em;
-}
-
-.contact-block a:hover {
-background: #eee;
-}
-
-.back-link {
-display: inline-block;
-margin-top: 32px;
-padding: 8px 20px;
-background: #111;
-color: white;
-border-radius: 4px;
-text-decoration: none;
-font-size: 0.9em;
-}
-
-.back-link:hover {
-background: #333;
-}
-</style>
-
+    @media (max-width: 600px) {
+      .dx-hero {
+        padding: 64px 24px;
+      }
+      .dx-hero .hero-copy {
+        font-size: 1.1rem;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<header>
-<h1>DX支援</h1>
-<p>B8E AI Website Lab</p>
-</header>
+  <!-- Header -->
+  <header class="site-header">
+    <h1>B8E</h1>
+    <p class="tagline">BEAT EIGHT EMOTION</p>
+  </header>
 
-<nav>
-<a href="index.html">TOP</a>
-<a href="dx.html">DX支援</a>
-<a href="dc.html">企業型DC</a>
-<a href="academy.html">Dreamin' Spiral Academy</a>
-</nav>
+  <!-- Navigation -->
+  <nav class="site-nav">
+    <a href="index.html">TOP</a>
+    <a href="dx.html" class="current">DX支援</a>
+    <a href="dc.html">企業型DC</a>
+    <a href="academy.html">Dreamin' Spiral Academy</a>
+    <a href="about.html">About</a>
+  </nav>
 
-<div class="page-content">
+  <main>
 
-  <p class="intro">
-    「DXを進めたいが、何から手をつければいいかわからない」。<br>
-    B8EはそんなステージにいるチームのDXを、戦略策定から現場への定着まで一貫して支援します。
-  </p>
+    <!-- Hero -->
+    <section class="dx-hero">
+      <span class="hero-label">DX支援</span>
+      <p class="hero-copy">
+        ツールの問題ではない、<br>
+        と気づいたところから始まる。
+      </p>
+    </section>
 
-  <div class="block">
-    <h3>提供価値</h3>
-    <ul>
-      <li>現状分析をもとにした、実行可能なDX戦略の策定</li>
-      <li>業務プロセスの見直しと自動化による生産性向上</li>
-      <li>AI・クラウドツールの選定・導入・定着支援</li>
-      <li>社内人材が自走できるDX推進体制の構築</li>
-    </ul>
-  </div>
+    <div class="page-content">
 
-  <div class="block">
-    <h3>こんな方に向いています</h3>
-    <ul>
-      <li>DXに取り組みたいが社内に知見がない</li>
-      <li>ツールを導入したものの活用しきれていない</li>
-      <li>経営層と現場のDX温度差を解消したい</li>
-      <li>外部の視点で業務課題を整理したい</li>
-    </ul>
-  </div>
+      <!-- B8E's view of DX -->
+      <div class="page-intro">
+        <p>
+          DXが止まる理由は、たいていテクノロジーにはありません。
+        </p>
+        <p>
+          戦略と現場がずれている。<br>
+          変わろうとしている人と、そうでない人がいる。<br>
+          何のために変わるのかが、共有されていない。
+        </p>
+        <p>
+          28年間、金融・Fintech・ITの現場にいました。<br>
+          プロジェクトの立ち上げと、立て直し。<br>
+          その経験から、ひとつ感じていることがあります。
+        </p>
+        <p>
+          組織が本来の流れに乗るとき、<br>
+          テクノロジーは自然についてくる。
+        </p>
+      </div>
 
-  <div class="contact-block">
-    <p>DX支援について、まずはお気軽にご相談ください。</p>
-    <a href="index.html">お問い合わせはTOPから</a>
-  </div>
+      <!-- How B8E walks alongside -->
+      <div class="section-block">
+        <h3>伴走という在り方</h3>
+        <p>
+          B8Eは、答えを持って来るコンサルタントではありません。
+        </p>
+        <p>
+          まず、組織のどこに摩擦があるかを、一緒に見ます。<br>
+          戦略を描くだけでなく、現場が動き始めるまで隣にいます。<br>
+          ツールを選ぶだけでなく、人が使いこなせるようになるまで関わります。
+        </p>
+        <p>
+          「外部に頼む」ではなく、「共に考える人が増える」。<br>
+          B8Eの関わり方は、そういうものだと思っています。
+        </p>
+      </div>
 
-  <a href="index.html" class="back-link">← TOPへ戻る</a>
+      <!-- What alignment in DX looks like -->
+      <div class="section-block">
+        <h3>外側の変容と内側の状態</h3>
+        <p>
+          DXは、外側の仕組みを変えることです。<br>
+          しかし、その仕組みを動かすのは、人の内側の状態です。
+        </p>
+        <p>
+          「なぜ変わるのか」が腹落ちしている組織は、<br>
+          ツールの選択を間違えても、自分で修正できます。<br>
+          「なぜ」がない組織は、最善のツールを入れても、止まります。
+        </p>
+        <p>
+          だから私たちは、プロセスより先に、<br>
+          その問いのそばに留まります。
+        </p>
+      </div>
 
-</div>
+      <!-- Resonance Questions -->
+      <div class="resonance-questions">
+        <h3>こんな状況に、心当たりはありますか</h3>
+        <p>ツールは入れた。でも、現場はまだ動いていない。</p>
+        <p>経営はDXを進めたい。でも、現場との温度差が縮まらない。</p>
+        <p>外部の力を借りたい。でも、丸投げにはしたくない。</p>
+        <p>何から始めればいいか、社内に答えを持っている人がいない。</p>
+      </div>
+
+      <!-- Quiet CTA -->
+      <div class="quiet-cta">
+        <p>
+          その問いを、一緒に持ちたいと思っています。<br>
+          答えより先に、状況を聞かせてください。
+        </p>
+        <a href="mailto:contact@b8e.co.jp" class="cta-link">話してみたいと思ったら</a>
+      </div>
+
+      <a href="index.html" class="back-link">← TOP</a>
+
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="site-footer-inner">
+
+      <div class="footer-brand">
+        <span class="brand-name">BEAT EIGHT EMOTION株式会社</span>
+        <p>
+          テクノロジーと人間の内側が交わる場所で、<br>
+          変容を共にする。
+        </p>
+      </div>
+
+      <nav class="footer-links">
+        <a href="index.html">TOP</a>
+        <a href="dx.html">DX支援</a>
+        <a href="dc.html">企業型DC</a>
+        <a href="academy.html">Dreamin' Spiral Academy</a>
+        <a href="about.html">About</a>
+        <a href="mailto:contact@b8e.co.jp">お問い合わせ</a>
+      </nav>
+
+    </div>
+    <div class="footer-bottom">
+      © 2025 BEAT EIGHT EMOTION株式会社
+    </div>
+  </footer>
 
 </body>
 </html>

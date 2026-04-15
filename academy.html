@@ -1,180 +1,255 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dreamin' Spiral Academy | B8E AI Website Lab</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dreamin' Spiral Academy | B8E</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Academy-specific overrides */
+    .academy-hero {
+      background-color: #1a1a1a;
+      color: #f7f6f4;
+      padding: 104px 40px;
+      text-align: center;
+    }
 
-<style>
-body {
-font-family: Arial, sans-serif;
-margin: 0;
-padding: 0;
-background: #f5f5f5;
-color: #222;
-}
+    .academy-hero .hero-copy {
+      font-size: 1.25rem;
+      font-weight: 300;
+      line-height: 2.2;
+      color: #e8e5e1;
+      letter-spacing: 0.06em;
+      max-width: 480px;
+      margin: 0 auto;
+    }
 
-header {
-background: #111;
-color: white;
-padding: 20px;
-text-align: center;
-}
+    .academy-hero .hero-label {
+      display: block;
+      margin-bottom: 28px;
+      font-size: 0.72rem;
+      color: #666;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
 
-header p {
-margin: 4px 0 0;
-font-size: 0.9em;
-color: #aaa;
-}
+    .engine-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px 48px;
+      margin-top: 28px;
+    }
 
-nav {
-background: #333;
-padding: 10px;
-text-align: center;
-}
+    .engine-item .engine-label {
+      font-size: 0.72rem;
+      color: #aaa;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      display: block;
+      margin-bottom: 6px;
+    }
 
-nav a {
-color: white;
-margin: 0 15px;
-text-decoration: none;
-font-size: 0.95em;
-}
+    .engine-item p {
+      font-size: 0.92rem;
+      color: #666;
+      line-height: 1.9;
+    }
 
-nav a:hover {
-text-decoration: underline;
-}
+    .divider {
+      width: 32px;
+      height: 1px;
+      background-color: #ddd;
+      margin: 0;
+    }
 
-.page-content {
-max-width: 800px;
-margin: 0 auto;
-padding: 48px 40px;
-}
-
-.intro {
-font-size: 1.05em;
-line-height: 1.8;
-margin-bottom: 40px;
-color: #444;
-}
-
-.block {
-background: white;
-border-radius: 8px;
-padding: 28px 32px;
-margin-bottom: 24px;
-box-shadow: 0 2px 8px rgba(0,0,0,0.07);
-}
-
-.block h3 {
-margin-top: 0;
-font-size: 1.05em;
-border-left: 4px solid #111;
-padding-left: 12px;
-}
-
-.block ul {
-margin: 12px 0 0;
-padding-left: 20px;
-line-height: 2;
-}
-
-.contact-block {
-background: #111;
-color: white;
-border-radius: 8px;
-padding: 32px;
-text-align: center;
-margin-top: 40px;
-}
-
-.contact-block p {
-margin: 0 0 16px;
-font-size: 0.95em;
-color: #ccc;
-}
-
-.contact-block a {
-display: inline-block;
-padding: 10px 28px;
-background: white;
-color: #111;
-border-radius: 4px;
-text-decoration: none;
-font-weight: bold;
-font-size: 0.95em;
-}
-
-.contact-block a:hover {
-background: #eee;
-}
-
-.back-link {
-display: inline-block;
-margin-top: 32px;
-padding: 8px 20px;
-background: #111;
-color: white;
-border-radius: 4px;
-text-decoration: none;
-font-size: 0.9em;
-}
-
-.back-link:hover {
-background: #333;
-}
-</style>
-
+    @media (max-width: 600px) {
+      .academy-hero {
+        padding: 72px 24px;
+      }
+      .academy-hero .hero-copy {
+        font-size: 1.1rem;
+      }
+      .engine-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<header>
-<h1>Dreamin' Spiral Academy</h1>
-<p>B8E AI Website Lab</p>
-</header>
+  <!-- Header -->
+  <header class="site-header">
+    <h1>B8E</h1>
+    <p class="tagline">BEAT EIGHT EMOTION</p>
+  </header>
 
-<nav>
-<a href="index.html">TOP</a>
-<a href="dx.html">DX支援</a>
-<a href="dc.html">企業型DC</a>
-<a href="academy.html">Dreamin' Spiral Academy</a>
-</nav>
+  <!-- Navigation -->
+  <nav class="site-nav">
+    <a href="index.html">TOP</a>
+    <a href="dx.html">DX支援</a>
+    <a href="dc.html">企業型DC</a>
+    <a href="academy.html" class="current">Dreamin' Spiral Academy</a>
+    <a href="about.html">About</a>
+  </nav>
 
-<div class="page-content">
+  <main>
 
-  <p class="intro">
-    Dreamin' Spiral Academyは、自己変容をテーマにした学びのコミュニティです。<br>
-    ビジネスと人生の両輪で「なりたい自分」に向かって螺旋的に成長することを支援します。
-  </p>
+    <!-- Hero -->
+    <section class="academy-hero">
+      <span class="hero-label">Dreamin' Spiral Academy</span>
+      <p class="hero-copy">
+        自分の内側に、<br>
+        戻っていく場所。
+      </p>
+    </section>
 
-  <div class="block">
-    <h3>提供価値</h3>
-    <ul>
-      <li>自己理解を深め、本質的なビジョンを描くワークショップ</li>
-      <li>思考・行動パターンを変えるマインドセット形成プログラム</li>
-      <li>目標設定から実行・振り返りまでの継続的サポート</li>
-      <li>同じ志を持つ仲間とのコミュニティへの参加</li>
-    </ul>
-  </div>
+    <div class="page-content">
 
-  <div class="block">
-    <h3>こんな方に向いています</h3>
-    <ul>
-      <li>今の自分から変わりたいが、何から始めればいいかわからない</li>
-      <li>目標はあるが行動が続かない</li>
-      <li>ビジネスだけでなく人生全体をデザインしたい</li>
-      <li>自分と向き合う時間と仲間が欲しい</li>
-    </ul>
-  </div>
+      <!-- Why Academy was born -->
+      <div class="page-intro">
+        <p>
+          Dreamin' Spiral Academyは、2025年に生まれた場所です。
+        </p>
+        <p>
+          28年間、ITとプロジェクトの現場で、<br>
+          組織の変容に関わり続けてきました。<br>
+          その中でひとつの確信が育っていきました。
+        </p>
+        <p>
+          外側をどれだけ変えても、<br>
+          内側が動かなければ、本当の変容は起きない。
+        </p>
+        <p>
+          Academyは、その確信から生まれています。<br>
+          ビジネスの変容ではなく、<br>
+          あなた自身の変容のための場所として。
+        </p>
+      </div>
 
-  <div class="contact-block">
-    <p>Dreamin' Spiral Academyについて、まずはお気軽にご相談ください。</p>
-    <a href="index.html">お問い合わせはTOPから</a>
-  </div>
+      <!-- Dreamin' Engine -->
+      <div class="section-block">
+        <h3>Dreamin' Engine</h3>
+        <p>
+          Dreamin' Engineは、変容のための「やり方」ではありません。<br>
+          あなたがすでに持っている力が、<br>
+          自然に動き始めるための、整え方です。
+        </p>
+        <p>
+          人が本来の流れに乗れないとき、<br>
+          そのとき、四つのどこかがずれていることがあります。
+        </p>
 
-  <a href="index.html" class="back-link">← TOPへ戻る</a>
+        <div class="engine-grid">
+          <div class="engine-item">
+            <span class="engine-label">Consciousness</span>
+            <p>何を信じ、何を見ているか。<br>意識の向きが、すべての出発点。</p>
+          </div>
+          <div class="engine-item">
+            <span class="engine-label">Body</span>
+            <p>身体は、内側の状態を映す鏡。<br>整えることで、流れが変わる。</p>
+          </div>
+          <div class="engine-item">
+            <span class="engine-label">Action</span>
+            <p>動くことではなく、<br>本来の自分として動くこと。</p>
+          </div>
+          <div class="engine-item">
+            <span class="engine-label">Future Vision</span>
+            <p>どこへ向かうかより、<br>どんな自分として在るか。</p>
+          </div>
+        </div>
+      </div>
 
-</div>
+      <!-- Spiral Growth -->
+      <div class="section-block">
+        <h3>螺旋的成長とは</h3>
+        <p>
+          成長は、直線ではありません。
+        </p>
+        <p>
+          同じ問いに、何度も戻ってくる。<br>
+          しかし、以前とは違う場所から、その問いを見ている。<br>
+          それが螺旋的成長の本質です。
+        </p>
+        <p>
+          「また同じ課題だ」と感じるとき、<br>
+          それは後退ではなく、<br>
+          より深い層でその問いと向き合える<br>
+          自分になった証かもしれません。
+        </p>
+      </div>
+
+      <!-- Resonance Questions -->
+      <div class="resonance-questions">
+        <h3>こんな問いを、持ったことはありますか</h3>
+        <p>目標はある。でも、なぜか動けない。</p>
+        <p>変わりたい。でも、何が邪魔しているかわからない。</p>
+        <p>外側は整ってきた。でも、内側がついてきていない気がする。</p>
+        <p>自分が本当に望んでいることが、わからなくなってきた。</p>
+      </div>
+
+      <!-- Bridge: philosophy to reality -->
+      <div class="section-block">
+        <p>
+          Academyでは、少人数での対話を大切にしています。
+        </p>
+        <p>
+          教わる場というより、<br>
+          それぞれが自分のリズムで深まっていける場として。
+        </p>
+        <p>
+          私もそこにいます。<br>
+          答えを持って来るのではなく、<br>
+          共に問いを持ち続ける一人として。
+        </p>
+        <p>
+          参加した方がよく口にするのは、<br>
+          「自分がどこにいるか、やっとわかった」という言葉です。
+        </p>
+      </div>
+
+      <!-- Quiet CTA -->
+      <div class="quiet-cta">
+        <p>
+          準備は整っていなくていい。<br>
+          問いがあれば、それで十分です。
+        </p>
+        <a href="mailto:contact@b8e.co.jp" class="cta-link">話してみたいと思ったら</a>
+      </div>
+
+      <a href="index.html" class="back-link">← TOP</a>
+
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="site-footer-inner">
+
+      <div class="footer-brand">
+        <span class="brand-name">BEAT EIGHT EMOTION株式会社</span>
+        <p>
+          テクノロジーと人間の内側が交わる場所で、<br>
+          変容を共にする。
+        </p>
+      </div>
+
+      <nav class="footer-links">
+        <a href="index.html">TOP</a>
+        <a href="dx.html">DX支援</a>
+        <a href="dc.html">企業型DC</a>
+        <a href="academy.html">Dreamin' Spiral Academy</a>
+        <a href="about.html">About</a>
+        <a href="mailto:contact@b8e.co.jp">お問い合わせ</a>
+      </nav>
+
+    </div>
+    <div class="footer-bottom">
+      © 2025 BEAT EIGHT EMOTION株式会社
+    </div>
+  </footer>
 
 </body>
 </html>

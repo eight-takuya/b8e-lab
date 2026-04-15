@@ -1,115 +1,160 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>B8E AI Website Lab</title>
-
-<style>
-body {
-font-family: Arial, sans-serif;
-margin: 0;
-padding: 0;
-background: #f5f5f5;
-}
-
-header {
-background: #111;
-color: white;
-padding: 20px;
-text-align: center;
-}
-
-nav {
-background: #333;
-padding: 10px;
-text-align: center;
-}
-
-nav a {
-color: white;
-margin: 0 15px;
-text-decoration: none;
-}
-
-.card a {
-display: inline-block;
-margin-top: 12px;
-padding: 8px 20px;
-background: #111;
-color: white;
-border-radius: 4px;
-text-decoration: none;
-font-size: 0.9em;
-}
-
-.card a:hover {
-background: #333;
-}
-
-section {
-padding: 40px;
-text-align: center;
-}
-
-.card {
-background: white;
-padding: 20px;
-margin: 20px auto;
-width: 300px;
-border-radius: 8px;
-box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-}
-
-.container {
-display: flex;
-justify-content: center;
-flex-wrap: wrap;
-}
-
-</style>
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>B8E | BEAT EIGHT EMOTION</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<header>
-<h1>B8E AI Website Lab</h1>
-<p>AI Driven Business Website</p>
-</header>
+  <!-- Header -->
+  <header class="site-header">
+    <h1>B8E</h1>
+    <p class="tagline">BEAT EIGHT EMOTION</p>
+  </header>
 
-<nav>
-<a href="dx.html">DX支援</a>
-<a href="dc.html">企業型DC</a>
-<a href="academy.html">Dreamin' Spiral Academy</a>
-</nav>
+  <!-- Navigation -->
+  <nav class="site-nav">
+    <a href="index.html" class="current">TOP</a>
+    <a href="dx.html">DX支援</a>
+    <a href="dc.html">企業型DC</a>
+    <a href="academy.html">Dreamin' Spiral Academy</a>
+    <a href="about.html">About</a>
+  </nav>
 
-<section>
-<h2>B8E Business</h2>
+  <main>
 
-<div class="container">
+    <!-- Hero -->
+    <section class="hero">
+      <p class="hero-copy">
+        変容には、外側と内側がある。<br>
+        どちらも、同じ問いから始まる。
+      </p>
+    </section>
 
-<div class="card">
-<h3>DX支援</h3>
-<p>DXコンサルティング支援</p>
-<a href="dx.html">詳しく見る</a>
-</div>
+    <!-- Philosophy -->
+    <section class="philosophy">
+      <div class="philosophy-inner">
+        <p>
+          28年間、ITとプロジェクトの現場にいました。<br>
+          組織が変わる瞬間を、何度も見てきました。
+        </p>
+        <p>
+          そこで気づいたことがあります。<br>
+          外側を変えても、内側が動かなければ、<br>
+          本当の変容は起きない。
+        </p>
+        <p>
+          B8Eは、その問いを持ち続けながら、<br>
+          人と組織の隣に在ることを選んだ場所です。
+        </p>
+        <p class="philosophy-author">— BEAT EIGHT EMOTION</p>
+      </div>
+    </section>
 
-<div class="card">
-<h3>企業型DC</h3>
-<p>企業型DC導入支援</p>
-<a href="dc.html">詳しく見る</a>
-</div>
+    <!-- Two Questions -->
+    <section class="two-questions">
+      <div class="two-questions-inner">
 
-<div class="card">
-<h3>Dreamin' Spiral Academy</h3>
-<p>自己変容アカデミー</p>
-<a href="academy.html">詳しく見る</a>
-</div>
+        <div class="question-block">
+          <p class="label">外側の変容</p>
+          <p>
+            組織やビジネスを、<br>
+            本来あるべき姿へ近づけたい。
+          </p>
+          <a href="#paths" class="path-link">DX支援 / 企業型DC →</a>
+        </div>
 
-</div>
+        <div class="question-block">
+          <p class="label">内側の変容</p>
+          <p>
+            自分自身を、<br>
+            本来あるべき姿へ近づけたい。
+          </p>
+          <a href="#paths" class="path-link">Dreamin' Spiral Academy →</a>
+        </div>
 
-</section>
+      </div>
+    </section>
+
+    <!-- Paths -->
+    <section class="paths" id="paths">
+      <p class="paths-heading">Three Paths</p>
+      <div class="paths-grid">
+
+        <div class="path-card">
+          <h3>DX支援</h3>
+          <p>
+            組織の外側に、<br>
+            伴走者として在る。
+          </p>
+          <a href="dx.html">→ 詳しく</a>
+        </div>
+
+        <div class="path-card">
+          <h3>企業型DC</h3>
+          <p>
+            安心して生きるための、<br>
+            制度的な基盤を整える。
+          </p>
+          <a href="dc.html">→ 詳しく</a>
+        </div>
+
+        <div class="path-card">
+          <h3>Dreamin' Spiral Academy</h3>
+          <p>
+            内側から始まる、<br>
+            変容の場所。
+          </p>
+          <a href="academy.html">→ 詳しく</a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Quiet Contact -->
+    <section class="philosophy">
+      <div class="philosophy-inner">
+        <div class="quiet-cta">
+          <p>
+            どれにも当てはまらない気がしても、<br>
+            ただ話してみたい方も、歓迎します。
+          </p>
+          <a href="mailto:contact@b8e.co.jp" class="cta-link">contact@b8e.co.jp</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="site-footer-inner">
+
+      <div class="footer-brand">
+        <span class="brand-name">BEAT EIGHT EMOTION株式会社</span>
+        <p>
+          テクノロジーと人間の内側が交わる場所で、<br>
+          変容を共にする。
+        </p>
+      </div>
+
+      <nav class="footer-links">
+        <a href="index.html">TOP</a>
+        <a href="dx.html">DX支援</a>
+        <a href="dc.html">企業型DC</a>
+        <a href="academy.html">Dreamin' Spiral Academy</a>
+        <a href="about.html">About</a>
+        <a href="mailto:contact@b8e.co.jp">お問い合わせ</a>
+      </nav>
+
+    </div>
+    <div class="footer-bottom">
+      © 2025 BEAT EIGHT EMOTION株式会社
+    </div>
+  </footer>
 
 </body>
 </html>
