@@ -125,13 +125,13 @@ a:hover {
   width: 48px;
   height: 19px;
   display: block;
-  opacity: 0.45;
+  opacity: 0.5;
 }
-
+/*
 .logo-wordmark {
-  color: #b5a88f; /* 少しだけ明るく */
+  color: #b5a88f; 
 }
-
+*/
 .site-header h1 {
   font-size: 0.7rem;
   font-weight: 200;
@@ -145,7 +145,7 @@ a:hover {
 .site-header .tagline {
   margin-top: 10px;
   font-size: 0.68rem;
-  color: #424039;
+  color: #7a7570;
   letter-spacing: 0.1em;
   text-indent: 0.1em;
 }
