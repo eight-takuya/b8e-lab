@@ -114,6 +114,7 @@ a:hover {
 }
 
 .logo-mark {
+  margin-top: 8px; /* 少し上に逃がす */
   display: inline-flex;
   flex-direction: column;
   align-items: center;
@@ -124,7 +125,7 @@ a:hover {
   width: 48px;
   height: 19px;
   display: block;
-  opacity: 0.6;
+  opacity: 0.45;
 }
 
 .site-header h1 {
