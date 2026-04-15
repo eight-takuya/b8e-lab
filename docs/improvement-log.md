@@ -184,6 +184,38 @@ Replacing: `background-color: #1a1a1a` (page heroes) and `linear-gradient(160deg
 The darkness is now a space, not a wall. The change is invisible as technique — it contributes only as quality. The reader arrives in air rather than encountering a surface.
 
 ### Deployed
+[x] Yes — commit: style: hero atmosphere — air not black, all pages
+[ ] No — pending
+
+---
+
+## 2026-04-15 — Typography and spacing refinement
+
+**Scope:** `style.css` only — line-height and margin-top values; no HTML or content changes
+**Triggered by:** Reader analysis of rhythm inversion — resonance questions (most contemplative text) had tightest spacing (8px); hero had same line-height as body
+**Mode used:** Reader → Designer → Guardian → Implementer
+
+### Changes
+
+12 properties adjusted. All in `style.css`.
+
+- `body line-height`: `1.9` → `2.0` — align with `p` rule; clean shared baseline
+- `p line-height`: `2.0` → `2.1` — slight lift for all unstyled paragraphs
+- `.hero-copy line-height`: `2.0` → `2.2` — opening words at font-weight 300 can hold more vertical space
+- `.hero-copy letter-spacing`: `0.04em` → `0.05em` — marginally more expansive; felt not seen
+- `.philosophy p line-height`: `2.2` → `2.3` — the site's most considered text; one step further
+- `.philosophy p + p margin-top`: `24px` → `32px` — more pause between separate thoughts
+- `.question-block p line-height`: `1.9` → `2.0` — raised to body baseline
+- `.path-card p line-height`: `1.8` → `1.95` — raised from system's tightest value toward body
+- `.section-block p + p margin-top`: `16px` → `24px` — content paragraphs need pause between thoughts
+- `.resonance-questions p + p margin-top`: `8px` → `16px` — each line must land before the next arrives
+- `.page-intro p + p margin-top`: `20px` → `28px` — intro sets the page tone; more pause
+- `.quiet-cta p line-height`: `2.0` → `2.2` — invitation breathes at the philosophy register
+
+### Philosophy notes
+The rhythm hierarchy now matches the contemplative weight of each section: hero and philosophy breathe the most; footer text remains compact. The resonance questions — the site's most important mirror text — finally have room between them.
+
+### Deployed
 [ ] Yes — commit: (pending)
 [x] No — local
 
