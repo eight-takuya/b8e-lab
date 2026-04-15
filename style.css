@@ -62,7 +62,7 @@ h3 {
 p {
   font-size: 1rem;
   color: #444;
-  line-height: 2.1;
+  line-height: 2.2;
 }
 
 small {
@@ -92,7 +92,7 @@ a:hover {
 }
 
 .page-content > * + * {
-  margin-top: 56px;
+  margin-top: 72px;
 }
 
 @media (max-width: 600px) {
@@ -199,7 +199,7 @@ a:hover {
     radial-gradient(ellipse at 50% 40%, rgba(255,235,200,0.055) 0%, transparent 58%),
     linear-gradient(180deg, #1c1a17 0%, #111010 100%);
   color: #f7f6f4;
-  padding: 88px 40px;
+  padding: 112px 40px;
   text-align: center;
 }
 
@@ -239,7 +239,7 @@ a:hover {
 
 .philosophy {
   background-color: #faf9f7;
-  padding: 64px 40px;
+  padding: 80px 40px;
 }
 
 .philosophy-inner {
@@ -277,7 +277,7 @@ a:hover {
 
 .two-questions {
   background-color: #f7f6f4;
-  padding: 64px 40px;
+  padding: 80px 40px;
 }
 
 .two-questions-inner {
@@ -337,7 +337,7 @@ a:hover {
 
 .paths {
   background-color: #faf9f7;
-  padding: 64px 40px;
+  padding: 80px 40px;
 }
 
 .paths-heading {
@@ -600,5 +600,26 @@ a:hover {
   .site-footer-inner {
     grid-template-columns: 1fr;
     gap: 32px;
+  }
+}
+
+
+/* ------------------------------------------------------------
+   16. Scroll Fade
+   ------------------------------------------------------------ */
+
+.fade-in {
+  opacity: 0.12;
+  transition: opacity 1.6s ease;
+}
+
+.fade-in.is-visible {
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fade-in {
+    opacity: 1;
+    transition: none;
   }
 }

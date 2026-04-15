@@ -237,6 +237,48 @@ The rhythm hierarchy now matches the contemplative weight of each section: hero 
 The logo no longer announces itself. The lemniscate (∞) appears at 60% opacity — barely a shape. The wordmark at font-weight 200 is the quietest text on the site. A reader scrolling through will discover the mark rather than be greeted by it. EIGHT = ∞ is now visible in the header, not merely encoded in the name.
 
 ### Deployed
+[x] Yes — commit: design: lemniscate logo mark — V3 + V1 typography, all pages
+[ ] No — pending
+
+---
+
+## 2026-04-16 — Scroll experience refinement
+
+**Scope:** `style.css` (spacing + fade CSS), new `scroll.js`, all 5 HTML files (script tag + hero padding)
+**Triggered by:** Explicit scroll refinement request — "scrolling should feel like breathing, not navigation"
+**Mode used:** Implementer (direct implementation, goals specified by user)
+
+### Changes
+
+**Spacing (style.css):**
+- `p line-height`: `2.1` → `2.2`
+- `.hero padding`: `88px 40px` → `112px 40px` — initial pause before first content
+- `.philosophy padding`: `64px 40px` → `80px 40px`
+- `.two-questions padding`: `64px 40px` → `80px 40px`
+- `.paths padding`: `64px 40px` → `80px 40px`
+- `.page-content > * + * margin-top`: `56px` → `72px` — breathing room between service page blocks
+
+**Page hero padding (HTML inline CSS):**
+- `.dx-hero`, `.dc-hero`, `.about-hero`: `96px → 120px`
+- `.academy-hero`: `104px → 120px`
+
+**Fade-in CSS (style.css, section 16):**
+- `.fade-in { opacity: 0.12; transition: opacity 1.6s ease; }`
+- `.fade-in.is-visible { opacity: 1; }`
+- `@media (prefers-reduced-motion: reduce)` — disables animation for accessibility
+
+**scroll.js (new):**
+- IntersectionObserver: `threshold: 0.07`, `rootMargin: 0px 0px -32px 0px`
+- Targets: `.philosophy-inner`, `.two-questions-inner`, `.paths-grid`, `.section-block`, `.page-intro`, `.resonance-questions`, `.quiet-cta`
+- Elements visible in initial viewport (top < 92% of innerHeight) receive no animation
+- Elements below fold: `.fade-in` class added; fade from `0.12 → 1` on entry
+- Feature-detected: no-op if IntersectionObserver unavailable
+- Observes each element once, then unobserves (no re-trigger)
+
+### Philosophy notes
+The fade targets only inner content containers — not section backgrounds. Backgrounds remain solid; only text/content surfaces arrive gently. The reader does not notice the animation; they notice that each thought seems to arrive at the right moment.
+
+### Deployed
 [ ] Yes — commit: (pending)
 [x] No — local
 
