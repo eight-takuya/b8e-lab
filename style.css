@@ -173,7 +173,9 @@ a:hover {
    ------------------------------------------------------------ */
 
 .hero {
-  background: linear-gradient(160deg, #1e1e1e 0%, #141414 100%);
+  background:
+    radial-gradient(ellipse at 50% 40%, rgba(255,235,200,0.055) 0%, transparent 58%),
+    linear-gradient(180deg, #1c1a17 0%, #111010 100%);
   color: #f7f6f4;
   padding: 88px 40px;
   text-align: center;

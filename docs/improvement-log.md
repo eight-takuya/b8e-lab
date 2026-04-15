@@ -153,6 +153,37 @@ The harness encodes the B8E Philosophy Layer as a non-negotiable constraint in e
 The accent color appears only at moments of invitation — the CTA link and the back link on hover. It gives warmth to the reader's choice without decorating the surrounding space. The white panel unification and border consolidation removed the last sources of visual inconsistency in the palette.
 
 ### Deployed
+[x] Yes — commit: style: visual tone refinement — accent color, warmth, typography
+[ ] No — pending
+
+---
+
+## 2026-04-15 — Hero atmosphere refinement (all pages)
+
+**Scope:** `style.css` (.hero), `dx.html` (.dx-hero), `dc.html` (.dc-hero), `academy.html` (.academy-hero), `about.html` (.about-hero) — background CSS only
+**Triggered by:** Reader analysis: all heroes reading as flat dark walls; goal: "air, not black"
+**Mode used:** Reader → Designer → Guardian → Implementer
+
+### Changes
+
+Single consistent change applied to all five hero classes:
+
+```css
+background:
+  radial-gradient(ellipse at 50% 40%, rgba(255,235,200,0.055) 0%, transparent 58%),
+  linear-gradient(180deg, #1c1a17 0%, #111010 100%);
+```
+
+Replacing: `background-color: #1a1a1a` (page heroes) and `linear-gradient(160deg, #1e1e1e 0%, #141414 100%)` (index hero).
+
+- Radial layer: warm cream at ~5.5% opacity, centered at 50% 40% — creates imperceptible atmospheric softness around the text position. Invisible as a shape; felt as depth.
+- Linear layer: `#1c1a17` (barely warm dark) → `#111010` (near-black), straight down — gives the field direction. Top is slightly less heavy than bottom. Replaces diagonal (160deg) with vertical (180deg).
+- No HTML structure changes. No content changes. Mobile breakpoints (padding only) untouched.
+
+### Philosophy notes
+The darkness is now a space, not a wall. The change is invisible as technique — it contributes only as quality. The reader arrives in air rather than encountering a surface.
+
+### Deployed
 [ ] Yes — commit: (pending)
 [x] No — local
 
