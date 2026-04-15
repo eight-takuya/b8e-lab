@@ -216,6 +216,27 @@ The darkness is now a space, not a wall. The change is invisible as technique �
 The rhythm hierarchy now matches the contemplative weight of each section: hero and philosophy breathe the most; footer text remains compact. The resonance questions — the site's most important mirror text — finally have room between them.
 
 ### Deployed
+[x] Yes — commit: style: typography and spacing refinement — rhythm and immersion
+[ ] No — pending
+
+---
+
+## 2026-04-16 — Logo redesign: lemniscate mark + V1 typography (all pages)
+
+**Scope:** `style.css` (logo CSS), all 5 HTML files (header h1 replacement)
+**Triggered by:** Logo redesign request — existing h1 at font-weight 600 contradicted site philosophy
+**Mode used:** Designer → Implementer (three variations presented, V3 + V1 selected)
+
+### Changes
+
+- `style.css`: replaced `.site-header h1` bold rule with new wordmark style (font-weight 200, 0.36em tracking, warm `#c0b8ad`). Added `.logo-mark` (inline-flex column) and `.logo-lemniscate` (48×19px, opacity 0.6). Dimmed tagline to `#424039`.
+- All 5 HTML files: replaced `<h1>B8E</h1>` with `.logo-mark` containing inline SVG lemniscate + `<h1>B8E</h1>`.
+- SVG: figure-8 lemniscate, viewBox 0 0 80 32, two ellipses (rx 18, ry 10) meeting at center (40,16). stroke `#c9a882`, stroke-width 1.1, opacity 0.6. `aria-hidden="true"` — h1 text provides semantic identity.
+
+### Philosophy notes
+The logo no longer announces itself. The lemniscate (∞) appears at 60% opacity — barely a shape. The wordmark at font-weight 200 is the quietest text on the site. A reader scrolling through will discover the mark rather than be greeted by it. EIGHT = ∞ is now visible in the header, not merely encoded in the name.
+
+### Deployed
 [ ] Yes — commit: (pending)
 [x] No — local
 
