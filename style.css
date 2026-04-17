@@ -492,7 +492,90 @@ a:hover {
 
 
 /* ------------------------------------------------------------
-   13. Intro (page lead text)
+   13. Contact Form
+   ------------------------------------------------------------ */
+
+.contact-form {
+  margin-top: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #e0ddd9;
+  padding: 12px 0;
+  font-family: inherit;
+  font-size: 0.92rem;
+  color: #444;
+  letter-spacing: 0.02em;
+  line-height: 1.8;
+  outline: none;
+  -webkit-appearance: none;
+  border-radius: 0;
+  transition: border-color 0.2s ease;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: #bbb;
+  font-size: 0.88rem;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-bottom-color: #9b7b5c;
+}
+
+.contact-form textarea {
+  min-height: 96px;
+  resize: none;
+  margin-top: 0;
+  line-height: 2.0;
+}
+
+.contact-form input + input,
+.contact-form input + textarea {
+  margin-top: 4px;
+}
+
+.contact-form textarea + button {
+  margin-top: 24px;
+}
+
+.contact-form button {
+  align-self: flex-start;
+  background: none;
+  border: none;
+  border-bottom: 1px solid #c9a882;
+  color: #9b7b5c;
+  font-family: inherit;
+  font-size: 0.88rem;
+  letter-spacing: 0.03em;
+  padding-bottom: 2px;
+  cursor: pointer;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.contact-form button:hover {
+  color: #7a5f44;
+  border-color: #9b7b5c;
+}
+
+.form-note {
+  margin-top: 20px;
+  font-size: 0.88rem !important;
+  color: #aaa !important;
+  line-height: 2.0 !important;
+}
+
+
+/* ------------------------------------------------------------
+   14. Intro (page lead text)
    ------------------------------------------------------------ */
 
 .page-intro {
