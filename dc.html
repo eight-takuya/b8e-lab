@@ -3,9 +3,58 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="中小企業・小規模法人の経営者向け企業型DC（企業型確定拠出年金）の導入支援。社長一人の会社でも活用できます。節税・社会保険料・退職金制度を整えたい経営者の方へ。">
   <title>企業型DC | B8E</title>
   <link rel="stylesheet" href="style.css">
   <script defer src="/_vercel/insights/script.js"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "社長一人でも導入できますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "できます。役員報酬が発生している法人であれば、従業員がいなくても企業型DCを設立できます。小規模な法人こそ活用できる場面が多い制度です。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "小規模法人でも利用できますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "利用できます。従業員数に下限はありません。法人格があれば、会社の規模を問わず設立を検討できます。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "個人事業主でも対象になりますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "企業型DCは法人が設立する制度のため、個人事業主の方は直接の対象外になります。法人化のご検討も含めて、まず状況をお聞かせいただければ、一緒に考えることができます。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "iDeCoとの違いは何ですか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "iDeCoは個人で加入する制度です。企業型DCは会社が設立し、会社が掛金を拠出します。社会保険料の負担が変わる点、会社の福利厚生として社員全体に提供できる点が主な違いです。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "社会保険料はどう変わりますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "企業型DCの掛金は、社会保険料の算定対象となる報酬に含まれません。そのため、役員・社員それぞれの社会保険料の負担が変わる場合があります。具体的な試算は、現在の報酬水準によって異なります。"
+        }
+      }
+    ]
+  }
+  </script>
   <style>
     /* DC-specific overrides */
     .dc-hero {
@@ -34,16 +83,6 @@
       letter-spacing: 0.04em;
       max-width: 480px;
       margin: 0 auto;
-    }
-
-    .dc-note {
-      margin-top: 20px;
-      padding: 20px 24px;
-      background-color: #f0eeeb;
-      border-radius: 4px;
-      font-size: 0.85rem;
-      color: #888;
-      line-height: 1.9;
     }
 
     @media (max-width: 600px) {
@@ -92,8 +131,22 @@
 
     <div class="page-content">
 
-      <!-- Human question first -->
+      <!-- For Who — ファーストビュー直下 -->
+      <div class="resonance-questions">
+        <h3>こんな経営者の方へ</h3>
+        <p>法人化したが、自分自身の将来設計が後回しになっている。</p>
+        <p>小規模な会社でも活用できる制度があるのか、まだ確かめていない。</p>
+        <p>社長一人でも対象になるのか、どこかひっかかっている。</p>
+        <p>採用や定着のために、何かを整えておきたいと思いながら、時間だけが過ぎている。</p>
+        <p>節税より、長期的な安心として将来を考えてみたいと思っている。</p>
+      </div>
+
+      <!-- Empathy intro — 経営者の悩みから -->
       <div class="page-intro">
+        <p>
+          経営者は、会社のことを考え続けている。<br>
+          その分、自分自身のこれからが、静かに後回しになっていく。
+        </p>
         <p>
           一緒に働く人の将来が、ふと気になるとき。<br>
           何かを整えたいのに、どこから手をつけるかが、まだ見えないとき。<br>
@@ -131,19 +184,54 @@
       <!-- Resonance Questions -->
       <div class="resonance-questions">
         <h3>たとえば、こんな感覚。</h3>
+        <p>経営者として、自分自身のこれからを後回しにしてきた気がする。</p>
         <p>ここで働く人たちが、安心していられているかが、ふと浮かぶとき。</p>
-        <p>何かを整えたいのに、何から始めればいいかわからない。</p>
         <p>みんなの将来を、もっと自分たちのこととして考えたい。</p>
+        <p>何かを整えたいのに、何から始めればいいかわからない。</p>
         <p>時間だけが過ぎている感覚が、どこかにある。</p>
       </div>
 
-      <!-- Quiet CTA -->
+      <!-- FAQ Section -->
+      <div class="section-block">
+        <h3>よくある問い</h3>
+        <div class="faq-items">
+
+          <div class="faq-item">
+            <p class="faq-q">社長一人でも導入できますか？</p>
+            <p class="faq-a">できます。役員報酬が発生している法人であれば、従業員がいなくても企業型DCを設立できます。むしろ、小規模な法人こそ活用できる場面が多い制度です。</p>
+          </div>
+
+          <div class="faq-item">
+            <p class="faq-q">小規模法人でも利用できますか？</p>
+            <p class="faq-a">利用できます。従業員数に下限はありません。法人格があれば、会社の規模を問わず設立を検討できます。</p>
+          </div>
+
+          <div class="faq-item">
+            <p class="faq-q">個人事業主でも対象になりますか？</p>
+            <p class="faq-a">企業型DCは法人が設立する制度のため、個人事業主の方は直接の対象外になります。ただし、法人化のご検討も含めて、まず状況をお聞かせいただければ、一緒に考えることができます。</p>
+          </div>
+
+          <div class="faq-item">
+            <p class="faq-q">iDeCoとの違いは何ですか？</p>
+            <p class="faq-a">iDeCoは個人で加入する制度です。企業型DCは会社が設立し、会社が掛金を拠出します。社会保険料の負担が変わる点、会社の福利厚生として社員全体に提供できる点が主な違いです。</p>
+          </div>
+
+          <div class="faq-item">
+            <p class="faq-q">社会保険料はどう変わりますか？</p>
+            <p class="faq-a">企業型DCの掛金は、社会保険料の算定対象となる報酬に含まれません。そのため、役員・社員それぞれの社会保険料の負担が変わる場合があります。具体的な試算は、現在の報酬水準によって異なります。</p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Quiet CTA — improved -->
       <div class="quiet-cta">
         <p>
           まだ決めていなくていい。<br>
-          まず、話すところから始められます。
+          小規模でも使えるか、社長一人でも対象になるか。<br>
+          そういった問いから話せます。
         </p>
-        <p class="form-note">言葉が整っていなくても、そのままで大丈夫です。</p>
+        <p class="form-note">情報交換ベースで。言葉が整っていなくても、そのままで大丈夫です。</p>
         <form class="contact-form" action="https://formspree.io/f/mykleakb" method="post">
           <input type="hidden" name="_next" value="https://b8e.co.jp/thanks.html">
           <input type="text" name="name" placeholder="お名前（任意）">

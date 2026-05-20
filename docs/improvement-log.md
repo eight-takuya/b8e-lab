@@ -283,3 +283,24 @@ The fade targets only inner content containers — not section backgrounds. Back
 [x] No — local
 
 ---
+
+## 2026-05-20 — DC page bridge and trust structure
+
+**Scope:** `dc.html`, `style.css`, `docs/improvement-log.md`
+**Triggered by:** User request — dc page lacked bridge from world-view to concrete situation; small-business owners and solo directors couldn't immediately recognize themselves
+**Mode used:** Implementer
+
+### Changes
+
+- `dc.html`: Added "こんな経営者の方へ" section as first block in page-content — five concrete situations (法人化・小規模・社長一人・採用・長期安心) using `.resonance-questions` styling so tone stays consistent. Modified page-intro to open with empathy about executives putting their own future on hold ("経営者は、会社のことを考え続けている"). Updated resonance-questions to include owner's personal perspective as first item. Added FAQ section (社長一人でも、小規模法人、個人事業主、iDeCoとの違い、社会保険料) inside `.section-block` with new `.faq-items`/`.faq-item` classes. Updated quiet-cta copy to lower consultation barrier ("情報交換ベースで。小規模でも使えるか…そういった問いから話せます"). Added `<meta name="description">` and FAQPage JSON-LD structured data for SEO. Removed dead `.dc-note` CSS.
+
+- `style.css`: Added section 18 — `.faq-items`, `.faq-item`, `.faq-q`, `.faq-a`. FAQ items separated by `#f0eeeb` border; question at `#444`, answer at `#777`.
+
+### Philosophy notes
+The page now builds a bridge from world-view to specific situation. Readers who are solo directors or small-company owners can recognize themselves before the philosophical content — the invitation becomes more accessible without losing the quiet B8E tone.
+
+### Deployed
+[ ] Yes — commit: improve dc page bridge and trust structure
+[x] No — local
+
+---
