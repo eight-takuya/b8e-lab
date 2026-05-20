@@ -145,11 +145,24 @@ Log before deploying — not after.
 
 ## Deployment
 
+**main への直接 push は禁止。** 必ず feature ブランチ → PR → Preview 確認 → merge のフローを使う。
+
 ```bash
+# 1. feature ブランチを作成
+git checkout main && git pull origin main
+git checkout -b feature/<作業名>
+
+# 2. 変更・commit
 git add [changed files]
 git commit -m "scope: description"
-git push origin main
+
+# 3. push して PR を作成
+git push origin feature/<作業名>
+gh pr create --title "..." --body "..."
 ```
 
-Vercel auto-deploys within ~60 seconds of push to `main`.
-Verify at https://www.b8e.co.jp/
+PR を作成すると Vercel が Preview Deployment を自動生成します。
+ユーザーが Preview URL で確認・承認してから main へ merge してください。
+merge 後、約 60 秒で https://www.b8e.co.jp/ に反映されます。
+
+詳細手順: [`docs/deploy-flow.md`](docs/deploy-flow.md)
