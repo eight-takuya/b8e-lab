@@ -344,7 +344,26 @@ dc-guide.html is a standalone LP with its own design language — it does not in
 The form now matches the B8E site's existing contact experience — transparent inputs, bottom border, text-link submit. The DC card in the comparison carries emphasis through a gold border, not a sales badge. The change removes the mailto fallback that broke desktop browser flows.
 
 ### Deployed
-[ ] Yes — commit: fix dc guide mobile table and formspree contact flow
+[x] Yes — commit: fix dc guide mobile table and formspree contact flow
+[ ] No — PR pending review
+
+---
+
+## 2026-05-21 — Consolidate DC contact form into dc-guide page
+
+**Scope:** `dc.html` only
+**Triggered by:** User request — duplicate contact forms on dc.html and dc-guide.html; consolidate to dc-guide.html as single contact point
+**Mode used:** Implementer
+
+### Changes
+
+- `dc.html`: Removed the `<!-- Quiet CTA — improved -->` block (Formspree `<form>`, `.form-note`, `.contact-form`). Updated `<!-- Guide link -->` block to become the sole CTA at the page end — new text: "制度の詳細・比較・問い合わせフォームは、こちらに整理しています。" / link text: "企業型DCについて、もう少し整理してみる →" / href: `/dc-guide.html`. Role split: dc.html = empathy/entry point; dc-guide.html = detail + FAQ + contact form.
+
+### Philosophy notes
+A single contact form on dc-guide.html keeps the entry page (dc.html) as a pure reading experience — no form pressure, no decision moment. The guide page receives readers who are already curious.
+
+### Deployed
+[ ] Yes — commit: consolidate dc contact form into guide page
 [x] No — PR pending review
 
 ---
