@@ -1,0 +1,1391 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- ========== SEO ========== -->
+<title>企業型DC（確定拠出年金）とは｜中小企業経営者向け制度ガイド | B8E</title>
+<meta name="description" content="1人法人・中小企業でも導入できる企業型確定拠出年金（企業型DC）の概要を、経営者目線で整理しました。退職金準備・社会保険料の見直し・福利厚生の3つの観点から、自社に合う活用法を確認できます。">
+
+<!-- OGP -->
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="B8E">
+<meta property="og:title" content="企業型DC（確定拠出年金）とは｜中小企業経営者向け制度ガイド | B8E">
+<meta property="og:description" content="1人法人・中小企業でも導入できる企業型確定拠出年金の概要を、経営者目線で整理しました。退職金準備・社会保険料の見直し・福利厚生の3つの観点から確認できます。">
+<!-- VERCEL: og:image に実際の画像URLを設定 (推奨: 1200×630px) -->
+<meta property="og:image" content="https://www.b8e.co.jp/assets/dc/ogp-dc-guide.jpg">
+<!-- VERCEL: og:url に本番URLを設定 -->
+<meta property="og:url" content="https://www.b8e.co.jp/dc-guide.html">
+<meta name="twitter:card" content="summary_large_image">
+
+<!-- VERCEL: canonical に本番URLを設定 -->
+<link rel="canonical" href="https://www.b8e.co.jp/dc-guide.html">
+<script defer src="/_vercel/insights/script.js"></script>
+
+<style>
+  /* ==============================================
+     DESIGN TOKENS
+  ============================================== */
+  :root {
+    --navy:        #1a2f5e;
+    --navy-mid:    #243d7a;
+    --gold:        #c9a840;
+    --gold-light:  #e8cc70;
+    --gold-pale:   #f7f0d8;
+    --white:       #ffffff;
+    --gray-50:     #f8f9fb;
+    --gray-100:    #f0f4f7;
+    --gray-200:    #e0e7ef;
+    --gray-300:    #c8d4e0;
+    --gray-400:    #9fb0c4;
+    --text:        #283040;
+    --text-mid:    #4a5568;
+    --text-light:  #7a8da3;
+    --radius:      8px;
+    --radius-lg:   14px;
+    --shadow-soft: 0 2px 20px rgba(26,47,94,0.06);
+    --shadow-card: 0 4px 28px rgba(26,47,94,0.09);
+  }
+
+  /* ==============================================
+     BASE
+  ============================================== */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Noto Sans JP', 'Yu Gothic', sans-serif;
+    color: var(--text);
+    background: var(--white);
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; text-decoration: none; }
+
+  /* ==============================================
+     LAYOUT
+  ============================================== */
+  .container {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 0 28px;
+  }
+  .container--wide {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 28px;
+  }
+  .section {
+    padding: 120px 0;
+  }
+  .section + .section {
+    border-top: 1px solid var(--gray-100);
+  }
+  .section--tinted {
+    background: var(--gray-50);
+    border-top: 1px solid var(--gray-100);
+    border-bottom: 1px solid var(--gray-100);
+  }
+
+  /* ==============================================
+     HEADER（固定ナビ）
+  ============================================== */
+  .header {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    background: rgba(255,255,255,0.97);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--gray-200);
+    padding: 15px 0;
+  }
+  .header__inner {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 28px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .header__brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .header__logo {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--navy);
+    letter-spacing: 0.06em;
+  }
+  .header__logo span { color: var(--gold); }
+  .header__sep {
+    width: 1px;
+    height: 14px;
+    background: var(--gray-300);
+  }
+  .header__tagline {
+    font-size: 11px;
+    color: var(--text-light);
+    letter-spacing: 0.05em;
+  }
+  .header__nav {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+  }
+  .header__back-link {
+    font-size: 12px;
+    color: var(--text-light);
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    border-bottom: 1px solid transparent;
+    padding-bottom: 1px;
+    transition: color 0.2s, border-color 0.2s;
+  }
+  .header__back-link:hover {
+    color: var(--navy);
+    border-bottom-color: var(--navy);
+  }
+  .header__cta-link {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--white);
+    background: var(--navy);
+    padding: 8px 20px;
+    border-radius: 100px;
+    letter-spacing: 0.02em;
+    transition: background 0.2s;
+  }
+  .header__cta-link:hover { background: var(--navy-mid); }
+
+  /* ==============================================
+     HERO
+  ============================================== */
+  .hero {
+    /* 固定ヘッダー（約52px）分のオフセット + 余白 */
+    padding: 160px 0 110px;
+    background: var(--white);
+  }
+  .hero__inner {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 0 28px;
+  }
+  .hero__label {
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    color: var(--text-light);
+    font-weight: 600;
+    margin-bottom: 36px;
+    text-transform: uppercase;
+  }
+  .hero__title {
+    font-size: clamp(28px, 4.5vw, 44px);
+    font-weight: 800;
+    color: var(--navy);
+    line-height: 1.38;
+    letter-spacing: -0.01em;
+  }
+  .hero__story {
+    margin-top: 52px;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+  }
+  .hero__story p {
+    font-size: clamp(15px, 1.9vw, 17px);
+    color: var(--text-mid);
+    line-height: 2.35;
+  }
+  .hero__story p.lead {
+    color: var(--text);
+    font-size: clamp(16px, 2vw, 18px);
+    font-weight: 500;
+  }
+  .hero__divider {
+    width: 32px;
+    height: 2px;
+    background: var(--gold);
+    margin: 8px 0;
+  }
+  .hero__note {
+    margin-top: 48px;
+    padding: 16px 20px;
+    background: var(--gray-50);
+    border-left: 3px solid var(--gray-300);
+    border-radius: 0 var(--radius) var(--radius) 0;
+    font-size: 13px;
+    color: var(--text-light);
+    line-height: 1.85;
+  }
+  .hero__cta-wrap {
+    margin-top: 52px;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+  .btn-read {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--navy);
+    color: var(--white);
+    font-size: 14px;
+    font-weight: 700;
+    padding: 14px 32px;
+    border-radius: 100px;
+    transition: all 0.2s;
+    cursor: pointer;
+    letter-spacing: 0.02em;
+  }
+  .btn-read:hover {
+    background: var(--navy-mid);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 16px rgba(26,47,94,0.22);
+  }
+  .btn-text-link {
+    font-size: 13px;
+    color: var(--text-light);
+    font-weight: 500;
+    border-bottom: 1px solid var(--gray-300);
+    padding-bottom: 2px;
+    transition: all 0.2s;
+  }
+  .btn-text-link:hover {
+    color: var(--navy);
+    border-bottom-color: var(--navy);
+  }
+
+  /* ==============================================
+     EDITORIAL TEXT
+  ============================================== */
+  .editorial {
+    font-size: clamp(15px, 1.8vw, 17px);
+    color: var(--text-mid);
+    line-height: 2.15;
+  }
+  .editorial p + p { margin-top: 1.6em; }
+  .editorial strong { color: var(--text); font-weight: 700; }
+  .editorial em { font-style: normal; color: var(--navy); font-weight: 600; }
+
+  .section-eyebrow {
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+  .section-heading {
+    font-size: clamp(20px, 3.2vw, 28px);
+    font-weight: 700;
+    color: var(--navy);
+    line-height: 1.5;
+    margin-bottom: 32px;
+  }
+
+  /* ==============================================
+     EMPATHY（共感セクション）
+  ============================================== */
+  .empathy-intro {
+    margin-bottom: 36px;
+    font-size: clamp(15px, 1.8vw, 17px);
+    color: var(--text-mid);
+    line-height: 2.1;
+  }
+  .checklist {
+    list-style: none;
+    border-top: 1px solid var(--gray-200);
+  }
+  .checklist li {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 24px 0;
+    font-size: 15px;
+    color: var(--text);
+    line-height: 1.9;
+    border-bottom: 1px solid var(--gray-100);
+  }
+  .cl-mark {
+    width: 18px;
+    height: 18px;
+    border: 1.5px solid var(--gray-300);
+    border-radius: 3px;
+    flex-shrink: 0;
+    margin-top: 3px;
+  }
+  .empathy-close {
+    margin-top: 44px;
+    font-size: clamp(15px, 1.8vw, 16px);
+    color: var(--text-mid);
+    line-height: 2.1;
+  }
+  .empathy-close strong { color: var(--text); }
+  .empathy-accent {
+    margin-top: 52px;
+    padding: 28px 32px;
+    border-left: 3px solid var(--gold);
+    background: var(--gold-pale);
+    border-radius: 0 var(--radius) var(--radius) 0;
+    font-size: 15px;
+    color: var(--text);
+    line-height: 2.1;
+  }
+
+  /* ==============================================
+     DC CONCEPT（制度概要）
+  ============================================== */
+  .concept-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 52px;
+    align-items: start;
+    margin-top: 40px;
+  }
+  .concept-merit-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    border-top: 1px solid var(--gray-200);
+  }
+  .concept-merit-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 26px 0;
+    border-bottom: 1px solid var(--gray-100);
+  }
+  .cmi-num {
+    font-size: 11px;
+    font-weight: 800;
+    color: var(--gold);
+    letter-spacing: 0.05em;
+    min-width: 20px;
+    padding-top: 2px;
+  }
+  .cmi-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 4px;
+    line-height: 1.4;
+  }
+  .cmi-desc {
+    font-size: 13px;
+    color: var(--text-light);
+    line-height: 1.75;
+  }
+  /* SP対応: 表のスクロールラッパー */
+  .table-scroll {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin-top: 0;
+  }
+  .compare-table {
+    width: 100%;
+    min-width: 480px; /* SP横スクロールの基準幅 */
+    border-collapse: collapse;
+    font-size: 13px;
+  }
+  .compare-table th,
+  .compare-table td {
+    padding: 13px 16px;
+    text-align: center;
+    border-bottom: 1px solid var(--gray-100);
+  }
+  .compare-table thead {
+    background: var(--navy);
+    color: var(--white);
+  }
+  .compare-table thead th:first-child { text-align: left; }
+  .compare-table tbody td:first-child {
+    text-align: left;
+    color: var(--text);
+    font-weight: 600;
+    background: var(--gray-50);
+  }
+  .compare-table .col-dc { background: rgba(201,168,64,0.06); }
+  .compare-table .col-dc-header { background: var(--gold); color: var(--navy); font-weight: 700; }
+  .compare-table .t-good { color: var(--navy); font-weight: 600; }
+  .compare-table .t-muted { color: var(--text-light); }
+
+  /* 図解前クッションテキスト */
+  .pre-diagram {
+    margin: 60px 0 28px;
+    padding: 18px 24px;
+    background: var(--gray-50);
+    border-left: 2px solid var(--gray-300);
+    border-radius: 0 var(--radius) var(--radius) 0;
+    font-size: 13px;
+    color: var(--text-light);
+    line-height: 1.9;
+  }
+
+  /* ==============================================
+     3 APPROACHES（3つのアプローチ）
+  ============================================== */
+  .approach-header {
+    max-width: 780px;
+    margin: 0 auto 40px;
+  }
+  .approach-intro {
+    font-size: clamp(15px, 1.8vw, 16px);
+    color: var(--text-mid);
+    line-height: 2.1;
+    margin-bottom: 0;
+  }
+  .approach-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+  .approach-card {
+    border: 1px solid var(--gray-200);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    background: var(--white);
+    transition: box-shadow 0.2s;
+  }
+  .approach-card:hover { box-shadow: var(--shadow-card); }
+  .approach-card__top {
+    padding: 30px 24px 22px;
+    border-bottom: 1px solid var(--gray-100);
+  }
+  .approach-card__eyebrow {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    color: var(--gold);
+    margin-bottom: 10px;
+    text-transform: uppercase;
+  }
+  .approach-card__icon { font-size: 24px; margin-bottom: 10px; }
+  .approach-card__title {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--navy);
+    line-height: 1.45;
+  }
+  .approach-card__body { padding: 22px 24px 30px; }
+  .approach-card__for {
+    font-size: 11px;
+    color: var(--text-light);
+    background: var(--gray-100);
+    border-radius: 100px;
+    padding: 3px 12px;
+    display: inline-block;
+    margin-bottom: 12px;
+  }
+  .approach-card__text {
+    font-size: 13px;
+    color: var(--text-mid);
+    line-height: 1.85;
+  }
+  .approach-card__point {
+    margin-top: 14px;
+    padding-top: 14px;
+    border-top: 1px solid var(--gray-100);
+    font-size: 12px;
+    color: var(--navy);
+    line-height: 1.65;
+    font-weight: 600;
+  }
+
+  /* 中間CTA */
+  .mid-cta-wrap {
+    margin-top: 64px;
+    padding-top: 52px;
+    border-top: 1px solid var(--gray-100);
+    text-align: center;
+  }
+  .mid-cta-text {
+    font-size: 14px;
+    color: var(--text-light);
+    line-height: 1.75;
+    margin-bottom: 20px;
+  }
+  .mid-cta-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--navy);
+    border-bottom: 1px solid var(--gray-300);
+    padding-bottom: 3px;
+    letter-spacing: 0.02em;
+    transition: all 0.2s;
+  }
+  .mid-cta-link:hover {
+    border-bottom-color: var(--navy);
+    opacity: 0.75;
+  }
+
+  /* ==============================================
+     REFERENCE DATA（参考データ・図解ブロック）
+  ============================================== */
+  .ref-cushion {
+    margin-bottom: 56px;
+    font-size: 14px;
+    color: var(--text-light);
+    line-height: 2.0;
+  }
+  .diagram-block {
+    margin-bottom: 0;
+  }
+  .diagram-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+  .diagram-title {
+    font-size: clamp(17px, 2.2vw, 20px);
+    font-weight: 700;
+    color: var(--navy);
+    line-height: 1.45;
+    margin-bottom: 20px;
+    margin-top: 8px;
+  }
+  .diagram-lead {
+    font-size: 15px;
+    color: var(--text-mid);
+    line-height: 2.15;
+    margin-bottom: 32px;
+  }
+  .diagram-card {
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    border-radius: var(--radius-lg);
+    padding: 32px 36px;
+    box-shadow: var(--shadow-soft);
+  }
+  .diagram-figure { margin: 0; }
+  .diagram-figure img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: var(--radius);
+  }
+  .diagram-caption {
+    margin-top: 14px;
+    font-size: 11px;
+    color: var(--text-light);
+    text-align: right;
+    letter-spacing: 0.02em;
+  }
+  .diagram-desc {
+    margin-top: 28px;
+    font-size: 15px;
+    color: var(--text-mid);
+    line-height: 2.15;
+  }
+  .diagram-desc p + p { margin-top: 1.1em; }
+  .diagram-note {
+    margin-top: 20px;
+    padding: 14px 18px;
+    background: var(--gray-50);
+    border-left: 2px solid var(--gray-200);
+    border-radius: 0 var(--radius) var(--radius) 0;
+    font-size: 12px;
+    color: var(--text-light);
+    line-height: 1.9;
+  }
+  .diagram-divider {
+    border: none;
+    border-top: 1px solid var(--gray-200);
+    margin: 68px 0;
+  }
+
+  /* ==============================================
+     FAQ
+  ============================================== */
+  .faq-intro {
+    margin-bottom: 36px;
+    font-size: clamp(14px, 1.7vw, 16px);
+    color: var(--text-mid);
+    line-height: 2.1;
+  }
+  .faq-list {
+    border-top: 1px solid var(--gray-200);
+  }
+  .faq-item {
+    border-bottom: 1px solid var(--gray-100);
+  }
+  .faq-q {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 30px 0;
+  }
+  .faq-q-mark {
+    font-size: 11px;
+    font-weight: 800;
+    color: var(--gold);
+    min-width: 18px;
+    padding-top: 3px;
+    letter-spacing: 0.05em;
+  }
+  .faq-q-text {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--navy);
+    line-height: 1.6;
+  }
+  .faq-a {
+    padding: 0 0 36px 32px;
+    font-size: 14px;
+    color: var(--text-mid);
+    line-height: 2.1;
+  }
+  .faq-aside {
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 12px;
+    color: var(--text-light);
+    background: var(--gray-50);
+    padding: 5px 12px;
+    border-radius: var(--radius);
+    border: 1px solid var(--gray-200);
+  }
+
+  /* ==============================================
+     CTA（メイン問い合わせ）
+  ============================================== */
+  .cta-section {
+    padding: 130px 0 120px;
+    background: var(--white);
+    border-top: 1px solid var(--gray-200);
+  }
+  .cta-inner {
+    max-width: 560px;
+    margin: 0 auto;
+    padding: 0 28px;
+    text-align: center;
+  }
+  .cta-top-line {
+    width: 40px;
+    height: 2px;
+    background: var(--gold);
+    margin: 0 auto 24px;
+  }
+  .cta-eyebrow {
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+  .cta-heading {
+    font-size: clamp(20px, 3vw, 26px);
+    font-weight: 700;
+    color: var(--navy);
+    line-height: 1.55;
+    margin-bottom: 24px;
+  }
+  .cta-body {
+    font-size: 15px;
+    color: var(--text-mid);
+    line-height: 2.1;
+    margin-bottom: 44px;
+  }
+  .cta-btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: var(--navy);
+    color: var(--white);
+    font-size: 15px;
+    font-weight: 700;
+    padding: 16px 44px;
+    border-radius: 100px;
+    width: 100%;
+    max-width: 380px;
+    transition: all 0.2s;
+    cursor: pointer;
+    letter-spacing: 0.02em;
+    margin-bottom: 12px;
+  }
+  .cta-btn-primary:hover {
+    background: var(--navy-mid);
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px rgba(26,47,94,0.2);
+  }
+  .cta-btn-ghost {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: transparent;
+    color: var(--text-mid);
+    font-size: 14px;
+    font-weight: 500;
+    padding: 14px 36px;
+    border-radius: 100px;
+    border: 1px solid var(--gray-300);
+    width: 100%;
+    max-width: 380px;
+    transition: all 0.2s;
+    cursor: pointer;
+  }
+  .cta-btn-ghost:hover { border-color: var(--navy); color: var(--navy); }
+  .cta-promises {
+    margin-top: 36px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+  }
+  .cta-promise {
+    font-size: 13px;
+    color: var(--text-light);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .cta-promise::before {
+    content: '';
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--gold);
+    flex-shrink: 0;
+  }
+  .cta-flow {
+    margin-top: 32px;
+    padding-top: 32px;
+    border-top: 1px solid var(--gray-200);
+    font-size: 12px;
+    color: var(--text-light);
+    line-height: 2;
+  }
+
+  /* ==============================================
+     FOOTER
+  ============================================== */
+  .footer {
+    background: var(--navy);
+    padding: 40px 0;
+    text-align: center;
+  }
+  .footer__logo {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--white);
+    letter-spacing: 0.08em;
+    margin-bottom: 6px;
+  }
+  .footer__logo span { color: var(--gold); }
+  .footer__tagline {
+    font-size: 12px;
+    color: rgba(255,255,255,0.45);
+    letter-spacing: 0.04em;
+    margin-bottom: 20px;
+  }
+  .footer__links {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    margin-bottom: 20px;
+  }
+  .footer__link {
+    font-size: 12px;
+    color: rgba(255,255,255,0.5);
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    padding-bottom: 1px;
+    transition: color 0.2s;
+  }
+  .footer__link:hover { color: rgba(255,255,255,0.85); }
+  .footer__copy {
+    font-size: 11px;
+    color: rgba(255,255,255,0.3);
+    margin-bottom: 10px;
+  }
+  .footer__disc {
+    font-size: 11px;
+    color: rgba(255,255,255,0.25);
+    line-height: 1.8;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 0 28px;
+  }
+
+  /* ==============================================
+     RESPONSIVE（SP最適化）
+  ============================================== */
+  @media (max-width: 768px) {
+    /* セクション余白 */
+    .section         { padding: 84px 0; }
+    .cta-section     { padding: 80px 0; }
+
+    /* ヘッダー */
+    .hero            { padding: 116px 0 80px; }
+    .header__tagline,
+    .header__sep,
+    .header__back-link { display: none; }
+
+    /* グリッド */
+    .concept-grid    { grid-template-columns: 1fr; gap: 32px; }
+    .approach-grid   { grid-template-columns: 1fr; }
+
+    /* 図解ブロック */
+    .diagram-card    { padding: 18px 20px; }
+    .diagram-divider { margin: 52px 0; }
+
+    /* ヒーローCTA */
+    .hero__cta-wrap  {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 14px;
+    }
+    .btn-read        { justify-content: center; }
+
+    /* CTA ボタン */
+    .cta-btn-primary,
+    .cta-btn-ghost   { max-width: none; }
+
+    /* フッターリンク */
+    .footer__links   { flex-direction: column; gap: 12px; align-items: center; }
+
+    /* コンテナ余白 */
+    .container,
+    .container--wide { padding: 0 20px; }
+    .hero__inner     { padding: 0 20px; }
+    .cta-inner       { padding: 0 20px; }
+  }
+
+  @media (max-width: 480px) {
+    /* 超小型SP */
+    .hero__title { font-size: 26px; }
+    .section-heading { font-size: 19px; }
+    .compare-table th,
+    .compare-table td { padding: 10px 10px; font-size: 12px; }
+    .checklist li { font-size: 14px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header class="header">
+  <div class="header__inner">
+    <div class="header__brand">
+      <a class="header__logo" href="/">B<span>8</span>E</a>
+      <div class="header__sep"></div>
+      <div class="header__tagline">経営者の未来設計を整える</div>
+    </div>
+    <nav class="header__nav">
+      <a class="header__back-link" href="/dc.html">← 企業型DCについて</a>
+      <a class="header__cta-link" href="#cta">概要を聞いてみる</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+  <div class="hero__inner">
+    <div class="hero__label">企業型確定拠出年金（企業型DC）について</div>
+    <h1 class="hero__title">
+      会社のことばかり考えて、<br>
+      自分自身の未来は、<br>
+      気づけば後回しになっている。
+    </h1>
+    <div class="hero__story">
+      <p class="lead">
+        社長は、いつも誰かのことを考えている。
+      </p>
+      <p>
+        従業員の生活、取引先との関係、来月の資金繰り。<br>
+        利益が出ていても、安心できない日々が続く。<br>
+        「自分自身の老後については、いつかちゃんと考えよう」<br>
+        ——そう思いながら、今日もまた先送りにしている。
+      </p>
+      <div class="hero__divider"></div>
+      <p>
+        そういう経営者のために、<br>
+        国の法律の中に、一つの仕組みが存在する。<br>
+        会社の経費で、社長自身と従業員の将来を<br>
+        静かに整えていく制度のことを、ここでお伝えしたい。
+      </p>
+    </div>
+    <div class="hero__note">
+      金融商品の販売ではありません。国が定めた制度（企業型確定拠出年金）の概要をご案内します。1人法人・中小企業から対応可能。まず読むだけで大丈夫です。
+    </div>
+    <div class="hero__cta-wrap">
+      <a class="btn-read" href="#what-is-dc">制度の概要を読む</a>
+      <a class="btn-text-link" href="#faq">よくある質問を見る</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== EMPATHY ===== -->
+<section class="section">
+  <div class="container">
+    <div class="section-eyebrow">多くの経営者が感じていること</div>
+    <h2 class="section-heading">後回しにしてきた、自分自身のこと</h2>
+    <div class="empathy-intro">
+      会社のために動き続けてきた。<br>
+      でも、経営者自身の退職後の生活や、従業員の将来については、<br>
+      まだ整理できていないことが多い。
+    </div>
+    <ul class="checklist">
+      <li>
+        <span class="cl-mark"></span>
+        <span>役員報酬を増やしても、税金と社保で手残りが思ったより少ない</span>
+      </li>
+      <li>
+        <span class="cl-mark"></span>
+        <span>社会保険料の負担が年々重くなっていると感じる</span>
+      </li>
+      <li>
+        <span class="cl-mark"></span>
+        <span>自分自身の退職金や老後の準備を、ずっと後回しにしている</span>
+      </li>
+      <li>
+        <span class="cl-mark"></span>
+        <span>従業員の将来が心配だが、福利厚生を整える方法がわからない</span>
+      </li>
+      <li>
+        <span class="cl-mark"></span>
+        <span>金融系の話は「売り込まれる感じ」がして、なかなか相談できていない</span>
+      </li>
+    </ul>
+    <div class="empathy-close">
+      こうした状況は、珍しいことではありません。<br>
+      経営を優先するあまり、自分と従業員の将来設計を後回しにしてしまう。<br>
+      そのパターンに、多くの中小企業経営者が気づいていない。
+    </div>
+    <div class="empathy-accent">
+      「後でやろう」と思い続けている間に、<br>
+      じつは使えた制度がある——<br>
+      国が法律で定めた、経営者のための仕組みが。
+    </div>
+  </div>
+</section>
+
+<!-- ===== WHAT IS DC ===== -->
+<section class="section section--tinted" id="what-is-dc">
+  <div class="container">
+    <div class="section-eyebrow">制度の概要</div>
+    <h2 class="section-heading">企業型DC（確定拠出年金）とは</h2>
+    <div class="concept-grid">
+      <div class="editorial">
+        <p>
+          企業型確定拠出年金（企業型DC）は、
+          会社が掛金を拠出し、加入者（役員・従業員）が
+          自分で運用する年金制度です。
+        </p>
+        <p>
+          NISAやiDeCoと大きく異なる点は、
+          <strong>「個人のお金」ではなく「会社の経費（損金）」から
+          積み立てられる</strong>ことです。
+        </p>
+        <p>
+          掛金は全額損金として計上でき、
+          さらに社会保険料の算定対象外となります。
+          この2点だけで、NISA・iDeCoを大きく上回る
+          制度上の優遇があります。
+        </p>
+      </div>
+      <ul class="concept-merit-list">
+        <li class="concept-merit-item">
+          <div class="cmi-num">01</div>
+          <div class="cmi-body">
+            <div class="cmi-title">掛金が全額損金計上</div>
+            <div class="cmi-desc">会社の利益から直接拠出でき、法人税の課税対象を抑えられます</div>
+          </div>
+        </li>
+        <li class="concept-merit-item">
+          <div class="cmi-num">02</div>
+          <div class="cmi-body">
+            <div class="cmi-title">社会保険料の算定対象外</div>
+            <div class="cmi-desc">給与扱いにならないため、会社・本人ともに社保に影響が出る可能性があります</div>
+          </div>
+        </li>
+        <li class="concept-merit-item">
+          <div class="cmi-num">03</div>
+          <div class="cmi-body">
+            <div class="cmi-title">運用益が非課税</div>
+            <div class="cmi-desc">運用中の利益に税金がかかりません。受取時の税制優遇もあります</div>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <p class="pre-diagram">制度の違いを整理すると、次のようになります。あくまで一つの参考として、全体像の把握にご活用ください。</p>
+    <!-- SP対応: 表が画面幅を超える場合は横スクロールで確認できます -->
+    <div class="table-scroll">
+      <table class="compare-table">
+        <thead>
+          <tr>
+            <th style="text-align:left; background:#172a52">比較項目</th>
+            <th style="background:#172a52">NISA</th>
+            <th style="background:#172a52">iDeCo</th>
+            <th class="col-dc-header">企業型DC</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>掛金の出所</td>
+            <td class="t-muted">個人（税引後）</td>
+            <td class="t-muted">個人（税引後）</td>
+            <td class="col-dc t-good">会社経費（損金）</td>
+          </tr>
+          <tr>
+            <td>社保への影響</td>
+            <td class="t-muted">なし</td>
+            <td class="t-muted">なし</td>
+            <td class="col-dc t-good">削減の可能性あり</td>
+          </tr>
+          <tr>
+            <td>掛金の損金計上</td>
+            <td class="t-muted">なし</td>
+            <td class="t-muted">なし</td>
+            <td class="col-dc t-good">全額可能</td>
+          </tr>
+          <tr>
+            <td>退職金準備として</td>
+            <td class="t-muted">△</td>
+            <td class="t-muted">○</td>
+            <td class="col-dc t-good">◎（最適）</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 3 APPROACHES ===== -->
+<section class="section" id="approaches">
+  <div class="container--wide">
+    <div class="approach-header">
+      <div class="section-eyebrow">活用の考え方</div>
+      <h2 class="section-heading">経営課題に合わせた、<br>3つのアプローチ</h2>
+      <div class="approach-intro">
+        企業型DCには、会社の状況によって異なる活用の仕方があります。<br>
+        どのパターンが自社に合うかは、状況確認のうえで一緒に考えます。
+      </div>
+    </div>
+    <div class="approach-grid">
+      <div class="approach-card">
+        <div class="approach-card__top">
+          <div class="approach-card__eyebrow">Approach 01</div>
+          <div class="approach-card__icon">💼</div>
+          <div class="approach-card__title">社長自身の<br>退職金・老後の準備</div>
+        </div>
+        <div class="approach-card__body">
+          <span class="approach-card__for">利益が出ている会社</span>
+          <p class="approach-card__text">
+            役員報酬は税金・社保が差し引かれますが、企業型DCの掛金はその対象外です。会社の経費から拠出した掛金が、そのまま社長個人の資産として積み立てられます。
+          </p>
+          <div class="approach-card__point">
+            会社の経費で、社長の将来を<br>効率よく整えられる仕組みです
+          </div>
+        </div>
+      </div>
+      <div class="approach-card">
+        <div class="approach-card__top">
+          <div class="approach-card__eyebrow">Approach 02</div>
+          <div class="approach-card__icon">⚖️</div>
+          <div class="approach-card__title">社会保険料の<br>コスト見直し</div>
+        </div>
+        <div class="approach-card__body">
+          <span class="approach-card__for">従業員がいる会社</span>
+          <p class="approach-card__text">
+            給与の一部をDC掛金に切り替えることで、標準報酬月額が変わる可能性があります。従業員が多いほど、組織全体への影響が大きくなります（状況による）。
+          </p>
+          <div class="approach-card__point">
+            正当な国の仕組みを活用した<br>コスト見直しのアプローチです
+          </div>
+        </div>
+      </div>
+      <div class="approach-card">
+        <div class="approach-card__top">
+          <div class="approach-card__eyebrow">Approach 03</div>
+          <div class="approach-card__icon">🤝</div>
+          <div class="approach-card__title">福利厚生と<br>採用力の強化</div>
+        </div>
+        <div class="approach-card__body">
+          <span class="approach-card__for">採用・定着に悩む会社</span>
+          <p class="approach-card__text">
+            大企業では標準化しつつある制度を、中小企業でも整えられます。「老後2000万円問題」への備えとして、従業員の将来への安心材料になります。
+          </p>
+          <div class="approach-card__point">
+            従業員を守る姿勢が、定着・採用の<br>差別化にもつながります
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="mid-cta-wrap">
+      <p class="mid-cta-text">
+        どのアプローチが自社に合うかは、状況によって異なります。<br>
+        まず概要だけ確認したい方は、気軽にご連絡ください。
+      </p>
+      <a class="mid-cta-link" href="#cta">自社に合うかどうか、一度話を聞いてみる →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== REFERENCE DATA ===== -->
+<section class="section section--tinted" id="reference">
+  <div class="container">
+    <div class="section-eyebrow">参考データ</div>
+    <h2 class="section-heading">自社で確認する価値がある、<br>3つのポイント</h2>
+    <p class="ref-cushion">
+      以下は、この制度が会社と経営者にどのような形で作用するかを整理したものです。<br>
+      実際の効果は、会社の規模・給与水準・設計内容によって異なります。<br>
+      数字はあくまで目安として、仕組みの理解にお役立てください。
+    </p>
+
+    <!-- Point 01 -->
+    <div class="diagram-block">
+      <div class="diagram-label">Point 01</div>
+      <div class="diagram-title">社長個人の資産形成効率</div>
+      <p class="diagram-lead">
+        会社の利益を、どのように社長自身の将来資産へ移していくか。<br>
+        役員報酬として受け取る場合と、企業型DCで積み立てる場合では、<br>
+        会社利益の流れ方が変わります。その構造の違いを整理した図です。
+      </p>
+      <div class="diagram-card">
+        <figure class="diagram-figure">
+          <img
+            src="/assets/dc/img-01-asset-flow.png"
+            alt="役員報酬ルートでは税金・社保が差し引かれ手残り50〜70%、企業型DCルートでは会社経費から個人の資産100%として積み立てられる仕組みの比較図"
+            width="100%"
+            loading="lazy"
+          >
+          <figcaption class="diagram-caption">出典：企業型DC紹介資料（EarlyCross）</figcaption>
+        </figure>
+      </div>
+      <div class="diagram-desc">
+        <p>役員報酬ルートでは、税金・社会保険料が差し引かれたうえで手元に届きます。一方、企業型DCの掛金は会社の経費（損金）から直接拠出されるため、税・社保の対象外となります。</p>
+        <p>この構造上の違いが、社長個人の資産形成効率に影響します。条件が合う会社にとっては、退職金準備として有効な仕組みになります。</p>
+      </div>
+      <div class="diagram-note">
+        ※ 実際の手残り率は、役員報酬額・税率・社会保険料等級によって異なります。ここでは制度の仕組みをシンプルに整理しています。具体的な試算は専門家にご確認ください。
+      </div>
+    </div>
+
+    <hr class="diagram-divider">
+
+    <!-- Point 02 -->
+    <div class="diagram-block">
+      <div class="diagram-label">Point 02</div>
+      <div class="diagram-title">社会保険料の負担見直し</div>
+      <p class="diagram-lead">
+        給与の一部を企業型DC掛金へ振り替えることで、標準報酬月額が変化するケースがあります。その結果、会社側・本人側双方の社会保険料負担に影響が出る場合があります。
+      </p>
+      <div class="diagram-card">
+        <figure class="diagram-figure">
+          <img
+            src="/assets/dc/img-02-social-insurance.png"
+            alt="給与の一部をDC掛金へ振り替えることで標準報酬月額が1等級ダウンし、年間4〜5万円程度の社会保険料負担変化が見込まれることを示す図"
+            width="100%"
+            loading="lazy"
+          >
+          <figcaption class="diagram-caption">出典：企業型DC紹介資料（EarlyCross）</figcaption>
+        </figure>
+      </div>
+      <div class="diagram-desc">
+        <p>標準報酬月額の等級が1段階下がることで、会社・本人それぞれが負担する社会保険料が変化します。従業員が多い会社ほど、組織全体としての影響が大きくなります。</p>
+        <p>図に示す年間4〜5万円はあくまで目安です。自社の等級・給与水準によって変わります。</p>
+      </div>
+      <div class="diagram-note">
+        ※ 実際の変化は、給与水準・等級・掛金設計によって異なります。「必ず下がる」とは断言できないため、詳細は専門家との確認をおすすめします。
+      </div>
+    </div>
+
+    <hr class="diagram-divider">
+
+    <!-- Point 03 -->
+    <div class="diagram-block">
+      <div class="diagram-label">Point 03</div>
+      <div class="diagram-title">従業員の将来不安に、会社として向き合う</div>
+      <p class="diagram-lead">
+        企業型DCは、単なる制度ではなく、従業員の将来不安に対する「会社としての姿勢」を示す仕組みでもあります。老後2000万円問題に代表されるような漠然とした不安を、制度として受け止めることができます。
+      </p>
+      <div class="diagram-card">
+        <figure class="diagram-figure">
+          <img
+            src="/assets/dc/img-03-welfare.png"
+            alt="老後2000万円問題という将来への漠然とした不安に対し、企業型DCによる「じぶん年金」づくりで安心を提供できることを示す図"
+            width="100%"
+            loading="lazy"
+          >
+          <figcaption class="diagram-caption">出典：企業型DC紹介資料（EarlyCross）</figcaption>
+        </figure>
+      </div>
+      <div class="diagram-desc">
+        <p>大企業だけでなく、中小企業でも導入できる制度です。「従業員の将来を考えている会社」という印象は、採用や定着にも影響することがあります。</p>
+        <p>経営者自身の将来準備と、従業員への配慮を、同じ仕組みの中で整えられる点が、この制度の特徴のひとつです。</p>
+      </div>
+      <div class="diagram-note">
+        ※ 効果の出方は会社の規模・業種・現状の福利厚生内容によって異なります。
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section class="section" id="faq">
+  <div class="container">
+    <div class="section-eyebrow">よくある質問</div>
+    <h2 class="section-heading">「うちには関係ないかも」と<br>思っている方へ</h2>
+    <div class="faq-intro">
+      多くの方が感じる疑問・不安に、正直にお答えします。<br>
+      「まず概要だけ聞く」ことは、決断でも契約でもありません。
+    </div>
+    <div class="faq-list">
+
+      <div class="faq-item">
+        <div class="faq-q">
+          <span class="faq-q-mark">Q.</span>
+          <span class="faq-q-text">社長1人の会社でも対象になりますか？</span>
+        </div>
+        <div class="faq-a">
+          はい、社長1人のみの法人（1人法人）でも導入できます。社長だけが加入するケースでも、退職金準備として十分な効果が期待できます。ただし、設立要件や規約の整備が必要なため、詳細は専門家への確認をおすすめします。
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">
+          <span class="faq-q-mark">Q.</span>
+          <span class="faq-q-text">小規模な法人でも導入できますか？</span>
+        </div>
+        <div class="faq-a">
+          基本的には可能です。従業員数に関する要件は厳格ではなく、小規模法人での導入事例も多くあります。「うちの場合はどうか」は、まず状況確認のうえでお伝えします。
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">
+          <span class="faq-q-mark">Q.</span>
+          <span class="faq-q-text">個人事業主でも利用できますか？</span>
+        </div>
+        <div class="faq-a">
+          企業型DCは「法人」が対象のため、個人事業主は対象外となります。個人事業主の方にはiDeCoが一般的な選択肢です。法人化とあわせてお考えの方は、その点も含めてご相談ください。
+          <div class="faq-aside">個人事業主の方 → iDeCoが一般的なルートです</div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">
+          <span class="faq-q-mark">Q.</span>
+          <span class="faq-q-text">iDeCoやNISAとの違いは何ですか？</span>
+        </div>
+        <div class="faq-a">
+          最大の違いは「誰のお金で積み立てるか」です。NISAとiDeCoは税引後の個人のお金で運用しますが、企業型DCは会社の経費（損金）から拠出できます。また、掛金が社会保険料の算定対象外になる点も、大きな違いです。
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">
+          <span class="faq-q-mark">Q.</span>
+          <span class="faq-q-text">社会保険料は本当に変わりますか？</span>
+        </div>
+        <div class="faq-a">
+          仕組み上、変わる可能性があります。ただし、どのくらい変わるかは現在の給与水準・等級・設計内容によって異なります。「必ず変わる」とは断言できません。具体的な試算は専門家とともに実際の数字で確認することをおすすめします。
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">
+          <span class="faq-q-mark">Q.</span>
+          <span class="faq-q-text">導入の手続きは難しくありませんか？</span>
+        </div>
+        <div class="faq-a">
+          一定の手続きは必要です（規約の作成・届出・運営管理機関との契約など）。ただし、専門家のサポートのもとで進める場合、経営者が直接動く場面は限られます。最初の概要確認から導入検討・その後の運用まで、一貫してお伴します。
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">
+          <span class="faq-q-mark">Q.</span>
+          <span class="faq-q-text">従業員に対して説明が必要ですか？</span>
+        </div>
+        <div class="faq-a">
+          加入対象となる従業員へは、制度の内容や運用方法の説明が必要です。説明資料の作成・サポートは専門家が行うため、経営者が一から準備する必要はありません。
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">
+          <span class="faq-q-mark">Q.</span>
+          <span class="faq-q-text">強引に契約を勧められることはありませんか？</span>
+        </div>
+        <div class="faq-a">
+          ありません。このページは制度の概要をお伝えするためのものです。概要を聞いたうえで「他の選択肢と比較したい」「まだ考えたい」という判断はもちろんOKです。決断を急かすようなことはしません。
+          <div class="faq-aside">「まず概要を聞くだけ」で大丈夫です</div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">
+          <span class="faq-q-mark">Q.</span>
+          <span class="faq-q-text">まず何を確認すればよいですか？</span>
+        </div>
+        <div class="faq-a">
+          まずは「自社が対象になるか」「どのアプローチが合いそうか」の2点を整理するところから始まります。30分程度のオンラインでの概要共有（情報交換）を設けています。「導入前提」ではなく「知るための機会」として、気軽にご活用ください。
+          <div class="faq-aside">概要確認 → 試算 → ご検討、の順で進みます</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA ===== -->
+<section class="cta-section" id="cta">
+  <div class="cta-inner">
+    <div class="cta-top-line"></div>
+    <div class="cta-eyebrow">まず、知るだけでいい</div>
+    <h2 class="cta-heading">
+      まずは、概要だけ<br>
+      聞いてみてください
+    </h2>
+    <div class="cta-body">
+      「今すぐ決める」必要はありません。<br>
+      自社に合うかどうかを確認するだけで大丈夫です。<br>
+      必要に応じて、専門家へおつなぎします。
+    </div>
+    <a class="cta-btn-primary" href="mailto:contact@b8e.co.jp">制度の概要を聞いてみる（無料）</a>
+    <a class="cta-btn-ghost" href="mailto:contact@b8e.co.jp">自社で使えるか、一緒に整理してみる</a>
+    <div class="cta-promises">
+      <div class="cta-promise">売り込みはしません</div>
+      <div class="cta-promise">まずは概要確認だけで大丈夫です</div>
+      <div class="cta-promise">必要に応じて専門家へおつなぎします</div>
+    </div>
+    <div class="cta-flow">
+      ご連絡後の流れ：概要の情報共有（約30分）→ 自社への適用確認 → ご検討
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="footer__logo">B<span>8</span>E</div>
+  <div class="footer__tagline">経営者の未来設計を整える</div>
+  <div class="footer__links">
+    <a class="footer__link" href="/index.html">TOP</a>
+    <a class="footer__link" href="/dx.html">DX支援</a>
+    <a class="footer__link" href="/dc.html">企業型DC</a>
+    <a class="footer__link" href="/academy.html">Dreamin' Spiral Academy</a>
+    <a class="footer__link" href="/about.html">About</a>
+    <a class="footer__link" href="mailto:contact@b8e.co.jp">お問い合わせ</a>
+  </div>
+  <div class="footer__copy">© 2026 B8E. All rights reserved.</div>
+  <div class="footer__disc">
+    本ページは企業型確定拠出年金の概要をご案内するものであり、個別の投資・税務・社会保険アドバイスを提供するものではありません。具体的な検討にあたっては社会保険労務士・税理士等の専門家へのご確認をおすすめします。
+  </div>
+</footer>
+
+</body>
+</html>
