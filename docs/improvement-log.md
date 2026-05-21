@@ -300,7 +300,30 @@ The fade targets only inner content containers — not section backgrounds. Back
 The page now builds a bridge from world-view to specific situation. Readers who are solo directors or small-company owners can recognize themselves before the philosophical content — the invitation becomes more accessible without losing the quiet B8E tone.
 
 ### Deployed
-[ ] Yes — commit: improve dc page bridge and trust structure
-[x] No — local
+[x] Yes — commit: improve dc page bridge and trust structure
+[ ] No — local
+
+---
+
+## 2026-05-21 — Add dc-guide.html LP to b8e site
+
+**Scope:** `dc-guide.html` (new), `assets/dc/` (new), `dc.html` (guide link added)
+**Triggered by:** User request — migrate completed LP from dc-growth-system repo to b8e-lab as `/dc-guide.html`
+**Mode used:** Implementer
+
+### Changes
+
+- `dc-guide.html`: Ported from `dc-growth-system/lp/vercel-ready/dc-guide.html`. Changes from source: image paths updated to `/assets/dc/` (3 places); CTA `href="/contact"` changed to `mailto:contact@b8e.co.jp` (2 places); footer nav updated to match b8e-lab nav structure (TOP/DX支援/企業型DC/Academy/About/お問い合わせ); Vercel Insights script added; residual `<!-- VERCEL: -->` migration comments removed. Global `style.css` is intentionally NOT linked — the page uses its own complete design system to avoid CSS conflicts.
+
+- `assets/dc/`: New directory. Three images copied from dc-growth-system (img-01-asset-flow.png 1.4MB, img-02-social-insurance.png 1.9MB, img-03-welfare.png 2.3MB).
+
+- `dc.html`: Added `.guide-link-block` section (CSS in inline `<style>`) between FAQ and quiet-cta. Points to `/dc-guide.html`. Navigation flow: dc.html（思想・入口）→ dc-guide.html（制度整理LP）→ contact.
+
+### Philosophy notes
+dc-guide.html is a standalone LP with its own design language — it does not inherit B8E's site-wide CSS. The connection to the site is maintained through the header back-link (`← 企業型DCについて`) and footer navigation.
+
+### Deployed
+[ ] Yes — commit: add dc-guide landing page to b8e site
+[x] No — PR pending review
 
 ---

@@ -93,6 +93,35 @@
         font-size: 1.1rem;
       }
     }
+
+    /* Guide link */
+    .guide-link-block {
+      padding-top: 48px;
+      border-top: 1px solid #e6e4e1;
+    }
+
+    .guide-link-block p {
+      font-size: 0.92rem;
+      color: #777;
+      line-height: 2.1;
+    }
+
+    .guide-link {
+      display: inline-block;
+      margin-top: 20px;
+      font-size: 0.88rem;
+      color: #9b7b5c;
+      border-bottom: 1px solid #c9a882;
+      padding-bottom: 2px;
+      letter-spacing: 0.03em;
+      text-decoration: none;
+      transition: color 0.2s ease, border-color 0.2s ease;
+    }
+
+    .guide-link:hover {
+      color: #7a5f44;
+      border-color: #9b7b5c;
+    }
   </style>
 </head>
 
@@ -222,6 +251,15 @@
           </div>
 
         </div>
+      </div>
+
+      <!-- Guide link — dc-guide.html への導線 -->
+      <div class="guide-link-block">
+        <p>
+          比較表・参考データ・よくある質問を、<br>
+          一つのページに整理しました。
+        </p>
+        <a href="/dc-guide.html" class="guide-link">企業型DC 制度整理ガイドを読む →</a>
       </div>
 
       <!-- Quiet CTA — improved -->
