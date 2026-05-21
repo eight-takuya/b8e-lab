@@ -382,7 +382,46 @@ A single contact form on dc-guide.html keeps the entry page (dc.html) as a pure 
 The entry page no longer asks the reader to decide or engage — it creates recognition ("自分のことかも") and opens a door. The detail, comparison, and contact live in dc-guide.html. Two CTAs give early leavers and full readers the same access point.
 
 ### Deployed
-[ ] Yes — commit: simplify dc entry page and guide flow
+[x] Yes — commit: simplify dc entry page and guide flow
+[ ] No — PR pending review
+
+---
+
+## 2026-05-21 — Refine dc pages spacing, tone, and readability
+
+**Scope:** `dc.html`, `dc-guide.html`
+**Triggered by:** User request — temperature/tone adjustment after structural simplification; focus on quietness, whitespace, and reduced information pressure
+**Mode used:** Implementer
+
+### Changes
+
+**dc.html:**
+- Hero background: warm dark (`#1c1a17→#111010` + warm amber radial) → deep quiet navy (`#182038→#0c1020` + faint cool-blue radial at 0.03 opacity). Removes "金融LP感", adds "経営者コラム感".
+- CTA text × 2: "制度の概要を見てみる →" → "制度の概要を見る →". Lighter action weight.
+
+**dc-guide.html CSS (spacing/rhythm):**
+- `.section padding`: `120px 0` → `136px 0` (more inter-section air)
+- `.hero__story gap`: `28px` → `40px`; `line-height`: `2.35` → `2.55`
+- `.editorial line-height`: `2.15` → `2.35`; `p+p margin-top`: `1.6em` → `2em`
+- `.empathy-intro margin-bottom`: `36px` → `52px`; `line-height`: `2.1` → `2.35`
+- `.empathy-close margin-top`: `44px` → `60px`; added `line-height: 2.35`
+- `.empathy-accent margin-top`: `52px` → `68px`; `padding`: `28px 32px` → `32px 36px`
+- `.pre-diagram margin`: `60px 0 28px` → `84px 0 36px`
+
+**dc-guide.html HTML (content lightening):**
+- Hero story: 3 paragraphs + divider → 2 paragraphs. Removed `.hero__divider`.
+- Hero note: shortened from 2 sentences to 1.
+- Empathy intro: 3-line → 2-line version.
+- Empathy close: 3-line → 2-line version.
+- Editorial (WHAT IS DC): 3 paragraphs → 2 (merged 2nd and 3rd).
+- Pre-diagram text: 2 sentences → 1.
+- Mid-CTA link: "自社に合うかどうか、一度話を聞いてみる →" → "少し話してみる →".
+
+### Philosophy notes
+Tone refinement rather than structure change. Every spacing/content edit removes one unit of pressure from the reader. The hero background shift from warm-dark to deep navy aligns the entry page with 企業型DC's trusted/institutional feel without introducing "金融営業" energy.
+
+### Deployed
+[ ] Yes — commit: refine dc pages spacing tone and readability
 [x] No — PR pending review
 
 ---
