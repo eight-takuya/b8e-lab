@@ -75,7 +75,7 @@
     padding: 0 28px;
   }
   .section {
-    padding: 120px 0;
+    padding: 136px 0;
   }
   .section + .section {
     border-top: 1px solid var(--gray-100);
@@ -188,15 +188,15 @@
     letter-spacing: -0.01em;
   }
   .hero__story {
-    margin-top: 52px;
+    margin-top: 56px;
     display: flex;
     flex-direction: column;
-    gap: 28px;
+    gap: 40px;
   }
   .hero__story p {
     font-size: clamp(15px, 1.9vw, 17px);
     color: var(--text-mid);
-    line-height: 2.35;
+    line-height: 2.55;
   }
   .hero__story p.lead {
     color: var(--text);
@@ -264,9 +264,9 @@
   .editorial {
     font-size: clamp(15px, 1.8vw, 17px);
     color: var(--text-mid);
-    line-height: 2.15;
+    line-height: 2.35;
   }
-  .editorial p + p { margin-top: 1.6em; }
+  .editorial p + p { margin-top: 2em; }
   .editorial strong { color: var(--text); font-weight: 700; }
   .editorial em { font-style: normal; color: var(--navy); font-weight: 600; }
 
@@ -290,10 +290,10 @@
      EMPATHY（共感セクション）
   ============================================== */
   .empathy-intro {
-    margin-bottom: 36px;
+    margin-bottom: 52px;
     font-size: clamp(15px, 1.8vw, 17px);
     color: var(--text-mid);
-    line-height: 2.1;
+    line-height: 2.35;
   }
   .checklist {
     list-style: none;
@@ -318,15 +318,15 @@
     margin-top: 3px;
   }
   .empathy-close {
-    margin-top: 44px;
+    margin-top: 60px;
     font-size: clamp(15px, 1.8vw, 16px);
     color: var(--text-mid);
-    line-height: 2.1;
+    line-height: 2.35;
   }
   .empathy-close strong { color: var(--text); }
   .empathy-accent {
-    margin-top: 52px;
-    padding: 28px 32px;
+    margin-top: 68px;
+    padding: 32px 36px;
     border-left: 3px solid var(--gold);
     background: var(--gold-pale);
     border-radius: 0 var(--radius) var(--radius) 0;
@@ -415,7 +415,7 @@
 
   /* 図解前クッションテキスト */
   .pre-diagram {
-    margin: 60px 0 28px;
+    margin: 84px 0 36px;
     padding: 18px 24px;
     background: var(--gray-50);
     border-left: 2px solid var(--gray-300);
@@ -1029,24 +1029,17 @@
     </h1>
     <div class="hero__story">
       <p class="lead">
-        社長は、いつも誰かのことを考えている。
+        社長は、いつも誰かのことを考えている。<br>
+        自分自身のことは、いつも後回しになっている。
       </p>
       <p>
-        従業員の生活、取引先との関係、来月の資金繰り。<br>
-        利益が出ていても、安心できない日々が続く。<br>
-        「自分自身の老後については、いつかちゃんと考えよう」<br>
-        ——そう思いながら、今日もまた先送りにしている。
-      </p>
-      <div class="hero__divider"></div>
-      <p>
-        そういう経営者のために、<br>
-        国の法律の中に、一つの仕組みが存在する。<br>
         会社の経費で、社長自身と従業員の将来を<br>
-        静かに整えていく制度のことを、ここでお伝えしたい。
+        静かに整えていく仕組みがある。<br>
+        国の法律で定められた、中小企業向けの制度です。
       </p>
     </div>
     <div class="hero__note">
-      金融商品の販売ではありません。国が定めた制度（企業型確定拠出年金）の概要をご案内します。1人法人・中小企業から対応可能。まず読むだけで大丈夫です。
+      金融商品の販売ではありません。国の制度（企業型確定拠出年金）の概要をご案内します。
     </div>
     <div class="hero__cta-wrap">
       <a class="btn-read" href="#what-is-dc">制度の概要を読む</a>
@@ -1061,9 +1054,8 @@
     <div class="section-eyebrow">多くの経営者が感じていること</div>
     <h2 class="section-heading">後回しにしてきた、自分自身のこと</h2>
     <div class="empathy-intro">
-      会社のために動き続けてきた。<br>
-      でも、経営者自身の退職後の生活や、従業員の将来については、<br>
-      まだ整理できていないことが多い。
+      会社のために動き続けてきた一方で、<br>
+      自分自身や従業員の将来設計は、まだ整っていない。
     </div>
     <ul class="checklist">
       <li>
@@ -1088,9 +1080,8 @@
       </li>
     </ul>
     <div class="empathy-close">
-      こうした状況は、珍しいことではありません。<br>
-      経営を優先するあまり、自分と従業員の将来設計を後回しにしてしまう。<br>
-      そのパターンに、多くの中小企業経営者が気づいていない。
+      経営を優先するあまり、自分自身の将来設計が後回しになっている。<br>
+      珍しいことではありませんが、気づかれにくいことでもあります。
     </div>
     <div class="empathy-accent">
       「後でやろう」と思い続けている間に、<br>
@@ -1116,12 +1107,8 @@
           NISAやiDeCoと大きく異なる点は、
           <strong>「個人のお金」ではなく「会社の経費（損金）」から
           積み立てられる</strong>ことです。
-        </p>
-        <p>
           掛金は全額損金として計上でき、
-          さらに社会保険料の算定対象外となります。
-          この2点だけで、NISA・iDeCoを大きく上回る
-          制度上の優遇があります。
+          社会保険料の算定対象外となります。
         </p>
       </div>
       <ul class="concept-merit-list">
@@ -1148,7 +1135,7 @@
         </li>
       </ul>
     </div>
-    <p class="pre-diagram">制度の違いを整理すると、次のようになります。あくまで一つの参考として、全体像の把握にご活用ください。</p>
+    <p class="pre-diagram">制度の違いを整理すると、次のようになります。</p>
     <!-- SP対応: 表が画面幅を超える場合は横スクロールで確認できます -->
     <div class="table-scroll">
       <table class="compare-table">
@@ -1319,7 +1306,7 @@
         どのアプローチが自社に合うかは、状況によって異なります。<br>
         まず概要だけ確認したい方は、気軽にご連絡ください。
       </p>
-      <a class="mid-cta-link" href="#cta">自社に合うかどうか、一度話を聞いてみる →</a>
+      <a class="mid-cta-link" href="#cta">少し話してみる →</a>
     </div>
   </div>
 </section>
