@@ -870,6 +870,135 @@
     .compare-table td { padding: 10px 10px; font-size: 12px; }
     .checklist li { font-size: 14px; }
   }
+
+  /* ==============================================
+     COMPARE CARDS（SP用カード表示 / PCでは非表示）
+  ============================================== */
+  .compare-cards { display: none; }
+
+  @media (max-width: 768px) {
+    .table-scroll  { display: none; }
+    .compare-cards {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 24px;
+    }
+    .ccard {
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: var(--white);
+    }
+    .ccard--dc {
+      border-color: var(--gold);
+    }
+    .ccard__header {
+      padding: 11px 16px;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--text-light);
+      background: var(--gray-50);
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      border-bottom: 1px solid var(--gray-100);
+    }
+    .ccard--dc .ccard__header {
+      background: var(--gold);
+      color: var(--navy);
+      border-bottom-color: var(--gold);
+      letter-spacing: 0.04em;
+    }
+    .ccard__row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 8px;
+      padding: 11px 16px;
+      font-size: 13px;
+      border-bottom: 1px solid var(--gray-100);
+    }
+    .ccard__row:last-child { border-bottom: none; }
+    .ccard__label {
+      color: var(--text-mid);
+      font-weight: 500;
+      flex-shrink: 0;
+    }
+    .ccard__value { text-align: right; }
+  }
+
+  /* ==============================================
+     DC CONTACT FORM（B8Eスタイル問い合わせフォーム）
+  ============================================== */
+  .cta-note {
+    margin-bottom: 28px;
+    font-size: 13px;
+    color: var(--text-light);
+    line-height: 1.9;
+  }
+  .dc-contact-form {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    gap: 0;
+  }
+  .dc-contact-form input,
+  .dc-contact-form textarea {
+    width: 100%;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid var(--gray-300);
+    padding: 13px 0;
+    font-family: inherit;
+    font-size: 15px;
+    color: var(--text);
+    text-align: left;
+    letter-spacing: 0.02em;
+    line-height: 1.8;
+    outline: none;
+    -webkit-appearance: none;
+    border-radius: 0;
+    transition: border-color 0.2s ease;
+  }
+  .dc-contact-form input::placeholder,
+  .dc-contact-form textarea::placeholder {
+    color: var(--gray-400);
+    font-size: 14px;
+  }
+  .dc-contact-form input:focus,
+  .dc-contact-form textarea:focus {
+    border-bottom-color: var(--gold);
+  }
+  .dc-contact-form textarea {
+    min-height: 88px;
+    resize: none;
+    line-height: 2.0;
+  }
+  .dc-contact-form input + input,
+  .dc-contact-form input + textarea {
+    margin-top: 4px;
+  }
+  .dc-contact-form textarea + button {
+    margin-top: 28px;
+  }
+  .dc-contact-form button {
+    align-self: center;
+    background: none;
+    border: none;
+    border-bottom: 1px solid var(--gold);
+    color: var(--gold);
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    padding-bottom: 3px;
+    cursor: pointer;
+    transition: color 0.2s ease, border-color 0.2s ease;
+  }
+  .dc-contact-form button:hover {
+    color: var(--gold-light);
+    border-color: var(--gold-light);
+  }
 </style>
 </head>
 <body>
@@ -1059,6 +1188,68 @@
         </tbody>
       </table>
     </div>
+
+    <!-- SP: カード表示（PCでは非表示） -->
+    <div class="compare-cards">
+      <div class="ccard">
+        <div class="ccard__header">NISA</div>
+        <div class="ccard__row">
+          <span class="ccard__label">掛金の出所</span>
+          <span class="ccard__value t-muted">個人（税引後）</span>
+        </div>
+        <div class="ccard__row">
+          <span class="ccard__label">社保への影響</span>
+          <span class="ccard__value t-muted">なし</span>
+        </div>
+        <div class="ccard__row">
+          <span class="ccard__label">損金計上</span>
+          <span class="ccard__value t-muted">なし</span>
+        </div>
+        <div class="ccard__row">
+          <span class="ccard__label">退職金準備</span>
+          <span class="ccard__value t-muted">△</span>
+        </div>
+      </div>
+      <div class="ccard">
+        <div class="ccard__header">iDeCo</div>
+        <div class="ccard__row">
+          <span class="ccard__label">掛金の出所</span>
+          <span class="ccard__value t-muted">個人（税引後）</span>
+        </div>
+        <div class="ccard__row">
+          <span class="ccard__label">社保への影響</span>
+          <span class="ccard__value t-muted">なし</span>
+        </div>
+        <div class="ccard__row">
+          <span class="ccard__label">損金計上</span>
+          <span class="ccard__value t-muted">なし</span>
+        </div>
+        <div class="ccard__row">
+          <span class="ccard__label">退職金準備</span>
+          <span class="ccard__value t-muted">○</span>
+        </div>
+      </div>
+      <div class="ccard ccard--dc">
+        <div class="ccard__header">企業型DC</div>
+        <div class="ccard__row">
+          <span class="ccard__label">掛金の出所</span>
+          <span class="ccard__value t-good">会社経費（損金）</span>
+        </div>
+        <div class="ccard__row">
+          <span class="ccard__label">社保への影響</span>
+          <span class="ccard__value t-good">削減の可能性あり</span>
+        </div>
+        <div class="ccard__row">
+          <span class="ccard__label">損金計上</span>
+          <span class="ccard__value t-good">全額可能</span>
+        </div>
+        <div class="ccard__row">
+          <span class="ccard__label">退職金準備</span>
+          <span class="ccard__value t-good">◎（最適）</span>
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -1356,16 +1547,14 @@
       自社に合うかどうかを確認するだけで大丈夫です。<br>
       必要に応じて、専門家へおつなぎします。
     </div>
-    <a class="cta-btn-primary" href="mailto:contact@b8e.co.jp">制度の概要を聞いてみる（無料）</a>
-    <a class="cta-btn-ghost" href="mailto:contact@b8e.co.jp">自社で使えるか、一緒に整理してみる</a>
-    <div class="cta-promises">
-      <div class="cta-promise">売り込みはしません</div>
-      <div class="cta-promise">まずは概要確認だけで大丈夫です</div>
-      <div class="cta-promise">必要に応じて専門家へおつなぎします</div>
-    </div>
-    <div class="cta-flow">
-      ご連絡後の流れ：概要の情報共有（約30分）→ 自社への適用確認 → ご検討
-    </div>
+    <p class="cta-note">情報交換ベースで。言葉が整っていなくても、そのままで大丈夫です。</p>
+    <form class="dc-contact-form" action="https://formspree.io/f/mykleakb" method="post">
+      <input type="hidden" name="_next" value="https://b8e.co.jp/thanks.html">
+      <input type="text" name="name" placeholder="お名前（任意）">
+      <input type="email" name="email" placeholder="メールアドレス" required>
+      <textarea name="message" placeholder="今、浮かんでいること（任意）"></textarea>
+      <button type="submit">少し話してみる</button>
+    </form>
   </div>
 </section>
 

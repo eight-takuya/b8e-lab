@@ -323,7 +323,28 @@ The page now builds a bridge from world-view to specific situation. Readers who 
 dc-guide.html is a standalone LP with its own design language — it does not inherit B8E's site-wide CSS. The connection to the site is maintained through the header back-link (`← 企業型DCについて`) and footer navigation.
 
 ### Deployed
-[ ] Yes — commit: add dc-guide landing page to b8e site
+[x] Yes — commit: add dc-guide landing page to b8e site
+[ ] No — PR pending review
+
+---
+
+## 2026-05-21 — Fix dc-guide SP table and Formspree contact flow
+
+**Scope:** `dc-guide.html` only
+**Triggered by:** Vercel Preview review — compare table was horizontally scrolling on SP; CTA used mailto which fails on PC browsers
+**Mode used:** Implementer
+
+### Changes
+
+- `dc-guide.html` CSS: Added `.compare-cards` section (hidden by default). Added `@media (max-width: 768px)` block that hides `.table-scroll` and shows `.compare-cards` as flex column of 3 cards (NISA / iDeCo / 企業型DC). 企業型DC card gets `border-color: var(--gold)` and gold header for light emphasis without being sales-heavy. Added `.dc-contact-form` section with B8E-style form (transparent inputs, bottom-border only, gold focus ring, text-link submit button).
+
+- `dc-guide.html` HTML: Added `.compare-cards` block (3 `.ccard` elements) immediately after `.table-scroll`. Replaced 2 `<a class="cta-btn-*" href="mailto:...">` buttons + `.cta-promises` + `.cta-flow` with a Formspree `<form>` (action `https://formspree.io/f/mykleakb`, `_next` → `https://b8e.co.jp/thanks.html`) + `.cta-note` text. Fields: name（任意）/ email（必須）/ message（任意）. Submit: 「少し話してみる」.
+
+### Philosophy notes
+The form now matches the B8E site's existing contact experience — transparent inputs, bottom border, text-link submit. The DC card in the comparison carries emphasis through a gold border, not a sales badge. The change removes the mailto fallback that broke desktop browser flows.
+
+### Deployed
+[ ] Yes — commit: fix dc guide mobile table and formspree contact flow
 [x] No — PR pending review
 
 ---
