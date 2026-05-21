@@ -3,60 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="中小企業・小規模法人の経営者向け企業型DC（企業型確定拠出年金）の導入支援。社長一人の会社でも活用できます。節税・社会保険料・退職金制度を整えたい経営者の方へ。">
+  <meta name="description" content="中小企業・小規模法人の経営者向け企業型DC（企業型確定拠出年金）の入口ページ。社長一人の会社でも活用できます。">
   <title>企業型DC | B8E</title>
   <link rel="stylesheet" href="style.css">
   <script defer src="/_vercel/insights/script.js"></script>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "社長一人でも導入できますか？",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "できます。役員報酬が発生している法人であれば、従業員がいなくても企業型DCを設立できます。小規模な法人こそ活用できる場面が多い制度です。"
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "小規模法人でも利用できますか？",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "利用できます。従業員数に下限はありません。法人格があれば、会社の規模を問わず設立を検討できます。"
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "個人事業主でも対象になりますか？",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "企業型DCは法人が設立する制度のため、個人事業主の方は直接の対象外になります。法人化のご検討も含めて、まず状況をお聞かせいただければ、一緒に考えることができます。"
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "iDeCoとの違いは何ですか？",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "iDeCoは個人で加入する制度です。企業型DCは会社が設立し、会社が掛金を拠出します。社会保険料の負担が変わる点、会社の福利厚生として社員全体に提供できる点が主な違いです。"
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "社会保険料はどう変わりますか？",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "企業型DCの掛金は、社会保険料の算定対象となる報酬に含まれません。そのため、役員・社員それぞれの社会保険料の負担が変わる場合があります。具体的な試算は、現在の報酬水準によって異なります。"
-        }
-      }
-    ]
-  }
-  </script>
   <style>
-    /* DC-specific overrides */
+    /* DC-specific */
     .dc-hero {
       background:
         radial-gradient(ellipse at 50% 40%, rgba(255,235,200,0.055) 0%, transparent 58%),
@@ -85,13 +37,31 @@
       margin: 0 auto;
     }
 
-    @media (max-width: 600px) {
-      .dc-hero {
-        padding: 64px 24px;
-      }
-      .dc-hero .hero-copy {
-        font-size: 1.1rem;
-      }
+    /* 3 benefits */
+    .dc-benefits {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .dc-benefit {
+      padding-top: 28px;
+      border-top: 1px solid #e6e4e1;
+    }
+
+    .dc-benefit__label {
+      display: block;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: #2a2a2a;
+      letter-spacing: 0.04em;
+      margin-bottom: 10px;
+    }
+
+    .dc-benefit p {
+      font-size: 0.88rem;
+      color: #777;
+      line-height: 1.95;
     }
 
     /* Guide link */
@@ -121,6 +91,28 @@
     .guide-link:hover {
       color: #7a5f44;
       border-color: #9b7b5c;
+      text-decoration: none;
+    }
+
+    /* Inline CTA (中盤) */
+    .dc-cta-inline {
+      padding-top: 8px;
+    }
+
+    @media (max-width: 600px) {
+      .dc-hero {
+        padding: 64px 24px;
+      }
+      .dc-hero .hero-copy {
+        font-size: 1.1rem;
+      }
+      .dc-benefits {
+        grid-template-columns: 1fr;
+        gap: 0;
+      }
+      .dc-benefit {
+        padding-bottom: 20px;
+      }
     }
   </style>
 </head>
@@ -153,112 +145,65 @@
     <section class="dc-hero">
       <span class="hero-label">企業型DC</span>
       <p class="hero-copy">
-        制度より先に、<br>
-        人のことを考える。
+        会社のことを、考え続けている。<br>
+        自分のことは、後回しになっていないか。
       </p>
     </section>
 
     <div class="page-content">
 
-      <!-- For Who — ファーストビュー直下 -->
-      <div class="resonance-questions">
-        <h3>こんな経営者の方へ</h3>
-        <p>法人化したが、自分自身の将来設計が後回しになっている。</p>
-        <p>小規模な会社でも活用できる制度があるのか、まだ確かめていない。</p>
-        <p>社長一人でも対象になるのか、どこかひっかかっている。</p>
-        <p>採用や定着のために、何かを整えておきたいと思いながら、時間だけが過ぎている。</p>
-        <p>節税より、長期的な安心として将来を考えてみたいと思っている。</p>
-      </div>
-
-      <!-- Empathy intro — 経営者の悩みから -->
+      <!-- 共感ブロック -->
       <div class="page-intro">
         <p>
-          経営者は、会社のことを考え続けている。<br>
-          その分、自分自身のこれからが、静かに後回しになっていく。
+          経営者は、利益のことを考える。従業員のことも考える。<br>
+          でも、自分自身の老後や退職金は、気づけば後回しになっている。
         </p>
         <p>
-          一緒に働く人の将来が、ふと気になるとき。<br>
-          何かを整えたいのに、どこから手をつけるかが、まだ見えないとき。<br>
-          制度という言葉だけが先にあって、実感がついてこないとき。
+          福利厚生を整えたいと思いながら、どこから始めればいいかわからない。<br>
+          小規模な会社でも使える仕組みがあるのか、まだ確かめていない。
         </p>
-        <p>
-          足元が整うとき、<br>
-          先のことを、少し遠くまで見られるようになっている。
-        </p>
-        <p class="bridge">その問いが、働くという場所に現れるとき。</p>
       </div>
 
-      <!-- Where the DC question appears -->
+      <!-- CTA #1 -->
+      <div class="dc-cta-inline">
+        <a href="/dc-guide.html" class="guide-link">制度の概要を見てみる →</a>
+      </div>
+
+      <!-- 制度紹介 -->
       <div class="section-block">
-        <h3>足元という問い</h3>
+        <h3>企業型DCという選択肢</h3>
         <p>
-          老後の資産という問いは、<br>
-          働く日常のなかに、静かに在ります。
+          中小企業や1人法人でも活用できる制度として、<br>
+          企業型DC（企業型確定拠出年金）があります。
         </p>
         <p>
-          会社がその問いのそばに在るとき、<br>
-          社員は、自分の将来を自分のこととして考え始めます。
-        </p>
-      </div>
-
-      <!-- How we stay with it -->
-      <div class="section-block">
-        <h3>問いのそばに在ること</h3>
-        <p>
-          問いのそばに在ります。<br>
-          制度が自分たちのものとして根づくまで、そこに在り続けます。
+          会社の経費から掛金を拠出し、<br>
+          社長自身や従業員の将来資産づくりを支える仕組みです。
         </p>
       </div>
 
-      <!-- Resonance Questions -->
-      <div class="resonance-questions">
-        <h3>たとえば、こんな感覚。</h3>
-        <p>経営者として、自分自身のこれからを後回しにしてきた気がする。</p>
-        <p>ここで働く人たちが、安心していられているかが、ふと浮かぶとき。</p>
-        <p>みんなの将来を、もっと自分たちのこととして考えたい。</p>
-        <p>何かを整えたいのに、何から始めればいいかわからない。</p>
-        <p>時間だけが過ぎている感覚が、どこかにある。</p>
-      </div>
-
-      <!-- FAQ Section -->
-      <div class="section-block">
-        <h3>よくある問い</h3>
-        <div class="faq-items">
-
-          <div class="faq-item">
-            <p class="faq-q">社長一人でも導入できますか？</p>
-            <p class="faq-a">できます。役員報酬が発生している法人であれば、従業員がいなくても企業型DCを設立できます。むしろ、小規模な法人こそ活用できる場面が多い制度です。</p>
-          </div>
-
-          <div class="faq-item">
-            <p class="faq-q">小規模法人でも利用できますか？</p>
-            <p class="faq-a">利用できます。従業員数に下限はありません。法人格があれば、会社の規模を問わず設立を検討できます。</p>
-          </div>
-
-          <div class="faq-item">
-            <p class="faq-q">個人事業主でも対象になりますか？</p>
-            <p class="faq-a">企業型DCは法人が設立する制度のため、個人事業主の方は直接の対象外になります。ただし、法人化のご検討も含めて、まず状況をお聞かせいただければ、一緒に考えることができます。</p>
-          </div>
-
-          <div class="faq-item">
-            <p class="faq-q">iDeCoとの違いは何ですか？</p>
-            <p class="faq-a">iDeCoは個人で加入する制度です。企業型DCは会社が設立し、会社が掛金を拠出します。社会保険料の負担が変わる点、会社の福利厚生として社員全体に提供できる点が主な違いです。</p>
-          </div>
-
-          <div class="faq-item">
-            <p class="faq-q">社会保険料はどう変わりますか？</p>
-            <p class="faq-a">企業型DCの掛金は、社会保険料の算定対象となる報酬に含まれません。そのため、役員・社員それぞれの社会保険料の負担が変わる場合があります。具体的な試算は、現在の報酬水準によって異なります。</p>
-          </div>
-
+      <!-- 3 メリット -->
+      <div class="dc-benefits">
+        <div class="dc-benefit">
+          <span class="dc-benefit__label">社長自身の将来準備</span>
+          <p>役員報酬ではなく、会社の経費で積み立てられます。</p>
+        </div>
+        <div class="dc-benefit">
+          <span class="dc-benefit__label">社会保険料の見直し</span>
+          <p>掛金が報酬算定の対象外となり、負担が変わることがあります。</p>
+        </div>
+        <div class="dc-benefit">
+          <span class="dc-benefit__label">福利厚生・採用力</span>
+          <p>中小企業でも整えられる、老後への備えとして機能します。</p>
         </div>
       </div>
 
-      <!-- CTA → dc-guide.html -->
+      <!-- CTA #2 -->
       <div class="guide-link-block">
         <p>
-          制度の詳細・比較・問い合わせフォームは、こちらに整理しています。
+          制度の詳細・比較・問い合わせは、こちらのガイドページにまとめています。
         </p>
-        <a href="/dc-guide.html" class="guide-link">企業型DCについて、もう少し整理してみる →</a>
+        <a href="/dc-guide.html" class="guide-link">制度の概要を見てみる →</a>
       </div>
 
       <a href="index.html" class="back-link">← TOP</a>

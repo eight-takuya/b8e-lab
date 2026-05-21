@@ -363,7 +363,26 @@ The form now matches the B8E site's existing contact experience — transparent 
 A single contact form on dc-guide.html keeps the entry page (dc.html) as a pure reading experience — no form pressure, no decision moment. The guide page receives readers who are already curious.
 
 ### Deployed
-[ ] Yes — commit: consolidate dc contact form into guide page
+[x] Yes — commit: consolidate dc contact form into guide page
+[ ] No — PR pending review
+
+---
+
+## 2026-05-21 — Simplify dc entry page and guide flow
+
+**Scope:** `dc.html` (complete rewrite of content; structure retained)
+**Triggered by:** User request — dc.html was too long to reach the CTA; FAQ/detail sections belong in dc-guide.html; entry page should create natural pull to dc-guide.html
+**Mode used:** Implementer
+
+### Changes
+
+- `dc.html`: Complete content restructure. **Removed:** FAQ section (5 Q&As + JSON-LD), all three resonance-question/section-block explanation blocks ("足元という問い", "問いのそばに在ること", "たとえば、こんな感覚。"), the detailed page-intro paragraphs. **Added:** New hero copy ("会社のことを、考え続けている。自分のことは、後回しになっていないか。") focused on owner's own future. Shortened page-intro to 2 paragraphs. CTA #1 (`dc-cta-inline`) placed immediately after page-intro. New `section-block` with 2-sentence 企業型DC intro. New `dc-benefits` grid (3 items: 社長自身の将来準備 / 社会保険料の見直し / 福利厚生・採用力). CTA #2 (`guide-link-block`) at page end. Both CTAs link to `/dc-guide.html` with text "制度の概要を見てみる →". **CSS:** Replaced FAQ/quiet-cta/resonance inline styles with `.dc-benefits` grid + `.dc-cta-inline` wrapper. Page reduced from 299 → 244 lines; content depth ≈ 3–4 scrolls on PC.
+
+### Philosophy notes
+The entry page no longer asks the reader to decide or engage — it creates recognition ("自分のことかも") and opens a door. The detail, comparison, and contact live in dc-guide.html. Two CTAs give early leavers and full readers the same access point.
+
+### Deployed
+[ ] Yes — commit: simplify dc entry page and guide flow
 [x] No — PR pending review
 
 ---
