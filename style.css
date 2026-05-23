@@ -991,14 +991,14 @@ a:hover {
 
 .line-card {
   margin-top: 24px;
-  padding: 24px 20px;
+  padding: 32px 24px;
   background-color: #f9f8f6;
   border: 1px solid #e8e5e1;
 }
 
 @media (max-width: 600px) {
   .line-card {
-    padding: 20px 16px;
+    padding: 28px 20px;
   }
 }
 
@@ -1011,7 +1011,9 @@ a:hover {
   display: flex;
   align-items: center;
   justify-content: center;
+  max-width: 360px;
   width: 100%;
+  margin: 0 auto;
   padding: 14px 24px;
   background-color: #2a2a2a;
   border: 1px solid rgba(255, 255, 255, 0.18);
@@ -1037,6 +1039,9 @@ a:hover {
 
 .line-qr-section {
   margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .line-qr-note {
