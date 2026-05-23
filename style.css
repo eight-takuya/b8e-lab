@@ -994,3 +994,41 @@ a:hover {
   color: #aaa;
   line-height: 2.0;
 }
+
+
+/* ------------------------------------------------------------
+   A6. LINE Custom Button
+   ------------------------------------------------------------ */
+
+.line-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 24px;
+  padding: 14px 36px;
+  min-width: 200px;
+  background-color: #2a2a2a;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: #f0eeea;
+  font-family: inherit;
+  font-size: 0.88rem;
+  letter-spacing: 0.1em;
+  text-decoration: none;
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.line-btn:hover {
+  background-color: #363330;
+  border-color: #c9a882;
+  color: #f7f6f4;
+  text-decoration: none;
+}
+
+@media (max-width: 600px) {
+  .line-btn {
+    display: flex;
+    width: 100%;
+    min-width: unset;
+    padding: 16px 24px;
+  }
+}
