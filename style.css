@@ -941,21 +941,6 @@ a:hover {
   line-height: 2.1;
 }
 
-.line-qr-img {
-  display: block;
-  width: 120px;
-  height: 120px;
-  margin-top: 12px;
-  border: 1px solid #e6e4e1;
-}
-
-@media (max-width: 600px) {
-  .line-qr-img {
-    width: 108px;
-    height: 108px;
-  }
-}
-
 .line-url {
   display: inline-block;
   margin-top: 16px;
@@ -1000,13 +985,34 @@ a:hover {
    A6. LINE Custom Button
    ------------------------------------------------------------ */
 
+/* ------------------------------------------------------------
+   A6. LINE Card
+   ------------------------------------------------------------ */
+
+.line-card {
+  margin-top: 24px;
+  padding: 24px 20px;
+  background-color: #f9f8f6;
+  border: 1px solid #e8e5e1;
+}
+
+@media (max-width: 600px) {
+  .line-card {
+    padding: 20px 16px;
+  }
+}
+
+
+/* ------------------------------------------------------------
+   A7. LINE Custom Button
+   ------------------------------------------------------------ */
+
 .line-btn {
-  display: inline-flex;
+  display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 24px;
-  padding: 14px 36px;
-  min-width: 200px;
+  width: 100%;
+  padding: 14px 24px;
   background-color: #2a2a2a;
   border: 1px solid rgba(255, 255, 255, 0.18);
   color: #f0eeea;
@@ -1024,27 +1030,35 @@ a:hover {
   text-decoration: none;
 }
 
-@media (max-width: 600px) {
-  .line-btn {
-    display: flex;
-    width: 100%;
-    min-width: unset;
-    padding: 16px 24px;
-  }
-}
-
 
 /* ------------------------------------------------------------
-   A7. LINE QR Section
+   A8. LINE QR Section
    ------------------------------------------------------------ */
 
 .line-qr-section {
-  margin-top: 40px;
+  margin-top: 20px;
 }
 
 .line-qr-note {
-  font-size: 0.75rem;
-  color: #bbb;
-  letter-spacing: 0.06em;
+  font-size: 0.7rem;
+  color: #c4c0bb;
+  letter-spacing: 0.05em;
   line-height: 1.6;
+}
+
+.line-qr-img {
+  display: block;
+  width: 96px;
+  height: 96px;
+  margin-top: 8px;
+  padding: 6px;
+  background-color: #fff;
+  border: 1px solid #e8e5e1;
+}
+
+@media (max-width: 600px) {
+  .line-qr-img {
+    width: 88px;
+    height: 88px;
+  }
 }
