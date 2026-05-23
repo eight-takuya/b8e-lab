@@ -752,3 +752,245 @@ a:hover {
     transition: none;
   }
 }
+
+
+/* ============================================================
+   Academy — Dreamin' Spiral Academy
+   追加: academy.html / academy/program, apply, thanks
+   ============================================================ */
+
+
+/* ------------------------------------------------------------
+   A1. Hero variants
+   ------------------------------------------------------------ */
+
+.academy-hero,
+.program-hero,
+.apply-hero,
+.thanks-hero {
+  background:
+    radial-gradient(ellipse at 50% 40%, rgba(255,235,200,0.055) 0%, transparent 58%),
+    linear-gradient(180deg, #1c1a17 0%, #111010 100%);
+  color: #f7f6f4;
+  padding: 120px 40px;
+  text-align: center;
+}
+
+.hero-label {
+  display: block;
+  margin-bottom: 28px;
+  font-size: 0.72rem;
+  color: #8c8680;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.hero-copy {
+  font-size: 1.25rem;
+  font-weight: 300;
+  line-height: 2.2;
+  color: #e8e5e1;
+  letter-spacing: 0.06em;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+@media (max-width: 600px) {
+  .academy-hero,
+  .program-hero,
+  .apply-hero,
+  .thanks-hero {
+    padding: 72px 24px;
+  }
+  .hero-copy {
+    font-size: 1.1rem;
+  }
+}
+
+
+/* ------------------------------------------------------------
+   A2. Dreamin' Engine Grid
+   ------------------------------------------------------------ */
+
+.engine-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px 48px;
+  margin-top: 28px;
+}
+
+.engine-item .engine-label {
+  font-size: 0.72rem;
+  color: #aaa;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.engine-item p {
+  font-size: 0.92rem;
+  color: #666;
+  line-height: 1.9;
+}
+
+@media (max-width: 600px) {
+  .engine-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+
+
+/* ------------------------------------------------------------
+   A3. Apply Form
+   ------------------------------------------------------------ */
+
+.apply-form {
+  margin-top: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.apply-form input,
+.apply-form textarea {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #e0ddd9;
+  padding: 12px 0;
+  font-family: inherit;
+  font-size: 0.92rem;
+  color: #444;
+  letter-spacing: 0.02em;
+  line-height: 1.8;
+  outline: none;
+  -webkit-appearance: none;
+  border-radius: 0;
+  transition: border-color 0.2s ease;
+}
+
+.apply-form input::placeholder,
+.apply-form textarea::placeholder {
+  color: #bbb;
+  font-size: 0.88rem;
+}
+
+.apply-form input:focus,
+.apply-form textarea:focus {
+  border-bottom-color: #9b7b5c;
+}
+
+.apply-form textarea {
+  min-height: 96px;
+  resize: none;
+  line-height: 2.0;
+}
+
+.apply-form input + input,
+.apply-form input + textarea {
+  margin-top: 4px;
+}
+
+.apply-form textarea + button {
+  margin-top: 24px;
+}
+
+.apply-form button {
+  align-self: flex-start;
+  background: none;
+  border: none;
+  border-bottom: 1px solid #c9a882;
+  color: #9b7b5c;
+  font-family: inherit;
+  font-size: 0.88rem;
+  letter-spacing: 0.03em;
+  padding-bottom: 2px;
+  cursor: pointer;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.apply-form button:hover {
+  color: #7a5f44;
+  border-color: #9b7b5c;
+}
+
+
+/* ------------------------------------------------------------
+   A4. LINE Block
+   ------------------------------------------------------------ */
+
+.line-block {
+  padding-top: 48px;
+  border-top: 1px solid #e6e4e1;
+}
+
+.line-block h3 {
+  font-size: 0.78rem;
+  font-weight: 400;
+  color: #aaa;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.line-block p {
+  font-size: 0.92rem;
+  color: #666;
+  line-height: 2.1;
+}
+
+.line-qr-img {
+  display: block;
+  width: 120px;
+  height: 120px;
+  margin-top: 24px;
+  border: 1px solid #e6e4e1;
+}
+
+@media (max-width: 600px) {
+  .line-qr-img {
+    width: 108px;
+    height: 108px;
+  }
+}
+
+.line-url {
+  display: inline-block;
+  margin-top: 16px;
+  font-size: 0.82rem;
+  color: #9b7b5c;
+  border-bottom: 1px solid #c9a882;
+  padding-bottom: 2px;
+  letter-spacing: 0.03em;
+}
+
+.line-url:hover {
+  color: #7a5f44;
+  border-color: #9b7b5c;
+  text-decoration: none;
+}
+
+
+/* ------------------------------------------------------------
+   A5. Thanks Block
+   ------------------------------------------------------------ */
+
+.thanks-message {
+  text-align: center;
+  padding: 48px 0 24px;
+}
+
+.thanks-message p {
+  font-size: 1.1rem;
+  color: #555;
+  line-height: 2.4;
+}
+
+.thanks-message .thanks-note {
+  margin-top: 24px;
+  font-size: 0.88rem;
+  color: #aaa;
+  line-height: 2.0;
+}
