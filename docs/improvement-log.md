@@ -444,7 +444,36 @@ Tone refinement rather than structure change. Every spacing/content edit removes
 「技術と人の可能性をつなぐ存在」という自己認識が、コピー上で初めて明示された。ただし断言するのではなく、読み手が感じ取れるように書かれている。年数の固定化という実務上の課題も解消。
 
 ### Deployed
-[ ] Yes — commit: content: update top copy 30years and ai era individual dimension
+[x] Yes — commit: content: update top copy 30years and ai era individual dimension
+[ ] No — PR pending review
+
+---
+
+## 2026-05-24 — About ページリニューアル：WHY→HISTORY→WHAT構成へ
+
+**Scope:** `about.html`
+**Triggered by:** User request — 「会社概要ページ」から「B8Eは何を大切にしている存在なのか」が自然に伝わるページへ進化させる。"技術と人の可能性をつなぐ存在"という現在地を静かに伝える。
+**Mode used:** Implementer
+
+### Changes
+
+- `about.html`: **meta description 追加** — "B8Eは、技術と人の可能性をつなぐ場所です。"
+
+- `about.html` **page-intro（WHY）**: "ITとプロジェクトマネジメントの現場に、28年間いました。" → "30年近くにわたり、IT・DXの現場で培ってきた経験の中で、ずっとひとつの問いがありました。" に変更。余分な経歴紹介パラグラフを削除し、WHYの問い（なぜ人は戻ってしまうのか）→確信（外側と内側が同時に動くとき）への流れに絞った。
+
+- `about.html` **新 section-block「積み重ねてきたもの」（HISTORY）**: NTTデータ（1997年入社・超大規模PJ・PM・QA視点）→ 中小企業4社（業務改善・IT化・DX化・経営感覚）→ B8E起業（2015年・11年目）を段落で繋ぐ。末尾に `.about-stats` グリッドで「11年目」「50+企業支援」「50+開発PJ」の数字を amber accent で静かに表示。
+
+- `about.html` **新 section-block「AIの時代と、人の可能性」**: AI時代における組織・個人双方の問い→「技術は、人の可能性をひらくためにある」という確信へ。B8Eの現在地を明示する。
+
+- `about.html` **section-block「なぜ、この三つが一つの場所にあるのか」**: pillar label を "DX支援" → "DX支援 / PJ推進" へ更新。会社情報の事業説明に "PJ推進支援" を追加。
+
+- `about.html` **inline CSS**: `.about-stats`（3列グリッド）/ `.about-stat` / `.about-stat__num`（amber 1.5rem）/ `.about-stat__label` を追加。SP: 2列表示（`repeat(2, 1fr)`）。CSS内の整理（コメント補完、順序統一）。
+
+### Philosophy notes
+経歴が「履歴書」ではなく「問いの旅程」として語られるようになった。NTTデータ→中小企業→起業という時間軸が、現在の思想（変容は外側と内側が同時に）へ自然に接続している。数字（11年・50+）は主張ではなく、文脈の中で静かに存在する。
+
+### Deployed
+[ ] Yes — commit: content: renew about page WHY-HISTORY-WHAT structure
 [x] No — PR pending review
 
 ---
