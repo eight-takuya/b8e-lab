@@ -3,11 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="B8Eは、技術と人の可能性をつなぐ場所です。DX支援・企業型DC・Dreamin' Spiral Academyを通じて、組織と人の変容に伴走します。">
   <title>About | B8E</title>
   <link rel="stylesheet" href="style.css">
   <script defer src="/_vercel/insights/script.js"></script>
   <style>
-    /* About-specific overrides */
+    /* About-specific */
     .about-hero {
       background:
         radial-gradient(ellipse at 50% 40%, rgba(255,235,200,0.055) 0%, transparent 58%),
@@ -36,6 +37,65 @@
       margin: 0 auto;
     }
 
+    /* Stats row */
+    .about-stats {
+      margin-top: 32px;
+      padding-top: 28px;
+      border-top: 1px solid #e6e4e1;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .about-stat {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .about-stat__num {
+      font-size: 1.5rem;
+      font-weight: 300;
+      color: #9b7b5c;
+      letter-spacing: 0.04em;
+    }
+
+    .about-stat__label {
+      font-size: 0.78rem;
+      color: #aaa;
+      letter-spacing: 0.06em;
+      line-height: 1.7;
+    }
+
+    /* Three pillars */
+    .three-pillars {
+      margin-top: 28px;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 24px;
+    }
+
+    .pillar {
+      padding-top: 20px;
+      border-top: 1px solid #e0e0e0;
+    }
+
+    .pillar .pillar-label {
+      font-size: 0.72rem;
+      color: #aaa;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .pillar p {
+      font-size: 0.88rem;
+      color: #777;
+      line-height: 1.9;
+    }
+
+    /* Company block */
     .name-block {
       margin-top: 48px;
       padding-top: 48px;
@@ -74,39 +134,15 @@
       font-size: 0.88rem;
     }
 
-    .three-pillars {
-      margin-top: 28px;
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      gap: 24px;
-    }
-
-    .pillar {
-      padding-top: 20px;
-      border-top: 1px solid #e0e0e0;
-    }
-
-    .pillar .pillar-label {
-      font-size: 0.72rem;
-      color: #aaa;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      display: block;
-      margin-bottom: 8px;
-    }
-
-    .pillar p {
-      font-size: 0.88rem;
-      color: #777;
-      line-height: 1.9;
-    }
-
     @media (max-width: 600px) {
       .about-hero {
         padding: 64px 24px;
       }
       .about-hero .hero-copy {
         font-size: 1.1rem;
+      }
+      .about-stats {
+        grid-template-columns: repeat(2, 1fr);
       }
       .three-pillars {
         grid-template-columns: 1fr;
@@ -151,18 +187,11 @@
 
     <div class="page-content">
 
-      <!-- The path as questions -->
+      <!-- WHY — The core question -->
       <div class="page-intro">
         <p>
-          ITとプロジェクトマネジメントの現場に、28年間いました。
-        </p>
-        <p>
-          金融・Fintech・ITの領域で、<br>
-          組織の立ち上げを支え、停滞を立て直し、<br>
-          変化の現場に伴走し続けてきました。
-        </p>
-        <p>
-          その中でずっと、ひとつの問いがありました。
+          30年近くにわたり、IT・DXの現場で培ってきた経験の中で、<br>
+          ずっとひとつの問いがありました。
         </p>
         <p>
           外側を変えることはできる。<br>
@@ -180,7 +209,59 @@
         </p>
       </div>
 
-      <!-- Why three things together -->
+      <!-- HISTORY — The journey -->
+      <div class="section-block">
+        <h3>積み重ねてきたもの</h3>
+        <p>
+          NTTデータにて、<br>
+          超大規模システムのPJ推進・PM・運用保守に関わりました。<br>
+          そこで身についたのは「開発する力」よりも、<br>
+          多人数を巻き込む推進力と、QA的な視点でした。
+        </p>
+        <p>
+          その後、中小企業4社で現場の内側を経験しました。<br>
+          業務改善・IT化・DX化・採用・経営感覚。<br>
+          大企業と中小企業、両方の地図を持てたことが、<br>
+          現在の支援の土台になっています。
+        </p>
+        <p>
+          2015年の創業以来、技術と人をつなぐ支援を続けています。
+        </p>
+        <div class="about-stats">
+          <div class="about-stat">
+            <span class="about-stat__num">10+</span>
+            <span class="about-stat__label">起業・伴走<br>2015年創業</span>
+          </div>
+          <div class="about-stat">
+            <span class="about-stat__num">50+</span>
+            <span class="about-stat__label">企業支援<br>Fintech・製造・医療 他</span>
+          </div>
+          <div class="about-stat">
+            <span class="about-stat__num">50+</span>
+            <span class="about-stat__label">開発PJ推進<br>PM・QA・IT導入</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- AI era and individual possibility -->
+      <div class="section-block">
+        <h3>AIの時代と、人の可能性</h3>
+        <p>
+          AIが日常に入ってくる今、<br>
+          「自分にできることが変わる」という問いが、<br>
+          組織にも、働く一人ひとりにも、現れています。
+        </p>
+        <p>
+          テクノロジーが進化するほど、<br>
+          「自分らしく在ること」の意味が、問われていく。
+        </p>
+        <p>
+          技術は、人の可能性をひらくためにある。<br>
+          その確信が、B8Eの現在地です。
+        </p>
+      </div>
+
+      <!-- WHAT — Three pillars as bridges -->
       <div class="section-block">
         <h3>なぜ、この三つが一つの場所にあるのか</h3>
         <p>
@@ -194,10 +275,9 @@
         <p>
           人と組織が、本来あるべき流れの中に在るためには何が必要か。
         </p>
-
         <div class="three-pillars">
           <div class="pillar">
-            <span class="pillar-label">DX支援</span>
+            <span class="pillar-label">DX支援 / PJ推進</span>
             <p>組織の外側を、<br>本来の流れに整える。</p>
           </div>
           <div class="pillar">
@@ -232,7 +312,7 @@
         </p>
       </div>
 
-      <!-- How B8E shows up — mission as living commitment -->
+      <!-- HOW — Mission as living commitment -->
       <div class="section-block">
         <h3>B8Eとして在るということ</h3>
         <p>
@@ -249,12 +329,12 @@
         </p>
       </div>
 
-      <!-- Company name block -->
+      <!-- Company info -->
       <div class="name-block">
         <span class="company-name-ja">会社情報</span>
         <span class="company-name-en">BEAT EIGHT EMOTION株式会社</span>
         <p>
-          DX支援 / 企業型DC導入支援 / Dreamin' Spiral Academy
+          DX支援 / PJ推進支援 / 企業型DC導入支援 / Dreamin' Spiral Academy
         </p>
         <p class="name-contact">
           <a href="mailto:contact@b8e.co.jp">contact@b8e.co.jp</a>
