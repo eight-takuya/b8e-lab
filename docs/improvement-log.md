@@ -425,3 +425,26 @@ Tone refinement rather than structure change. Every spacing/content edit removes
 [x] No — PR pending review
 
 ---
+
+## 2026-05-24 — TOP copy update: 30年近く + AI時代/個人次元の追加
+
+**Scope:** `index.html`, `dx.html`
+**Triggered by:** User request — ① "28年間" を経年変化しない表現へ変更、② DX支援説明にtoC（個人）次元を自然に追加し「技術と人の可能性をつなぐ存在」として伝わるよう整える
+**Mode used:** Implementer
+
+### Changes
+
+- `index.html`: Philosophy paragraph 1 — "28年間、組織が動く瞬間を、見てきました。" → "30年近くにわたり、IT・DXの現場で培ってきた経験をもとに、/ 組織が動く瞬間を見てきました。" 具体的な年数ではなく経験の深みとフィールドを示す表現に変更。
+
+- `index.html`: Philosophy paragraph 3 — "B8Eは、その問いのそばに在る場所です。" → "B8Eは、その問いのそばに在る場所です。/ 組織にも、一人ひとりにも。" toB/toC両面への在り方を一行で加筆。
+
+- `dx.html`: 新 `section-block` "AIの時代と、人の問い" を「外側の変容と内側の状態」セクションの直後に追加。AIが日常に入る時代における組織と個人の問いの共鳴を描き、B8Eが個人の可能性を開く場にも関わることを自然に伝える。
+
+### Philosophy notes
+「技術と人の可能性をつなぐ存在」という自己認識が、コピー上で初めて明示された。ただし断言するのではなく、読み手が感じ取れるように書かれている。年数の固定化という実務上の課題も解消。
+
+### Deployed
+[ ] Yes — commit: content: update top copy 30years and ai era individual dimension
+[x] No — PR pending review
+
+---
