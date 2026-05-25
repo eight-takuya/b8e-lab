@@ -767,7 +767,8 @@ a:hover {
 .academy-hero,
 .program-hero,
 .apply-hero,
-.thanks-hero {
+.thanks-hero,
+.library-hero {
   background:
     radial-gradient(ellipse at 50% 40%, rgba(255,235,200,0.055) 0%, transparent 58%),
     linear-gradient(180deg, #1c1a17 0%, #111010 100%);
@@ -799,7 +800,8 @@ a:hover {
   .academy-hero,
   .program-hero,
   .apply-hero,
-  .thanks-hero {
+  .thanks-hero,
+  .library-hero {
     padding: 72px 24px;
   }
   .hero-copy {
@@ -1066,4 +1068,124 @@ a:hover {
     width: 88px;
     height: 88px;
   }
+}
+
+
+/* ============================================================
+   Library — 人生覚醒ライブラリ（academy/library.html）
+   ============================================================ */
+
+
+/* ------------------------------------------------------------
+   L1. Featured PDF
+   ------------------------------------------------------------ */
+
+.pdf-featured {
+  margin-top: 24px;
+  padding: 28px 24px;
+  background-color: #f9f8f6;
+  border: 1px solid #e8e5e1;
+}
+
+.pdf-featured-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  line-height: 1.6;
+  letter-spacing: 0.02em;
+  margin-bottom: 10px;
+}
+
+.pdf-featured p {
+  font-size: 0.92rem;
+  color: #555;
+  line-height: 2.0;
+  margin-bottom: 18px;
+}
+
+
+/* ------------------------------------------------------------
+   L2. PDF Grid
+   ------------------------------------------------------------ */
+
+.pdf-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 48px;
+  margin-top: 8px;
+}
+
+.pdf-card {
+  padding-top: 28px;
+  margin-top: 28px;
+  border-top: 1px solid #e6e4e1;
+}
+
+.pdf-card:nth-child(-n+2) {
+  margin-top: 0;
+}
+
+.pdf-card-title-row {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.pdf-card-num {
+  flex-shrink: 0;
+  font-size: 0.78rem;
+  color: #b09070;
+  letter-spacing: 0.05em;
+}
+
+.pdf-card h4 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  line-height: 1.65;
+  letter-spacing: 0.02em;
+  margin-bottom: 0;
+}
+
+.pdf-card p {
+  font-size: 0.88rem;
+  color: #666;
+  line-height: 2.0;
+  margin-bottom: 16px;
+}
+
+@media (max-width: 600px) {
+  .pdf-grid {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  .pdf-card:nth-child(-n+2) {
+    margin-top: 28px;
+  }
+  .pdf-card:first-child {
+    margin-top: 0;
+  }
+}
+
+
+/* ------------------------------------------------------------
+   L3. PDF Open Link
+   ------------------------------------------------------------ */
+
+.pdf-open-link {
+  display: inline-block;
+  font-size: 0.8rem;
+  color: #9b7b5c;
+  border-bottom: 1px solid #c9a882;
+  padding-bottom: 2px;
+  letter-spacing: 0.03em;
+  text-decoration: none;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.pdf-open-link:hover {
+  color: #7a5f44;
+  border-color: #9b7b5c;
+  text-decoration: none;
 }
