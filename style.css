@@ -770,10 +770,10 @@ a:hover {
 .thanks-hero,
 .library-hero,
 .session-hero {
-  /* Deep Indigo — 知性・探究・静けさ */
+  /* Deep Indigo — 夜明け前の空：目覚める・探究する・創造する */
   background:
-    radial-gradient(ellipse at 50% 38%, rgba(100, 120, 210, 0.05) 0%, transparent 55%),
-    linear-gradient(180deg, #151b38 0%, #0a0d1e 100%);
+    radial-gradient(ellipse at 50% 20%, rgba(110, 145, 245, 0.12) 0%, transparent 65%),
+    linear-gradient(180deg, #1c2f60 0%, #0b1028 100%);
   color: #f7f6f4;
   padding: 120px 40px;
   text-align: center;
