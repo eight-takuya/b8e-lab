@@ -375,6 +375,13 @@ a:hover {
   line-height: 1.95;
 }
 
+.path-card .path-target {
+  font-size: 0.8rem;
+  color: #999;
+  line-height: 1.7;
+  margin-top: 12px;
+}
+
 .path-card a {
   display: inline-block;
   margin-top: 16px;
@@ -789,6 +796,29 @@ a:hover {
   margin-top: 28px;
 }
 
+/* What domains — activity area tags */
+.what-domains {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 36px;
+}
+
+.what-domain {
+  font-size: 0.78rem;
+  color: #888;
+  letter-spacing: 0.05em;
+  border: 1px solid #e0ddd9;
+  padding: 5px 14px;
+  line-height: 1.6;
+}
+
+@media (max-width: 600px) {
+  .what-domains {
+    gap: 8px;
+  }
+}
+
 /* Paths sub-copy */
 .paths-sub {
   max-width: 720px;
@@ -876,8 +906,19 @@ a:hover {
   align-items: baseline;
   justify-content: space-between;
   gap: 24px;
-  padding: 20px 0;
+  padding: 22px 0;
   border-top: 1px solid #e6e4e1;
+  transition: none;
+}
+
+.entry-item:hover .entry-question {
+  color: #333;
+  transition: color 0.2s ease;
+}
+
+.entry-item:hover a {
+  color: #7a5f44;
+  border-color: #9b7b5c;
 }
 
 .entry-item:last-child {
@@ -916,6 +957,14 @@ a:hover {
     flex-direction: column;
     gap: 8px;
   }
+}
+
+/* Track Record bridge */
+.track-bridge {
+  margin-top: 44px;
+  font-size: 0.9rem;
+  color: #888;
+  line-height: 2.1;
 }
 
 /* Form notice (spam guard) */
