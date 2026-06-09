@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="B8EのDX支援。戦略立案から現場実装まで、組織の変容に伴走します。中小企業・部門責任者・DX推進担当・プロジェクト責任者へ。">
   <title>DX支援 | B8E</title>
   <link rel="stylesheet" href="style.css">
   <script defer src="/_vercel/insights/script.js"></script>
@@ -36,9 +37,36 @@
       margin: 0 auto;
     }
 
-    @media (max-width: 600px) {
+    .dx-services {
+      margin-top: 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .dx-service-item {
+      padding: 14px 0 14px 20px;
+      border-left: 2px solid #e6e4e1;
+      font-size: 0.9rem;
+      color: #666;
+      line-height: 1.8;
+    }
+
+    .dx-service-item + .dx-service-item {
+      margin-top: 8px;
+    }
+
+    .dx-track {
+      margin-top: 8px;
+    }
+
+    .dx-track p + p {
+      margin-top: 24px;
+    }
+
+    @media (max-width: 768px) {
       .dx-hero {
-        padding: 64px 24px;
+        padding: 72px 24px;
       }
       .dx-hero .hero-copy {
         font-size: 1.1rem;
@@ -71,7 +99,7 @@
 
   <main>
 
-    <!-- Hero -->
+    <!-- 1. Hero -->
     <section class="dx-hero">
       <span class="hero-label">DX支援</span>
       <p class="hero-copy">
@@ -82,36 +110,60 @@
 
     <div class="page-content">
 
-      <!-- B8E's view of DX -->
-      <div class="page-intro">
-        <p>
-          戦略と現場の間に、距離が生まれているとき。<br>
-          変わろうとしている人と、そうでない人がいるとき。<br>
-          何のために変わるのかが、まだ言葉にならないとき。
-        </p>
-        <p>
-          何かが動いているのに、<br>
-          流れが戻ってこない、そんなとき。
-        </p>
-        <p>
-          流れが戻るとき、<br>
-          テクノロジーも、気づけばついてきている。
-        </p>
-        <p class="bridge">その問いが、組織という場所に現れるとき。</p>
+      <!-- 2. こんな状況はありませんか -->
+      <div class="resonance-questions">
+        <h3>こんな状況はありませんか</h3>
+        <p>ツールは入れた。でも、現場はまだ動いていない。</p>
+        <p>経営はDXを進めたい。でも、現場との温度差が縮まらない。</p>
+        <p>何から始めればいいか、社内に答えを持っている人がいない。</p>
+        <p>変わっているはずなのに、なぜか流れが戻ってくる。</p>
       </div>
 
-      <!-- How B8E walks alongside -->
+      <!-- 3. B8Eが支援すること -->
+      <div class="section-block">
+        <h3>B8Eが支援すること</h3>
+        <p>
+          DX推進の壁は、ツールではなく<br>
+          「人と組織の動き方」にあることが多い。
+        </p>
+        <p>
+          B8Eは、テクノロジーの導入から<br>
+          組織の動き方の整理まで、一貫して伴走します。
+        </p>
+        <div class="dx-services">
+          <div class="dx-service-item">DX戦略の整理と優先順位づけ</div>
+          <div class="dx-service-item">業務プロセスの可視化・改善</div>
+          <div class="dx-service-item">IT導入・システム選定の支援</div>
+          <div class="dx-service-item">プロジェクト推進・PM支援</div>
+          <div class="dx-service-item">社内浸透・現場との温度合わせ</div>
+          <div class="dx-service-item">AI活用の入口づくり</div>
+        </div>
+      </div>
+
+      <!-- 4. なぜ支援できるのか -->
+      <div class="section-block">
+        <h3>なぜ支援できるのか</h3>
+        <p>
+          NTTデータでの超大規模PJ推進・PM・QA経験から始まり、<br>
+          中小企業4社で業務改善・IT化・DX化を現場から経験しました。
+        </p>
+        <p>
+          2015年の創業以来、業種・規模の異なる<br>
+          50社以上の企業とプロジェクトを共にしてきました。
+        </p>
+        <p>
+          大企業の「推進力」と、中小企業の「現場感覚」。<br>
+          その両方を持って、伴走します。
+        </p>
+      </div>
+
+      <!-- 5. 伴走という在り方 -->
       <div class="section-block">
         <h3>伴走という在り方</h3>
         <p>
           問いのそばに在ります。<br>
           現場が自分たちの言葉で動き始めるまで、そこに在り続けます。
         </p>
-      </div>
-
-      <!-- What alignment in DX looks like -->
-      <div class="section-block">
-        <h3>外側の変容と内側の状態</h3>
         <p>
           外側が変わるとき、<br>
           組織の内側で、何かが動き始めています。
@@ -121,36 +173,27 @@
           自分たちの言葉になっているとき。<br>
           変化は、自然に根づいていきます。
         </p>
-        <p>
-          その問いのそばに、留まります。
-        </p>
       </div>
 
-      <!-- AI era and individual possibility -->
+      <!-- 6. 支援実績 -->
       <div class="section-block">
-        <h3>AIの時代と、人の問い</h3>
-        <p>
-          AIが日常に入ってくる中、<br>
-          「自分にできることが変わる」という問いが、<br>
-          組織の内側にも、働く一人ひとりにも、現れています。
-        </p>
-        <p>
-          組織の変容支援だけでなく、<br>
-          一人ひとりが自分の可能性に気づく場づくりにも、<br>
-          B8Eは関わっています。
-        </p>
+        <h3>支援実績</h3>
+        <div class="dx-track">
+          <p>
+            Fintech、製造、医療・ヘルスケア、人材、小売、教育など、<br>
+            業種や規模の異なる企業のプロジェクトに関わってきました。
+          </p>
+          <p>
+            50社以上の企業とプロジェクトに関わる中で、<br>
+            組織ごとに異なる課題と、現場ごとの温度差を見てきました。
+          </p>
+          <p>
+            個別の事例は、ご相談時に必要に応じてお伝えしています。
+          </p>
+        </div>
       </div>
 
-      <!-- Resonance Questions -->
-      <div class="resonance-questions">
-        <h3>たとえば、こんな感覚。</h3>
-        <p>ツールは入れた。でも、現場はまだ動いていない。</p>
-        <p>経営はDXを進めたい。でも、現場との温度差が縮まらない。</p>
-        <p>みんなが、少しずつ違う方向を向いている。</p>
-        <p>何から始めればいいか、社内に答えを持っている人がいない。</p>
-      </div>
-
-      <!-- Quiet CTA -->
+      <!-- 7. Contact CTA -->
       <div class="quiet-cta">
         <p>
           その問いを、一緒に持ちたいと思っています。<br>
@@ -162,6 +205,7 @@
           <input type="text" name="name" placeholder="お名前（任意）">
           <input type="email" name="email" placeholder="メールアドレス" required>
           <textarea name="message" placeholder="今、浮かんでいること"></textarea>
+          <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
           <button type="submit">少し話してみる</button>
         </form>
       </div>
