@@ -264,9 +264,9 @@ a:hover {
   letter-spacing: 0.06em;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .philosophy {
-    padding: 48px 24px;
+    padding: 56px 24px;
   }
 }
 
@@ -395,13 +395,17 @@ a:hover {
   text-decoration: none;
 }
 
-@media (max-width: 640px) {
+@media (max-width: 768px) {
   .paths-grid {
     grid-template-columns: 1fr;
     gap: 0;
   }
   .paths {
-    padding: 48px 24px;
+    padding: 56px 24px;
+  }
+  .paths-sub {
+    margin-top: 0;
+    margin-bottom: 24px;
   }
 }
 
@@ -866,15 +870,25 @@ a:hover {
   line-height: 1.7;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .what-block {
-    padding: 48px 24px;
+    padding: 56px 24px;
   }
   .track-record {
-    padding: 48px 24px;
+    padding: 56px 24px;
   }
   .track-stats {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  .track-stat {
+    flex-direction: row;
+    align-items: baseline;
+    gap: 16px;
+  }
+  .track-stat__num {
+    font-size: 1.3rem;
+    min-width: 40px;
   }
 }
 
@@ -949,13 +963,17 @@ a:hover {
   text-decoration: none;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .entry-points {
-    padding: 48px 24px;
+    padding: 56px 24px;
   }
   .entry-item {
     flex-direction: column;
     gap: 8px;
+    padding: 20px 0;
+  }
+  .entry-item a {
+    align-self: flex-start;
   }
 }
 
