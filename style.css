@@ -260,7 +260,7 @@ a:hover {
 .philosophy-author {
   margin-top: 32px;
   font-size: 0.82rem;
-  color: #aaa;
+  color: #888;
   letter-spacing: 0.06em;
 }
 
@@ -295,7 +295,7 @@ a:hover {
 
 .question-block .label {
   font-size: 0.78rem;
-  color: #aaa;
+  color: #888;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   margin-bottom: 12px;
@@ -344,7 +344,7 @@ a:hover {
   max-width: 720px;
   margin: 0 auto 40px;
   font-size: 0.78rem;
-  color: #aaa;
+  color: #888;
   letter-spacing: 0.1em;
   text-transform: uppercase;
 }
@@ -379,7 +379,7 @@ a:hover {
   display: inline-block;
   margin-top: 16px;
   font-size: 0.82rem;
-  color: #aaa;
+  color: #888;
   letter-spacing: 0.04em;
 }
 
@@ -411,7 +411,7 @@ a:hover {
 .section-block h3 {
   font-size: 0.78rem;
   font-weight: 400;
-  color: #aaa;
+  color: #888;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   margin-bottom: 20px;
@@ -440,7 +440,7 @@ a:hover {
 .resonance-questions h3 {
   font-size: 0.78rem;
   font-weight: 400;
-  color: #aaa;
+  color: #888;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   margin-bottom: 24px;
@@ -522,7 +522,7 @@ a:hover {
 
 .contact-form input::placeholder,
 .contact-form textarea::placeholder {
-  color: #bbb;
+  color: #aaa;
   font-size: 0.88rem;
 }
 
@@ -601,7 +601,7 @@ a:hover {
   display: inline-block;
   margin-top: 64px;
   font-size: 0.82rem;
-  color: #bbb;
+  color: #aaa;
   letter-spacing: 0.04em;
   text-decoration: none;
   transition: color 0.2s ease;
@@ -643,7 +643,7 @@ a:hover {
 
 .footer-brand p {
   font-size: 0.78rem;
-  color: #666;
+  color: #777;
   line-height: 1.8;
 }
 
@@ -655,7 +655,7 @@ a:hover {
 
 .footer-links a {
   font-size: 0.82rem;
-  color: #777;
+  color: #888;
   text-decoration: none;
   letter-spacing: 0.03em;
   transition: color 0.2s ease;
@@ -696,7 +696,7 @@ a:hover {
   margin-left: auto;
   margin-right: auto;
   font-size: 0.88rem;
-  color: #aaa;
+  color: #888;
   line-height: 2.0;
 }
 
@@ -762,7 +762,7 @@ a:hover {
 .section-label {
   display: block;
   font-size: 0.72rem;
-  color: #aaa;
+  color: #888;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   margin-bottom: 28px;
@@ -794,7 +794,7 @@ a:hover {
   max-width: 720px;
   margin: -24px auto 32px;
   font-size: 0.88rem;
-  color: #aaa;
+  color: #888;
   line-height: 2.0;
 }
 
@@ -831,7 +831,7 @@ a:hover {
 
 .track-stat__label {
   font-size: 0.78rem;
-  color: #aaa;
+  color: #888;
   letter-spacing: 0.04em;
   line-height: 1.7;
 }
@@ -923,7 +923,7 @@ a:hover {
   margin-top: 20px;
   margin-bottom: 4px;
   font-size: 0.8rem !important;
-  color: #bbb !important;
+  color: #999 !important;
   line-height: 1.9 !important;
 }
 
