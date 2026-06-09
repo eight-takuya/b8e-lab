@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="B8EのDX支援。戦略立案から現場実装まで、組織の変容に伴走します。中小企業・部門責任者・DX推進担当・プロジェクト責任者へ。">
+  <meta name="description" content="B8EのDX支援。組織が本来の流れを取り戻すための伴走支援。中小企業・部門責任者・DX推進担当・プロジェクト責任者へ。">
   <title>DX支援 | B8E</title>
   <link rel="stylesheet" href="style.css">
   <script defer src="/_vercel/insights/script.js"></script>
   <style>
-    /* DX-specific overrides — Teal Blue */
+    /* DX-specific */
     .dx-hero {
       background:
         radial-gradient(ellipse at 50% 38%, rgba(60, 180, 170, 0.05) 0%, transparent 55%),
@@ -37,6 +37,37 @@
       margin: 0 auto;
     }
 
+    /* Hero直後の一文説明 */
+    .dx-intro {
+      padding: 52px 40px;
+      text-align: center;
+      background-color: #f7f6f4;
+    }
+
+    .dx-intro p {
+      font-size: 0.95rem;
+      color: #777;
+      line-height: 2.0;
+      letter-spacing: 0.02em;
+    }
+
+    /* こんな方へ */
+    .dx-for {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 28px;
+    }
+
+    .dx-for-item {
+      font-size: 0.82rem;
+      color: #777;
+      border: 1px solid #dedad6;
+      padding: 6px 16px;
+      line-height: 1.6;
+    }
+
+    /* 支援内容リスト */
     .dx-services {
       margin-top: 32px;
       display: flex;
@@ -56,10 +87,27 @@
       margin-top: 8px;
     }
 
-    .dx-track {
+    /* B8Eが支援しないこと */
+    .dx-not {
+      margin-top: 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .dx-not-item {
+      padding: 13px 0 13px 20px;
+      border-left: 2px solid #ece9e5;
+      font-size: 0.88rem;
+      color: #999;
+      line-height: 1.8;
+    }
+
+    .dx-not-item + .dx-not-item {
       margin-top: 8px;
     }
 
+    /* 支援実績 */
     .dx-track p + p {
       margin-top: 24px;
     }
@@ -70,6 +118,14 @@
       }
       .dx-hero .hero-copy {
         font-size: 1.1rem;
+      }
+      .dx-intro {
+        padding: 40px 24px;
+      }
+      .dx-for {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
       }
     }
   </style>
@@ -108,6 +164,14 @@
       </p>
     </section>
 
+    <!-- 1.5. Hero直後の一文説明 -->
+    <div class="dx-intro">
+      <p>
+        組織が本来の流れを取り戻すための、<br>
+        DX支援を行っています。
+      </p>
+    </div>
+
     <div class="page-content">
 
       <!-- 2. こんな状況はありませんか -->
@@ -117,6 +181,22 @@
         <p>経営はDXを進めたい。でも、現場との温度差が縮まらない。</p>
         <p>何から始めればいいか、社内に答えを持っている人がいない。</p>
         <p>変わっているはずなのに、なぜか流れが戻ってくる。</p>
+      </div>
+
+      <!-- 2.5. こんな方へ -->
+      <div class="section-block">
+        <h3>こんな方へ</h3>
+        <p>
+          DXをどこから始めるか迷っている方、<br>
+          推進中だが手応えがない方、<br>
+          現場と経営の間で動き方を模索している方へ。
+        </p>
+        <div class="dx-for">
+          <span class="dx-for-item">中小企業の経営者</span>
+          <span class="dx-for-item">DX推進担当</span>
+          <span class="dx-for-item">部門責任者</span>
+          <span class="dx-for-item">プロジェクト責任者</span>
+        </div>
       </div>
 
       <!-- 3. B8Eが支援すること -->
@@ -138,6 +218,25 @@
           <div class="dx-service-item">社内浸透・現場との温度合わせ</div>
           <div class="dx-service-item">AI活用の入口づくり</div>
         </div>
+      </div>
+
+      <!-- 3.5. B8Eが支援しないこと -->
+      <div class="section-block">
+        <h3>B8Eが支援しないこと</h3>
+        <p>
+          何でも対応するわけではありません。<br>
+          以下のような関わり方は、B8Eには向いていません。
+        </p>
+        <div class="dx-not">
+          <div class="dx-not-item">ツール導入だけで完結させたい</div>
+          <div class="dx-not-item">資料・提案書の作成だけを依頼したい</div>
+          <div class="dx-not-item">現場不在のまま変革を進めたい</div>
+          <div class="dx-not-item">短期間で成果数値だけを求めたい</div>
+        </div>
+        <p style="margin-top: 28px; font-size: 0.88rem; color: #999; line-height: 2.0;">
+          現場と一緒に考え、組織の動き方から整えていく。<br>
+          そのプロセスに意味を感じていただける方と、伴走したいと思っています。
+        </p>
       </div>
 
       <!-- 4. なぜ支援できるのか -->
@@ -180,12 +279,13 @@
         <h3>支援実績</h3>
         <div class="dx-track">
           <p>
+            スタートアップから中堅企業まで、<br>
             Fintech、製造、医療・ヘルスケア、人材、小売、教育など、<br>
-            業種や規模の異なる企業のプロジェクトに関わってきました。
+            業種や規模の異なる50社以上の企業とプロジェクトに関わってきました。
           </p>
           <p>
-            50社以上の企業とプロジェクトに関わる中で、<br>
-            組織ごとに異なる課題と、現場ごとの温度差を見てきました。
+            組織ごとに異なる課題と、現場ごとの温度差を見てきたことが、<br>
+            今の伴走スタイルの土台になっています。
           </p>
           <p>
             個別の事例は、ご相談時に必要に応じてお伝えしています。
