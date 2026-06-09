@@ -22,7 +22,10 @@
     '.section-block, ' +
     '.page-intro, ' +
     '.resonance-questions, ' +
-    '.quiet-cta'
+    '.quiet-cta, ' +
+    '.what-inner, ' +
+    '.track-record-inner, ' +
+    '.entry-points-inner'
   );
 
   targets.forEach(function (el) {

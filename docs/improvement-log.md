@@ -449,6 +449,28 @@ Tone refinement rather than structure change. Every spacing/content edit removes
 
 ---
 
+## 2026-06-09 — TOPページ全面改訂：静かな会社案内の入口へ
+
+**Scope:** `index.html`, `style.css`, `scroll.js`
+**Triggered by:** User request — 「思想作品」から「静かな会社案内の入口」へ。初見の人にB8Eが何をしている会社かが伝わるようにしたい。
+
+### Changes
+
+- `index.html`: 全面再構成。旧: Hero → Philosophy → Two Questions → Paths → Contact。新: Hero → What → Three Paths → Philosophy → Track Record → Entry Points → Contact。Two Questionsセクション削除。Pathsカードの詩的コピーを説明的な文言へ変更。Philosophyセクションを後半へ移動し新コピーへ更新。Track Record（10+/50+/50+の実績数字）とEntry Points（目的別4リンク）を新規追加。ContactフォームにhoneypotフィールドとSPAM抑制文を追加。meta descriptionを追加。
+
+- `style.css`: セクション19を追加。`.section-label`（共通小見出しラベル）、`.what-block`/`.what-inner`（B8Eとはブロック）、`.paths-sub`（Paths副コピー）、`.track-record`/`.track-stat`系（実績セクション）、`.entry-points`/`.entry-item`/`.entry-question`系（目的別導線）、`.form-notice`（フォーム前注意書き）を定義。SP対応のmedia queryを含む。
+
+- `scroll.js`: fadein対象セレクタに `.what-inner`, `.track-record-inner`, `.entry-points-inner` を追加。
+
+### Philosophy notes
+「何をしている会社か」を最初のコンテンツセクションで明示しつつ、詩的な哲学テキストを後半（Philosophy）に温存。Entry Pointsの設置により、初見の読者が迷わず次のページへ進める導線ができた。B8Eの静けさと余白はそのまま保っている。
+
+### Deployed
+[ ] Yes — commit: (pending)
+[x] No — local
+
+---
+
 ## 2026-05-24 — About ページリニューアル：WHY→HISTORY→WHAT構成へ
 
 **Scope:** `about.html`
