@@ -754,6 +754,180 @@ a:hover {
 }
 
 
+/* ------------------------------------------------------------
+   19. TOP page — What / Track Record / Entry Points
+   ------------------------------------------------------------ */
+
+/* shared section label (small uppercase) */
+.section-label {
+  display: block;
+  font-size: 0.72rem;
+  color: #aaa;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 28px;
+}
+
+/* What block */
+.what-block {
+  background-color: #faf9f7;
+  padding: 80px 40px;
+}
+
+.what-inner {
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.what-inner p {
+  font-size: 1.02rem;
+  line-height: 2.3;
+  color: #444;
+}
+
+.what-inner p + p {
+  margin-top: 28px;
+}
+
+/* Paths sub-copy */
+.paths-sub {
+  max-width: 720px;
+  margin: -24px auto 32px;
+  font-size: 0.88rem;
+  color: #aaa;
+  line-height: 2.0;
+}
+
+/* Track Record */
+.track-record {
+  background-color: #f7f6f4;
+  padding: 72px 40px;
+}
+
+.track-record-inner {
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.track-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding-top: 8px;
+}
+
+.track-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.track-stat__num {
+  font-size: 1.5rem;
+  font-weight: 300;
+  color: #9b7b5c;
+  letter-spacing: 0.04em;
+}
+
+.track-stat__label {
+  font-size: 0.78rem;
+  color: #aaa;
+  letter-spacing: 0.04em;
+  line-height: 1.7;
+}
+
+@media (max-width: 600px) {
+  .what-block {
+    padding: 48px 24px;
+  }
+  .track-record {
+    padding: 48px 24px;
+  }
+  .track-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Entry Points */
+.entry-points {
+  background-color: #faf9f7;
+  padding: 80px 40px;
+}
+
+.entry-points-inner {
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.entry-points-sub {
+  font-size: 0.92rem;
+  color: #888;
+  line-height: 2.0;
+  margin-bottom: 36px;
+}
+
+.entry-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.entry-item {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 20px 0;
+  border-top: 1px solid #e6e4e1;
+}
+
+.entry-item:last-child {
+  border-bottom: 1px solid #e6e4e1;
+}
+
+.entry-question {
+  font-size: 0.92rem;
+  color: #555;
+  line-height: 1.8;
+  flex: 1;
+}
+
+.entry-item a {
+  flex-shrink: 0;
+  font-size: 0.82rem;
+  color: #9b7b5c;
+  border-bottom: 1px solid #c9a882;
+  padding-bottom: 2px;
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.entry-item a:hover {
+  color: #7a5f44;
+  border-color: #9b7b5c;
+  text-decoration: none;
+}
+
+@media (max-width: 600px) {
+  .entry-points {
+    padding: 48px 24px;
+  }
+  .entry-item {
+    flex-direction: column;
+    gap: 8px;
+  }
+}
+
+/* Form notice (spam guard) */
+.form-notice {
+  margin-top: 20px;
+  margin-bottom: 4px;
+  font-size: 0.8rem !important;
+  color: #bbb !important;
+  line-height: 1.9 !important;
+}
+
+
 /* ============================================================
    Academy — Dreamin' Spiral Academy
    追加: academy.html / academy/program, apply, thanks
