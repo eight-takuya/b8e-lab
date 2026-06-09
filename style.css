@@ -817,8 +817,9 @@ a:hover {
   line-height: 1.6;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .what-domains {
+    flex-direction: column;
     gap: 8px;
   }
 }
