@@ -136,6 +136,98 @@ git branch -d feature/<作業名>
 
 ---
 
+## Claude Code の報告ルール
+
+### 背景と目的
+
+PR 作成後に「mergeしてください」と報告したが、実際には GitHub 上ですでに merged 状態だった、というケースが複数回発生しています。  
+ユーザーが GitHub を開いて状態を再確認しなくても済むよう、報告前に必ず状態を確認します。
+
+---
+
+### 報告前チェックリスト（必須）
+
+push・PR 作成後、最終報告の前に以下を確認する。
+
+```
+[ ] PR が存在するか
+[ ] PR 状態（open / merged / closed）
+[ ] 最新 commit が PR に含まれているか
+[ ] 最新 commit が main に反映済みか
+[ ] Vercel の状態（Preview / Production / 未確認）
+```
+
+確認コマンド例：
+
+```bash
+# PR 状態と最新 commit の確認
+gh pr view <番号> --json state,headRefName,mergedAt,commits
+
+# main への反映確認
+git fetch origin main
+git log origin/main --oneline -5
+
+# 最新 commit が main に含まれているか
+git branch -r --contains <commit-sha>
+```
+
+---
+
+### 報告フォーマット
+
+以下の形式で報告する。
+
+```
+PR: #26
+Status: open          ← open / merged / closed
+Commit: e020f21       ← 最新 commit SHA（7桁）
+Main: not yet         ← reflected / not yet
+Vercel: Preview ready ← Preview ready / Production deployed / 未確認
+
+Next Action:
+Vercel Preview URLをご確認後、問題なければmergeをお願いします。
+```
+
+---
+
+### 禁止事項
+
+| 状態 | ❌ 言ってはいけない | ✅ 正しい報告 |
+|---|---|---|
+| PR が merged | 「mergeしてください」 | 「merge済みです」「Production反映をご確認ください」 |
+| PR が open | 「反映されました」 | 「Vercel Previewでご確認後、mergeをお願いします」 |
+| main 未反映 | 「本番に反映されました」 | 「mainに未反映です。新しいPRを作成します」 |
+
+---
+
+### 報告例（merged の場合）
+
+```
+PR: #26
+Status: merged（2026-06-09 merge済み）
+Commit: e020f21 → main に反映済み
+Vercel: Production deployed
+
+Next Action:
+https://www.b8e.co.jp/ でスマホ表示をご確認ください。
+```
+
+### 報告例（open の場合）
+
+```
+PR: #26
+URL: https://github.com/eight-takuya/b8e-lab/pull/26
+Status: open
+Commit: e020f21（PRに含まれている）
+Main: not yet
+Vercel: Preview ready
+
+Next Action:
+Vercel Preview URLでご確認後、問題なければmergeをお願いします。
+```
+
+---
+
 ## よくある質問
 
 **Q: 複数ページを一度に変更したい場合は？**
