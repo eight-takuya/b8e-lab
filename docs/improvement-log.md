@@ -449,6 +449,26 @@ Tone refinement rather than structure change. Every spacing/content edit removes
 
 ---
 
+## 2026-06-09 — TOPページ細部改善：活動領域・対象者・Entry Points入口感
+
+**Scope:** `index.html`, `style.css`
+**Triggered by:** User request — Whatセクションの活動領域タグ追加、Three Pathsへの対象者文追加、Entry Pointsのhover改善、営業抑制文の文言柔軟化、Track Record→Entry Points橋渡し文追加
+
+### Changes
+
+- `index.html`: What セクション末尾に `.what-domains`（DX支援・IT推進 / 企業型DC・制度設計 / 人材育成・内面探究）の3タグを追加。Three Paths各カードに `.path-target`（対象者1行）を追加。Track Record末尾に `.track-bridge` の橋渡し段落を追加。Contact の `.form-notice` 文言を柔らかく改訂。
+
+- `style.css`: `.what-domain`（枠線タグ、border付き小テキスト）、`.path-card .path-target`（#999 対象者テキスト）、`.entry-item` hover状態（`.entry-question` → #333、リンク → #7a5f44）、`.track-bridge` を追加。
+
+### Philosophy notes
+活動領域を「タグ」として置くことで、説明文を読まなくても一瞬で活動分野が把握できるようになった。対象者文と hover 改善は、読者の「自分のことかも」という認識を静かに促す。
+
+### Deployed
+[ ] Yes — commit: (pending)
+[x] No — local
+
+---
+
 ## 2026-06-09 — TOPページ全面改訂：静かな会社案内の入口へ
 
 **Scope:** `index.html`, `style.css`, `scroll.js`
