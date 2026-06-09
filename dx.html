@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="B8EのDX支援。組織が本来の流れを取り戻すための伴走支援。中小企業・部門責任者・DX推進担当・プロジェクト責任者へ。">
+  <meta name="description" content="B8EのDX支援。DX戦略、業務改善、IT導入、プロジェクト推進を通じて、組織が本来の流れを取り戻すまで伴走します。">
   <title>DX支援 | B8E</title>
   <link rel="stylesheet" href="style.css">
   <script defer src="/_vercel/insights/script.js"></script>
@@ -47,11 +47,13 @@
     .dx-intro p {
       font-size: 0.95rem;
       color: #777;
-      line-height: 2.0;
+      line-height: 2.2;
       letter-spacing: 0.02em;
+      max-width: 480px;
+      margin: 0 auto;
     }
 
-    /* こんな方へ */
+    /* こんな方へ — タグ */
     .dx-for {
       display: flex;
       flex-wrap: wrap;
@@ -72,47 +74,67 @@
       margin-top: 32px;
       display: flex;
       flex-direction: column;
-      gap: 0;
+      gap: 8px;
     }
 
     .dx-service-item {
       padding: 14px 0 14px 20px;
       border-left: 2px solid #e6e4e1;
       font-size: 0.9rem;
-      color: #666;
-      line-height: 1.8;
+      color: #555;
+      line-height: 1.9;
     }
 
-    .dx-service-item + .dx-service-item {
-      margin-top: 8px;
-    }
-
-    /* B8Eが支援しないこと */
+    /* 支援しないこと — リスト */
     .dx-not {
-      margin-top: 32px;
+      margin-top: 28px;
       display: flex;
       flex-direction: column;
-      gap: 0;
+      gap: 8px;
     }
 
     .dx-not-item {
-      padding: 13px 0 13px 20px;
+      padding: 12px 0 12px 20px;
       border-left: 2px solid #ece9e5;
       font-size: 0.88rem;
-      color: #999;
-      line-height: 1.8;
+      color: #aaa;
+      line-height: 1.9;
     }
 
-    .dx-not-item + .dx-not-item {
-      margin-top: 8px;
+    .dx-not-note {
+      margin-top: 28px;
+      font-size: 0.88rem;
+      color: #888;
+      line-height: 2.1;
     }
 
-    /* 支援実績 */
+    /* 実績 */
     .dx-track p + p {
       margin-top: 24px;
     }
 
+    /* 支援の形 */
+    .dx-scope {
+      margin-top: 0;
+    }
+
+    .dx-scope p + p {
+      margin-top: 20px;
+    }
+
+    .dx-scope .dx-scope-items {
+      margin-top: 24px;
+      font-size: 0.9rem;
+      color: #777;
+      line-height: 2.3;
+    }
+
+    .dx-intro-text-sp { display: none; }
+
     @media (max-width: 768px) {
+      .dx-intro-text-pc { display: none; }
+      .dx-intro-text-sp { display: block; }
+
       .dx-hero {
         padding: 72px 24px;
       }
@@ -127,6 +149,7 @@
         align-items: flex-start;
         gap: 8px;
       }
+      .br-pc { display: none; }
     }
   </style>
 </head>
@@ -164,17 +187,21 @@
       </p>
     </section>
 
-    <!-- 1.5. Hero直後の一文説明 -->
+    <!-- 2. 一文説明 -->
     <div class="dx-intro">
-      <p>
-        組織が本来の流れを取り戻すための、<br>
+      <p class="dx-intro-text-pc">
+        組織が本来の流れを取り戻すために、<br>
+        DX戦略、業務改善、IT導入、プロジェクト推進を支援しています。
+      </p>
+      <p class="dx-intro-text-sp">
+        組織が本来の流れを取り戻すために、<br>
         DX支援を行っています。
       </p>
     </div>
 
     <div class="page-content">
 
-      <!-- 2. こんな状況はありませんか -->
+      <!-- 3. こんな状況はありませんか -->
       <div class="resonance-questions">
         <h3>こんな状況はありませんか</h3>
         <p>ツールは入れた。でも、現場はまだ動いていない。</p>
@@ -183,7 +210,7 @@
         <p>変わっているはずなのに、なぜか流れが戻ってくる。</p>
       </div>
 
-      <!-- 2.5. こんな方へ -->
+      <!-- 4. こんな方へ -->
       <div class="section-block">
         <h3>こんな方へ</h3>
         <p>
@@ -199,7 +226,7 @@
         </div>
       </div>
 
-      <!-- 3. B8Eが支援すること -->
+      <!-- 5. B8Eが支援すること -->
       <div class="section-block">
         <h3>B8Eが支援すること</h3>
         <p>
@@ -207,56 +234,64 @@
           「人と組織の動き方」にあることが多い。
         </p>
         <p>
-          B8Eは、テクノロジーの導入から<br>
-          組織の動き方の整理まで、一貫して伴走します。
+          B8Eは、組織が本来の流れを取り戻すまで、<br>
+          現場とともに考え、動き続けます。
         </p>
         <div class="dx-services">
-          <div class="dx-service-item">DX戦略の整理と優先順位づけ</div>
-          <div class="dx-service-item">業務プロセスの可視化・改善</div>
-          <div class="dx-service-item">IT導入・システム選定の支援</div>
-          <div class="dx-service-item">プロジェクト推進・PM支援</div>
-          <div class="dx-service-item">社内浸透・現場との温度合わせ</div>
-          <div class="dx-service-item">AI活用の入口づくり</div>
+          <div class="dx-service-item">戦略を整理し、どこから動くかを決める</div>
+          <div class="dx-service-item">現場の流れを整え、業務を動かしやすくする</div>
+          <div class="dx-service-item">必要な仕組みを選び、現場に合わせて入れる</div>
+          <div class="dx-service-item">プロジェクトを前へ進め、止まらないようにする</div>
+          <div class="dx-service-item">組織の言葉を揃え、温度差を縮める</div>
+          <div class="dx-service-item">AI活用の入口をつくる</div>
         </div>
       </div>
 
-      <!-- 3.5. B8Eが支援しないこと -->
+      <!-- 6. B8Eが支援しないこと -->
       <div class="section-block">
         <h3>B8Eが支援しないこと</h3>
         <p>
-          何でも対応するわけではありません。<br>
-          以下のような関わり方は、B8Eには向いていません。
+          B8Eは、現場と一緒に考えることを大切にしています。
+        </p>
+        <p>
+          そのため、以下のような関わり方は向いていません。
         </p>
         <div class="dx-not">
-          <div class="dx-not-item">ツール導入だけで完結させたい</div>
-          <div class="dx-not-item">資料・提案書の作成だけを依頼したい</div>
-          <div class="dx-not-item">現場不在のまま変革を進めたい</div>
-          <div class="dx-not-item">短期間で成果数値だけを求めたい</div>
+          <div class="dx-not-item">ツールの導入だけで完結させたい</div>
+          <div class="dx-not-item">資料や提案書の作成だけを請け負ってほしい</div>
+          <div class="dx-not-item">現場には関わらず、上流だけで完結させたい</div>
+          <div class="dx-not-item">短期間で数値だけを出したい</div>
         </div>
-        <p style="margin-top: 28px; font-size: 0.88rem; color: #999; line-height: 2.0;">
-          現場と一緒に考え、組織の動き方から整えていく。<br>
-          そのプロセスに意味を感じていただける方と、伴走したいと思っています。
+        <p class="dx-not-note">
+          現場が動く変化を、一緒につくっていく。<br>
+          そのプロセスに意味を感じていただける方と、<br>
+          伴走したいと思っています。
         </p>
       </div>
 
-      <!-- 4. なぜ支援できるのか -->
+      <!-- 7. なぜ支援できるのか -->
       <div class="section-block">
         <h3>なぜ支援できるのか</h3>
         <p>
-          NTTデータでの超大規模PJ推進・PM・QA経験から始まり、<br>
-          中小企業4社で業務改善・IT化・DX化を現場から経験しました。
+          大企業には、組織を動かすための推進力がある。<br>
+          中小企業には、現場を知る感覚がある。
         </p>
         <p>
-          2015年の創業以来、業種・規模の異なる<br>
-          50社以上の企業とプロジェクトを共にしてきました。
+          どちらも、変化を根づかせるためには必要なものです。
         </p>
         <p>
-          大企業の「推進力」と、中小企業の「現場感覚」。<br>
-          その両方を持って、伴走します。
+          NTTデータでの超大規模PJ推進・PM・QAから始まり、<br>
+          中小企業4社で現場の内側を経験しました。<br>
+          2015年の創業以来、50社以上の企業と<br>
+          プロジェクトをともにしてきました。
+        </p>
+        <p>
+          理想論でもなく、場当たり的でもない。<br>
+          現場が動く変化を、一緒につくります。
         </p>
       </div>
 
-      <!-- 5. 伴走という在り方 -->
+      <!-- 8. 伴走という在り方 -->
       <div class="section-block">
         <h3>伴走という在り方</h3>
         <p>
@@ -274,7 +309,7 @@
         </p>
       </div>
 
-      <!-- 6. 支援実績 -->
+      <!-- 9. 支援実績 -->
       <div class="section-block">
         <h3>支援実績</h3>
         <div class="dx-track">
@@ -293,7 +328,26 @@
         </div>
       </div>
 
-      <!-- 7. Contact CTA -->
+      <!-- 10. 支援の形 -->
+      <div class="section-block">
+        <h3>支援の形</h3>
+        <div class="dx-scope">
+          <p>
+            単発の相談から、継続的な伴走まで。
+          </p>
+          <p class="dx-scope-items">
+            課題を整理したい、<br>
+            プロジェクトを前へ進めたい、<br>
+            PM補佐として入ってほしい、<br>
+            AI活用の入口を一緒に考えたい——
+          </p>
+          <p>
+            どんな状況でも、まず状況を聞かせてください。
+          </p>
+        </div>
+      </div>
+
+      <!-- 11. Contact CTA -->
       <div class="quiet-cta">
         <p>
           その問いを、一緒に持ちたいと思っています。<br>
