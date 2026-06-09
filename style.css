@@ -257,6 +257,27 @@ a:hover {
   margin-top: 32px;
 }
 
+.philosophy p.philosophy-about,
+.philosophy-about {
+  margin-top: 36px;
+  font-size: 0.85rem;
+  color: #aaa;
+  line-height: 2.0;
+}
+
+.philosophy-about a {
+  color: #9b7b5c;
+  border-bottom: 1px solid #c9a882;
+  padding-bottom: 1px;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.philosophy-about a:hover {
+  color: #7a5f44;
+  border-color: #9b7b5c;
+  text-decoration: none;
+}
+
 .philosophy-author {
   margin-top: 32px;
   font-size: 0.82rem;

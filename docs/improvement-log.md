@@ -519,3 +519,26 @@ Tone refinement rather than structure change. Every spacing/content edit removes
 [x] No — PR pending review
 
 ---
+
+## 2026-06-09 — About ページ全面再設計：「創業者の問いの旅」構成へ
+
+**Scope:** `about.html`, `index.html`, `style.css`
+**Triggered by:** User request — About と TOP の役割重複を解消。About を「会社概要」から「問いの旅程」へ。Aboutページは静かな旅として機能させ、TOPは入口に徹する。
+**Mode used:** Implementer
+
+### Changes
+
+- `about.html`: 全面再構成。旧: about-stats グリッド（数字3列）・three-pillars グリッドを削除。新: 9セクション構成（Hero「一人の問いが、場所になった。」/ page-intro「問い」/ section-block「積み重ねてきたもの」/ 「転換」/ 「なぜ三つが一つの場所に」/ 「AIの時代と、人の可能性」/ 「BEAT EIGHT EMOTION」/ 「B8Eとして在るということ」/ 「会社情報」）。グリッドを排除し、すべてテキストによる旅程として再構成。inline CSS を about-hero のみに整理。モバイルブレークポイントを 640px → 768px に統一。
+
+- `index.html`: Philosophy セクション末尾に `.philosophy-about`（Aboutへの静かな誘導リンク）を追加。「この問いの旅について、もう少し読んでみたい方は — About」
+
+- `style.css`: `.philosophy-about`（margin-top: 36px、color: #aaa、font-size: 0.85rem）と `.philosophy-about a`（amber accent + hover）を追加。
+
+### Philosophy notes
+About は「会社紹介」ではなく、創業者が30年かけてたどり着いた問いの旅程として機能するようになった。TOP で「問いのそばに在る場所」と伝え、About でその旅の全体像が静かに語られる。TOPの哲学テキストとAboutの旅程は、重複ではなく層になっている。
+
+### Deployed
+[ ] Yes — commit: (pending)
+[x] No — local
+
+---
