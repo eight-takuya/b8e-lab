@@ -218,12 +218,20 @@
         </p>
       </div>
 
-      <!-- 8.5. Quiet bridge -->
+      <!-- 8.5. Quiet bridge + form -->
       <div class="section-block">
         <p>
           言葉になっていなくても、大丈夫です。<br>
           必要なときに、声をかけてください。
         </p>
+        <form class="contact-form" action="https://formspree.io/f/mykleakb" method="post" style="margin-top: 36px;">
+          <input type="hidden" name="_next" value="https://b8e.co.jp/thanks.html">
+          <input type="text" name="name" placeholder="お名前（任意）">
+          <input type="email" name="email" placeholder="メールアドレス" required>
+          <textarea name="message" placeholder="今、浮かんでいること"></textarea>
+          <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+          <button type="submit">少し話してみる</button>
+        </form>
       </div>
 
       <!-- 9. Company Info -->
