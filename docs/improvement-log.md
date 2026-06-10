@@ -30,6 +30,27 @@
 
 ---
 
+## 2026-06-10 — dc-guide：注意書きブロックのレイアウト修正
+
+**Scope:** dc-guide.html
+**Triggered by:** ユーザー依頼 — 注意書きが全幅・左寄りでレイアウトの重心が崩れていた
+**Mode used:** Designer / Implementer
+
+### Changes
+- dc-guide.html: `.dcg-notice`（全幅・左ボーダーボックス）を廃止し、`page-content` 内に `.dcg-about-page` として移動
+- 見出し「このページについて」を追加（small caps スタイル）
+- 警告ボックス的な背景色・左ボーダーを削除し、静かな導入テキストとして再スタイリング
+- 本文と同じ content-width に揃え、About/DX支援ページと同じ読み心地に統一
+
+### Philosophy notes
+制度の情報ページとして、法的注意を前面に出すのではなく、「読む準備を整える場所」として入口を設計した。
+
+### Deployed
+[ ] Yes — commit: pending
+[ ] No — pending
+
+---
+
 ## 2026-06-10 — 企業型DC：思想接続セクション追加
 
 **Scope:** dc.html
