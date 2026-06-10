@@ -30,6 +30,24 @@
 
 ---
 
+## 2026-06-10 — 企業型DC：思想接続セクション追加
+
+**Scope:** dc.html
+**Triggered by:** ユーザー要求 — DX支援・About と同じ思想の連続性を企業型DCページに追加
+**Mode used:** Implementer
+
+### Changes
+- dc.html: 「この制度を伝えている理由」セクション追加（「こんな方へ」と「企業型DCという選択肢」の間）
+  - 会社変革支援の中で経営者自身の後回しに出会ってきた経験を記述
+  - 「DXも制度も、本質は同じ問い」という思想の接続を明示
+  - 「人と組織が本来あるべき流れの中にいるか」→ About・DX支援との共鳴
+  - Mobile 375px で全行孤立なし（各行 21px 以内に収まることを計測確認）
+
+### Deployed
+[ ] Yes — commit: pending
+[ ] No — pending
+---
+
 ## 2026-06-10 — 企業型DCページ全面再設計
 
 **Scope:** dc.html, dc-guide.html
