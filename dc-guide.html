@@ -37,15 +37,28 @@
       margin: 0 auto;
     }
 
-    /* 注意書きバナー */
-    .dcg-notice {
-      background-color: #f0ede9;
-      border-left: 3px solid #c9a882;
-      padding: 20px 28px;
-      font-size: 0.85rem;
-      color: #888;
-      line-height: 2.0;
-      margin-bottom: 0;
+    /* このページについて（静かな導入テキスト） */
+    .dcg-about-page {
+      padding: 52px 0 0;
+    }
+
+    .dcg-about-page h3 {
+      font-size: 0.78rem;
+      font-weight: 400;
+      color: #aaa;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .dcg-about-page p {
+      font-size: 0.88rem;
+      color: #999;
+      line-height: 2.2;
+    }
+
+    .dcg-about-page p + p {
+      margin-top: 12px;
     }
 
     /* 制度概要グリッド */
@@ -326,8 +339,8 @@
       .dcg-hero .hero-copy {
         font-size: 1.1rem;
       }
-      .dcg-notice {
-        padding: 16px 20px;
+      .dcg-about-page {
+        padding: 40px 0 0;
       }
     }
   </style>
@@ -366,14 +379,15 @@
       </p>
     </section>
 
-    <!-- 注意書き -->
-    <div class="dcg-notice">
-      このページでは、企業型DC制度の概要をわかりやすく整理しています。<br>
-      B8Eは金融商品の販売・投資助言・税務判断・社労士業務を行うものではありません。<br>
-      具体的な導入可否や効果については、専門家・運営管理機関と確認しながら判断することをおすすめします。
-    </div>
-
     <div class="page-content">
+
+      <!-- このページについて -->
+      <div class="dcg-about-page">
+        <h3>このページについて</h3>
+        <p>企業型DC制度の概要を、わかりやすく整理しています。</p>
+        <p>B8Eは金融商品の販売・投資助言・税務判断・社労士業務を行うものではありません。<br>
+        導入可否や効果の判断は、専門家・運営管理機関とご確認ください。</p>
+      </div>
 
       <!-- 1. 企業型DCとは -->
       <div class="page-intro">
