@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="中小企業・小規模法人の経営者向け企業型DC（企業型確定拠出年金）の入口ページ。社長一人の会社でも活用できます。">
+  <meta name="description" content="B8Eの企業型DC支援。中小企業・1人法人の経営者が、企業型DCという制度を正しく理解し、自社に合うかどうかを判断できる状態をつくるための入口ページです。">
   <title>企業型DC | B8E</title>
   <link rel="stylesheet" href="style.css">
   <script defer src="/_vercel/insights/script.js"></script>
@@ -37,48 +37,140 @@
       margin: 0 auto;
     }
 
-    /* 3 benefits */
-    .dc-benefits {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
+    /* Hero直後の一文説明 */
+    .dc-intro {
+      padding: 52px 40px;
+      text-align: center;
+      background-color: #f7f6f4;
     }
 
-    .dc-benefit {
-      padding-top: 28px;
-      border-top: 1px solid #e6e4e1;
-    }
-
-    .dc-benefit__label {
-      display: block;
-      font-size: 0.82rem;
-      font-weight: 600;
-      color: #2a2a2a;
-      letter-spacing: 0.04em;
-      margin-bottom: 10px;
-    }
-
-    .dc-benefit p {
-      font-size: 0.88rem;
+    .dc-intro p {
+      font-size: 0.95rem;
       color: #777;
-      line-height: 1.95;
+      line-height: 2.2;
+      letter-spacing: 0.02em;
+      max-width: 480px;
+      margin: 0 auto;
+    }
+
+    .dc-intro p + p {
+      margin-top: 16px;
+    }
+
+    .dc-intro .dc-intro-note {
+      font-size: 0.82rem;
+      color: #aaa;
+      margin-top: 20px;
+      max-width: 480px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* こんな方へ — タグ */
+    .dc-for {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 28px;
+    }
+
+    .dc-for-item {
+      font-size: 0.82rem;
+      color: #777;
+      border: 1px solid #dedad6;
+      padding: 6px 16px;
+      line-height: 1.6;
+    }
+
+    /* 支援内容リスト */
+    .dc-services {
+      margin-top: 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .dc-service-item {
+      padding: 14px 0 14px 20px;
+      border-left: 2px solid #e6e4e1;
+      font-size: 0.9rem;
+      color: #555;
+      line-height: 1.9;
+    }
+
+    /* 支援しないこと — リスト */
+    .dc-not {
+      margin-top: 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .dc-not-item {
+      padding: 12px 0 12px 20px;
+      border-left: 2px solid #ece9e5;
+      font-size: 0.88rem;
+      color: #aaa;
+      line-height: 1.9;
+    }
+
+    .dc-not-note {
+      margin-top: 28px;
+      font-size: 0.88rem;
+      color: #888;
+      line-height: 2.1;
+    }
+
+    /* 導入の考え方 — ステップ */
+    .dc-steps {
+      margin-top: 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .dc-step {
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+      padding: 20px 0;
+      border-bottom: 1px solid #ece9e5;
+    }
+
+    .dc-step:last-child {
+      border-bottom: none;
+    }
+
+    .dc-step__num {
+      font-size: 0.72rem;
+      color: #c9a882;
+      letter-spacing: 0.1em;
+      min-width: 28px;
+      padding-top: 4px;
+      font-weight: 600;
+    }
+
+    .dc-step__text {
+      font-size: 0.9rem;
+      color: #555;
+      line-height: 1.9;
     }
 
     /* Guide link */
     .guide-link-block {
-      padding-top: 48px;
+      padding-top: 40px;
       border-top: 1px solid #e6e4e1;
     }
 
     .guide-link-block p {
-      font-size: 0.92rem;
-      color: #777;
-      line-height: 2.1;
+      font-size: 0.88rem;
+      color: #aaa;
+      line-height: 2.0;
     }
 
     .guide-link {
       display: inline-block;
-      margin-top: 20px;
+      margin-top: 16px;
       font-size: 0.88rem;
       color: #9b7b5c;
       border-bottom: 1px solid #c9a882;
@@ -94,24 +186,23 @@
       text-decoration: none;
     }
 
-    /* Inline CTA (中盤) */
-    .dc-cta-inline {
-      padding-top: 8px;
-    }
-
-    @media (max-width: 600px) {
+    @media (max-width: 768px) {
       .dc-hero {
-        padding: 64px 24px;
+        padding: 72px 24px;
       }
       .dc-hero .hero-copy {
         font-size: 1.1rem;
       }
-      .dc-benefits {
-        grid-template-columns: 1fr;
-        gap: 0;
+      .dc-intro {
+        padding: 40px 24px;
       }
-      .dc-benefit {
-        padding-bottom: 20px;
+      .dc-intro p {
+        max-width: 100%;
+      }
+      .dc-for {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
       }
     }
   </style>
@@ -141,7 +232,7 @@
 
   <main>
 
-    <!-- Hero -->
+    <!-- 1. Hero -->
     <section class="dc-hero">
       <span class="hero-label">企業型DC</span>
       <p class="hero-copy">
@@ -150,60 +241,151 @@
       </p>
     </section>
 
+    <!-- 2. 一文説明 -->
+    <div class="dc-intro">
+      <p>
+        B8Eは、企業型DCの導入を検討する経営者の<br>
+        入口づくりと理解整理を支援しています。
+      </p>
+      <p class="dc-intro-note">
+        金融商品の販売ではなく、<br>
+        自社に合うかどうかを判断するための材料を、一緒に整えていきます。
+      </p>
+    </div>
+
     <div class="page-content">
 
-      <!-- 共感ブロック -->
-      <div class="page-intro">
-        <p>
-          経営者は、利益のことを考える。従業員のことも考える。<br>
-          でも、自分自身の老後や退職金は、気づけば後回しになっている。
-        </p>
-        <p>
-          福利厚生を整えたいと思いながら、どこから始めればいいかわからない。<br>
-          小規模な会社でも使える仕組みがあるのか、まだ確かめていない。
-        </p>
+      <!-- 3. こんな状況はありませんか -->
+      <div class="resonance-questions">
+        <h3>こんな状況はありませんか</h3>
+        <p>会社の利益は考えている。従業員の将来も考えている。<br>
+        でも、自分自身の老後や退職金は、気づけば後回しになっている。</p>
+        <p>社会保険料の負担を見直したいが、何から始めればいいかわからない。</p>
+        <p>福利厚生や採用力を整えたいが、自社に合う制度なのか判断できない。</p>
+        <p>金融系の話は、売り込まれる感じがして相談しにくい。</p>
       </div>
 
-      <!-- CTA #1 -->
-      <div class="dc-cta-inline">
-        <a href="/dc-guide.html" class="guide-link">制度の概要を見る →</a>
+      <!-- 4. こんな方へ -->
+      <div class="section-block">
+        <h3>こんな方へ</h3>
+        <p>
+          社長自身の退職金・老後準備を考えたい方、<br>
+          従業員の将来準備を整えたい方、<br>
+          社会保険料や福利厚生を見直したい方、<br>
+          採用・定着のための制度を整えたい方、<br>
+          自社に企業型DCが合うかを知りたい方へ。
+        </p>
+        <div class="dc-for">
+          <span class="dc-for-item">中小企業経営者</span>
+          <span class="dc-for-item">社長1人会社</span>
+          <span class="dc-for-item">従業員のいる会社</span>
+          <span class="dc-for-item">福利厚生を整えたい会社</span>
+          <span class="dc-for-item">採用・定着に悩む会社</span>
+        </div>
       </div>
 
-      <!-- 制度紹介 -->
+      <!-- 5. 企業型DCという選択肢 -->
       <div class="section-block">
         <h3>企業型DCという選択肢</h3>
         <p>
-          中小企業や1人法人でも活用できる制度として、<br>
-          企業型DC（企業型確定拠出年金）があります。
+          企業型DC（企業型確定拠出年金）は、<br>
+          会社が掛金を拠出し、役員や従業員の将来資産づくりを支える制度です。
         </p>
         <p>
-          会社の経費から掛金を拠出し、<br>
-          社長自身や従業員の将来資産づくりを支える仕組みです。
+          掛金は会社の経費として扱われる場合があり、<br>
+          社会保険料の見直しにつながる可能性もあります。<br>
+          ただし、効果は会社の状況によって異なります。
+        </p>
+        <p>
+          大切なのは、制度のメリットだけを見ることではなく、<br>
+          自社に合うかどうかを整理することです。
         </p>
       </div>
 
-      <!-- 3 メリット -->
-      <div class="dc-benefits">
-        <div class="dc-benefit">
-          <span class="dc-benefit__label">社長自身の将来準備</span>
-          <p>役員報酬ではなく、会社の経費で積み立てられます。</p>
-        </div>
-        <div class="dc-benefit">
-          <span class="dc-benefit__label">社会保険料の見直し</span>
-          <p>掛金が報酬算定の対象外となり、負担が変わることがあります。</p>
-        </div>
-        <div class="dc-benefit">
-          <span class="dc-benefit__label">福利厚生・採用力</span>
-          <p>中小企業でも整えられる、老後への備えとして機能します。</p>
+      <!-- 6. B8Eが支援すること -->
+      <div class="section-block">
+        <h3>B8Eが支援すること</h3>
+        <p>
+          B8Eは、企業型DCの導入を無理にすすめるのではなく、<br>
+          経営者が制度を理解し、<br>
+          自社に合うかどうかを判断できる状態づくりを支援します。
+        </p>
+        <div class="dc-services">
+          <div class="dc-service-item">制度の概要を整理する</div>
+          <div class="dc-service-item">自社に合うかどうかを一緒に確認する</div>
+          <div class="dc-service-item">導入検討の入口をつくる</div>
+          <div class="dc-service-item">必要に応じて専門家や運営管理機関につなぐ</div>
+          <div class="dc-service-item">経営者が制度を理解し、判断できる状態をつくる</div>
         </div>
       </div>
 
-      <!-- CTA #2 -->
+      <!-- 7. B8Eが支援しないこと -->
+      <div class="section-block">
+        <h3>B8Eが支援しないこと</h3>
+        <p>
+          B8Eは、金融商品の販売や投資助言を行いません。<br>
+          そのため、以下のような関わり方は行っていません。
+        </p>
+        <div class="dc-not">
+          <div class="dc-not-item">特定商品の販売</div>
+          <div class="dc-not-item">投資判断の助言</div>
+          <div class="dc-not-item">税務・社労士業務の代行</div>
+          <div class="dc-not-item">メリットだけを強調した導入推奨</div>
+          <div class="dc-not-item">無理な導入営業</div>
+        </div>
+        <p class="dc-not-note">
+          制度の概要を整理し、必要に応じて専門家と確認しながら、<br>
+          経営者が自分で判断できる状態を大切にしています。
+        </p>
+      </div>
+
+      <!-- 8. 導入までの考え方 -->
+      <div class="section-block">
+        <h3>導入までの考え方</h3>
+        <p>
+          まずは、制度の概要を知るところから。
+        </p>
+        <div class="dc-steps">
+          <div class="dc-step">
+            <span class="dc-step__num">01</span>
+            <span class="dc-step__text">制度の概要を知る</span>
+          </div>
+          <div class="dc-step">
+            <span class="dc-step__num">02</span>
+            <span class="dc-step__text">自社に合うかどうかを整理する</span>
+          </div>
+          <div class="dc-step">
+            <span class="dc-step__num">03</span>
+            <span class="dc-step__text">必要であれば、専門家や運営管理機関とつながる</span>
+          </div>
+          <div class="dc-step">
+            <span class="dc-step__num">04</span>
+            <span class="dc-step__text">導入するかどうかは、その後に決めれば大丈夫です</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 9. dc-guide への静かな導線 -->
       <div class="guide-link-block">
+        <p>制度について詳しく読みたい方は</p>
+        <a href="dc-guide.html" class="guide-link">制度の概要を見る →</a>
+      </div>
+
+      <!-- 10. Contact CTA -->
+      <div class="quiet-cta">
         <p>
-          制度の詳細・比較・問い合わせは、こちらのガイドページにまとめています。
+          今すぐ決める必要はありません。<br>
+          まずは、自社に関係がありそうかを一緒に整理しましょう。
         </p>
-        <a href="/dc-guide.html" class="guide-link">制度の概要を見る →</a>
+        <p class="form-note">言葉が整っていなくても、そのままで大丈夫です。</p>
+        <form class="contact-form" action="https://formspree.io/f/mykleakb" method="post">
+          <input type="hidden" name="_next" value="https://b8e.co.jp/thanks.html">
+          <input type="text" name="name" placeholder="お名前（任意）">
+          <input type="email" name="email" placeholder="メールアドレス" required>
+          <textarea name="message" placeholder="今、浮かんでいること"></textarea>
+          <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+          <button type="submit">少し話してみる</button>
+        </form>
       </div>
 
       <a href="index.html" class="back-link">← TOP</a>
