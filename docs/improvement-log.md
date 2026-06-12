@@ -30,6 +30,27 @@
 
 ---
 
+## 2026-06-10 — dc.html：YouTube動画補足導線を追加
+
+**Scope:** dc.html
+**Triggered by:** ユーザー依頼 — 「この制度を伝えている理由」の補足として動画を静かに紹介
+**Mode used:** Designer / Implementer
+
+### Changes
+- dc.html: `.video-reference` ブロックを「この制度を伝えている理由」セクション直後に追加
+- ラベル「動画でもお話ししています」+ 動画タイトル + テキストリンク「YouTubeで見る →」構成
+- サムネイルなし・大きなボタンなし・B8Eの静かなトーンで統一
+- リンク先: https://youtu.be/HEEvSczlJpU
+
+### Philosophy notes
+YouTube集客ではなく、思想の補足として動画を紹介する静かな導線設計。
+
+### Deployed
+[ ] Yes — commit: pending
+[ ] No — pending
+
+---
+
 ## 2026-06-10 — dc.html：最終ブラッシュアップ（思想の前置・制度説明リード・導線文言）
 
 **Scope:** dc.html
