@@ -1116,7 +1116,72 @@ a:hover {
 
 
 /* ------------------------------------------------------------
-   A3. Apply Form
+   A3. この場を作った理由 / Academy支援しないこと
+   ------------------------------------------------------------ */
+
+.academy-why {
+  padding-top: 12px;
+}
+
+.academy-why p {
+  font-size: 0.95rem;
+  color: #666;
+  line-height: 2.4;
+}
+
+.academy-why p + p {
+  margin-top: 28px;
+}
+
+.academy-not {
+  margin-top: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.academy-not-item {
+  padding: 12px 0 12px 20px;
+  border-left: 2px solid #ece9e5;
+  font-size: 0.88rem;
+  color: #aaa;
+  line-height: 1.9;
+}
+
+.academy-not-note {
+  margin-top: 28px;
+  font-size: 0.88rem;
+  color: #888;
+  line-height: 2.1;
+}
+
+/* 静かな2リンクCTA */
+.academy-nav-links {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.academy-nav-links a {
+  font-size: 0.88rem;
+  color: #9b7b5c;
+  border-bottom: 1px solid #c9a882;
+  padding-bottom: 2px;
+  text-decoration: none;
+  letter-spacing: 0.03em;
+  align-self: flex-start;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.academy-nav-links a:hover {
+  color: #7a5f44;
+  border-color: #9b7b5c;
+}
+
+
+/* ------------------------------------------------------------
+   A4. Apply Form
    ------------------------------------------------------------ */
 
 .apply-form {
