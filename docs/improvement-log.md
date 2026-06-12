@@ -30,6 +30,29 @@
 
 ---
 
+## 2026-06-12 — academy.html：「講座紹介ページ」から「思想の入口ページ」へ再設計
+
+**Scope:** academy.html, style.css
+**Triggered by:** ユーザー依頼 — DX支援・企業型DCと同じ思想で統一。「なぜこの場があるのか」が伝わる入口ページへ
+**Mode used:** Designer / Implementer
+
+### Changes
+- academy.html: Dreamin' Engineの4象限グリッドを削除（program.html側へ移す前提）
+- academy.html: 「この場を作った理由」セクションを追加（dc-whyと同構造）
+- academy.html: 「Academyが支援しないこと」セクションを追加（B8Eが支援しないことと同構造）
+- academy.html: CTAを`.cta-link`ボタンから2つの静かなテキストリンクへ変更
+  - 「プログラムを読む →」「無料ガイドセッションの案内を読む →」
+- style.css: `.academy-why` / `.academy-not` / `.academy-not-item` / `.academy-not-note` / `.academy-nav-links` を追加
+
+### Philosophy notes
+「答えを与えない、変容を急がせない」という姿勢を、ページの構造自体で体現した。
+
+### Deployed
+[ ] Yes — commit: pending
+[ ] No — pending
+
+---
+
 ## 2026-06-10 — dc.html：YouTube動画補足導線を追加
 
 **Scope:** dc.html
