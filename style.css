@@ -937,6 +937,10 @@ a:hover {
   margin-bottom: 36px;
 }
 
+.entry-points-inner .section-label {
+  margin-top: 28px;
+}
+
 .entry-list {
   display: flex;
   flex-direction: column;
