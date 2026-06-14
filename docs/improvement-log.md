@@ -5,6 +5,27 @@
 
 ---
 
+---
+## [2026-06-14] — Community Portal 初期画面を追加
+
+**Scope:** academy/community.html（新規）/ style.css（追記）/ assets/community/（新規）
+**Triggered by:** dreamin' spiral Academy Community の設計完了を受けた初期実装
+**Mode used:** Implementer
+
+### Changes
+- `academy/community.html`: Community Portal トップページを新規作成。5ブロック構成（Welcome / Community Journey / Current Theme / Library / Schedule）。noindex / nofollow 設定済み。認証なしの初期版。
+- `style.css`: Community Portal 専用スタイル（C1〜C6 セクション）を追加。既存スタイルには影響なし。
+- `assets/community/bg_v01.png`: Archive #01 背景画像（Current Theme ビジュアルエリアに使用）
+- `assets/community/thumbnail_v01.png`: Archive #01 サムネイル（Library カードに表示）
+
+### Philosophy notes
+「学ぶ場所ではなく、自分に還る場所」という DSA の根幹を、問いかけの構成と深い森の色調（#0d1a10 系）で表現。
+
+### Deployed
+[ ] Yes — commit: （PR merge 後に記入）
+[ ] No — pending（PR 確認中）
+---
+
 ## Entry Template
 
 ```

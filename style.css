@@ -1557,3 +1557,417 @@ a:hover {
   border-color: #9b7b5c;
   text-decoration: none;
 }
+
+
+/* ============================================================
+   C — Community Portal
+   ============================================================ */
+
+/* ------------------------------------------------------------
+   C1. Hero
+   ------------------------------------------------------------ */
+
+.community-hero {
+  background:
+    radial-gradient(ellipse at 30% 60%, rgba(60, 100, 60, 0.18) 0%, transparent 60%),
+    linear-gradient(160deg, #0d1a10 0%, #0a1208 60%, #111a0e 100%);
+  color: #f7f6f4;
+  padding: 120px 40px;
+  text-align: center;
+}
+
+.community-hero-title {
+  font-size: 2rem;
+  font-weight: 300;
+  letter-spacing: 0.18em;
+  color: #e8e5e0;
+  margin-bottom: 28px;
+  line-height: 1.4;
+}
+
+.community-hero-copy {
+  font-size: 1.05rem;
+  font-weight: 300;
+  line-height: 2.4;
+  color: #a8a49e;
+  letter-spacing: 0.06em;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+@media (max-width: 600px) {
+  .community-hero {
+    padding: 80px 24px;
+  }
+  .community-hero-title {
+    font-size: 1.6rem;
+  }
+}
+
+
+/* ------------------------------------------------------------
+   C2. Section label
+   ------------------------------------------------------------ */
+
+.community-section-label {
+  display: block;
+  font-size: 0.68rem;
+  letter-spacing: 0.18em;
+  color: #aaa;
+  text-transform: uppercase;
+  margin-bottom: 28px;
+}
+
+
+/* ------------------------------------------------------------
+   C3. Community Journey
+   ------------------------------------------------------------ */
+
+.community-journey-lead {
+  font-size: 1rem;
+  color: #555;
+  line-height: 2.0;
+  margin-bottom: 28px;
+  letter-spacing: 0.04em;
+}
+
+.community-journey-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background-color: #e6e4e1;
+  border: 1px solid #e6e4e1;
+}
+
+.community-journey-card {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  padding: 20px 24px;
+  background: #faf9f7;
+  text-decoration: none;
+  transition: background 0.18s ease;
+}
+
+.community-journey-card:hover {
+  background: #f3f1ee;
+}
+
+.community-journey-num {
+  font-size: 0.72rem;
+  color: #b09070;
+  letter-spacing: 0.08em;
+  flex-shrink: 0;
+}
+
+.community-journey-text {
+  font-size: 0.92rem;
+  color: #444;
+  line-height: 1.7;
+  letter-spacing: 0.03em;
+}
+
+@media (max-width: 600px) {
+  .community-journey-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* ------------------------------------------------------------
+   C4. Current Theme
+   ------------------------------------------------------------ */
+
+.community-current-theme {
+  margin-top: 48px;
+  border: 1px solid #dedad5;
+}
+
+/* Visual (背景画像) エリア */
+.community-theme-visual {
+  position: relative;
+  aspect-ratio: 16 / 7;
+  overflow: hidden;
+  background: #0d1a10;
+}
+
+.community-theme-bg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  opacity: 0.55;
+}
+
+.community-theme-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 32px 24px;
+  background: linear-gradient(
+    to bottom,
+    rgba(10, 18, 8, 0.15) 0%,
+    rgba(10, 18, 8, 0.45) 100%
+  );
+}
+
+.community-theme-badge {
+  display: block;
+  font-size: 0.62rem;
+  letter-spacing: 0.2em;
+  color: rgba(255, 255, 255, 0.55);
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.community-theme-number {
+  font-size: 0.9rem;
+  letter-spacing: 0.12em;
+  color: rgba(255, 255, 255, 0.65);
+  margin-bottom: 8px;
+}
+
+.community-theme-title {
+  font-size: 1.6rem;
+  font-weight: 300;
+  letter-spacing: 0.08em;
+  color: #f0ede8;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.community-theme-question {
+  font-size: 0.88rem;
+  color: rgba(255, 255, 255, 0.72);
+  letter-spacing: 0.06em;
+  line-height: 1.9;
+  padding: 10px 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+@media (max-width: 600px) {
+  .community-theme-visual {
+    aspect-ratio: 4 / 3;
+  }
+  .community-theme-title {
+    font-size: 1.25rem;
+  }
+}
+
+/* Body エリア */
+.community-theme-body {
+  padding: 36px 32px 40px;
+  background: #faf9f7;
+}
+
+.community-theme-intro {
+  font-size: 0.9rem;
+  color: #666;
+  line-height: 2.4;
+  letter-spacing: 0.04em;
+  margin-bottom: 36px;
+  padding-bottom: 36px;
+  border-bottom: 1px solid #e6e4e1;
+}
+
+/* 3つのドア */
+.community-theme-doors {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 32px 40px;
+  margin-bottom: 36px;
+  padding-bottom: 36px;
+  border-bottom: 1px solid #e6e4e1;
+}
+
+.community-door-label {
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  letter-spacing: 0.04em;
+  margin-bottom: 6px;
+}
+
+.community-door-sub {
+  font-size: 0.88rem;
+  color: #555;
+  line-height: 1.8;
+  margin-bottom: 6px;
+}
+
+.community-door-detail {
+  font-size: 0.78rem;
+  color: #aaa;
+  line-height: 1.7;
+  margin-bottom: 14px;
+}
+
+.community-door-link {
+  display: inline-block;
+  font-size: 0.8rem;
+  color: #9b7b5c;
+  border-bottom: 1px solid #c9a882;
+  padding-bottom: 2px;
+  text-decoration: none;
+  letter-spacing: 0.03em;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.community-door-link:hover {
+  color: #7a5f44;
+  border-color: #9b7b5c;
+}
+
+/* Archive カードを視覚的に少し強調 */
+.community-door--archive .community-door-label {
+  color: #3d5c3a;
+}
+
+@media (max-width: 700px) {
+  .community-theme-doors {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .community-theme-body {
+    padding: 28px 20px 32px;
+  }
+}
+
+/* Worksheet */
+.community-worksheet-label {
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+  color: #aaa;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.community-worksheet-note {
+  font-size: 0.85rem;
+  color: #888;
+  line-height: 2.0;
+  margin-bottom: 14px;
+}
+
+.community-worksheet-links {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+
+/* ------------------------------------------------------------
+   C5. Library
+   ------------------------------------------------------------ */
+
+.community-library-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1px;
+  background: #e6e4e1;
+  border: 1px solid #e6e4e1;
+}
+
+.community-lib-card {
+  background: #faf9f7;
+  padding: 28px 24px 32px;
+  display: flex;
+  flex-direction: column;
+}
+
+.community-lib-num {
+  font-size: 0.7rem;
+  color: #b09070;
+  letter-spacing: 0.1em;
+  margin-bottom: 10px;
+}
+
+.community-lib-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+
+.community-lib-desc {
+  font-size: 0.82rem;
+  color: #888;
+  line-height: 2.0;
+  flex-grow: 1;
+  margin-bottom: 16px;
+}
+
+.community-lib-thumbnail {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  margin-bottom: 16px;
+  opacity: 0.88;
+}
+
+.community-lib-items {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: auto;
+}
+
+@media (max-width: 700px) {
+  .community-library-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* ------------------------------------------------------------
+   C6. Schedule
+   ------------------------------------------------------------ */
+
+.community-schedule-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.community-schedule-item {
+  display: flex;
+  align-items: baseline;
+  gap: 24px;
+  padding: 18px 0;
+  border-bottom: 1px solid #e6e4e1;
+}
+
+.community-schedule-item:first-child {
+  border-top: 1px solid #e6e4e1;
+}
+
+.community-schedule-type {
+  font-size: 0.82rem;
+  color: #1a1a1a;
+  letter-spacing: 0.03em;
+  min-width: 160px;
+  flex-shrink: 0;
+}
+
+.community-schedule-status {
+  font-size: 0.82rem;
+  color: #aaa;
+  line-height: 1.8;
+}
+
+@media (max-width: 500px) {
+  .community-schedule-item {
+    flex-direction: column;
+    gap: 4px;
+  }
+  .community-schedule-type {
+    min-width: auto;
+  }
+}
