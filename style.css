@@ -1971,3 +1971,658 @@ a:hover {
     min-width: auto;
   }
 }
+
+
+/* ============================================================
+   P — Premium Portal
+   ============================================================ */
+
+/* ------------------------------------------------------------
+   P1. Hero
+   ------------------------------------------------------------ */
+
+.premium-hero {
+  position: relative;
+  overflow: hidden;
+  min-height: 480px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #f7f6f4;
+}
+
+.premium-hero-bg-wrap {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.premium-hero-bg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 40%;
+  opacity: 0.38;
+}
+
+/* Community より深く・落ち着いた色調 */
+.premium-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 50% 70%, rgba(20, 30, 20, 0.3) 0%, transparent 65%),
+    linear-gradient(170deg, #0a0f0a 0%, #0c1510 55%, #080e08 100%);
+}
+
+.premium-hero-content {
+  position: relative;
+  z-index: 1;
+  padding: 100px 40px;
+  max-width: 560px;
+}
+
+.premium-hero-label {
+  display: block;
+  font-size: 0.62rem;
+  letter-spacing: 0.22em;
+  color: rgba(255, 255, 255, 0.45);
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.premium-hero-title {
+  font-size: 2.4rem;
+  font-weight: 200;
+  letter-spacing: 0.22em;
+  color: #e8e4de;
+  margin-bottom: 28px;
+  line-height: 1.3;
+}
+
+.premium-hero-copy {
+  font-size: 1.0rem;
+  font-weight: 300;
+  line-height: 2.4;
+  color: #a0a8a0;
+  letter-spacing: 0.06em;
+  margin-bottom: 16px;
+}
+
+.premium-hero-sub {
+  font-size: 0.82rem;
+  color: rgba(255, 255, 255, 0.38);
+  line-height: 2.4;
+  letter-spacing: 0.06em;
+}
+
+@media (max-width: 600px) {
+  .premium-hero {
+    min-height: 380px;
+  }
+  .premium-hero-content {
+    padding: 72px 24px;
+  }
+  .premium-hero-title {
+    font-size: 1.8rem;
+  }
+}
+
+
+/* ------------------------------------------------------------
+   P2. Section label (共有)
+   ------------------------------------------------------------ */
+
+.premium-section-label {
+  display: block;
+  font-size: 0.62rem;
+  letter-spacing: 0.2em;
+  color: #bbb;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+
+/* ------------------------------------------------------------
+   P3. Link スタイル (共有)
+   ------------------------------------------------------------ */
+
+.premium-link {
+  display: inline-block;
+  font-size: 0.78rem;
+  color: #7a9e7a;
+  border-bottom: 1px solid #7a9e7a;
+  padding-bottom: 2px;
+  text-decoration: none;
+  letter-spacing: 0.04em;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.premium-link:hover {
+  color: #5c7d5c;
+  border-color: #5c7d5c;
+}
+
+
+/* ------------------------------------------------------------
+   P4. Top Row — Current Position + Next Step
+   ------------------------------------------------------------ */
+
+.premium-top-row {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  gap: 1px;
+  background: #dedad5;
+  border: 1px solid #dedad5;
+  margin-bottom: 48px;
+}
+
+/* Current Position */
+.premium-current-position {
+  background: #faf9f7;
+  padding: 44px 40px 48px;
+}
+
+.premium-position-month {
+  font-size: 0.72rem;
+  color: #7a9e7a;
+  letter-spacing: 0.14em;
+  margin-bottom: 28px;
+}
+
+.premium-position-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.premium-position-item {
+  padding: 16px 0;
+  border-bottom: 1px solid #ede9e4;
+  display: grid;
+  grid-template-columns: 90px 1fr;
+  gap: 16px;
+  align-items: baseline;
+}
+
+.premium-position-item:first-child {
+  border-top: 1px solid #ede9e4;
+}
+
+.premium-position-key {
+  font-size: 0.68rem;
+  color: #bbb;
+  letter-spacing: 0.08em;
+  line-height: 1.8;
+  flex-shrink: 0;
+}
+
+.premium-position-val {
+  font-size: 0.92rem;
+  color: #2a2a2a;
+  line-height: 1.8;
+  letter-spacing: 0.03em;
+}
+
+.premium-position-question {
+  color: #3d5c3a;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.premium-position-note {
+  color: #aaa;
+  font-size: 0.84rem;
+}
+
+.premium-position-item--note {
+  align-items: start;
+}
+
+/* Next Step */
+.premium-next-step {
+  background: #f5f3f0;
+  padding: 44px 36px 48px;
+  display: flex;
+  flex-direction: column;
+}
+
+.premium-nextstep-label {
+  font-size: 0.72rem;
+  color: #999;
+  letter-spacing: 0.08em;
+  margin-bottom: 10px;
+}
+
+.premium-nextstep-val {
+  font-size: 1.0rem;
+  font-weight: 400;
+  color: #2a2a2a;
+  line-height: 1.9;
+  letter-spacing: 0.04em;
+  margin-bottom: 20px;
+}
+
+.premium-nextstep-note {
+  font-size: 0.82rem;
+  color: #aaa;
+  line-height: 2.2;
+  margin-bottom: 28px;
+  flex-grow: 1;
+}
+
+@media (max-width: 760px) {
+  .premium-top-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* ------------------------------------------------------------
+   P5. This Month
+   ------------------------------------------------------------ */
+
+.premium-this-month {
+  border: 1px solid #dedad5;
+  padding: 40px 40px 44px;
+  margin-bottom: 48px;
+}
+
+.premium-this-month-header {
+  display: flex;
+  align-items: baseline;
+  gap: 20px;
+  margin-bottom: 16px;
+}
+
+.premium-month-num {
+  font-size: 0.7rem;
+  color: #7a9e7a;
+  letter-spacing: 0.12em;
+}
+
+.premium-month-title {
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: #1a1a1a;
+  letter-spacing: 0.06em;
+  line-height: 1.5;
+}
+
+.premium-month-desc {
+  font-size: 0.88rem;
+  color: #888;
+  line-height: 2.4;
+  letter-spacing: 0.04em;
+  margin-bottom: 32px;
+  padding-bottom: 32px;
+  border-bottom: 1px solid #ede9e4;
+}
+
+.premium-month-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 1px;
+  background: #e6e4e1;
+  border: 1px solid #e6e4e1;
+}
+
+.premium-month-card {
+  background: #faf9f7;
+  padding: 24px 20px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.premium-month-card-label {
+  display: block;
+  font-size: 0.64rem;
+  color: #bbb;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.premium-month-card-body {
+  font-size: 0.84rem;
+  color: #444;
+  line-height: 1.9;
+  flex-grow: 1;
+}
+
+@media (max-width: 900px) {
+  .premium-month-cards {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .premium-this-month {
+    padding: 28px 20px 32px;
+  }
+  .premium-month-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* ------------------------------------------------------------
+   P6. Mid Row — Next Session + Journal
+   ------------------------------------------------------------ */
+
+.premium-mid-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: #dedad5;
+  border: 1px solid #dedad5;
+  margin-bottom: 48px;
+}
+
+/* Next Session */
+.premium-next-session {
+  background: #faf9f7;
+  padding: 40px 36px 44px;
+}
+
+.premium-session-date {
+  font-size: 0.96rem;
+  color: #1a1a1a;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  margin-bottom: 10px;
+}
+
+.premium-session-meta {
+  font-size: 0.82rem;
+  color: #888;
+  line-height: 2.0;
+  letter-spacing: 0.03em;
+}
+
+.premium-session-prep {
+  font-size: 0.82rem;
+  color: #7a9e7a;
+  line-height: 2.0;
+  letter-spacing: 0.03em;
+  margin-top: 12px;
+  margin-bottom: 24px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid #ede9e4;
+}
+
+.premium-session-check-label {
+  font-size: 0.68rem;
+  color: #bbb;
+  letter-spacing: 0.1em;
+  margin-bottom: 12px;
+}
+
+.premium-session-check-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.premium-session-check-list li {
+  font-size: 0.84rem;
+  color: #666;
+  line-height: 1.8;
+  padding-left: 16px;
+  position: relative;
+}
+
+.premium-session-check-list li::before {
+  content: "□";
+  position: absolute;
+  left: 0;
+  color: #ccc;
+  font-size: 0.8rem;
+}
+
+/* Journal */
+.premium-journal {
+  background: #f5f3f0;
+  padding: 40px 36px 44px;
+}
+
+.premium-journal-lead {
+  font-size: 0.96rem;
+  color: #1a1a1a;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  margin-bottom: 28px;
+}
+
+.premium-journal-links {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 28px;
+  padding-bottom: 28px;
+  border-bottom: 1px solid #dedad5;
+}
+
+.premium-journal-btn {
+  display: inline-block;
+  padding: 12px 24px;
+  background: #3d5c3a;
+  color: #f0f0ee;
+  font-size: 0.82rem;
+  letter-spacing: 0.06em;
+  text-decoration: none;
+  text-align: center;
+  transition: background 0.2s ease;
+}
+
+.premium-journal-btn:hover {
+  background: #2d4a2a;
+}
+
+.premium-journal-link {
+  display: inline-block;
+  font-size: 0.78rem;
+  color: #7a9e7a;
+  border-bottom: 1px solid #7a9e7a;
+  padding-bottom: 2px;
+  text-decoration: none;
+  letter-spacing: 0.04em;
+  width: fit-content;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.premium-journal-link:hover {
+  color: #5c7d5c;
+  border-color: #5c7d5c;
+}
+
+.premium-journal-note {
+  font-size: 0.82rem;
+  color: #aaa;
+  line-height: 2.4;
+  letter-spacing: 0.04em;
+}
+
+@media (max-width: 700px) {
+  .premium-mid-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* ------------------------------------------------------------
+   P7. Premium Content
+   ------------------------------------------------------------ */
+
+.premium-content-section {
+  border: 1px solid #dedad5;
+  padding: 40px 40px 44px;
+  margin-bottom: 48px;
+}
+
+.premium-content-month {
+  font-size: 0.78rem;
+  color: #999;
+  letter-spacing: 0.08em;
+  margin-bottom: 28px;
+}
+
+.premium-content-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: #e6e4e1;
+  border: 1px solid #e6e4e1;
+  margin-bottom: 24px;
+}
+
+.premium-content-card {
+  background: #faf9f7;
+  padding: 28px 24px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.premium-content-type {
+  display: inline-block;
+  font-size: 0.6rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  border: 1px solid currentColor;
+  width: fit-content;
+}
+
+.premium-content-type--audio {
+  color: #3d5c3a;
+}
+
+.premium-content-type--pdf {
+  color: #7a6a50;
+}
+
+.premium-content-title {
+  font-size: 0.96rem;
+  font-weight: 400;
+  color: #1a1a1a;
+  letter-spacing: 0.04em;
+  line-height: 1.5;
+}
+
+.premium-content-meta {
+  font-size: 0.75rem;
+  color: #bbb;
+  letter-spacing: 0.06em;
+}
+
+.premium-content-desc {
+  font-size: 0.82rem;
+  color: #888;
+  line-height: 2.0;
+  flex-grow: 1;
+  margin-bottom: 8px;
+}
+
+.premium-content-archive-link {
+  font-size: 0.78rem;
+}
+
+@media (max-width: 600px) {
+  .premium-content-section {
+    padding: 28px 20px 32px;
+  }
+  .premium-content-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* ------------------------------------------------------------
+   P8. Six-Month Journey
+   ------------------------------------------------------------ */
+
+.premium-journey-section {
+  border: 1px solid #dedad5;
+  padding: 40px 40px 44px;
+  margin-bottom: 48px;
+}
+
+.premium-journey-lead {
+  font-size: 1.0rem;
+  color: #1a1a1a;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  margin-bottom: 14px;
+}
+
+.premium-journey-desc {
+  font-size: 0.84rem;
+  color: #aaa;
+  line-height: 2.4;
+  letter-spacing: 0.04em;
+  margin-bottom: 36px;
+  max-width: 420px;
+}
+
+.premium-journey-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  max-width: 480px;
+}
+
+.premium-journey-item {
+  display: grid;
+  grid-template-columns: 24px 80px 1fr;
+  gap: 12px;
+  align-items: baseline;
+  padding: 14px 0;
+  border-bottom: 1px solid #ede9e4;
+}
+
+.premium-journey-item:first-child {
+  border-top: 1px solid #ede9e4;
+}
+
+.premium-journey-marker {
+  font-size: 0.7rem;
+  color: #ccc;
+  line-height: 1;
+}
+
+.premium-journey-item--current .premium-journey-marker {
+  color: #3d5c3a;
+  font-size: 0.82rem;
+}
+
+.premium-journey-month-num {
+  font-size: 0.7rem;
+  color: #bbb;
+  letter-spacing: 0.08em;
+}
+
+.premium-journey-item--current .premium-journey-month-num {
+  color: #3d5c3a;
+}
+
+.premium-journey-theme {
+  font-size: 0.88rem;
+  color: #888;
+  line-height: 1.7;
+  letter-spacing: 0.03em;
+}
+
+.premium-journey-item--current .premium-journey-theme {
+  color: #1a1a1a;
+  font-weight: 400;
+}
+
+@media (max-width: 600px) {
+  .premium-journey-section {
+    padding: 28px 20px 32px;
+  }
+}
