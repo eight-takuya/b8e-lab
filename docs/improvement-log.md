@@ -6,6 +6,32 @@
 ---
 
 ---
+## [2026-07-01] — Premium UX改善 / 文言修正・サムネイル再発防止
+
+**Scope:** academy/premium.html
+**Triggered by:** 「正解」文言の削除 + サムネイル表示の再発防止確認
+
+### Changes
+- `academy/premium.html`: 「どちらから始めても、正解です。」→「今の自分に近い方から、静かに始めてください。」に変更
+  - 判断・評価の言葉（正解）を除去し、安心・選べる・戻れるニュアンスに統一
+
+### サムネイル表示チェックリスト（premium.html 更新時に必ず確認）
+
+academy/premium.html または style.css を更新するたびに以下を確認すること。
+
+- [ ] Content 01 サムネイルが表示されている（灰色プレースホルダーになっていない）
+- [ ] Content 02 サムネイルが表示されている（灰色プレースホルダーになっていない）
+- [ ] 画像パスが `../assets/academy/premium/month01/content0X-thumbnail.png` になっている
+- [ ] 実ファイルが `git ls-files assets/academy/premium/month01/` に含まれている
+- [ ] Vercel Preview で画像 404 が出ていない（curl -sL -o /dev/null -w "%{http_code}" で確認）
+- [ ] PC 表示・スマホ表示の両方でサムネイルが表示されている
+
+**過去の失敗パターン（再発防止）**
+- `assets/academy/` を git add し忘れ → Vercel に画像がデプロイされなかった
+- ファイル名大文字小文字不一致（`Month01.Content01.thumbnail.png` vs `content01-thumbnail.png`）
+- `month01/` サブディレクトリと `premium/` 直下の混同
+
+---
 ## [2026-07-01] — Premium マイページ精緻化 / Month01 コンテンツ導線を更新
 
 **Scope:** academy/premium.html / style.css / assets/academy/premium/month01/（新規ディレクトリ）
