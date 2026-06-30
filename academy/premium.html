@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Premium Portal | Dreamin' Spiral Academy</title>
-  <meta name="description" content="Dreamin' Spiral Academy Premium Portal。6か月の旅路の現在地に戻る場所。">
+  <title>Premium | Dreamin' Spiral Academy</title>
+  <meta name="description" content="Dreamin' Spiral Academy Premium。今の自分に静かに戻る場所。">
   <meta name="robots" content="noindex, nofollow">
   <link rel="stylesheet" href="../style.css">
   <script defer src="/_vercel/insights/script.js"></script>
@@ -35,7 +35,7 @@
   <main>
 
     <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-         BLOCK 1 — Welcome / Hero
+         HERO
     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
     <section class="premium-hero">
       <div class="premium-hero-bg-wrap">
@@ -63,191 +63,160 @@
     <div class="page-content">
 
       <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-           BLOCK 2 + 3 — Current Position + Next Step (上部 2カラム)
+           TODAY'S FIRST STEP — 今日の一歩
       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
-      <div class="premium-top-row">
-
-        <!-- Current Position -->
-        <!-- data-premium="current-position" は将来の個人別データ差し込み用 -->
-        <section id="current-position" class="premium-current-position" data-premium="current-position">
-          <span class="premium-section-label">CURRENT POSITION</span>
-          <p class="premium-position-month">Month 01 / 6</p>
-
-          <dl class="premium-position-list">
-
-            <div class="premium-position-item">
-              <dt class="premium-position-key">今月のテーマ</dt>
-              <dd class="premium-position-val" data-field="personal-theme">自分の中心に還る</dd>
-            </div>
-
-            <div class="premium-position-item">
-              <dt class="premium-position-key">今の問い</dt>
-              <dd class="premium-position-val premium-position-question" data-field="question">今、自分の中心にいるだろうか。</dd>
-            </div>
-
-            <div class="premium-position-item">
-              <dt class="premium-position-key">今月のゴール</dt>
-              <dd class="premium-position-val" data-field="goal">静けさから、自分の現実を見つめる</dd>
-            </div>
-
-            <div class="premium-position-item premium-position-item--note">
-              <dt class="premium-position-key">最近の気づき</dt>
-              <dd class="premium-position-val premium-position-note" data-field="recent-insight">ここに、あなたの言葉が入ります。</dd>
-            </div>
-
-          </dl>
-        </section>
-
-        <!-- Next Step -->
-        <section id="next-step" class="premium-next-step" data-premium="next-step">
-          <span class="premium-section-label">NEXT STEP</span>
-          <p class="premium-nextstep-label">今週の一歩</p>
-          <p class="premium-nextstep-val" data-field="next-step-week">毎日5分、自分の呼吸を感じる</p>
-          <p class="premium-nextstep-note">
-            小さくてよいので、<br>
-            続けられる一歩を大切にします。
-          </p>
-          <a href="#monthly-review" class="premium-link">今月のレビューを書く →</a>
-        </section>
-
-      </div>
+      <section class="premium-today" data-premium="today">
+        <span class="premium-today-label">今日の一歩</span>
+        <p class="premium-today-question">今日は、どこから始めますか。</p>
+        <div class="premium-today-choices">
+          <a href="#premium-content" class="premium-today-choice">
+            <span class="premium-today-choice-icon" aria-hidden="true">◎</span>
+            <span class="premium-today-choice-text">コンテンツを聴く</span>
+            <span class="premium-today-choice-sub">Content 01 / 02</span>
+          </a>
+          <span class="premium-today-or" aria-hidden="true">または</span>
+          <a href="#journal" class="premium-today-choice">
+            <span class="premium-today-choice-icon" aria-hidden="true">◎</span>
+            <span class="premium-today-choice-text">ジャーナルを書く</span>
+            <span class="premium-today-choice-sub">今日の記録</span>
+          </a>
+        </div>
+        <p class="premium-today-note">どちらから始めても、正解です。</p>
+      </section>
 
       <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-           BLOCK 4 — This Month
+           THIS MONTH — 今月の現在地
       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
-      <section id="this-month" class="section-block premium-this-month" data-premium="this-month">
-        <span class="premium-section-label">THIS MONTH</span>
-        <div class="premium-this-month-header">
-          <span class="premium-month-num">Month 01</span>
-          <h3 class="premium-month-title">自分の中心に還る</h3>
+      <section id="this-month" class="premium-month-overview" data-premium="this-month">
+        <div class="premium-month-overview-header">
+          <span class="premium-section-label">THIS MONTH</span>
+          <span class="premium-month-overview-num">Month 01 / 6</span>
         </div>
-        <p class="premium-month-desc">
+        <h3 class="premium-month-overview-title">自分の中心に還る</h3>
+        <p class="premium-month-overview-desc">
           何かを足すのではなく、<br>
           今の自分に静かに触れていく月です。
         </p>
-        <div class="premium-month-cards">
-
-          <div class="premium-month-card">
-            <span class="premium-month-card-label">今月の問い</span>
-            <p class="premium-month-card-body">今、自分の中心にいるだろうか。</p>
+        <div class="premium-month-overview-question">
+          <span class="premium-month-overview-question-label">今月の問い</span>
+          <p class="premium-month-overview-question-body">今、自分の中心にいるだろうか。</p>
+        </div>
+        <div class="premium-month-overview-meta">
+          <div class="premium-month-overview-meta-item">
+            <span class="premium-month-overview-meta-key">ゴール</span>
+            <span class="premium-month-overview-meta-val">静けさから、自分の現実を見つめる</span>
           </div>
-
-          <div class="premium-month-card">
-            <span class="premium-month-card-label">今月の個別セッション</span>
-            <p class="premium-month-card-body">Zoom 1対1 / 月1〜2回</p>
-            <a href="#next-session" class="premium-link">次回日程を見る →</a>
+          <div class="premium-month-overview-meta-item">
+            <span class="premium-month-overview-meta-key">個別セッション</span>
+            <span class="premium-month-overview-meta-val">Zoom 1対1 / 月1〜2回</span>
           </div>
+        </div>
+      </section>
 
-          <div class="premium-month-card">
-            <span class="premium-month-card-label">今月の Premium Content</span>
-            <p class="premium-month-card-body">Content 01「自分の中心に還る」<br>Content 02「頭ではなく身体に戻る」</p>
-            <a href="#premium-content" class="premium-link">コンテンツを見る →</a>
-          </div>
+      <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+           PREMIUM CONTENT
+      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+      <section id="premium-content" class="premium-content-section" data-premium="premium-content">
+        <span class="premium-section-label">PREMIUM CONTENT</span>
+        <p class="premium-content-month">Month 01 のコンテンツ</p>
 
-          <div class="premium-month-card">
-            <span class="premium-month-card-label">今月のジャーナル</span>
-            <p class="premium-month-card-body">日々の記録・週次ノート・月次振り返り</p>
-            <a href="#journal" class="premium-link">ジャーナルを開く →</a>
-          </div>
+        <div class="premium-content-list">
+
+          <article class="premium-content-item">
+            <div class="premium-content-item-thumb">
+              <img
+                src="../assets/academy/premium/month01/content01-thumbnail.png"
+                alt="Content 01 自分の中心に還る"
+                class="premium-content-item-img"
+                onerror="this.style.display='none';this.closest('.premium-content-item-thumb').classList.add('premium-content-item-thumb--empty')"
+              >
+            </div>
+            <div class="premium-content-item-body">
+              <span class="premium-content-item-type premium-content-item-type--audio">音声ガイダンス</span>
+              <h4 class="premium-content-item-title">自分の中心に還る</h4>
+              <p class="premium-content-item-desc">
+                今月のテーマを内側で深めるための音声。<br>
+                問いとともに静かにいる時間。
+              </p>
+              <!-- TODO: 実ファイルURL確定後に差し替え -->
+              <a href="#" class="premium-content-item-link" aria-label="Content 01 を開く（準備中）">
+                Content 01 を開く →
+              </a>
+            </div>
+          </article>
+
+          <article class="premium-content-item">
+            <div class="premium-content-item-thumb">
+              <img
+                src="../assets/academy/premium/month01/content02-thumbnail.png"
+                alt="Content 02 頭ではなく身体に戻る"
+                class="premium-content-item-img"
+                onerror="this.style.display='none';this.closest('.premium-content-item-thumb').classList.add('premium-content-item-thumb--empty')"
+              >
+            </div>
+            <div class="premium-content-item-body">
+              <span class="premium-content-item-type premium-content-item-type--body">ボディワーク音声</span>
+              <h4 class="premium-content-item-title">頭ではなく身体に戻る</h4>
+              <p class="premium-content-item-desc">
+                呼吸と身体感覚へ戻るための、<br>
+                ガイドつきボディスキャン。
+              </p>
+              <!-- TODO: 実ファイルURL確定後に差し替え -->
+              <a href="#" class="premium-content-item-link" aria-label="Content 02 を開く（準備中）">
+                Content 02 を開く →
+              </a>
+            </div>
+          </article>
 
         </div>
       </section>
 
       <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-           BLOCK 5 + 7 — Next Session / Journal (中段 2カラム)
+           JOURNAL
       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
-      <div class="premium-mid-row">
-
-        <!-- Next Session -->
-        <section id="next-session" class="premium-next-session" data-premium="next-session">
-          <span class="premium-section-label">NEXT SESSION</span>
-          <div class="premium-session-detail" data-field="session-info">
-            <p class="premium-session-date">次回個別セッション</p>
-            <p class="premium-session-meta">日程：個別調整中</p>
-            <p class="premium-session-meta">形式：Zoom 1対1</p>
-          </div>
-          <p class="premium-session-prep">準備：今月の問いを静かに眺める</p>
-          <div class="premium-session-checklist">
-            <p class="premium-session-check-label">セッション前に書いておくと良いこと</p>
-            <ul class="premium-session-check-list">
-              <li>今の状態を一言で</li>
-              <li>最近気になっていること</li>
-              <li>今日触れたいこと</li>
-            </ul>
-          </div>
-          <a href="#" class="premium-link">セッション準備を見る →</a>
-        </section>
-
-        <!-- Journal -->
-        <section id="journal" class="premium-journal" data-premium="journal">
-          <span class="premium-section-label">JOURNAL</span>
-          <p class="premium-journal-lead">日々の記録</p>
-          <div class="premium-journal-links">
-            <a href="#" class="premium-journal-btn">今日の記録を書く</a>
-            <a href="#" class="premium-journal-link">Weekly Note を見る →</a>
-            <a href="#monthly-review" class="premium-journal-link">Monthly Review を書く →</a>
+      <section id="journal" class="premium-journal-section" data-premium="journal">
+        <span class="premium-section-label">JOURNAL</span>
+        <div class="premium-journal-inner">
+          <div class="premium-journal-main">
+            <!-- TODO: Journalツール確定後に href を差し替え -->
+            <a href="#" class="premium-journal-primary">今日の記録を書く</a>
+            <div class="premium-journal-sub-links">
+              <a href="#" class="premium-link">Weekly Note を見る →</a>
+              <a href="#" class="premium-link">Monthly Review を書く →</a>
+            </div>
           </div>
           <p class="premium-journal-note">
             完璧に続ける必要はありません。<br>
             戻ってきた日が、また始まりです。
           </p>
-        </section>
-
-      </div>
-
-      <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-           BLOCK 6 — Premium Content
-      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
-      <section id="premium-content" class="section-block premium-content-section" data-premium="premium-content">
-        <span class="premium-section-label">PREMIUM CONTENT</span>
-        <p class="premium-content-month">Month 01 のコンテンツ</p>
-        <div class="premium-content-grid">
-
-          <div class="premium-content-card">
-            <div class="premium-content-thumbnail" aria-hidden="true">
-              <img
-                src="../assets/academy/premium/month01/content01-thumbnail.png"
-                alt=""
-                class="premium-content-thumb-img"
-                onerror="this.style.display='none';this.closest('.premium-content-thumbnail').classList.add('premium-content-thumbnail--empty')"
-              >
-            </div>
-            <h4 class="premium-content-title">自分の中心に還る</h4>
-            <span class="premium-content-type premium-content-type--audio">音声ガイダンス</span>
-            <p class="premium-content-desc">
-              今月のテーマを内側で深めるための音声。<br>
-              問いとともに静かにいる時間。
-            </p>
-            <!-- TODO: 実ファイルが確定したら href を差し替える -->
-            <a href="#" class="premium-link" aria-label="Content 01 を開く（準備中）">Content 01 を開く →</a>
-          </div>
-
-          <div class="premium-content-card">
-            <div class="premium-content-thumbnail" aria-hidden="true">
-              <img
-                src="../assets/academy/premium/month01/content02-thumbnail.png"
-                alt=""
-                class="premium-content-thumb-img"
-                onerror="this.style.display='none';this.closest('.premium-content-thumbnail').classList.add('premium-content-thumbnail--empty')"
-              >
-            </div>
-            <h4 class="premium-content-title">頭ではなく身体に戻る</h4>
-            <span class="premium-content-type premium-content-type--body">ボディワーク音声</span>
-            <p class="premium-content-desc">
-              呼吸と身体感覚へ戻るための<br>
-              ガイドつきボディスキャン。
-            </p>
-            <!-- TODO: 実ファイルが確定したら href を差し替える -->
-            <a href="#" class="premium-link" aria-label="Content 02 を開く（準備中）">Content 02 を開く →</a>
-          </div>
-
         </div>
-        <!-- TODO: 過去コンテンツページのURLが確定したら href を差し替える -->
-        <a href="#" class="premium-link premium-content-archive-link">過去のコンテンツを見る →</a>
       </section>
 
       <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-           BLOCK 8 — Six-Month Journey
+           NEXT SESSION
+      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+      <section id="next-session" class="premium-session-section" data-premium="next-session">
+        <span class="premium-section-label">NEXT SESSION</span>
+        <div class="premium-session-inner">
+          <div class="premium-session-info">
+            <p class="premium-session-title">次回個別セッション</p>
+            <p class="premium-session-detail">日程：個別調整中　／　形式：Zoom 1対1</p>
+          </div>
+          <div class="premium-session-prep-block">
+            <p class="premium-session-prep-label">セッション前に書いておくと良いこと</p>
+            <ul class="premium-session-prep-list">
+              <li>今の状態を一言で</li>
+              <li>最近気になっていること</li>
+              <li>今日触れたいこと</li>
+            </ul>
+          </div>
+          <!-- TODO: セッション準備ページ確定後に href を差し替え -->
+          <a href="#" class="premium-link">セッション準備を見る →</a>
+        </div>
+      </section>
+
+      <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+           SIX-MONTH JOURNEY
       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
       <section id="six-month-journey" class="section-block premium-journey-section" data-premium="six-month-journey">
         <span class="premium-section-label">SIX-MONTH JOURNEY</span>
@@ -257,7 +226,6 @@
           どこまで進んだかを測るためではなく、<br>
           今ここにいることを確かめるために見てください。
         </p>
-        <!-- data-current="1" は将来の現在月ハイライト用 -->
         <ol class="premium-journey-list" data-current="1">
           <li class="premium-journey-item premium-journey-item--current" data-month="1">
             <span class="premium-journey-marker" aria-label="現在地">◎</span>
@@ -292,9 +260,7 @@
         </ol>
       </section>
 
-      <!-- Monthly Review anchor (journalから参照) -->
       <div id="monthly-review"></div>
-
       <a href="../academy.html" class="back-link">← Academy</a>
 
     </div>
@@ -304,7 +270,6 @@
   <!-- Footer -->
   <footer class="site-footer">
     <div class="site-footer-inner">
-
       <div class="footer-brand">
         <span class="brand-name">BEAT EIGHT EMOTION株式会社</span>
         <p>
@@ -312,7 +277,6 @@
           変容を共にする。
         </p>
       </div>
-
       <nav class="footer-links">
         <a href="../index.html">TOP</a>
         <a href="../dx.html">DX支援</a>
@@ -321,7 +285,6 @@
         <a href="../about.html">About</a>
         <a href="mailto:contact@b8e.co.jp">お問い合わせ</a>
       </nav>
-
     </div>
     <div class="footer-bottom">
       © 2025 BEAT EIGHT EMOTION株式会社
