@@ -6,6 +6,39 @@
 ---
 
 ---
+## [2026-07-01] — Premium マイページ精緻化 / Month01 コンテンツ導線を更新
+
+**Scope:** academy/premium.html / style.css / assets/academy/premium/month01/（新規ディレクトリ）
+**Triggered by:** Premium Month01 教材制作進行に合わせたマイページ整備
+
+### Changes
+- `academy/premium.html`: PREMIUM CONTENT セクションを Month01 制作内容に合わせて刷新
+  - Content 01「自分の中心に還る」（音声ガイダンス 15〜18分）
+  - Content 02「頭ではなく身体に戻る」（ボディワーク音声 12〜15分）
+  - 各カードにサムネイル表示エリアを追加（画像未配置時はプレースホルダー表示）
+  - Content 番号ラベル（CONTENT 01 / 02）を追加
+  - THIS MONTH カードのコンテンツ説明を新しい2本に更新
+  - 仮リンク（`href="#"`）に TODO コメントを付与
+- `style.css`: 新クラスを追加
+  - `.premium-content-thumbnail` / `.premium-content-thumb-img` / `.premium-content-thumbnail--empty`
+  - `.premium-content-num`
+  - `.premium-content-type--body`（ボディワーク音声用）
+- `assets/academy/premium/month01/`: サムネイル配置用ディレクトリを新規作成
+  - `content01-thumbnail.png`（配置待ち）
+  - `content02-thumbnail.png`（配置待ち）
+
+### 仮リンク一覧
+| リンクテキスト | href | 備考 |
+|---|---|---|
+| Content 01 を開く | `#` | 実ファイルURL確定後に差し替え |
+| Content 02 を開く | `#` | 実ファイルURL確定後に差し替え |
+| 今日の記録を書く | `#` | ジャーナルツール未定 |
+| Weekly Note を見る | `#` | 未定 |
+| Monthly Review を書く | `#` | 未定 |
+| セッション準備を見る | `#` | 未定 |
+| 過去のコンテンツを見る | `#` | 未定 |
+
+---
 ## [2026-06-14] — Community Portal 初期画面を追加
 
 **Scope:** academy/community.html（新規）/ style.css（追記）/ assets/community/（新規）
