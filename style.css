@@ -2616,20 +2616,26 @@ a:hover {
   display: flex;
   flex-direction: column;
   gap: 0;
-  max-width: 480px;
+  max-width: 600px;
 }
 
 .premium-journey-item {
-  display: grid;
-  grid-template-columns: 24px 80px 1fr;
+  display: flex;
+  flex-direction: column;
   gap: 12px;
-  align-items: baseline;
-  padding: 14px 0;
+  padding: 20px 0;
   border-bottom: 1px solid #ede9e4;
 }
 
 .premium-journey-item:first-child {
   border-top: 1px solid #ede9e4;
+}
+
+.premium-journey-item-head {
+  display: grid;
+  grid-template-columns: 24px 80px 1fr;
+  gap: 12px;
+  align-items: baseline;
 }
 
 .premium-journey-marker {
@@ -2665,9 +2671,63 @@ a:hover {
   font-weight: 400;
 }
 
+.premium-journey-item-detail {
+  padding-left: 116px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.premium-journey-transform {
+  font-size: 0.78rem;
+  letter-spacing: 0.02em;
+  line-height: 1.9;
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.premium-journey-before {
+  color: #aaa;
+}
+
+.premium-journey-arrow {
+  color: #ccc;
+  font-size: 0.72rem;
+}
+
+.premium-journey-after {
+  color: #555;
+}
+
+.premium-journey-item--current .premium-journey-after {
+  color: #3d5c3a;
+}
+
+.premium-journey-key {
+  font-size: 0.74rem;
+  color: #b0a898;
+  letter-spacing: 0.03em;
+  line-height: 1.7;
+}
+
+.premium-journey-key-label {
+  display: inline-block;
+  font-size: 0.62rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #ccc;
+  margin-right: 10px;
+}
+
 @media (max-width: 600px) {
   .premium-journey-section {
     padding: 28px 20px 32px;
+  }
+  .premium-journey-item-detail {
+    padding-left: 0;
+    margin-top: 4px;
   }
 }
 
@@ -2812,6 +2872,15 @@ a:hover {
   letter-spacing: 0.12em;
 }
 
+.premium-month-overview-theme-label {
+  display: block;
+  font-size: 0.62rem;
+  letter-spacing: 0.16em;
+  color: #b0a898;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
 .premium-month-overview-title {
   font-size: 1.4rem;
   font-weight: 400;
@@ -2827,6 +2896,35 @@ a:hover {
   line-height: 2.2;
   letter-spacing: 0.04em;
   margin-bottom: 32px;
+}
+
+.premium-month-overview-sense {
+  margin-bottom: 28px;
+}
+
+.premium-month-overview-sense-label {
+  display: block;
+  font-size: 0.62rem;
+  letter-spacing: 0.16em;
+  color: #b0a898;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.premium-month-overview-sense-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 10px;
+  list-style: none;
+}
+
+.premium-month-overview-sense-list li {
+  font-size: 0.78rem;
+  color: #555;
+  letter-spacing: 0.04em;
+  padding: 5px 14px;
+  border: 1px solid #ede9e4;
+  background: #faf9f7;
 }
 
 .premium-month-overview-question {
