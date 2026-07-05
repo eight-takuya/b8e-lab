@@ -6,6 +6,28 @@
 ---
 
 ---
+## [2026-07-05] — Premium Program体験価値向上 / Six-Month Journey・This Month Overview拡充
+
+**Scope:** academy/premium.html, style.css
+**Triggered by:** Dreamin' Spiral Academy Knowledge Architecture整理（Notion）を踏まえ、Premium Programを「教材提供」ではなく「6ヶ月間の変容体験」として伝えるための改善
+
+### Changes
+- `Six-Month Journey`: 各月に Theme（維持）に加え、Before（開始時の状態）／After（その月で育つ状態）／Key Experience を追加。単なる学習項目一覧ではなく、受講者Journeyとして表現した
+- `This Month Overview`（Month01）: 「今月のテーマ」ラベルを明示化。「育てる感覚」（呼吸／身体感覚／安心／静けさ／自己信頼）タグを新設
+- `style.css`: `.premium-journey-item-head` / `.premium-journey-item-detail` / `.premium-journey-transform` / `.premium-journey-before` / `.premium-journey-after` / `.premium-journey-key` 等を追加。`.premium-month-overview-theme-label` / `.premium-month-overview-sense` 系を追加
+- 内容はいずれも `dreamin-spiral-core/docs/session-library/premium/roadmap/month01〜06.md` の受講者の変容イメージ・実践ワークを要約する形で作成
+
+### Philosophy notes
+Premium Programの役割分担（Programs=Journey / Contents Library=教材資産 / Web Platform=届ける場所）を維持したまま、Web Platform側（premium.html）が「届ける」だけでなく「変容そのものを静かに伝える」ページとして機能するようになった。
+
+### 未対応（次フェーズ）
+- Content01/02リンク・Journalリンク・Session準備リンクは仮リンク（href="#"）のまま維持（Contents Library / Session設計側の責務のため今回は対応しない）
+
+### Deployed
+[ ] Yes — commit: (pending)
+[x] No — local
+
+---
 ## [2026-07-01] — Premium UX改善 / 文言修正・サムネイル再発防止
 
 **Scope:** academy/premium.html
