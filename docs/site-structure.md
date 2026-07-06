@@ -35,10 +35,17 @@ https://www.b8e.co.jp/academy.html                    Academy入口（Program概
 ├─ /academy/library.html     人生再起動ガイド（Library PDF配布）
 │   └─ /academy/pdf/*.pdf                              PDF実体（7件。うち1件はarchiveと重複）
 ├─ /academy/community.html   Community Portal（作成途中・Client My Page候補）
-└─ /academy/premium.html     Premium（作成途中・Client My Page候補）
+├─ /academy/premium.html     Premium Program Preview / external introduction（静的モック。Client My Pageではない）
+└─ /academy/premium-portal.html  Premium Client Portal Prototype（契約後マイページの原型）
 ```
 
-`academy/community.html` と `academy/premium.html` は、直接URLアクセスは可能（サイトには実在する）だが、サイト内のどこからもリンクされていない。内容的にも Program の紹介LPではなく、Community/Premium参加者向けの **Client My Page（マイページ）の作成途中版**である（詳細は下記「Notion Architecture 対応」参照）。
+**役割の再整理（2026年7月）:** 当初 `academy/community.html` と `academy/premium.html` はどちらも「Client My Page の作成途中版」として扱っていたが、`academy/premium-portal.html`（契約後マイページの原型）を新設したことで役割を分離した。
+
+- `academy/premium.html` — **Premium Program の外向け紹介ページ / Preview / 静的モック**。対象は未契約者・検討者・運営者確認用。クライアント個別マイページとしては扱わない
+- `academy/premium-portal.html` — **Premium Client Portal Prototype**。対象は契約者・受講者・個別伴走クライアント。Client My Page 配下の Premium Portal の原型として扱う
+- `academy/community.html` — 引き続き Community参加者向け **Client My Page の作成途中版**（Premium側のような Preview/Portal 分離はまだ行っていない）
+
+いずれも直接URLアクセスは可能（サイトには実在する）だが、サイト内のどこからもリンクされていない（意図的。詳細は下記「Notion Architecture 対応」参照）。
 
 ### 現在の導線（実際にクリックして辿れる経路）
 
@@ -64,8 +71,9 @@ academy/apply.html
   ├→ Stripe Checkout（外部 ×2リンク）
   └→ 送信後 → academy/thanks.html（Formspree経由）
 
-academy/community.html   ← どこからもリンクされていない（Client My Page 作成途中）
-academy/premium.html     ← どこからもリンクされていない（Client My Page 作成途中）
+academy/community.html        ← どこからもリンクされていない（Client My Page 作成途中）
+academy/premium.html          ← どこからもリンクされていない（Preview / 静的モック。まだ正式公開導線なし）
+academy/premium-portal.html   ← どこからもリンクされていない（Client Portal Prototype。契約者向け・体験確認段階）
 ```
 
 **Formspree連携:** `academy/apply.html` のフォーム（`action="https://formspree.io/f/xgoqybbl"`）は送信後 `https://www.b8e.co.jp/academy/thanks.html` にリダイレクトする（`_next` hidden field）。これにより本番ドメイン `www.b8e.co.jp` が現行の実装先であることを確認済み（旧「Wixが本番」という記述は本ドキュメントで訂正した。下記「Deployment」参照）。
@@ -85,7 +93,8 @@ academy/premium.html     ← どこからもリンクされていない（Client
 | `academy/thanks.html` | 届きました。申込完了後のサンクスページ |
 | `academy/library.html` | 人生再起動ガイド。Library PDF（7件）の配布ページ |
 | `academy/community.html` | Community参加者向け Client My Page の作成途中版（Journey / Group Session / Personal Session / Archive Content / Schedule構成）。Program紹介LPではない。現状どこからもリンクされていない |
-| `academy/premium.html` | Premium参加者向け Client My Page の作成途中版（6か月の旅路・Month Overview構成）。Program紹介LPではない。`feature/premium-ux-improvement` ブランチで作業中 |
+| `academy/premium.html` | **Premium Program Preview / external introduction**。Premium Programの世界観・6か月Journeyの全体像・伴走の価値を伝える外向け紹介ページ（静的モック）。対象は未契約者・検討者・運営者確認用。クライアント個別マイページとしては扱わない。将来的にLPまたはProgram紹介ページへ統合・接続する可能性あり |
+| `academy/premium-portal.html` | **Premium Client Portal Prototype**。契約後マイページの原型。対象は契約者・受講者・個別伴走クライアント。受講者が現在地・今月のテーマ・教材・Journal・Next Sessionを確認する場所。外向けLPではなく、本番導線へ出す前の体験確認用Prototype（Next.js / Supabase / 認証 / per-member表示への育成を見据える） |
 
 ---
 
@@ -102,12 +111,15 @@ Dreamin' Spiral Academy の Notion Knowledge Architecture（`Fields > 🎓 Dream
 | `academy/thanks.html` | 🌐 Web / Platform > LP（Thanks） |
 | `academy/library.html` | 🌐 Web / Platform > LP（Library）※PDF実体7件は教材資産として 📚 Contents Library 側の棚卸し対象（本ドキュメントの調査対象外） |
 | `academy/community.html` | 🌐 Web / Platform > Client My Page（Community Portal Page。作成途中／要導線設計） |
-| `academy/premium.html` | 🌐 Web / Platform > Client My Page（Premium Portal Page。作成途中／要導線設計） |
+| `academy/premium.html` | 🌐 Web / Platform > **LP**（Premium Program Preview）※ 2026年7月に Client My Page から再分類。Notion側の実反映は未実施（フォローアップ要） |
+| `academy/premium-portal.html` | 🌐 Web / Platform > **Client My Page**（Premium Portal Prototype）※ 新規追加。Notion側の実反映は未実施（フォローアップ要） |
 | （設計のみ・未実装） | 🌐 Web / Platform > Client My Page（Community Portal Design / Premium Portal Design） |
 
 `academy/community.html` ・ `academy/premium.html` は、当初 🏫 Programs 側（各Programの紹介ページ）に対応すると考えていたが、実際には Client My Page の作成途中版であることが判明し、Notion側も Web / Platform > Client My Page 配下へ再配置した（2026年7月）。
 
-Notion側との同期は `dreamin-spiral-core/scripts/notion-setup/sync-academy-existing-assets.js`（初回棚卸し）→ `rebuild-web-platform-toggles.js`（トグル構造化）→ `fix-web-platform-lp-clientmypage.js`（library.html追加・Community/Premium再配置）で実施済み（2026年7月）。
+**役割の再整理（2026年7月・追記）:** その後 `academy/premium-portal.html`（Premium Client Portal Prototype）を新設したことで、`academy/premium.html` は Client My Page ではなく **外向けPreview（LP）** として再定義した。Community側は同様の分離をまだ行っていないため、`academy/community.html` は引き続き Client My Page 扱いのまま。**この再分類は本ドキュメント上の整理のみで、Notion Knowledge Architecture 側（Web / Platform > LP / Client My Page の実際のブロック配置）へはまだ反映していない。** 次回Notion側整理の際に合わせて反映する。
+
+Notion側との同期は `dreamin-spiral-core/scripts/notion-setup/sync-academy-existing-assets.js`（初回棚卸し）→ `rebuild-web-platform-toggles.js`（トグル構造化）→ `fix-web-platform-lp-clientmypage.js`（library.html追加・Community/Premium再配置）で実施済み（2026年7月）。上記の役割再整理はこのNotion反映より後に発生したため、次回同期対象。
 
 ---
 
@@ -123,7 +135,8 @@ Notion側との同期は `dreamin-spiral-core/scripts/notion-setup/sync-academy-
 | `academy/library.html` + PDF 7件 | ✅ Released | 本番稼働中 |
 | Stripe Checkout連携（Community/Premium） | ✅ Released | `program.html` / `apply.html` に埋め込み済み |
 | `academy/community.html`（Client My Page 作成途中） | 🚧 In Progress | ページ自体は実装済みだが、サイト内のどこからもリンクされていない（導線未接続） |
-| `academy/premium.html`（Client My Page 作成途中） | 🚧 In Progress | `feature/premium-ux-improvement` ブランチで作業中。導線未接続 |
+| `academy/premium.html`（Premium Program Preview） | ✅ Released（ページとして） | 静的モックとして実装済み。ただし2026年7月時点でHP導線なし・公開ステータスは「未公開」。既存コピーは受講者向けトーンで書かれており、Preview向けに整えるかは今後の検討課題 |
+| `academy/premium-portal.html`（Premium Client Portal Prototype） | 🚧 Prototype | 8ブロック構成で実装済み。認証・DB・Next.jsなし。本番導線へは未接続（意図的） |
 | Community/Premium Portal Design（設計ドキュメント） | ✅ Released（設計のみ） | `dreamin-spiral-core/docs/session-library/{community,premium}/portal/` に存在。実装（ログイン等）は別途 |
 | Community / Premium Portal ページへの導線接続 | 📅 Planned | 未着手 |
 | Client My Page（認証・ログイン機能） | 📅 Planned | 実装未着手 |
@@ -132,9 +145,11 @@ Notion側との同期は `dreamin-spiral-core/scripts/notion-setup/sync-academy-
 
 ## Future
 
-- **Client My Page** — ログイン・マイページ機能。`academy/community.html` / `academy/premium.html` はその作成途中版として既に存在するが認証機能はない。Portal 設計ドキュメント（`community/portal/`・`premium/portal/`。Community側は認証アーキテクチャの設計を含む）も別途存在
+- **Client My Page** — ログイン・マイページ機能。`academy/community.html` / `academy/premium-portal.html` はその作成途中版・Prototypeとして既に存在するが認証機能はない。Portal 設計ドキュメント（`community/portal/`・`premium/portal/`。Community側は認証アーキテクチャの設計を含む）も別途存在
 - **Community / Premium Portal ページの導線接続** — 参加者が実際に辿り着けるよう、ログイン後の導線を設計する（現状は孤立ページ）
 - **Premium UX改善** — 現在進行中の `feature/premium-ux-improvement` ブランチでの作業
+- **Notion Knowledge Architecture への役割再整理の反映** — `academy/premium.html`（LP再分類）・`academy/premium-portal.html`（Client My Page新規追加）を Notion側 Web / Platform 配下へ反映する
+- **Premium Content の教材タイプ別表示検討** — Content01/02中心から Video / Audio / Workbook / Practice への再編成（`docs/improvement-log.md` 2026-07-06 参照）
 
 ---
 

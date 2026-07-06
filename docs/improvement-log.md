@@ -6,6 +6,47 @@
 ---
 
 ---
+## [2026-07-06] — premium.html / premium-portal.html の責務分離を明確化
+
+**Scope:** `docs/site-structure.md`, `academy/premium.html`（冒頭コメントのみ）, `academy/premium-portal.html`（冒頭コメントのみ）
+**Triggered by:** Premium Portal Prototype 追加（直前のログ参照）により、`premium.html` の位置づけが曖昧になったため役割を再整理
+
+### Changes
+
+- **`academy/premium.html`** — Premium Program の**外向け紹介ページ / Preview / 静的モック**として再定義。対象は未契約者・検討者・運営者確認用。クライアント個別マイページとしては扱わない。将来的にLPまたはProgram紹介ページへ統合・接続する可能性あり
+- **`academy/premium-portal.html`** — **Premium Client Portal Prototype**（契約後マイページの原型）として位置づけを明確化。対象は契約者・受講者・個別伴走クライアント。Client My Page 配下の Premium Portal の原型として扱う
+- `docs/site-structure.md` の Academy Site Map / Page Role / Notion Architecture 対応 / Status / Future の各セクションを上記の役割分離に合わせて更新
+- 両ページとも冒頭にHTMLコメントで役割を明記（下記参照）
+- 導線追加は行っていない（`academy.html` / `program.html` / navigation / footer とも無変更）。両ページとも引き続きHP導線なしで維持
+
+### 現在の導線方針
+
+- `premium.html` はまだ外向け導線として正式公開していない
+- `premium-portal.html` は契約者向けPrototypeであり、一般導線に出すべきではない
+- まず体験確認・構造確認を優先する
+
+### 副次的な発見・修正
+
+`docs/site-structure.md` が、2026年7月上旬のブランチ整理作業（PR分離のためのcherry-pick操作）の過程で誤って旧版（拡張前の110行版）に巻き戻った状態のまま `feature/premium-ux-improvement` ブランチに残っていたことが判明。今回 `main` の最新版（243行・拡張済み）から復元した上で、本ログの変更を追記した。
+
+### Notionとの整合性（未反映・フォローアップ要）
+
+`academy/premium.html` の Client My Page → LP への再分類、および `academy/premium-portal.html` の Client My Page への新規追加は、Notion Knowledge Architecture（`Web / Platform` 配下）にはまだ反映していない。次回のNotion側整理で対応する（詳細は下記「Future Sync」）。
+
+### Future Sync
+
+Notion Knowledge Architecture同期時に以下を反映する。
+
+- `academy/premium.html` → Premium Program Preview（外向け紹介ページ）
+- `academy/premium-portal.html` → Premium Client Portal Prototype（契約者マイページ原型）
+
+**背景:** 以前 `premium.html` を Client My Page 候補として扱っていた時期があるため、今後の混乱防止としてNotion側にも反映予定。今回はNotion同期作業自体は実施していない。
+
+### Deployed
+[ ] Yes — commit: (pending)
+[x] No — local
+
+---
 ## [2026-07-06] — Premium Portal Prototype 追加（体験確認・技術基盤なし）
 
 **Scope:** `academy/premium-portal.html`（新規）, `style.css`
