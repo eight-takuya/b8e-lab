@@ -6,6 +6,26 @@
 ---
 
 ---
+## [2026-07-06] — Premium Portal Prototype 追加（体験確認・技術基盤なし）
+
+**Scope:** `academy/premium-portal.html`（新規）, `style.css`
+**Triggered by:** Next.js / Supabase / 認証実装に進む前に、既存の静的HTML環境で「6か月Journeyの受講者ホーム」としての体験を確認したい
+
+### Changes
+- `academy/premium-portal.html` を新設。`premium/portal/premium-information-architecture.md` の8ブロック構成（Welcome / Current Position / Six-Month Journey / This Month / Premium Content / Journal / Next Session / Next Step）を静的HTMLで実装
+- `academy/premium.html`（外向けLP・静的モック）は無変更のまま維持し、役割を分離
+- `style.css` に Welcome / Current Position / Next Step 用のセクションスタイル、Next Session の「前回セッション振り返りメモ」欄、Premium Content の type バリアント（`--meditation` / `--workbook`）を追加
+- 認証・DB・Next.js・per-member表示は今回スコープ外（意図的に未実装）
+
+### 次の改善候補（記録のみ・今回は対応しない）
+
+Premium Content について、将来的に Contents Library（`dreamin-spiral-core`）との接続を考慮し、現在の「Content01 / Content02」中心の並びから、教材タイプ別表示（Video / Audio / Workbook / Practice）への再編成を検討する。
+
+### Deployed
+[ ] Yes — commit: (pending)
+[x] No — local
+
+---
 ## [2026-07-05] — Premium Program体験価値向上 / Six-Month Journey・This Month Overview拡充
 
 **Scope:** academy/premium.html, style.css
