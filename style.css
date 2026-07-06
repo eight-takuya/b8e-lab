@@ -2850,6 +2850,89 @@ a:hover {
 
 
 /* ------------------------------------------------------------
+   Premium Portal Prototype — Welcome / Current Position / Next Step
+   ------------------------------------------------------------ */
+
+.premium-portal-welcome {
+  text-align: center;
+  padding: 48px 24px 52px;
+  border-bottom: 1px solid #e6e4e1;
+  margin-bottom: 48px;
+}
+
+.premium-portal-welcome-text {
+  font-size: 1.3rem;
+  font-weight: 400;
+  color: #1a1a1a;
+  letter-spacing: 0.06em;
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+.premium-portal-welcome-sub {
+  font-size: 0.84rem;
+  color: #999;
+  letter-spacing: 0.04em;
+  line-height: 2.0;
+}
+
+.premium-current-position {
+  border: 1px solid #dedad5;
+  padding: 32px 40px;
+  margin-bottom: 48px;
+  text-align: center;
+}
+
+.premium-current-position-body {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: center;
+  margin-top: 14px;
+  margin-bottom: 14px;
+}
+
+.premium-current-position-month {
+  font-size: 0.78rem;
+  color: #b0a898;
+  letter-spacing: 0.12em;
+}
+
+.premium-current-position-theme {
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: #1a1a1a;
+  letter-spacing: 0.06em;
+}
+
+.premium-current-position-note {
+  font-size: 0.8rem;
+  color: #999;
+  letter-spacing: 0.04em;
+}
+
+.premium-next-step {
+  text-align: center;
+  padding: 44px 24px;
+  margin-bottom: 40px;
+}
+
+.premium-next-step-text {
+  font-size: 0.92rem;
+  color: #666;
+  letter-spacing: 0.04em;
+  line-height: 2.0;
+  margin-top: 14px;
+}
+
+@media (max-width: 600px) {
+  .premium-current-position {
+    padding: 28px 20px;
+  }
+}
+
+
+/* ------------------------------------------------------------
    This Month Overview（統合版）
    ------------------------------------------------------------ */
 
@@ -3077,6 +3160,14 @@ a:hover {
   color: #5a6e7a;
 }
 
+.premium-content-item-type--meditation {
+  color: #6b7d5e;
+}
+
+.premium-content-item-type--workbook {
+  color: #a8875e;
+}
+
 .premium-content-item-title {
   font-size: 1.15rem;
   font-weight: 400;
@@ -3243,6 +3334,25 @@ a:hover {
   left: 0;
   color: #ccc;
   font-size: 0.7rem;
+}
+
+.premium-session-review-block {
+  border-top: 1px solid #ede9e4;
+  padding-top: 20px;
+}
+
+.premium-session-review-label {
+  font-size: 0.72rem;
+  color: #b0a898;
+  letter-spacing: 0.1em;
+  margin-bottom: 10px;
+}
+
+.premium-session-review-note {
+  font-size: 0.82rem;
+  color: #999;
+  letter-spacing: 0.03em;
+  line-height: 1.8;
 }
 
 @media (max-width: 600px) {
