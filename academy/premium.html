@@ -1,16 +1,16 @@
-<!--
-  Premium Program Preview / external introduction page.
-  Not a client portal. Audience: prospective clients / internal review.
-  Client Portal Prototype (contracted clients) → academy/premium-portal.html
--->
 <!DOCTYPE html>
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Premium | Dreamin' Spiral Academy</title>
-  <meta name="description" content="Dreamin' Spiral Academy Premium。今の自分に静かに戻る場所。">
-  <meta name="robots" content="noindex, nofollow">
+  <meta name="description" content="Dreamin' Spiral Academy Premium。一人ひとりの人生全体を、6か月かけて整える個別伴走。My Life Map・Monthly Reflection・Monthly Personal Session・Message Support・Premium Contents・Community Accessが含まれます。">
+  <link rel="canonical" href="https://www.b8e.co.jp/academy/premium.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Premium | Dreamin' Spiral Academy">
+  <meta property="og:description" content="一人ひとりの人生全体を、6か月かけて整える個別伴走。">
+  <meta property="og:url" content="https://www.b8e.co.jp/academy/premium.html">
+  <meta property="og:image" content="https://www.b8e.co.jp/assets/community/bg_v01.png">
   <link rel="stylesheet" href="../style.css">
   <script defer src="/_vercel/insights/script.js"></script>
 </head>
@@ -23,7 +23,7 @@
       <svg class="logo-lemniscate" viewBox="0 0 80 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
         <path d="M40,16 C40,10.5 48,6 58,6 C68,6 76,10.5 76,16 C76,21.5 68,26 58,26 C48,26 40,21.5 40,16 C40,10.5 32,6 22,6 C12,6 4,10.5 4,16 C4,21.5 12,26 22,26 C32,26 40,21.5 40,16 Z" fill="none" stroke="#c9a882" stroke-width="1.1" stroke-linejoin="round"/>
       </svg>
-      <h1>B8E</h1>
+      <p class="logo-wordmark">B8E</p>
     </div>
     <p class="tagline">BEAT EIGHT EMOTION</p>
   </header>
@@ -39,9 +39,7 @@
 
   <main>
 
-    <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-         HERO
-    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+    <!-- Hero -->
     <section class="premium-hero">
       <div class="premium-hero-bg-wrap">
         <img
@@ -54,9 +52,9 @@
       </div>
       <div class="premium-hero-content">
         <span class="premium-hero-label">Dreamin' Spiral Academy</span>
-        <h2 class="premium-hero-title">Premium</h2>
+        <h1 class="premium-hero-title">Premium</h1>
         <p class="premium-hero-copy">
-          ここは、あなた自身の6か月の旅路に戻る場所です。
+          一人ひとりの人生全体を、6か月かけて整える個別伴走です。
         </p>
         <p class="premium-hero-sub">
           進むためではなく、<br>
@@ -67,277 +65,131 @@
 
     <div class="page-content">
 
-      <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-           TODAY'S FIRST STEP — 今日の一歩
-      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
-      <section class="premium-today" data-premium="today">
-        <span class="premium-today-label">今日の一歩</span>
-        <p class="premium-today-question">今日は、どこから始めますか。</p>
-        <div class="premium-today-choices">
-          <a href="#premium-content" class="premium-today-choice">
-            <span class="premium-today-choice-icon" aria-hidden="true">◎</span>
-            <span class="premium-today-choice-text">コンテンツを聴く</span>
-            <span class="premium-today-choice-sub">Content 01 / 02</span>
-          </a>
-          <span class="premium-today-or" aria-hidden="true">または</span>
-          <a href="#journal" class="premium-today-choice">
-            <span class="premium-today-choice-icon" aria-hidden="true">◎</span>
-            <span class="premium-today-choice-text">ジャーナルを書く</span>
-            <span class="premium-today-choice-sub">今日の記録</span>
-          </a>
-        </div>
-        <p class="premium-today-note">今の自分に近い方から、静かに始めてください。</p>
-      </section>
-
-      <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-           THIS MONTH — 今月の現在地
-      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
-      <section id="this-month" class="premium-month-overview" data-premium="this-month">
-        <div class="premium-month-overview-header">
-          <span class="premium-section-label">THIS MONTH</span>
-          <span class="premium-month-overview-num">Month 01 / 6</span>
-        </div>
-        <span class="premium-month-overview-theme-label">今月のテーマ</span>
-        <h3 class="premium-month-overview-title">自分の中心に還る</h3>
-        <p class="premium-month-overview-desc">
-          何かを足すのではなく、<br>
-          今の自分に静かに触れていく月です。
+      <!-- Premiumの位置づけ -->
+      <div class="page-intro">
+        <p>
+          Premium は、Community の上位版ではありません。<br><br>
+          Community が「共に育つ場所」であるのに対し、<br>
+          Premium は、一人ひとりの人生全体を、<br>
+          現在地から6か月かけて整えていく、個別の旅路です。
         </p>
-        <div class="premium-month-overview-sense">
-          <span class="premium-month-overview-sense-label">育てる感覚</span>
-          <ul class="premium-month-overview-sense-list">
-            <li>呼吸</li>
-            <li>身体感覚</li>
-            <li>安心</li>
-            <li>静けさ</li>
-            <li>自己信頼</li>
-          </ul>
-        </div>
-        <div class="premium-month-overview-question">
-          <span class="premium-month-overview-question-label">今月の問い</span>
-          <p class="premium-month-overview-question-body">今、自分の中心にいるだろうか。</p>
-        </div>
-        <div class="premium-month-overview-meta">
-          <div class="premium-month-overview-meta-item">
-            <span class="premium-month-overview-meta-key">ゴール</span>
-            <span class="premium-month-overview-meta-val">静けさから、自分の現実を見つめる</span>
+      </div>
+
+      <!-- こんな方へ -->
+      <div class="resonance-questions">
+        <h3>こんな方へ。</h3>
+        <p>内側の変化を、現実の行動へつなげたいとき。</p>
+        <p>自分の人生全体を、一度じっくり整理したいとき。</p>
+        <p>一人で向き合うより、個別に伴走してほしいとき。</p>
+        <p>人生や仕事を、具体的に動かしたいとき。</p>
+      </div>
+
+      <!-- 提供内容 -->
+      <div class="section-block">
+        <h3>提供内容</h3>
+        <p>Premium が提供するのは、次の6つです。</p>
+        <div class="offer-list">
+          <div class="offer-item">
+            <span class="offer-item-title">My Life Map</span>
+            <span class="offer-item-desc">自分の現在地・ゴール・変化を映す地図。</span>
           </div>
-          <div class="premium-month-overview-meta-item">
-            <span class="premium-month-overview-meta-key">個別セッション</span>
-            <span class="premium-month-overview-meta-val">Zoom 1対1 / 月1〜2回</span>
+          <div class="offer-item">
+            <span class="offer-item-title">Monthly Reflection</span>
+            <span class="offer-item-desc">毎月、静かに自分の歩みを振り返る時間。</span>
+          </div>
+          <div class="offer-item">
+            <span class="offer-item-title">Monthly Personal Session</span>
+            <span class="offer-item-desc">月1回、ファシリテーターと一対一で向き合う時間。</span>
+          </div>
+          <div class="offer-item">
+            <span class="offer-item-title">Message Support</span>
+            <span class="offer-item-desc">セッションの合間も、静かに伴走し続けます。</span>
+          </div>
+          <div class="offer-item">
+            <span class="offer-item-title">Premium Contents</span>
+            <span class="offer-item-desc">自分のペースで繰り返し触れる、音声・PDF・ワーク。</span>
+          </div>
+          <div class="offer-item">
+            <span class="offer-item-title">Community Access</span>
+            <span class="offer-item-desc">一人の伴走に加えて、共に育つ場にもアクセスできます。</span>
           </div>
         </div>
-      </section>
+      </div>
 
-      <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-           PREMIUM CONTENT
-      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
-      <section id="premium-content" class="premium-content-section" data-premium="premium-content">
-        <span class="premium-section-label">PREMIUM CONTENT</span>
-        <p class="premium-content-month">Month 01 のコンテンツ</p>
-
-        <div class="premium-content-list">
-
-          <article class="premium-content-item">
-            <div class="premium-content-item-thumb">
-              <img
-                src="../assets/academy/premium/month01/content01-thumbnail.png"
-                alt="Content 01 自分の中心に還る"
-                class="premium-content-item-img"
-                onerror="this.style.display='none';this.closest('.premium-content-item-thumb').classList.add('premium-content-item-thumb--empty')"
-              >
-            </div>
-            <div class="premium-content-item-body">
-              <span class="premium-content-item-type premium-content-item-type--audio">音声ガイダンス</span>
-              <h4 class="premium-content-item-title">自分の中心に還る</h4>
-              <p class="premium-content-item-desc">
-                今月のテーマを内側で深めるための音声。<br>
-                問いとともに静かにいる時間。
-              </p>
-              <!-- TODO: 実ファイルURL確定後に差し替え -->
-              <a href="#" class="premium-content-item-link" aria-label="Content 01 を開く（準備中）">
-                Content 01 を開く →
-              </a>
-            </div>
-          </article>
-
-          <article class="premium-content-item">
-            <div class="premium-content-item-thumb">
-              <img
-                src="../assets/academy/premium/month01/content02-thumbnail.png"
-                alt="Content 02 頭ではなく身体に戻る"
-                class="premium-content-item-img"
-                onerror="this.style.display='none';this.closest('.premium-content-item-thumb').classList.add('premium-content-item-thumb--empty')"
-              >
-            </div>
-            <div class="premium-content-item-body">
-              <span class="premium-content-item-type premium-content-item-type--body">ボディワーク音声</span>
-              <h4 class="premium-content-item-title">頭ではなく身体に戻る</h4>
-              <p class="premium-content-item-desc">
-                呼吸と身体感覚へ戻るための、<br>
-                ガイドつきボディスキャン。
-              </p>
-              <!-- TODO: 実ファイルURL確定後に差し替え -->
-              <a href="#" class="premium-content-item-link" aria-label="Content 02 を開く（準備中）">
-                Content 02 を開く →
-              </a>
-            </div>
-          </article>
-
-        </div>
-      </section>
-
-      <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-           JOURNAL
-      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
-      <section id="journal" class="premium-journal-section" data-premium="journal">
-        <span class="premium-section-label">JOURNAL</span>
-        <div class="premium-journal-inner">
-          <div class="premium-journal-main">
-            <!-- TODO: Journalツール確定後に href を差し替え -->
-            <a href="#" class="premium-journal-primary">今日の記録を書く</a>
-            <div class="premium-journal-sub-links">
-              <a href="#" class="premium-link">Weekly Note を見る →</a>
-              <a href="#" class="premium-link">Monthly Review を書く →</a>
-            </div>
-          </div>
-          <p class="premium-journal-note">
-            完璧に続ける必要はありません。<br>
-            戻ってきた日が、また始まりです。
-          </p>
-        </div>
-      </section>
-
-      <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-           NEXT SESSION
-      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
-      <section id="next-session" class="premium-session-section" data-premium="next-session">
-        <span class="premium-section-label">NEXT SESSION</span>
-        <div class="premium-session-inner">
-          <div class="premium-session-info">
-            <p class="premium-session-title">次回個別セッション</p>
-            <p class="premium-session-detail">日程：個別調整中　／　形式：Zoom 1対1</p>
-          </div>
-          <div class="premium-session-prep-block">
-            <p class="premium-session-prep-label">セッション前に書いておくと良いこと</p>
-            <ul class="premium-session-prep-list">
-              <li>今の状態を一言で</li>
-              <li>最近気になっていること</li>
-              <li>今日触れたいこと</li>
-            </ul>
-          </div>
-          <!-- TODO: セッション準備ページ確定後に href を差し替え -->
-          <a href="#" class="premium-link">セッション準備を見る →</a>
-        </div>
-      </section>
-
-      <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-           SIX-MONTH JOURNEY
-      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
-      <section id="six-month-journey" class="section-block premium-journey-section" data-premium="six-month-journey">
-        <span class="premium-section-label">SIX-MONTH JOURNEY</span>
-        <p class="premium-journey-lead">6か月の旅路</p>
-        <p class="premium-journey-desc">
-          これは、あなたが今いる場所の地図です。<br>
-          どこまで進んだかを測るためではなく、<br>
-          今ここにいることを確かめるために見てください。
+      <!-- Communityとの違い -->
+      <div class="section-block">
+        <h3>Community との違い</h3>
+        <p>
+          どちらが上でも下でもありません。<br>
+          今の自分に合う関わり方が、よい関わり方です。
         </p>
-        <ol class="premium-journey-list" data-current="1">
-          <li class="premium-journey-item premium-journey-item--current" data-month="1">
-            <div class="premium-journey-item-head">
-              <span class="premium-journey-marker" aria-label="現在地">◎</span>
-              <span class="premium-journey-month-num">Month 01</span>
-              <span class="premium-journey-theme">自分の中心に還る</span>
-            </div>
-            <div class="premium-journey-item-detail">
-              <p class="premium-journey-transform">
-                <span class="premium-journey-before">「学ばなければ」という焦り</span>
-                <span class="premium-journey-arrow" aria-hidden="true">→</span>
-                <span class="premium-journey-after">今の自分を、そのまま言葉にできる</span>
-              </p>
-              <p class="premium-journey-key"><span class="premium-journey-key-label">Key Experience</span>現在地ワークシート／静けさに触れる音声ガイダンス</p>
-            </div>
-          </li>
-          <li class="premium-journey-item" data-month="2">
-            <div class="premium-journey-item-head">
-              <span class="premium-journey-marker" aria-label="これから">○</span>
-              <span class="premium-journey-month-num">Month 02</span>
-              <span class="premium-journey-theme">委ねる</span>
-            </div>
-            <div class="premium-journey-item-detail">
-              <p class="premium-journey-transform">
-                <span class="premium-journey-before">「正解を持っていなければ」という緊張</span>
-                <span class="premium-journey-arrow" aria-hidden="true">→</span>
-                <span class="premium-journey-after">知らないことへの抵抗が緩み、委ねられる</span>
-              </p>
-              <p class="premium-journey-key"><span class="premium-journey-key-label">Key Experience</span>委ねる感覚を探る音声ガイダンス／AIとの対話実践</p>
-            </div>
-          </li>
-          <li class="premium-journey-item" data-month="3">
-            <div class="premium-journey-item-head">
-              <span class="premium-journey-marker" aria-label="これから">○</span>
-              <span class="premium-journey-month-num">Month 03</span>
-              <span class="premium-journey-theme">身体の声を聴く</span>
-            </div>
-            <div class="premium-journey-item-detail">
-              <p class="premium-journey-transform">
-                <span class="premium-journey-before">頭の判断が先に立ち、身体は後回しになる</span>
-                <span class="premium-journey-arrow" aria-hidden="true">→</span>
-                <span class="premium-journey-after">判断より先に、身体の感覚に気づける</span>
-              </p>
-              <p class="premium-journey-key"><span class="premium-journey-key-label">Key Experience</span>ボディスキャン音声／身体観察ジャーナル（1週間）</p>
-            </div>
-          </li>
-          <li class="premium-journey-item" data-month="4">
-            <div class="premium-journey-item-head">
-              <span class="premium-journey-marker" aria-label="これから">○</span>
-              <span class="premium-journey-month-num">Month 04</span>
-              <span class="premium-journey-theme">手放しと整え</span>
-            </div>
-            <div class="premium-journey-item-detail">
-              <p class="premium-journey-transform">
-                <span class="premium-journey-before">気づかないまま、多くのものを持ち続けている</span>
-                <span class="premium-journey-arrow" aria-hidden="true">→</span>
-                <span class="premium-journey-after">手放して軽くなり、つながる余白が生まれる</span>
-              </p>
-              <p class="premium-journey-key"><span class="premium-journey-key-label">Key Experience</span>棚卸しワーク／生活と環境を整える実践ワーク</p>
-            </div>
-          </li>
-          <li class="premium-journey-item" data-month="5">
-            <div class="premium-journey-item-head">
-              <span class="premium-journey-marker" aria-label="これから">○</span>
-              <span class="premium-journey-month-num">Month 05</span>
-              <span class="premium-journey-theme">表現する</span>
-            </div>
-            <div class="premium-journey-item-detail">
-              <p class="premium-journey-transform">
-                <span class="premium-journey-before">内側にあるものを、外に出すことへの抵抗</span>
-                <span class="premium-journey-arrow" aria-hidden="true">→</span>
-                <span class="premium-journey-after">言葉・声・身体・選択として、自分を表現できる</span>
-              </p>
-              <p class="premium-journey-key"><span class="premium-journey-key-label">Key Experience</span>内側の声を外へ出す音声／小さな表現ワーク（1日1つ）</p>
-            </div>
-          </li>
-          <li class="premium-journey-item" data-month="6">
-            <div class="premium-journey-item-head">
-              <span class="premium-journey-marker" aria-label="これから">○</span>
-              <span class="premium-journey-month-num">Month 06</span>
-              <span class="premium-journey-theme">自然に動く</span>
-            </div>
-            <div class="premium-journey-item-detail">
-              <p class="premium-journey-transform">
-                <span class="premium-journey-before">「しなければならない」という力み</span>
-                <span class="premium-journey-arrow" aria-hidden="true">→</span>
-                <span class="premium-journey-after">「したい」から、自然に動けている</span>
-              </p>
-              <p class="premium-journey-key"><span class="premium-journey-key-label">Key Experience</span>6か月のまとめジャーナル／次の人生を始めるクロージング音声</p>
-            </div>
-          </li>
-        </ol>
-      </section>
+        <div class="compare-list">
+          <div class="compare-item">
+            <span class="compare-item-label">Premium</span>
+            <p class="compare-item-text">
+              一人ひとりの人生全体を、<br>
+              6か月かけて個別に整えていく伴走です。<br>
+              現実の行動まで、具体的に動かしたい方へ。
+            </p>
+          </div>
+          <div class="compare-item">
+            <span class="compare-item-label">Community</span>
+            <p class="compare-item-text">
+              共に育つ場所です。<br>
+              同じ Growth Theme を仲間と見つめながら、<br>
+              自分のペースで継続していきます。
+            </p>
+          </div>
+        </div>
+      </div>
 
-      <div id="monthly-review"></div>
-      <a href="../academy.html" class="back-link">← Academy</a>
+      <!-- 6か月という設計について -->
+      <div class="section-block">
+        <h3>6か月という設計について</h3>
+        <p>
+          内側が整い、<br>
+          現実の行動へつながり、<br>
+          次の Spiral（循環）へ進んでいく。<br><br>
+          Premium は、その一巡りを、<br>
+          6か月かけて丁寧に体験していく伴走です。
+        </p>
+        <p>
+          月ごとに何を学ぶかを決めるのではなく、<br>
+          今の自分の現在地から、<br>
+          自然に整っていく順番で進んでいきます。
+        </p>
+      </div>
+
+      <!-- Quiet CTA -->
+      <div class="quiet-cta">
+        <p>
+          急がなくていい。<br>
+          今の自分に合うと感じたら、それで十分です。
+        </p>
+        <div class="academy-nav-links">
+          <a href="apply.html#premium">Premiumに申し込む →</a>
+          <a href="community.html">Communityを詳しく見る →</a>
+        </div>
+      </div>
+
+      <!-- LINE block -->
+      <div class="line-block">
+        <h3>LINE</h3>
+        <p>
+          迷っていても大丈夫です。<br><br>
+          質問や確認したいことがあれば、<br>
+          LINEから気軽にご連絡ください。
+        </p>
+        <div class="line-card">
+          <a class="line-btn" href="https://lin.ee/wP4UfPR" target="_blank" rel="noopener">LINEで相談する</a>
+          <div class="line-qr-section">
+            <p class="line-qr-note">QRでも追加できます</p>
+            <img class="line-qr-img" src="../assets/line-qr-black.png" alt="LINE QR コード" width="96" height="96">
+          </div>
+        </div>
+      </div>
+
+      <a href="program.html" class="back-link">← プログラム</a>
 
     </div>
 
