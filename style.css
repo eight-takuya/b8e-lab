@@ -127,12 +127,8 @@ a:hover {
   display: block;
   opacity: 0.5;
 }
-/*
-.logo-wordmark {
-  color: #b5a88f; 
-}
-*/
-.site-header h1 {
+.site-header h1,
+.site-header .logo-wordmark {
   font-size: 0.7rem;
   font-weight: 200;
   color: #c0b8ad;
@@ -1181,6 +1177,65 @@ a:hover {
 .academy-nav-links a:hover {
   color: #7a5f44;
   border-color: #9b7b5c;
+}
+
+
+/* ------------------------------------------------------------
+   A3.5 — Offer List / Compare Block（Community・Premium LP共通）
+   ------------------------------------------------------------ */
+
+.offer-list {
+  margin-top: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.offer-item {
+  padding: 12px 0 12px 20px;
+  border-left: 2px solid #ece9e5;
+}
+
+.offer-item-title {
+  display: block;
+  font-size: 0.9rem;
+  color: #6b6560;
+  letter-spacing: 0.02em;
+  margin-bottom: 4px;
+}
+
+.offer-item-desc {
+  display: block;
+  font-size: 0.88rem;
+  color: #aaa;
+  line-height: 1.9;
+}
+
+.compare-list {
+  margin-top: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.compare-item {
+  padding: 16px 0 16px 20px;
+  border-left: 2px solid #d8c9ae;
+}
+
+.compare-item-label {
+  display: block;
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #9b7b5c;
+  margin-bottom: 10px;
+}
+
+.compare-item-text {
+  font-size: 0.92rem;
+  color: #666;
+  line-height: 2.1;
 }
 
 
