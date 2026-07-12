@@ -6,16 +6,19 @@
 
 ## Version History
 
-### v1.0
+### v1.0 — 完成・正式運用開始
 2026-07
 
-- Brand OGP System 設計確定（Design Philosophy / Brand Rules）
+- Brand OGP System 設計確定（Design Philosophy / Brand Rules / Change Policy）
 - OGP_Template_Master.pptx 正式マスター化（PowerPoint Slide Master運用）
 - Slide 01 Brand Manual化
 - 公開9ページ分のOGP画像生成（`generated/`配下）
 - 該当HTML9ページの `og:image` 反映
+- Dreamin' Spiral Brand Design System（`assets/brand/`）の入口を整備
 
-Future
+v1.0はここまでの範囲で完成しており、未完了項目はない。
+
+### v1.1以降（拡張予定・未着手）
 
 - Community Portal 用スライド追加
 - Premium Portal 用スライド追加
@@ -346,6 +349,22 @@ assets/ogp/generated/ へ配置
 - `generated/` 配下のPNGを直接編集しない
 - 個別ページだけ独自フォントを使用しない
 - Slide 01をPNGへ書き出さない
+
+---
+
+## Change Policy
+
+Brand Rulesが日々の運用ルール（何をして良いか／悪いか）であるのに対し、Change Policyは変更そのものをどう判断するかの原則である。
+
+Brand OGP Systemは、その場限りの制作物ではなく、Dreamin' Spiralが長期的に運用し続けるブランド資産である。この前提に立ち、変更の判断は次の原則に従う。
+
+背景・配色・余白・ロゴの位置・レイアウトは、個別のページ単位では変更しない。あるページだけ見栄えを整えたい、という理由での例外対応は行わない。これらはブランド全体の一貫性そのものであり、1ページのための調整が、他の全ページの統一性を崩すことになるためである。
+
+正式な変更として扱うのは、ブランド全体に影響する変更のみである。配色・フォント・余白といったブランド仕様そのものを見直す場合は、この README と PowerPointのSlide Masterを同時に更新し、両者が常に一致した状態を保つ。どちらか一方だけを更新した状態を残さない。
+
+新しい用途（新しいページ、新しい展開先）が生まれた場合も、既存のレイアウトを壊してその用途に合わせるのではなく、既存の構成を保ったまま正式なレイアウトとして追加する。
+
+`generated/` 配下のPNGは、マスターからの書き出し結果として扱い、直接編集しない。正式マスターは `OGP_Template_Master.pptx` の1つのみとし、v2・final・最新版といった複製ファイルを作らない。変更の履歴はファイルを増やすことではなく、Gitのコミット履歴で管理する。
 
 ---
 
