@@ -3416,14 +3416,7 @@ a:hover {
   }
 }
 
-/* ===== A9. Plan Price & Apply Flow — 公開導線改善（2026-07） ===== */
-
-p.plan-price {
-  margin-top: 22px;
-  font-size: 1.02rem;
-  color: #2a2a2a;
-  letter-spacing: 0.05em;
-}
+/* ===== A9. Apply Flow — 公開導線改善（2026-07） ===== */
 
 .apply-flow {
   margin: 20px 0 0;

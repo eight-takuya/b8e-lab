@@ -14,15 +14,15 @@
 ### Changes
 
 - **`academy.html`** — quiet-cta に「実践の形を見る →」（`academy/program.html`）を先頭に追加。既存の library / session リンクは保持（「まずは」の一語のみ調整）。CTA は3本に留め、静かな設計思想を維持
-- **`academy/program.html`** — Community / Premium 各ブロックに料金を追記（月額 ¥20,000／¥500,000・6ヶ月・一括）。Community の提供内容を Stripe Payment Link の記載に整合（週1回集団セッション・月1回個別セッション・アーカイブ視聴）。quiet-cta に「参加までの流れを確認する →」（apply.html）を追加し、重複していた LINE リンクを quiet-cta から削除（直下の LINE block に集約）
-- **`academy/premium.html`** — 「料金」セクションを新設（¥500,000・6ヶ月・一括、内容の要約付き）。compare-list を撤去し「ふたつの関わり方を見比べる →」（program.html）への参照に一本化。quiet-cta に「まず相談してみる →」（apply.html#consult）を追加
-- **`academy/community.html`** — 提供内容を Stripe の記載に整合（Weekly Group Session へ変更・Monthly Personal Session を追加・5項目に）。「料金」セクション新設（月額 ¥20,000・定期購入）。compare-list を program.html への参照に一本化。「まず相談してみる →」を追加
-- **`academy/apply.html`** — Community / Premium 両ブロックに料金を追記（Stripe 画面で初めて価格を知る状態を解消）。Community の内容記載を Stripe に整合。「お申し込み後の流れ」セクションを新設（決済 → メール・LINE で案内 → 初回セッション日程調整、＋案内が届かない場合の LINE 連絡）
-- **`style.css`** — `.plan-price` と `.apply-flow` を末尾に追加（A9）。既存パレット（#2a2a2a / #555 / #aaa）に整合
+- **`academy/program.html`** — quiet-cta に「参加までの流れを確認する →」（apply.html）を追加し、重複していた LINE リンクを quiet-cta から削除（直下の LINE block に集約）
+- **`academy/premium.html`** — compare-list を撤去し「ふたつの関わり方を見比べる →」（program.html）への参照に一本化（比較の正本は program.html）。quiet-cta に「まず相談してみる →」（apply.html#consult）を追加
+- **`academy/community.html`** — compare-list を program.html への参照に一本化。「まず相談してみる →」を追加
+- **`academy/apply.html`** — 「お申し込み後の流れ」セクションを新設（決済 → メール・LINE で案内 → 初回セッション日程調整、＋案内が届かない場合の LINE 連絡）
+- **`style.css`** — `.apply-flow` を末尾に追加（A9）。既存パレット（#555）に整合
 
-### 価格の根拠
+### Correction（同一 PR 内で撤回）
 
-Stripe Payment Link の実画面（ユーザー提供のスクリーンショット・2026-07-17）。Premium ¥500,000（一括・6ヶ月）、Community ¥20,000/月（定期購入）。税込/税別の表記は Stripe 画面に無いため記載せず、請求額のみ表示
+当初、Stripe Payment Link の現行登録内容（Premium ¥500,000・Community 月額 ¥20,000・週1回集団/月1回個別等）を根拠として料金表示と提供内容の変更を含めていたが、**Stripe の登録内容は旧 Offer であり、リニューアル後の Premium / Community の正本ではない**ことが確認されたため、同一 PR 内の追加コミットで全て撤回した。料金・提供内容は Offer Definition のユーザー確認後に、正しい上流（最新設計 → ユーザー確認 → HP/LP → Stripe）の順で反映する。Offer 候補の棚卸しは dreamin-spiral-core `docs/repository-architecture/academy-offer-definition-candidates.md`（Draft）を参照
 
 ### 導線方針
 
