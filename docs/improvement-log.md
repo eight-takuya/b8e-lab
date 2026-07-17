@@ -6,6 +6,36 @@
 ---
 
 ---
+## [2026-07-17] — Academy 公開導線の改善（Program → Apply の Customer Journey）
+
+**Scope:** `academy.html`, `academy/program.html`, `academy/premium.html`, `academy/community.html`, `academy/apply.html`, `style.css`
+**Triggered by:** Academy Customer Journey 棚卸し（dreamin-spiral-core `docs/repository-architecture/academy-current-customer-journey.md` ほか）。入口 LP から Offer への導線が0本、料金表示が全ページ0件、比較説明が3ページに重複していたため
+
+### Changes
+
+- **`academy.html`** — quiet-cta に「実践の形を見る →」（`academy/program.html`）を先頭に追加。既存の library / session リンクは保持（「まずは」の一語のみ調整）。CTA は3本に留め、静かな設計思想を維持
+- **`academy/program.html`** — Community / Premium 各ブロックに料金を追記（月額 ¥20,000／¥500,000・6ヶ月・一括）。Community の提供内容を Stripe Payment Link の記載に整合（週1回集団セッション・月1回個別セッション・アーカイブ視聴）。quiet-cta に「参加までの流れを確認する →」（apply.html）を追加し、重複していた LINE リンクを quiet-cta から削除（直下の LINE block に集約）
+- **`academy/premium.html`** — 「料金」セクションを新設（¥500,000・6ヶ月・一括、内容の要約付き）。compare-list を撤去し「ふたつの関わり方を見比べる →」（program.html）への参照に一本化。quiet-cta に「まず相談してみる →」（apply.html#consult）を追加
+- **`academy/community.html`** — 提供内容を Stripe の記載に整合（Weekly Group Session へ変更・Monthly Personal Session を追加・5項目に）。「料金」セクション新設（月額 ¥20,000・定期購入）。compare-list を program.html への参照に一本化。「まず相談してみる →」を追加
+- **`academy/apply.html`** — Community / Premium 両ブロックに料金を追記（Stripe 画面で初めて価格を知る状態を解消）。Community の内容記載を Stripe に整合。「お申し込み後の流れ」セクションを新設（決済 → メール・LINE で案内 → 初回セッション日程調整、＋案内が届かない場合の LINE 連絡）
+- **`style.css`** — `.plan-price` と `.apply-flow` を末尾に追加（A9）。既存パレット（#2a2a2a / #555 / #aaa）に整合
+
+### 価格の根拠
+
+Stripe Payment Link の実画面（ユーザー提供のスクリーンショット・2026-07-17）。Premium ¥500,000（一括・6ヶ月）、Community ¥20,000/月（定期購入）。税込/税別の表記は Stripe 画面に無いため記載せず、請求額のみ表示
+
+### 導線方針
+
+- LINE 登録者（人生覚醒チャンネル約70名）への案内入口は `program.html` を推奨（academy.html は「初めまして」のページであるため）
+- Success / Welcome / Member Start Page / Portal は本変更の対象外（別工程）
+- 特定商取引法に基づく表記・利用規約・プライバシーポリシーは未整備のまま（Launch Blocker として別途対応）
+
+### 未対応・フォローアップ
+
+- グローバルナビ・フッターは15ページ連動のため無変更
+- `docs/site-structure.md` の導線記述は本変更後に更新が必要（community/premium の孤立ページ記述は commit 1f24772 時点で既に古い）
+
+---
 ## [2026-07-06] — premium.html / premium-portal.html の責務分離を明確化
 
 **Scope:** `docs/site-structure.md`, `academy/premium.html`（冒頭コメントのみ）, `academy/premium-portal.html`（冒頭コメントのみ）
