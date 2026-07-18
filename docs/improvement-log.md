@@ -6,6 +6,24 @@
 ---
 
 ---
+## [2026-07-18] — Academy Offer 記載を正式決定の Offer Definition へ整合
+
+**Scope:** `academy/premium.html`, `academy/community.html`, `academy/program.html`, `academy/apply.html`
+**Triggered by:** Offer Definition の正式決定（2026-07-18 ユーザー決定。正本は dreamin-spiral-core `docs/repository-architecture/academy-offer-definition.md`・core PR #65）。Source of Truth は 2026-07-11 V3 設計＋本決定であり、旧 Stripe 登録内容は正本としない
+
+### Changes
+
+- **`academy/premium.html`** — 提供内容を確定構成の4つへ（Personal Lesson 月1回／Learning Video 月2本／My Portal＝メッセージ伴走・気づき記録・振り返り・進捗確認／Community Access）。meta description も更新
+- **`academy/community.html`** — 提供内容を確定構成の4つへ（Monthly Group Session 月1回／Archive／Learning Resources／Community Portal＝今月の内容・来月の予定・お知らせの共通の場）。meta / og:description も更新
+- **`academy/program.html`** — Community・Premium 両ブロックの内容記載を確定構成へ。Community の紹介文を「共に学び、共に体験する場所」に
+- **`academy/apply.html`** — 両ブロックの内容記載を確定構成へ
+- **料金は未確定のため、金額は一切記載していない**
+
+### Offer の責務整理（正本より）
+
+Premium ＝ Personal Experience（個別 My Portal・個別記録・Message Support）／Community ＝ Shared Experience（Community Portal は1つ・個別 ID/PW 認証・表示は全員共通・個別記録は扱わない）
+
+---
 ## [2026-07-17] — Academy 公開導線の改善（Program → Apply の Customer Journey）
 
 **Scope:** `academy.html`, `academy/program.html`, `academy/premium.html`, `academy/community.html`, `academy/apply.html`, `style.css`
