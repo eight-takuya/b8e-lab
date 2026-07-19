@@ -142,6 +142,8 @@ Slide 01（Brand Manual）も同じ`OGP_MASTER`レイアウトを使用する。
 | 08 | Guide Session | `session` |
 | 09 | Apply | `apply` |
 | 10 | Library | `library` |
+| 11 | Community Apply | `community-apply` |
+| 12 | Premium Apply | `premium-apply` |
 
 運用ルール：
 
@@ -389,6 +391,8 @@ Community Portal / Premium Portal / DX支援などを追加する場合も、同
 | Guide Session | DREAMIN' SPIRAL ACADEMY | 無料ガイドセッション | 今の自分の言葉で、話してみる。 |
 | Apply | DREAMIN' SPIRAL ACADEMY | 参加方法を選ぶ | あなたに合う入口から、静かに。 |
 | Library | DREAMIN' SPIRAL ACADEMY | 人生再起動ガイド | 人生再起動の、入口へ。 |
+| Community Apply | DREAMIN' SPIRAL ACADEMY | Community に参加する | 共に育つ場へ。 |
+| Premium Apply | DREAMIN' SPIRAL ACADEMY | Premium 伴走を始める | 個別の伴走を、始める。 |
 
 **将来拡張分（参考・未確定）**
 
@@ -415,5 +419,9 @@ Community Portal / Premium Portal / DX支援などを追加する場合も、同
 | `academy/session.html` | `https://www.b8e.co.jp/assets/ogp/generated/session.png` |
 | `academy/apply.html` | `https://www.b8e.co.jp/assets/ogp/generated/apply.png` |
 | `academy/library.html` | `https://www.b8e.co.jp/assets/ogp/generated/library.png` |
+| `academy/community-apply.html` | `https://www.b8e.co.jp/assets/ogp/generated/community-apply.png` |
+| `academy/premium-apply.html` | `https://www.b8e.co.jp/assets/ogp/generated/premium-apply.png` |
 
 `academy/community.html` / `academy/premium.html` が暫定利用していた`assets/community/bg_v01.png`は、v1.0で正式なOGP画像に置き換え済み。og:imageはすべて絶対URLで記載する（SNSクローラーによっては相対パスを正しく解決できないため）。
+
+**v1.0.1追記：** Community Apply / Premium Apply の専用OGP（Slide 11 / 12）を追加。決済後の Success ページ（`community-success.html` / `premium-success.html`）は `noindex` で SNS 共有を想定しないため、専用OGPは作らず親サービスの `community.png` / `premium.png` を流用する。Twitter Card 用タグ（`twitter:*`）はサイト全体で使用しておらず（X は og: にフォールバック）、本システムも og: のみで統一する。
