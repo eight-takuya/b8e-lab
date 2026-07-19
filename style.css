@@ -3429,3 +3429,103 @@ a:hover {
   line-height: 2.1;
   margin-bottom: 8px;
 }
+
+/* ------------------------------------------------------------
+   A6. Academy Journey Map（Program — Academy の歩き方）
+   ------------------------------------------------------------ */
+
+.journey-map {
+  margin-top: 28px;
+  display: flex;
+  flex-direction: column;
+}
+
+.journey-step {
+  padding: 14px 0 14px 20px;
+  border-left: 2px solid #ece9e5;
+}
+
+.journey-step-phase {
+  display: block;
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  color: #9b7b5c;
+  margin-bottom: 6px;
+}
+
+.journey-step-desc {
+  font-size: 0.92rem;
+  color: #666;
+  line-height: 2;
+  margin-bottom: 10px;
+}
+
+.journey-step-link {
+  font-size: 0.88rem;
+  color: #9b7b5c;
+  border-bottom: 1px solid #c9a882;
+  padding-bottom: 2px;
+  text-decoration: none;
+  letter-spacing: 0.03em;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.journey-step-link:hover {
+  color: #7a5f44;
+  border-color: #9b7b5c;
+}
+
+.journey-arrow {
+  padding: 4px 0 4px 20px;
+  color: #c9b8a5;
+  font-size: 0.85rem;
+  line-height: 1.6;
+}
+
+.journey-fork {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px 40px;
+}
+
+.journey-fork > div {
+  flex: 1 1 220px;
+}
+
+.journey-end {
+  margin-top: 20px;
+  padding-left: 20px;
+  font-size: 0.85rem;
+  color: #aaa;
+  letter-spacing: 0.05em;
+}
+
+/* 主導線（Quiet CTA 内の第一リンク） */
+.academy-nav-links a.link-primary {
+  color: #7a5f44;
+  border-bottom-color: #9b7b5c;
+  font-weight: 500;
+}
+
+/* Quiet CTA 内で導線グループを分けるときの間隔 */
+.quiet-cta .academy-nav-links + p {
+  margin-top: 36px;
+}
+
+/* Stripe 等の申込リンクを section-block 内でも同じ静かな表現に */
+.section-block .cta-link {
+  display: inline-block;
+  margin-top: 20px;
+  font-size: 0.88rem;
+  color: #9b7b5c;
+  border-bottom: 1px solid #c9a882;
+  padding-bottom: 2px;
+  letter-spacing: 0.03em;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.section-block .cta-link:hover {
+  color: #7a5f44;
+  border-color: #9b7b5c;
+  text-decoration: none;
+}
