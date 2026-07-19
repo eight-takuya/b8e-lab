@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>参加の入口 | Dreamin' Spiral Academy</title>
   <meta name="description" content="参加の入口は、それぞれのページに移りました。Academy の歩き方から、今の自分に合う入口へ進めます。">
+  <meta name="robots" content="noindex, follow">
   <link rel="canonical" href="https://www.b8e.co.jp/academy/apply.html">
   <meta property="og:type" content="website">
   <meta property="og:title" content="参加の入口 | Dreamin' Spiral Academy">
@@ -119,5 +120,20 @@
   </footer>
 
   <script src="../scroll.js"></script>
+  <script>
+    // 旧アンカー（apply.html#community / #premium / #consult）で到達した利用者を、
+    // 対応する入口リンクへ静かに案内する（クライアント側の案内のみ。自動リダイレクトはせず、
+    // 他の入口も選べるよう選択肢を残す）。
+    (function () {
+      var allowed = { community: 'community', premium: 'premium', consult: 'consult' };
+      var key = (location.hash || '').replace('#', '');
+      if (!Object.prototype.hasOwnProperty.call(allowed, key)) return;
+      var target = document.getElementById(allowed[key]);
+      if (!target) return;
+      target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      target.setAttribute('tabindex', '-1');
+      target.focus({ preventScroll: true });
+    })();
+  </script>
 </body>
 </html>
