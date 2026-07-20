@@ -6,6 +6,19 @@
 ---
 
 ---
+## [2026-07-20] — Stripe Product Description aligned with Offer Definition
+
+**Scope:** Stripe（Community / Premium の Product Description）。リポジトリ内のファイル変更なし
+**Triggered by:** Stripe の商品説明文が Offer Definition（dreamin-spiral-core [`academy-offer-definition.md`](https://github.com/eight-takuya/dreamin-spiral-core/blob/main/docs/repository-architecture/academy-offer-definition.md)・2026-07-18 正式決定）と不整合だったため
+
+### Changes
+
+- Stripe の Community / Premium の **Product Description を、Offer Definition の確定表現へ更新**（新規の説明文は作成していない）
+- 商品名・価格・決済方法・Payment Link・Success URL・税設定は**変更なし**
+- 料金（Offer Definition 未決事項 P-1）は今回の対象外
+- b8e-lab の LP（`academy/community.html` / `academy/premium.html`）との整合を確認
+
+---
 ## [2026-07-18] — Academy Offer 記載を正式決定の Offer Definition へ整合
 
 **Scope:** `academy/premium.html`, `academy/community.html`, `academy/program.html`, `academy/apply.html`
