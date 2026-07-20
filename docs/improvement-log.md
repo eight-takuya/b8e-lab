@@ -6,6 +6,44 @@
 ---
 
 ---
+## [2026-07-20] — Stripe Product Description aligned with Offer Definition
+
+**Scope:** Stripe（Community / Premium の Product Description）。リポジトリ内のファイル変更なし
+**Triggered by:** Offer Definition（正本）と Stripe 登録内容の不整合。正本は dreamin-spiral-core [`docs/repository-architecture/academy-offer-definition.md`](https://github.com/eight-takuya/dreamin-spiral-core/blob/main/docs/repository-architecture/academy-offer-definition.md)（2026-07-18 正式決定・core PR #65）
+
+### Changes
+
+- Stripe の **Community / Premium の商品説明文（Product Description）を更新**
+- 説明文は Offer Definition を **Single Source of Truth** として反映
+- **新しい説明文は作成せず、正本の確定表現をそのまま採用**
+- **商品名・価格・決済方法・Payment Link・Success URL・税設定等は変更なし**（Product Description のみ更新）
+- b8e-lab の LP（`academy/community.html` / `academy/premium.html`）との整合も確認済み
+
+### 反映した説明文
+
+| 商品 | Product Description |
+|---|---|
+| Community | 共に学び、共に体験する場としてのCommunity。月1回のGroup Session、Archive、Learning Resources、Community Portalが含まれます。 |
+| Premium | 一人ひとりの人生全体を、6か月かけて整える個別伴走。月1回の個別レッスン、月2本のLearning Video、一人ひとり専用のMy Portal、Community Accessが含まれます。 |
+
+### 管理方針（本更新により確立）
+
+```
+dreamin'-spiral-core / docs/repository-architecture/academy-offer-definition.md   ← 正本
+        ↓
+b8e-lab LP（academy/community.html・academy/premium.html）
+        ↓
+Stripe Product Description
+```
+
+Offer に関する記載は、常に上流（正本）から下流（LP → Stripe）の順で反映する。Stripe の登録内容を正本として扱わない。
+
+### 対象外
+
+- 料金は Offer Definition の未決事項 P-1 のままで、**今回は触れていない**（Stripe の金額は旧 Offer のまま）
+- Payment Link / Success URL / 税設定 / 商品名は現状維持
+
+---
 ## [2026-07-18] — Academy Offer 記載を正式決定の Offer Definition へ整合
 
 **Scope:** `academy/premium.html`, `academy/community.html`, `academy/program.html`, `academy/apply.html`
