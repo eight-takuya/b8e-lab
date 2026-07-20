@@ -10,7 +10,7 @@
   <meta property="og:title" content="Community に参加する | Dreamin' Spiral Academy">
   <meta property="og:description" content="Dreamin' Spiral Academy Community への参加申込ページです。">
   <meta property="og:url" content="https://www.b8e.co.jp/academy/community-apply.html">
-  <meta property="og:image" content="https://www.b8e.co.jp/assets/ogp/generated/apply.png">
+  <meta property="og:image" content="https://www.b8e.co.jp/assets/ogp/generated/community-apply.png">
   <link rel="stylesheet" href="../style.css">
   <script defer src="/_vercel/insights/script.js"></script>
 </head>
@@ -72,11 +72,11 @@
         </p>
         <a class="cta-link" href="https://buy.stripe.com/28E8wJe6MftWdGScEk0x205" target="_blank" rel="noopener">Community に参加する</a>
         <p class="form-note">ご参加後、メールと LINE にて今後の流れをご案内します。</p>
-        <!-- TODO: Stripe決済後 Success ページへ移設予定
-          「お申し込みありがとうございます。
-           ここから新しい流れが、静かに始まります。
-           今後の案内はメールをご確認ください。LINE 案内もお送りします。」
-        -->
+        <!-- 決済後の案内は community-success.html に用意済み。
+             Stripe Payment Link の「支払い後」→「Web サイトにリダイレクト」を
+             https://www.b8e.co.jp/academy/community-success.html に設定すると、
+             決済完了後この Success ページへ遷移する（Stripe 管理画面での設定が必要）。
+             詳細は docs/academy-apply-migration.md / PR 本文の Stripe 手順を参照。 -->
       </div>
 
       <!-- お申し込み後の流れ -->
@@ -99,7 +99,7 @@
           迷いがあるなら、急がなくて大丈夫です。
         </p>
         <div class="academy-nav-links">
-          <a href="session.html">まず Session で話してみる →</a>
+          <a href="session.html?from=community-apply">まず Session で話してみる →</a>
           <a href="community.html">Community の内容を見直す →</a>
         </div>
       </div>

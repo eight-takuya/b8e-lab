@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>参加の入口 | Dreamin' Spiral Academy</title>
-  <meta name="description" content="参加の入口は、それぞれのページに移りました。Academy の歩き方から、今の自分に合う入口へ進めます。">
+  <title>お申し込みありがとうございます | Premium | Dreamin' Spiral Academy</title>
+  <meta name="description" content="Premium 伴走へのお申し込みが完了しました。これより、あなたの人生の再設計がスタートします。">
   <meta name="robots" content="noindex, follow">
-  <link rel="canonical" href="https://www.b8e.co.jp/academy/apply.html">
+  <link rel="canonical" href="https://www.b8e.co.jp/academy/premium-success.html">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="参加の入口 | Dreamin' Spiral Academy">
-  <meta property="og:description" content="参加の入口は、それぞれのページに移りました。Academy の歩き方から、今の自分に合う入口へ進めます。">
-  <meta property="og:url" content="https://www.b8e.co.jp/academy/apply.html">
-  <meta property="og:image" content="https://www.b8e.co.jp/assets/ogp/generated/apply.png">
+  <meta property="og:title" content="お申し込みありがとうございます | Premium | Dreamin' Spiral Academy">
+  <meta property="og:description" content="Premium 伴走へのお申し込みが完了しました。これより、あなたの人生の再設計がスタートします。">
+  <meta property="og:url" content="https://www.b8e.co.jp/academy/premium-success.html">
+  <meta property="og:image" content="https://www.b8e.co.jp/assets/ogp/generated/premium.png">
   <link rel="stylesheet" href="../style.css">
   <script defer src="/_vercel/insights/script.js"></script>
 </head>
@@ -41,41 +41,49 @@
   <main>
 
     <!-- Hero -->
-    <section class="apply-hero">
-      <span class="hero-label">Entry</span>
-      <h1 class="hero-copy">
-        あなたに合う<br>
-        参加方法を。
-      </h1>
+    <section class="thanks-hero">
+      <span class="hero-label">Premium</span>
+      <p class="hero-copy">
+        ありがとうございます。
+      </p>
     </section>
 
     <div class="page-content">
 
-      <!-- Intro -->
-      <div class="page-intro">
+      <!-- Success message -->
+      <div class="thanks-message">
         <p>
-          参加の入口は、それぞれのページに移りました。<br>
-          今の自分に合う入口から、静かに始めることができます。
+          お申し込みありがとうございます。
+        </p>
+        <p class="thanks-note">
+          これより、あなたの人生の<br>
+          再設計がスタートします。
         </p>
       </div>
 
-      <!-- 入口のご案内 -->
+      <!-- これからの流れ -->
       <div class="section-block">
-        <h3>入口のご案内</h3>
-        <div class="academy-nav-links">
-          <a href="program.html" class="link-primary">Academy の歩き方を見る →</a>
-          <a href="community-apply.html" id="community">Community に参加する →</a>
-          <a href="premium-apply.html" id="premium">Premium 伴走を始める →</a>
-          <a href="session.html?from=apply#apply" id="consult">Session（無料ガイドセッション）を申し込む →</a>
-        </div>
+        <h3>これからの流れ</h3>
+        <p>
+          今後の案内はメールをご確認ください。<br>
+          LINE 案内もお送りします。
+        </p>
+        <p>
+          最初の Session の日程は、<br>
+          ご連絡の中で一緒に決めていきます。
+        </p>
+        <p class="form-note">
+          案内が届かない場合は、迷惑メールフォルダをご確認のうえ、<br>
+          下記の LINE からご連絡ください。
+        </p>
       </div>
 
       <!-- LINE block -->
       <div class="line-block">
         <h3>LINE</h3>
         <p>
-          LINE でやりとりすることもできます。<br>
-          フォームを送らずに、直接ご連絡いただいても大丈夫です。
+          まだ LINE がお済みでなければ、<br>
+          こちらからつながっておくと、ご案内がスムーズです。
         </p>
         <div class="line-card">
           <a class="line-btn" href="https://lin.ee/wP4UfPR" target="_blank" rel="noopener">LINEでつながる</a>
@@ -86,7 +94,18 @@
         </div>
       </div>
 
-      <a href="program.html" class="back-link">← プログラム</a>
+      <!-- お問い合わせ -->
+      <div class="section-block">
+        <h3>お問い合わせ</h3>
+        <p>
+          気になることがあれば、いつでもご連絡ください。
+        </p>
+        <div class="academy-nav-links">
+          <a href="mailto:contact@b8e.co.jp">メールで問い合わせる →</a>
+        </div>
+      </div>
+
+      <a href="premium.html" class="back-link">← Premium</a>
 
     </div>
 
@@ -120,20 +139,5 @@
   </footer>
 
   <script src="../scroll.js"></script>
-  <script>
-    // 旧アンカー（apply.html#community / #premium / #consult）で到達した利用者を、
-    // 対応する入口リンクへ静かに案内する（クライアント側の案内のみ。自動リダイレクトはせず、
-    // 他の入口も選べるよう選択肢を残す）。
-    (function () {
-      var allowed = { community: 'community', premium: 'premium', consult: 'consult' };
-      var key = (location.hash || '').replace('#', '');
-      if (!Object.prototype.hasOwnProperty.call(allowed, key)) return;
-      var target = document.getElementById(allowed[key]);
-      if (!target) return;
-      target.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      target.setAttribute('tabindex', '-1');
-      target.focus({ preventScroll: true });
-    })();
-  </script>
 </body>
 </html>

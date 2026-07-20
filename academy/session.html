@@ -129,6 +129,12 @@
         <form class="apply-form" action="https://formspree.io/f/xgoqybbl" method="post">
           <input type="hidden" name="program" value="dreamin-spiral-academy">
           <input type="hidden" name="_next" value="https://www.b8e.co.jp/academy/thanks.html">
+          <!-- 運用トラッキング用 hidden 項目（利用者には表示しない）。
+               source_page / submitted_at はページ末尾のスクリプトが安全に設定する。 -->
+          <input type="hidden" name="form_type" value="academy_session">
+          <input type="hidden" name="site_version" value="academy-v1.0.1">
+          <input type="hidden" name="source_page" id="source_page" value="direct">
+          <input type="hidden" name="submitted_at" id="submitted_at" value="">
 
           <input type="text" name="name" placeholder="お名前（任意）" autocomplete="name">
           <input type="email" name="email" placeholder="メールアドレス" required autocomplete="email">
@@ -204,5 +210,23 @@
   </footer>
 
   <script src="../scroll.js"></script>
+  <script>
+    // Session への流入元を運用トラッキング用 hidden 項目へ設定する。
+    // ?from= の値は許可リストで検証し、許可値のみをそのまま設定する
+    // （任意文字列を DOM へ出力しないため XSS の心配がない）。referrer や閲覧履歴は収集しない。
+    (function () {
+      var ALLOWED = ['program', 'library', 'community', 'premium', 'community-apply', 'premium-apply', 'apply'];
+      var params = new URLSearchParams(location.search);
+      var from = params.get('from');
+      var el = document.getElementById('source_page');
+      if (el && from && ALLOWED.indexOf(from) !== -1) el.value = from;
+      // 送信時刻（利用者の端末時計。おおよその運用分析用）。
+      var form = document.querySelector('.apply-form');
+      if (form) form.addEventListener('submit', function () {
+        var ts = document.getElementById('submitted_at');
+        if (ts) { try { ts.value = new Date().toISOString(); } catch (e) {} }
+      });
+    })();
+  </script>
 </body>
 </html>
