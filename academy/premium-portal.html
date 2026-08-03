@@ -1,8 +1,12 @@
 <!--
-  Premium Client Portal Prototype.
-  Future authenticated client my page. Audience: contracted Premium clients.
-  Not the external LP — see academy/premium.html for the Preview / introduction page.
-  Static HTML prototype: no auth, no DB, no Next.js. Experience check before Next.js migration.
+  Premium My Portal Prototype.
+  Premium 契約者一人ひとりの個別 My Portal（per-member）。表示内容は本人の進行月・
+  現在地・記録に合わせて変わる前提であり、全員共通ページではない。
+  本ファイルは「Month 01 のある一人の受講者」の状態を表す静的プロトタイプ:
+  no auth, no DB, no Next.js. per-member 化（認証・DB）は将来フェーズ。
+  月・個人で変わる箇所には data-premium / data-month / data-current 属性を付してある。
+  共通表示の Community Portal は academy/community-portal.html（役割を混在させない）。
+  Not the external LP — see academy/premium.html for the introduction page.
 -->
 <!DOCTYPE html>
 <html lang="ja">
@@ -95,6 +99,23 @@
       </section>
 
       <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+           2b. NOW — いま、ここから（今月の自然な流れ。順番の管理表ではない）
+      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+      <section id="now" class="section-block premium-now-section" data-premium="now" data-month="1">
+        <span class="premium-section-label">NOW ／ いま、ここから</span>
+        <p>
+          今月は、この流れの中のどこにいても大丈夫です。<br>
+          いま、いちばん自然なところから、どうぞ。
+        </p>
+        <ul class="premium-session-prep-list">
+          <li>はじめてなら — <a href="#tools-works" class="premium-link">Tuning Map</a> を記入して、Personal Lesson の日程を待つ</li>
+          <li>レッスンが終わっていたら — <a href="#learning-video" class="premium-link">Learning Video</a> を、静かな時間にひらく</li>
+          <li>日々のなかで — <a href="#tools-works" class="premium-link">Being Book</a> を1日1枚。気づいたことをひとつ書き留める</li>
+          <li>月の終わりに — <a href="#journal" class="premium-link">Monthly Reflection</a> で、今月をひとことに</li>
+        </ul>
+      </section>
+
+      <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
            3. SIX-MONTH JOURNEY
       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
       <section id="six-month-journey" class="section-block premium-journey-section" data-premium="six-month-journey">
@@ -118,7 +139,7 @@
                 <span class="premium-journey-arrow" aria-hidden="true">→</span>
                 <span class="premium-journey-after">今の自分を、そのまま言葉にできる</span>
               </p>
-              <p class="premium-journey-key"><span class="premium-journey-key-label">Key Experience</span>現在地ワークシート／静けさに触れる音声ガイダンス</p>
+              <p class="premium-journey-key"><span class="premium-journey-key-label">Key Experience</span>Learning Video 2本／Tuning Map（Balance Wheel）／Being Book</p>
             </div>
           </li>
           <li class="premium-journey-item" data-month="2">
@@ -202,7 +223,7 @@
       <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
            4. THIS MONTH
       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
-      <section id="this-month" class="premium-month-overview" data-premium="this-month">
+      <section id="this-month" class="premium-month-overview" data-premium="this-month" data-month="1">
         <div class="premium-month-overview-header">
           <span class="premium-section-label">THIS MONTH</span>
           <span class="premium-month-overview-num">Month 01 / 6</span>
@@ -236,11 +257,11 @@
       </section>
 
       <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-           5. PREMIUM CONTENT
+           5. LEARNING VIDEO（月2本・録音後にリンクを差し込む）
       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
-      <section id="premium-content" class="premium-content-section" data-premium="premium-content">
-        <span class="premium-section-label">PREMIUM CONTENT</span>
-        <p class="premium-content-month">Month 01 のコンテンツ</p>
+      <section id="learning-video" class="premium-content-section" data-premium="learning-video" data-month="1">
+        <span class="premium-section-label">LEARNING VIDEO</span>
+        <p class="premium-content-month">Month 01 の Learning Video（月2本）</p>
 
         <div class="premium-content-list">
 
@@ -248,21 +269,27 @@
             <div class="premium-content-item-thumb">
               <img
                 src="../assets/academy/premium/month01/content01-thumbnail.png"
-                alt="Content 01 自分の中心に還る"
+                alt="Learning Video 01 自分の中心に還る"
                 class="premium-content-item-img"
                 onerror="this.style.display='none';this.closest('.premium-content-item-thumb').classList.add('premium-content-item-thumb--empty')"
               >
             </div>
             <div class="premium-content-item-body">
-              <span class="premium-content-item-type premium-content-item-type--audio">音声ガイダンス</span>
-              <h4 class="premium-content-item-title">Content01 — 自分の中心に還る</h4>
+              <span class="premium-content-item-type premium-content-item-type--audio">音声ガイダンス（約15分）</span>
+              <h4 class="premium-content-item-title">Learning Video 01 — 自分の中心に還る</h4>
               <p class="premium-content-item-desc">
-                今月のテーマを内側で深めるための音声。<br>
-                問いとともに静かにいる時間。
+                今月のテーマを内側で深めるための時間。<br>
+                問いとともに静かにいる。
               </p>
-              <a href="#" class="premium-content-item-link" aria-label="Content 01 を開く（準備中）">
-                Content 01 を開く →（準備中）
+              <p class="form-note">
+                朝のはじまりや、一日の終わりに。<br>
+                問いに答えようとしなくていい。ただ、聴く。
+              </p>
+              <!-- ▼▼ VIDEO01 URL 差し替え位置: href="#" → YouTube 限定公開 URL・「（準備中）」を外す ▼▼ -->
+              <a id="video01-link" href="#" class="premium-content-item-link" aria-label="Learning Video 01 を開く（準備中）">
+                Learning Video 01 を開く →（準備中）
               </a>
+              <!-- ▲▲ VIDEO01 ここまで ▲▲ -->
             </div>
           </article>
 
@@ -270,34 +297,53 @@
             <div class="premium-content-item-thumb">
               <img
                 src="../assets/academy/premium/month01/content02-thumbnail.png"
-                alt="Content 02 頭ではなく身体に戻る"
+                alt="Learning Video 02 頭ではなく身体に戻る"
                 class="premium-content-item-img"
                 onerror="this.style.display='none';this.closest('.premium-content-item-thumb').classList.add('premium-content-item-thumb--empty')"
               >
             </div>
             <div class="premium-content-item-body">
-              <span class="premium-content-item-type premium-content-item-type--body">ボディワーク音声</span>
-              <h4 class="premium-content-item-title">Content02 — 頭ではなく身体に戻る</h4>
+              <span class="premium-content-item-type premium-content-item-type--body">ボディワーク（約12分）</span>
+              <h4 class="premium-content-item-title">Learning Video 02 — 頭ではなく身体に戻る</h4>
               <p class="premium-content-item-desc">
                 呼吸と身体感覚へ戻るための、<br>
                 ガイドつきボディスキャン。
               </p>
-              <a href="#" class="premium-content-item-link" aria-label="Content 02 を開く（準備中）">
-                Content 02 を開く →（準備中）
-              </a>
-            </div>
-          </article>
-
-          <article class="premium-content-item">
-            <div class="premium-content-item-thumb premium-content-item-thumb--empty"></div>
-            <div class="premium-content-item-body">
-              <span class="premium-content-item-type premium-content-item-type--meditation">Audio / Meditation</span>
-              <h4 class="premium-content-item-title">静けさに触れる瞑想音声</h4>
-              <p class="premium-content-item-desc">
-                日常の中で、今の自分に静かに戻るための音声。
+              <p class="form-note">
+                朝目覚めたときや、切り替えたいときに。<br>
+                正しくやろうとしない。感じることが目的。
               </p>
-              <a href="#" class="premium-content-item-link" aria-label="準備中">
-                準備中
+              <!-- ▼▼ VIDEO02 URL 差し替え位置: href="#" → YouTube 限定公開 URL・「（準備中）」を外す ▼▼ -->
+              <a id="video02-link" href="#" class="premium-content-item-link" aria-label="Learning Video 02 を開く（準備中）">
+                Learning Video 02 を開く →（準備中）
+              </a>
+              <!-- ▲▲ VIDEO02 ここまで ▲▲ -->
+            </div>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+           5b. TOOLS & WORKS（Month 01 のワーク）
+      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+      <section id="tools-works" class="premium-content-section" data-premium="tools-works" data-month="1">
+        <span class="premium-section-label">TOOLS &amp; WORKS</span>
+        <p class="premium-content-month">Month 01 のワーク</p>
+
+        <div class="premium-content-list">
+
+          <article class="premium-content-item">
+            <div class="premium-content-item-thumb premium-content-item-thumb--empty"></div>
+            <div class="premium-content-item-body">
+              <span class="premium-content-item-type premium-content-item-type--workbook">Workbook ／ Lesson 準備</span>
+              <h4 class="premium-content-item-title">Tuning Map — Balance Wheel</h4>
+              <p class="premium-content-item-desc">
+                8つの領域から、今の現在地を静かに俯瞰する1枚。<br>
+                Personal Lesson の前に記入して持ってきてください。
+              </p>
+              <a href="#" class="premium-content-item-link" aria-label="Tuning Map（配布準備中）">
+                記入用シート →（配布準備中）
               </a>
             </div>
           </article>
@@ -305,13 +351,62 @@
           <article class="premium-content-item">
             <div class="premium-content-item-thumb premium-content-item-thumb--empty"></div>
             <div class="premium-content-item-body">
-              <span class="premium-content-item-type premium-content-item-type--workbook">Workbook</span>
+              <span class="premium-content-item-type premium-content-item-type--workbook">Daily ／ 1日1枚・約1分</span>
+              <h4 class="premium-content-item-title">Being Book — A7 Pocket Edition</h4>
+              <p class="premium-content-item-desc">
+                8つの在り方へ還るためのポケットブック。<br>
+                A4横1枚を印刷して、折るだけで手のひらサイズに。
+              </p>
+              <a href="#" class="premium-content-item-link" aria-label="Being Book（配布準備中）">
+                印刷用PDF →（配布準備中）
+              </a>
+            </div>
+          </article>
+
+          <article class="premium-content-item">
+            <div class="premium-content-item-thumb premium-content-item-thumb--empty"></div>
+            <div class="premium-content-item-body">
+              <span class="premium-content-item-type premium-content-item-type--meditation">Audio ／ 毎日・5〜8分</span>
+              <h4 class="premium-content-item-title">静けさに触れる — 瞑想音声</h4>
+              <p class="premium-content-item-desc">
+                一日のどこかで、静けさに還るための短い時間。<br>
+                何かを得ようとしなくていい。ただ、ここにいる。
+              </p>
+              <!-- ▼▼ MEDITATION URL 差し替え位置: href="#" → 限定公開URL・「（準備中）」を外す ▼▼ -->
+              <a id="meditation-link" href="#" class="premium-content-item-link" aria-label="瞑想音声を開く（準備中）">
+                瞑想音声を開く →（準備中）
+              </a>
+              <!-- ▲▲ MEDITATION ここまで ▲▲ -->
+            </div>
+          </article>
+
+          <article class="premium-content-item">
+            <div class="premium-content-item-thumb premium-content-item-thumb--empty"></div>
+            <div class="premium-content-item-body">
+              <span class="premium-content-item-type premium-content-item-type--workbook">Workbook ／ いつでも</span>
               <h4 class="premium-content-item-title">現在地ワークシート</h4>
               <p class="premium-content-item-desc">
-                今の自分の状態・感じていることを言葉にするための1枚。
+                いま、ここを言葉にする1枚。<br>
+                評価するためではありません。レッスン前に1枚あると、現在地をそのまま持っていけます。
               </p>
-              <a href="#" class="premium-content-item-link" aria-label="準備中">
-                準備中
+              <a href="#" class="premium-content-item-link" aria-label="現在地ワークシート（配布準備中）">
+                記入用シート →（配布準備中）
+              </a>
+            </div>
+          </article>
+
+          <article class="premium-content-item">
+            <div class="premium-content-item-thumb premium-content-item-thumb--empty"></div>
+            <div class="premium-content-item-body">
+              <span class="premium-content-item-type premium-content-item-type--workbook">Monthly ／ 月末</span>
+              <h4 class="premium-content-item-title">Monthly Reflection</h4>
+              <p class="premium-content-item-desc">
+                今月の変化と Next Step を、<br>
+                月の終わりにひとつ言葉にする振り返り。<br>
+                ここから、次の Month のテーマへ渡っていきます。
+              </p>
+              <a href="#" class="premium-content-item-link" aria-label="Monthly Reflection（準備中）">
+                振り返りシート →（準備中）
               </a>
             </div>
           </article>
@@ -323,13 +418,13 @@
            6. JOURNAL
       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
       <section id="journal" class="premium-journal-section" data-premium="journal">
-        <span class="premium-section-label">JOURNAL</span>
+        <span class="premium-section-label">JOURNAL ／ 気づき記録</span>
         <div class="premium-journal-inner">
           <div class="premium-journal-main">
-            <a href="#" class="premium-journal-primary">今日の記録を書く</a>
+            <a href="#" class="premium-journal-primary" aria-label="今日の気づきを書く（準備中）">今日の気づきを書く（準備中）</a>
             <div class="premium-journal-sub-links">
-              <a href="#" class="premium-link">Weekly Note を見る →</a>
-              <a href="#" class="premium-link">Monthly Review を書く →</a>
+              <a href="#" class="premium-link">これまでの気づきを見る →（準備中）</a>
+              <a href="#" class="premium-link">Monthly Reflection を書く →（準備中）</a>
             </div>
           </div>
           <p class="premium-journal-note">
@@ -340,33 +435,50 @@
       </section>
 
       <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-           7. NEXT SESSION
+           7. PERSONAL LESSON
       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
-      <section id="next-session" class="premium-session-section" data-premium="next-session">
-        <span class="premium-section-label">NEXT SESSION</span>
+      <section id="personal-lesson" class="premium-session-section" data-premium="personal-lesson">
+        <span class="premium-section-label">PERSONAL LESSON</span>
         <div class="premium-session-inner">
           <div class="premium-session-info">
-            <p class="premium-session-title">次回個別セッション</p>
-            <p class="premium-session-detail">日程：個別調整中　／　形式：Zoom 1対1</p>
+            <p class="premium-session-title">次回 Personal Lesson（月1回・Zoom 1対1）</p>
+            <p class="premium-session-detail">日程：個別調整中　／　45〜60分</p>
           </div>
           <div class="premium-session-prep-block">
-            <p class="premium-session-prep-label">セッション前に書いておくと良いこと</p>
+            <p class="premium-session-prep-label">レッスン前に</p>
             <ul class="premium-session-prep-list">
+              <li>Tuning Map（Balance Wheel）を記入して持ってくる</li>
               <li>今の状態を一言で</li>
-              <li>最近気になっていること</li>
               <li>今日触れたいこと</li>
             </ul>
           </div>
           <div class="premium-session-review-block">
-            <p class="premium-session-review-label">前回セッションの振り返りメモ</p>
-            <p class="premium-session-review-note">まだ記録がありません。セッション後にここに残ります。</p>
+            <p class="premium-session-review-label">前回レッスンの振り返りメモ</p>
+            <p class="premium-session-review-note">まだ記録がありません。レッスン後にここに残ります。</p>
           </div>
-          <a href="#" class="premium-link">セッション準備を見る →</a>
+          <p class="form-note">
+            レッスンで受け取った問いを、Learning Video と日々の気づき記録が、<br>
+            次のレッスンまでのあいだ、静かに深めていきます。
+          </p>
         </div>
       </section>
 
       <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-           8. NEXT STEP
+           8. MESSAGE SUPPORT
+      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+      <section id="message-support" class="section-block premium-message-section" data-premium="message-support">
+        <span class="premium-section-label">MESSAGE SUPPORT</span>
+        <p>
+          レッスンの合間も、静かに伴走し続けます。<br>
+          急ぎの返信を求めるものではなく、気づきや揺らぎを、そのまま届けてください。
+        </p>
+        <p class="form-note">
+          連絡手段のご案内は準備中です。確定次第、ここに表示します。
+        </p>
+      </section>
+
+      <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+           9. NEXT STEP
       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
       <section id="next-step" class="premium-next-step" data-premium="next-step">
         <span class="premium-section-label">NEXT STEP</span>
@@ -374,6 +486,20 @@
           今日の一歩は、無理に進めることではありません。<br>
           整ってから、で大丈夫です。
         </p>
+      </section>
+
+      <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+           10. COMMUNITY ACCESS
+      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+      <section id="community-access" class="section-block premium-community-access" data-premium="community-access">
+        <span class="premium-section-label">COMMUNITY ACCESS</span>
+        <p>
+          一人で深める時間と、共に育つ時間。<br>
+          Premium のあなたは、Community の場にもアクセスできます。
+        </p>
+        <div class="academy-nav-links">
+          <a href="community-portal.html">Community Portal へ →</a>
+        </div>
       </section>
 
       <a href="premium.html" class="back-link">← Premium</a>

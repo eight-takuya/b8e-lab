@@ -5,6 +5,8 @@
 > Academy 配下のページ構成・Notion Knowledge Architecture との対応・実装状況は「Academy Site Map」以降を参照。Dreamin' Spiral Academy の Notion 側構造は [dreamin-spiral-core/docs/06_implementations/academy-knowledge-architecture.md](https://github.com/eight-takuya/dreamin-spiral-core/blob/main/docs/06_implementations/academy-knowledge-architecture.md) を正本とする。
 >
 > Community / Premium の提供内容（Offer）の正本は [dreamin-spiral-core/docs/repository-architecture/academy-offer-definition.md](https://github.com/eight-takuya/dreamin-spiral-core/blob/main/docs/repository-architecture/academy-offer-definition.md) とする。b8e-lab の LP は、この Offer Definition を反映する位置付けであり、提供内容を変更する際は正本を先に更新する。
+>
+> **Portal 掲載内容（Premium Month01 教材等）の正本は `dreamin'-spiral-academy`**（`content/premium/month01/`）とする（2026-07-21 決定）。b8e-lab の Portal ページは Academy の正本を Web 画面へ反映する実装であり、教材の正本ではない。
 
 ---
 

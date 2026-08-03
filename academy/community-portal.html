@@ -1,0 +1,248 @@
+<!--
+  Community Portal.
+  Community 契約者全員が同じ内容を見る共通ポータル（Shared Experience）。
+  認証は個別 ID / Password・表示コンテンツは全員共通（per-member 表示は行わない）。
+  掲載するのは: 今月の内容／今月の流れ／Group Session／Archive／Learning Resources／
+  お知らせ／来月の予定。個別の記録・振り返り・Message は扱わない
+  （それらは Premium の My Portal = academy/premium-portal.html の責務）。
+  Static HTML: no auth, no DB. 認証の実装は将来フェーズ（設計: core community/portal/）。
+  Not the external LP — see academy/community.html for the introduction page.
+  月次更新箇所には data-community-month 属性を付してある。
+-->
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Community Portal | Dreamin' Spiral Academy</title>
+  <meta name="description" content="Dreamin' Spiral Academy Community Portal。共に育つ場所へ、おかえりなさい。">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="stylesheet" href="../style.css">
+  <script defer src="/_vercel/insights/script.js"></script>
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="logo-mark">
+      <svg class="logo-lemniscate" viewBox="0 0 80 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M40,16 C40,10.5 48,6 58,6 C68,6 76,10.5 76,16 C76,21.5 68,26 58,26 C48,26 40,21.5 40,16 C40,10.5 32,6 22,6 C12,6 4,10.5 4,16 C4,21.5 12,26 22,26 C32,26 40,21.5 40,16 Z" fill="none" stroke="#c9a882" stroke-width="1.1" stroke-linejoin="round"/>
+      </svg>
+      <h1>B8E</h1>
+    </div>
+    <p class="tagline">BEAT EIGHT EMOTION</p>
+  </header>
+
+  <!-- Navigation -->
+  <nav class="site-nav">
+    <a href="../index.html">TOP</a>
+    <a href="../dx.html">DX支援</a>
+    <a href="../dc.html">企業型DC</a>
+    <a href="../academy.html" class="current">Dreamin' Spiral Academy</a>
+    <a href="../about.html">About</a>
+  </nav>
+
+  <main>
+
+    <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+         C1. HERO
+    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+    <section class="community-hero">
+      <span class="hero-label">Dreamin' Spiral Academy</span>
+      <h2 class="community-hero-title">Community Portal</h2>
+      <p class="community-hero-copy">
+        共に育つ場所へ、おかえりなさい。
+      </p>
+    </section>
+
+    <div class="page-content">
+
+      <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+           お知らせ（共通・月次更新）
+      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+      <div class="section-block" data-community-month="1">
+        <span class="community-section-label">NEWS ／ お知らせ</span>
+        <p>
+          Community が始まります。<br>
+          今月の Group Session の日程は、決まり次第ここでお知らせします。
+        </p>
+        <p class="form-note">
+          Zoom の参加リンクは、開催日の前にこのページとご案内でお届けします。
+        </p>
+      </div>
+
+      <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+           今月のテーマ（Growth Theme #01・共通）
+      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+      <section class="community-current-theme" data-community-month="1">
+        <div class="community-theme-visual">
+          <img src="../assets/community/bg_v01.png" alt="" class="community-theme-bg" aria-hidden="true">
+          <div class="community-theme-overlay">
+            <span class="community-theme-badge">GROWTH THEME</span>
+            <span class="community-theme-number">#01</span>
+            <h3 class="community-theme-title">自分の中心に還る</h3>
+            <p class="community-theme-question">今、自分の中心にいるだろうか。</p>
+          </div>
+        </div>
+        <div class="community-theme-body">
+          <p class="community-theme-intro">
+            何かを足すのではなく、<br>
+            今の自分に静かに触れていく月です。<br>
+            この問いと、ひと月、共にいてみてください。
+          </p>
+
+          <div class="community-theme-doors">
+            <div class="community-door">
+              <span class="community-door-label">Group Session</span>
+              <p class="community-door-sub">仲間と共に気付く、月1回のセッション。</p>
+              <p class="community-door-detail">Zoom ／ 90分 ／ 4〜6名 ／ 日程調整中</p>
+            </div>
+            <div class="community-door community-door--archive">
+              <span class="community-door-label">Archive</span>
+              <p class="community-door-sub">日常の中で、何度でも立ち返る音声。</p>
+              <p class="community-door-detail">Archive #01 ／ 15〜20分 ／ 今月後半に公開予定</p>
+              <!-- ▼▼ ARCHIVE01 URL 差し替え位置: 公開時に下の span を
+                   <a id="archive01-link" href="限定公開URL" class="community-door-link">Archive #01 を聴く →</a>
+                   に置き換える ▼▼ -->
+              <span id="archive01-link" class="community-door-detail">公開までお待ちください（準備中）</span>
+              <!-- ▲▲ ARCHIVE01 ここまで ▲▲ -->
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+           今月の流れ（Week 1〜4・共通）
+      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+      <div class="section-block" data-community-month="1">
+        <span class="community-section-label">THIS MONTH ／ 今月の流れ</span>
+        <p class="community-journey-lead">
+          急がなくて大丈夫です。<br>
+          どの週からでも、入れます。
+        </p>
+        <div class="community-journey-grid">
+          <div class="community-journey-card">
+            <span class="community-journey-num">Week 1</span>
+            <span class="community-journey-text">テーマと出会う。今月の問いを受け取る</span>
+          </div>
+          <div class="community-journey-card">
+            <span class="community-journey-num">Week 2</span>
+            <span class="community-journey-text">Group Session。仲間と共に気付く</span>
+          </div>
+          <div class="community-journey-card">
+            <span class="community-journey-num">Week 3</span>
+            <span class="community-journey-text">Archive 公開。日常の中で思い出す</span>
+          </div>
+          <div class="community-journey-card">
+            <span class="community-journey-num">Week 4</span>
+            <span class="community-journey-text">静かに振り返る。気づきをひとつ言葉にする</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+           LEARNING RESOURCES（共通）
+      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+      <div class="section-block" data-community-month="1">
+        <span class="community-section-label">LEARNING RESOURCES ／ 学びの資料</span>
+        <div class="community-library-grid">
+          <div class="community-lib-card">
+            <span class="community-lib-num">01</span>
+            <span class="community-lib-title">Being Book — A7 Pocket Edition</span>
+            <p class="community-lib-desc">
+              8つの在り方へ還るポケットブック。A4横1枚を印刷して折るだけ。<br>
+              （配布準備中）
+            </p>
+          </div>
+          <div class="community-lib-card">
+            <span class="community-lib-num">02</span>
+            <span class="community-lib-title">Group Session ワークシート</span>
+            <p class="community-lib-desc">
+              セッションで使う1枚。当日までにお届けします。<br>
+              （配布準備中）
+            </p>
+          </div>
+          <div class="community-lib-card">
+            <span class="community-lib-num">03</span>
+            <span class="community-lib-title">人生再起動ガイド（PDF 7本）</span>
+            <p class="community-lib-desc">
+              いつでも読める、無料の Library。
+            </p>
+            <a href="library.html" class="pdf-open-link">Library を開く →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+           SCHEDULE（今月・来月の予定）
+      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+      <div class="section-block" data-community-month="1">
+        <span class="community-section-label">SCHEDULE ／ 予定</span>
+        <div class="community-schedule-list">
+          <div class="community-schedule-item">
+            <span class="community-schedule-type">Group Session #01</span>
+            <span class="community-schedule-status">日程調整中 — 決まり次第お知らせします</span>
+          </div>
+          <div class="community-schedule-item">
+            <span class="community-schedule-type">Archive #01 公開</span>
+            <span class="community-schedule-status">今月後半 予定</span>
+          </div>
+          <div class="community-schedule-item">
+            <span class="community-schedule-type">来月の Growth Theme #02</span>
+            <span class="community-schedule-status">準備中 — 月末にここで予告します</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+           利用案内（共通）
+      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+      <div class="section-block">
+        <span class="community-section-label">GUIDE ／ この場所について</span>
+        <p>
+          ここは、Community のみなさん全員が同じ内容を見る、共通のポータルです。<br>
+          今月の内容・予定・Archive・学びの資料を、ここで共有します。
+        </p>
+        <p class="form-note">
+          個別の記録・振り返り・メッセージのやり取りは、この場所では扱いません。<br>
+          一人ひとりへの個別伴走は、Premium（My Portal）でお受けしています。
+        </p>
+        <div class="academy-nav-links">
+          <a href="mailto:contact@b8e.co.jp">気になることがあれば、メールで →</a>
+        </div>
+      </div>
+
+      <a href="community.html" class="back-link">← Community</a>
+
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="site-footer-inner">
+      <div class="footer-brand">
+        <span class="brand-name">BEAT EIGHT EMOTION株式会社</span>
+        <p>
+          テクノロジーと人間の内側が交わる場所で、<br>
+          変容を共にする。
+        </p>
+      </div>
+      <nav class="footer-links">
+        <a href="../index.html">TOP</a>
+        <a href="../dx.html">DX支援</a>
+        <a href="../dc.html">企業型DC</a>
+        <a href="../academy.html">Dreamin' Spiral Academy</a>
+        <a href="../about.html">About</a>
+        <a href="mailto:contact@b8e.co.jp">お問い合わせ</a>
+      </nav>
+    </div>
+    <div class="footer-bottom">
+      © 2025 BEAT EIGHT EMOTION株式会社
+    </div>
+  </footer>
+
+  <script src="../scroll.js"></script>
+</body>
+</html>
