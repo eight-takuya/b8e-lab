@@ -10,7 +10,7 @@
 | /academy.html | Academy 入口（世界観・こんな方へ・支援しないこと） | Hero「外側が変わるほど、自分の中心が大切になる。」 |
 | /academy/program.html | 「実践の形」— Community / Premium の2つの関わり方紹介 | Journey 全体像はない |
 | /academy/library.html | **Guide + Library 兼用**（hero label は "Guide"） | 人生覚醒ガイド（Featured）+ 処方箋・実践 PDF 6本 |
-| /academy/session.html | 無料ガイドセッション（60〜90分・Zoom・無料） | 申込は LINE と apply.html#consult |
+| /academy/session.html | 無料ガイドセッション（約45分・1対1・Zoom・無料） | 申込は LINE と apply.html#consult |
 | /academy/community.html | Community 紹介 | 申込は apply.html#community |
 | /academy/premium.html | Premium 紹介 | 申込は apply.html#premium |
 | /academy/apply.html | **共通 Apply**（Community / Premium / 相談 の3分岐） | Stripe ×2 + Formspree フォーム |
