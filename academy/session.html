@@ -12,6 +12,15 @@
   <meta property="og:url" content="https://www.b8e.co.jp/academy/session.html">
   <meta property="og:image" content="https://www.b8e.co.jp/assets/ogp/generated/session.png">
   <link rel="stylesheet" href="../style.css">
+  <!-- 予約ページ（Google Apps Script Web App）への接続を、クリック前に温めておく。
+       DNS 解決と TLS ハンドシェイクを先に済ませることで、遷移後の待ち時間を短くする。
+       ・script.google.com … 予約ページ本体のリクエスト先。preconnect まで行う
+       ・script.googleusercontent.com … 中身を描画する frame の親ドメイン。
+         実際の frame は deployment ごとのサブドメインから配信されるため
+         preconnect までの効果は薄い。ハードコードもしないので dns-prefetch のみ -->
+  <link rel="preconnect" href="https://script.google.com">
+  <link rel="dns-prefetch" href="//script.google.com">
+  <link rel="dns-prefetch" href="//script.googleusercontent.com">
   <script defer src="/_vercel/insights/script.js"></script>
 </head>
 
@@ -163,7 +172,7 @@
           それだけで十分です。
         </p>
         <div class="academy-nav-links">
-          <a href="https://script.google.com/macros/s/AKfycbwhwbdcfjjDJ__Cv-J7veUDJerr26FxK1E1OSFXZNdDyBQ4Ty6knD9CkWXyV6-Fqj3zcA/exec?page=booking" class="link-primary" target="_blank" rel="noopener noreferrer">日程を選んで申し込む →</a>
+          <a href="https://script.google.com/macros/s/AKfycbwhwbdcfjjDJ__Cv-J7veUDJerr26FxK1E1OSFXZNdDyBQ4Ty6knD9CkWXyV6-Fqj3zcA/exec?page=booking" class="link-primary js-booking" target="_blank" rel="noopener noreferrer">日程を選んで申し込む →</a>
           <a href="https://lin.ee/wP4UfPR" target="_blank" rel="noopener noreferrer">LINEから連絡する →</a>
         </div>
       </div>
@@ -177,7 +186,7 @@
           お申し込みのあと、日時と Zoom の URL を<br>
           確認メールでお送りします。
         </p>
-        <a class="cta-link" href="https://script.google.com/macros/s/AKfycbwhwbdcfjjDJ__Cv-J7veUDJerr26FxK1E1OSFXZNdDyBQ4Ty6knD9CkWXyV6-Fqj3zcA/exec?page=booking" target="_blank" rel="noopener noreferrer">日程を選んで申し込む</a>
+        <a class="cta-link js-booking" href="https://script.google.com/macros/s/AKfycbwhwbdcfjjDJ__Cv-J7veUDJerr26FxK1E1OSFXZNdDyBQ4Ty6knD9CkWXyV6-Fqj3zcA/exec?page=booking" target="_blank" rel="noopener noreferrer">日程を選んで申し込む</a>
       </div>
 
       <!-- セッションのあとに -->
@@ -289,6 +298,26 @@
       if (form) form.addEventListener('submit', function () {
         var ts = document.getElementById('submitted_at');
         if (ts) { try { ts.value = new Date().toISOString(); } catch (e) {} }
+      });
+
+      // 予約ページは別タブで開くため、押したことが分かりにくい。
+      // 文言だけを静かに切り替えて、押せたことを伝える。
+      // スピナーや待機時間の案内は置かない（システム都合の印象を出さないため）。
+      var links = document.querySelectorAll('.js-booking');
+      Array.prototype.forEach.call(links, function (link) {
+        var original = link.textContent;
+        var timer = null;
+        function restore() {
+          if (timer) { clearTimeout(timer); timer = null; }
+          link.textContent = original;
+        }
+        link.addEventListener('click', function () {
+          link.textContent = '日程選択へ進んでいます…';
+          timer = setTimeout(restore, 8000);
+        });
+        // 別タブから戻ってきたとき・戻るで表示されたときは元へ戻す
+        window.addEventListener('focus', restore);
+        window.addEventListener('pageshow', restore);
       });
     })();
   </script>
