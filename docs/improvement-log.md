@@ -6,6 +6,61 @@
 ---
 
 ---
+## [2026-08-26] — 無料ガイドセッション：主導線を予約ページへ接続・Formspree を問い合わせへ降格
+
+**Scope:** `academy/session.html`
+**Triggered by:** Dreamin' Spiral Academy 側で Client Booking Page（予約ページ）が稼働したため（academy repo PR #114・Owner Review Gate 4 通過）。設計正本は academy repo `pre-contract/free-guide-session/client-booking/client-booking-page-detail-design.md` の §17（LP Integration）／§18（Formspree Handling・決定 D-5）
+
+### Changes
+
+- **Quiet CTA の第一リンクを予約ページへ**。「セッションを申し込む →（`#apply`）」→ **「日程を選んで申し込む →」（予約ページ・別タブ）**。LINE 導線は変更なし
+- **`#apply` セクションを申込導線に作り替え**。Formspree フォームを外し、予約ページへの `cta-link` 1 本に。文面は「予約ページで空いている日程を選び、お名前とメールアドレスをご入力ください／お申し込みのあと、日時と Zoom の URL を確認メールでお送りします」
+- **Formspree フォームをページ下部へ降格**し、新しい `#contact` セクション「**日程が合わない方・ご質問はこちら**」として設置。**申込ではなく問い合わせ**であることを明記（「この送信では日程は確定しません」）。配置は「セッションのあとに」と LINE ブロックの間
+- **hidden 項目**: `form_type` を `academy_session` → **`academy_session_inquiry`**、`site_version` を `academy-v1.0.1` → **`academy-v1.1.0`** へ。通知が申込か問い合わせかを取り違えないようにするため
+- `message` の placeholder を「今、浮かんでいること（任意）」→「日程のご希望や、聞いてみたいこと（任意）」へ。`form-note` も問い合わせ向けの文面に
+- `source_page` / `submitted_at` を設定するページ末尾スクリプトは**変更なし**（フォームは 1 つのままで、id は重複していない）
+
+### なぜ一本化するか
+
+Formspree 経由の申込は Sheet に入らないため、**予約ページ側の重複判定（`client_dedupe_key`）でも枠の押さえでも検知できない**。申込導線を 2 本持つと、同じ枠が二重に埋まりうる。**申込は予約ページ 1 本に統一し、Formspree は「日程が合わない・先に質問したい」方の受け皿として残す**（設計 §18-3 ②）。
+
+> ⚠️ 問い合わせから日程調整に至った場合、Mentor が Sessions へ手動で記入することになる。
+> その行は `client_dedupe_key` の対象外なので、**既存予約の有無を目視で確認する運用**が必要（設計 §18-3 の注記）。
+
+### Philosophy notes
+「申し込む」が、フォームに書いて待つ行為から、**自分で日程を選ぶ行為**に変わった。待たされる時間が消えた分、静けさは保ったまま、相手側に主導権が移っている。Formspree を消さずに「日程が合わない方」の受け皿として残したのは、合わなかった人を締め出さないため。
+
+### 追記（2026-08-26）— 予約ページ遷移の体感速度を改善
+
+**Scope:** `academy/session.html`（同一 PR に追加）
+
+- **`<head>` に接続の先読みを追加**。`script.google.com` へ `preconnect` ＋ `dns-prefetch`、
+  `script.googleusercontent.com` へ `dns-prefetch`。クリック前に DNS 解決と TLS ハンドシェイクを
+  済ませておき、遷移後の待ち時間を短くする
+- **予約ページのリンクを同一タブ遷移に変更**（`target="_blank"` を外す）。
+  別タブだと、遷移中に見えているのは「白い新しいタブ」で、LP 側の文言変化は目に入らない。
+  同じタブなら LP が表示され続けるため、文言の切り替えが実際に見える。
+  **LINE 導線は別タブのまま**
+- **予約ページのリンクを押したとき、文言だけを「日程選択へ進んでいます…」に切り替える**。
+  戻るボタンで戻ったとき（bfcache 復帰）は `pageshow` で元へ戻す。
+  遷移できなかったときの保険として 15 秒後にも戻す
+- **スピナー・待機時間の案内・外部ライブラリは置かない**。
+  「数秒お待ちください」のようなシステム都合の文言も使わない
+- **予約ページ側（academy repo）の実装は変更していない**
+
+> `script.googleusercontent.com` は中身を描画する frame の親ドメイン。実際の frame は
+> deployment ごとのサブドメインから配信されるため `preconnect` までの効果は薄く、
+> サブドメインをハードコードもしない（deployment を更新すると変わるため）。**`dns-prefetch` のみ。**
+
+### Philosophy notes
+速さの演出ではなく、**押した手ごたえ**だけを返す。待たせていることを言葉にすると、
+その瞬間から「待たされている時間」になる。何も言わずに、静かに次へ渡す。
+
+### Deployed
+[ ] Yes
+[x] No — PR pending review
+
+---
 ## [2026-07-20] — Stripe Product Description aligned with Offer Definition
 
 **Scope:** Stripe（Community / Premium の Product Description）。リポジトリ内のファイル変更なし

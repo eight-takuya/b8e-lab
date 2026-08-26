@@ -12,6 +12,15 @@
   <meta property="og:url" content="https://www.b8e.co.jp/academy/session.html">
   <meta property="og:image" content="https://www.b8e.co.jp/assets/ogp/generated/session.png">
   <link rel="stylesheet" href="../style.css">
+  <!-- 予約ページ（Google Apps Script Web App）への接続を、クリック前に温めておく。
+       DNS 解決と TLS ハンドシェイクを先に済ませることで、遷移後の待ち時間を短くする。
+       ・script.google.com … 予約ページ本体のリクエスト先。preconnect まで行う
+       ・script.googleusercontent.com … 中身を描画する frame の親ドメイン。
+         実際の frame は deployment ごとのサブドメインから配信されるため
+         preconnect までの効果は薄い。ハードコードもしないので dns-prefetch のみ -->
+  <link rel="preconnect" href="https://script.google.com">
+  <link rel="dns-prefetch" href="//script.google.com">
+  <link rel="dns-prefetch" href="//script.googleusercontent.com">
   <script defer src="/_vercel/insights/script.js"></script>
 </head>
 
@@ -163,35 +172,21 @@
           それだけで十分です。
         </p>
         <div class="academy-nav-links">
-          <a href="#apply" class="link-primary">セッションを申し込む →</a>
+          <a href="https://script.google.com/macros/s/AKfycbwhwbdcfjjDJ__Cv-J7veUDJerr26FxK1E1OSFXZNdDyBQ4Ty6knD9CkWXyV6-Fqj3zcA/exec?page=booking" class="link-primary js-booking">日程を選んで申し込む →</a>
           <a href="https://lin.ee/wP4UfPR" target="_blank" rel="noopener noreferrer">LINEから連絡する →</a>
         </div>
       </div>
 
-      <!-- 申込 -->
+      <!-- 申込（主導線：予約ページで日程を選ぶ） -->
       <div class="section-block" id="apply">
         <h3>申込</h3>
         <p>
-          フォームから、そのままお申し込みいただけます。<br>
-          LINE からのご連絡でも大丈夫です。
+          予約ページで空いている日程を選び、<br>
+          お名前とメールアドレスをご入力ください。<br><br>
+          お申し込みのあと、日時と Zoom の URL を<br>
+          確認メールでお送りします。
         </p>
-        <form class="apply-form" action="https://formspree.io/f/xgoqybbl" method="post">
-          <input type="hidden" name="program" value="dreamin-spiral-academy">
-          <input type="hidden" name="_next" value="https://www.b8e.co.jp/academy/thanks.html">
-          <!-- 運用トラッキング用 hidden 項目（利用者には表示しない）。
-               source_page / submitted_at はページ末尾のスクリプトが安全に設定する。 -->
-          <input type="hidden" name="form_type" value="academy_session">
-          <input type="hidden" name="site_version" value="academy-v1.0.1">
-          <input type="hidden" name="source_page" id="source_page" value="direct">
-          <input type="hidden" name="submitted_at" id="submitted_at" value="">
-
-          <input type="text" name="name" placeholder="お名前（任意）" autocomplete="name">
-          <input type="email" name="email" placeholder="メールアドレス" required autocomplete="email">
-          <textarea name="message" placeholder="今、浮かんでいること（任意）"></textarea>
-
-          <button type="submit">送る</button>
-        </form>
-        <p class="form-note">送信後、順番にご連絡します。</p>
+        <a class="cta-link js-booking" href="https://script.google.com/macros/s/AKfycbwhwbdcfjjDJ__Cv-J7veUDJerr26FxK1E1OSFXZNdDyBQ4Ty6knD9CkWXyV6-Fqj3zcA/exec?page=booking">日程を選んで申し込む</a>
       </div>
 
       <!-- セッションのあとに -->
@@ -206,6 +201,35 @@
           <a href="community.html">共に続けたい — Community →</a>
           <a href="premium.html">個別に伴走してほしい — Premium →</a>
         </div>
+      </div>
+
+      <!-- 問い合わせ（Formspree は申込ではなく問い合わせへ降格） -->
+      <div class="section-block" id="contact">
+        <h3>日程が合わない方・ご質問はこちら</h3>
+        <p>
+          予約ページに合う日程がないときや、<br>
+          先に聞いておきたいことがあるときは、<br>
+          こちらからご連絡ください。<br><br>
+          こちらは<strong>お問い合わせ</strong>です。<br>
+          この送信では日程は確定しません。
+        </p>
+        <form class="apply-form" action="https://formspree.io/f/xgoqybbl" method="post">
+          <input type="hidden" name="program" value="dreamin-spiral-academy">
+          <input type="hidden" name="_next" value="https://www.b8e.co.jp/academy/thanks.html">
+          <!-- 運用トラッキング用 hidden 項目（利用者には表示しない）。
+               source_page / submitted_at はページ末尾のスクリプトが安全に設定する。 -->
+          <input type="hidden" name="form_type" value="academy_session_inquiry">
+          <input type="hidden" name="site_version" value="academy-v1.1.0">
+          <input type="hidden" name="source_page" id="source_page" value="direct">
+          <input type="hidden" name="submitted_at" id="submitted_at" value="">
+
+          <input type="text" name="name" placeholder="お名前（任意）" autocomplete="name">
+          <input type="email" name="email" placeholder="メールアドレス" required autocomplete="email">
+          <textarea name="message" placeholder="日程のご希望や、聞いてみたいこと（任意）"></textarea>
+
+          <button type="submit">送る</button>
+        </form>
+        <p class="form-note">順番にご連絡します。日程のご希望があれば、あわせてお知らせください。</p>
       </div>
 
       <!-- LINE block -->
@@ -274,6 +298,29 @@
       if (form) form.addEventListener('submit', function () {
         var ts = document.getElementById('submitted_at');
         if (ts) { try { ts.value = new Date().toISOString(); } catch (e) {} }
+      });
+
+      // 予約ページ（GAS Web App）は表示までに少し時間がかかる。
+      // 同じタブで遷移するあいだ、この LP は表示され続けるので、
+      // 文言だけを静かに切り替えて「進んでいる」ことを伝える。
+      // スピナーや待機時間の案内は置かない（システム都合の印象を出さないため）。
+      // 戻るボタンで戻ったときは pageshow で元へ戻す（bfcache 対策）。
+      var links = document.querySelectorAll('.js-booking');
+      Array.prototype.forEach.call(links, function (link) {
+        var original = link.textContent;
+        var timer = null;
+        function restore() {
+          if (timer) { clearTimeout(timer); timer = null; }
+          link.textContent = original;
+        }
+        link.addEventListener('click', function () {
+          link.textContent = '日程選択へ進んでいます…';
+          // 遷移が始まればこのページは離れるので、通常このタイマーは働かない。
+          // 遷移できなかったときだけ、文言が残り続けないように戻す。
+          timer = setTimeout(restore, 15000);
+        });
+        // 戻るボタンで表示されたとき（bfcache 復帰）は元へ戻す
+        window.addEventListener('pageshow', restore);
       });
     })();
   </script>
