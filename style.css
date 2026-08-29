@@ -1066,6 +1066,15 @@ a:hover {
   margin: 0 auto;
 }
 
+/* Academy TOP / Session hero のリード文
+   （トーンは既存 .community-hero-copy に合わせる） */
+.academy-hero .hero-sub,
+.session-hero .hero-sub {
+  color: #a8a49e;
+  line-height: 2.4;
+  max-width: 420px;
+}
+
 @media (max-width: 600px) {
   .academy-hero,
   .program-hero,
