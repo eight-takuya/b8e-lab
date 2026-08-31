@@ -6,6 +6,63 @@
 ---
 
 ---
+## [2026-08-31] — Academy へ「3つの入口」を実装（Phase E・本番未反映）
+
+**Scope:** `academy.html`／`academy/program.html`／`docs/site-structure.md`／`docs/improvement-log.md`
+**Triggered by:** Gate 2｜Experience / Expression の Owner 承認。実装計画の正本は OS repo `owner-program-web-implementation-plan.md`（Phase E）。Offer の正本は同 `academy-offer-definition.md`（**期間 6 か月は §3-6 として正本化済み — OS repo PR #145**）
+
+### Changes
+
+**`academy.html`** — 「Academyが支援しないこと」と Quiet CTA の間へ**「3つの入口」section を新設**。
+Community / Premium / Dreamin' Spiral オーナープログラムを `.offer-list` に**同じ体裁で対等に**並べ、
+「どこから始めても構いません。今の自分に合う入口から、必要なときに、必要な場へ。」で結ぶ。
+下に `.academy-nav-links` で 3 ページへのリンク。**既存セクションは 1 つも変更していない。**
+
+**`academy/program.html`**
+
+- 「関わり方の違い」→ **「3つの入口」**へ。「二つの関わり方があります／どちらが上でも下でもありません」→
+  **「三つの入口があります／どれが上でも下でもありません／順番でもありません／今の自分に合う入口が、よい入口です」**
+- **オーナープログラムの `program-plan` ブロックを追加**（コミュニティ・プレミアム伴走と同じ体裁・同じ `program-join-link`）。**原則6か月**と「全部を自分でできるようになる必要はありません」を記載
+- 「今の自分を確認する」に**オーナープログラムの 1 行を追加**（「どちらが」→「どれが」）
+- Quiet CTA に「オーナープログラム を知る →」を追加
+- `<meta name="description">` / `og:description` の「二つの関わり方」→「三つの入口」
+
+**新しい CSS / JS / asset は追加していない。** 3 入口はすべて既存コンポーネント（`.offer-list` / `.program-plan` / `.academy-nav-links` / `.program-join-link`）で構成した。
+
+### 「突出させない」ために測ったこと
+
+3 つが同じ重さに見えることを、実際のレンダリング高さで確認した。
+
+| 場所 | Community | Premium | オーナープログラム |
+|---|---|---|---|
+| `academy.html`「3つの入口」（1280px） | 84px | 84px | 84px |
+| `academy/program.html` の `program-plan`（1280px） | 446px | 478px | 478px |
+
+初稿ではオーナープログラムのブロックが 543px と 2 割ほど高かったため、**1 段落削って Premium と同じ高さに揃えた**。
+`academy.html` のリンク文言も「Dreamin' Spiral オーナープログラム を見る →」（302px）では 1 本だけ長く目立ったため、
+**「オーナープログラム を見る →」（193px）へ短縮**した。プログラム名の正式表記はすぐ上の `.offer-item-title` にある。
+
+### 変えなかったもの
+
+- **global nav / footer** — オーナープログラムの単独追加はしない。まず Academy 内導線として公開する
+- **`academy/owner-program.html`** — Gate 2 承認済みの採用版をそのまま維持（1 行も変更していない）
+- **`academy/community.html` / `academy/premium.html` / `academy/session.html` / `index.html` / `style.css` / `scroll.js`**
+- **`academy/program.html` の Journey Map（`.journey-fork`）** — `共に育つ` / `個別に伴走する` の 2 分岐のまま。
+  3 つ目を足すと `flex: 1 1 220px` が 720px カラムで **2+1 に折り返し、かえって上下関係に見える**ため見送った。Gate 3 判断事項として残す
+
+### 公開した提供条件
+
+**期間「原則6か月」のみ。** 料金・セッション回数・時間・チャット範囲・教材数・保証・契約条件は引き続き非掲載。
+
+### Philosophy notes
+
+3 つ並べたとき、人は長さで格を測る。文章の良し悪しより先に、ブロックの高さが答えを出してしまう。
+だから今回は、コピーを整えるのと同じ手間で、ピクセルを揃えた。
+
+### Deployed
+[ ] Yes（Vercel Preview のみ。**本番未反映・Gate 3｜Production Review 待ち**）
+
+---
 ## [2026-08-31] — Dreamin' Spiral オーナープログラム LP を単独実装（Phase C・未リンク）
 
 **Scope:** `academy/owner-program.html`（新規）／`style.css`（hero variant 登録のみ）／`docs/site-structure.md`／`docs/improvement-log.md`
