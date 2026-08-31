@@ -6,6 +6,204 @@
 ---
 
 ---
+## [2026-08-31] — Journey Map を3分岐へ整合・オーナープログラム専用 OGP を作成（Gate 3 前の最終整備）
+
+**Scope:** `academy/program.html`／`style.css`／`academy/owner-program.html`（`og:image` のみ）／`assets/ogp/master/OGP_Template_Master.pptx`／`assets/ogp/generated/owner-program.png`（新規）／`assets/ogp/generated/program.png`／`assets/ogp/README.md`／`docs/academy-ogp-operation.md`／`docs/site-structure.md`／`docs/improvement-log.md`
+**Triggered by:** Gate 3 直前の Owner / Architect 確認で挙がった 2 点（Journey Map の 2 分岐が残っている／専用 OGP が未作成）
+
+### 1. Journey Map を 3 分岐へ
+
+同じページ内に「3つの入口」と「2 分岐の Journey Map」が並んでいて、**結局 2 つなのか 3 つなのか**が読み取れなくなっていた。
+
+- `.journey-fork` に **`仕組みにする` — 「6か月、実際の事業を一緒に形にする。」→ オーナープログラム** を追加
+- 導入文へ「最後の三つは、順番の先にあるものではなく、それぞれ独立した入口です。」を追記
+- **`.journey-fork` を flex → grid へ変更**（`grid-template-columns: repeat(3, 1fr)`／600px 以下は 1 カラム）
+
+前回 flex のまま 3 つ目を足さなかったのは、`flex: 1 1 220px` が 720px カラムで **2+1 に折り返し**、
+2 つと 1 つのあいだに上下関係が見えてしまうためだった。grid の 3 等分なら折り返しが構造的に起こらない。
+
+**実測（3 分岐の高さ・位置）**
+
+| 幅 | 列 | 行 | 共に育つ | 個別に伴走する | 仕組みにする |
+|---|---|---|---|---|---|
+| 1280px | 3 等分（各 185px） | **1 行** | 138px | 138px | **138px** |
+| 768px | 3 等分（各 185px） | **1 行** | 138px | 138px | **138px** |
+| 375px | 1 カラム | 3 行 | 106px | 106px | **106px** |
+
+初稿では 3 つ目の説明文が 1 文字長く、375px で 138px（他は 106px）になったため、
+**Premium と同じ 18 文字へ揃えた**（「一緒に形にしていく。」→「一緒に形にする。」）。
+
+### 2. オーナープログラム専用 OGP
+
+既存の正規運用（`docs/academy-ogp-operation.md`）どおり、Master PPTX へスライドを追加して生成した。
+
+- **Slide 13** を **Slide 07（Premium）の複製**として追加し、**タイトルとサブコピーの `<a:t>` のみ**差し替え
+  （タイトル `オーナープログラム`／サブコピー `自分がオーナーとなり、AIと一緒に事業の仕組みをつくる。`＝ LP の Hero そのまま）
+- 背景・ロゴ・配色・余白・フォント・レイアウトは一切触っていない
+- `generated/owner-program.png`（**1200×630**）を生成し、LP の `og:image` を差し替え。`twitter:*` はサイト慣習どおり追加しない
+
+**検証**
+
+- **既存スライド非破壊：** 更新前後の pptx を zip として比較し、Slide 05 以外の Slide 01〜12 が **byte 単位で一致**
+- **既存 PNG 再現：** 更新後の master から `premium` を書き出すと、repo の既存 `premium.png` と**文字境界が完全一致**（x 431..768 / y 281..344）。master 編集がレンダリングへ影響していないことの裏付け
+- **セーフゾーン：** 明るい文字画素の外接矩形は x 222..977 / y 267..347。外周 90px の内側・幅 756px（上限 1020px）に収まる。1 行・文字切れなし・フォント置換なし
+
+**PNG 出力手順を 1 点修正した。** 従来の `-r 96` → `sips -z 630 1200` は 631px からの再サンプルで
+**最下段に明るい 1px 行**が残っていた。`pdftoppm -scale-to-x 1200 -scale-to-y 630` なら直接 1200×630 が出る。
+運用手順書を更新し、検証手順（非破壊確認・再現確認・セーフゾーン確認）も追記した。
+
+### 3. Program の OGP サブコピーを追随更新
+
+`generated/program.png` のサブコピーが **「Community と Premium、二つの関わり方。」** のままで、
+3 入口へ整合したページ本文と矛盾していた。SNS へ共有したときにこの画像が出るため、
+**Slide 05 のサブコピーを「三つの入口から、今の自分に合う形で。」へ更新**して再生成した（テキストのみ・レイアウト不変）。
+
+> これは当初の指示になかった変更です。Phase E の 3 入口整合が原因で生じた矛盾のため直しましたが、
+> **既存の本番 OGP 画像を差し替える**ことになるので、Gate 3 でご確認ください。
+
+### 変えていないもの
+
+`academy.html`／`academy/owner-program.html` 本文（`og:image` の 1 行を除く）／`academy/community.html`／
+`academy/premium.html`／`academy/session.html`／`index.html`／`scroll.js`／global nav／footer。
+
+### Deployed
+[ ] Yes（Vercel Preview のみ。**本番未反映・Gate 3｜Production Review 待ち**）
+
+---
+## [2026-08-31] — Academy へ「3つの入口」を実装（Phase E・本番未反映）
+
+**Scope:** `academy.html`／`academy/program.html`／`docs/site-structure.md`／`docs/improvement-log.md`
+**Triggered by:** Gate 2｜Experience / Expression の Owner 承認。実装計画の正本は OS repo `owner-program-web-implementation-plan.md`（Phase E）。Offer の正本は同 `academy-offer-definition.md`（**期間 6 か月は §3-6 として正本化済み — OS repo PR #145**）
+
+### Changes
+
+**`academy.html`** — 「Academyが支援しないこと」と Quiet CTA の間へ**「3つの入口」section を新設**。
+Community / Premium / Dreamin' Spiral オーナープログラムを `.offer-list` に**同じ体裁で対等に**並べ、
+「どこから始めても構いません。今の自分に合う入口から、必要なときに、必要な場へ。」で結ぶ。
+下に `.academy-nav-links` で 3 ページへのリンク。**既存セクションは 1 つも変更していない。**
+
+**`academy/program.html`**
+
+- 「関わり方の違い」→ **「3つの入口」**へ。「二つの関わり方があります／どちらが上でも下でもありません」→
+  **「三つの入口があります／どれが上でも下でもありません／順番でもありません／今の自分に合う入口が、よい入口です」**
+- **オーナープログラムの `program-plan` ブロックを追加**（コミュニティ・プレミアム伴走と同じ体裁・同じ `program-join-link`）。**原則6か月**と「全部を自分でできるようになる必要はありません」を記載
+- 「今の自分を確認する」に**オーナープログラムの 1 行を追加**（「どちらが」→「どれが」）
+- Quiet CTA に「オーナープログラム を知る →」を追加
+- `<meta name="description">` / `og:description` の「二つの関わり方」→「三つの入口」
+
+**新しい CSS / JS / asset は追加していない。** 3 入口はすべて既存コンポーネント（`.offer-list` / `.program-plan` / `.academy-nav-links` / `.program-join-link`）で構成した。
+
+### 「突出させない」ために測ったこと
+
+3 つが同じ重さに見えることを、実際のレンダリング高さで確認した。
+
+| 場所 | Community | Premium | オーナープログラム |
+|---|---|---|---|
+| `academy.html`「3つの入口」（1280px） | 84px | 84px | 84px |
+| `academy/program.html` の `program-plan`（1280px） | 446px | 478px | 478px |
+
+初稿ではオーナープログラムのブロックが 543px と 2 割ほど高かったため、**1 段落削って Premium と同じ高さに揃えた**。
+`academy.html` のリンク文言も「Dreamin' Spiral オーナープログラム を見る →」（302px）では 1 本だけ長く目立ったため、
+**「オーナープログラム を見る →」（193px）へ短縮**した。プログラム名の正式表記はすぐ上の `.offer-item-title` にある。
+
+### 変えなかったもの
+
+- **global nav / footer** — オーナープログラムの単独追加はしない。まず Academy 内導線として公開する
+- **`academy/owner-program.html`** — Gate 2 承認済みの採用版をそのまま維持（1 行も変更していない）
+- **`academy/community.html` / `academy/premium.html` / `academy/session.html` / `index.html` / `style.css` / `scroll.js`**
+- **`academy/program.html` の Journey Map（`.journey-fork`）** — `共に育つ` / `個別に伴走する` の 2 分岐のまま。
+  3 つ目を足すと `flex: 1 1 220px` が 720px カラムで **2+1 に折り返し、かえって上下関係に見える**ため見送った。Gate 3 判断事項として残す
+
+### 公開した提供条件
+
+**期間「原則6か月」のみ。** 料金・セッション回数・時間・チャット範囲・教材数・保証・契約条件は引き続き非掲載。
+
+### Philosophy notes
+
+3 つ並べたとき、人は長さで格を測る。文章の良し悪しより先に、ブロックの高さが答えを出してしまう。
+だから今回は、コピーを整えるのと同じ手間で、ピクセルを揃えた。
+
+### Deployed
+[ ] Yes（Vercel Preview のみ。**本番未反映・Gate 3｜Production Review 待ち**）
+
+---
+## [2026-08-31] — Dreamin' Spiral オーナープログラム LP を単独実装（Phase C・未リンク）
+
+**Scope:** `academy/owner-program.html`（新規）／`style.css`（hero variant 登録のみ）／`docs/site-structure.md`／`docs/improvement-log.md`
+**Triggered by:** Phase B（PR #81）merge 後の Phase C｜LP 単独実装。実装計画の正本は OS repo `docs/repository-architecture/owner-program-web-implementation-plan.md`、Offer の正本は同 `academy-offer-definition.md` §3・§6
+
+### Changes
+
+- **`academy/owner-program.html` を新規作成。** Dreamin' Spiral オーナープログラムの LP。構成は Hero →（具体）こんなことは、ありませんか →（理解）3つの役割 → 仕組みにできるもの → 対象者 → 目指すこと →（構造・思想）Dreamin' Spiral → Academy の3つの入口 → Quiet CTA
+- **`style.css`** — 既存の hero variant セレクタ群（本体・`.hero-sub`・mobile）へ `.owner-program-hero` を**追記のみ**。新しい宣言は 1 行も追加していない（他ページと同じ Deep Indigo hero をそのまま使う）
+- 本文は既存コンポーネントのみで構成 — `.page-intro` / `.academy-nav-links` / `.resonance-questions` / `.section-block` / `.compare-list` / `.offer-list` / `.journey-map` / `.quiet-cta` / `.back-link`
+- **新しい JS を追加していない**（`scroll.js` のみ・既存全ページと同じ）
+- `docs/site-structure.md` の Site Map / Page Role / Status / Future を Phase C の実態へ更新
+
+### このページがまだ「どこからも辿れない」理由
+
+Phase C は **LP 単独実装**。既存 HP へ入口を追加するのは Phase E であり、その前に
+**Gate 2（Experience / Expression — これで伝わるか）**の Owner Review がある。
+URL を知っている人だけが Preview で開ける状態にして、体験そのものを先に確認してもらう。
+
+そのため `academy.html` / `academy/program.html` / nav / footer からのリンクは追加していない。
+
+### 載せなかったもの
+
+**料金・期間・詳細な提供条件は書いていない。** Offer Definition 上で未確定であり、
+b8e-lab は Public repository のため（`site-structure.md` の Public / Private 境界）。
+「個別相談で案内します」のような、正本にない代替の言い回しも置いていない。
+CTA は既存の無料ガイドセッション（`session.html`）1 本のみで、新しい申込フォームは作っていない。
+
+### OGP
+
+専用スライドが Master PPTX に未追加のため、**暫定で `generated/academy.png` を流用**している。
+専用 OGP を作るかどうかは Owner / Architect 判断事項として残す（場当たり的な画像は作らない）。
+
+### Philosophy notes
+
+3 つの役割に分けた瞬間、AI は「賢い道具」ではなく「席のあるチーム」になる。
+それでも決めるのはオーナーだけ、という一文をどのセクションにも残した。
+分業の話に見えて、実際には主語を手放さないための構造になっている。
+
+### Deployed
+[ ] Yes（Vercel Preview のみ。本番未反映・Gate 2 Review 待ち）
+
+### 追記（2026-08-31）— Gate 2 Review を受けた改善（同一 PR #82）
+
+Owner / Architect が Vercel Preview を確認した結果、「構造としては正しいが、初見では少し難しそう・
+ハードルが高そうに見える」という指摘があった。**思想・Offer・3 入口 Architecture・3 者構造は変えず、
+伝える順序と安心感だけを直した。**
+
+**変えたのは順序。** Architecture（オーナー / アーキテクト / エンジニア）が早い段階に出ることで、
+「この仕組みを自分で理解して使いこなさなければならないのか」という印象が先に立っていた。
+3 役は**後半へ移し**、その前に「ハードルが下がった」「一人でやらなくていい」を置いた。
+
+| # | 変更 |
+|---|---|
+| Hero 直下 | 「ChatGPT をアーキテクトに / Claude Code をエンジニアに」という**役割の説明から始めるのをやめた**。具体（Webサイト・資料・顧客管理・発信・業務の整理）→ 手元でできるようになった → **最初の 6 か月は中村琢八が伴走・AIに詳しくなくても大丈夫**、の順に |
+| **新設「これまでと、これから」** | 既存の `.engine-grid`（2 カラム・mobile で 1 カラム）で、`自分で全部やる / 社内に頼む / 業者へ外注`（これまで）と `自分で決める / AIと考える / AIと形にする / 必要なところだけ専門家`（これから）を対比。締めに **「全部を自分でできるようになる必要は、ありません」** |
+| **新設「6か月、実際の事業で一緒につくります」** | 教材学習ではなく、**実際の事業を題材に一緒につくる**こと。「これをどうすればいいですか」から始めてよいこと。**「代わりにつくってお渡しする、ということはしません。つくるのは、いつもあなたの事業です」** |
+| 3 役 section | 見出しを「3つの役割に分けて考える」→ **「では、どうやって進めるのか」**へ。位置を「こんなことは、ありませんか。」の**後ろ**へ移動。**役割の定義そのものは 1 文字も変えていない** |
+| Quiet CTA | 「申し込みを決めてから来る場所ではありません。AIに詳しくなくても大丈夫です。」を追加 |
+| metadata | `description` / `og:description` を 6 か月伴走・AI に詳しくなくてよい旨へ更新 |
+
+**新しい CSS は追加していない**（`.engine-grid` / `.engine-item` は既存定義の初回使用）。
+新しい JS・新規 asset・新規 visual も追加していない。派手さではなく、順序と余白で解いた。
+
+**提供期間 6 か月を公開情報として記載した**（Owner 決定）。料金・セッション回数・チャット対応範囲・
+保証内容などの未確定条件は引き続き記載していない。
+
+> ⚠️ **OS 側 Offer 正本が未追随。** `academy-offer-definition.md` は「期間は未確定・HP / LP へ公開しない」
+> のままであり、本決定を Private 正本へ反映する OS repo 側の更新が別途必要（Gate 2 で報告）。
+
+### Philosophy notes（追記）
+
+先に構造を見せると、人は「理解できるか」を測り始める。先に「一人でやらなくていい」を置くと、
+同じ構造が「だからできるのか」に変わる。書いてある内容はほとんど同じで、順番だけを入れ替えた。
+
+
+---
 ## [2026-08-31] — Academy を「3 つの独立した入口」へ整合（設計正本のみ）
 
 **Scope:** `docs/site-structure.md` / `docs/improvement-log.md` — **HTML / CSS / JS は変更していない**

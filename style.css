@@ -1037,7 +1037,8 @@ a:hover {
 .apply-hero,
 .thanks-hero,
 .library-hero,
-.session-hero {
+.session-hero,
+.owner-program-hero {
   /* Deep Indigo — 夜明け前の空：目覚める・探究する・創造する */
   background:
     radial-gradient(ellipse at 50% 20%, rgba(110, 145, 245, 0.12) 0%, transparent 65%),
@@ -1069,7 +1070,8 @@ a:hover {
 /* Academy TOP / Session hero のリード文
    （トーンは既存 .community-hero-copy に合わせる） */
 .academy-hero .hero-sub,
-.session-hero .hero-sub {
+.session-hero .hero-sub,
+.owner-program-hero .hero-sub {
   color: #a8a49e;
   line-height: 2.4;
   max-width: 420px;
@@ -1081,7 +1083,8 @@ a:hover {
   .apply-hero,
   .thanks-hero,
   .library-hero,
-  .session-hero {
+  .session-hero,
+  .owner-program-hero {
     padding: 72px 24px;
   }
   .hero-copy {
@@ -3491,14 +3494,18 @@ a:hover {
   line-height: 1.6;
 }
 
+/* 3 つの入口は対等。grid で 3 等分し、2+1 の折り返しを起こさせない
+   （折り返すと、2 つと 1 つのあいだに上下関係が見えてしまうため） */
 .journey-fork {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 24px 40px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px 32px;
 }
 
-.journey-fork > div {
-  flex: 1 1 220px;
+@media (max-width: 600px) {
+  .journey-fork {
+    grid-template-columns: 1fr;
+  }
 }
 
 .journey-end {
