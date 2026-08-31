@@ -6,6 +6,70 @@
 ---
 
 ---
+## [2026-08-31] — Journey Map を3分岐へ整合・オーナープログラム専用 OGP を作成（Gate 3 前の最終整備）
+
+**Scope:** `academy/program.html`／`style.css`／`academy/owner-program.html`（`og:image` のみ）／`assets/ogp/master/OGP_Template_Master.pptx`／`assets/ogp/generated/owner-program.png`（新規）／`assets/ogp/generated/program.png`／`assets/ogp/README.md`／`docs/academy-ogp-operation.md`／`docs/site-structure.md`／`docs/improvement-log.md`
+**Triggered by:** Gate 3 直前の Owner / Architect 確認で挙がった 2 点（Journey Map の 2 分岐が残っている／専用 OGP が未作成）
+
+### 1. Journey Map を 3 分岐へ
+
+同じページ内に「3つの入口」と「2 分岐の Journey Map」が並んでいて、**結局 2 つなのか 3 つなのか**が読み取れなくなっていた。
+
+- `.journey-fork` に **`仕組みにする` — 「6か月、実際の事業を一緒に形にする。」→ オーナープログラム** を追加
+- 導入文へ「最後の三つは、順番の先にあるものではなく、それぞれ独立した入口です。」を追記
+- **`.journey-fork` を flex → grid へ変更**（`grid-template-columns: repeat(3, 1fr)`／600px 以下は 1 カラム）
+
+前回 flex のまま 3 つ目を足さなかったのは、`flex: 1 1 220px` が 720px カラムで **2+1 に折り返し**、
+2 つと 1 つのあいだに上下関係が見えてしまうためだった。grid の 3 等分なら折り返しが構造的に起こらない。
+
+**実測（3 分岐の高さ・位置）**
+
+| 幅 | 列 | 行 | 共に育つ | 個別に伴走する | 仕組みにする |
+|---|---|---|---|---|---|
+| 1280px | 3 等分（各 185px） | **1 行** | 138px | 138px | **138px** |
+| 768px | 3 等分（各 185px） | **1 行** | 138px | 138px | **138px** |
+| 375px | 1 カラム | 3 行 | 106px | 106px | **106px** |
+
+初稿では 3 つ目の説明文が 1 文字長く、375px で 138px（他は 106px）になったため、
+**Premium と同じ 18 文字へ揃えた**（「一緒に形にしていく。」→「一緒に形にする。」）。
+
+### 2. オーナープログラム専用 OGP
+
+既存の正規運用（`docs/academy-ogp-operation.md`）どおり、Master PPTX へスライドを追加して生成した。
+
+- **Slide 13** を **Slide 07（Premium）の複製**として追加し、**タイトルとサブコピーの `<a:t>` のみ**差し替え
+  （タイトル `オーナープログラム`／サブコピー `自分がオーナーとなり、AIと一緒に事業の仕組みをつくる。`＝ LP の Hero そのまま）
+- 背景・ロゴ・配色・余白・フォント・レイアウトは一切触っていない
+- `generated/owner-program.png`（**1200×630**）を生成し、LP の `og:image` を差し替え。`twitter:*` はサイト慣習どおり追加しない
+
+**検証**
+
+- **既存スライド非破壊：** 更新前後の pptx を zip として比較し、Slide 05 以外の Slide 01〜12 が **byte 単位で一致**
+- **既存 PNG 再現：** 更新後の master から `premium` を書き出すと、repo の既存 `premium.png` と**文字境界が完全一致**（x 431..768 / y 281..344）。master 編集がレンダリングへ影響していないことの裏付け
+- **セーフゾーン：** 明るい文字画素の外接矩形は x 222..977 / y 267..347。外周 90px の内側・幅 756px（上限 1020px）に収まる。1 行・文字切れなし・フォント置換なし
+
+**PNG 出力手順を 1 点修正した。** 従来の `-r 96` → `sips -z 630 1200` は 631px からの再サンプルで
+**最下段に明るい 1px 行**が残っていた。`pdftoppm -scale-to-x 1200 -scale-to-y 630` なら直接 1200×630 が出る。
+運用手順書を更新し、検証手順（非破壊確認・再現確認・セーフゾーン確認）も追記した。
+
+### 3. Program の OGP サブコピーを追随更新
+
+`generated/program.png` のサブコピーが **「Community と Premium、二つの関わり方。」** のままで、
+3 入口へ整合したページ本文と矛盾していた。SNS へ共有したときにこの画像が出るため、
+**Slide 05 のサブコピーを「三つの入口から、今の自分に合う形で。」へ更新**して再生成した（テキストのみ・レイアウト不変）。
+
+> これは当初の指示になかった変更です。Phase E の 3 入口整合が原因で生じた矛盾のため直しましたが、
+> **既存の本番 OGP 画像を差し替える**ことになるので、Gate 3 でご確認ください。
+
+### 変えていないもの
+
+`academy.html`／`academy/owner-program.html` 本文（`og:image` の 1 行を除く）／`academy/community.html`／
+`academy/premium.html`／`academy/session.html`／`index.html`／`scroll.js`／global nav／footer。
+
+### Deployed
+[ ] Yes（Vercel Preview のみ。**本番未反映・Gate 3｜Production Review 待ち**）
+
+---
 ## [2026-08-31] — Academy へ「3つの入口」を実装（Phase E・本番未反映）
 
 **Scope:** `academy.html`／`academy/program.html`／`docs/site-structure.md`／`docs/improvement-log.md`

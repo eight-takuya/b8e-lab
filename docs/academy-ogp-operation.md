@@ -42,6 +42,7 @@ assets/ogp/master/OGP_Template_Master.pptx
 | 10 | library | `generated/library.png` | `academy/library.html` |
 | **11** | **community-apply** | **`generated/community-apply.png`** | **`academy/community-apply.html`** |
 | **12** | **premium-apply** | **`generated/premium-apply.png`** | **`academy/premium-apply.html`** |
+| **13** | **owner-program** | **`generated/owner-program.png`** | **`academy/owner-program.html`** |
 
 Success ページ（`community-success.html` / `premium-success.html`）は `noindex` で SNS 共有を想定しないため、専用スライドは作らず親サービスの `community.png` / `premium.png` を流用する。
 
@@ -56,14 +57,17 @@ Success ページ（`community-success.html` / `premium-success.html`）は `noi
 5. 検証：`validate.py OGP_Template_Master.pptx --original <元master>` が PASS すること。
 
 > v1.0.1 では Slide 11（community-apply）/ Slide 12（premium-apply）を、それぞれ Slide 06 / 07 の複製 + タイトル・サブコピー差し替えで追加した。
+>
+> 2026-08-31 に **Slide 13（owner-program）** を Slide 07（premium）の複製 + タイトル・サブコピー差し替えで追加した。あわせて **Slide 05（program）のサブコピー**を 3 入口構成へ追随更新している（テキストのみ）。
 
 ## PNG 出力方法
 
 1. PDF 化：`soffice.py --headless --convert-to pdf OGP_Template_Master.pptx`
    （このリポジトリでは LibreOffice レンダリングが実機 PowerPoint 出力とピクセル一致することを確認済み）
-2. 対象スライドを PNG 化：`pdftoppm -png -r 96 -f <slide> -l <slide> OGP_Template_Master.pdf out`
-   （12.5in × 96dpi = 1200px。高さは丸めで 631px になる場合があるため次で厳密化）
-3. 厳密に 1200×630 へ：`sips -z 630 1200 out.png`
+2. 対象スライドを PNG 化：`pdftoppm -png -scale-to-x 1200 -scale-to-y 630 -f <slide> -l <slide> OGP_Template_Master.pdf out`
+   （**この形で直接 1200×630 が出る。**`-r 96` は高さ 631px になり、`sips -z` での再サンプルが
+   最下段に明るい 1px 行を残すため使わない）
+3. 追加のリサイズは不要（サイズは `sips -g pixelWidth -g pixelHeight` で確認する）
 4. `assets/ogp/generated/<page-key>.png` へ配置する。
 5. 書き出し前に文字切れ・フォント置換・余白・タイトル位置を目視確認する。
 
@@ -77,6 +81,9 @@ Success ページ（`community-success.html` / `premium-success.html`）は `noi
 
 ## OGP 検証手順
 
+- **既存スライドの非破壊確認：** 更新前後の pptx を zip として開き、変更対象以外の `ppt/slides/slideN.xml` が byte 単位で一致することを確認する。
+- **既存 PNG の再現確認：** 更新後の master から既存ページ（例 premium）を書き出し、`generated/` の既存 PNG とテキスト境界が一致することを確認する。
+- **セーフゾーン確認：** 明るい文字画素の外接矩形が外周 90px の内側に収まり、幅が 1020px 以内であることを確認する。
 - リポジトリ内：`og:image` の URL・絶対 URL であること・画像が 1200×630 であることを確認。
 - 公開後の HTTP 確認：`curl -I https://www.b8e.co.jp/assets/ogp/generated/community-apply.png` で 200 と `Content-Type: image/png` を確認。
 - 外部プレビュー（ログインが必要なため手順のみ）：

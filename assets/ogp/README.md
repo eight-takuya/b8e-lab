@@ -18,6 +18,13 @@
 
 v1.0はここまでの範囲で完成しており、未完了項目はない。
 
+### v1.2 — Owner Program 追加
+2026-08-31
+
+- **Slide 13（Owner Program）を追加**（Slide 07 Premium の複製 + タイトル・サブコピー差し替え）。`generated/owner-program.png` を生成し `academy/owner-program.html` の `og:image` へ反映
+- **Slide 05（Program）のサブコピーを更新** — `Community と Premium、二つの関わり方。` → `三つの入口から、今の自分に合う形で。`。`academy/program.html` が 3 入口構成へ整合したことに伴う追随（`generated/program.png` を再生成）
+- 背景・ロゴ・配色・余白・フォント・レイアウトは変更していない。Slide 05 以外の既存スライドは byte 単位で不変
+
 ### v1.1以降（拡張予定・未着手）
 
 - Community Portal 用スライド追加
@@ -144,6 +151,7 @@ Slide 01（Brand Manual）も同じ`OGP_MASTER`レイアウトを使用する。
 | 10 | Library | `library` |
 | 11 | Community Apply | `community-apply` |
 | 12 | Premium Apply | `premium-apply` |
+| **13** | **Owner Program** | **`owner-program`** |
 
 運用ルール：
 
@@ -385,7 +393,7 @@ Community Portal / Premium Portal / DX支援などを追加する場合も、同
 | Top | BEAT EIGHT EMOTION | B8E | 変容には、外側と内側がある。 |
 | About | BEAT EIGHT EMOTION | About | 一人の問いが、場所になった。 |
 | Academy | DREAMIN' SPIRAL ACADEMY | Dreamin' Spiral Academy | 外側が変わるほど、自分の中心が大切になる。 |
-| Program | DREAMIN' SPIRAL ACADEMY | 実践の形 | Community と Premium、二つの関わり方。 |
+| Program | DREAMIN' SPIRAL ACADEMY | 実践の形 | 三つの入口から、今の自分に合う形で。 |
 | Community | DREAMIN' SPIRAL ACADEMY | Community | 共に育つ場所です。 |
 | Premium | DREAMIN' SPIRAL ACADEMY | Premium | 一人ひとりの人生全体を、6か月かけて整える。 |
 | Guide Session | DREAMIN' SPIRAL ACADEMY | 無料ガイドセッション | 今の自分の言葉で、話してみる。 |
@@ -393,6 +401,7 @@ Community Portal / Premium Portal / DX支援などを追加する場合も、同
 | Library | DREAMIN' SPIRAL ACADEMY | 人生再起動ガイド | 人生再起動の、入口へ。 |
 | Community Apply | DREAMIN' SPIRAL ACADEMY | Community に参加する | 共に育つ場へ。 |
 | Premium Apply | DREAMIN' SPIRAL ACADEMY | Premium 伴走を始める | 個別の伴走を、始める。 |
+| **Owner Program** | DREAMIN' SPIRAL ACADEMY | **オーナープログラム** | **自分がオーナーとなり、AIと一緒に事業の仕組みをつくる。** |
 
 **将来拡張分（参考・未確定）**
 
@@ -421,6 +430,7 @@ Community Portal / Premium Portal / DX支援などを追加する場合も、同
 | `academy/library.html` | `https://www.b8e.co.jp/assets/ogp/generated/library.png` |
 | `academy/community-apply.html` | `https://www.b8e.co.jp/assets/ogp/generated/community-apply.png` |
 | `academy/premium-apply.html` | `https://www.b8e.co.jp/assets/ogp/generated/premium-apply.png` |
+| **`academy/owner-program.html`** | **`https://www.b8e.co.jp/assets/ogp/generated/owner-program.png`** |
 
 `academy/community.html` / `academy/premium.html` が暫定利用していた`assets/community/bg_v01.png`は、v1.0で正式なOGP画像に置き換え済み。og:imageはすべて絶対URLで記載する（SNSクローラーによっては相対パスを正しく解決できないため）。
 

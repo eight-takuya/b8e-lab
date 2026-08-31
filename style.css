@@ -3494,14 +3494,18 @@ a:hover {
   line-height: 1.6;
 }
 
+/* 3 つの入口は対等。grid で 3 等分し、2+1 の折り返しを起こさせない
+   （折り返すと、2 つと 1 つのあいだに上下関係が見えてしまうため） */
 .journey-fork {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 24px 40px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px 32px;
 }
 
-.journey-fork > div {
-  flex: 1 1 220px;
+@media (max-width: 600px) {
+  .journey-fork {
+    grid-template-columns: 1fr;
+  }
 }
 
 .journey-end {

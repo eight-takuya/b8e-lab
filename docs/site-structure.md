@@ -120,7 +120,9 @@ Dreamin' Spiral Academy には、**3 つの独立した入口**がある。
 | `academy/program.html` の `<meta name="description">` / `og:description` | **「三つの入口」へ更新済み** | ✅ Phase E |
 | `academy.html` | **「3つの入口」section を追加済み**（`Academyが支援しないこと` と Quiet CTA の間）。3 つを `.offer-list` に対等に並べ、`.academy-nav-links` から各ページへ | ✅ Phase E |
 | `/academy/owner-program.html` | **`academy.html` / `academy/program.html` から導線接続済み** | ✅ Phase E |
-| `academy/program.html` の Journey Map `.journey-fork` | **未変更**（`共に育つ` / `個別に伴走する` の 2 分岐のまま）。3 つ目を足すと `flex: 1 1 220px` が 720px カラムで 2+1 に折り返し、**視覚的な上下関係を作ってしまう**ため見送った。Gate 3 判断事項 | ⏸ 保留 |
+| `academy/program.html` の Journey Map `.journey-fork` | **3 分岐へ整合済み。**`仕組みにする`（オーナープログラム）を追加し、`.journey-fork` を **flex → `grid-template-columns: repeat(3, 1fr)`** へ変更。**2+1 の折り返しが構造的に起こらない**。600px 以下は 1 カラム | ✅ Phase E |
+| オーナープログラム専用 OGP | **作成済み。**Master PPTX の **Slide 13**（Slide 07 Premium の複製 + タイトル / サブコピー差し替え）から `generated/owner-program.png`（1200×630）を生成し `og:image` へ反映 | ✅ Phase E |
+| `generated/program.png` の OGP サブコピー | **追随更新済み。**`Community と Premium、二つの関わり方。` → `三つの入口から、今の自分に合う形で。`（Slide 05 のテキストのみ変更） | ✅ Phase E |
 | global nav | **未変更**（オーナープログラムの単独追加は行わない）。まず Academy 内導線として公開する | ⏸ 意図的 |
 
 ⚠️ **Phase E で導線を追加した。** `academy.html` と `academy/program.html` から
@@ -276,13 +278,13 @@ Notion側との同期は `dreamin-spiral-core/scripts/notion-setup/sync-academy-
 | Community / Premium Portal ページへの導線接続 | 📅 Planned | 未着手 |
 | Client My Page（認証・ログイン機能） | 📅 Planned | 実装未着手 |
 | `academy/owner-program.html`（オーナープログラム LP） | 🚧 Preview | **実装済み・Gate 2 承認済み。** `academy.html` / `academy/program.html` から導線接続済み。**本番未反映** — Gate 3（Production）Owner Review 待ち |
-| `academy.html` / `academy/program.html` の 3 入口導線 | 🚧 Preview | **実装済み・本番未反映。** Gate 3 Owner Review 待ち |
+| `academy.html` / `academy/program.html` の 3 入口導線 | 🚧 Preview | **実装済み・本番未反映。** Journey Map も 3 分岐へ整合済み。Gate 3 Owner Review 待ち |
+| `generated/owner-program.png`（専用 OGP） | 🚧 Preview | **作成済み・本番未反映。** Master Slide 13 から生成（1200×630） |
 
 ---
 
 ## Future
 
-- **Journey Map の 3 入口整合** — `academy/program.html` の `.journey-fork` は `共に育つ` / `個別に伴走する` の 2 分岐のまま。3 つ目を足すとレイアウトが 2+1 に折り返して上下関係に見えるため、`.journey-fork` の CSS 調整とあわせて別途検討する
 - **global nav へのオーナープログラム追加** — 現時点では行わない。Academy 内導線での公開後、必要性を Owner が判断する
 - **オーナープログラム専用 OGP** — 現在は暫定で `generated/academy.png` を流用している。Master PPTX へ専用スライドを追加するかは Owner / Architect 判断事項（[academy-ogp-operation.md](academy-ogp-operation.md)）
 - **既存 Academy ページの 3 入口整合** — `academy/program.html` の「二つの関わり方」（本文・meta description・OGP description）と `academy.html` を、Community / Premium / オーナープログラムの対等な 3 入口へ改稿する
