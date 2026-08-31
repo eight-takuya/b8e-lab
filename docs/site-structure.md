@@ -99,10 +99,16 @@ Dreamin' Spiral Academy には、**3 つの独立した入口**がある。
 **b8e-lab は Public repository である。** 次を b8e-lab（HTML・docs いずれも）へ置かない。
 
 - 未確定の**料金**
-- 未確定の**期間**
-- 未確定の**詳細な提供条件**
+- 未確定の**詳細な提供条件**（セッション回数・チャット対応範囲・教材数・保証内容など）
 - 内部戦略・内部検討・内部思想ドラフト
 - OS 側 Offer Definition の Private 情報（公開前提でない対象者情報を含む）
+
+**期間について（2026-08-31 Owner 決定）:** オーナープログラムの**提供期間 6 か月は公開情報**として LP へ記載する。
+**料金は引き続き非公開。**
+
+> ⚠️ **OS 側 Offer 正本が未追随。** `academy-offer-definition.md` §3-6・§6-3・未決事項 O-1 は
+> 2026-08-30 時点の「期間は未確定・HP / LP へ公開しない」のままである。本決定を Private 正本へ反映する
+> **OS repo 側の更新（Phase A 追随）が必要**。Owner / Architect 判断事項として Gate 2 で報告済み。
 
 **反映順序:** OS repo の Offer Definition（Private 正本）→ 本書ほか b8e-lab 設計文書 → HP / LP 実装。
 
@@ -216,7 +222,7 @@ academy/premium-portal.html        ← どこからもリンクされていな�
 | `academy/premium.html` | **Premium LP**。提供内容（Offer Definition 準拠の4項目）と Premium 専用申込への導線。Community の申込 CTA は置かない（比較は program.html へ） |
 | `academy/premium-apply.html` | **Premium 専用申込ページ**。Stripe Payment Link・申込後の流れ・LINE |
 | `academy/premium-success.html` | Premium 決済後の案内（noindex）。Stripe のリダイレクト先 |
-| `academy/owner-program.html` | **Dreamin' Spiral オーナープログラム LP**。3 入口のうちオーナープログラムの詳細ページ。主 CTA は無料ガイドセッション（`session.html`）。**料金・期間・詳細な提供条件は掲載しない**（未確定のため）。Phase C 時点では**既存ページからリンクされていない**（Gate 2 承認 → Phase E で導線追加） |
+| `academy/owner-program.html` | **Dreamin' Spiral オーナープログラム LP**。3 入口のうちオーナープログラムの詳細ページ。主 CTA は無料ガイドセッション（`session.html`）。**提供期間 6 か月は掲載・料金と詳細な提供条件は掲載しない**（Owner 決定 2026-08-31／料金は未確定）。Phase C 時点では**既存ページからリンクされていない**（Gate 2 承認 → Phase E で導線追加） |
 | `academy/premium-portal.html` | **Premium Client Portal Prototype**。契約後マイページの原型。対象は契約者・受講者・個別伴走クライアント。受講者が現在地・今月のテーマ・教材・Journal・Next Sessionを確認する場所。外向けLPではなく、本番導線へ出す前の体験確認用Prototype（Next.js / Supabase / 認証 / per-member表示への育成を見据える） |
 
 ---
