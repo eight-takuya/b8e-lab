@@ -6,6 +6,68 @@
 ---
 
 ---
+## [2026-08-31] — Dreamin' Spiral オーナープログラムを本番公開（Phase F・Work Closed）
+
+**Scope:** 本番反映と post-deploy validation の記録（`docs/site-structure.md` / `docs/improvement-log.md`）
+**Triggered by:** **Gate 3｜Production の Owner 承認**（「承認します。」）
+
+### 公開したもの
+
+| 対象 | 内容 |
+|---|---|
+| `academy/owner-program.html` | **新規公開。** Dreamin' Spiral オーナープログラム LP |
+| `academy.html` | 「3つの入口」section を追加（Community / Premium / オーナープログラム） |
+| `academy/program.html` | 「二つの関わり方」→「3つの入口」。Journey Map を 3 分岐へ。オーナープログラムの `program-plan` を追加 |
+| `assets/ogp/generated/owner-program.png` | **新規公開。** 専用 OGP（1200×630・Master Slide 13） |
+| `assets/ogp/generated/program.png` | 3 入口へ追随したサブコピーで再生成 |
+
+PR [#82](https://github.com/eight-takuya/b8e-lab/pull/82) を通常 merge（merge commit `9e5189e`・commit 4 件）。feature branch は remote / local とも削除済み。
+
+### Production validation（本番 URL で実測）
+
+| 項目 | 結果 |
+|---|---|
+| HTTP | 公開 11 ページすべて 200。OGP 画像 6 件すべて 200 / `image/png` |
+| **リンク切れ** | **0 件**（7 ページから辿れる内部 URL 25 件をすべて実アクセス確認） |
+| Journey Map 3 分岐 | **1280px**: 3 列 1 行・各 185×138px／**768px**: 3 列 1 行・各 138px／**375px**: 1 列 3 行・各 106px。**2+1 の折り返しなし・3 つとも同寸** |
+| `academy.html` 3 入口 | 1280px で 84 / 84 / 84px（同寸）。375px で 84 / 110 / 110px |
+| 横スクロール | 全ページで発生なし。viewport はみ出し要素 0 件 |
+| OGP 画像 | 本番配信バイト列が repo と **SHA-256 一致**。1200×630 |
+| metadata | `canonical` = `og:url` = `https://www.b8e.co.jp/academy/owner-program.html`。`og:image` は専用 OGP の絶対 URL。`twitter:*` はサイト慣習どおりなし |
+| 旧表現の残存 | `二つの関わり方` **0 件**・`どちらが` **0 件** |
+| regression | `index.html` / `academy/community.html`（offer 4 件維持）/ `academy/premium.html`（offer 4 件維持）/ `academy/session.html`（予約 CTA 維持）に崩れなし。global nav・footer は変更していない |
+| Public / Private 境界 | 公開されている提供条件は **6 か月のみ**。料金・セッション回数・時間・チャット範囲・教材数・保証・契約条件の記載 **0 件** |
+| security | secret / token / credential / API key / password / ローカルパスの混入 **0 件** |
+
+### この Work の全体
+
+```
+Phase A  Private 正本         OS PR #144（3 入口・Phasing-Gate）
+Phase B  b8e-lab 設計整合      PR #81
+Gate 1   Concept / Architecture      ✅ Owner 承認
+Phase C  LP 単独実装 → Gate 2 改善   PR #82（b787a66 / 4a460ae）
+Gate 2   Experience / Expression     ✅ Owner 承認
+Phase E  既存 HP へ 3 入口追加        PR #82（7906e1f / b18be7d）
+Gate 3   Production                  ✅ Owner 承認
+Phase F  Merge / Production / Validation / Close   ← 本エントリ
+```
+
+期間「原則 6 か月の伴走」は OS repo PR #145（`academy-offer-definition.md` §3-6）で Private 正本化してから公開している。
+
+### 残した follow-up（本番公開を妨げないもの）
+
+- **global nav へのオーナープログラム追加** — 現時点では行わない。Academy 内導線での公開後、必要性を Owner が判断する
+- **Premium と期間が同じ 6 か月** — 公開面で 2 つの区別が付きにくくならないか、運用しながら確認する
+
+### Philosophy notes
+
+3 つ目の入口を足す作業は、3 つ目を目立たせない作業だった。
+ピクセルを測って高さを揃えるところまでやって、ようやく「どこから始めても構いません」が本当になる。
+
+### Deployed
+[x] Yes（2026-08-31・https://www.b8e.co.jp/academy/owner-program.html）
+
+---
 ## [2026-08-31] — Journey Map を3分岐へ整合・オーナープログラム専用 OGP を作成（Gate 3 前の最終整備）
 
 **Scope:** `academy/program.html`／`style.css`／`academy/owner-program.html`（`og:image` のみ）／`assets/ogp/master/OGP_Template_Master.pptx`／`assets/ogp/generated/owner-program.png`（新規）／`assets/ogp/generated/program.png`／`assets/ogp/README.md`／`docs/academy-ogp-operation.md`／`docs/site-structure.md`／`docs/improvement-log.md`

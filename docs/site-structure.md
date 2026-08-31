@@ -36,7 +36,7 @@ Dreamin' Spiral Academy には、**3 つの独立した入口**がある。
 |---|---|---|
 | **Community** | 気づき・つながりが育つ場 | `academy/community.html`（✅ 公開中） |
 | **Premium** | メンターとともに、自分の質感や本命の未来を深め、育てていく伴走 | `academy/premium.html`（✅ 公開中） |
-| **Dreamin' Spiral オーナープログラム** | 自分自身がオーナーとして立ち、AI とともに自分の事業・活動を仕組みにし、実装し、改善しながら育て続ける実践 | `academy/owner-program.html`（🚧 **Phase E 実装済み・`academy.html` / `academy/program.html` から導線接続**） |
+| **Dreamin' Spiral オーナープログラム** | 自分自身がオーナーとして立ち、AI とともに自分の事業・活動を仕組みにし、実装し、改善しながら育て続ける実践 | `academy/owner-program.html`（✅ **公開中**） |
 
 ### 構造上の拘束（Web 表現）
 
@@ -116,20 +116,20 @@ Dreamin' Spiral Academy には、**3 つの独立した入口**がある。
 
 | 箇所 | 対応 | 実施 Phase |
 |---|---|---|
-| `academy/program.html`「関わり方の違い」 | **「3つの入口」へ改稿済み。**「どれが上でも下でもありません。順番でもありません。今の自分に合う入口が、よい入口です」。オーナープログラムの `program-plan` ブロックを追加（Community / Premium と同じ体裁） | ✅ Phase E |
-| `academy/program.html` の `<meta name="description">` / `og:description` | **「三つの入口」へ更新済み** | ✅ Phase E |
-| `academy.html` | **「3つの入口」section を追加済み**（`Academyが支援しないこと` と Quiet CTA の間）。3 つを `.offer-list` に対等に並べ、`.academy-nav-links` から各ページへ | ✅ Phase E |
-| `/academy/owner-program.html` | **`academy.html` / `academy/program.html` から導線接続済み** | ✅ Phase E |
-| `academy/program.html` の Journey Map `.journey-fork` | **3 分岐へ整合済み。**`仕組みにする`（オーナープログラム）を追加し、`.journey-fork` を **flex → `grid-template-columns: repeat(3, 1fr)`** へ変更。**2+1 の折り返しが構造的に起こらない**。600px 以下は 1 カラム | ✅ Phase E |
-| オーナープログラム専用 OGP | **作成済み。**Master PPTX の **Slide 13**（Slide 07 Premium の複製 + タイトル / サブコピー差し替え）から `generated/owner-program.png`（1200×630）を生成し `og:image` へ反映 | ✅ Phase E |
-| `generated/program.png` の OGP サブコピー | **追随更新済み。**`Community と Premium、二つの関わり方。` → `三つの入口から、今の自分に合う形で。`（Slide 05 のテキストのみ変更） | ✅ Phase E |
+| `academy/program.html`「関わり方の違い」 | **「3つの入口」へ改稿済み。**「どれが上でも下でもありません。順番でもありません。今の自分に合う入口が、よい入口です」。オーナープログラムの `program-plan` ブロックを追加（Community / Premium と同じ体裁） | ✅ 公開済み |
+| `academy/program.html` の `<meta name="description">` / `og:description` | **「三つの入口」へ更新済み** | ✅ 公開済み |
+| `academy.html` | **「3つの入口」section を追加済み**（`Academyが支援しないこと` と Quiet CTA の間）。3 つを `.offer-list` に対等に並べ、`.academy-nav-links` から各ページへ | ✅ 公開済み |
+| `/academy/owner-program.html` | **`academy.html` / `academy/program.html` から導線接続済み** | ✅ 公開済み |
+| `academy/program.html` の Journey Map `.journey-fork` | **3 分岐へ整合済み。**`仕組みにする`（オーナープログラム）を追加し、`.journey-fork` を **flex → `grid-template-columns: repeat(3, 1fr)`** へ変更。**2+1 の折り返しが構造的に起こらない**。600px 以下は 1 カラム | ✅ 公開済み |
+| オーナープログラム専用 OGP | **作成済み。**Master PPTX の **Slide 13**（Slide 07 Premium の複製 + タイトル / サブコピー差し替え）から `generated/owner-program.png`（1200×630）を生成し `og:image` へ反映 | ✅ 公開済み |
+| `generated/program.png` の OGP サブコピー | **追随更新済み。**`Community と Premium、二つの関わり方。` → `三つの入口から、今の自分に合う形で。`（Slide 05 のテキストのみ変更） | ✅ 公開済み |
 | global nav | **未変更**（オーナープログラムの単独追加は行わない）。まず Academy 内導線として公開する | ⏸ 意図的 |
 
-⚠️ **Phase E で導線を追加した。** `academy.html` と `academy/program.html` から
-`academy/owner-program.html` へリンクしている。一方、**global nav・footer・`academy/session.html`・
-`academy/community.html`・`academy/premium.html`・`index.html`・`scroll.js` は変更していない。**
-global nav へのオーナープログラム単独追加は行わず、まず Academy 内導線として公開する。
-**本番未反映**（Gate 3｜Production の Owner Review 待ち）。
+**2026-08-31 に本番公開済み**（Gate 3 Owner 承認 → PR #82 merge → Vercel Production）。
+`academy.html` と `academy/program.html` から `academy/owner-program.html` へリンクしている。
+一方、**global nav・footer・`academy/session.html`・`academy/community.html`・`academy/premium.html`・
+`index.html`・`scroll.js` は変更していない。** global nav へのオーナープログラム単独追加は行わず、
+Academy 内導線としての公開に留めている（追加の要否は今後 Owner が判断する）。
 
 ---
 
@@ -152,7 +152,7 @@ https://www.b8e.co.jp/academy.html                    Academy入口（世界観�
 ├─ /academy/premium.html          Premium LP（提供内容・申込導線）
 │   ├─ /academy/premium-apply.html      Premium 専用申込（Stripe）
 │   └─ /academy/premium-success.html    決済後の案内（noindex）
-├─ /academy/owner-program.html    Dreamin' Spiral オーナープログラム LP（🚧 Phase E・academy.html / program.html から到達可能・本番未反映）
+├─ /academy/owner-program.html    Dreamin' Spiral オーナープログラム LP（academy.html / program.html から到達可能）
 ├─ /academy/apply.html            旧共通 Apply。現在は入口の案内ページ（noindex）
 └─ /academy/premium-portal.html   Premium Client Portal Prototype（契約後マイページの原型）
 ```
@@ -227,7 +227,7 @@ academy/premium-portal.html        ← どこからもリンクされていな�
 | `academy/premium.html` | **Premium LP**。提供内容（Offer Definition 準拠の4項目）と Premium 専用申込への導線。Community の申込 CTA は置かない（比較は program.html へ） |
 | `academy/premium-apply.html` | **Premium 専用申込ページ**。Stripe Payment Link・申込後の流れ・LINE |
 | `academy/premium-success.html` | Premium 決済後の案内（noindex）。Stripe のリダイレクト先 |
-| `academy/owner-program.html` | **Dreamin' Spiral オーナープログラム LP**。3 入口のうちオーナープログラムの詳細ページ。主 CTA は無料ガイドセッション（`session.html`）。**提供期間 6 か月は掲載・料金と詳細な提供条件は掲載しない**（Owner 決定 2026-08-31／料金は未確定）。**Gate 2 承認済み。** `academy.html`「3つの入口」と `academy/program.html`「3つの入口」から到達できる（Phase E） |
+| `academy/owner-program.html` | **Dreamin' Spiral オーナープログラム LP**。3 入口のうちオーナープログラムの詳細ページ。主 CTA は無料ガイドセッション（`session.html`）。**提供期間 6 か月は掲載・料金と詳細な提供条件は掲載しない**（Owner 決定 2026-08-31／料金は未確定）。`academy.html`「3つの入口」と `academy/program.html`「3つの入口」から到達できる |
 | `academy/premium-portal.html` | **Premium Client Portal Prototype**。契約後マイページの原型。対象は契約者・受講者・個別伴走クライアント。受講者が現在地・今月のテーマ・教材・Journal・Next Sessionを確認する場所。外向けLPではなく、本番導線へ出す前の体験確認用Prototype（Next.js / Supabase / 認証 / per-member表示への育成を見据える） |
 
 ---
@@ -277,9 +277,9 @@ Notion側との同期は `dreamin-spiral-core/scripts/notion-setup/sync-academy-
 | Community/Premium Portal Design（設計ドキュメント） | ✅ Released（設計のみ） | `dreamin-spiral-core/docs/session-library/{community,premium}/portal/` に存在。実装（ログイン等）は別途 |
 | Community / Premium Portal ページへの導線接続 | 📅 Planned | 未着手 |
 | Client My Page（認証・ログイン機能） | 📅 Planned | 実装未着手 |
-| `academy/owner-program.html`（オーナープログラム LP） | 🚧 Preview | **実装済み・Gate 2 承認済み。** `academy.html` / `academy/program.html` から導線接続済み。**本番未反映** — Gate 3（Production）Owner Review 待ち |
-| `academy.html` / `academy/program.html` の 3 入口導線 | 🚧 Preview | **実装済み・本番未反映。** Journey Map も 3 分岐へ整合済み。Gate 3 Owner Review 待ち |
-| `generated/owner-program.png`（専用 OGP） | 🚧 Preview | **作成済み・本番未反映。** Master Slide 13 から生成（1200×630） |
+| `academy/owner-program.html`（オーナープログラム LP） | ✅ Released | 本番稼働中（2026-08-31 公開）。`academy.html` / `academy/program.html` から導線接続済み |
+| `academy.html` / `academy/program.html` の 3 入口導線 | ✅ Released | 本番稼働中。Journey Map も 3 分岐（Desktop / Tablet 3 列 1 行・Mobile 1 列 3 行） |
+| `generated/owner-program.png`（専用 OGP） | ✅ Released | 本番稼働中。Master Slide 13 から生成（1200×630） |
 
 ---
 
