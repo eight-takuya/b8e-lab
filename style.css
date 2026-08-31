@@ -1037,7 +1037,8 @@ a:hover {
 .apply-hero,
 .thanks-hero,
 .library-hero,
-.session-hero {
+.session-hero,
+.owner-program-hero {
   /* Deep Indigo — 夜明け前の空：目覚める・探究する・創造する */
   background:
     radial-gradient(ellipse at 50% 20%, rgba(110, 145, 245, 0.12) 0%, transparent 65%),
@@ -1069,7 +1070,8 @@ a:hover {
 /* Academy TOP / Session hero のリード文
    （トーンは既存 .community-hero-copy に合わせる） */
 .academy-hero .hero-sub,
-.session-hero .hero-sub {
+.session-hero .hero-sub,
+.owner-program-hero .hero-sub {
   color: #a8a49e;
   line-height: 2.4;
   max-width: 420px;
@@ -1081,7 +1083,8 @@ a:hover {
   .apply-hero,
   .thanks-hero,
   .library-hero,
-  .session-hero {
+  .session-hero,
+  .owner-program-hero {
     padding: 72px 24px;
   }
   .hero-copy {

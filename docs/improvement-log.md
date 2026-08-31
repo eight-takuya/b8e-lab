@@ -6,6 +6,49 @@
 ---
 
 ---
+## [2026-08-31] — Dreamin' Spiral オーナープログラム LP を単独実装（Phase C・未リンク）
+
+**Scope:** `academy/owner-program.html`（新規）／`style.css`（hero variant 登録のみ）／`docs/site-structure.md`／`docs/improvement-log.md`
+**Triggered by:** Phase B（PR #81）merge 後の Phase C｜LP 単独実装。実装計画の正本は OS repo `docs/repository-architecture/owner-program-web-implementation-plan.md`、Offer の正本は同 `academy-offer-definition.md` §3・§6
+
+### Changes
+
+- **`academy/owner-program.html` を新規作成。** Dreamin' Spiral オーナープログラムの LP。構成は Hero →（具体）こんなことは、ありませんか →（理解）3つの役割 → 仕組みにできるもの → 対象者 → 目指すこと →（構造・思想）Dreamin' Spiral → Academy の3つの入口 → Quiet CTA
+- **`style.css`** — 既存の hero variant セレクタ群（本体・`.hero-sub`・mobile）へ `.owner-program-hero` を**追記のみ**。新しい宣言は 1 行も追加していない（他ページと同じ Deep Indigo hero をそのまま使う）
+- 本文は既存コンポーネントのみで構成 — `.page-intro` / `.academy-nav-links` / `.resonance-questions` / `.section-block` / `.compare-list` / `.offer-list` / `.journey-map` / `.quiet-cta` / `.back-link`
+- **新しい JS を追加していない**（`scroll.js` のみ・既存全ページと同じ）
+- `docs/site-structure.md` の Site Map / Page Role / Status / Future を Phase C の実態へ更新
+
+### このページがまだ「どこからも辿れない」理由
+
+Phase C は **LP 単独実装**。既存 HP へ入口を追加するのは Phase E であり、その前に
+**Gate 2（Experience / Expression — これで伝わるか）**の Owner Review がある。
+URL を知っている人だけが Preview で開ける状態にして、体験そのものを先に確認してもらう。
+
+そのため `academy.html` / `academy/program.html` / nav / footer からのリンクは追加していない。
+
+### 載せなかったもの
+
+**料金・期間・詳細な提供条件は書いていない。** Offer Definition 上で未確定であり、
+b8e-lab は Public repository のため（`site-structure.md` の Public / Private 境界）。
+「個別相談で案内します」のような、正本にない代替の言い回しも置いていない。
+CTA は既存の無料ガイドセッション（`session.html`）1 本のみで、新しい申込フォームは作っていない。
+
+### OGP
+
+専用スライドが Master PPTX に未追加のため、**暫定で `generated/academy.png` を流用**している。
+専用 OGP を作るかどうかは Owner / Architect 判断事項として残す（場当たり的な画像は作らない）。
+
+### Philosophy notes
+
+3 つの役割に分けた瞬間、AI は「賢い道具」ではなく「席のあるチーム」になる。
+それでも決めるのはオーナーだけ、という一文をどのセクションにも残した。
+分業の話に見えて、実際には主語を手放さないための構造になっている。
+
+### Deployed
+[ ] Yes（Vercel Preview のみ。本番未反映・Gate 2 Review 待ち）
+
+---
 ## [2026-08-31] — Academy を「3 つの独立した入口」へ整合（設計正本のみ）
 
 **Scope:** `docs/site-structure.md` / `docs/improvement-log.md` — **HTML / CSS / JS は変更していない**
