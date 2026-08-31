@@ -4,7 +4,9 @@
 >
 > Academy 配下のページ構成・Notion Knowledge Architecture との対応・実装状況は「Academy Site Map」以降を参照。Dreamin' Spiral Academy の Notion 側構造は [dreamin-spiral-core/docs/06_implementations/academy-knowledge-architecture.md](https://github.com/eight-takuya/dreamin-spiral-core/blob/main/docs/06_implementations/academy-knowledge-architecture.md) を正本とする。
 >
-> Community / Premium の提供内容（Offer）の正本は [dreamin-spiral-core/docs/repository-architecture/academy-offer-definition.md](https://github.com/eight-takuya/dreamin-spiral-core/blob/main/docs/repository-architecture/academy-offer-definition.md) とする。b8e-lab の LP は、この Offer Definition を反映する位置付けであり、提供内容を変更する際は正本を先に更新する。
+> Community / Premium / Dreamin' Spiral オーナープログラムの提供内容（Offer）の正本は [dreamin-spiral-os/docs/repository-architecture/academy-offer-definition.md](https://github.com/eight-takuya/dreamin-spiral-os/blob/main/docs/repository-architecture/academy-offer-definition.md) とする。b8e-lab の LP は、この Offer Definition を反映する位置付けであり、提供内容を変更する際は正本を先に更新する。
+>
+> ※ OS 側 repository の現名称は **`dreamin-spiral-os`**（旧名 `dreamin-spiral-core`。旧名の URL は GitHub の redirect で引き続き到達する）。
 
 ---
 
@@ -19,6 +21,102 @@
 | `about.html` | `/about` | About \| B8E | Founder's path, company identity, name meaning |
 
 `dc-guide.html` は DC 領域の補助ページ（本ドキュメントの調査対象外。Academy とは無関係）。
+
+---
+
+## Academy の 3 つの入口（Web Architecture）
+
+> Offer の正本は OS repo の [`academy-offer-definition.md`](https://github.com/eight-takuya/dreamin-spiral-os/blob/main/docs/repository-architecture/academy-offer-definition.md)（§0・§3・§6）。
+> 本節はそれを **b8e-lab の Web 構造としてどう扱うか**の正本であり、提供内容そのものを定義しない。
+> 実装の進め方（Phase A〜F / Owner Review Gate 1〜3）は同 repo の [`owner-program-web-implementation-plan.md`](https://github.com/eight-takuya/dreamin-spiral-os/blob/main/docs/repository-architecture/owner-program-web-implementation-plan.md)。
+
+Dreamin' Spiral Academy には、**3 つの独立した入口**がある。
+
+| 入口 | 質感（一言） | Web 上の現在地 |
+|---|---|---|
+| **Community** | 気づき・つながりが育つ場 | `academy/community.html`（✅ 公開中） |
+| **Premium** | メンターとともに、自分の質感や本命の未来を深め、育てていく伴走 | `academy/premium.html`（✅ 公開中） |
+| **Dreamin' Spiral オーナープログラム** | 自分自身がオーナーとして立ち、AI とともに自分の事業・活動を仕組みにし、実装し、改善しながら育て続ける実践 | **未実装**（LP 候補 `/academy/owner-program.html`） |
+
+### 構造上の拘束（Web 表現）
+
+**3 つは上下関係ではない。順番でもない。ステップアップ型でもない。**
+
+- 3 つを**横並び・対等**な関係として扱う
+- 次のような段階・矢印の構造で表現しない
+
+```
+❌ Community → Premium → オーナープログラム
+❌ Community ↓ Premium ↓ オーナープログラム
+```
+
+- `Community → Premium` と進む人もいれば、`オーナープログラム → Premium` と進む人もいる。1 つだけを使う人もいる
+- どれも入口になれる。順番は本人の現在地が決める
+
+### 入口の質感（基本表現）
+
+> 今の自分に合うところから、どこからでも始められる。
+
+3 入口を並べるすべての箇所（`academy.html`・`academy/program.html`・各 LP）で、この質感を基本とする。
+
+### HP / LP Communication Principle — 入口は広く、奥は深く
+
+**抽象度をできるだけ下げ、入口を広くする。** 思想を薄めるのではなく、入口では日常語・具体語へ翻訳し、
+読み進めるほど背景の構造・思想が自然に見えてくる設計とする。公開ページの情報設計はこの順で組む。
+
+```
+具体 → 理解 → 共感 → 構造 → 思想
+```
+
+**ファーストビューでは抽象語を前面に出しすぎない。** 情報空間／現実創造／OS Architecture 等の
+抽象的な語の大量提示から始めない。まず「何をするものなのか」が初見で分かるところから始める。
+
+オーナープログラムの想定する中心表現（確定コピーではなく方向性）:
+
+> 自分がオーナーとなり、AI と一緒に事業の仕組みをつくる。
+
+これは既存の [`writing-principles.md`](writing-principles.md)（短い文・問いで開く・ブローシャーにしない）と併存する。
+文体の正本は writing-principles、**情報の出し順**の正本が本節。
+
+### 用語表記
+
+| 原則 | 表記 |
+|---|---|
+| 日本人向け公開ページでは日本で一般的・直感的な表記を使う | `Mentor` ではなく **メンター** |
+| 3 者の役割名はカタカナ | **オーナー（意思決定役）／アーキテクト（設計役）／エンジニア（実装役）** |
+| プログラム名は日本語主表記 | **Dreamin' Spiral オーナープログラム**（英語単独表記を主にしない） |
+| 対象者 | 職種を機械的に大量列挙しない |
+
+### CTA 方針（現時点）
+
+| 項目 | 方針 |
+|---|---|
+| **主 CTA** | **当面は無料ガイドセッション**（`academy/session.html`）。オーナープログラム専用の申込システムは作らない |
+| 申込導線 | Community / Premium は既存の専用申込ページ（Stripe）を維持。オーナープログラムは専用申込を持たない |
+
+### Public / Private 境界
+
+**b8e-lab は Public repository である。** 次を b8e-lab（HTML・docs いずれも）へ置かない。
+
+- 未確定の**料金**
+- 未確定の**期間**
+- 未確定の**詳細な提供条件**
+- 内部戦略・内部検討・内部思想ドラフト
+- OS 側 Offer Definition の Private 情報（公開前提でない対象者情報を含む）
+
+**反映順序:** OS repo の Offer Definition（Private 正本）→ 本書ほか b8e-lab 設計文書 → HP / LP 実装。
+
+### 既存ページとの差分（未整合として記録）
+
+| 箇所 | 現状 | 必要な整合 | 実施 Phase |
+|---|---|---|---|
+| `academy/program.html`「関わり方の違い」 | 「**二つの関わり方**があります」＝ Community / Premium の 2 プログラム前提 | 3 入口として読める構造へ改稿 | **Phase E**（未着手） |
+| `academy/program.html` の `<meta name="description">` / `og:description` | 「コミュニティ・個別伴走という二つの関わり方」 | 同上 | **Phase E**（未着手） |
+| `academy.html` | オーナープログラムへの言及なし | 3 入口として入口を追加 | **Phase E**（未着手） |
+| `/academy/owner-program.html` | 未作成 | LP 単独実装（既存ページからリンクしない状態で Preview 確認） | **Phase C**（未着手） |
+
+⚠️ **上記の HTML 変更は本節の記録時点（Phase B）では実施していない。** 設計正本の更新のみを行い、
+`academy.html` / `academy/program.html` / `academy/session.html` / `style.css` / `scroll.js` / OGP / navigation は変更していない。
 
 ---
 
@@ -164,11 +262,15 @@ Notion側との同期は `dreamin-spiral-core/scripts/notion-setup/sync-academy-
 | Community/Premium Portal Design（設計ドキュメント） | ✅ Released（設計のみ） | `dreamin-spiral-core/docs/session-library/{community,premium}/portal/` に存在。実装（ログイン等）は別途 |
 | Community / Premium Portal ページへの導線接続 | 📅 Planned | 未着手 |
 | Client My Page（認証・ログイン機能） | 📅 Planned | 実装未着手 |
+| `academy/owner-program.html`（オーナープログラム LP） | 📅 Planned | **未作成。** Phase C で単独実装 → Preview で Owner 確認（既存ページからはリンクしない） |
+| `academy.html` / `academy/program.html` の 3 入口整合 | 📅 Planned | **未着手。** 現在は 2 プログラム前提（「二つの関わり方」）。Phase E で改稿 |
 
 ---
 
 ## Future
 
+- **Dreamin' Spiral オーナープログラム LP の新設** — `/academy/owner-program.html`。単独実装（Phase C）→ Owner Review（Phase D）を経て、既存 HP へ 3 入口として統合する（Phase E）。進め方の正本は OS repo `owner-program-web-implementation-plan.md`
+- **既存 Academy ページの 3 入口整合** — `academy/program.html` の「二つの関わり方」（本文・meta description・OGP description）と `academy.html` を、Community / Premium / オーナープログラムの対等な 3 入口へ改稿する
 - **Client My Page** — ログイン・マイページ機能。`academy/premium-portal.html` が Prototype として存在するが認証機能はない。Portal 設計ドキュメント（`community/portal/`・`premium/portal/`。Community側は認証アーキテクチャの設計を含む）も別途存在
 - **Community / Premium Portal ページの導線接続** — 参加者が実際に辿り着けるよう、ログイン後の導線を設計する（`premium-portal.html` は現状どこからもリンクされていない）
 - **Notion Knowledge Architecture への役割再整理の反映** — `academy/community.html` / `academy/premium.html`（LP再分類）・`academy/premium-portal.html`（Client My Page）に加え、`community-apply` / `premium-apply` / `community-success` / `premium-success` の配置を Notion側 Web / Platform 配下へ反映する

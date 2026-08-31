@@ -6,6 +6,35 @@
 ---
 
 ---
+## [2026-08-31] — Academy を「3 つの独立した入口」へ整合（設計正本のみ）
+
+**Scope:** `docs/site-structure.md` / `docs/improvement-log.md` — **HTML / CSS / JS は変更していない**
+**Triggered by:** OS repo PR #144 merge（Dreamin' Spiral オーナープログラムの Offer 正本化・Owner Review Gate 1 承認）。実装の進め方の正本は OS repo `docs/repository-architecture/owner-program-web-implementation-plan.md`（Phase A〜F / Gate 1〜3）
+
+### Changes
+
+- `docs/site-structure.md` に **「Academy の 3 つの入口（Web Architecture）」節を新設**。Community / Premium / Dreamin' Spiral オーナープログラムを **上下関係でも順番でもない 3 つの独立した入口**として正本化。矢印・段階構造での表現を禁止として明記
+- 同節に **HP / LP Communication Principle**（入口は広く、奥は深く。具体 → 理解 → 共感 → 構造 → 思想）・用語表記（メンター／オーナー・アーキテクト・エンジニア）・**主 CTA ＝ 無料ガイドセッション**・Public / Private 境界（未確定の料金・期間・提供条件を Public repo へ置かない）を記録
+- 冒頭の Offer 正本ポインタを **3 プログラム**対応へ更新。あわせて OS repo の現名称が `dreamin-spiral-os`（旧名 `dreamin-spiral-core`）であることを注記
+- **Status / Future** へ未実装項目を追記 — `academy/owner-program.html`（未作成・Phase C）と、`academy.html` / `academy/program.html` の 3 入口整合（未着手・Phase E）
+
+### なぜ HTML を変えないか
+
+実装計画上、ここは **Phase B（設計整合）**にあたる。LP 単独実装は Phase C、既存 HP への入口追加は Phase E であり、
+それぞれの前に Owner Review Gate がある。**設計正本を先に揃え、公開面の変更は Owner 判断の後に行う**。
+
+現在の `academy/program.html` は「二つの関わり方」（Community / Premium）を前提に書かれている。
+この未整合は伏せず、**設計正本側に「どこを Phase E で直すか」として明示的に記録**した。
+
+### Philosophy notes
+
+3 つを並べるとき、どうしても「どれが上か」の読み方が生まれる。それを Web の構造で先に閉じておく。
+選ぶのは本人で、順番を決めるのは今の現在地であって、ページの並び順ではない。
+
+### Deployed
+[ ] Yes（設計文書のみ。公開ページの表示に変化はない）
+
+---
 ## [2026-08-26] — 無料ガイドセッション：主導線を予約ページへ接続・Formspree を問い合わせへ降格
 
 **Scope:** `academy/session.html`
