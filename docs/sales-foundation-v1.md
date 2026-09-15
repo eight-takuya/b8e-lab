@@ -9,7 +9,7 @@
 
 | 項目 | 内容 |
 |---|---|
-| Status | **Implemented（feature branch）・Owner Review 待ち**（merge 後に本番公開） |
+| Status | **Released（2026-09-15・PR #84 merge `081fa8a`）／ Legal Foundation v1：CLOSED** |
 | Decision | Owner Approved（2026-09-15） |
 | 対象 | Legal Page 3 本・全ページ Footer・Form Consent v1.1 仕様 |
 | Offer の正本 | [dreamin-spiral-os `docs/repository-architecture/dreamin-spiral-offer-definition.md`](https://github.com/eight-takuya/dreamin-spiral-os/blob/main/docs/repository-architecture/dreamin-spiral-offer-definition.md)（3 Weeks Offer v1 / My Life Offer v1） |
@@ -155,5 +155,6 @@ Hidden：`form_type = dreamin_spiral_my_life`・`source_page`・`submitted_at`�
 
 | Date | 内容 |
 |---|---|
+| 2026-09-15 | **Legal Foundation v1 CLOSED。** PR #84（b8e-lab・`081fa8a`）・PR #132（academy・`483e5a2`）を merge。本番で 3 Legal Page・Footer Legal リンク・© 2026・日付表示を確認 |
 | 2026-09-15 | Legal Page に制定日 / 最終更新日（2026年9月15日）を追加。全公開ページの Footer 著作権表示を © 2026 へ更新（Owner / Architect Approved） |
 | 2026-09-15 | 新規作成。Legal Page 3 本（v0.3）・Footer Legal Navigation・正式窓口・Community 解約運用・Form Consent v1.1・Form v1.1 Reference を記録 |

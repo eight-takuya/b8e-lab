@@ -290,8 +290,8 @@ Notion側との同期は `dreamin-spiral-core/scripts/notion-setup/sync-academy-
 | `academy/owner-program.html`（オーナープログラム LP） | ✅ Released | 本番稼働中（2026-08-31 公開）。`academy.html` / `academy/program.html` から導線接続済み |
 | `academy.html` / `academy/program.html` の 3 入口導線 | ✅ Released | 本番稼働中。Journey Map も 3 分岐（Desktop / Tablet 3 列 1 行・Mobile 1 列 3 行） |
 | `generated/owner-program.png`（専用 OGP） | ✅ Released | 本番稼働中。Master Slide 13 から生成（1200×630） |
-| `privacy-policy/` ・ `terms/` ・ `legal/`（Legal Pages） | 🔍 Owner Review 待ち | Sales Foundation v1。feature branch で実装・Vercel Preview で確認中（[sales-foundation-v1.md](sales-foundation-v1.md)） |
-| Footer Legal Navigation（全ページ） | 🔍 Owner Review 待ち | `nav.footer-links` 末尾に プライバシーポリシー / 利用規約 / 特定商取引法に基づく表記 |
+| `privacy-policy/` ・ `terms/` ・ `legal/`（Legal Pages） | ✅ Released | 本番稼働中（2026-09-15 公開・PR #84）。Privacy / 利用規約：制定日 2026年9月15日、特商法表記：最終更新日 2026年9月15日（[sales-foundation-v1.md](sales-foundation-v1.md)） |
+| Footer Legal Navigation（全ページ） | ✅ Released | 本番稼働中。`nav.footer-links` 末尾に プライバシーポリシー / 利用規約 / 特定商取引法に基づく表記。著作権表示は © 2026 |
 
 ---
 

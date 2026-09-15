@@ -6,6 +6,46 @@
 ---
 
 ---
+## [2026-09-15] — Sales Foundation v1：Legal Foundation を本番公開（Work Closed）
+
+**Scope:** 本番反映と post-deploy validation の記録（`docs/site-structure.md` / `docs/sales-foundation-v1.md` / `docs/improvement-log.md`）
+**Triggered by:** Owner / Architect 承認（制定日・Footer 年の微修正を含め、再 Validation 後の merge まで承認・追加 Owner Review Gate なし）
+
+### 公開したもの
+
+| 対象 | 内容 |
+|---|---|
+| `/privacy-policy/` | プライバシーポリシー v0.3（制定日：2026年9月15日） |
+| `/terms/` | Dreamin' Spiral 利用規約 v0.3（制定日：2026年9月15日） |
+| `/legal/` | 特定商取引法に基づく表記 v0.3（最終更新日：2026年9月15日） |
+| 全公開ページ | Footer 末尾の Legal 3 リンク・著作権表示 © 2026 |
+
+PR [#84](https://github.com/eight-takuya/b8e-lab/pull/84) を通常 merge（merge commit `081fa8a`・commit 2 件）。
+Community 解約運用の正本化は academy repo PR #132（merge commit `483e5a2`）。
+
+### Production validation（本番 URL で実測）
+
+| 項目 | 結果 |
+|---|---|
+| HTTP | `/privacy-policy/` ・ `/terms/` ・ `/legal/` すべて 200（末尾スラッシュなしも 200） |
+| 配信内容 | 3 Legal Page・`style.css`・`index.html`・`about.html`・`academy/session.html`・`academy/premium-apply.html`・`academy/community-apply.html` の本番配信バイト列が repo `main` と **SHA-256 一致** |
+| 日付 | Privacy / 利用規約「制定日：2026年9月15日」、特商法表記「最終更新日：2026年9月15日」を本番で確認 |
+| Footer | 確認した公開ページすべてで Legal 3 リンク（`/privacy-policy/` `/terms/` `/legal/`）と © 2026。© 2025 の残存 0 件 |
+| 連絡先 | `mailto:contact@b8e.co.jp` を 3 Legal Page で確認。`academy@b8e.co.jp` の記載 0 件 |
+| 描画 | 本番 URL を headless Chrome で描画（1280px / 500px）。Header・背景・Legal スタイルが適用されていることを確認。mobile（≤600px）で販売者情報表が 1 列・Footer が 1 列 |
+| 本文 | Owner Approved v0.3 の文言と全文一致（日付行を除く差分 0） |
+
+### 残した follow-up（Legal Foundation を妨げないもの）
+
+- Dreamin' Spiral 3 Weeks / My Life の Stripe Payment Asset・銀行振込案内・Service Page / Form（Form Consent v1.1）・Thanks / Next Step・Payment Complete / Start Flow
+- 旧 Premium / Community の公開申込導線（Stripe Link）の扱い
+
+### Deployed
+[x] Yes — 本エントリは closeout 記録（docs のみ）
+
+---
+
+---
 ## [2026-09-15] — Sales Foundation v1：Legal Pages と Footer Legal Navigation を追加
 
 **Scope:** `privacy-policy/index.html`（新規）, `terms/index.html`（新規）, `legal/index.html`（新規）, `style.css`（A10 追加）, 全公開ページ 20 件の Footer（Legal リンク）・23 件の著作権年, `docs/sales-foundation-v1.md`（新規）, `docs/site-structure.md`
@@ -33,8 +73,8 @@ Business Creation の価格・販売条件は載せていない。旧 Academy / 
 売るための言葉ではなく、関わる前に確かめられる約束を置いた。静かなサイトの佇まいはそのままに、足元に「確認できる場所」がひとつ増えただけ。
 
 ### Deployed
-[ ] Yes
-[x] No — PR pending review（Owner が Vercel Preview で確認後に merge）
+[x] Yes — PR #84 merge `081fa8a`（2026-09-15）
+[ ] No
 
 ---
 
