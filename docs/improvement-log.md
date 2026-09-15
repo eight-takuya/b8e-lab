@@ -6,6 +6,37 @@
 ---
 
 ---
+## [2026-09-15] — Sales Foundation v1：Legal Pages と Footer Legal Navigation を追加
+
+**Scope:** `privacy-policy/index.html`（新規）, `terms/index.html`（新規）, `legal/index.html`（新規）, `style.css`（A10 追加）, 全公開ページ 20 件の Footer, `docs/sales-foundation-v1.md`（新規）, `docs/site-structure.md`
+**Triggered by:** Dreamin' Spiral 3 Weeks / My Life を Reality へ出すための Sales Foundation v1（Owner / Architect Approved・2026-09-15）。Legal Page 不在は 2026-07-17 から Launch Blocker として記録されていた
+
+### Changes
+
+- **Privacy Policy v0.3** を `/privacy-policy/` に公開ページとして追加
+- **Dreamin' Spiral 利用規約 v0.3** を `/terms/` に追加（Guide / 3 Weeks / Community / My Life。Business Creation は Offer 確定後に追加）
+- **特定商取引法に基づく表記 v0.3** を `/legal/` に追加（有料 3 サービスの税込価格・支払・提供時期・キャンセル / 解約 / 返金）
+- **全ページの Footer**（`nav.footer-links` 末尾）に「プライバシーポリシー」「利用規約」「特定商取引法に基づく表記」をルート相対パスで追加。既存リンク・Footer デザインは変更なし
+- `style.css` に **A10. Legal Pages**（`.legal-hero` / `.legal-lead` / `.legal-section` / `.legal-table`）を追加。既存ルールは変更なし
+- 本文は Owner Approved v0.3 の文言をそのまま HTML 化（見出しレベル調整・メール / 他 Legal Page へのリンク化のみ）
+- 公開・契約上の正式窓口は `contact@b8e.co.jp`。`academy@b8e.co.jp`（Technical Account）は使用していない
+- 後続の 3 Weeks / My Life Form が従う **Form Consent v1.1**（`terms_privacy_consent`・required）を `docs/sales-foundation-v1.md` に記録
+
+### Public / Private 境界
+
+有料 3 サービスの価格（3 Weeks 60,000円・Community 20,000円／月・My Life 600,000円、いずれも税込）は Owner Approved のため `/legal/` に公開した。
+Business Creation の価格・販売条件は載せていない。旧 Academy / Premium 系ページ（`academy/*`）の本文・Stripe 導線は変更していない。
+
+### Philosophy notes
+売るための言葉ではなく、関わる前に確かめられる約束を置いた。静かなサイトの佇まいはそのままに、足元に「確認できる場所」がひとつ増えただけ。
+
+### Deployed
+[ ] Yes
+[x] No — PR pending review（Owner が Vercel Preview で確認後に merge）
+
+---
+
+---
 ## [2026-08-31] — Dreamin' Spiral オーナープログラムを本番公開（Phase F・Work Closed）
 
 **Scope:** 本番反映と post-deploy validation の記録（`docs/site-structure.md` / `docs/improvement-log.md`）

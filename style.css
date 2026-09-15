@@ -3545,3 +3545,110 @@ a:hover {
   border-color: #9b7b5c;
   text-decoration: none;
 }
+
+/* ------------------------------------------------------------
+   A10. Legal Pages — Sales Foundation v1（2026-09）
+   /privacy-policy/ ・ /terms/ ・ /legal/ 専用。既存ページには影響しない
+   ------------------------------------------------------------ */
+
+.legal-hero {
+  background:
+    radial-gradient(ellipse at 50% 40%, rgba(255,235,200,0.055) 0%, transparent 58%),
+    linear-gradient(180deg, #1c1a17 0%, #111010 100%);
+  color: #f7f6f4;
+  padding: 96px 40px;
+  text-align: center;
+}
+
+.legal-lead p {
+  font-size: 0.97rem;
+  color: #555;
+  line-height: 2.1;
+}
+
+.legal-section {
+  margin-top: 48px;
+  padding-top: 40px;
+  border-top: 1px solid #e6e4e1;
+}
+
+.legal-section h2 {
+  font-size: 1.02rem;
+  color: #2a2a2a;
+  margin-bottom: 16px;
+}
+
+.legal-section h3 {
+  font-size: 0.94rem;
+  color: #444;
+  margin: 28px 0 8px;
+}
+
+.legal-section p {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 2.1;
+}
+
+.legal-section p + p {
+  margin-top: 16px;
+}
+
+.legal-section ul {
+  margin: 12px 0 16px;
+  padding-left: 1.5em;
+}
+
+.legal-section li {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 2.0;
+  margin-bottom: 4px;
+}
+
+.legal-section a,
+.legal-lead a {
+  color: #9b7b5c;
+  border-bottom: 1px solid #c9a882;
+  overflow-wrap: anywhere;
+}
+
+.legal-section a:hover,
+.legal-lead a:hover {
+  color: #7a5f44;
+  text-decoration: none;
+}
+
+.legal-table {
+  display: grid;
+  grid-template-columns: 8.5em 1fr;
+  gap: 14px 24px;
+  margin: 0;
+}
+
+.legal-table dt {
+  font-size: 0.88rem;
+  color: #888;
+  line-height: 2.0;
+}
+
+.legal-table dd {
+  font-size: 0.95rem;
+  color: #444;
+  line-height: 2.0;
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 600px) {
+  .legal-hero {
+    padding: 64px 24px;
+  }
+  .legal-table {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  .legal-table dd {
+    margin-bottom: 18px;
+  }
+}

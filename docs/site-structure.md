@@ -22,6 +22,16 @@
 
 `dc-guide.html` は DC 領域の補助ページ（本ドキュメントの調査対象外。Academy とは無関係）。
 
+### Legal Pages（Sales Foundation v1・2026-09-15）
+
+| File | URL path（Public Canonical） | Title | Role |
+|---|---|---|---|
+| `privacy-policy/index.html` | `/privacy-policy/` | プライバシーポリシー \| B8E | BEAT EIGHT EMOTION株式会社の個人情報の取扱い（v0.3） |
+| `terms/index.html` | `/terms/` | Dreamin' Spiral 利用規約 \| B8E | Dreamin' Spiral Guide / 3 Weeks / Community / My Life の利用条件（v0.3） |
+| `legal/index.html` | `/legal/` | 特定商取引法に基づく表記 \| B8E | 有料サービスの販売条件（v0.3） |
+
+Legal Page は **末尾スラッシュのディレクトリ URL** を Canonical とし、`<dir>/index.html` で配置する（Clean URLs は使わない）。文言・掲載範囲・Form Consent v1.1 は [sales-foundation-v1.md](sales-foundation-v1.md) を参照。Global Nav には並べず、全ページ Footer から到達する。
+
 ---
 
 ## Academy の 3 つの入口（Web Architecture）
@@ -280,6 +290,8 @@ Notion側との同期は `dreamin-spiral-core/scripts/notion-setup/sync-academy-
 | `academy/owner-program.html`（オーナープログラム LP） | ✅ Released | 本番稼働中（2026-08-31 公開）。`academy.html` / `academy/program.html` から導線接続済み |
 | `academy.html` / `academy/program.html` の 3 入口導線 | ✅ Released | 本番稼働中。Journey Map も 3 分岐（Desktop / Tablet 3 列 1 行・Mobile 1 列 3 行） |
 | `generated/owner-program.png`（専用 OGP） | ✅ Released | 本番稼働中。Master Slide 13 から生成（1200×630） |
+| `privacy-policy/` ・ `terms/` ・ `legal/`（Legal Pages） | 🔍 Owner Review 待ち | Sales Foundation v1。feature branch で実装・Vercel Preview で確認中（[sales-foundation-v1.md](sales-foundation-v1.md)） |
+| Footer Legal Navigation（全ページ） | 🔍 Owner Review 待ち | `nav.footer-links` 末尾に プライバシーポリシー / 利用規約 / 特定商取引法に基づく表記 |
 
 ---
 
@@ -373,7 +385,7 @@ All hero variants share: dark background, `.hero-label` (small uppercase), `.her
 | `.site-footer` | Dark footer wrapper |
 | `.site-footer-inner` | Two-column grid: brand + nav |
 | `.footer-brand` | Company name + one-line description |
-| `.footer-links` | Column of page links |
+| `.footer-links` | Column of page links（末尾に Legal 3 リンク） |
 | `.footer-bottom` | Copyright line |
 
 ---
@@ -387,6 +399,11 @@ All 5 top-level pages must appear in both the `<nav>` and the footer `<nav>`:
 - Dreamin' Spiral Academy
 - About
 - お問い合わせ (mailto link, footer only)
+- プライバシーポリシー → `/privacy-policy/`（footer only）
+- 利用規約 → `/terms/`（footer only）
+- 特定商取引法に基づく表記 → `/legal/`（footer only）
+
+**Legal リンク（Sales Foundation v1）:** Footer の 3 つの Legal リンクは、階層に関係なく同じになるようルート相対パスで記述する。新しいページを追加するときは、この 3 リンクを含む Footer を複製する。
 
 **Academy 配下の扱い:** Academy 配下の詳細ページはグローバルナビには並べず、`academy/program.html`（Journey Map）と各ページ下部の文脈リンクで辿る構成とする（PR #69）。`academy/community.html` / `academy/premium.html` は program.html から到達可能で、孤立ページではない。
 
