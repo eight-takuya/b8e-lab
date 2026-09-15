@@ -19,16 +19,17 @@
 
 ## 1. Legal Pages
 
-| Public URL（Canonical） | Source | 文書版 | 対象 |
-|---|---|---|---|
-| `https://www.b8e.co.jp/privacy-policy/` | `privacy-policy/index.html` | Privacy Policy **v0.3** | BEAT EIGHT EMOTION株式会社の Web サイト・各種サービス |
-| `https://www.b8e.co.jp/terms/` | `terms/index.html` | Dreamin' Spiral 利用規約 **v0.3** | Dreamin' Spiral Guide / 3 Weeks / Community / My Life |
-| `https://www.b8e.co.jp/legal/` | `legal/index.html` | 特定商取引法に基づく表記 **v0.3** | 有料サービス（3 Weeks / Community / My Life） |
+| Public URL（Canonical） | Source | 文書版 | 日付表示 | 対象 |
+|---|---|---|---|---|
+| `https://www.b8e.co.jp/privacy-policy/` | `privacy-policy/index.html` | Privacy Policy **v0.3** | 制定日：2026年9月15日 | BEAT EIGHT EMOTION株式会社の Web サイト・各種サービス |
+| `https://www.b8e.co.jp/terms/` | `terms/index.html` | Dreamin' Spiral 利用規約 **v0.3** | 制定日：2026年9月15日 | Dreamin' Spiral Guide / 3 Weeks / Community / My Life |
+| `https://www.b8e.co.jp/legal/` | `legal/index.html` | 特定商取引法に基づく表記 **v0.3** | 最終更新日：2026年9月15日 | 有料サービス（3 Weeks / Community / My Life） |
 
 - URL は **末尾スラッシュのディレクトリ URL**（`/privacy-policy/` 等）を Public Canonical とする。
   サイトは `vercel.json` を持たず Clean URLs も無効のため、`<dir>/index.html` の静的配置で実現している（新しい Routing の導入なし）
 - 本文は Owner Approved v0.3 の文言をそのまま HTML 化した（見出しレベルの調整・リンク化のみ）。**文言を変える場合は Owner / Architect の承認を経る**
 - 表示は既存の Header / Global Nav / Footer / `.page-content` を踏襲し、`style.css` の **A10. Legal Pages**（`.legal-*`）だけを追加した
+- 日付は各ページ本文の末尾に `.legal-date` で表示する。**文言を改訂したときは Privacy / 利用規約に「最終更新日」を追加し、特商法表記の「最終更新日」を更新する**
 - Global Nav には追加しない（5 ページ構成を維持）
 
 ## 2. Footer Legal Navigation
@@ -44,6 +45,7 @@
 - どの階層のページからも同じになるよう **ルート相対パス**で記述する
 - **新しいページを追加するときは、この 3 リンクを含む Footer を複製する**（Footer は各 HTML に個別複製されている）
 - Legal Page 同士の相互移動は Footer で担う（Legal 専用の重複 Navigation は置かない）
+- Footer の著作権表示は **`© 2026 BEAT EIGHT EMOTION株式会社`**（2026-09-15 に全公開ページを 2025 → 2026 へ更新）
 
 ## 3. 公開・契約上の正式窓口
 
@@ -153,4 +155,5 @@ Hidden：`form_type = dreamin_spiral_my_life`・`source_page`・`submitted_at`�
 
 | Date | 内容 |
 |---|---|
+| 2026-09-15 | Legal Page に制定日 / 最終更新日（2026年9月15日）を追加。全公開ページの Footer 著作権表示を © 2026 へ更新（Owner / Architect Approved） |
 | 2026-09-15 | 新規作成。Legal Page 3 本（v0.3）・Footer Legal Navigation・正式窓口・Community 解約運用・Form Consent v1.1・Form v1.1 Reference を記録 |

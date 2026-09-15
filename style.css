@@ -3619,6 +3619,15 @@ a:hover {
   text-decoration: none;
 }
 
+.legal-date {
+  margin-top: 56px;
+  padding-top: 24px;
+  border-top: 1px solid #e6e4e1;
+  font-size: 0.85rem;
+  color: #888;
+  line-height: 2.0;
+}
+
 .legal-table {
   display: grid;
   grid-template-columns: 8.5em 1fr;

@@ -8,7 +8,7 @@
 ---
 ## [2026-09-15] — Sales Foundation v1：Legal Pages と Footer Legal Navigation を追加
 
-**Scope:** `privacy-policy/index.html`（新規）, `terms/index.html`（新規）, `legal/index.html`（新規）, `style.css`（A10 追加）, 全公開ページ 20 件の Footer, `docs/sales-foundation-v1.md`（新規）, `docs/site-structure.md`
+**Scope:** `privacy-policy/index.html`（新規）, `terms/index.html`（新規）, `legal/index.html`（新規）, `style.css`（A10 追加）, 全公開ページ 20 件の Footer（Legal リンク）・23 件の著作権年, `docs/sales-foundation-v1.md`（新規）, `docs/site-structure.md`
 **Triggered by:** Dreamin' Spiral 3 Weeks / My Life を Reality へ出すための Sales Foundation v1（Owner / Architect Approved・2026-09-15）。Legal Page 不在は 2026-07-17 から Launch Blocker として記録されていた
 
 ### Changes
@@ -21,6 +21,8 @@
 - 本文は Owner Approved v0.3 の文言をそのまま HTML 化（見出しレベル調整・メール / 他 Legal Page へのリンク化のみ）
 - 公開・契約上の正式窓口は `contact@b8e.co.jp`。`academy@b8e.co.jp`（Technical Account）は使用していない
 - 後続の 3 Weeks / My Life Form が従う **Form Consent v1.1**（`terms_privacy_consent`・required）を `docs/sales-foundation-v1.md` に記録
+- 各 Legal Page の本文末尾に日付を表示（Privacy Policy・利用規約：**制定日：2026年9月15日**／特商法表記：**最終更新日：2026年9月15日**。`style.css` に `.legal-date` を追加）
+- 全公開ページ 23 件の Footer 著作権表示を **© 2025 → © 2026** へ更新（表記構造は維持）
 
 ### Public / Private 境界
 
