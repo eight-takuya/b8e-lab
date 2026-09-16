@@ -3765,6 +3765,31 @@ a:hover {
   margin-top: 32px;
 }
 
+/* 送信失敗時のエラー表示（既定は hidden 属性で非表示） */
+.ds-form-error {
+  margin-top: 28px;
+  margin-bottom: 0;
+  padding: 12px 14px;
+  border-left: 2px solid #b8705c;
+  background: rgba(184, 112, 92, 0.05);
+  font-size: 0.86rem;
+  color: #8a4f3d;
+  line-height: 1.9;
+}
+
+.ds-form-error[hidden] {
+  display: none;
+}
+
+.ds-apply-form .ds-form-error + button {
+  margin-top: 28px;
+}
+
+.ds-apply-form button:disabled {
+  opacity: 0.45;
+  cursor: default;
+}
+
 /* Payment choice — Stripe / 銀行振込は並列。順序で優劣を示さない */
 .ds-payment-choice {
   display: grid;

@@ -65,9 +65,8 @@
       <div class="section-block">
         <!-- Formspree: Dreamin' Spiral 3 Weeks 専用 Form（Owner 作成・2026-09-16）。
              既存 endpoint（mykleakb = B8E 問い合わせ / xgoqybbl = Academy Session）は流用しない。 -->
-        <form class="apply-form ds-apply-form" action="https://formspree.io/f/mwlpenvp" method="post">
+        <form class="apply-form ds-apply-form" id="ds-apply-form" action="https://formspree.io/f/mwlpenvp" method="post">
 
-          <input type="hidden" name="_next" value="https://www.b8e.co.jp/dreamin-spiral/3-weeks/thanks/">
           <input type="hidden" name="form_type" value="dreamin_spiral_3weeks">
           <input type="hidden" name="site_version" value="payment-foundation-v1">
           <input type="hidden" name="source_page" id="source_page" value="direct">
@@ -102,7 +101,9 @@
             </label>
           </div>
 
-          <button type="submit">3 Weeksに申し込む</button>
+          <p class="ds-form-error" id="ds-form-error" role="alert" hidden></p>
+
+          <button type="submit" id="ds-submit">3 Weeksに申し込む</button>
         </form>
       </div>
 
@@ -141,15 +142,57 @@
   </footer>
 
   <script>
-    // 運用トラッキング用 hidden 項目（利用者には表示しない）
     (function () {
+      var form   = document.getElementById('ds-apply-form');
+      var button = document.getElementById('ds-submit');
+      var errorBox = document.getElementById('ds-form-error');
+      var THANKS = '/dreamin-spiral/3-weeks/thanks/';   // ルート相対。Preview / Production どちらでも解決する
+      // 暫定文言（Architect 承認待ち）。承認された文言に差し替える。
+      var ERROR_TEXT = '送信できませんでした。お手数ですが、もう一度お試しください。';
+
+      // 運用トラッキング用 hidden 項目（利用者には表示しない）
       var ref = document.referrer || '';
       var src = document.getElementById('source_page');
       if (src && ref) {
         try { src.value = new URL(ref).pathname || 'direct'; } catch (e) { src.value = 'direct'; }
       }
-      var at = document.getElementById('submitted_at');
-      if (at) { at.value = new Date().toISOString(); }
+
+      if (!form) { return; }
+
+      form.addEventListener('submit', function (event) {
+        event.preventDefault();
+
+        var at = document.getElementById('submitted_at');
+        if (at) { at.value = new Date().toISOString(); }
+
+        errorBox.hidden = true;
+        errorBox.textContent = '';
+        button.disabled = true;
+
+        fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { 'Accept': 'application/json' }
+        })
+          .then(function (response) {
+            return response.json().catch(function () { return {}; })
+              .then(function (data) { return { ok: response.ok, data: data }; });
+          })
+          .then(function (result) {
+            if (result.ok && result.data && result.data.ok !== false) {
+              // 送信成功時のみ Thanks へ進む
+              window.location.assign(THANKS);
+              return;
+            }
+            throw new Error('submission failed');
+          })
+          .catch(function () {
+            // 失敗時は Thanks へ進ませず、入力内容を保持したままエラーを表示する
+            button.disabled = false;
+            errorBox.textContent = ERROR_TEXT;
+            errorBox.hidden = false;
+          });
+      });
     })();
   </script>
 
