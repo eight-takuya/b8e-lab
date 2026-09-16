@@ -5,7 +5,7 @@
 
 | 項目 | 内容 |
 |---|---|
-| Status | 実装済み（未公開）・**Owner Reality Review Gate で停止中** |
+| Status | **CLOSED（2026-09-16）。** Production 公開済み（PR #92 `462ca31`）・CTA は Current Community Live Payment Link・Owner Reality Review（Community Service Page画面 / Stripe Community Checkout画面）Approved。正本：OS repo `community-current-entrance-v1.md` §16 |
 | 実装日 | 2026-09-16 |
 | Branch | `feature/community-current-entrance-v1`（PR #92） |
 
@@ -52,3 +52,7 @@ Dreamin' Spiral Community に「詳しく見る」→ `/dreamin-spiral/community
 | CTA | 2 件とも Live Payment Link（HTTP 200・Live Account の Payment Link を返すことを確認） |
 | Community Complete Page | 見出し / 本文一致 ・ noindex ・ Current Header / Footer ・ 旧表記 0 件 ・ Mobile 横スクロールなし |
 | Regression | Guide / 3 Weeks / My Life / Payment Foundation / `/academy/*` / `style.css` の差分 0 |
+
+## 5. Temporary Coexistence
+
+Phase 10 cleanup まで、Current Community Flow（`/dreamin-spiral/community/`）と Old Academy Community Flow（`/academy/community*.html`・旧 Payment Link）が一時併存する。旧 Flow は変更していない。
