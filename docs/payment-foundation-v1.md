@@ -46,7 +46,8 @@ Form 仕様の正本は [sales-foundation-v1.md](sales-foundation-v1.md) §6・�
 
 | 項目 | 3 Weeks | My Life |
 |---|---|---|
-| Formspree action | `https://formspree.io/f/mwlpenvp` ✅ 受理確認済み | `https://formspree.io/f/xbgtradg` ⚠️ **FORM_NOT_FOUND** |
+| Formspree action | `https://formspree.io/f/mwlpenvp` ✅ | `https://formspree.io/f/xbglradg` ✅ 修正済み（**未検証**） |
+| 送信方式 | **AJAX（fetch + `Accept: application/json`）** | 標準 POST（`_next`）。AJAX 未展開 |
 | `_next`（送信後 redirect） | `/dreamin-spiral/3-weeks/thanks/` | `/dreamin-spiral/my-life/thanks/` |
 | `form_type` | `dreamin_spiral_3weeks` | `dreamin_spiral_my_life` |
 | Required | `name` / `email` / `phone` / `terms_privacy_consent` | 同左 |
@@ -108,8 +109,8 @@ Historical ページの HTML をコピー流用していない（構造上の参
 
 | # | 項目 | 状態 |
 |---|---|---|
-| 1 | My Life の Formspree endpoint | ⚠️ `xbgtradg` が **FORM_NOT_FOUND**。Owner による ID 確認 / Form 有効化が必要 |
-| 1b | Thanks Page への redirect | ⚠️ **`_next` が効かない**。Formspree が自身の `/thanks` へ上書きする（§9） |
+| 1 | My Life の AJAX 横展開・E2E | 3 Weeks の Owner Reality Review 承認後に実施 |
+| 1b | 送信失敗時のエラー文言 | **暫定文言を使用中。Architect 承認待ち**（§9-4） |
 | 2 | Stripe Payment Link × 2 | **Sandbox 接続済み。** Owner Reality Review → Live Provisioning 後に Live URL へ差し替え |
 | 3 | Service Page 本文 | 未作成。Business Copy が Canonical に不足するため Architect / Owner へ返している |
 | 4 | Service Page → Application Form の導線 | Service Page 未作成のため未接続 |
@@ -130,34 +131,78 @@ Historical ページの HTML をコピー流用していない（構造上の参
 
 ---
 
-## 9. Formspree 接続検証（2026-09-16・実測）
+## 9. Formspree 接続・送信方式（2026-09-16・実測）
 
-### 9-1. endpoint の受理状況
+### 9-1. Architect Decision — AJAX 方式の採用
 
-| Service | endpoint | POST 結果 | 判定 |
+Formspree の `_next` hidden field では自前 Thanks Page へ遷移できないことが実測で確認された
+（submission は `ok:true` で受理されるが、レスポンスの `next` が Formspree 自身の `/thanks` に上書きされる）。
+
+Dashboard の Thank You redirect 設定には寄せず、**Engineer 側の AJAX 送信**を採用する（Owner の設定作業を増やさないため）。
+
+```
+Application Form
+↓ fetch(action, { method:'POST', body:FormData, headers:{ Accept:'application/json' } })
+↓ response.ok && data.ok !== false
+自前 Thanks Page へ window.location.assign()
+```
+
+- **redirect 先はルート相対パス** `/dreamin-spiral/3-weeks/thanks/`。
+  Production URL をハードコードしないため、**Preview / localhost / Production のどこでも解決する**
+- `_next` hidden field は redirect 制御に使わないため **削除**した
+- Form の項目・`name` 属性・必須/任意・Consent 仕様は**一切変更していない**
+
+### 9-2. endpoint
+
+| Service | endpoint | 送信方式 | 検証 |
 |---|---|---|---|
-| 3 Weeks | `mwlpenvp` | `{"next":"/thanks","ok":true}` | ✅ **受理される**（submission は Formspree に届く） |
-| My Life | `xbgtradg` | `{"error":"Form not found","errors":[{"code":"FORM_NOT_FOUND"}]}`（3回とも同一） | ⛔ **endpoint が無効** |
+| 3 Weeks | `mwlpenvp` | AJAX | ✅ 実送信成功・自前 Thanks へ到達 |
+| My Life | `xbglradg`（`xbgtradg` は誤りだった） | 標準 POST のまま | ⏸ 未検証（3 Weeks Review 後に横展開） |
 
-### 9-2. `_next` が効かない（両 Form 共通の仕様問題）
+### 9-3. 3 Weeks 送信検証
 
-3 Weeks は `ok:true` で受理されるが、レスポンスの `next` が **`/thanks`（Formspree 自身のページ）** に上書きされ、
-HTML の `_next` hidden field（`/dreamin-spiral/3-weeks/thanks/`）は**無視される**。
+| 確認項目 | 結果 |
+|---|---|
+| action | `https://formspree.io/f/mwlpenvp` ✅ |
+| `_next` の有無 | なし（削除済み）✅ |
+| 送信 field | `name` / `email` / `phone` / `message` / `terms_privacy_consent=agreed` / `form_type=dreamin_spiral_3weeks` / `site_version=payment-foundation-v1` / `source_page` / `submitted_at` |
+| required validation | 空送信は `checkValidity()=false`（最初の不正は `name`）✅ |
+| 送信成功 | ✅ |
+| 遷移先 | `/dreamin-spiral/3-weeks/thanks/` ✅（Formspree の `/thanks` には行かない） |
+| 既存 Form への誤送信 | なし（`mykleakb` / `xgoqybbl` へは未送信）✅ |
 
-Formspree の現行仕様では、送信後のリダイレクト先は
-**Form ごとの Settings タブ（「Thank You」redirect）** で設定する方式であり、
-この機能は **Personal / Professional / Business プラン**で提供される。
+### 9-4. 送信失敗時の挙動（無効 endpoint で実測）
 
-- 既存の `academy/session.html`（`xgoqybbl`）は `_next` で `/academy/thanks.html` へ遷移する前提で実装されている。
-  **同じ事象が起きていないかは未検証**（Historical Form への試験送信を避けたため）
-- 解消方法は §9-3
+| 確認項目 | 結果 |
+|---|---|
+| Thanks へ遷移 | **しない** ✅ |
+| エラー表示 | `.ds-form-error` を表示 ✅ |
+| 入力内容の保持 | `name` / `email` / Consent すべて保持 ✅ |
+| 再送信 | ボタンが再度有効化される ✅ |
 
-### 9-3. 未解決事項（Owner / Architect 判断が必要）
+> ⚠️ **エラー文言は暫定（Architect 承認待ち）。** 既存サイトに再利用できるエラー表現が存在しなかったため
+> （`.form-notice` は spam guard 用）、機能要件（利用者が送信失敗を認識できる）を満たす最小の文言を置いている。
+> 承認された文言が決まりしだい `ERROR_TEXT` を差し替える。
 
-| # | 事象 | 選択肢 |
-|---|---|---|
-| 1 | `xbgtradg` が FORM_NOT_FOUND | Owner が endpoint ID を再確認、または Form を有効化する |
-| 2 | `_next` が無視される | (a) Owner が各 Form の Settings タブで Thank You redirect に Thanks URL を設定する（プラン要件あり）／ (b) Engineer 側で AJAX 送信（`Accept: application/json` + JS redirect）へ変更する（全プランで動作するが、送信方式の変更のため Architect 判断） |
+### 9-5. 3 Weeks Full Sandbox E2E（通し確認・成功）
+
+```
+Application（/dreamin-spiral/3-weeks/apply/）
+↓ AJAX submission → Formspree 受理
+↓ 自前 Thanks（/dreamin-spiral/3-weeks/thanks/）
+↓ Stripe Sandbox Checkout（buy.stripe.com/test_…）
+↓ Test Payment（4242…）
+Complete（/dreamin-spiral/3-weeks/complete/）
+```
+
+| 段階 | 結果 |
+|---|---|
+| Checkout Session | `status=complete` / `payment_status=paid` |
+| amount_total | `60000 jpy` ／ `amount_tax=0` |
+| metadata | `service=dreamin_spiral_3_weeks`（Payment Link から継承） |
+| livemode | `false` |
+| after_completion | Complete URL へ redirect 発火 |
+| Complete Page | Owner Approved Copy と一致・mobile 375px で横スクロール 0 |
 
 ---
 
@@ -165,6 +210,7 @@ Formspree の現行仕様では、送信後のリダイレクト先は
 
 | Date | 内容 |
 |---|---|
+| 2026-09-16 | **3 Weeks を AJAX 送信方式へ変更し、Full Sandbox E2E（Application → Formspree → Thanks → Stripe → Test Payment → Complete）を通しで成功。** My Life は endpoint を `xbglradg` へ修正のみ（横展開は 3 Weeks Owner Review 後） |
 | 2026-09-16 | Formspree endpoint を両 Form へ接続。3 Weeks（`mwlpenvp`）は受理を確認、My Life（`xbgtradg`）は FORM_NOT_FOUND。`_next` が Formspree 側で上書きされる事象を §9 に記録 |
 | 2026-09-16 | **Owner Reality Review 第1回を反映。** 申込 Form の「お名前」「電話番号」に入力例を追加。Complete Page 本文から `contact@b8e.co.jp` の表示を削除 |
 | 2026-09-16 | Sandbox Payment Link を Thanks Page へ接続。Sandbox E2E（3 Weeks のテスト決済 → redirect）を実測して記録 |
