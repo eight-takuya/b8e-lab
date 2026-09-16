@@ -17,7 +17,7 @@
 | `/dreamin-spiral/library/pdf/<file>.pdf` | `dreamin-spiral/library/pdf/*.pdf`（7 件） | — | — | — |
 
 - Header / Footer は Guide ・ Community Service Page と同一。og:image なし（他の `/dreamin-spiral/*` と同じ）
-- **CSS 変更なし。** Resource 一覧は TOP の Service Family と同じ `.ds-family-list` / `.ds-family-item` を再利用
+- Resource 一覧は TOP の Service Family と同じ `.ds-family-list` / `.ds-family-item` を再利用。`.page-content` 内では汎用の `.section-block h3` が `.ds-family-name` より優先され見出しが小さな大文字表示になるため、`style.css` A12 に `.ds-service-section` スコープの 2 ルールだけを追加し TOP と同じ見え方に揃えた（他ページへの影響なし：`.ds-service-section` 内で `.ds-family-*` を使うのは本ページのみ）
 - TOP の Service Family ・ Header / Footer には Library を追加していない（Library は Service ではない。Navigation 追加は Owner 判断）
 
 ## 2. Page 構造

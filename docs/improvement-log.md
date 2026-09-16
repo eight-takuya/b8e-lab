@@ -8,10 +8,10 @@
 ---
 ## [2026-09-16] — Phase 10-B2：Dreamin' Spiral 🌱 Library を `/dreamin-spiral/library/` に新設（Owner Reality Review 待ち）
 
-**Scope:** `dreamin-spiral/library/index.html`（新規）, `dreamin-spiral/library/pdf/*.pdf`（新規 7 件）, `vercel.json`（redirect 8 件追加）, `docs/library-currentization-phase-10b2.md`（新規）, `docs/site-structure.md`
+**Scope:** `dreamin-spiral/library/index.html`（新規）, `style.css`（A12 に 2 ルール追加）, `dreamin-spiral/library/pdf/*.pdf`（新規 7 件）, `vercel.json`（redirect 8 件追加）, `docs/library-currentization-phase-10b2.md`（新規）, `docs/site-structure.md`
 **Triggered by:** Phase 10-B2｜Library Currentization（Architect 設計・Owner Approved）。正本は OS repo `docs/repository-architecture/old-academy-cleanup-v1.md` §14
 
-- Current Library Page（Hero は Approved Copy、Resource 説明文は旧 Library の公開済み説明文を再利用）。CSS 変更なし（TOP の `.ds-family-*` を再利用）
+- Current Library Page（Hero は Approved Copy、Resource 説明文は旧 Library の公開済み説明文を再利用）。TOP の `.ds-family-*` を再利用し、`style.css` A12 に Library 用のスコープ付き 2 ルールを追加
 - PDF 6 件は OS repo の Generator で「Dreamin' Spiral Academy」→「Dreamin' Spiral 🌱」に変更して再生成。`awakening-guide.pdf` は source がなく旧ファイルのまま（Owner 確認対象）
 - `/academy/library.html` と旧 PDF 7 件を 308 redirect。archive PDF は非掲載
 
