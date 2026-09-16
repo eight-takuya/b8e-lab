@@ -51,10 +51,12 @@ Legal Pages と同じく **末尾スラッシュのディレクトリ URL** を 
 |---|---|---|
 | `dreamin-spiral/3-weeks/index.html` | `/dreamin-spiral/3-weeks/` | 3 Weeks Service Page（CTA → `/dreamin-spiral/3-weeks/apply/`） |
 | `dreamin-spiral/my-life/index.html` | `/dreamin-spiral/my-life/` | My Life Service Page（CTA → `/dreamin-spiral/my-life/apply/`） |
+| `dreamin-spiral/community/index.html` | `/dreamin-spiral/community/` | Community Service Page（CTA「Communityに参加する」→ Current Community Stripe Payment Link・月額・Community Current Entrance v1・2026-09-16） |
+| `dreamin-spiral/community/complete/index.html` | `/dreamin-spiral/community/complete/` | Community Complete Page（Stripe Checkout 完了後の redirect 先・noindex） |
 | `dreamin-spiral/guide/index.html` | `/dreamin-spiral/guide/` | Guide Service Page（CTA「Guide（無料）に申し込む」→ 既存 Booking System・Guide Current Entrance v1・2026-09-16） |
 
 入口は TOP の `section#dreamin-spiral`（Dreamin' Spiral 🌱・Service Family 5 件）。Header / Footer の `Dreamin' Spiral 🌱` はこの anchor を指す（`academy.html` / `academy/*` の Header / Footer は Historical Protection により変更していない）。
-Community / Business Creation は Current の Service Page が未作成のため TOP 上で CTA を置いていない（Guide は [guide-current-entrance-v1.md](guide-current-entrance-v1.md) で接続）。
+Community / Business Creation は Current の Service Page が未作成のため TOP 上で CTA を置いていない（Guide は [guide-current-entrance-v1.md](guide-current-entrance-v1.md)、Community は [community-current-entrance-v1.md](community-current-entrance-v1.md) で接続）。
 実装詳細は [current-sales-entrance-v1.md](current-sales-entrance-v1.md)、設計の正本は OS repo の `docs/repository-architecture/current-sales-entrance-v1.md`。
 
 ---

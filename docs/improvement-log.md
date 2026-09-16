@@ -6,6 +6,17 @@
 ---
 
 ---
+## [2026-09-16] — Community Current Entrance v1：`/dreamin-spiral/community/` を追加（未公開）
+
+**Scope:** `dreamin-spiral/community/index.html`（新規）, `dreamin-spiral/community/complete/index.html`（新規）, `index.html`（TOP の Community に「詳しく見る」）, `docs/community-current-entrance-v1.md`（新規）, `docs/site-structure.md`
+**Triggered by:** Phase 8｜Community Current Entrance v1（Owner Approved）。設計の正本は OS repo `docs/repository-architecture/community-current-entrance-v1.md`
+
+- Community Service Page（Owner Approved Copy・内容は既存 Canonical / Legal で確認した事実のみ）。CTA は Current Community Stripe Live Payment Link（月額）
+- Community Complete Page（Checkout 完了後の redirect 先）
+- TOP の Dreamin' Spiral Community に「詳しく見る」を追加（Copy 変更なし）
+- `/academy/*`・旧 Academy Community Stripe Asset は変更なし
+
+---
 ## [2026-09-16] — Production Release / Closeout：Guide Current Entrance v1 を CLOSED
 
 **Scope:** PR #90（`fd45fa8`）の merge による Production 反映・実装記録の Status
