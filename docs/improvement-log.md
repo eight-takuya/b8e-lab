@@ -6,7 +6,16 @@
 ---
 
 ---
-## [2026-09-16] — Phase 10-B2：Dreamin' Spiral 🌱 Library を `/dreamin-spiral/library/` に新設（Owner Reality Review 待ち）
+## [2026-09-17] — Production Release / Closeout：Phase 10-B2 Library Currentization を CLOSED
+
+**Scope:** PR #98（`68d6ce9`）の merge による Production 反映・実装記録の Status
+**Triggered by:** Owner Approval（Current Library Page画面 / awakening-guide.pdf / 8-page Overview画面 / Cover Before / After比較画面）
+
+- `/dreamin-spiral/library/` と Current PDF 7 件を公開（HTTP 200・main と byte 一致）
+- `/academy/library.html` と旧 PDF 7 件は 308 で Current へ。archive PDF・Phase 10-B3 対象ページは変更なし
+
+---
+## [2026-09-16] — Phase 10-B2：Dreamin' Spiral 🌱 Library を `/dreamin-spiral/library/` に新設（当時 Owner Reality Review 待ち）
 
 **Scope:** `dreamin-spiral/library/index.html`（新規）, `style.css`（A12 に 2 ルール追加）, `dreamin-spiral/library/pdf/*.pdf`（新規 7 件）, `vercel.json`（redirect 8 件追加）, `docs/library-currentization-phase-10b2.md`（新規）, `docs/site-structure.md`
 **Triggered by:** Phase 10-B2｜Library Currentization（Architect 設計・Owner Approved）。正本は OS repo `docs/repository-architecture/old-academy-cleanup-v1.md` §14

@@ -5,7 +5,7 @@
 
 | 項目 | 内容 |
 |---|---|
-| Status | **OWNER REVIEW PENDING**（Preview・PR #98）。正本：OS repo `old-academy-cleanup-v1.md` §14（OS PR #232） |
+| Status | **CLOSED（2026-09-17）。** Owner Approved（Current Library Page画面 ・ awakening-guide.pdf ・ 8-page Overview画面 ・ Cover Before / After比較画面）→ Production 公開済み（PR #98 `68d6ce9`）・ Production Validation 済み。正本：OS repo `docs/repository-architecture/old-academy-cleanup-v1.md` §14（OS PR #232 `a6d4f95` ・ closeout #233） |
 | 実装日 | 2026-09-16 |
 | Branch | `feature/phase-10b2-library-currentization` |
 
@@ -51,3 +51,13 @@
 
 - `/academy/pdf/archive/*` は redirect せず、200 のまま（Historical・どこからも link しない）
 - 旧 `academy/library.html` ・ `academy/pdf/*.pdf` の source file は削除していない（redirect が先に評価されるため配信されない。Phase 10-B3）
+
+## 5. Production Validation（2026-09-17）
+
+| 項目 | 結果 |
+|---|---|
+| `/dreamin-spiral/library/` | 200 ・ main と byte 一致 ・ canonical 自身 ・ index ・ Resource 7 件 ・ 表示テキストに Academy 0 件 ・ 375px で横スクロールなし ・ link は keyboard で focus 可能 |
+| `/dreamin-spiral/library/pdf/*.pdf`（7 件） | すべて 200 ・ `application/pdf` ・ main と byte 一致 ・ Academy / エイト 0 件 |
+| `/academy/library.html` ・ `/academy/pdf/*.pdf`（7 件） | すべて 308 → Current ・ 1 hop ・ 正しいファイル |
+| `/academy/pdf/archive/*` | 200 のまま（Historical ・ 非掲載） |
+| Regression | TOP ・ Guide ・ Community ・ 3 Weeks ・ My Life ・ Legal は main と byte 一致、Phase 10-A redirect 308 ・ Premium 404 は不変 |
