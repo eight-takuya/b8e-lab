@@ -6,6 +6,15 @@
 ---
 
 ---
+## [2026-09-16] — Phase 10-B1：旧 Premium の公開販売導線を退役（404）
+
+**Scope:** `academy/premium.html`・`academy/premium-apply.html`・`academy/premium-success.html`（削除）, `assets/ogp/generated/premium.png`・`premium-apply.png`（削除）, `docs/old-premium-retirement-phase-10b1.md`（新規）, `docs/site-structure.md`
+**Triggered by:** Phase 10-B1｜Old Premium Retirement（Architect 設計・Owner Approved）。正本は OS repo `docs/repository-architecture/old-academy-cleanup-v1.md` §12
+
+- 旧 Premium Live Payment Link を先に inactive 化（Stripe 側）したうえで、3 ページを削除し 404 とした
+- Premium は My Life の単純 Rename ではないため redirect なし。My Life ・ Business Creation ・ 他の Academy ページは変更なし
+
+---
 ## [2026-09-16] — Phase 10-A：Guide / Community の旧 Academy 入口を Current URL へ 308 redirect
 
 **Scope:** `vercel.json`（新規・redirects のみ）, `docs/old-academy-cleanup-phase-10a.md`（新規）, `docs/site-structure.md`

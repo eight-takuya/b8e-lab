@@ -72,6 +72,20 @@ Community / Business Creation は Current の Service Page が未作成のため
 
 `academy.html`・`academy/program.html`・`premium*.html`・`owner-program.html`・`library.html`・`apply.html`・`thanks.html`・`premium-portal.html`・`/academy/pdf/*` は対象外（Phase 10-B）。実装記録は [old-academy-cleanup-phase-10a.md](old-academy-cleanup-phase-10a.md)。
 
+### Retired Pages（Phase 10-B1｜Old Premium Retirement・2026-09-16）
+
+旧 Premium（Dreamin' Spiral Academy Premium・500,000円 one-off）の公開販売導線を退役した。Premium は My Life の単純 Rename ではない（Service Identity の再設計）ため、**Current URL への redirect は設定していない**。ファイルを削除し、HTTP 404 とした（`vercel.json` 変更なし）。
+
+| Old URL | 状態 |
+|---|---|
+| `/academy/premium.html` | 削除 → 404 |
+| `/academy/premium-apply.html` | 削除 → 404 |
+| `/academy/premium-success.html` | 削除 → 404（旧 Premium Payment Link を先に inactive 化） |
+
+- 同時に削除した asset：`assets/ogp/generated/premium.png`・`premium-apply.png`（上記 3 ページ専用）。OGP Master PPTX は変更していない
+- 旧 Academy ページ（`academy.html`・`academy/program.html`・`apply.html`・`owner-program.html`・`premium-portal.html`）に残る Premium への link は 404 になる（Phase 10-B3 で扱う）
+- 実装記録：[old-premium-retirement-phase-10b1.md](old-premium-retirement-phase-10b1.md)。以下の Academy Site Map ・ Page Role 等の Premium 記述は当時の記録として保持する
+
 ---
 
 ## Academy の 3 つの入口（Web Architecture）
@@ -199,9 +213,9 @@ https://www.b8e.co.jp/academy.html                    Academy入口（世界観�
 ├─ /academy/community.html        Community LP（提供内容・申込導線）※ 308 → /dreamin-spiral/community/
 │   ├─ /academy/community-apply.html    Community 専用申込（Stripe）※ 308 → /dreamin-spiral/community/（旧 Payment Link は inactive）
 │   └─ /academy/community-success.html  決済後の案内（noindex）※ 308 → /dreamin-spiral/community/complete/
-├─ /academy/premium.html          Premium LP（提供内容・申込導線）
-│   ├─ /academy/premium-apply.html      Premium 専用申込（Stripe）
-│   └─ /academy/premium-success.html    決済後の案内（noindex）
+├─ /academy/premium.html          Premium LP（提供内容・申込導線）※ 2026-09-16 退役（404）
+│   ├─ /academy/premium-apply.html      Premium 専用申込（Stripe）※ 退役（404）・Payment Link inactive
+│   └─ /academy/premium-success.html    決済後の案内（noindex）※ 退役（404）
 ├─ /academy/owner-program.html    Dreamin' Spiral オーナープログラム LP（academy.html / program.html から到達可能）
 ├─ /academy/apply.html            旧共通 Apply。現在は入口の案内ページ（noindex）
 └─ /academy/premium-portal.html   Premium Client Portal Prototype（契約後マイページの原型）
