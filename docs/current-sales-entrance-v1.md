@@ -9,7 +9,7 @@
 
 | 項目 | 内容 |
 |---|---|
-| Status | **Production 公開済み（2026-09-16・PR #87 merge `52169c5`）・CLOSED**（OS repo `current-sales-entrance-v1.md` §16-11） |
+| Status | **CLOSED（2026-09-16）。** Production 公開済み（PR #87 `52169c5`）・Owner が Production で 3 Weeks / My Life を確認済み。正本：OS repo `current-sales-entrance-v1.md` §16-11 |
 | 実装日 | 2026-09-16 |
 | Branch | `feature/current-sales-entrance-v1`（`feature/payment-foundation-v1-web` の上に積む） |
 
