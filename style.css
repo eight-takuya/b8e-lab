@@ -3988,3 +3988,268 @@ a:hover {
     padding: 26px 20px;
   }
 }
+
+
+/* ------------------------------------------------------------
+   A12. Dreamin' Spiral 🌱 Current Sales Entrance v1（2026-09）
+   TOP の Dreamin' Spiral 🌱 Section（.ds-family）と
+   /dreamin-spiral/<service>/ の Service Page（.ds-service-*）専用。既存ページには影響しない
+   Academy 用 CSS（A1〜A9）に依存しないよう、Hero も本セクション内で定義する
+   （値は A1 Hero variants と同じ Deep Indigo に揃え、Payment Foundation の各ページと同じ見え方にする）
+   ------------------------------------------------------------ */
+
+/* Header / Footer の Dreamin' Spiral 🌱 link — 折り返しで 🌱 だけが次の行へ分かれないようにする（この link のみ） */
+.site-nav a[href$="#dreamin-spiral"],
+.footer-links a[href$="#dreamin-spiral"] {
+  white-space: nowrap;
+}
+
+/* TOP｜Dreamin' Spiral 🌱 Section */
+.ds-family {
+  background-color: #f7f6f4;
+  padding: 88px 40px;
+  border-top: 1px solid #ebe8e4;
+}
+
+.ds-family-inner {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.ds-family-heading {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #1a1a1a;
+  letter-spacing: 0.04em;
+  margin-bottom: 28px;
+}
+
+.ds-family-core {
+  font-size: 1.08rem;
+  color: #2a2a2a;
+  line-height: 2.1;
+}
+
+.ds-family-lead {
+  margin-top: 20px;
+  font-size: 0.97rem;
+  color: #555;
+  line-height: 2.1;
+}
+
+.ds-family-list {
+  list-style: none;
+  margin: 48px 0 0;
+  padding: 0;
+}
+
+.ds-family-item {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 24px 0;
+  border-top: 1px solid #e6e4e1;
+}
+
+.ds-family-item:last-child {
+  border-bottom: 1px solid #e6e4e1;
+}
+
+.ds-family-name {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  letter-spacing: 0.02em;
+  line-height: 1.8;
+  margin: 0 0 4px;
+}
+
+.ds-family-desc {
+  font-size: 0.92rem;
+  color: #555;
+  line-height: 1.9;
+}
+
+.ds-family-item a {
+  flex-shrink: 0;
+  font-size: 0.82rem;
+  color: #9b7b5c;
+  border-bottom: 1px solid #c9a882;
+  padding-bottom: 2px;
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.ds-family-item a:hover {
+  color: #7a5f44;
+  border-color: #9b7b5c;
+  text-decoration: none;
+}
+
+@media (max-width: 768px) {
+  .ds-family {
+    padding: 56px 24px;
+  }
+  .ds-family-item {
+    flex-direction: column;
+    gap: 8px;
+    padding: 20px 0;
+  }
+  .ds-family-item a {
+    align-self: flex-start;
+  }
+}
+
+/* Service Page｜Hero */
+.ds-service-hero {
+  background:
+    radial-gradient(ellipse at 50% 20%, rgba(110, 145, 245, 0.12) 0%, transparent 65%),
+    linear-gradient(180deg, #1c2f60 0%, #0b1028 100%);
+  color: #f7f6f4;
+  padding: 120px 40px;
+  text-align: center;
+}
+
+.ds-service-eyebrow {
+  display: block;
+  margin-bottom: 28px;
+  font-size: 0.72rem;
+  color: #8c8680;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.ds-service-title {
+  font-size: 1.35rem;
+  font-weight: 300;
+  line-height: 2.0;
+  color: #f0eeeb;
+  letter-spacing: 0.06em;
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+.ds-service-lead {
+  margin: 32px auto 0;
+  max-width: 460px;
+  font-size: 0.95rem;
+  color: #c9c5bf;
+  line-height: 2.2;
+}
+
+.ds-service-hero .ds-service-cta {
+  margin-top: 40px;
+  color: #dcc3a0;
+  border-bottom-color: #c9a882;
+}
+
+.ds-service-hero .ds-service-cta:hover {
+  color: #f0e2cc;
+  border-color: #dcc3a0;
+}
+
+/* Service Page｜本文 */
+.ds-service-section h2 {
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: #2a2a2a;
+  letter-spacing: 0.03em;
+  line-height: 1.9;
+  margin-bottom: 24px;
+}
+
+.ds-service-list {
+  margin: 0;
+  padding-left: 1.2em;
+}
+
+.ds-service-list li {
+  font-size: 0.97rem;
+  color: #555;
+  line-height: 2.0;
+}
+
+.ds-service-list li + li {
+  margin-top: 8px;
+}
+
+.ds-service-list li::marker {
+  color: #c9a882;
+}
+
+/* セッションとリアリティの往復 */
+.ds-service-flow {
+  list-style: none;
+  margin: 0 0 32px;
+  padding: 0;
+}
+
+.ds-service-flow li {
+  font-size: 0.95rem;
+  color: #444;
+  letter-spacing: 0.06em;
+  line-height: 1.9;
+}
+
+.ds-service-flow li + li::before {
+  content: "↓";
+  display: block;
+  color: #c9a882;
+  line-height: 1.8;
+}
+
+.ds-service-section .ds-service-note {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.ds-service-section .ds-offer-summary + .ds-service-note {
+  margin-top: 28px;
+}
+
+.ds-service-section .ds-offer-summary {
+  grid-template-columns: 9.5em 1fr;
+}
+
+.ds-service-section .ds-service-list + p {
+  margin-top: 28px;
+}
+
+.ds-service-section .ds-service-cta + .ds-service-note {
+  margin-top: 28px;
+}
+
+/* Service Page｜申込 CTA（Payment Foundation の .cta-link と同じ静かな表現） */
+.ds-service-cta {
+  display: inline-block;
+  margin-top: 24px;
+  font-size: 0.92rem;
+  color: #9b7b5c;
+  border-bottom: 1px solid #c9a882;
+  padding-bottom: 2px;
+  letter-spacing: 0.03em;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.ds-service-cta:hover {
+  color: #7a5f44;
+  border-color: #9b7b5c;
+  text-decoration: none;
+}
+
+@media (max-width: 600px) {
+  .ds-service-hero {
+    padding: 72px 24px;
+  }
+  .ds-service-title {
+    font-size: 1.15rem;
+  }
+  .ds-service-lead {
+    font-size: 0.92rem;
+  }
+  .ds-service-section .ds-offer-summary {
+    grid-template-columns: 1fr;
+  }
+}

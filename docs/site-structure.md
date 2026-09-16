@@ -45,6 +45,17 @@ Legal Page は **末尾スラッシュのディレクトリ URL** を Canonical 
 
 Legal Pages と同じく **末尾スラッシュのディレクトリ URL** を Canonical とし、`<dir>/index.html` で配置する（Clean URLs は使わない）。3 階層のため CSS・Nav・Footer のリンクはすべてルート相対パス。Global Nav には並べない。実装詳細・未接続項目は [payment-foundation-v1.md](payment-foundation-v1.md)、設計の正本は OS repo の `docs/repository-architecture/payment-foundation-v1.md`。
 
+### Dreamin' Spiral 🌱 Service Pages（Current Sales Entrance v1・2026-09-16）
+
+| File | URL path（Public Canonical） | Role |
+|---|---|---|
+| `dreamin-spiral/3-weeks/index.html` | `/dreamin-spiral/3-weeks/` | 3 Weeks Service Page（CTA → `/dreamin-spiral/3-weeks/apply/`） |
+| `dreamin-spiral/my-life/index.html` | `/dreamin-spiral/my-life/` | My Life Service Page（CTA → `/dreamin-spiral/my-life/apply/`） |
+
+入口は TOP の `section#dreamin-spiral`（Dreamin' Spiral 🌱・Service Family 5 件）。Header / Footer の `Dreamin' Spiral 🌱` はこの anchor を指す（`academy.html` / `academy/*` の Header / Footer は Historical Protection により変更していない）。
+Guide / Community / Business Creation は Current の Service Page が未作成のため TOP 上で CTA を置いていない。
+実装詳細は [current-sales-entrance-v1.md](current-sales-entrance-v1.md)、設計の正本は OS repo の `docs/repository-architecture/current-sales-entrance-v1.md`。
+
 ---
 
 ## Academy の 3 つの入口（Web Architecture）
