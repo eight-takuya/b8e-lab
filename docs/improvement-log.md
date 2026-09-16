@@ -6,6 +6,16 @@
 ---
 
 ---
+## [2026-09-16] — Production Release / Closeout：Guide Current Entrance v1 を CLOSED
+
+**Scope:** PR #90（`fd45fa8`）の merge による Production 反映・実装記録の Status
+**Triggered by:** Owner Reality Review（Guide Service Page画面 / GAS Guide日程選択画面）Approved
+
+- `/dreamin-spiral/guide/` を公開（HTTP 200）・TOP の Guide「詳しく見る」を公開
+- GAS Booking の Production deployment を @53 へ更新（URL 不変・Dreamin' Spiral 🌱 ／ Guide（無料） 日程選択）
+- 3 Weeks / My Life / Payment Foundation / `/academy/*` は変更なし。実予約なし
+
+---
 ## [2026-09-16] — Guide Current Entrance v1：`/dreamin-spiral/guide/` を追加（未公開）
 
 **Scope:** `dreamin-spiral/guide/index.html`（新規）, `index.html`（TOP の Guide に「詳しく見る」）, `style.css`（A12 に 1 ルール追加）, `docs/guide-current-entrance-v1.md`（新規）, `docs/site-structure.md`

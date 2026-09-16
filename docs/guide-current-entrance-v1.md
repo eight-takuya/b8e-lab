@@ -6,7 +6,7 @@
 
 | 項目 | 内容 |
 |---|---|
-| Status | 実装済み（未公開）・**Owner Reality Review Gate で停止中** |
+| Status | **CLOSED（2026-09-16）。** Production 公開済み（PR #90 `fd45fa8`）・Booking 表記は GAS Production deployment @53 へ反映（URL 不変）・Owner Reality Review Approved。正本：OS repo `guide-current-entrance-v1.md` §14 |
 | 実装日 | 2026-09-16 |
 | Branch | `feature/guide-current-entrance-v1` |
 
