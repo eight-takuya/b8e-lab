@@ -6,6 +6,16 @@
 ---
 
 ---
+## [2026-09-16] — Guide Current Entrance v1：`/dreamin-spiral/guide/` を追加（未公開）
+
+**Scope:** `dreamin-spiral/guide/index.html`（新規）, `index.html`（TOP の Guide に「詳しく見る」）, `style.css`（A12 に 1 ルール追加）, `docs/guide-current-entrance-v1.md`（新規）, `docs/site-structure.md`
+**Triggered by:** Phase 7｜Guide Current Entrance v1（Owner Approved）。設計の正本は OS repo `docs/repository-architecture/guide-current-entrance-v1.md`
+
+- Guide Service Page（Owner Approved Copy）。CTA「Guide（無料）に申し込む」は既存 Booking System（`/academy/session.html` と同じ deployment）
+- TOP の Dreamin' Spiral Guide に「詳しく見る」を追加（Copy 変更なし）
+- `/academy/*` は変更なし
+
+---
 ## [2026-09-16] — Closeout：Payment Foundation v1 / Current Sales Entrance v1 を CLOSED
 
 **Scope:** 実装記録の Status のみ（Web / Stripe の変更なし）

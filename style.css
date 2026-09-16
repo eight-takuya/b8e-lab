@@ -4218,6 +4218,12 @@ a:hover {
   margin-top: 28px;
 }
 
+/* Guide（Phase 7）：内容表の直後に置く、明確に読ませる一文（本文色のまま・補足より淡くしない） */
+.ds-service-section .ds-offer-summary + .ds-service-statement {
+  margin-top: 28px;
+  color: #2f2b27;
+}
+
 /* Service Page｜申込 CTA（Payment Foundation の .cta-link と同じ静かな表現） */
 .ds-service-cta {
   display: inline-block;
