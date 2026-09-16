@@ -6,6 +6,17 @@
 ---
 
 ---
+## [2026-09-16] — Production Release：Payment Foundation v1 / Current Sales Entrance v1 を公開
+
+**Scope:** PR #86（`412c84d`）・PR #87（`52169c5`）の merge による Production 反映
+**Triggered by:** Owner Reality Review（3 Weeks / My Life・Live Stripe Checkout まで）Approved
+
+- `/dreamin-spiral/3-weeks/`・`/dreamin-spiral/my-life/` と各 `apply/`・`thanks/`・`complete/` を公開（全 URL HTTP 200）
+- TOP の Dreamin' Spiral 🌱 Section・Header / Footer の `Dreamin' Spiral 🌱` を公開
+- Thanks の Stripe CTA は Live Payment Link。実決済なし
+- `/academy/*` は変更なし
+
+---
 ## [2026-09-16] — Current Sales Entrance v1：3 Weeks Section 3 を Owner Reality Review に合わせて調整（未公開）
 
 **Scope:** `dreamin-spiral/3-weeks/index.html`（Section 3 のみ）, `style.css`（A12 の Section 3 用ルール）, `docs/current-sales-entrance-v1.md`

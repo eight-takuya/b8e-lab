@@ -12,7 +12,7 @@
 
 | 項目 | 内容 |
 |---|---|
-| Status | **実装済み・未公開（PR 段階）。Stripe CTA は Live Payment Link へ接続済み（§14）。Production Review（Owner Review Gate）前のため merge しない** |
+| Status | **Production 公開済み（2026-09-16・PR #86 merge `412c84d`）。** Stripe CTA は Live Payment Link。Close 判定は OS repo `payment-foundation-v1.md` §13-12 |
 | Design 承認 | Owner Approved（2026-09-16） |
 | 対象 | Application Form 2 本・Thanks / Next Step 2 本・Complete / Start 2 本・`style.css` A11 |
 | 前提 | Sales Foundation v1 / Legal Foundation：CLOSED（2026-09-15） |

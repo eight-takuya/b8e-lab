@@ -9,7 +9,7 @@
 
 | 項目 | 内容 |
 |---|---|
-| Status | 実装済み（未公開）・**Owner Reality Review Gate で停止中** |
+| Status | **Production 公開済み（2026-09-16・PR #87 merge `52169c5`）・CLOSED**（OS repo `current-sales-entrance-v1.md` §16-11） |
 | 実装日 | 2026-09-16 |
 | Branch | `feature/current-sales-entrance-v1`（`feature/payment-foundation-v1-web` の上に積む） |
 
