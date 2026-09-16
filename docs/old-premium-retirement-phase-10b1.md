@@ -5,9 +5,9 @@
 
 | 項目 | 内容 |
 |---|---|
-| Status | 実装中（Production 反映前） |
+| Status | **CLOSED（2026-09-16）。** Production 反映済み（PR #96 `85fbebd`）・3 ページとも 404 を確認。正本：OS repo `docs/repository-architecture/old-academy-cleanup-v1.md` §12（Phase 10-B2 ・ B3 NOT STARTED） |
 | 実装日 | 2026-09-16 |
-| Branch | `feature/phase-10b1-old-premium-retirement` |
+| Branch | `feature/phase-10b1-old-premium-retirement`（PR #96） |
 
 ## 1. 退役方法
 
@@ -37,3 +37,13 @@
 ## 4. 変更していないもの
 
 My Life ・ Business Creation ・ Community ・ Guide ・ 3 Weeks ・ Payment Foundation ・ Legal ・ `academy.html` ・ `program.html` ・ `owner-program.html` ・ `library.html` ・ PDF ・ `vercel.json`。
+
+## 5. Production Validation（2026-09-16）
+
+| 項目 | 結果 |
+|---|---|
+| `/academy/premium.html` ・ `premium-apply.html` ・ `premium-success.html` | 404（redirect なし） |
+| `premium.png` ・ `premium-apply.png` | 404 |
+| Current pages | TOP ・ My Life（Service / apply / thanks / complete）・ 3 Weeks ・ Guide ・ Community ・ Community Complete ・ Legal が main と byte 一致 |
+| Phase 10-A redirects | 4 件とも 308 |
+| 対象外 `/academy/*` ・ PDF | 200 |
