@@ -206,10 +206,69 @@ Complete（/dreamin-spiral/3-weeks/complete/）
 
 ---
 
+## 10. Owner Reality Review Adjustment（3 Weeks・2026-09-16）
+
+Owner が 3 Weeks Sandbox Flow を実際に確認し、以下 3 点を承認した。**この 3 点のみを反映している。**
+
+| # | 内容 | 対象 | 結果 |
+|---|---|---|---|
+| 1 | 利用規約 / プライバシーポリシーを別タブで開く | `3-weeks/apply/`・`my-life/apply/` | ✅ `target="_blank" rel="noopener"` |
+| 2 | Stripe Product Description の意味の切れ目に改行 | Stripe **Sandbox** Product | ✅ 保存済み。**Checkout 表示は未確認**（§10-2） |
+| 3 | Complete Page の「最初のDialogueの日程」→「最初のセッションの日程」 | `3-weeks/complete/` | ✅ 反映済み |
+
+### 10-1. Legal Links
+
+- `rel` は既存サイト規約に合わせて **`noopener`**（repo 内 22 箇所で使用）
+- **URL・Legal 文書内容・Consent 文言はいずれも変更していない**
+- 入力保持を実測：別タブ遷移後にブラウザバックしても `name` / `email` / Consent がすべて保持される
+- My Life 側は**同じ Technical Fix のみ**適用（Business Copy / Full Flow には触れていない）
+
+### 10-2. Stripe Product Description（Checkout 表示は未確認）
+
+Sandbox Product `prod_VGe5W1b9Gzp6LW` の description を改行入りで更新し、**API 上は改行が保存されている**
+（`'…3週間。\nZoom 60分 × 3回。'`）。
+
+**Checkout 上での改行表示は確認できていない。** 理由は §10-3 の Sandbox Account 側の問題であり、
+description の内容とは無関係（未変更の My Life Payment Link でも同じ事象が発生する）。
+
+Product Name / Price / Price ID / `tax_behavior` / Payment Link はいずれも**変更していない**。
+
+### 10-3. ⛔ Sandbox Checkout が停止中（Engineer では解消できない）
+
+Sandbox Account `acct_1TN7OX5pPQTx6Vir` が **requirements past due** となり、決済が無効化された。
+
+```
+charges_enabled              : false
+requirements.disabled_reason : requirements.past_due
+requirements.currently_due   : ["company.name"]
+```
+
+- 両 Payment Link の Checkout が `Something went wrong / The page you were looking for could not be found.`
+- **API 上の Asset はすべて正常**（Product active / Price active / Payment Link active / line_items qty=1 amount=60000）
+- **未変更の My Life Payment Link でも同じ事象**が起きるため、今回の description 変更が原因ではない
+- 解消には Sandbox Account の business information（`company.name`）の入力が必要。
+  これは Account-wide 設定であり **Engineer の Scope 外**（Owner 操作）
+
+### 10-4. 再 Validation 結果
+
+| 段階 | 結果 |
+|---|---|
+| Legal links 別タブ属性 | ✅ `target="_blank" rel="noopener"`・URL 変更なし |
+| Consent 仕様 | ✅ `terms_privacy_consent` / `agreed` / required・文言変更なし |
+| 入力保持 | ✅ 戻っても `name` / `email` / Consent を保持 |
+| Application → Formspree | ✅ 送信成功 |
+| → 自前 Thanks | ✅ `/dreamin-spiral/3-weeks/thanks/` へ到達 |
+| Complete Copy | ✅ 「最初のセッションの日程」／ページ内に `Dialogue` の語 **0 件** |
+| Complete のその他 Copy | ✅ 変更なし（3 段落そのまま） |
+| **Stripe Checkout 以降** | ⛔ **未実施**（§10-3 により到達不能） |
+
+---
+
 ## Change History
 
 | Date | 内容 |
 |---|---|
+| 2026-09-16 | **Owner Reality Review Adjustment 3 点を反映**（Legal links 別タブ／Stripe Description 改行／Complete Copy Dialogue→セッション）。Application → Formspree → Thanks と Complete Copy は再 Validation 済み。**Stripe Checkout は Sandbox Account の requirements past due により停止中**（§10-3） |
 | 2026-09-16 | **3 Weeks を AJAX 送信方式へ変更し、Full Sandbox E2E（Application → Formspree → Thanks → Stripe → Test Payment → Complete）を通しで成功。** My Life は endpoint を `xbglradg` へ修正のみ（横展開は 3 Weeks Owner Review 後） |
 | 2026-09-16 | Formspree endpoint を両 Form へ接続。3 Weeks（`mwlpenvp`）は受理を確認、My Life（`xbgtradg`）は FORM_NOT_FOUND。`_next` が Formspree 側で上書きされる事象を §9 に記録 |
 | 2026-09-16 | **Owner Reality Review 第1回を反映。** 申込 Form の「お名前」「電話番号」に入力例を追加。Complete Page 本文から `contact@b8e.co.jp` の表示を削除 |
