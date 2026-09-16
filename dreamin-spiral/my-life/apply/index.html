@@ -69,10 +69,11 @@
 
       <!-- Application Form v1.1 -->
       <div class="section-block">
-        <!-- Formspree endpoint は Owner Gate G-2。
-             My Life 専用 Form の作成後に action を差し替える。
-             既存 endpoint（mykleakb / xgoqybbl）は用途が異なるため流用しない。 -->
-        <form class="apply-form ds-apply-form" action="https://formspree.io/f/__PENDING_MYLIFE_ENDPOINT__" method="post">
+        <!-- Formspree: Dreamin' Spiral My Life 専用 Form（Owner 提供 ID・2026-09-16）。
+             ⚠️ 未検証: この endpoint は現在 FORM_NOT_FOUND を返す。
+                Owner による ID 確認 / Form 有効化のあと再検証するまで merge しない。
+             既存 endpoint（mykleakb = B8E 問い合わせ / xgoqybbl = Academy Session）は流用しない。 -->
+        <form class="apply-form ds-apply-form" action="https://formspree.io/f/xbgtradg" method="post">
 
           <input type="hidden" name="_next" value="https://www.b8e.co.jp/dreamin-spiral/my-life/thanks/">
           <input type="hidden" name="form_type" value="dreamin_spiral_my_life">

@@ -46,7 +46,7 @@ Form 仕様の正本は [sales-foundation-v1.md](sales-foundation-v1.md) §6・�
 
 | 項目 | 3 Weeks | My Life |
 |---|---|---|
-| Formspree action | **未接続**（`__PENDING_3WEEKS_ENDPOINT__`） | **未接続**（`__PENDING_MYLIFE_ENDPOINT__`） |
+| Formspree action | `https://formspree.io/f/mwlpenvp` ✅ 受理確認済み | `https://formspree.io/f/xbgtradg` ⚠️ **FORM_NOT_FOUND** |
 | `_next`（送信後 redirect） | `/dreamin-spiral/3-weeks/thanks/` | `/dreamin-spiral/my-life/thanks/` |
 | `form_type` | `dreamin_spiral_3weeks` | `dreamin_spiral_my_life` |
 | Required | `name` / `email` / `phone` / `terms_privacy_consent` | 同左 |
@@ -108,7 +108,8 @@ Historical ページの HTML をコピー流用していない（構造上の参
 
 | # | 項目 | 状態 |
 |---|---|---|
-| 1 | Formspree endpoint × 2 | **Owner Gate.** Formspree Dashboard での Form 作成が必要 |
+| 1 | My Life の Formspree endpoint | ⚠️ `xbgtradg` が **FORM_NOT_FOUND**。Owner による ID 確認 / Form 有効化が必要 |
+| 1b | Thanks Page への redirect | ⚠️ **`_next` が効かない**。Formspree が自身の `/thanks` へ上書きする（§9） |
 | 2 | Stripe Payment Link × 2 | **Sandbox 接続済み。** Owner Reality Review → Live Provisioning 後に Live URL へ差し替え |
 | 3 | Service Page 本文 | 未作成。Business Copy が Canonical に不足するため Architect / Owner へ返している |
 | 4 | Service Page → Application Form の導線 | Service Page 未作成のため未接続 |
@@ -129,10 +130,42 @@ Historical ページの HTML をコピー流用していない（構造上の参
 
 ---
 
+## 9. Formspree 接続検証（2026-09-16・実測）
+
+### 9-1. endpoint の受理状況
+
+| Service | endpoint | POST 結果 | 判定 |
+|---|---|---|---|
+| 3 Weeks | `mwlpenvp` | `{"next":"/thanks","ok":true}` | ✅ **受理される**（submission は Formspree に届く） |
+| My Life | `xbgtradg` | `{"error":"Form not found","errors":[{"code":"FORM_NOT_FOUND"}]}`（3回とも同一） | ⛔ **endpoint が無効** |
+
+### 9-2. `_next` が効かない（両 Form 共通の仕様問題）
+
+3 Weeks は `ok:true` で受理されるが、レスポンスの `next` が **`/thanks`（Formspree 自身のページ）** に上書きされ、
+HTML の `_next` hidden field（`/dreamin-spiral/3-weeks/thanks/`）は**無視される**。
+
+Formspree の現行仕様では、送信後のリダイレクト先は
+**Form ごとの Settings タブ（「Thank You」redirect）** で設定する方式であり、
+この機能は **Personal / Professional / Business プラン**で提供される。
+
+- 既存の `academy/session.html`（`xgoqybbl`）は `_next` で `/academy/thanks.html` へ遷移する前提で実装されている。
+  **同じ事象が起きていないかは未検証**（Historical Form への試験送信を避けたため）
+- 解消方法は §9-3
+
+### 9-3. 未解決事項（Owner / Architect 判断が必要）
+
+| # | 事象 | 選択肢 |
+|---|---|---|
+| 1 | `xbgtradg` が FORM_NOT_FOUND | Owner が endpoint ID を再確認、または Form を有効化する |
+| 2 | `_next` が無視される | (a) Owner が各 Form の Settings タブで Thank You redirect に Thanks URL を設定する（プラン要件あり）／ (b) Engineer 側で AJAX 送信（`Accept: application/json` + JS redirect）へ変更する（全プランで動作するが、送信方式の変更のため Architect 判断） |
+
+---
+
 ## Change History
 
 | Date | 内容 |
 |---|---|
+| 2026-09-16 | Formspree endpoint を両 Form へ接続。3 Weeks（`mwlpenvp`）は受理を確認、My Life（`xbgtradg`）は FORM_NOT_FOUND。`_next` が Formspree 側で上書きされる事象を §9 に記録 |
 | 2026-09-16 | **Owner Reality Review 第1回を反映。** 申込 Form の「お名前」「電話番号」に入力例を追加。Complete Page 本文から `contact@b8e.co.jp` の表示を削除 |
 | 2026-09-16 | Sandbox Payment Link を Thanks Page へ接続。Sandbox E2E（3 Weeks のテスト決済 → redirect）を実測して記録 |
 | 2026-09-16 | 新規作成。Application Form 2 本・Thanks / Next Step 2 本・Complete / Start 2 本・`style.css` A11 を実装。Formspree endpoint と Stripe Payment Link は未接続 |
