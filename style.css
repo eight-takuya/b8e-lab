@@ -3661,3 +3661,330 @@ a:hover {
     margin-bottom: 18px;
   }
 }
+
+
+/* ------------------------------------------------------------
+   A11. Dreamin' Spiral Application / Payment — Payment Foundation v1（2026-09）
+   /dreamin-spiral/<service>/apply|thanks|complete/ 専用。既存ページには影響しない
+   ------------------------------------------------------------ */
+
+/* Offer summary（申込ページの事実表示） */
+.ds-offer-summary {
+  display: grid;
+  grid-template-columns: 8em 1fr;
+  gap: 10px 20px;
+  margin: 24px 0 0;
+}
+
+.ds-offer-summary dt {
+  font-size: 0.86rem;
+  color: #9b7b5c;
+  letter-spacing: 0.04em;
+  line-height: 1.9;
+  margin: 0;
+}
+
+.ds-offer-summary dd {
+  font-size: 0.95rem;
+  color: #444;
+  line-height: 1.9;
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+/* Application Form v1.1（label 付き。既存 .apply-form の上に載せる） */
+.ds-apply-form .ds-field {
+  margin-top: 28px;
+}
+
+.ds-apply-form .ds-field:first-of-type {
+  margin-top: 0;
+}
+
+.ds-apply-form .ds-field label {
+  display: block;
+  font-size: 0.9rem;
+  color: #444;
+  letter-spacing: 0.02em;
+  line-height: 1.8;
+  margin-bottom: 4px;
+}
+
+.ds-required {
+  display: inline-block;
+  margin-left: 8px;
+  padding: 1px 7px;
+  border: 1px solid #c9a882;
+  border-radius: 2px;
+  font-size: 0.68rem;
+  color: #9b7b5c;
+  letter-spacing: 0.06em;
+  vertical-align: 2px;
+}
+
+.ds-field-note {
+  font-size: 0.8rem;
+  color: #8d8781;
+  line-height: 1.9;
+  margin: 6px 0 0;
+}
+
+/* Consent checkbox */
+.ds-consent {
+  margin-top: 32px;
+}
+
+.ds-consent label {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.88rem;
+  color: #444;
+  line-height: 1.9;
+  cursor: pointer;
+}
+
+.ds-consent input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  margin: 4px 0 0;
+  flex: 0 0 auto;
+  accent-color: #9b7b5c;
+  border-radius: 0;
+  -webkit-appearance: auto;
+  appearance: auto;
+}
+
+.ds-consent a {
+  color: #9b7b5c;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.ds-apply-form .ds-consent + button {
+  margin-top: 32px;
+}
+
+/* 送信失敗時のエラー表示（既定は hidden 属性で非表示） */
+.ds-form-error {
+  margin-top: 28px;
+  margin-bottom: 0;
+  padding: 12px 14px;
+  border-left: 2px solid #b8705c;
+  background: rgba(184, 112, 92, 0.05);
+  font-size: 0.86rem;
+  color: #8a4f3d;
+  line-height: 1.9;
+}
+
+.ds-form-error[hidden] {
+  display: none;
+}
+
+.ds-apply-form .ds-form-error + button {
+  margin-top: 28px;
+}
+
+.ds-apply-form button:disabled {
+  opacity: 0.45;
+  cursor: default;
+}
+
+/* 申込前の確認ステップ */
+.ds-confirm {
+  display: grid;
+  grid-template-columns: 12em 1fr;
+  gap: 14px 20px;
+  margin: 24px 0 0;
+  padding-top: 24px;
+  border-top: 1px solid #e6e2dd;
+}
+
+.ds-confirm dt {
+  font-size: 0.82rem;
+  color: #6b6b6b;
+  letter-spacing: 0.03em;
+  line-height: 1.9;
+  margin: 0;
+}
+
+.ds-confirm dd {
+  font-size: 0.95rem;
+  color: #2f2b27;
+  line-height: 1.9;
+  margin: 0;
+  overflow-wrap: anywhere;
+  white-space: pre-wrap;
+}
+
+.ds-confirm-actions {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  margin-top: 36px;
+}
+
+.ds-confirm-actions button {
+  background: none;
+  border: none;
+  border-bottom: 1px solid #c9a882;
+  color: #9b7b5c;
+  font-family: inherit;
+  font-size: 0.88rem;
+  letter-spacing: 0.03em;
+  padding-bottom: 2px;
+  cursor: pointer;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.ds-confirm-actions button:hover {
+  color: #7a5f44;
+  border-color: #9b7b5c;
+}
+
+.ds-confirm-actions button:disabled {
+  opacity: 0.45;
+  cursor: default;
+}
+
+.ds-confirm-actions #ds-back {
+  border-bottom-color: #d8d3cc;
+  color: #6b6b6b;
+}
+
+@media (max-width: 600px) {
+  .ds-confirm {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  .ds-confirm dt {
+    margin-top: 16px;
+  }
+  .ds-confirm dt:first-of-type {
+    margin-top: 0;
+  }
+  .ds-confirm-actions {
+    gap: 22px;
+  }
+}
+
+/* Payment choice — Stripe / 銀行振込は並列。順序で優劣を示さない */
+.ds-payment-choice {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+  margin-top: 48px;
+}
+
+.ds-payment-block {
+  border: 1px solid #e6e2dd;
+  border-radius: 3px;
+  padding: 32px 28px;
+}
+
+.ds-payment-block h3 {
+  font-size: 0.95rem;
+  color: #9b7b5c;
+  letter-spacing: 0.06em;
+  margin: 0 0 14px;
+}
+
+.ds-payment-block p {
+  font-size: 0.92rem;
+  color: #444;
+  line-height: 2.0;
+  margin: 0;
+}
+
+.ds-payment-block p + p {
+  margin-top: 12px;
+}
+
+.ds-payment-amount {
+  font-size: 1.12rem !important;
+  color: #2f2b27 !important;
+  letter-spacing: 0.03em;
+  margin-bottom: 14px !important;
+}
+
+.ds-payment-block .cta-link {
+  display: inline-block;
+  margin-top: 22px;
+}
+
+.ds-payment-block .form-note {
+  margin-top: 18px;
+}
+
+/* 振込先 */
+.ds-bank {
+  margin: 18px 0 0;
+}
+
+.ds-bank dt {
+  font-size: 0.78rem;
+  color: #9b7b5c;
+  letter-spacing: 0.05em;
+  line-height: 1.8;
+  margin: 14px 0 0;
+}
+
+.ds-bank dt:first-child {
+  margin-top: 0;
+}
+
+.ds-bank dd {
+  font-size: 0.95rem;
+  color: #2f2b27;
+  line-height: 1.9;
+  margin: 2px 0 0;
+  overflow-wrap: anywhere;
+}
+
+/* 可読性調整（Owner Reality Review・2026-09-16）
+   「読ませる文」なのに背景 #f7f6f4 に対し WCAG AA（4.5:1）を満たしていなかった 3 種を #666（5.32:1）へ。
+   本文 #555（6.90:1）よりは淡いままなので Visual Hierarchy は保つ。
+   .thanks-note（#aaa / 2.15:1）と .form-note（#aaa / 2.15:1）はサイト全体で共用しているため、
+   body.ds-page で Payment Foundation の 6 ページだけにスコープする。
+   color 以外（font-size / font-weight / margin / line-height）は一切変更しない。
+   accent（#9b7b5c）・placeholder（#bbb）・hero-label は意図的な階層のため対象外。 */
+.ds-page .thanks-message .thanks-note {
+  color: #666;
+}
+
+.ds-page .form-note {
+  color: #666 !important;   /* 元ルールが !important のため合わせる */
+}
+
+/* Complete page の案内リスト */
+.ds-next-list {
+  margin: 14px 0 0;
+  padding-left: 1.2em;
+}
+
+.ds-next-list li {
+  font-size: 0.92rem;
+  color: #444;
+  line-height: 2.0;
+}
+
+@media (max-width: 600px) {
+  .ds-offer-summary {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  .ds-offer-summary dt {
+    margin-top: 14px;
+  }
+  .ds-offer-summary dt:first-child {
+    margin-top: 0;
+  }
+  .ds-payment-choice {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    margin-top: 36px;
+  }
+  .ds-payment-block {
+    padding: 26px 20px;
+  }
+}

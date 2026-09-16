@@ -32,6 +32,19 @@
 
 Legal Page は **末尾スラッシュのディレクトリ URL** を Canonical とし、`<dir>/index.html` で配置する（Clean URLs は使わない）。文言・掲載範囲・Form Consent v1.1 は [sales-foundation-v1.md](sales-foundation-v1.md) を参照。Global Nav には並べず、全ページ Footer から到達する。
 
+### Dreamin' Spiral Application / Payment（Payment Foundation v1・2026-09-16）
+
+| File | URL path（Public Canonical） | Role |
+|---|---|---|
+| `dreamin-spiral/3-weeks/apply/index.html` | `/dreamin-spiral/3-weeks/apply/` | 3 Weeks 申込 Form（Formspree・Form v1.1） |
+| `dreamin-spiral/3-weeks/thanks/index.html` | `/dreamin-spiral/3-weeks/thanks/` | 3 Weeks Thanks / Next Step（Stripe ／ 銀行振込の並列導線・noindex） |
+| `dreamin-spiral/3-weeks/complete/index.html` | `/dreamin-spiral/3-weeks/complete/` | 3 Weeks Payment Complete / Start（Stripe redirect 到達先・noindex） |
+| `dreamin-spiral/my-life/apply/index.html` | `/dreamin-spiral/my-life/apply/` | My Life 申込 Form（Formspree・Form v1.1） |
+| `dreamin-spiral/my-life/thanks/index.html` | `/dreamin-spiral/my-life/thanks/` | My Life Thanks / Next Step（noindex） |
+| `dreamin-spiral/my-life/complete/index.html` | `/dreamin-spiral/my-life/complete/` | My Life Payment Complete / Start（noindex） |
+
+Legal Pages と同じく **末尾スラッシュのディレクトリ URL** を Canonical とし、`<dir>/index.html` で配置する（Clean URLs は使わない）。3 階層のため CSS・Nav・Footer のリンクはすべてルート相対パス。Global Nav には並べない。実装詳細・未接続項目は [payment-foundation-v1.md](payment-foundation-v1.md)、設計の正本は OS repo の `docs/repository-architecture/payment-foundation-v1.md`。
+
 ---
 
 ## Academy の 3 つの入口（Web Architecture）

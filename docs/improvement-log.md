@@ -6,6 +6,45 @@
 ---
 
 ---
+## [2026-09-16] — Payment Foundation v1：Dreamin' Spiral 申込・支払い導線を追加（未公開）
+
+**Scope:** `dreamin-spiral/3-weeks/{apply,thanks,complete}/index.html`（新規）, `dreamin-spiral/my-life/{apply,thanks,complete}/index.html`（新規）, `style.css`（A11 追加）, `docs/payment-foundation-v1.md`（新規）, `docs/site-structure.md`
+**Triggered by:** Dreamin' Spiral 🌱 Payment Foundation v1（Owner / Architect Approved・2026-09-16）。設計の正本は OS repo `docs/repository-architecture/payment-foundation-v1.md`
+
+### Changes
+
+- **Application Form（Form v1.1）** を 3 Weeks / My Life それぞれに追加。Consent は Form Consent v1.1（`terms_privacy_consent`）
+- **Thanks / Next Step** を追加。Stripe と銀行振込を並列に提示（上下関係をつけない）。銀行振込先は千葉銀行 新浦安支店
+- **Payment Complete / Start** を追加。Stripe Payment Link の `after_completion` redirect 到達先
+- `style.css` に **A11. Dreamin' Spiral Application / Payment** を追加。既存ルールは変更なし
+- URL は Legal Pages と同じ `<dir>/index.html` 方式の末尾スラッシュ ディレクトリ URL。Global Nav には追加なし
+
+### Validation（ローカル静的配信で実測）
+
+| 項目 | 結果 |
+|---|---|
+| 6 ページの描画 | Header / Nav / Hero / 本文 / Footer すべて適用。`style.css` 読み込み OK |
+| Form 必須項目 | `name` / `email` / `phone` / `terms_privacy_consent` の 4 件（両 Form 一致） |
+| Form 任意項目 | 3 Weeks: `message` ／ My Life: `message`・`six_month_intent` |
+| `_next` | 各 Service の Thanks URL を指している |
+| Thanks 表示 | Stripe / 銀行振込が同一の見た目で並列。金額・口座情報が Owner 提供値と一致 |
+| Complete 表示 | Owner Approved の文言と一致。連絡元は `contact@b8e.co.jp` |
+| mobile（375px） | 横スクロール 0。支払いブロックが 1 カラムへ、Offer summary が 1 カラムへ |
+| Footer Legal | 全 6 ページで 3 リンク（`/privacy-policy/` `/terms/` `/legal/`）と © 2026 |
+| 既存ページ | `academy/*`・Legal・ルート直下・Global Nav・既存 CSS すべて無変更 |
+
+### 未接続（merge 前に解消が必要）
+
+- Formspree endpoint × 2（Owner Gate：Formspree Dashboard での Form 作成）
+- Stripe Payment Link × 2（Sandbox → Owner Reality Review → Live の順で接続）
+- Service Page 本文（Business Copy 不足のため Architect / Owner へ返却中）
+
+### Deployed
+[ ] No — 未接続項目が解消されるまで merge しない
+
+---
+
+---
 ## [2026-09-15] — Sales Foundation v1：Legal Foundation を本番公開（Work Closed）
 
 **Scope:** 本番反映と post-deploy validation の記録（`docs/site-structure.md` / `docs/sales-foundation-v1.md` / `docs/improvement-log.md`）
