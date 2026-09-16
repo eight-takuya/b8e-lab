@@ -429,10 +429,77 @@ Stripe Sandbox Asset は**今回操作しておらず**、Canonical のまま（
 
 ---
 
+## 13. 3 Weeks Owner Approved Pattern の My Life 横展開（2026-09-16）
+
+3 Weeks は Application → Confirmation → Formspree → Thanks → Stripe Sandbox → Complete まで
+**Owner Reality Review 完了・全項目 OK（Owner Approved）**。同 Pattern を My Life へ横展開した。
+
+### 13-1. 横展開の方法（差分を生まないため 3 Weeks から抽出）
+
+| 対象 | 方法 | 3 Weeks との差 |
+|---|---|---|
+| Email / Phone の `pattern` | 3 Weeks の HTML から**そのまま抽出** | **完全一致**（`diff` で確認） |
+| 2 ステップ JS | 3 Weeks の script をそのまま複製 | **3 行のみ**：`THANKS` の遷移先 ／ `six_month_intent` の trim ／ 確認表示 |
+| 確認ステップ | 3 Weeks と同構造 | `この6か月を、どんな時間として過ごしてみたいですか？` の行を追加 |
+| 文言 | `入力内容の確認` ／ `同意済み` ／ Error Copy | 3 Weeks Owner Approved のものをそのまま使用 |
+
+### 13-2. ⚠️ 横展開中に発見した潜在欠陥と修正（3 Weeks / My Life 共通）
+
+**事象：** 前後空白の除去（trim）が、値によっては実行されなかった。
+
+**原因：** ブラウザは `submit` イベントの**前に**標準 Validation を実行する。
+そのため **前後空白だけが原因で `pattern` に一致しない値**は、JS の trim に到達する前に弾かれていた。
+
+| 入力 | trim 前 | trim 後 |
+|---|---|---|
+| `" +81 80 1234 5678 "` | ❌ 不正 | ✅ 正常 |
+| `" 080-1234-5678 "` | ✅（文字クラスが空白を許容） | ✅ |
+
+`type="email"` は HTML 仕様上ブラウザが値の前後空白を自動除去するため影響なし。`type="tel"` / `type="text"` は除去されない。
+3 Weeks の前回 E2E は国内形式で検証したため顕在化していなかった。
+
+**修正：** `<form>` に **`novalidate`** を付与し、JS 側で **trim → `reportValidity()`** の順に実行する。
+**利用者に見える挙動（ブラウザ標準のメッセージ表示）は変わらない。**
+Owner Approved Pattern の仕様（前後空白除去）へ実装を合わせる**欠陥修正**であり、UX / Business の変更ではない。
+
+**3 Weeks の回帰確認：** 空白付き `+81` が確認ステップへ進むこと、無効な電話（`123`）・無効なメール（`abc@`）・未同意が引き続き阻止されることを確認。
+
+### 13-3. My Life Validation（3 Weeks と同一結果）
+
+| Email | 結果 | Phone | 結果 |
+|---|---|---|---|
+| `takuya.nakamura@b8e.co.jp` ／ `user+test@example.com` | ✅ 通過 | `080-1234-5678` ／ `08012345678` ／ `03-6868-5470` ／ `+81 80 1234 5678` | ✅ 通過 |
+| `abc` ／ `abc@` ／ `@example.com` ／ `abc@example` | ✅ 弾く | `090 1234 5678` ／ `(03) 6868-5470` ／ `0120-123-456` | ✅ 通過 |
+| | | `123` ／ 19 桁 ／ `あいうえお` ／ `abc-defg-hijk` ／ 空 | ✅ 弾く |
+
+### 13-4. My Life Full Sandbox E2E
+
+| 段階 | 結果 |
+|---|---|
+| Application 全項目・`six_month_intent`（placeholder 含む） | ✅ |
+| Legal links 別タブ | ✅ `target="_blank" rel="noopener"` |
+| trim（前後空白付きで入力） | ✅ 確認表示・送信値とも trim 後 |
+| 確認ステップ | ✅ 6 項目（名前 / メール / 電話 / メッセージ / 6か月の意図 / `同意済み`） |
+| 「修正する」 | ✅ **6 項目 + Consent すべて保持**（reload なし） |
+| 無効値（`novalidate` 下） | ✅ 確認へ進まず、ブラウザ標準メッセージ |
+| 「この内容で申し込む」 | ✅ Formspree（`xbglradg`）送信成功 → `/dreamin-spiral/my-life/thanks/` |
+| 送信 payload | ✅ `six_month_intent` を含む 10 field ／ `_next` なし |
+| Thanks | ✅ 600,000円（税込）×2 ／ Stripe・銀行振込が並列 ／ Pressure 語 0 件 ／ `thanks-note`・`form-note` とも 5.32 |
+| Stripe Sandbox Asset | ✅ retrieve で Canonical と**不一致 0 件** |
+| **Checkout → Test Payment → Complete redirect** | ⏸ **Engineer 環境では未検証**（`ERR_BLOCKED_BY_CLIENT`・§10-3 と同一事象） |
+| Complete | ✅「最初のセッションについて」／ My Page ／ Community ／ `Dialogue` 0 件 ／ 5.32・6.90・9.02 ／ Footer Legal |
+| mobile 375px | ✅ 確認ステップ表示・横スクロール 0 |
+
+**Readability：** 横展開で新たに加わった確認ステップのラベル（`.ds-confirm dt` = `#6b6b6b`）は 3 Weeks と同一で AA を満たし、
+**新たな薄い本文は生じていない。**
+
+---
+
 ## Change History
 
 | Date | 内容 |
 |---|---|
+| 2026-09-16 | **3 Weeks Owner Approved Pattern を My Life へ横展開**（確認ステップ・Email / Phone Validation・`pattern` は 3 Weeks から抽出し完全一致）。横展開中に**前後空白を含む値が trim 前に弾かれる潜在欠陥**を発見し、`novalidate` で 3 Weeks / My Life 両方を修正。My Life は Application → Confirmation → Formspree → Thanks と Complete を検証。Stripe Checkout 以降は Owner Review へ |
 | 2026-09-16 | **Owner Reality Review Adjustment。** ①6 ページを Read-only 調査し「読ませる文」で AA 未達だった `.thanks-note` / `.form-note`（2.15:1）を `#666`（5.32:1）へ。`body.ds-page` で Payment Foundation 配下のみにスコープし、accent / placeholder / eyebrow は対象外 ②3 Weeks に申込前の確認ステップを追加（修正する / この内容で申し込む・二重送信防止・値保持）③Email / Phone に Validation を追加（`pattern` のみ・独自エラーコピーなし）④3 Weeks E2E 再成功。My Life は文字色のみ |
 | 2026-09-16 | **3 Weeks を Owner Approved Pattern として確定**（Stripe Description を `｜` 区切りの Final Copy へ）。**同 Pattern を My Life へ横展開**（AJAX 送信・Legal links 別タブ・`_next` 削除・Complete Copy `Dialogue`→`セッション`）。My Life の Application → Formspree → Thanks と Complete を検証。Stripe Checkout 以降は Engineer 環境の制約により Owner Review へ委ねる |
 | 2026-09-16 | **Owner Reality Review Adjustment 3 点を反映**（Legal links 別タブ／Stripe Description 改行／Complete Copy Dialogue→セッション）。Application → Formspree → Thanks と Complete Copy は再 Validation 済み。**Stripe Checkout は Sandbox Account の requirements past due により停止中**（§10-3） |

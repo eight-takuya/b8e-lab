@@ -65,7 +65,7 @@
       <div class="section-block" id="ds-step-input">
         <!-- Formspree: Dreamin' Spiral 3 Weeks 専用 Form（Owner 作成・2026-09-16）。
              既存 endpoint（mykleakb = B8E 問い合わせ / xgoqybbl = Academy Session）は流用しない。 -->
-        <form class="apply-form ds-apply-form" id="ds-apply-form" action="https://formspree.io/f/mwlpenvp" method="post">
+        <form class="apply-form ds-apply-form" id="ds-apply-form" action="https://formspree.io/f/mwlpenvp" method="post" novalidate>
 
           <input type="hidden" name="form_type" value="dreamin_spiral_3weeks">
           <input type="hidden" name="site_version" value="payment-foundation-v1">
@@ -196,7 +196,10 @@
       form.addEventListener('submit', function (event) {
         event.preventDefault();
 
-        // 前後空白を除去してからブラウザ標準 Validation にかける
+        // 前後空白を除去してからブラウザ標準 Validation にかける。
+        // form に novalidate を付けているのは、ブラウザが submit イベントより前に Validation を実行し、
+        // 前後空白だけが原因の値（例: ' +81 80 1234 5678 '）を trim 前に弾いてしまうため。
+        // メッセージは reportValidity() によるブラウザ標準表示のまま。
         var name  = trimField('name');
         var email = trimField('email');
         var phone = trimField('phone');

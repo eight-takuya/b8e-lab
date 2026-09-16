@@ -67,12 +67,12 @@
         </dl>
       </div>
 
-      <!-- Application Form v1.1 -->
-      <div class="section-block">
+      <!-- Application Form v1.1（入力ステップ） -->
+      <div class="section-block" id="ds-step-input">
         <!-- Formspree: Dreamin' Spiral My Life 専用 Form（Owner 確認済み ID・2026-09-16）。
              送信は 3 Weeks と同じ AJAX 方式（Owner Approved Pattern）。
              既存 endpoint（mykleakb = B8E 問い合わせ / xgoqybbl = Academy Session）は流用しない。 -->
-        <form class="apply-form ds-apply-form" id="ds-apply-form" action="https://formspree.io/f/xbglradg" method="post">
+        <form class="apply-form ds-apply-form" id="ds-apply-form" action="https://formspree.io/f/xbglradg" method="post" novalidate>
 
           <input type="hidden" name="form_type" value="dreamin_spiral_my_life">
           <input type="hidden" name="site_version" value="payment-foundation-v1">
@@ -86,13 +86,15 @@
 
           <div class="ds-field">
             <label for="email">メールアドレス<span class="ds-required">必須</span></label>
-            <input type="email" id="email" name="email" required autocomplete="email">
+            <input type="email" id="email" name="email" required autocomplete="email"
+                   pattern="[^\s@]+@[^\s@]+\.[^\s@]+">
             <p class="ds-field-note">お申し込み後のご案内をお送りします。</p>
           </div>
 
           <div class="ds-field">
             <label for="phone">電話番号<span class="ds-required">必須</span></label>
-            <input type="tel" id="phone" name="phone" placeholder="例）090-1234-5678" required autocomplete="tel">
+            <input type="tel" id="phone" name="phone" placeholder="例）090-1234-5678" required autocomplete="tel"
+                   pattern="(?:\+81(?=(?:\D*\d){9,10}\D*$)[\d\s\(\)\-]+|(?=(?:\D*\d){10,11}\D*$)[\d\s\(\)\-]+)">
             <p class="ds-field-note">メール等でご連絡がつかない場合や、Zoom当日の緊急連絡などに使用します。</p>
           </div>
 
@@ -113,10 +115,34 @@
             </label>
           </div>
 
-          <p class="ds-form-error" id="ds-form-error" role="alert" hidden></p>
-
           <button type="submit" id="ds-submit">My Lifeに申し込む</button>
         </form>
+      </div>
+
+      <!-- 確認ステップ（既定は非表示。入力ステップの Validation 通過後に表示する） -->
+      <div class="section-block" id="ds-step-confirm" hidden>
+        <h3>入力内容の確認</h3>
+        <dl class="ds-confirm">
+          <dt>お名前</dt>
+          <dd id="ds-c-name"></dd>
+          <dt>メールアドレス</dt>
+          <dd id="ds-c-email"></dd>
+          <dt>電話番号</dt>
+          <dd id="ds-c-phone"></dd>
+          <dt>今、気になっていることや、話してみたいこと</dt>
+          <dd id="ds-c-message"></dd>
+          <dt>この6か月を、どんな時間として過ごしてみたいですか？</dt>
+          <dd id="ds-c-six_month_intent"></dd>
+          <dt>利用規約およびプライバシーポリシー</dt>
+          <dd id="ds-c-consent"></dd>
+        </dl>
+
+        <p class="ds-form-error" id="ds-form-error" role="alert" hidden></p>
+
+        <div class="ds-confirm-actions">
+          <button type="button" id="ds-back">修正する</button>
+          <button type="button" id="ds-confirm-submit">この内容で申し込む</button>
+        </div>
       </div>
 
     </div>
@@ -155,12 +181,17 @@
 
   <script>
     (function () {
-      var form   = document.getElementById('ds-apply-form');
-      var button = document.getElementById('ds-submit');
-      var errorBox = document.getElementById('ds-form-error');
+      var form       = document.getElementById('ds-apply-form');
+      var stepInput  = document.getElementById('ds-step-input');
+      var stepConfirm= document.getElementById('ds-step-confirm');
+      var backBtn    = document.getElementById('ds-back');
+      var sendBtn    = document.getElementById('ds-confirm-submit');
+      var errorBox   = document.getElementById('ds-form-error');
       var THANKS = '/dreamin-spiral/my-life/thanks/';   // ルート相対。Preview / Production どちらでも解決する
-      // 暫定文言（Architect 承認待ち）。承認された文言に差し替える。
+      // Owner Approved Error Copy
       var ERROR_TEXT = '送信できませんでした。お手数ですが、もう一度お試しください。';
+
+      if (!form) { return; }
 
       // 運用トラッキング用 hidden 項目（利用者には表示しない）
       var ref = document.referrer || '';
@@ -169,17 +200,61 @@
         try { src.value = new URL(ref).pathname || 'direct'; } catch (e) { src.value = 'direct'; }
       }
 
-      if (!form) { return; }
+      function trimField(id) {
+        var el = document.getElementById(id);
+        if (el) { el.value = el.value.trim(); }
+        return el ? el.value : '';
+      }
 
+      // 入力 → 確認
       form.addEventListener('submit', function (event) {
         event.preventDefault();
 
-        var at = document.getElementById('submitted_at');
-        if (at) { at.value = new Date().toISOString(); }
+        // 前後空白を除去してからブラウザ標準 Validation にかける。
+        // form に novalidate を付けているのは、ブラウザが submit イベントより前に Validation を実行し、
+        // 前後空白だけが原因の値（例: ' +81 80 1234 5678 '）を trim 前に弾いてしまうため。
+        // メッセージは reportValidity() によるブラウザ標準表示のまま。
+        var name  = trimField('name');
+        var email = trimField('email');
+        var phone = trimField('phone');
+        var message = trimField('message');
+        var sixMonthIntent = trimField('six_month_intent');
+        if (!form.reportValidity()) { return; }
+
+        document.getElementById('ds-c-name').textContent    = name;
+        document.getElementById('ds-c-email').textContent   = email;
+        document.getElementById('ds-c-phone').textContent   = phone;
+        document.getElementById('ds-c-message').textContent = message || '—';
+        document.getElementById('ds-c-six_month_intent').textContent = sixMonthIntent || '—';
+        document.getElementById('ds-c-consent').textContent =
+          document.getElementById('terms_privacy_consent').checked ? '同意済み' : '';
 
         errorBox.hidden = true;
         errorBox.textContent = '';
-        button.disabled = true;
+        stepInput.hidden = true;
+        stepConfirm.hidden = false;
+        stepConfirm.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+
+      // 修正する → 入力へ戻る（値はそのまま保持される。reload しない）
+      backBtn.addEventListener('click', function () {
+        stepConfirm.hidden = true;
+        stepInput.hidden = false;
+        sendBtn.disabled = false;
+        errorBox.hidden = true;
+        errorBox.textContent = '';
+        stepInput.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+
+      // この内容で申し込む → Formspree へ送信
+      sendBtn.addEventListener('click', function () {
+        if (sendBtn.disabled) { return; }   // 二重送信防止
+        sendBtn.disabled = true;
+        errorBox.hidden = true;
+        errorBox.textContent = '';
+
+        var at = document.getElementById('submitted_at');
+        if (at) { at.value = new Date().toISOString(); }
 
         fetch(form.action, {
           method: 'POST',
@@ -199,8 +274,8 @@
             throw new Error('submission failed');
           })
           .catch(function () {
-            // 失敗時は Thanks へ進ませず、入力内容を保持したままエラーを表示する
-            button.disabled = false;
+            // 失敗時は Thanks へ進ませず、確認画面に留まって再送信できるようにする
+            sendBtn.disabled = false;
             errorBox.textContent = ERROR_TEXT;
             errorBox.hidden = false;
           });
