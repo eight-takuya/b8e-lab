@@ -5,9 +5,9 @@
 
 | 項目 | 内容 |
 |---|---|
-| Status | 実装中（Production 反映前） |
+| Status | **CLOSED（2026-09-16）。** Production 反映済み（PR #94 `a5d50cc`）・4 redirect とも 308 → 200 を確認。正本：OS repo `docs/repository-architecture/old-academy-cleanup-v1.md`（Phase 10-A CLOSED ／ Phase 10-B NOT STARTED） |
 | 実装日 | 2026-09-16 |
-| Branch | `feature/phase-10a-guide-community-redirects` |
+| Branch | `feature/phase-10a-guide-community-redirects`（PR #94） |
 
 ## 1. Redirects
 
@@ -30,3 +30,17 @@
 - Current Guide / Community / 3 Weeks / My Life / Payment Foundation / TOP / Legal の HTML・CSS
 - `academy.html`・`academy/program.html`・`academy/premium*.html`・`academy/owner-program.html`・`academy/library.html`・`academy/apply.html`・`academy/thanks.html`・`academy/premium-portal.html`・`academy/pdf/*`・関連 assets / OGP
 - GAS Booking URL（Guide CTA の遷移先）
+
+## 3. Production Validation（2026-09-16）
+
+| 項目 | 結果 |
+|---|---|
+| `/academy/session.html` | 308 → `/dreamin-spiral/guide/` 200（`?from=` は引き継ぎ） |
+| `/academy/community.html` | 308 → `/dreamin-spiral/community/` 200 |
+| `/academy/community-apply.html` | 308 → `/dreamin-spiral/community/` 200 |
+| `/academy/community-success.html` | 308 → `/dreamin-spiral/community/complete/` 200（noindex） |
+| Loop / chain | なし（redirect 1 回） |
+| Current pages | TOP ・ Guide ・ Community ・ Community Complete ・ 3 Weeks ・ My Life ・ Thanks ・ Legal が main と byte 一致 |
+| 対象外 `/academy/*` | `academy.html` ・ program ・ premium 系 ・ owner-program ・ library ・ apply ・ thanks ・ premium-portal ・ PDF は 200（redirect なし） |
+
+Stripe：旧 Academy Community Payment Link を同日 deactivate（OS repo 正本 §6）。
