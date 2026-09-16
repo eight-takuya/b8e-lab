@@ -65,8 +65,8 @@ Form 仕様の正本は [sales-foundation-v1.md](sales-foundation-v1.md) §6・�
 - Stripe と銀行振込を **`.ds-payment-choice` の 2 カラムに並列配置**（≤600px で 1 カラム）。
   順序・装飾で優劣を示さない
 - Deadline / Scarcity / Pressure 表現は置いていない
-- Stripe CTA は **未接続**（`__PENDING_STRIPE_PAYMENT_LINK_3WEEKS__` / `__PENDING_STRIPE_PAYMENT_LINK_MYLIFE__`）。
-  Sandbox 検証時に Sandbox URL、Production 接続時に Live URL へ差し替える
+- Stripe CTA は現在 **Sandbox の Payment Link**（`buy.stripe.com/test_…`）に接続している。
+  **Owner Reality Review 承認後、Live Payment Link へ差し替えてから merge する**
 - Stripe ブロックには「Stripeでは、お申し込み時と同じメールアドレスをご入力ください。」を表示する
 - **銀行振込先は本 Web 実装の `.ds-bank` 定義を Current Configuration とする。**
   OS repo の Canonical Specification へ口座情報そのものを複製しない
@@ -105,10 +105,23 @@ Historical ページの HTML をコピー流用していない（構造上の参
 | # | 項目 | 状態 |
 |---|---|---|
 | 1 | Formspree endpoint × 2 | **Owner Gate.** Formspree Dashboard での Form 作成が必要 |
-| 2 | Stripe Payment Link × 2 | Sandbox Provisioning → Owner Reality Review → Live Provisioning 後に接続 |
+| 2 | Stripe Payment Link × 2 | **Sandbox 接続済み。** Owner Reality Review → Live Provisioning 後に Live URL へ差し替え |
 | 3 | Service Page 本文 | 未作成。Business Copy が Canonical に不足するため Architect / Owner へ返している |
 | 4 | Service Page → Application Form の導線 | Service Page 未作成のため未接続 |
 | 5 | 銀行振込ユーザー向けの「この後どうなるか」の一文 | Owner Approved Copy が存在しないため記載していない |
+
+---
+
+## 8. Sandbox 接続状態（Owner Reality Review 用）
+
+| Service | Thanks Page の Stripe CTA | Complete Page（redirect 先） |
+|---|---|---|
+| 3 Weeks | `https://buy.stripe.com/test_00w4gseyMdC5bhKbU7eAg00` | Preview の `/dreamin-spiral/3-weeks/complete/` |
+| My Life | `https://buy.stripe.com/test_fZudR29es9lP4Tmf6jeAg01` | Preview の `/dreamin-spiral/my-life/complete/` |
+
+- Sandbox の `after_completion` は **Vercel Preview URL** を指している（本番 Complete URL はこの PR が merge されるまで存在しないため）
+- Live Payment Link は **本番 Complete URL** を指す別 Resource として Phase 6 で新規作成する
+- Vercel Preview は Deployment Protection 下にあるため、Review は **Vercel にログイン済みのブラウザ**で行う
 
 ---
 
@@ -116,4 +129,5 @@ Historical ページの HTML をコピー流用していない（構造上の参
 
 | Date | 内容 |
 |---|---|
+| 2026-09-16 | Sandbox Payment Link を Thanks Page へ接続。Sandbox E2E（3 Weeks のテスト決済 → redirect）を実測して記録 |
 | 2026-09-16 | 新規作成。Application Form 2 本・Thanks / Next Step 2 本・Complete / Start 2 本・`style.css` A11 を実装。Formspree endpoint と Stripe Payment Link は未接続 |
