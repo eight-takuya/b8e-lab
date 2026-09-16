@@ -6,6 +6,17 @@
 ---
 
 ---
+## [2026-09-16] — Phase 10-A：Guide / Community の旧 Academy 入口を Current URL へ 308 redirect
+
+**Scope:** `vercel.json`（新規・redirects のみ）, `docs/old-academy-cleanup-phase-10a.md`（新規）, `docs/site-structure.md`
+**Triggered by:** Phase 10-A｜Guide / Community Old Academy Cleanup（Architect 設計・Owner Approved）。正本は OS repo `docs/repository-architecture/old-academy-cleanup-v1.md`
+
+- `/academy/session.html` → `/dreamin-spiral/guide/`
+- `/academy/community.html`・`/academy/community-apply.html` → `/dreamin-spiral/community/`
+- `/academy/community-success.html` → `/dreamin-spiral/community/complete/`
+- 旧 HTML ファイルは削除していない。Premium / Owner Program / Library / PDF / `academy.html` は変更なし（Phase 10-B）
+
+---
 ## [2026-09-16] — Production Release / Closeout：Community Current Entrance v1 を CLOSED
 
 **Scope:** PR #92（`462ca31`）の merge による Production 反映・実装記録の Status

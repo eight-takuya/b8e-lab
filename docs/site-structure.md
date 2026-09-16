@@ -59,6 +59,19 @@ Legal Pages と同じく **末尾スラッシュのディレクトリ URL** を 
 Community / Business Creation は Current の Service Page が未作成のため TOP 上で CTA を置いていない（Guide は [guide-current-entrance-v1.md](guide-current-entrance-v1.md)、Community は [community-current-entrance-v1.md](community-current-entrance-v1.md) で接続）。
 実装詳細は [current-sales-entrance-v1.md](current-sales-entrance-v1.md)、設計の正本は OS repo の `docs/repository-architecture/current-sales-entrance-v1.md`。
 
+### Redirects（Phase 10-A｜Guide / Community Old Academy Cleanup・2026-09-16）
+
+`vercel.json`（新規・`redirects` のみ）で、Current と意味が一致する旧 Academy 入口だけを Current URL へ恒久 redirect（`permanent: true` = HTTP 308）する。旧 HTML ファイルは削除せず残している（削除要否は Phase 10-B）。
+
+| Old URL | Destination |
+|---|---|
+| `/academy/session.html` | `/dreamin-spiral/guide/` |
+| `/academy/community.html` | `/dreamin-spiral/community/` |
+| `/academy/community-apply.html` | `/dreamin-spiral/community/` |
+| `/academy/community-success.html` | `/dreamin-spiral/community/complete/` |
+
+`academy.html`・`academy/program.html`・`premium*.html`・`owner-program.html`・`library.html`・`apply.html`・`thanks.html`・`premium-portal.html`・`/academy/pdf/*` は対象外（Phase 10-B）。実装記録は [old-academy-cleanup-phase-10a.md](old-academy-cleanup-phase-10a.md)。
+
 ---
 
 ## Academy の 3 つの入口（Web Architecture）
@@ -174,18 +187,18 @@ Academy 内導線としての公開に留めている（追加の要否は今後
 
 `academy.html` を入口として、`academy/` 配下にプログラム紹介・導線ページが存在する。
 
-**訂正（実URLで検証済み）:** 本サイトは `vercel.json` を持たず、Vercel の Clean URLs は有効になっていない。全ページ **`.html` 拡張子付きのURLでのみ実在**する（例: `academy.html` → 実在するのは `https://www.b8e.co.jp/academy.html`。`https://www.b8e.co.jp/academy` は404）。以下は実際にHTTPアクセスして確認した実URL。
+**訂正（実URLで検証済み）:** 本サイトは（2026-09-16 Phase 10-A まで）`vercel.json` を持たず、Vercel の Clean URLs は有効になっていない。全ページ **`.html` 拡張子付きのURLでのみ実在**する（例: `academy.html` → 実在するのは `https://www.b8e.co.jp/academy.html`。`https://www.b8e.co.jp/academy` は404）。以下は実際にHTTPアクセスして確認した実URL。
 
 ```
 https://www.b8e.co.jp/academy.html                    Academy入口（世界観・Program への導線）
 ├─ /academy/program.html          実践の形（Academy 全体の Journey Map・体験マップ）
 ├─ /academy/library.html          人生再起動ガイド（#guide＝知る / #library＝深める）
 │   └─ /academy/pdf/*.pdf                              PDF実体（7件。うち1件はarchiveと重複）
-├─ /academy/session.html          無料ガイドセッション（対話の入口。#apply に申込フォーム内蔵）
+├─ /academy/session.html          無料ガイドセッション（対話の入口。#apply に申込フォーム内蔵）※ 2026-09-16 以降 308 → /dreamin-spiral/guide/
 ├─ /academy/thanks.html           届きました（Session フォーム送信後のサンクスページ）
-├─ /academy/community.html        Community LP（提供内容・申込導線）
-│   ├─ /academy/community-apply.html    Community 専用申込（Stripe）
-│   └─ /academy/community-success.html  決済後の案内（noindex）
+├─ /academy/community.html        Community LP（提供内容・申込導線）※ 308 → /dreamin-spiral/community/
+│   ├─ /academy/community-apply.html    Community 専用申込（Stripe）※ 308 → /dreamin-spiral/community/（旧 Payment Link は inactive）
+│   └─ /academy/community-success.html  決済後の案内（noindex）※ 308 → /dreamin-spiral/community/complete/
 ├─ /academy/premium.html          Premium LP（提供内容・申込導線）
 │   ├─ /academy/premium-apply.html      Premium 専用申込（Stripe）
 │   └─ /academy/premium-success.html    決済後の案内（noindex）
