@@ -6,6 +6,16 @@
 ---
 
 ---
+## [2026-09-16] — Production Release / Closeout：Community Current Entrance v1 を CLOSED
+
+**Scope:** PR #92（`462ca31`）の merge による Production 反映・実装記録の Status
+**Triggered by:** Owner Reality Review（Community Service Page画面 / Stripe Community Checkout画面）Approved
+
+- `/dreamin-spiral/community/`・`/dreamin-spiral/community/complete/` を公開（HTTP 200）・TOP の Community「詳しく見る」を公開
+- CTA は Current Community Live Payment Link（¥20,000/月・tax inclusive）。実課金なし
+- `/academy/community*.html`・旧 Academy Community Payment Link は変更なし（Phase 10 まで一時併存）
+
+---
 ## [2026-09-16] — Community Current Entrance v1：`/dreamin-spiral/community/` を追加（未公開）
 
 **Scope:** `dreamin-spiral/community/index.html`（新規）, `dreamin-spiral/community/complete/index.html`（新規）, `index.html`（TOP の Community に「詳しく見る」）, `docs/community-current-entrance-v1.md`（新規）, `docs/site-structure.md`
