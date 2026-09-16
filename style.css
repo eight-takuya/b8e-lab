@@ -3790,6 +3790,84 @@ a:hover {
   cursor: default;
 }
 
+/* 申込前の確認ステップ */
+.ds-confirm {
+  display: grid;
+  grid-template-columns: 12em 1fr;
+  gap: 14px 20px;
+  margin: 24px 0 0;
+  padding-top: 24px;
+  border-top: 1px solid #e6e2dd;
+}
+
+.ds-confirm dt {
+  font-size: 0.82rem;
+  color: #6b6b6b;
+  letter-spacing: 0.03em;
+  line-height: 1.9;
+  margin: 0;
+}
+
+.ds-confirm dd {
+  font-size: 0.95rem;
+  color: #2f2b27;
+  line-height: 1.9;
+  margin: 0;
+  overflow-wrap: anywhere;
+  white-space: pre-wrap;
+}
+
+.ds-confirm-actions {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  margin-top: 36px;
+}
+
+.ds-confirm-actions button {
+  background: none;
+  border: none;
+  border-bottom: 1px solid #c9a882;
+  color: #9b7b5c;
+  font-family: inherit;
+  font-size: 0.88rem;
+  letter-spacing: 0.03em;
+  padding-bottom: 2px;
+  cursor: pointer;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.ds-confirm-actions button:hover {
+  color: #7a5f44;
+  border-color: #9b7b5c;
+}
+
+.ds-confirm-actions button:disabled {
+  opacity: 0.45;
+  cursor: default;
+}
+
+.ds-confirm-actions #ds-back {
+  border-bottom-color: #d8d3cc;
+  color: #6b6b6b;
+}
+
+@media (max-width: 600px) {
+  .ds-confirm {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  .ds-confirm dt {
+    margin-top: 16px;
+  }
+  .ds-confirm dt:first-of-type {
+    margin-top: 0;
+  }
+  .ds-confirm-actions {
+    gap: 22px;
+  }
+}
+
 /* Payment choice — Stripe / 銀行振込は並列。順序で優劣を示さない */
 .ds-payment-choice {
   display: grid;
@@ -3863,14 +3941,19 @@ a:hover {
   overflow-wrap: anywhere;
 }
 
-/* Complete Page の受付確認 2 行の文字色。
-   既存 .thanks-note（#aaa）は Thanks Page と Historical Page でも共用しているため、
-   Complete 専用の修飾クラスで color だけを上書きする。
-   #aaa は背景 #f7f6f4 に対しコントラスト 2.15:1 で可読性が不足していた。
-   #666 は 5.32:1（WCAG AA 達成）。本文 #555（6.90:1）よりは淡く、階層は保つ。
-   font-size / font-weight / margin / line-height は .thanks-note のまま変更しない。 */
-.thanks-message .ds-complete-note {
+/* 可読性調整（Owner Reality Review・2026-09-16）
+   「読ませる文」なのに背景 #f7f6f4 に対し WCAG AA（4.5:1）を満たしていなかった 3 種を #666（5.32:1）へ。
+   本文 #555（6.90:1）よりは淡いままなので Visual Hierarchy は保つ。
+   .thanks-note（#aaa / 2.15:1）と .form-note（#aaa / 2.15:1）はサイト全体で共用しているため、
+   body.ds-page で Payment Foundation の 6 ページだけにスコープする。
+   color 以外（font-size / font-weight / margin / line-height）は一切変更しない。
+   accent（#9b7b5c）・placeholder（#bbb）・hero-label は意図的な階層のため対象外。 */
+.ds-page .thanks-message .thanks-note {
   color: #666;
+}
+
+.ds-page .form-note {
+  color: #666 !important;   /* 元ルールが !important のため合わせる */
 }
 
 /* Complete page の案内リスト */

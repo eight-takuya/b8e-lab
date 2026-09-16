@@ -89,8 +89,8 @@ Form 仕様の正本は [sales-foundation-v1.md](sales-foundation-v1.md) §6・�
 `A11. Dreamin' Spiral Application / Payment` を末尾に追加した。**既存ルールは 1 行も変更していない。**
 
 追加クラス: `.ds-offer-summary` / `.ds-apply-form` / `.ds-field` / `.ds-field-note` / `.ds-required` /
-`.ds-consent` / `.ds-form-error` / `.ds-payment-choice` / `.ds-payment-block` / `.ds-payment-amount` /
-`.ds-bank` / `.ds-complete-note` / `.ds-next-list`
+`.ds-consent` / `.ds-form-error` / `.ds-confirm` / `.ds-confirm-actions` / `.ds-payment-choice` / `.ds-payment-block` / `.ds-payment-amount` /
+`.ds-bank` / `.ds-next-list`
 
 既存の `.thanks-hero` / `.hero-label` / `.hero-copy` / `.page-content` / `.section-block` /
 `.thanks-message` / `.apply-form` / `.cta-link` / `.form-note` はそのまま再利用している。
@@ -328,41 +328,104 @@ Owner が実機で確認した。そのため Owner Approved Final Copy とし�
 
 ---
 
-## 12. Owner Reality Review Adjustment — Complete Page の文字色（2026-09-16）
+## 12. Owner Reality Review Adjustment（2026-09-16）
 
-Owner が 3 Weeks / My Life の Flow・文言・構造を承認。残る指摘は
-**Complete Page の受付確認 2 行のグレーが薄く「無効化された補足文」に見える**点のみだった。
+### 12-1. 可読性調整 — 全 6 ページの Read-only 調査結果
 
-### 変更内容（文字色のみ）
+背景 `#f7f6f4` に対する WCAG AA（通常テキスト 4.5:1）で判定した。
 
-| 項目 | 変更前 | 変更後 |
-|---|---|---|
-| selector | `.thanks-message .thanks-note` | `.thanks-message .ds-complete-note`（新規・color のみ） |
-| color | `#aaa` | **`#666`** |
-| コントラスト比（背景 `#f7f6f4`） | **2.15:1**（WCAG AA 未達） | **5.32:1**（AA 達成） |
+| selector | 色 | 比 | 意味役割 | 判定 |
+|---|---|---|---|---|
+| `.thanks-message .thanks-note` | `#aaa` | **2.15** | 申込受付確認・支払い案内 | ❌ → **`#666`（5.32）** |
+| `.form-note` | `#aaa !important` | **2.15** | Stripe 補足・振込手数料 | ❌ → **`#666`（5.32）** |
+| `.thanks-message p` | `#555` | 6.90 | 本文 | ✅ 維持 |
+| `.section-block p` | `#555` | 6.90 | 本文 | ✅ 維持 |
+| `.ds-payment-block p` ／ `.ds-offer-summary dd` ／ `.ds-next-list li` ／ `.ds-consent label` ／ `.apply-form input` | `#444` | 9.02 | 本文・入力値 | ✅ 維持 |
+| `.ds-bank dd` | `#2f2b27` | 13.0 | 振込先の値 | ✅ 維持 |
+| `.ds-bank dt` ／ `.ds-offer-summary dt` ／ `.ds-required` | `#9b7b5c` | 3.61 | **accent（ラベル・バッジ）** | — 対象外 |
+| `::placeholder` | `#bbb` | 1.78 | **意図的に淡い** | — 対象外 |
+| `.hero-label` | `#8c8680` | — | **eyebrow（濃紺背景上）** | — 対象外 |
+| `.ds-field-note` | 宣言 `#8d8781` | — | 項目補足文 | — **実表示は `.section-block p` の `#555`（6.90）に上書きされており既に十分**。宣言値は変更していない |
 
-本文 `.thanks-message p` は `#555`（6.90:1）のままで、**Visual Hierarchy は保持**している。
+**スコープ方法：** `.thanks-note` と `.form-note` はサイト全体（`index` / `dx` / `dc` / `dc-guide` / `academy/*` 計 9 ファイル）で共用しているため、
+**6 ページの `<body>` に `ds-page` を付与し `.ds-page` 配下だけにスコープ**した。
+前回の `.ds-complete-note` は `.ds-page .thanks-note` が担うため撤去し、重複スタイルを増やしていない。
 
-### スコープ限定の理由
+**非波及の実測：** `academy/premium-success.html` ・ `index.html` とも `body.ds-page` を持たず `rgb(170,170,170)`（`#aaa`）のまま。
 
-`.thanks-note` は **Thanks Page 2 本と Historical Page 3 本**
-（`academy/premium-success.html` / `academy/thanks.html` / `academy/community-success.html`）でも共用している。
-これらを変更しないため、**Complete Page の該当要素にのみ修飾クラス `.ds-complete-note` を付与**し、
-`color` だけを上書きした。
+`color` 以外（font-size / font-weight / margin / line-height / layout / spacing / accent）は一切変更していない。
 
-### Validation
+### 12-2. 3 Weeks — 申込前の確認ステップ
 
-| 項目 | 3 Weeks Complete | My Life Complete |
-|---|---|---|
-| color | `rgb(102,102,102)` ✅ | `rgb(102,102,102)` ✅ |
-| font-size | `14.08px`（不変）✅ | 同左 ✅ |
-| font-weight | `400`（不変）✅ | 同左 ✅ |
-| margin-top / line-height | `24px` / `28.16px`（不変）✅ | 同左 ✅ |
-| mobile 375px | 横スクロール 0 ✅ | 横スクロール 0 ✅ |
-| 文言 | 変更なし ✅ | 変更なし ✅ |
+```
+入力 → Validation → 確認 → 「修正する」 / 「この内容で申し込む」 → Formspree → Thanks
+```
 
-**非波及の確認：** `3-weeks/thanks` ・ `academy/premium-success.html` とも
-`.ds-complete-note` を持たず `rgb(170,170,170)`（`#aaa`）のまま。
+- 入力ステップ `#ds-step-input` と確認ステップ `#ds-step-confirm` を同一ページ内で切り替える（**reload しない**）
+- 確認表示：お名前 ／ メールアドレス ／ 電話番号 ／ 今、気になっていることや、話してみたいこと ／ 利用規約およびプライバシーポリシー（`同意済み`）
+- hidden 項目（`form_type` / `source_page` / `submitted_at` / `site_version`）は**表示しない**
+- **「修正する」** … 入力ステップへ戻す。DOM をそのまま残すため**全値と Consent が保持される**
+- **「この内容で申し込む」** … `disabled` で二重送信を防止 → Formspree へ AJAX → **成功時のみ Thanks**。失敗時は確認ステップに留まり再送信可能
+- Formspree の endpoint・送信方式・field 構成は**変更なし**（`_next` は不使用のまま）
+
+### 12-3. Email / Phone Validation
+
+**方針：** 入力欄は 1 つ（二重入力なし）。送信前に前後空白を `trim`。
+メッセージは**ブラウザ標準**を使い、独自のエラーコピーを作っていない（`pattern` 属性のみ）。
+
+| 項目 | ルール |
+|---|---|
+| Email | `type="email"` + `required` + `pattern="[^\s@]+@[^\s@]+\.[^\s@]+"`（TLD のドットを要求） |
+| Phone | `type="tel"` + `required` + `pattern="(?:\+81(?=(?:\D*\d){9,10}\D*$)[\d\s\(\)\-]+\|(?=(?:\D*\d){10,11}\D*$)[\d\s\(\)\-]+)"` |
+
+Phone は **数字・ハイフン・半角スペース・括弧・`+81` を許容**し、**桁数だけ**で判定する
+（国内 10〜11 桁 ／ `+81` は国番号の後 9〜10 桁）。**キャリア接頭辞や市外局番のルールは実装していない。**
+placeholder は変更していない。
+
+**検証結果（実ブラウザ・`checkValidity()`）**
+
+| Email | 判定 | Phone | 判定 |
+|---|---|---|---|
+| `takuya.nakamura@b8e.co.jp` | ✅ 通過 | `080-1234-5678` | ✅ 通過 |
+| `user+test@example.com` | ✅ 通過 | `08012345678` | ✅ 通過 |
+| `abc` | ✅ 弾く | `03-6868-5470` | ✅ 通過 |
+| `abc@` | ✅ 弾く | `+81 80 1234 5678` | ✅ 通過 |
+| `@example.com` | ✅ 弾く | `090 1234 5678` ／ `(03) 6868-5470` ／ `0120-123-456` | ✅ 通過 |
+| `abc@example` | ✅ 弾く | `123` ／ 19 桁の数字列 ／ `あいうえお` ／ `abc-defg-hijk` ／ 空 | ✅ 弾く |
+
+Email 6 件・Phone 13 件すべて期待どおり。**一般的な正しい形式を弾いていない。**
+
+### 12-4. 3 Weeks E2E 再検証
+
+| 段階 | 結果 |
+|---|---|
+| Application 表示・Legal links 別タブ | ✅ |
+| trim（前後空白） | ✅ 確認画面・送信値とも trim 後 |
+| Validation | ✅ 上表のとおり |
+| 入力 → 確認ステップ | ✅ 入力ステップが隠れ確認ステップが表示 |
+| 確認表示（名前 / メール / 電話 / メッセージ / 同意済み） | ✅ |
+| 「修正する」 | ✅ 入力へ戻り **全値 + Consent を保持**（URL 変化なし・reload なし） |
+| 「この内容で申し込む」 | ✅ Formspree 送信成功 → `/dreamin-spiral/3-weeks/thanks/` |
+| Thanks 文字色 | ✅ `thanks-note` / `form-note` とも 5.32 |
+| Complete 文字色 | ✅ 5.32 ／「最初のセッション」／`Dialogue` 0 件 |
+
+Stripe Sandbox Asset は**今回操作しておらず**、Canonical のまま（Description は `｜` 区切りの Final Copy）。
+
+### 12-5. My Life の今回スコープ
+
+**文字色の Technical Adjustment のみ**（`thanks-note` / `form-note` とも 5.32 を実測）。
+確認ステップ・Email / Phone Validation・Application Flow 変更・Full E2E 再実行は**未実施**。
+3 Weeks Owner Review 後に横展開する。
+
+### 12-6. 未承認の暫定文言（Architect へ返却中）
+
+| 文言 | 箇所 |
+|---|---|
+| `入力内容の確認` | 確認ステップの見出し |
+| `同意済み` | 確認ステップの Consent 表示 |
+| `送信できませんでした。お手数ですが、もう一度お試しください。` | 送信失敗時（既存・Owner Approved Error Copy として使用） |
+
+前 2 件は機能上必要な最小ラベル。承認文言が決まりしだい差し替える。
 
 ---
 
@@ -370,7 +433,7 @@ Owner が 3 Weeks / My Life の Flow・文言・構造を承認。残る指摘�
 
 | Date | 内容 |
 |---|---|
-| 2026-09-16 | **Owner Reality Review Adjustment：Complete Page の受付確認 2 行の文字色を `#aaa` → `#666` へ**（コントラスト 2.15:1 → 5.32:1）。`.ds-complete-note` で Complete Page のみに限定し、Thanks Page と Historical Page は変更なし。文言 / font-size / spacing / layout は不変 |
+| 2026-09-16 | **Owner Reality Review Adjustment。** ①6 ページを Read-only 調査し「読ませる文」で AA 未達だった `.thanks-note` / `.form-note`（2.15:1）を `#666`（5.32:1）へ。`body.ds-page` で Payment Foundation 配下のみにスコープし、accent / placeholder / eyebrow は対象外 ②3 Weeks に申込前の確認ステップを追加（修正する / この内容で申し込む・二重送信防止・値保持）③Email / Phone に Validation を追加（`pattern` のみ・独自エラーコピーなし）④3 Weeks E2E 再成功。My Life は文字色のみ |
 | 2026-09-16 | **3 Weeks を Owner Approved Pattern として確定**（Stripe Description を `｜` 区切りの Final Copy へ）。**同 Pattern を My Life へ横展開**（AJAX 送信・Legal links 別タブ・`_next` 削除・Complete Copy `Dialogue`→`セッション`）。My Life の Application → Formspree → Thanks と Complete を検証。Stripe Checkout 以降は Engineer 環境の制約により Owner Review へ委ねる |
 | 2026-09-16 | **Owner Reality Review Adjustment 3 点を反映**（Legal links 別タブ／Stripe Description 改行／Complete Copy Dialogue→セッション）。Application → Formspree → Thanks と Complete Copy は再 Validation 済み。**Stripe Checkout は Sandbox Account の requirements past due により停止中**（§10-3） |
 | 2026-09-16 | **3 Weeks を AJAX 送信方式へ変更し、Full Sandbox E2E（Application → Formspree → Thanks → Stripe → Test Payment → Complete）を通しで成功。** My Life は endpoint を `xbglradg` へ修正のみ（横展開は 3 Weeks Owner Review 後） |
