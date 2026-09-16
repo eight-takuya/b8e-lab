@@ -34,7 +34,7 @@
 
 | File（`/dreamin-spiral/library/pdf/`） | Source | Branding |
 |---|---|---|
-| `awakening-guide.pdf` | OS `pptx/library/00-awakening-guide/build.js`（2026-09-17 Current Edition として再構成し、同日 Reading Weight / Typography Tuning。旧版は source なし） | 表紙：Dreamin' Spiral 🌱 ／ 最終ページ footer：B8E Library \| Dreamin' Spiral 🌱 |
+| `awakening-guide.pdf` | OS `pptx/library/00-awakening-guide/build.js`（2026-09-17 Current Edition として再構成し、同日 Reading Weight / Typography Tuning ・ 表紙の光量調整。旧版は source なし） | 表紙：Dreamin' Spiral 🌱 ／ 最終ページ footer：B8E Library \| Dreamin' Spiral 🌱 |
 | `being-love-trust-joy.pdf` | OS `pptx/library/01-being-love-trust-joy/build.js` | 再生成：Dreamin' Spiral 🌱 |
 | `breathing-practice-3min.pdf` | OS `pptx/library/02-breathing-practice-3min/build.js` | 再生成：Dreamin' Spiral 🌱 |
 | `prescription-release-should.pdf` | OS `pptx/library/03-prescription-release-should/build.js` | 再生成：Dreamin' Spiral 🌱 |
