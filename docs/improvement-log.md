@@ -6,6 +6,32 @@
 ---
 
 ---
+## [2026-09-16] — Current Sales Entrance v1：3 Weeks Section 3 を Owner Reality Review に合わせて調整（未公開）
+
+**Scope:** `dreamin-spiral/3-weeks/index.html`（Section 3 のみ）, `style.css`（A12 の Section 3 用ルール）, `docs/current-sales-entrance-v1.md`
+**Triggered by:** Owner Reality Review（5 段階の縦型 Flow が工程表に見える）
+
+- 見出しを「日常を生きながら、3週間を一緒に見ていく。」へ、本文を Owner Approved Copy へ。縦型 Flow を削除し、「セッション ⇄ 日常のリアリティ」の 1 行のみ表示
+
+---
+## [2026-09-16] — Current Sales Entrance v1：TOP の Dreamin' Spiral 🌱 と 3 Weeks / My Life Service Page を追加（未公開）
+
+**Scope:** `dreamin-spiral/3-weeks/index.html`（新規）, `dreamin-spiral/my-life/index.html`（新規）, `index.html`, Header / Footer（`about.html` / `dx.html` / `dc.html` / `dc-guide.html` / `thanks.html` / `legal/` / `terms/` / `privacy-policy/` / `dreamin-spiral/*/{apply,thanks,complete}/`）, `style.css`（A12 追加）, `docs/current-sales-entrance-v1.md`（新規）, `docs/site-structure.md`
+**Triggered by:** Dreamin' Spiral 🌱 Current Sales Entrance v1（Owner / Architect Approved・2026-09-16）。設計の正本は OS repo `docs/repository-architecture/current-sales-entrance-v1.md`
+
+### Changes
+
+- TOP に **Dreamin' Spiral 🌱 Section**（`#dreamin-spiral`）を追加。Service Family 5 件を並べ、3 Weeks / My Life のみ「詳しく見る」で Service Page へ接続
+- TOP の旧「Dreamin' Spiral Academy」入口（Three Paths のカード・Entry Points の link・meta description）を Dreamin' Spiral 🌱 へ
+- **3 Weeks / My Life Service Page** を追加（Owner Approved Copy）。CTA は各 Application へ
+- Header / Footer の `Dreamin' Spiral Academy`（→ `academy.html`）を `Dreamin' Spiral 🌱`（→ TOP `#dreamin-spiral`）へ。**`academy.html` / `academy/*` は変更なし**
+- `style.css` に **A12** を追加。既存ルールは変更なし
+
+### Validation
+
+ローカル静的配信で TOP → Service Page → Application → Confirmation → Formspree → Thanks を 3 Weeks / My Life ともに実測。Payment Foundation 6 ページの差分は Header / Footer の link のみ。詳細は [current-sales-entrance-v1.md](current-sales-entrance-v1.md) §7。
+
+---
 ## [2026-09-16] — Payment Foundation v1：Dreamin' Spiral 申込・支払い導線を追加（未公開）
 
 **Scope:** `dreamin-spiral/3-weeks/{apply,thanks,complete}/index.html`（新規）, `dreamin-spiral/my-life/{apply,thanks,complete}/index.html`（新規）, `style.css`（A11 追加）, `docs/payment-foundation-v1.md`（新規）, `docs/site-structure.md`
