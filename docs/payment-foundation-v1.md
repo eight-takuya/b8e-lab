@@ -12,7 +12,7 @@
 
 | 項目 | 内容 |
 |---|---|
-| Status | **実装済み・未公開（PR 段階）。Stripe Payment Link と Formspree endpoint が未接続のため merge しない** |
+| Status | **実装済み・未公開（PR 段階）。Stripe CTA は Live Payment Link へ接続済み（§14）。Production Review（Owner Review Gate）前のため merge しない** |
 | Design 承認 | Owner Approved（2026-09-16） |
 | 対象 | Application Form 2 本・Thanks / Next Step 2 本・Complete / Start 2 本・`style.css` A11 |
 | 前提 | Sales Foundation v1 / Legal Foundation：CLOSED（2026-09-15） |
@@ -68,8 +68,7 @@ Form 仕様の正本は [sales-foundation-v1.md](sales-foundation-v1.md) §6・�
 - Stripe と銀行振込を **`.ds-payment-choice` の 2 カラムに並列配置**（≤600px で 1 カラム）。
   順序・装飾で優劣を示さない
 - Deadline / Scarcity / Pressure 表現は置いていない
-- Stripe CTA は現在 **Sandbox の Payment Link**（`buy.stripe.com/test_…`）に接続している。
-  **Owner Reality Review 承認後、Live Payment Link へ差し替えてから merge する**
+- Stripe CTA は **Live Payment Link** に接続している（2026-09-16・§14）。Sandbox Payment Link は検証用に Stripe 側へ残し、Web からは接続しない
 - Stripe ブロックには「Stripeでは、お申し込み時と同じメールアドレスをご入力ください。」を表示する
 - **銀行振込先は本 Web 実装の `.ds-bank` 定義を Current Configuration とする。**
   OS repo の Canonical Specification へ口座情報そのものを複製しない
@@ -112,7 +111,7 @@ Historical ページの HTML をコピー流用していない（構造上の参
 | # | 項目 | 状態 |
 |---|---|---|
 | 1b | 送信失敗時のエラー文言 | **暫定文言を使用中。Architect 承認待ち**（§9-4） |
-| 2 | Stripe Payment Link × 2 | **Sandbox 接続済み。** Owner Reality Review → Live Provisioning 後に Live URL へ差し替え |
+| 2 | Stripe Payment Link × 2 | ✅ **Live 接続済み**（§14）。Production Review（Owner）待ち |
 | 3 | Service Page 本文 | 未作成。Business Copy が Canonical に不足するため Architect / Owner へ返している |
 | 4 | Service Page → Application Form の導線 | Service Page 未作成のため未接続 |
 | 5 | 銀行振込ユーザー向けの「この後どうなるか」の一文 | Owner Approved Copy が存在しないため記載していない |
@@ -120,6 +119,8 @@ Historical ページの HTML をコピー流用していない（構造上の参
 ---
 
 ## 8. Sandbox 接続状態（Owner Reality Review 用）
+
+> **Historical（2026-09-16 時点）。** Thanks Page の Stripe CTA は §14 で Live Payment Link へ差し替え済み。
 
 | Service | Thanks Page の Stripe CTA | Complete Page（redirect 先） |
 |---|---|---|
@@ -495,10 +496,28 @@ Owner Approved Pattern の仕様（前後空白除去）へ実装を合わせる
 
 ---
 
+## 14. Live Web Connection（Phase 5 Production Connection・2026-09-16）
+
+Stripe Live Provisioning（OS repo `payment-foundation-v1.md` §13-10・Owner Approved）で作成済みの Live Payment Link を Thanks Page へ接続。
+Live Asset は再作成していない。URL は Canonical（§13-10）から取得した。
+
+| Service | 変更前（Sandbox） | 変更後（Live） | File |
+|---|---|---|---|
+| 3 Weeks | `https://buy.stripe.com/test_00w4gseyMdC5bhKbU7eAg00` | `https://buy.stripe.com/28E5kxe6M5TmcCO0VC0x206`（`plink_1UGFKH8tXYwNlHqEYUPswbJm`） | `dreamin-spiral/3-weeks/thanks/index.html` |
+| My Life | `https://buy.stripe.com/test_fZudR29es9lP4Tmf6jeAg01` | `https://buy.stripe.com/28EbIV2o4ftWcCO47O0x207`（`plink_1UGFKQ8tXYwNlHqEgg0hw2rn`） | `dreamin-spiral/my-life/thanks/index.html` |
+
+- 変更は各 Thanks Page の Stripe CTA の `href` と直前の HTML コメントのみ。Copy・銀行振込ブロック・Application・Complete は変更なし
+- Live Payment Link の `after_completion` は Production Complete URL（`https://www.b8e.co.jp/dreamin-spiral/<service>/complete/`）。retrieve で再確認済み
+- Production Complete URL は本 PR の merge までは 404（Preview 上で Live Checkout を完了すると本番 404 へ redirect されるため、Preview では支払わない）
+- Sandbox Asset は Stripe 側に残す（regression / comparison 用）
+
+---
+
 ## Change History
 
 | Date | 内容 |
 |---|---|
+| 2026-09-16 | **Live Web Connection（§14）。** 3 Weeks / My Life の Thanks Page の Stripe CTA を Sandbox → Live Payment Link へ切替。Production Review（Owner Review Gate）で停止 |
 | 2026-09-16 | **3 Weeks Owner Approved Pattern を My Life へ横展開**（確認ステップ・Email / Phone Validation・`pattern` は 3 Weeks から抽出し完全一致）。横展開中に**前後空白を含む値が trim 前に弾かれる潜在欠陥**を発見し、`novalidate` で 3 Weeks / My Life 両方を修正。My Life は Application → Confirmation → Formspree → Thanks と Complete を検証。Stripe Checkout 以降は Owner Review へ |
 | 2026-09-16 | **Owner Reality Review Adjustment。** ①6 ページを Read-only 調査し「読ませる文」で AA 未達だった `.thanks-note` / `.form-note`（2.15:1）を `#666`（5.32:1）へ。`body.ds-page` で Payment Foundation 配下のみにスコープし、accent / placeholder / eyebrow は対象外 ②3 Weeks に申込前の確認ステップを追加（修正する / この内容で申し込む・二重送信防止・値保持）③Email / Phone に Validation を追加（`pattern` のみ・独自エラーコピーなし）④3 Weeks E2E 再成功。My Life は文字色のみ |
 | 2026-09-16 | **3 Weeks を Owner Approved Pattern として確定**（Stripe Description を `｜` 区切りの Final Copy へ）。**同 Pattern を My Life へ横展開**（AJAX 送信・Legal links 別タブ・`_next` 削除・Complete Copy `Dialogue`→`セッション`）。My Life の Application → Formspree → Thanks と Complete を検証。Stripe Checkout 以降は Engineer 環境の制約により Owner Review へ委ねる |
