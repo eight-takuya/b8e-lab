@@ -4224,6 +4224,20 @@ a:hover {
   color: #2f2b27;
 }
 
+/* Library（Phase 10-B2）：Resource 一覧は TOP の .ds-family-* を再利用する。
+   .page-content 内では汎用の .section-block h3（小さな大文字見出し）が優先されるため、TOP と同じ見え方に戻す */
+.ds-service-section .ds-family-list {
+  margin-top: 0;
+}
+.ds-service-section h3.ds-family-name {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  letter-spacing: 0.02em;
+  line-height: 1.8;
+  text-transform: none;
+  margin: 0 0 4px;
+}
 /* Service Page｜申込 CTA（Payment Foundation の .cta-link と同じ静かな表現） */
 .ds-service-cta {
   display: inline-block;

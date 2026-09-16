@@ -6,6 +6,16 @@
 ---
 
 ---
+## [2026-09-16] — Phase 10-B2：Dreamin' Spiral 🌱 Library を `/dreamin-spiral/library/` に新設（Owner Reality Review 待ち）
+
+**Scope:** `dreamin-spiral/library/index.html`（新規）, `style.css`（A12 に 2 ルール追加）, `dreamin-spiral/library/pdf/*.pdf`（新規 7 件）, `vercel.json`（redirect 8 件追加）, `docs/library-currentization-phase-10b2.md`（新規）, `docs/site-structure.md`
+**Triggered by:** Phase 10-B2｜Library Currentization（Architect 設計・Owner Approved）。正本は OS repo `docs/repository-architecture/old-academy-cleanup-v1.md` §14
+
+- Current Library Page（Hero は Approved Copy、Resource 説明文は旧 Library の公開済み説明文を再利用）。TOP の `.ds-family-*` を再利用し、`style.css` A12 に Library 用のスコープ付き 2 ルールを追加
+- PDF 6 件は OS repo の Generator で「Dreamin' Spiral Academy」→「Dreamin' Spiral 🌱」に変更して再生成。`awakening-guide.pdf` は 2026-09-17 に OS repo で Current Edition（旧版画像から復元した背景 ＋ Editable Text）として再構成し差し替え
+- `/academy/library.html` と旧 PDF 7 件を 308 redirect。archive PDF は非掲載
+
+---
 ## [2026-09-16] — Phase 10-B1：旧 Premium の公開販売導線を退役（404）
 
 **Scope:** `academy/premium.html`・`academy/premium-apply.html`・`academy/premium-success.html`（削除）, `assets/ogp/generated/premium.png`・`premium-apply.png`（削除）, `docs/old-premium-retirement-phase-10b1.md`（新規）, `docs/site-structure.md`
