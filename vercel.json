@@ -3,6 +3,14 @@
     { "source": "/academy/session.html", "destination": "/dreamin-spiral/guide/", "permanent": true },
     { "source": "/academy/community.html", "destination": "/dreamin-spiral/community/", "permanent": true },
     { "source": "/academy/community-apply.html", "destination": "/dreamin-spiral/community/", "permanent": true },
-    { "source": "/academy/community-success.html", "destination": "/dreamin-spiral/community/complete/", "permanent": true }
+    { "source": "/academy/community-success.html", "destination": "/dreamin-spiral/community/complete/", "permanent": true },
+    { "source": "/academy/library.html", "destination": "/dreamin-spiral/library/", "permanent": true },
+    { "source": "/academy/pdf/awakening-guide.pdf", "destination": "/dreamin-spiral/library/pdf/awakening-guide.pdf", "permanent": true },
+    { "source": "/academy/pdf/being-love-trust-joy.pdf", "destination": "/dreamin-spiral/library/pdf/being-love-trust-joy.pdf", "permanent": true },
+    { "source": "/academy/pdf/breathing-practice-3min.pdf", "destination": "/dreamin-spiral/library/pdf/breathing-practice-3min.pdf", "permanent": true },
+    { "source": "/academy/pdf/prescription-release-should.pdf", "destination": "/dreamin-spiral/library/pdf/prescription-release-should.pdf", "permanent": true },
+    { "source": "/academy/pdf/prescription-paradox-words.pdf", "destination": "/dreamin-spiral/library/pdf/prescription-paradox-words.pdf", "permanent": true },
+    { "source": "/academy/pdf/inner-weather-reality.pdf", "destination": "/dreamin-spiral/library/pdf/inner-weather-reality.pdf", "permanent": true },
+    { "source": "/academy/pdf/night-letter.pdf", "destination": "/dreamin-spiral/library/pdf/night-letter.pdf", "permanent": true }
   ]
 }

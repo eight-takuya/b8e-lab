@@ -72,6 +72,15 @@ Community / Business Creation は Current の Service Page が未作成のため
 
 `academy.html`・`academy/program.html`・`premium*.html`・`owner-program.html`・`library.html`・`apply.html`・`thanks.html`・`premium-portal.html`・`/academy/pdf/*` は対象外（Phase 10-B）。実装記録は [old-academy-cleanup-phase-10a.md](old-academy-cleanup-phase-10a.md)。
 
+### Dreamin' Spiral 🌱 Library（Phase 10-B2｜Library Currentization・2026-09-16）
+
+| File | URL path（Public Canonical） | Role |
+|---|---|---|
+| `dreamin-spiral/library/index.html` | `/dreamin-spiral/library/` | Dreamin' Spiral 🌱 Library。日々の気づきや実践に使える、無料の Resource 集（Service ではない。TOP の Service Family には置かない） |
+| `dreamin-spiral/library/pdf/*.pdf` | `/dreamin-spiral/library/pdf/<file>.pdf` | Current Resource PDF 7 件（6 件は OS repo の Generator で Current Brand 表記へ再生成） |
+
+Redirect（`vercel.json`・308）：`/academy/library.html` → `/dreamin-spiral/library/`、`/academy/pdf/<file>.pdf` → `/dreamin-spiral/library/pdf/<file>.pdf`（7 件）。`/academy/pdf/archive/*` は Historical として 200 のまま・どこからも link しない。旧 `academy/library.html` ・ `academy/pdf/*.pdf` の source file は Phase 10-B3 まで保持。実装記録は [library-currentization-phase-10b2.md](library-currentization-phase-10b2.md)。
+
 ### Retired Pages（Phase 10-B1｜Old Premium Retirement・2026-09-16）
 
 旧 Premium（Dreamin' Spiral Academy Premium・500,000円 one-off）の公開販売導線を退役した。Premium は My Life の単純 Rename ではない（Service Identity の再設計）ため、**Current URL への redirect は設定していない**。ファイルを削除し、HTTP 404 とした（`vercel.json` 変更なし）。
@@ -206,7 +215,7 @@ Academy 内導線としての公開に留めている（追加の要否は今後
 ```
 https://www.b8e.co.jp/academy.html                    Academy入口（世界観・Program への導線）
 ├─ /academy/program.html          実践の形（Academy 全体の Journey Map・体験マップ）
-├─ /academy/library.html          人生再起動ガイド（#guide＝知る / #library＝深める）
+├─ /academy/library.html          人生再起動ガイド（#guide＝知る / #library＝深める） ※ 2026-09-16 以降 308 → /dreamin-spiral/library/
 │   └─ /academy/pdf/*.pdf                              PDF実体（7件。うち1件はarchiveと重複）
 ├─ /academy/session.html          無料ガイドセッション（対話の入口。#apply に申込フォーム内蔵）※ 2026-09-16 以降 308 → /dreamin-spiral/guide/
 ├─ /academy/thanks.html           届きました（Session フォーム送信後のサンクスページ）
