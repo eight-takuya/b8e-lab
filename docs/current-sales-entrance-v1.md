@@ -34,7 +34,7 @@
 |---|---|
 | Section 1 Hero（Eyebrow / Title / Lead / CTA） | Section 1 Hero（Eyebrow / Title / Lead / CTA） |
 | Section 2 今、こんなことが気になっているなら（list） | Section 2 Lifeは、解決するものではなく、生き様そのもの。 |
-| Section 3 セッションとリアリティを行き来する3週間（Flow + 本文） | Section 3 6か月の日常そのものが、My Lifeです。（list + 本文） |
+| Section 3 日常を生きながら、3週間を一緒に見ていく。（Relation 1 行 + 本文・Owner Reality Review Adjustment で更新） | Section 3 6か月の日常そのものが、My Lifeです。（list + 本文） |
 | Section 4 内容（期間 / 対話 / 教材・動画・宿題 / 料金 + 補足） | Section 4 6か月後の答えを、今決めなくていい。 |
 | Section 5 この時間で大切にしていること | Section 5 大切にすること |
 | Section 6 CTA | Section 6 内容・料金（期間 / セッション / Video / Community / My Page / 料金 + 補足） |
@@ -111,6 +111,15 @@ Mobile：専用メニューはなく、既存どおり折り返し表示。`Drea
 | Historical | `academy.html` / `academy/*` の差分 0。Stripe / Formspree の URL 差分 0 |
 
 Validation 送信は test 値（`sales-entrance-test@example.com`・本文に `[TEST]`）で 3 Weeks / My Life 各 1 件。
+
+## 7-1. Owner Reality Review Adjustment（3 Weeks Section 3・2026-09-16）
+
+- 5 段階の縦型 Flow（`<ol class="ds-service-flow">`）を削除し、見出し・本文を Owner Approved Copy に置換
+- Relation は「セッション ⇄ 日常のリアリティ」の 1 行（`.ds-service-relation`・accent 色・小さな文字）
+- 見出しは `.ds-phrase`（inline-block）で語句単位に折り返す（Mobile で「く。」だけが次行に残るのを防ぐ。文言は不変）
+- `style.css`：`.ds-service-flow` 系 3 ルールを削除し、`.ds-service-relation` / `.ds-phrase` を追加（A12 内・他 Section のルールは不変）
+- Validation：Desktop / Mobile（375px）で横スクロールなし、旧見出し・旧 Flow・`Dialogue`・`Reality` 0 件
+- 設計の正本：OS repo `current-sales-entrance-v1.md` §16-9
 
 ## 8. 残っている旧表記（今回の Scope 外・事実のみ）
 

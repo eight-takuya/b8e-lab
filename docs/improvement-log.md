@@ -6,6 +6,14 @@
 ---
 
 ---
+## [2026-09-16] — Current Sales Entrance v1：3 Weeks Section 3 を Owner Reality Review に合わせて調整（未公開）
+
+**Scope:** `dreamin-spiral/3-weeks/index.html`（Section 3 のみ）, `style.css`（A12 の Section 3 用ルール）, `docs/current-sales-entrance-v1.md`
+**Triggered by:** Owner Reality Review（5 段階の縦型 Flow が工程表に見える）
+
+- 見出しを「日常を生きながら、3週間を一緒に見ていく。」へ、本文を Owner Approved Copy へ。縦型 Flow を削除し、「セッション ⇄ 日常のリアリティ」の 1 行のみ表示
+
+---
 ## [2026-09-16] — Current Sales Entrance v1：TOP の Dreamin' Spiral 🌱 と 3 Weeks / My Life Service Page を追加（未公開）
 
 **Scope:** `dreamin-spiral/3-weeks/index.html`（新規）, `dreamin-spiral/my-life/index.html`（新規）, `index.html`, Header / Footer（`about.html` / `dx.html` / `dc.html` / `dc-guide.html` / `thanks.html` / `legal/` / `terms/` / `privacy-policy/` / `dreamin-spiral/*/{apply,thanks,complete}/`）, `style.css`（A12 追加）, `docs/current-sales-entrance-v1.md`（新規）, `docs/site-structure.md`

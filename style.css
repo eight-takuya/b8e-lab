@@ -4179,25 +4179,22 @@ a:hover {
   color: #c9a882;
 }
 
-/* セッションとリアリティの往復 */
-.ds-service-flow {
-  list-style: none;
-  margin: 0 0 32px;
-  padding: 0;
-}
-
-.ds-service-flow li {
-  font-size: 0.95rem;
-  color: #444;
-  letter-spacing: 0.06em;
+/* セッションと日常のリアリティを行き来する関係（1 組だけを静かに示す。Step・順序・工程表にしない）
+   Owner Reality Review（2026-09-16）で 5 段階の縦型 Flow を廃止 */
+.ds-service-section .ds-service-relation {
+  font-size: 0.88rem;
+  color: #9b7b5c;
+  letter-spacing: 0.08em;
   line-height: 1.9;
 }
 
-.ds-service-flow li + li::before {
-  content: "↓";
-  display: block;
-  color: #c9a882;
-  line-height: 1.8;
+.ds-service-section .ds-service-relation + p {
+  margin-top: 28px;
+}
+
+/* 見出しを語句の切れ目でだけ折り返す（狭い画面で「く。」だけが次の行に残らないようにする。文言は変えない） */
+.ds-phrase {
+  display: inline-block;
 }
 
 .ds-service-section .ds-service-note {
