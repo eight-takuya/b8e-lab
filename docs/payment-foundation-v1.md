@@ -46,14 +46,15 @@ Form 仕様の正本は [sales-foundation-v1.md](sales-foundation-v1.md) §6・�
 
 | 項目 | 3 Weeks | My Life |
 |---|---|---|
-| Formspree action | `https://formspree.io/f/mwlpenvp` ✅ | `https://formspree.io/f/xbglradg` ✅ 修正済み（**未検証**） |
-| 送信方式 | **AJAX（fetch + `Accept: application/json`）** | 標準 POST（`_next`）。AJAX 未展開 |
-| `_next`（送信後 redirect） | `/dreamin-spiral/3-weeks/thanks/` | `/dreamin-spiral/my-life/thanks/` |
+| Formspree action | `https://formspree.io/f/mwlpenvp` ✅ | `https://formspree.io/f/xbglradg` ✅ |
+| 送信方式 | **AJAX（fetch + `Accept: application/json`）** | **AJAX（3 Weeks Pattern を横展開）** |
+| 送信成功後の遷移先（ルート相対） | `/dreamin-spiral/3-weeks/thanks/` | `/dreamin-spiral/my-life/thanks/` |
+| `_next` hidden field | **削除済み**（redirect 制御に使わない） | **削除済み** |
 | `form_type` | `dreamin_spiral_3weeks` | `dreamin_spiral_my_life` |
 | Required | `name` / `email` / `phone` / `terms_privacy_consent` | 同左 |
 | 入力例（placeholder） | `name`＝`例）山田　太郎`（姓名の両方を促す・全角スペース区切り）／ `phone`＝`例）090-1234-5678`（ハイフン表記を提示） | 同左 |
 | Optional | `message` | `message` / `six_month_intent` |
-| Hidden | `_next` / `form_type` / `site_version` / `source_page` / `submitted_at` | 同左 |
+| Hidden | `form_type` / `site_version` / `source_page` / `submitted_at` | 同左 |
 | Submit | 3 Weeksに申し込む | My Lifeに申し込む |
 
 - Consent は **Form Consent v1.1**（1 つの必須チェックボックス・`terms_privacy_consent=agreed`・
@@ -109,7 +110,6 @@ Historical ページの HTML をコピー流用していない（構造上の参
 
 | # | 項目 | 状態 |
 |---|---|---|
-| 1 | My Life の AJAX 横展開・E2E | 3 Weeks の Owner Reality Review 承認後に実施 |
 | 1b | 送信失敗時のエラー文言 | **暫定文言を使用中。Architect 承認待ち**（§9-4） |
 | 2 | Stripe Payment Link × 2 | **Sandbox 接続済み。** Owner Reality Review → Live Provisioning 後に Live URL へ差し替え |
 | 3 | Service Page 本文 | 未作成。Business Copy が Canonical に不足するため Architect / Owner へ返している |
@@ -264,10 +264,74 @@ requirements.currently_due   : ["company.name"]
 
 ---
 
+## 11. Owner Approved Pattern の確定と My Life 横展開（2026-09-16）
+
+### 11-1. 3 Weeks — Owner Approved Pattern（確定）
+
+Owner が通常ブラウザで Stripe Checkout まで確認し、**Flow 全体を承認**した。
+以下を Payment Foundation v1 の **Owner Approved Pattern** として確定する。
+
+| 層 | 確定内容 |
+|---|---|
+| Application | Canonical Form v1.1 ／ Legal links は**別タブ**（`target="_blank" rel="noopener"`）／**AJAX submission** ／ `_next` は redirect 制御に使わない |
+| Thanks | Stripe と銀行振込を**並列**表示 ／ Pressure・Scarcity・Deadline を置かない |
+| Stripe | `Dreamin' Spiral 3 Weeks` ／ 60,000 JPY ／ one-time ／ `tax_behavior=inclusive` ／ `automatic_tax=false` ／ `quantity=1` ／ `metadata service=dreamin_spiral_3_weeks` |
+| Stripe Description | **`「気になる」や「悩み」から自分に気づく3週間。｜Zoom 60分 × 3回。`**（Final） |
+| Complete | 「最初の**セッション**の日程」／ 公開画面に `Dialogue` を使わない |
+
+**Description の経緯：** 改行（`\n`）は API には保存されるが、**Stripe Checkout の表示上は維持されず一続きになる**ことを
+Owner が実機で確認した。そのため Owner Approved Final Copy として **全角縦棒 `｜` による区切り**を採用した。
+
+### 11-2. My Life — 横展開の内容
+
+| 項目 | 内容 |
+|---|---|
+| Formspree endpoint | `https://formspree.io/f/xbglradg`（誤記 `xbgtradg` は不使用） |
+| 送信方式 | **AJAX**（3 Weeks と同一実装） |
+| 遷移先 | `/dreamin-spiral/my-life/thanks/`（ルート相対） |
+| `_next` | 削除 |
+| Legal links | **別タブ**（`target="_blank" rel="noopener"`） |
+| Complete Copy | `最初のDialogueについて` → **`最初のセッションについて`** |
+
+**Business Copy は新規創作していない。** 3 Weeks で Owner が確定した言い換えの適用と、Technical Pattern の横展開のみ。
+
+### 11-3. My Life Sandbox Asset（retrieve validation・不一致 0 件）
+
+| 項目 | 値 |
+|---|---|
+| Product | `prod_VGe5rKegivpnJE` ／ `Dreamin' Spiral My Life` ／ `自分そのものから、自分の人生を生きる6か月の伴走。` |
+| Price | `price_1UG6nJ5pPQTx6Vir4FGeOBzy` ／ `jpy` `600000` `one_time` `tax_behavior=inclusive` |
+| Payment Link | `plink_1UG6pr5pPQTx6Vir6W75gxgv` ／ `automatic_tax=false` ／ `quantity=1` ／ `metadata service=dreamin_spiral_my_life` ／ `active=true` ／ `livemode=false` |
+
+**既存 Asset をそのまま使用し、再作成していない。**
+
+### 11-4. My Life Sandbox E2E 結果
+
+| 段階 | 結果 |
+|---|---|
+| required validation | ✅ 空送信を阻止（最初の不正は `name`） |
+| `six_month_intent` | ✅ 項目あり・placeholder 一致・任意 |
+| Legal links 別タブ | ✅ `target="_blank" rel="noopener"` |
+| endpoint | ✅ `xbglradg` |
+| Formspree submission | ✅ 成功 |
+| 送信 field | `name` / `email` / `phone` / `message` / `six_month_intent` / `terms_privacy_consent=agreed` / `form_type=dreamin_spiral_my_life` / `site_version` / `source_page` / `submitted_at` |
+| 既存 Form への誤送信 | ✅ なし |
+| → 自前 Thanks | ✅ `/dreamin-spiral/my-life/thanks/` |
+| Thanks 表示 | ✅ 600,000円（税込）×2 ／ Stripe・銀行振込が並列 ／ Pressure なし |
+| Stripe Asset | ✅ Canonical と不一致 0 件 |
+| **Stripe Checkout → Test Payment → Complete** | ⏸ **Engineer 環境では未検証**（§10-3 の `ERR_BLOCKED_BY_CLIENT`）。Checkout の HTML はサーバーから正常に返っている（約 576KB） |
+| Complete Copy | ✅ 「最初のセッションについて」／`Dialogue` **0 件**／My Page・Community の記載あり |
+| Complete mobile 375px | ✅ 横スクロール 0 |
+
+`Dialogue` は `dreamin-spiral/` 配下の公開ページ全体で **0 件**。
+
+---
+
 ## Change History
 
 | Date | 内容 |
 |---|---|
+| 2026-09-16 | **3 Weeks を Owner Approved Pattern として確定**（Stripe Description を `｜` 区切りの Final Copy へ）。**同 Pattern を My Life へ横展開**（AJAX 送信・Legal links 別タブ・`_next` 削除・Complete Copy `Dialogue`→`セッション`）。My Life の Application → Formspree → Thanks と Complete を検証。Stripe Checkout 以降は Engineer 環境の制約により Owner Review へ委ねる |
 | 2026-09-16 | **Owner Reality Review Adjustment 3 点を反映**（Legal links 別タブ／Stripe Description 改行／Complete Copy Dialogue→セッション）。Application → Formspree → Thanks と Complete Copy は再 Validation 済み。**Stripe Checkout は Sandbox Account の requirements past due により停止中**（§10-3） |
 | 2026-09-16 | **3 Weeks を AJAX 送信方式へ変更し、Full Sandbox E2E（Application → Formspree → Thanks → Stripe → Test Payment → Complete）を通しで成功。** My Life は endpoint を `xbglradg` へ修正のみ（横展開は 3 Weeks Owner Review 後） |
 | 2026-09-16 | Formspree endpoint を両 Form へ接続。3 Weeks（`mwlpenvp`）は受理を確認、My Life（`xbgtradg`）は FORM_NOT_FOUND。`_next` が Formspree 側で上書きされる事象を §9 に記録 |
