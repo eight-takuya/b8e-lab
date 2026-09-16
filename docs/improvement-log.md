@@ -6,6 +6,15 @@
 ---
 
 ---
+## [2026-09-16] — Closeout：Payment Foundation v1 / Current Sales Entrance v1 を CLOSED
+
+**Scope:** 実装記録の Status のみ（Web / Stripe の変更なし）
+**Triggered by:** Owner が Production 本番 URL から 3 Weeks / My Life の Live Stripe Checkout 直前まで確認（実決済なし）
+
+- Payment Foundation v1：CLOSED（OS repo `payment-foundation-v1.md` §13-13）
+- Current Sales Entrance v1：CLOSED（OS repo `current-sales-entrance-v1.md` §16-11）
+
+---
 ## [2026-09-16] — Production Release：Payment Foundation v1 / Current Sales Entrance v1 を公開
 
 **Scope:** PR #86（`412c84d`）・PR #87（`52169c5`）の merge による Production 反映
