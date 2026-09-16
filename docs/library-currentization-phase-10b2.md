@@ -5,7 +5,7 @@
 
 | 項目 | 内容 |
 |---|---|
-| Status | Owner Reality Review 待ち（Preview） |
+| Status | **OWNER REVIEW PENDING**（Preview・PR #98）。正本：OS repo `old-academy-cleanup-v1.md` §14（OS PR #232） |
 | 実装日 | 2026-09-16 |
 | Branch | `feature/phase-10b2-library-currentization` |
 
