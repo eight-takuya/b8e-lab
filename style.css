@@ -3863,6 +3863,16 @@ a:hover {
   overflow-wrap: anywhere;
 }
 
+/* Complete Page の受付確認 2 行の文字色。
+   既存 .thanks-note（#aaa）は Thanks Page と Historical Page でも共用しているため、
+   Complete 専用の修飾クラスで color だけを上書きする。
+   #aaa は背景 #f7f6f4 に対しコントラスト 2.15:1 で可読性が不足していた。
+   #666 は 5.32:1（WCAG AA 達成）。本文 #555（6.90:1）よりは淡く、階層は保つ。
+   font-size / font-weight / margin / line-height は .thanks-note のまま変更しない。 */
+.thanks-message .ds-complete-note {
+  color: #666;
+}
+
 /* Complete page の案内リスト */
 .ds-next-list {
   margin: 14px 0 0;

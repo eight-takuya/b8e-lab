@@ -89,7 +89,8 @@ Form 仕様の正本は [sales-foundation-v1.md](sales-foundation-v1.md) §6・�
 `A11. Dreamin' Spiral Application / Payment` を末尾に追加した。**既存ルールは 1 行も変更していない。**
 
 追加クラス: `.ds-offer-summary` / `.ds-apply-form` / `.ds-field` / `.ds-field-note` / `.ds-required` /
-`.ds-consent` / `.ds-payment-choice` / `.ds-payment-block` / `.ds-payment-amount` / `.ds-bank` / `.ds-next-list`
+`.ds-consent` / `.ds-form-error` / `.ds-payment-choice` / `.ds-payment-block` / `.ds-payment-amount` /
+`.ds-bank` / `.ds-complete-note` / `.ds-next-list`
 
 既存の `.thanks-hero` / `.hero-label` / `.hero-copy` / `.page-content` / `.section-block` /
 `.thanks-message` / `.apply-form` / `.cta-link` / `.form-note` はそのまま再利用している。
@@ -327,10 +328,49 @@ Owner が実機で確認した。そのため Owner Approved Final Copy とし�
 
 ---
 
+## 12. Owner Reality Review Adjustment — Complete Page の文字色（2026-09-16）
+
+Owner が 3 Weeks / My Life の Flow・文言・構造を承認。残る指摘は
+**Complete Page の受付確認 2 行のグレーが薄く「無効化された補足文」に見える**点のみだった。
+
+### 変更内容（文字色のみ）
+
+| 項目 | 変更前 | 変更後 |
+|---|---|---|
+| selector | `.thanks-message .thanks-note` | `.thanks-message .ds-complete-note`（新規・color のみ） |
+| color | `#aaa` | **`#666`** |
+| コントラスト比（背景 `#f7f6f4`） | **2.15:1**（WCAG AA 未達） | **5.32:1**（AA 達成） |
+
+本文 `.thanks-message p` は `#555`（6.90:1）のままで、**Visual Hierarchy は保持**している。
+
+### スコープ限定の理由
+
+`.thanks-note` は **Thanks Page 2 本と Historical Page 3 本**
+（`academy/premium-success.html` / `academy/thanks.html` / `academy/community-success.html`）でも共用している。
+これらを変更しないため、**Complete Page の該当要素にのみ修飾クラス `.ds-complete-note` を付与**し、
+`color` だけを上書きした。
+
+### Validation
+
+| 項目 | 3 Weeks Complete | My Life Complete |
+|---|---|---|
+| color | `rgb(102,102,102)` ✅ | `rgb(102,102,102)` ✅ |
+| font-size | `14.08px`（不変）✅ | 同左 ✅ |
+| font-weight | `400`（不変）✅ | 同左 ✅ |
+| margin-top / line-height | `24px` / `28.16px`（不変）✅ | 同左 ✅ |
+| mobile 375px | 横スクロール 0 ✅ | 横スクロール 0 ✅ |
+| 文言 | 変更なし ✅ | 変更なし ✅ |
+
+**非波及の確認：** `3-weeks/thanks` ・ `academy/premium-success.html` とも
+`.ds-complete-note` を持たず `rgb(170,170,170)`（`#aaa`）のまま。
+
+---
+
 ## Change History
 
 | Date | 内容 |
 |---|---|
+| 2026-09-16 | **Owner Reality Review Adjustment：Complete Page の受付確認 2 行の文字色を `#aaa` → `#666` へ**（コントラスト 2.15:1 → 5.32:1）。`.ds-complete-note` で Complete Page のみに限定し、Thanks Page と Historical Page は変更なし。文言 / font-size / spacing / layout は不変 |
 | 2026-09-16 | **3 Weeks を Owner Approved Pattern として確定**（Stripe Description を `｜` 区切りの Final Copy へ）。**同 Pattern を My Life へ横展開**（AJAX 送信・Legal links 別タブ・`_next` 削除・Complete Copy `Dialogue`→`セッション`）。My Life の Application → Formspree → Thanks と Complete を検証。Stripe Checkout 以降は Engineer 環境の制約により Owner Review へ委ねる |
 | 2026-09-16 | **Owner Reality Review Adjustment 3 点を反映**（Legal links 別タブ／Stripe Description 改行／Complete Copy Dialogue→セッション）。Application → Formspree → Thanks と Complete Copy は再 Validation 済み。**Stripe Checkout は Sandbox Account の requirements past due により停止中**（§10-3） |
 | 2026-09-16 | **3 Weeks を AJAX 送信方式へ変更し、Full Sandbox E2E（Application → Formspree → Thanks → Stripe → Test Payment → Complete）を通しで成功。** My Life は endpoint を `xbglradg` へ修正のみ（横展開は 3 Weeks Owner Review 後） |
