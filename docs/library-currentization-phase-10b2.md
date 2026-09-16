@@ -34,7 +34,7 @@
 
 | File（`/dreamin-spiral/library/pdf/`） | Source | Branding |
 |---|---|---|
-| `awakening-guide.pdf` | repo 内に source なし（Google 書き出しの画像 PDF） | 旧ファイルと同一。表紙画像に「B8E ACADEMY / エイト」 |
+| `awakening-guide.pdf` | OS `pptx/library/00-awakening-guide/build.js`（2026-09-17 Current Edition として再構成。旧版は source なし） | 表紙：Dreamin' Spiral 🌱 ／ 最終ページ footer：B8E Library \| Dreamin' Spiral 🌱 |
 | `being-love-trust-joy.pdf` | OS `pptx/library/01-being-love-trust-joy/build.js` | 再生成：Dreamin' Spiral 🌱 |
 | `breathing-practice-3min.pdf` | OS `pptx/library/02-breathing-practice-3min/build.js` | 再生成：Dreamin' Spiral 🌱 |
 | `prescription-release-should.pdf` | OS `pptx/library/03-prescription-release-should/build.js` | 再生成：Dreamin' Spiral 🌱 |
