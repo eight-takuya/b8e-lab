@@ -50,6 +50,7 @@ Form 仕様の正本は [sales-foundation-v1.md](sales-foundation-v1.md) §6・�
 | `_next`（送信後 redirect） | `/dreamin-spiral/3-weeks/thanks/` | `/dreamin-spiral/my-life/thanks/` |
 | `form_type` | `dreamin_spiral_3weeks` | `dreamin_spiral_my_life` |
 | Required | `name` / `email` / `phone` / `terms_privacy_consent` | 同左 |
+| 入力例（placeholder） | `name`＝`例）山田　太郎`（姓名の両方を促す・全角スペース区切り）／ `phone`＝`例）090-1234-5678`（ハイフン表記を提示） | 同左 |
 | Optional | `message` | `message` / `six_month_intent` |
 | Hidden | `_next` / `form_type` / `site_version` / `source_page` / `submitted_at` | 同左 |
 | Submit | 3 Weeksに申し込む | My Lifeに申し込む |
@@ -75,7 +76,10 @@ Form 仕様の正本は [sales-foundation-v1.md](sales-foundation-v1.md) §6・�
 
 - Stripe Payment Link の `after_completion = redirect` の到達先
 - **銀行振込ユーザーはここを経由しない**（Owner が入金確認 → Owner から Start 案内）
-- 連絡元は `contact@b8e.co.jp`。`academy@b8e.co.jp` は使用していない
+- **本文に送信元メールアドレスを表示しない。** `contact@b8e.co.jp` は受信専用の group address で、
+  実際の連絡の送信元にならないため（Owner Review 反映・2026-09-16）
+- Footer の「お問い合わせ」`mailto:contact@b8e.co.jp` は受信窓口として維持（Legal Pages も変更なし）
+- `academy@b8e.co.jp` は使用していない
 - Scheduling System・Onboarding UI は新規構築していない
 
 ## 5. style.css
@@ -129,5 +133,6 @@ Historical ページの HTML をコピー流用していない（構造上の参
 
 | Date | 内容 |
 |---|---|
+| 2026-09-16 | **Owner Reality Review 第1回を反映。** 申込 Form の「お名前」「電話番号」に入力例を追加。Complete Page 本文から `contact@b8e.co.jp` の表示を削除 |
 | 2026-09-16 | Sandbox Payment Link を Thanks Page へ接続。Sandbox E2E（3 Weeks のテスト決済 → redirect）を実測して記録 |
 | 2026-09-16 | 新規作成。Application Form 2 本・Thanks / Next Step 2 本・Complete / Start 2 本・`style.css` A11 を実装。Formspree endpoint と Stripe Payment Link は未接続 |
