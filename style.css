@@ -1497,9 +1497,9 @@ a:hover {
    （値は A1 Hero variants と同じ Deep Indigo に揃え、Payment Foundation の各ページと同じ見え方にする）
    ------------------------------------------------------------ */
 
-/* Header / Footer の Dreamin' Spiral 🌱 link — 折り返しで 🌱 だけが次の行へ分かれないようにする（この link のみ） */
-.site-nav a[href$="#dreamin-spiral"],
-.footer-links a[href$="#dreamin-spiral"] {
+/* Header / Footer の Dreamin' Spiral 🌱 link（Dreamin' Spiral 🌱 Home v1 以降は /dreamin-spiral/）— 折り返しで 🌱 だけが次の行へ分かれないようにする（この link のみ） */
+.site-nav a[href="/dreamin-spiral/"],
+.footer-links a[href="/dreamin-spiral/"] {
   white-space: nowrap;
 }
 
@@ -1737,6 +1737,13 @@ a:hover {
   text-transform: none;
   margin: 0 0 4px;
 }
+/* Dreamin' Spiral 🌱 Home v1：Service Family は見出しを持たない section のため、
+   section 区切り線と一覧の先頭線が二重にならないよう、先頭 item の線と上余白だけを外す（/dreamin-spiral/ のみ） */
+.ds-home-family .ds-family-item:first-child {
+  border-top: none;
+  padding-top: 0;
+}
+
 /* Service Page｜申込 CTA（Payment Foundation の .cta-link と同じ静かな表現） */
 .ds-service-cta {
   display: inline-block;

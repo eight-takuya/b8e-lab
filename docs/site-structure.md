@@ -21,7 +21,7 @@
 | `dc.html` | `/dc` | 企業型DC \| B8E | Financial foundation via corporate DC |
 | `about.html` | `/about` | About \| B8E | Founder's path, company identity, name meaning |
 
-旧 `academy.html` は Phase 10-B3 で削除し、`/academy.html` は `/#dreamin-spiral` へ 308 redirect。
+旧 `academy.html` は Phase 10-B3 で削除し、`/academy.html` は 308 redirect（Phase 10-B3 では `/#dreamin-spiral`、Dreamin' Spiral 🌱 Home v1 以降は `/dreamin-spiral/`）。
 
 `dc-guide.html` は DC 領域の補助ページ（本ドキュメントの調査対象外。Academy とは無関係）。
 
@@ -48,6 +48,31 @@ Legal Page は **末尾スラッシュのディレクトリ URL** を Canonical 
 
 Legal Pages と同じく **末尾スラッシュのディレクトリ URL** を Canonical とし、`<dir>/index.html` で配置する（Clean URLs は使わない）。3 階層のため CSS・Nav・Footer のリンクはすべてルート相対パス。Global Nav には並べない。実装詳細・未接続項目は [payment-foundation-v1.md](payment-foundation-v1.md)、設計の正本は OS repo の `docs/repository-architecture/payment-foundation-v1.md`。
 
+### Dreamin' Spiral 🌱 Home（Dreamin' Spiral 🌱 Home v1・2026-09-17）
+
+| File | URL path（Public Canonical） | Role |
+|---|---|---|
+| `dreamin-spiral/index.html` | `/dreamin-spiral/` | **Dreamin' Spiral 🌱 Canonical Home。** Dreamin' Spiral 🌱 そのものを理解し、Service Family と Library へ入るための Home（Hero ／ Dreamin' Spiral 🌱とは ／ 今、気になっているところから。／ Service Family ／ Library ／ Closing） |
+
+```
+B8E  /
+├─ DX支援        /dx.html
+├─ 企業型DC      /dc.html
+└─ Dreamin' Spiral 🌱   /dreamin-spiral/
+   ├─ Guide              /dreamin-spiral/guide/
+   ├─ 3 Weeks            /dreamin-spiral/3-weeks/
+   ├─ Community          /dreamin-spiral/community/
+   ├─ My Life            /dreamin-spiral/my-life/
+   ├─ Business Creation  （Current page なし）
+   └─ Library            /dreamin-spiral/library/   ← Service ではない
+```
+
+- URL 階層はサイト上の置き場所であり、Service の上下関係 ・ Level ・ 順序ではない（Service Family は並列の入口）
+- TOP の `section#dreamin-spiral` は B8E TOP 上の **summary section** として残る（別 canonical を持たない）。TOP の「Dreamin' Spiral 🌱について」（path card ・ section の Lead 直後 ・「どこから始めますか」の 3 箇所）はすべて `/dreamin-spiral/` を指す
+- 全ページの Header / Footer の `Dreamin' Spiral 🌱` は `/dreamin-spiral/` を指す（Home v1 以前は TOP の `#dreamin-spiral`）。Home 上では `.current`
+- `/academy.html` は `/dreamin-spiral/` へ 308（Home v1 以前は `/#dreamin-spiral`）
+- 設計正本：OS repo `docs/repository-architecture/dreamin-spiral-home-v1.md`、実装記録：[dreamin-spiral-home-v1.md](dreamin-spiral-home-v1.md)
+
 ### Dreamin' Spiral 🌱 Service Pages（Current Sales Entrance v1・2026-09-16）
 
 | File | URL path（Public Canonical） | Role |
@@ -58,7 +83,7 @@ Legal Pages と同じく **末尾スラッシュのディレクトリ URL** を 
 | `dreamin-spiral/community/complete/index.html` | `/dreamin-spiral/community/complete/` | Community Complete Page（Stripe Checkout 完了後の redirect 先・noindex） |
 | `dreamin-spiral/guide/index.html` | `/dreamin-spiral/guide/` | Guide Service Page（CTA「Guide（無料）に申し込む」→ 既存 Booking System・Guide Current Entrance v1・2026-09-16） |
 
-入口は TOP の `section#dreamin-spiral`（Dreamin' Spiral 🌱・Service Family 5 件）。Header / Footer の `Dreamin' Spiral 🌱` はこの anchor を指す（旧 `academy.html` / `academy/*` は Phase 10-B3 で退役）。
+入口は TOP の `section#dreamin-spiral`（Dreamin' Spiral 🌱・Service Family 5 件）と、2026-09-17 以降は Dreamin' Spiral 🌱 Home（`/dreamin-spiral/`）。Header / Footer の `Dreamin' Spiral 🌱` は Home v1 まではこの anchor を、以降は `/dreamin-spiral/` を指す（旧 `academy.html` / `academy/*` は Phase 10-B3 で退役）。
 Community / Business Creation は Current の Service Page が未作成のため TOP 上で CTA を置いていない（Guide は [guide-current-entrance-v1.md](guide-current-entrance-v1.md)、Community は [community-current-entrance-v1.md](community-current-entrance-v1.md) で接続）。
 実装詳細は [current-sales-entrance-v1.md](current-sales-entrance-v1.md)、設計の正本は OS repo の `docs/repository-architecture/current-sales-entrance-v1.md`。
 
@@ -79,7 +104,7 @@ Community / Business Creation は Current の Service Page が未作成のため
 
 | File | URL path（Public Canonical） | Role |
 |---|---|---|
-| `dreamin-spiral/library/index.html` | `/dreamin-spiral/library/` | Dreamin' Spiral 🌱 Library。日々の気づきや実践に使える、無料の Resource 集（Service ではない。TOP の Service Family には置かない） |
+| `dreamin-spiral/library/index.html` | `/dreamin-spiral/library/` | Dreamin' Spiral 🌱 Library。**自分に気づくガイドとワーク。** 日々の中で、自分に気づくための小さなガイドやワークをまとめた場所（Service ではない。TOP の Service Family には置かない。2026-09-17 Library Wording Currentization で「日々の気づきや実践に使える、無料の Resource 集」から更新） |
 | `dreamin-spiral/library/pdf/*.pdf` | `/dreamin-spiral/library/pdf/<file>.pdf` | Current Resource PDF 7 件（6 件は OS repo の Generator で Current Brand 表記へ再生成） |
 
 Redirect（`vercel.json`・308）：`/academy/library.html` → `/dreamin-spiral/library/`、`/academy/pdf/<file>.pdf` → `/dreamin-spiral/library/pdf/<file>.pdf`（7 件）。`/academy/pdf/archive/*` は Historical として 200 のまま・どこからも link しない。旧 `academy/library.html` ・ `academy/pdf/*.pdf` の source file は Phase 10-B3 まで保持。実装記録は [library-currentization-phase-10b2.md](library-currentization-phase-10b2.md)。
@@ -90,7 +115,7 @@ Redirect（`vercel.json`・308）：`/academy/library.html` → `/dreamin-spiral
 
 | Old URL | 状態 |
 |---|---|
-| `/academy.html` | 削除 → **308 → `/#dreamin-spiral`**（`vercel.json`） |
+| `/academy.html` | 削除 → **308 → `/#dreamin-spiral`**（`vercel.json`）。2026-09-17 Dreamin' Spiral 🌱 Home v1 で destination を `/dreamin-spiral/` に変更 |
 | `/academy/program.html` ・ `/academy/owner-program.html` | 削除 → 404（redirect なし。Owner Program → Business Creation は Rename ではない） |
 | `/academy/apply.html` ・ `/academy/thanks.html` ・ `/academy/premium-portal.html` | 削除 → 404 |
 | `/academy/session.html` ・ `community*.html` ・ `library.html` ・ `/academy/pdf/*.pdf`（7） | source file 削除。`vercel.json` の 308 は維持 |

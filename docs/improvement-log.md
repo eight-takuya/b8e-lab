@@ -6,6 +6,26 @@
 ---
 
 ---
+## [2026-09-17] — Library Wording Currentization：Library の framing copy を「自分に気づくガイドとワーク。」へ（Owner Reality Review 待ち）
+
+**Scope:** `dreamin-spiral/library/index.html`（meta ・ og ・ Hero h1 ・ lead ・ 一覧 h2）, `dreamin-spiral/index.html`（Library section 本文）, `docs/dreamin-spiral-home-v1.md`, `docs/site-structure.md`, `docs/library-currentization-phase-10b2.md`（後続変更の注記のみ）
+**Triggered by:** Owner / Architect Approved Copy。正本は OS repo `docs/repository-architecture/dreamin-spiral-home-v1.md`
+
+- Library を説明する「無料のResource集」「Resourceをまとめています」「Resources」を、Approved Copy に揃えた（PDF の title ・ 説明文 ・ link は不変）
+- Community の「Learning Resources」・ 技術用語 ・ code ・ 過去記録の「Resource」は保持
+
+---
+## [2026-09-17] — Dreamin' Spiral 🌱 Home v1：`/dreamin-spiral/` を新設（Owner Reality Review 待ち）
+
+**Scope:** `dreamin-spiral/index.html`（新規）, `index.html`（Dreamin' Spiral 🌱 section に Home link を追加）, 全現行ページ 21 の Header / Footer link, `style.css`（nowrap selector の更新・Home 用 1 rule）, `vercel.json`（`/academy.html` の destination）, `docs/dreamin-spiral-home-v1.md`（新規）, `docs/site-structure.md`
+**Triggered by:** Dreamin' Spiral 🌱 Home v1（Architect Design・Owner Approved Copy）。正本は OS repo `docs/repository-architecture/dreamin-spiral-home-v1.md`
+
+- Dreamin' Spiral 🌱 Canonical Home（Hero ／ とは ／ 入口 ／ Service Family ／ Library ／ Closing）。Service Page ・ Library の既存 class を再利用
+- Header / Footer の `Dreamin' Spiral 🌱` → `/dreamin-spiral/`、`/academy.html` → `/dreamin-spiral/`（308）
+- TOP の `#dreamin-spiral` section は summary として維持し、「Dreamin' Spiral 🌱について」→ Home を追加
+- Final Tuning：TOP の「Dreamin' Spiral 🌱について」3 箇所をすべて `/dreamin-spiral/` に統一、TOP mobile の「3週間。」分断を `.ds-phrase` で解消（文言不変）
+
+---
 ## [2026-09-17] — Production Release / Closeout：Phase 10-B3 Remaining Academy Shell Cleanup を CLOSED（Old Academy Cleanup 全体 CLOSED）
 
 **Scope:** PR #100（`1e31249`）の Production 反映・実装記録の Status
