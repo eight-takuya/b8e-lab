@@ -45,7 +45,25 @@
 - **TOP mobile「3週間。」：** 375 ／ 320px で `.ds-family-desc`（幅 327 ／ 272px）の末尾が「3週 ／ 間。」「気づ ／ く3週間。」と分断されていた。文言は変えず、Home と同じく `<span class="ds-phrase">「気になる」や「悩み」から</span><span class="ds-phrase">自分に気づく3週間。</span>` で語句単位の折り返しにした（CSS 追加なし）。行数は 2 行のまま
 - **320px phrase wrapping refinement：** 320px で TOP `section#dreamin-spiral` の Lead（「…感覚／を入口に、」→「に、」、「…伴走で／す。」）と Guide 説明文（「…話してみ／る。」）に 1〜2 文字の行が残っていた。文言は変えず、Home と同じ区切りの `.ds-phrase`（「「気になること」や」「現実の中で生まれる感覚を入口に、」／「人生や仕事を」「創っていくための伴走です。」／「今、気になっていることから」「話してみる。」）で包んだ（CSS 変更なし）。1280px は差分 0、Lead ・ 各 item の高さは 1280 ／ 375 ／ 320px とも不変。375px では Lead 1 行目の折り返し位置のみ「…感覚／を入口に、」→「…や／現実の中で生まれる感覚を入口に、」に変わる（行数 ・ 高さは同じ）
 
-## 3. Local Validation（Chromium）
+## 4. Library Wording Currentization（2026-09-17・Owner / Architect Approved Copy）
+
+Library の framing copy から「Resource ／ Resources」を外し、Approved Copy「自分に気づくガイドとワーク。」「日々の中で、自分に気づくための小さなガイドやワークをまとめています。」に揃えた。全 hit を文脈ごとに分類し、一括置換はしていない。
+
+| Screen | 箇所 | Before | After |
+|---|---|---|---|
+| Library（`/dreamin-spiral/library/`） | `<meta name="description">` | Dreamin' Spiral 🌱 Library｜日々の気づきや実践に使える、無料のResource集。 | Dreamin' Spiral 🌱 Library｜自分に気づくガイドとワーク。日々の中で、自分に気づくための小さなガイドやワークをまとめています。 |
+| Library | `og:description` | 日々の気づきや実践に使える、無料のResource集。 | 日々の中で、自分に気づくための小さなガイドやワークをまとめています。 |
+| Library | Hero h1 | 日々の気づきや実践に使える、／無料のResource集。 | 自分に気づくガイドとワーク。 |
+| Library | Hero lead 1 段落目 | Dreamin' Spiral 🌱で大切にしていることを、／日々の中で感じたり、試したりするためのResourceをまとめています。 | 日々の中で、自分に気づくための／小さなガイドやワークをまとめています。 |
+| Library | 一覧の h2 | Resources | ガイドとワーク |
+| Home（`/dreamin-spiral/`） | Library section 本文 1 段落目 | 日々の気づきや実践に使える、／無料のResourceをまとめています。 | 日々の中で、自分に気づくための／小さなガイドやワークをまとめています。 |
+
+- 変更しない：Eyebrow `DREAMIN' SPIRAL LIBRARY` ・ title ・ Hero lead 2 段落目「必要なものがあれば、今の自分に合うものから自由にご覧ください。」・ 各 PDF の title ・ 説明文 ・ link ・ `id="resources"`（既存 anchor）・ Home の「Libraryを見る」・ Community の「Learning Resources」
+- 一覧 h2「ガイドとワーク」は Approved Copy の語から作った見出し（Owner Reality Review で確認する）
+- 「無料」は Approved Copy に含まれないため、Library の framing copy からは外れた（Library が無料であることの表示は他ページにない）
+- 狭い画面の折り返しは既存 `.ds-phrase`（CSS 変更なし）。1280 ／ 375 ／ 320px で横 scroll なし・1〜2 文字だけの行なし。他 6 ページ（TOP ・ About ・ Guide ・ Community ・ 3 Weeks ・ My Life）は pixel 差分 0
+
+## 5. Local Validation（Chromium）
 
 - 1280 ／ 375 ／ 320px：横 scroll なし、1〜2 文字だけの行なし
 - 見出し：h1 → h2 ×2 → h3 ×5（Service）→ h2 ×2。空 link 0。Business Creation の link 0

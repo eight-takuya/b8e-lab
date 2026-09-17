@@ -104,7 +104,7 @@ Community / Business Creation は Current の Service Page が未作成のため
 
 | File | URL path（Public Canonical） | Role |
 |---|---|---|
-| `dreamin-spiral/library/index.html` | `/dreamin-spiral/library/` | Dreamin' Spiral 🌱 Library。日々の気づきや実践に使える、無料の Resource 集（Service ではない。TOP の Service Family には置かない） |
+| `dreamin-spiral/library/index.html` | `/dreamin-spiral/library/` | Dreamin' Spiral 🌱 Library。**自分に気づくガイドとワーク。** 日々の中で、自分に気づくための小さなガイドやワークをまとめた場所（Service ではない。TOP の Service Family には置かない。2026-09-17 Library Wording Currentization で「日々の気づきや実践に使える、無料の Resource 集」から更新） |
 | `dreamin-spiral/library/pdf/*.pdf` | `/dreamin-spiral/library/pdf/<file>.pdf` | Current Resource PDF 7 件（6 件は OS repo の Generator で Current Brand 表記へ再生成） |
 
 Redirect（`vercel.json`・308）：`/academy/library.html` → `/dreamin-spiral/library/`、`/academy/pdf/<file>.pdf` → `/dreamin-spiral/library/pdf/<file>.pdf`（7 件）。`/academy/pdf/archive/*` は Historical として 200 のまま・どこからも link しない。旧 `academy/library.html` ・ `academy/pdf/*.pdf` の source file は Phase 10-B3 まで保持。実装記録は [library-currentization-phase-10b2.md](library-currentization-phase-10b2.md)。

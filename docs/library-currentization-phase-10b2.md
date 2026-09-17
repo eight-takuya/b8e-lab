@@ -1,6 +1,8 @@
 # Phase 10-B2｜Library Currentization — 実装記録（b8e-lab）
 
 > 旧 Academy Library を **Dreamin' Spiral 🌱 Library**（日々の気づきや実践に使える、無料の Resource 集）として Current URL へ移行する Web 実装の記録。
+> **後続の変更（2026-09-17）：** Library の Current-facing wording は Library Wording Currentization で「自分に気づくガイドとワーク。／ 日々の中で、自分に気づくための小さなガイドやワークをまとめています。」へ変更された（本書の「Resource」表記は当時の実装記録として保持）。記録：[dreamin-spiral-home-v1.md](dreamin-spiral-home-v1.md) §4
+>
 > **設計・判断の正本は OS repo `docs/repository-architecture/old-academy-cleanup-v1.md` §14。** 本書は b8e-lab 上の実装事実のみを扱う。
 
 | 項目 | 内容 |
