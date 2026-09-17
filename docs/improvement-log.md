@@ -6,6 +6,14 @@
 ---
 
 ---
+## [2026-09-17] — Production Release / Closeout：Phase 10-B3 Remaining Academy Shell Cleanup を CLOSED（Old Academy Cleanup 全体 CLOSED）
+
+**Scope:** PR #100（`1e31249`）の Production 反映・実装記録の Status
+**Triggered by:** Owner Approved Decisions 1〜10
+
+- 旧 Shell 28 URL の 308 ／ 404 と、現行 36 files の main との byte 一致を Production で確認
+
+---
 ## [2026-09-17] — Phase 10-B3：旧 Academy Shell を退役（academy.html → /#dreamin-spiral・その他 404）
 
 **Scope:** `academy.html`・`academy/*`（全削除）, `assets/ogp/generated/` 旧 Academy 用 8 件・`assets/academy/`・`assets/community/`・`assets/line-qr-black.png`（削除）, `vercel.json`（redirect 1 件追加）, `about.html`（名称 2 箇所）, `style.css`（Academy 専用 ・ 未使用 selector を削除）, `README.md`, `assets/ogp/README.md`, `docs/site-structure.md`, `docs/remaining-academy-shell-cleanup-phase-10b3.md`（新規）
