@@ -1,5 +1,6 @@
 {
   "redirects": [
+    { "source": "/academy.html", "destination": "/#dreamin-spiral", "permanent": true },
     { "source": "/academy/session.html", "destination": "/dreamin-spiral/guide/", "permanent": true },
     { "source": "/academy/community.html", "destination": "/dreamin-spiral/community/", "permanent": true },
     { "source": "/academy/community-apply.html", "destination": "/dreamin-spiral/community/", "permanent": true },

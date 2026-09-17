@@ -24,7 +24,7 @@ Every change passes through this pipeline. No code reaches production without Gu
 index.html    — TOP page
 dx.html       — DX支援
 dc.html       — 企業型DC
-academy.html  — Dreamin' Spiral Academy
+dreamin-spiral/ — Dreamin' Spiral 🌱 service pages (guide / community / library / 3-weeks / my-life)
 about.html    — Company & Founder
 style.css     — Shared stylesheet
 ```
@@ -54,7 +54,7 @@ b8e-lab/
     ├── improve-homepage.md    — Improve index.html
     ├── refine-copy.md         — Copy-only refinement pass
     ├── improve-dx-page.md     — Improve dx.html
-    ├── improve-academy-page.md — Improve academy.html
+    ├── improve-academy-page.md — (historical) academy.html was retired in Phase 10-B3
     └── polish-site-wide.md   — Cross-page consistency pass
 ```
 
@@ -76,7 +76,6 @@ b8e-lab/
 | Improve the TOP page | `prompts/improve-homepage.md` |
 | Refine copy on any page | `prompts/refine-copy.md` |
 | Improve the DX page | `prompts/improve-dx-page.md` |
-| Improve the Academy page | `prompts/improve-academy-page.md` |
 | Full site consistency pass | `prompts/polish-site-wide.md` |
 
 ### Manual pipeline invocation
@@ -84,7 +83,7 @@ b8e-lab/
 You can also invoke individual skills directly:
 
 ```
-"Use hp-reader to analyze academy.html."
+"Use hp-reader to analyze about.html."
 
 "Use hp-designer to redesign the DX hero section based on this analysis: [paste analysis]"
 

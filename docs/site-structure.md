@@ -2,6 +2,8 @@
 
 > Current state of the b8e-lab website as deployed to https://www.b8e.co.jp/ via GitHub + Vercel.
 >
+> **Phase 10-B3（2026-09-17）で旧 Academy Shell は Public から退役した（下記「Old Academy Shell Retirement」）。**「Academy の 3 つの入口」「Academy Site Map」以降は当時の記録として保持する。
+>
 > Academy 配下のページ構成・Notion Knowledge Architecture との対応・実装状況は「Academy Site Map」以降を参照。Dreamin' Spiral Academy の Notion 側構造は [dreamin-spiral-core/docs/06_implementations/academy-knowledge-architecture.md](https://github.com/eight-takuya/dreamin-spiral-core/blob/main/docs/06_implementations/academy-knowledge-architecture.md) を正本とする。
 >
 > Community / Premium / Dreamin' Spiral オーナープログラムの提供内容（Offer）の正本は [dreamin-spiral-os/docs/repository-architecture/academy-offer-definition.md](https://github.com/eight-takuya/dreamin-spiral-os/blob/main/docs/repository-architecture/academy-offer-definition.md) とする。b8e-lab の LP は、この Offer Definition を反映する位置付けであり、提供内容を変更する際は正本を先に更新する。
@@ -17,8 +19,9 @@
 | `index.html` | `/` | B8E \| BEAT EIGHT EMOTION | Entry point. Philosophy first, paths second. |
 | `dx.html` | `/dx` | DX支援 \| B8E | External transformation via DX consulting |
 | `dc.html` | `/dc` | 企業型DC \| B8E | Financial foundation via corporate DC |
-| `academy.html` | `/academy` | Dreamin' Spiral Academy \| B8E | Internal transformation via the Academy（Academy入口） |
 | `about.html` | `/about` | About \| B8E | Founder's path, company identity, name meaning |
+
+旧 `academy.html` は Phase 10-B3 で削除し、`/academy.html` は `/#dreamin-spiral` へ 308 redirect。
 
 `dc-guide.html` は DC 領域の補助ページ（本ドキュメントの調査対象外。Academy とは無関係）。
 
@@ -55,7 +58,7 @@ Legal Pages と同じく **末尾スラッシュのディレクトリ URL** を 
 | `dreamin-spiral/community/complete/index.html` | `/dreamin-spiral/community/complete/` | Community Complete Page（Stripe Checkout 完了後の redirect 先・noindex） |
 | `dreamin-spiral/guide/index.html` | `/dreamin-spiral/guide/` | Guide Service Page（CTA「Guide（無料）に申し込む」→ 既存 Booking System・Guide Current Entrance v1・2026-09-16） |
 
-入口は TOP の `section#dreamin-spiral`（Dreamin' Spiral 🌱・Service Family 5 件）。Header / Footer の `Dreamin' Spiral 🌱` はこの anchor を指す（`academy.html` / `academy/*` の Header / Footer は Historical Protection により変更していない）。
+入口は TOP の `section#dreamin-spiral`（Dreamin' Spiral 🌱・Service Family 5 件）。Header / Footer の `Dreamin' Spiral 🌱` はこの anchor を指す（旧 `academy.html` / `academy/*` は Phase 10-B3 で退役）。
 Community / Business Creation は Current の Service Page が未作成のため TOP 上で CTA を置いていない（Guide は [guide-current-entrance-v1.md](guide-current-entrance-v1.md)、Community は [community-current-entrance-v1.md](community-current-entrance-v1.md) で接続）。
 実装詳細は [current-sales-entrance-v1.md](current-sales-entrance-v1.md)、設計の正本は OS repo の `docs/repository-architecture/current-sales-entrance-v1.md`。
 
@@ -80,6 +83,20 @@ Community / Business Creation は Current の Service Page が未作成のため
 | `dreamin-spiral/library/pdf/*.pdf` | `/dreamin-spiral/library/pdf/<file>.pdf` | Current Resource PDF 7 件（6 件は OS repo の Generator で Current Brand 表記へ再生成） |
 
 Redirect（`vercel.json`・308）：`/academy/library.html` → `/dreamin-spiral/library/`、`/academy/pdf/<file>.pdf` → `/dreamin-spiral/library/pdf/<file>.pdf`（7 件）。`/academy/pdf/archive/*` は Historical として 200 のまま・どこからも link しない。旧 `academy/library.html` ・ `academy/pdf/*.pdf` の source file は Phase 10-B3 まで保持。実装記録は [library-currentization-phase-10b2.md](library-currentization-phase-10b2.md)。
+
+### Old Academy Shell Retirement（Phase 10-B3｜Remaining Academy Shell Cleanup・2026-09-17）
+
+旧 Dreamin' Spiral Academy の Public Shell を退役した。設計 ・ 判断の正本は OS repo `docs/repository-architecture/old-academy-cleanup-v1.md` §15、実装記録は [remaining-academy-shell-cleanup-phase-10b3.md](remaining-academy-shell-cleanup-phase-10b3.md)。
+
+| Old URL | 状態 |
+|---|---|
+| `/academy.html` | 削除 → **308 → `/#dreamin-spiral`**（`vercel.json`） |
+| `/academy/program.html` ・ `/academy/owner-program.html` | 削除 → 404（redirect なし。Owner Program → Business Creation は Rename ではない） |
+| `/academy/apply.html` ・ `/academy/thanks.html` ・ `/academy/premium-portal.html` | 削除 → 404 |
+| `/academy/session.html` ・ `community*.html` ・ `library.html` ・ `/academy/pdf/*.pdf`（7） | source file 削除。`vercel.json` の 308 は維持 |
+| `/academy/pdf/archive/*.pdf`（7） | 削除 → 404（Historical copy は OS repo `content/library/archive/`） |
+
+`academy/` ディレクトリは repository から無くなった。Academy 専用 ・ 未使用の CSS selector（327 rules ＋ grouped 2 rules の一部）と、退役ページ専用の OGP ・ asset も削除した。
 
 ### Retired Pages（Phase 10-B1｜Old Premium Retirement・2026-09-16）
 

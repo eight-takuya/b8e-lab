@@ -6,6 +6,13 @@
 
 ## Version History
 
+### Phase 10-B3 — 旧 Academy ページ用 OGP の削除
+2026-09-17
+
+- 旧 Academy Shell の退役（`academy.html` は `/#dreamin-spiral` へ 308、その他は 404 ・ redirect）に伴い、`generated/` の `academy.png` ・ `program.png` ・ `owner-program.png` ・ `apply.png` ・ `session.png` ・ `community.png` ・ `community-apply.png` ・ `library.png` を削除した。現行の `generated/` は `top.png` ・ `about.png` のみ
+- `master/OGP_Template_Master.pptx` は変更していない（旧 Slide は Master 内に残る）。以下の記述は当時の記録として保持する
+- 正本：OS repo `docs/repository-architecture/old-academy-cleanup-v1.md` §15
+
 ### v1.0 — 完成・正式運用開始
 2026-07
 
