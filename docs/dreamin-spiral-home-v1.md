@@ -5,7 +5,7 @@
 
 | 項目 | 内容 |
 |---|---|
-| Status | Preview 実装済み ・ **OWNER REVIEW PENDING** |
+| Status | **CLOSED（2026-09-17）。** Owner Approved（Home v1 ・ Library Wording Currentization・List heading「ガイドとワーク」を含む）→ PR #102 merge（`79d927b`）→ Production Validation 済み（§6）。正本：OS repo `docs/repository-architecture/dreamin-spiral-home-v1.md` §12（OS #235 `a859ba0`） |
 | 実装日 | 2026-09-17 |
 | Branch | `feature/dreamin-spiral-home-v1` |
 
@@ -59,8 +59,8 @@ Library の framing copy から「Resource ／ Resources」を外し、Approved 
 | Home（`/dreamin-spiral/`） | Library section 本文 1 段落目 | 日々の気づきや実践に使える、／無料のResourceをまとめています。 | 日々の中で、自分に気づくための／小さなガイドやワークをまとめています。 |
 
 - 変更しない：Eyebrow `DREAMIN' SPIRAL LIBRARY` ・ title ・ Hero lead 2 段落目「必要なものがあれば、今の自分に合うものから自由にご覧ください。」・ 各 PDF の title ・ 説明文 ・ link ・ `id="resources"`（既存 anchor）・ Home の「Libraryを見る」・ Community の「Learning Resources」
-- 一覧 h2「ガイドとワーク」は Approved Copy の語から作った見出し（Owner Reality Review で確認する）
-- 「無料」は Approved Copy に含まれないため、Library の framing copy からは外れた（Library が無料であることの表示は他ページにない）
+- 一覧 h2「ガイドとワーク」は Owner Approved（2026-09-17）
+- 「無料」は Library の framing copy から外す（Owner Decision。Library が無料であることの表示は他ページにない）
 - 狭い画面の折り返しは既存 `.ds-phrase`（CSS 変更なし）。1280 ／ 375 ／ 320px で横 scroll なし・1〜2 文字だけの行なし。他 6 ページ（TOP ・ About ・ Guide ・ Community ・ 3 Weeks ・ My Life）は pixel 差分 0
 
 ## 5. Local Validation（Chromium）
@@ -70,3 +70,11 @@ Library の framing copy から「Resource ／ Resources」を外し、Approved 
 - Keyboard：Header 5 → 詳しく見る 4 → Libraryを見る → Guide（無料）について見る の順に focus、focus ring 表示
 - Regression：Home 以外の現行 20 ページ × 1280 ／ 375px の computed style ・ screenshot が main と一致（Header / Footer の nowrap も維持）。TOP は追加 link 分のみ差分
 - Final Tuning 後：TOP ・ About ・ Home ・ Guide ・ 3 Weeks ・ Community ・ My Life ・ Library × 1280 ／ 375 ／ 320px を Tuning 前と比較し、差分は TOP mobile の 3 Weeks 説明文の範囲のみ（1280px は差分 0）。横 scroll なし
+
+## 6. Production Validation（2026-09-17）
+
+- `/dreamin-spiral/` ・ `/dreamin-spiral/library/` ・ `/` が 200（redirect なし）。Home ・ Library の title ・ meta ・ canonical ・ 見出し ・ Approved Copy ・ link を描画で確認。Library の表示テキストに Resource ・ Academy 0 件、PDF 7 件 200
+- TOP の「Dreamin' Spiral 🌱について」3 箇所 ・ 8 ページの Header ／ Footer → `/dreamin-spiral/`
+- `/academy.html` 308 → `/dreamin-spiral/`（1 hop・200）。旧 Academy redirect 12 件は 308 → Current、退役ページ ・ archive PDF は 404
+- 1280 ／ 375 ／ 320px：Home ・ Library ・ TOP で横 scroll なし ・ 1〜2 文字だけの行なし
+- 現行公開ファイル 37（HTML 22 ・ CSS ・ JS ・ PDF 7 ・ OGP 2 ・ OGP master ・ DC asset 3）が main と byte 一致。Stripe ・ Formspree ・ GAS link は不変、Guide Booking 200
