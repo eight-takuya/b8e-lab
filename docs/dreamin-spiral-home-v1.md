@@ -43,6 +43,7 @@
 
 - **TOP link 統一：** TOP の「Dreamin' Spiral 🌱について」3 箇所（path card ・ `section#dreamin-spiral` の Lead 直後 ・「どこから始めますか」）をすべて `/dreamin-spiral/` に統一。同じ label で異なる destination は残っていない。`section#dreamin-spiral`（summary ・ Service Family）は不変
 - **TOP mobile「3週間。」：** 375 ／ 320px で `.ds-family-desc`（幅 327 ／ 272px）の末尾が「3週 ／ 間。」「気づ ／ く3週間。」と分断されていた。文言は変えず、Home と同じく `<span class="ds-phrase">「気になる」や「悩み」から</span><span class="ds-phrase">自分に気づく3週間。</span>` で語句単位の折り返しにした（CSS 追加なし）。行数は 2 行のまま
+- **320px phrase wrapping refinement：** 320px で TOP `section#dreamin-spiral` の Lead（「…感覚／を入口に、」→「に、」、「…伴走で／す。」）と Guide 説明文（「…話してみ／る。」）に 1〜2 文字の行が残っていた。文言は変えず、Home と同じ区切りの `.ds-phrase`（「「気になること」や」「現実の中で生まれる感覚を入口に、」／「人生や仕事を」「創っていくための伴走です。」／「今、気になっていることから」「話してみる。」）で包んだ（CSS 変更なし）。1280px は差分 0、Lead ・ 各 item の高さは 1280 ／ 375 ／ 320px とも不変。375px では Lead 1 行目の折り返し位置のみ「…感覚／を入口に、」→「…や／現実の中で生まれる感覚を入口に、」に変わる（行数 ・ 高さは同じ）
 
 ## 3. Local Validation（Chromium）
 
