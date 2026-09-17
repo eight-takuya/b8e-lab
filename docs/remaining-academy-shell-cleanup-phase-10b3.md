@@ -5,7 +5,7 @@
 
 | 項目 | 内容 |
 |---|---|
-| Status | 実装済み ・ Preview 検証待ち |
+| Status | **CLOSED（2026-09-17）。** Preview 検証（Claude in Chrome）→ PR #100 merge（`1e31249`）→ Production Validation 済み（§6）。正本：OS repo `docs/repository-architecture/old-academy-cleanup-v1.md` §15 ・ §16（Phase 10｜Old Academy Cleanup CLOSED） |
 | 実装日 | 2026-09-17 |
 | Branch | `feature/phase-10b3-academy-shell-cleanup` |
 
@@ -72,3 +72,10 @@ Regression 検証（local static server ・ Chromium ・ reduced motion）：
 - `README.md`：Site Files から `academy.html` を外し `dreamin-spiral/` を記載
 - `docs/site-structure.md` ・ `assets/ogp/README.md` ・ `docs/improvement-log.md`：Phase 10-B3 を追記（過去の記述は当時の記録として保持）
 - Formspree form（旧 `session.html` の inquiry form）：到達不能。今回は disable していない（Owner Action ／ Later）
+
+## 6. Production Validation（2026-09-17）
+
+- 28 URL（旧 Shell 6 ・ redirect 済み HTML 5 ・ 旧 PDF 7 ・ archive PDF 7 ・ 旧 Premium 3）が期待どおり：`/academy.html` 308 → `/#dreamin-spiral`（ブラウザで TOP の `section#dreamin-spiral` に到達）、redirect はすべて 1 hop で 200、退役ページ ・ archive PDF は 404
+- 現行ページ ・ asset 36 files（HTML 21 ・ `style.css` ・ `scroll.js` ・ Current Library PDF 7 ・ OGP 2 ・ OGP master ・ DC asset 3）が HTTP 200 で main と byte 一致
+- Regression なし
+
