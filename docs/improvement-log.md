@@ -6,6 +6,14 @@
 ---
 
 ---
+## [2026-09-17] — Production Release / Closeout：Dreamin' Spiral 🌱 Home v1 ・ Library Wording Currentization を CLOSED
+
+**Scope:** PR #102（`79d927b`）の Production 反映・実装記録の Status
+**Triggered by:** Owner Approval（Home v1 ・ Library Wording Currentization・List heading「ガイドとワーク」）
+
+- `/dreamin-spiral/` Home ・ Library wording ・ Header / Footer ・ TOP link ・ `/academy.html` → `/dreamin-spiral/`（308）を Production で確認。現行公開ファイル 37 が main と byte 一致
+
+---
 ## [2026-09-17] — Library Wording Currentization：Library の framing copy を「自分に気づくガイドとワーク。」へ（Owner Reality Review 待ち）
 
 **Scope:** `dreamin-spiral/library/index.html`（meta ・ og ・ Hero h1 ・ lead ・ 一覧 h2）, `dreamin-spiral/index.html`（Library section 本文）, `docs/dreamin-spiral-home-v1.md`, `docs/site-structure.md`, `docs/library-currentization-phase-10b2.md`（後続変更の注記のみ）
