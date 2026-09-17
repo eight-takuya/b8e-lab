@@ -6,6 +6,16 @@
 ---
 
 ---
+## [2026-09-17] — Dreamin' Spiral 🌱 Home v1：`/dreamin-spiral/` を新設（Owner Reality Review 待ち）
+
+**Scope:** `dreamin-spiral/index.html`（新規）, `index.html`（Dreamin' Spiral 🌱 section に Home link を追加）, 全現行ページ 21 の Header / Footer link, `style.css`（nowrap selector の更新・Home 用 1 rule）, `vercel.json`（`/academy.html` の destination）, `docs/dreamin-spiral-home-v1.md`（新規）, `docs/site-structure.md`
+**Triggered by:** Dreamin' Spiral 🌱 Home v1（Architect Design・Owner Approved Copy）。正本は OS repo `docs/repository-architecture/dreamin-spiral-home-v1.md`
+
+- Dreamin' Spiral 🌱 Canonical Home（Hero ／ とは ／ 入口 ／ Service Family ／ Library ／ Closing）。Service Page ・ Library の既存 class を再利用
+- Header / Footer の `Dreamin' Spiral 🌱` → `/dreamin-spiral/`、`/academy.html` → `/dreamin-spiral/`（308）
+- TOP の `#dreamin-spiral` section は summary として維持し、「Dreamin' Spiral 🌱について」→ Home を追加
+
+---
 ## [2026-09-17] — Production Release / Closeout：Phase 10-B3 Remaining Academy Shell Cleanup を CLOSED（Old Academy Cleanup 全体 CLOSED）
 
 **Scope:** PR #100（`1e31249`）の Production 反映・実装記録の Status
