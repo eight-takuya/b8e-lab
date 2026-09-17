@@ -68,7 +68,7 @@ B8E  /
 ```
 
 - URL 階層はサイト上の置き場所であり、Service の上下関係 ・ Level ・ 順序ではない（Service Family は並列の入口）
-- TOP の `section#dreamin-spiral` は B8E TOP 上の **summary section** として残る（別 canonical を持たない）。Lead の直後に「Dreamin' Spiral 🌱について」→ `/dreamin-spiral/`
+- TOP の `section#dreamin-spiral` は B8E TOP 上の **summary section** として残る（別 canonical を持たない）。TOP の「Dreamin' Spiral 🌱について」（path card ・ section の Lead 直後 ・「どこから始めますか」の 3 箇所）はすべて `/dreamin-spiral/` を指す
 - 全ページの Header / Footer の `Dreamin' Spiral 🌱` は `/dreamin-spiral/` を指す（Home v1 以前は TOP の `#dreamin-spiral`）。Home 上では `.current`
 - `/academy.html` は `/dreamin-spiral/` へ 308（Home v1 以前は `/#dreamin-spiral`）
 - 設計正本：OS repo `docs/repository-architecture/dreamin-spiral-home-v1.md`、実装記録：[dreamin-spiral-home-v1.md](dreamin-spiral-home-v1.md)

@@ -34,12 +34,15 @@
 
 | File | 変更 |
 |---|---|
-| `index.html` | `section#dreamin-spiral` の Lead 直後に `<a class="ds-service-cta" href="/dreamin-spiral/">Dreamin' Spiral 🌱について</a>` を追加。Header / Footer link |
+| `index.html` | `section#dreamin-spiral` の Lead 直後に `<a class="ds-service-cta" href="/dreamin-spiral/">Dreamin' Spiral 🌱について</a>` を追加。Header / Footer link。既存の「Dreamin' Spiral 🌱について」2 箇所（3 つの道の path card ・「どこから始めますか」）の href を `#dreamin-spiral` → `/dreamin-spiral/`（Final Tuning）。3 Weeks の説明文を `.ds-phrase` 2 つで包む（Final Tuning） |
 | 現行 21 ページ（TOP ・ About ・ DX ・ DC ・ DC Guide ・ thanks ・ Guide ・ Community ・ Community Complete ・ Library ・ 3 Weeks 4 ・ My Life 4 ・ Legal ・ Terms ・ Privacy） | Header ・ Footer の `Dreamin' Spiral 🌱` link の `href` のみ（`index.html#dreamin-spiral` 等 → `/dreamin-spiral/`、計 42 箇所）。他の文言 ・ CTA ・ Stripe ・ Formspree ・ GAS link は不変 |
 | `style.css` | ① Header / Footer の Dreamin' Spiral 🌱 link の `white-space: nowrap` selector を `[href$="#dreamin-spiral"]` → `[href="/dreamin-spiral/"]`（href 変更に追随）② `.ds-home-family .ds-family-item:first-child { border-top: none; padding-top: 0; }`（見出しのない Service Family section で区切り線が二重にならないように。Home のみ） |
 | `vercel.json` | `/academy.html` の destination：`/#dreamin-spiral` → `/dreamin-spiral/`（他の redirect 12 件は不変） |
 
-TOP の path card ・「どこから始めますか」の「Dreamin' Spiral 🌱について」（`#dreamin-spiral` への page 内 link）は変更していない。
+### Final Tuning（Owner Review 前・Owner / Architect 採用）
+
+- **TOP link 統一：** TOP の「Dreamin' Spiral 🌱について」3 箇所（path card ・ `section#dreamin-spiral` の Lead 直後 ・「どこから始めますか」）をすべて `/dreamin-spiral/` に統一。同じ label で異なる destination は残っていない。`section#dreamin-spiral`（summary ・ Service Family）は不変
+- **TOP mobile「3週間。」：** 375 ／ 320px で `.ds-family-desc`（幅 327 ／ 272px）の末尾が「3週 ／ 間。」「気づ ／ く3週間。」と分断されていた。文言は変えず、Home と同じく `<span class="ds-phrase">「気になる」や「悩み」から</span><span class="ds-phrase">自分に気づく3週間。</span>` で語句単位の折り返しにした（CSS 追加なし）。行数は 2 行のまま
 
 ## 3. Local Validation（Chromium）
 
@@ -47,3 +50,4 @@ TOP の path card ・「どこから始めますか」の「Dreamin' Spiral 🌱
 - 見出し：h1 → h2 ×2 → h3 ×5（Service）→ h2 ×2。空 link 0。Business Creation の link 0
 - Keyboard：Header 5 → 詳しく見る 4 → Libraryを見る → Guide（無料）について見る の順に focus、focus ring 表示
 - Regression：Home 以外の現行 20 ページ × 1280 ／ 375px の computed style ・ screenshot が main と一致（Header / Footer の nowrap も維持）。TOP は追加 link 分のみ差分
+- Final Tuning 後：TOP ・ About ・ Home ・ Guide ・ 3 Weeks ・ Community ・ My Life ・ Library × 1280 ／ 375 ／ 320px を Tuning 前と比較し、差分は TOP mobile の 3 Weeks 説明文の範囲のみ（1280px は差分 0）。横 scroll なし

@@ -14,6 +14,7 @@
 - Dreamin' Spiral 🌱 Canonical Home（Hero ／ とは ／ 入口 ／ Service Family ／ Library ／ Closing）。Service Page ・ Library の既存 class を再利用
 - Header / Footer の `Dreamin' Spiral 🌱` → `/dreamin-spiral/`、`/academy.html` → `/dreamin-spiral/`（308）
 - TOP の `#dreamin-spiral` section は summary として維持し、「Dreamin' Spiral 🌱について」→ Home を追加
+- Final Tuning：TOP の「Dreamin' Spiral 🌱について」3 箇所をすべて `/dreamin-spiral/` に統一、TOP mobile の「3週間。」分断を `.ds-phrase` で解消（文言不変）
 
 ---
 ## [2026-09-17] — Production Release / Closeout：Phase 10-B3 Remaining Academy Shell Cleanup を CLOSED（Old Academy Cleanup 全体 CLOSED）
