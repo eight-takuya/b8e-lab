@@ -6,8 +6,9 @@
 
 | 項目 | 内容 |
 |---|---|
-| Status | **PREVIEW IMPLEMENTED** ／ Owner Reality Review：**PENDING** |
-| Formspree endpoint | **OWNER ACTION REQUIRED（未作成）**。endpoint 設定までは Preview 用の非送信モード（§5） |
+| Status | **SUPERSEDED（2026-09-18・Production 未公開のまま廃止）** — Business Creation Dialogue Entry Integration（Architect Decision）で、GAS の Business Creation Dialogue Form（Reality → 90分の対話日時 → 予約）へ統合。`inquiry/` ・ `thanks/` は PR #104 から削除した。本書は Historical Record として残す（以下の本文は当時の実装記録） |
+| 旧 Status | PREVIEW IMPLEMENTED ／ Owner Reality Review：PENDING |
+| Formspree endpoint | 不要になった（Superseded）。当時は OWNER ACTION REQUIRED（未作成）・Preview 用の非送信モード（§5） |
 | Production | **NOT RELEASED**（PR #104 ＝ Business Creation Public Entrance の release branch。merge していない） |
 | 実装日 | 2026-09-18 |
 | Branch | `feature/business-creation-public-page-v1`（PR #104・additive commit） |
@@ -88,3 +89,4 @@
 | Date | 内容 |
 |---|---|
 | 2026-09-18 | **新規作成。** Inquiry Form v1 ・ Thanks を Preview として実装。Public Page の Primary CTA を接続。Formspree endpoint は Owner Action 待ち（非送信モード）。Production 未公開 |
+| 2026-09-18 | **Superseded。** Business Creation Dialogue Entry Integration により、Inquiry Form ／ Thanks を Production 未公開のまま削除。Formspree endpoint の作成は不要になった。後継: dreamin-spiral-academy の Business Creation Dialogue Form（GAS）・OS `business-creation-architecture.md` §9.5.3 |

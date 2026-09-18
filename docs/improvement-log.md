@@ -6,6 +6,16 @@
 ---
 
 ---
+## [2026-09-18] — Business Creation Dialogue Entry Integration：Primary CTA を GAS Dialogue Form へ ・ Inquiry Form ／ Thanks を削除（Preview のみ）
+
+**Scope:** `dreamin-spiral/business-creation/index.html`（Primary CTA の href）, `dreamin-spiral/business-creation/inquiry/index.html`（削除）, `dreamin-spiral/business-creation/thanks/index.html`（削除）, `docs/business-creation-public-page-v1.md`, `docs/business-creation-inquiry-form-v1.md`（Superseded）, `docs/site-structure.md`
+**Triggered by:** Owner Reality Review（name ／ email の二重入力）→ Architect Decision（OS `business-creation-architecture.md` §9.5.3）
+
+- Formspree Inquiry → Thanks → 日程調整の 2 段をやめ、GAS の Business Creation Dialogue Form（Step 1 Reality → Step 2 90分の対話日時 → 予約）へ一続きにした
+- `inquiry/` ・ `thanks/` は Production 未公開のため削除（Formspree endpoint は作成しない）
+- Primary CTA の href はいま Safe Review 用の Dialogue Form（架空データ）。**Production 公開時に Production の Dialogue Form の URL へ置き換える**（Production Gate）
+
+---
 ## [2026-09-18] — Business Creation Inquiry Form v1：`/dreamin-spiral/business-creation/inquiry/` ・ `/thanks/` を新設（Preview のみ・Owner Reality Review 待ち）
 
 **Scope:** `dreamin-spiral/business-creation/inquiry/index.html`（新規）, `dreamin-spiral/business-creation/thanks/index.html`（新規）, `dreamin-spiral/business-creation/index.html`（Primary CTA を接続）, `docs/business-creation-inquiry-form-v1.md`（新規）, `docs/business-creation-public-page-v1.md`, `docs/site-structure.md`
