@@ -37,6 +37,8 @@
       'background:radial-gradient(ellipse at 50% 20%,rgba(110,145,245,.12) 0%,transparent 65%),',
       'linear-gradient(180deg,#1c2f60 0%,#0b1028 100%);animation:gas-transition-in .12s ease-out;}',
       '.gas-transition__inner{max-width:520px;}',
+      // 日本語を語の途中で折り返さない（対応ブラウザは文節で折り返す。非対応は通常の折り返し）
+      '.gas-transition__heading,.gas-transition__text{word-break:auto-phrase;overflow-wrap:anywhere;}',
       '.gas-transition__eyebrow{display:block;margin-bottom:28px;font-size:.72rem;color:#8c8680;letter-spacing:.14em;text-transform:uppercase;}',
       '.gas-transition__heading{margin:0;font-size:1.2rem;font-weight:300;line-height:2;color:#f0eeeb;letter-spacing:.06em;outline:none;}',
       '.gas-transition__text{margin:20px 0 0;font-size:.95rem;line-height:2.2;color:#c9c5bf;}',
