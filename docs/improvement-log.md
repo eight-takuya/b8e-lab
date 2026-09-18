@@ -6,6 +6,16 @@
 ---
 
 ---
+## [2026-09-18] — Production Release：Guide Page の Vercel → GAS Transition（PR #105）
+
+**Scope:** `gas-transition.js`, `dreamin-spiral/guide/index.html`, `docs/vercel-gas-transition-v1.md`
+**Triggered by:** Owner Reality Review APPROVED（Guide ・ Business Creation の Preview）
+
+- PR #105 を merge（`2f04537`）。Vercel Production へ反映
+- Production Verification PASS: 承認済みの Transition View ・ 行き先は release 前と同一の Guide 予約ページ（GAS Production @54 は変更なし）・ 移動 1 回 ・ 戻る ・ 他の link は通常どおり（予約は送信していない）
+- Business Creation（PR #104）は未公開のまま
+
+---
 ## [2026-09-18] — Guide Page：「Guide（無料）に申し込む」に Vercel → GAS Transition を適用（Preview・Owner Reality Review 待ち）
 
 **Scope:** `dreamin-spiral/guide/index.html`（Hero ・ Final の CTA に `data-gas-transition` と言葉・`/gas-transition.js` を読み込み）
