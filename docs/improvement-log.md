@@ -6,6 +6,23 @@
 ---
 
 ---
+## [2026-09-18] — Guide Page：「Guide（無料）に申し込む」に Vercel → GAS Transition を適用（Preview・Owner Reality Review 待ち）
+
+**Scope:** `dreamin-spiral/guide/index.html`（Hero ・ Final の CTA に `data-gas-transition` と言葉・`/gas-transition.js` を読み込み）
+**Triggered by:** OS `vercel-gas-transition-standard-v1.md` §5
+
+- 押した瞬間に「Guide（無料）の予約ページを開いています。」を出してから、既存の Guide 予約ページ（GAS・Production deployment のまま）へ移動する。href ・ 行き先は変更なし
+- **merge ＝ Production 反映のため、Owner Reality Review 後に merge する**
+
+---
+## [2026-09-18] — Vercel → GAS Transition Standard v1：共通の `gas-transition.js` を追加（Preview のみ）
+
+**Scope:** `gas-transition.js`（新規）, `docs/vercel-gas-transition-v1.md`（新規）
+**Triggered by:** Business Creation Dialogue Entry の Owner Reality Review（GAS の最初の読み込みで「押したのに何も起きない」間がある）→ OS `docs/design-systems/web-design-system/vercel-gas-transition-standard-v1.md`
+
+- `data-gas-transition` を付けた GAS link を押した瞬間に、行き先につながる短い言葉の Transition View を出してから同じタブで移動する（人工的な待ちなし・移動は 1 回だけ・href は本物の GAS URL のまま）
+- ページへの適用は Business Creation（PR #104）と Guide（別 PR）で行う
+
 ## [2026-09-17] — Production Release / Closeout：Dreamin' Spiral 🌱 Home v1 ・ Library Wording Currentization を CLOSED
 
 **Scope:** PR #102（`79d927b`）の Production 反映・実装記録の Status
