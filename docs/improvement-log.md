@@ -6,6 +6,15 @@
 ---
 
 ---
+## [2026-09-18] — Guide Page：「Guide（無料）に申し込む」に Vercel → GAS Transition を適用（Preview・Owner Reality Review 待ち）
+
+**Scope:** `dreamin-spiral/guide/index.html`（Hero ・ Final の CTA に `data-gas-transition` と言葉・`/gas-transition.js` を読み込み）
+**Triggered by:** OS `vercel-gas-transition-standard-v1.md` §5
+
+- 押した瞬間に「Guide（無料）の予約ページを開いています。」を出してから、既存の Guide 予約ページ（GAS・Production deployment のまま）へ移動する。href ・ 行き先は変更なし
+- **merge ＝ Production 反映のため、Owner Reality Review 後に merge する**
+
+---
 ## [2026-09-18] — Vercel → GAS Transition Standard v1：共通の `gas-transition.js` を追加（Preview のみ）
 
 **Scope:** `gas-transition.js`（新規）, `docs/vercel-gas-transition-v1.md`（新規）
