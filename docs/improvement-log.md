@@ -6,6 +6,15 @@
 ---
 
 ---
+## [2026-09-18] — Vercel → GAS Transition Standard v1：共通の `gas-transition.js` を追加（Preview のみ）
+
+**Scope:** `gas-transition.js`（新規）, `docs/vercel-gas-transition-v1.md`（新規）
+**Triggered by:** Business Creation Dialogue Entry の Owner Reality Review（GAS の最初の読み込みで「押したのに何も起きない」間がある）→ OS `docs/design-systems/web-design-system/vercel-gas-transition-standard-v1.md`
+
+- `data-gas-transition` を付けた GAS link を押した瞬間に、行き先につながる短い言葉の Transition View を出してから同じタブで移動する（人工的な待ちなし・移動は 1 回だけ・href は本物の GAS URL のまま）
+- ページへの適用は Business Creation（PR #104）と Guide（別 PR）で行う
+
+---
 ## [2026-09-18] — Business Creation Dialogue Entry Integration：Primary CTA を GAS Dialogue Form へ ・ Inquiry Form ／ Thanks を削除（Preview のみ）
 
 **Scope:** `dreamin-spiral/business-creation/index.html`（Primary CTA の href）, `dreamin-spiral/business-creation/inquiry/index.html`（削除）, `dreamin-spiral/business-creation/thanks/index.html`（削除）, `docs/business-creation-public-page-v1.md`, `docs/business-creation-inquiry-form-v1.md`（Superseded）, `docs/site-structure.md`
