@@ -93,6 +93,7 @@ Owner は Preview 全体を「その他は、とてもいい感じ」と確認�
 - 公開ページの表示文言のみの変更。OS の Canonical 概念（Starting Reality ・ Offer Definition ・ Creation Portal ／ Workspace 等）・ 技術用語 ・ HTML comment ・ CSS class は変えていない
 - 「Creation Portal / Workspace」（内容・料金の提供内容）・ Automation は Owner の変更指定がないため維持
 - Layout ・ CSS ・ CTA ・ 料金 ・ Guide の Secondary path ・ Partner ・ Final CTA ・ SEO は変更なし
+- 狭い画面（320 ／ 375px）で語句の途中や 1〜2 文字だけで折り返さないよう、既存の `.ds-phrase` の区切りだけを調整した（文言は不変）
 - Production：**NOT RELEASED**
 
 ## 8. Change History
