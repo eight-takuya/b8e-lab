@@ -6,6 +6,14 @@
 ---
 
 ---
+## [2026-09-18] — Business Creation Page：Primary CTA に Vercel → GAS Transition を適用（Preview のみ）
+
+**Scope:** `dreamin-spiral/business-creation/index.html`（Hero ・ Final の CTA に `data-gas-transition` と言葉・`/gas-transition.js` を読み込み）, `docs/business-creation-public-page-v1.md`
+**Triggered by:** Owner Reality Review（押したのに何も起きない間）→ OS `vercel-gas-transition-standard-v1.md`
+
+- 押した瞬間に「Business Creationの対話ページを開いています。」を出してから、Safe Review 用の Dialogue Form（GAS）へ移動する。行き先は変更なし（Production の URL への置き換えは Production Gate）
+
+---
 ## [2026-09-18] — Vercel → GAS Transition Standard v1：共通の `gas-transition.js` を追加（Preview のみ）
 
 **Scope:** `gas-transition.js`（新規）, `docs/vercel-gas-transition-v1.md`（新規）

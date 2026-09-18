@@ -52,6 +52,7 @@
 - **2026-09-18 更新:** Inquiry Form v1 の Preview 実装に合わせ、Primary CTA（Hero ・ Final）を `<a href="/dreamin-spiral/business-creation/inquiry/">` へ接続した（Preview branch のみ）。Inquiry Form の実装記録は [business-creation-inquiry-form-v1.md](business-creation-inquiry-form-v1.md)
 - **2026-09-18 更新（Dialogue Entry Integration・Architect Decision）:** Formspree の Inquiry Form → Thanks → 日程調整（name ／ email の二重入力）をやめ、Primary CTA（Hero ・ Final）を GAS の **Business Creation Dialogue Form**（Step 1 Reality → Step 2 90分の対話日時 → 予約確定）へ接続した。
   `/dreamin-spiral/business-creation/inquiry/` ・ `/thanks/` は Production 未公開のまま削除（Superseded）。意味の正本: OS `constitution/brand-architecture/business-creation-architecture.md` §9.5.3、実装: dreamin-spiral-academy `integrations/free-guide-session-console-gas/DialogueIntake.gs`
+- **Transition View（2026-09-18）:** Primary CTA を押した瞬間に「Business Creationの対話ページを開いています。／今、気になっていることを、そのまま聞かせてください。」を出してから Dialogue Form へ移動する（`/gas-transition.js`・OS Vercel → GAS Transition Standard v1・実装記録 [vercel-gas-transition-v1.md](vercel-gas-transition-v1.md)）
 - **Production Gate（追加）:** いまの href は **Safe Review 用の Dialogue Form**（Review deployment・架空データ・本番の Sheet ／ Calendar ／ メールに触れない）。Production 公開時に、Production の Dialogue Form（Guide の Production Web App を Phase 1 版へ更新した後の `?page=booking&type=business_creation_initial`）へ href を置き換える
 
 ## 4. 載せていないもの
@@ -109,3 +110,4 @@ Owner は Preview 全体を「その他は、とてもいい感じ」と確認�
 | 2026-09-18 | Owner Reality Review #2：**APPROVED**（`2aac8bd`）。Release path：PR #104 を Business Creation Public Entrance 全体の release branch として保持し、Public Page 単独では merge しない（main merge ＝ Vercel Production 自動反映のため）。以後は additive commit のみ（`e243cfc` → `2aac8bd` の amend ＋ force-push は Engineer の process slip として記録済み・内容の欠落なし） |
 | 2026-09-18 | Primary CTA を Inquiry Form（Preview）へ接続（§3） |
 | 2026-09-18 | Primary CTA を Business Creation Dialogue Form（GAS・Safe Review）へ接続。Inquiry Form ／ Thanks は Superseded として削除（Production 未公開）。Production Gate に CTA の URL 置き換えを追加（§3） |
+| 2026-09-18 | Primary CTA に Vercel → GAS Transition View を適用（§3） |
