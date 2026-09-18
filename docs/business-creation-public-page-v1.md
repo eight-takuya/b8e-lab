@@ -7,8 +7,8 @@
 
 | 項目 | 内容 |
 |---|---|
-| Status | **OWNER APPROVED COPY REVISION ／ PREVIEW UPDATE**（Owner Reality Review #1 の Copy Revision を反映・§7）。Owner Reality Review #2：**PENDING RECHECK** |
-| Production | **NOT RELEASED**（main へ merge していない） |
+| Status | **OWNER APPROVED**（Owner Reality Review #1 ・ #2 COMPLETE・Copy Revision APPLIED）。Primary CTA は Inquiry Form（Preview）へ接続済み（§3） |
+| Production | **NOT RELEASED**（main へ merge していない。PR #104 ＝ Public Entrance 全体の release branch） |
 | 実装日 | 2026-09-18 |
 | Branch | `feature/business-creation-public-page-v1` |
 | Copy | Business Creation Public Page v1 Information Architecture / Copy（Owner Approved） |
@@ -49,6 +49,7 @@
 
 - **Production 公開前に、Primary CTA を Inquiry Form への link に置き換えること**（Production Launch Gate: Public Page ／ Inquiry Form ／ 特定商取引法に基づく表記 ／ 利用規約 ／ プライバシーポリシー の整合・OS `business-creation-legal-design-v1.md` §18）
 - Guide は Optional の Secondary path。Primary の見え方にしない
+- **2026-09-18 更新:** Inquiry Form v1 の Preview 実装に合わせ、Primary CTA（Hero ・ Final）を `<a href="/dreamin-spiral/business-creation/inquiry/">` へ接続した（Preview branch のみ）。Inquiry Form の実装記録は [business-creation-inquiry-form-v1.md](business-creation-inquiry-form-v1.md)
 
 ## 4. 載せていないもの
 
@@ -102,3 +103,5 @@ Owner は Preview 全体を「その他は、とてもいい感じ」と確認�
 |---|---|
 | 2026-09-18 | **新規作成。** Public Page v1 を Preview として実装。Owner Reality Review 待ち。Production 未公開 |
 | 2026-09-18 | Owner Reality Review #1 の Copy Revision（Owner Approved）を Preview に反映（§7）。Owner Reality Review #2 待ち。Production 未公開 |
+| 2026-09-18 | Owner Reality Review #2：**APPROVED**（`2aac8bd`）。Release path：PR #104 を Business Creation Public Entrance 全体の release branch として保持し、Public Page 単独では merge しない（main merge ＝ Vercel Production 自動反映のため）。以後は additive commit のみ（`e243cfc` → `2aac8bd` の amend ＋ force-push は Engineer の process slip として記録済み・内容の欠落なし） |
+| 2026-09-18 | Primary CTA を Inquiry Form（Preview）へ接続（§3） |

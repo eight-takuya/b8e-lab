@@ -6,6 +6,16 @@
 ---
 
 ---
+## [2026-09-18] — Business Creation Inquiry Form v1：`/dreamin-spiral/business-creation/inquiry/` ・ `/thanks/` を新設（Preview のみ・Owner Reality Review 待ち）
+
+**Scope:** `dreamin-spiral/business-creation/inquiry/index.html`（新規）, `dreamin-spiral/business-creation/thanks/index.html`（新規）, `dreamin-spiral/business-creation/index.html`（Primary CTA を接続）, `docs/business-creation-inquiry-form-v1.md`（新規）, `docs/business-creation-public-page-v1.md`, `docs/site-structure.md`
+**Triggered by:** Business Creation Public Entrance（OS `business-creation-architecture.md` §9.5.3 の 6 fields）
+
+- 既存 apply ／ thanks pattern ・ Form Consent v1.1 ・ `_gotcha` honeypot ・ AJAX 送信を再利用。style.css は変更なし
+- Formspree 専用 endpoint は Owner が作成（未作成）。設定までは非送信モード
+- **Production merge ・ 公開はしていない**（PR #104 を release branch として継続）
+
+---
 ## [2026-09-18] — Business Creation Public Page v1：Owner Reality Review #1 の Copy Revision を Preview に反映（Owner Reality Review #2 待ち）
 
 **Scope:** `dreamin-spiral/business-creation/index.html`（表示文言のみ）, `docs/business-creation-public-page-v1.md` §7

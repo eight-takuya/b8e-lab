@@ -63,7 +63,9 @@ B8E  /
    ├─ 3 Weeks            /dreamin-spiral/3-weeks/
    ├─ Community          /dreamin-spiral/community/
    ├─ My Life            /dreamin-spiral/my-life/
-   ├─ Business Creation  /dreamin-spiral/business-creation/   ← Public Page v1（Preview・Owner Reality Review 待ち・Production 未公開）
+   ├─ Business Creation  /dreamin-spiral/business-creation/   ← Public Page v1（Owner Approved・Preview のみ・Production 未公開）
+   │  ├─ inquiry/        /dreamin-spiral/business-creation/inquiry/   ← Inquiry Form v1（Preview のみ・Production 未公開）
+   │  └─ thanks/         /dreamin-spiral/business-creation/thanks/    ← Inquiry 送信後（noindex・Preview のみ）
    └─ Library            /dreamin-spiral/library/   ← Service ではない
 ```
 
@@ -82,7 +84,7 @@ B8E  /
 | `dreamin-spiral/community/index.html` | `/dreamin-spiral/community/` | Community Service Page（CTA「Communityに参加する」→ Current Community Stripe Payment Link・月額・Community Current Entrance v1・2026-09-16） |
 | `dreamin-spiral/community/complete/index.html` | `/dreamin-spiral/community/complete/` | Community Complete Page（Stripe Checkout 完了後の redirect 先・noindex） |
 | `dreamin-spiral/guide/index.html` | `/dreamin-spiral/guide/` | Guide Service Page（CTA「Guide（無料）に申し込む」→ 既存 Booking System・Guide Current Entrance v1・2026-09-16） |
-| `dreamin-spiral/business-creation/index.html` | `/dreamin-spiral/business-creation/` | Business Creation Service Page（Public Page v1・**Preview のみ・Production 未公開**）。Primary CTA「Business Creationについて話してみる」は Inquiry Form 未実装のため link ではない要素 ／ Secondary「Guide（無料）について見る」→ `/dreamin-spiral/guide/`。実装記録：[business-creation-public-page-v1.md](business-creation-public-page-v1.md) |
+| `dreamin-spiral/business-creation/index.html` | `/dreamin-spiral/business-creation/` | Business Creation Service Page（Public Page v1・**Preview のみ・Production 未公開**）。Primary CTA「Business Creationについて話してみる」→ `/dreamin-spiral/business-creation/inquiry/`（Inquiry Form v1・Preview のみ。Formspree endpoint は Owner 作成待ち）／ Secondary「Guide（無料）について見る」→ `/dreamin-spiral/guide/`。実装記録：[business-creation-public-page-v1.md](business-creation-public-page-v1.md) |
 
 入口は TOP の `section#dreamin-spiral`（Dreamin' Spiral 🌱・Service Family 5 件）と、2026-09-17 以降は Dreamin' Spiral 🌱 Home（`/dreamin-spiral/`）。Header / Footer の `Dreamin' Spiral 🌱` は Home v1 まではこの anchor を、以降は `/dreamin-spiral/` を指す（旧 `academy.html` / `academy/*` は Phase 10-B3 で退役）。
 Community は Community Current Entrance v1 で接続。Business Creation は Public Page v1（Preview）で TOP ・ Home の item から link する（Production 未公開）（Guide は [guide-current-entrance-v1.md](guide-current-entrance-v1.md)、Community は [community-current-entrance-v1.md](community-current-entrance-v1.md) で接続）。

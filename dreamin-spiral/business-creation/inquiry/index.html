@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Dreamin' Spiral Business Creationについて話してみるためのフォーム。今の現実（リアリティ）から、まず一度お話しします。">
+  <title>Business Creationについて話してみる | Dreamin' Spiral Business Creation | B8E</title>
+  <link rel="canonical" href="https://www.b8e.co.jp/dreamin-spiral/business-creation/inquiry/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Business Creationについて話してみる | Dreamin' Spiral Business Creation | B8E">
+  <meta property="og:url" content="https://www.b8e.co.jp/dreamin-spiral/business-creation/inquiry/">
+  <link rel="stylesheet" href="/style.css">
+  <script defer src="/_vercel/insights/script.js"></script>
+</head>
+
+<body class="ds-page">
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="logo-mark">
+      <svg class="logo-lemniscate" viewBox="0 0 80 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M40,16 C40,10.5 48,6 58,6 C68,6 76,10.5 76,16 C76,21.5 68,26 58,26 C48,26 40,21.5 40,16 C40,10.5 32,6 22,6 C12,6 4,10.5 4,16 C4,21.5 12,26 22,26 C32,26 40,21.5 40,16 Z" fill="none" stroke="#c9a882" stroke-width="1.1" stroke-linejoin="round"/>
+      </svg>
+      <p class="logo-wordmark">B8E</p>
+    </div>
+    <p class="tagline">BEAT EIGHT EMOTION</p>
+  </header>
+
+  <!-- Navigation -->
+  <nav class="site-nav">
+    <a href="/index.html">TOP</a>
+    <a href="/dx.html">DX支援</a>
+    <a href="/dc.html">企業型DC</a>
+    <a href="/dreamin-spiral/">Dreamin' Spiral 🌱</a>
+    <a href="/about.html">About</a>
+  </nav>
+
+  <main>
+
+    <!-- Hero -->
+    <section class="thanks-hero">
+      <span class="hero-label">Dreamin' Spiral Business Creation</span>
+      <h1 class="hero-copy">
+        Business Creationについて<br>
+        話してみる
+      </h1>
+    </section>
+
+    <div class="page-content">
+
+      <!-- Intro（申込 ・ 審査ではなく、最初の対話の入口） -->
+      <div class="section-block ds-service-section">
+        <p>
+          <span class="ds-phrase">今、気になっていることや、</span><br>
+          <span class="ds-phrase">Businessの現在地、</span><br>
+          <span class="ds-phrase">AIやITとの距離感などを、</span><br>
+          <span class="ds-phrase">そのまま聞かせてください。</span>
+        </p>
+        <p>
+          <span class="ds-phrase">送信後、</span><span class="ds-phrase">すぐに契約や決済へ</span><span class="ds-phrase">進むことはありません。</span>
+        </p>
+        <p>
+          <span class="ds-phrase">まず一度お話ししながら、</span><br>
+          <span class="ds-phrase">今の現実（リアリティ）を</span><span class="ds-phrase">一緒に見ていきます。</span>
+        </p>
+      </div>
+
+      <!-- Business Creation Inquiry Form v1
+           Business Creation 専用の Inquiry（OS business-creation-architecture.md §9.5.3）。Application ・ 審査 ・ Fit Gate ・ 決済の入口ではない。
+           Formspree: Business Creation 専用 endpoint は Owner が Dashboard で作成する（作成後に ENDPOINT へ設定する）。
+           既存 endpoint（mykleakb = B8E 問い合わせ ／ mwlpenvp = 3 Weeks ／ xbglradg = My Life ／ xgoqybbl = Academy Session）は流用しない。
+           endpoint 未設定の間は送信しない（Preview 用の非送信モード）。 -->
+      <div class="section-block">
+        <form class="apply-form ds-apply-form" id="bc-inquiry-form" method="post" novalidate>
+
+          <input type="hidden" name="form_type" value="business_creation_inquiry">
+          <input type="hidden" name="site_version" value="business-creation-inquiry-v1">
+          <input type="hidden" name="source_page" id="source_page" value="direct">
+          <input type="hidden" name="submitted_at" id="submitted_at" value="">
+          <!-- spam guard（既存 Contact Form と同じ Formspree honeypot） -->
+          <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+
+          <div class="ds-field">
+            <label for="name">お名前<span class="ds-required">必須</span></label>
+            <input type="text" id="name" name="name" placeholder="例）山田　太郎" required autocomplete="name">
+          </div>
+
+          <div class="ds-field">
+            <label for="email">メールアドレス<span class="ds-required">必須</span></label>
+            <input type="email" id="email" name="email" required autocomplete="email"
+                   pattern="[^\s@]+@[^\s@]+\.[^\s@]+">
+          </div>
+
+          <div class="ds-field">
+            <label for="current_concern">今、気になっていること</label>
+            <textarea id="current_concern" name="current_concern" aria-describedby="current_concern_note"></textarea>
+            <p class="ds-field-note" id="current_concern_note">まとまっていなくても大丈夫です。今感じていることを、そのまま書いてください。</p>
+          </div>
+
+          <div class="ds-field">
+            <label for="business_current">Businessの現在地</label>
+            <textarea id="business_current" name="business_current"></textarea>
+          </div>
+
+          <div class="ds-field">
+            <label for="it_ai_current">IT / AIについての現在地</label>
+            <textarea id="it_ai_current" name="it_ai_current"></textarea>
+          </div>
+
+          <div class="ds-field">
+            <label for="conversation_topic">話してみたいこと</label>
+            <textarea id="conversation_topic" name="conversation_topic"></textarea>
+          </div>
+
+          <p class="ds-field-note">パスワードや機密情報などは入力しないでください。</p>
+
+          <!-- Form Consent v1.1（b8e-lab docs/sales-foundation-v1.md §6 と同じ文言 ・ 仕様） -->
+          <div class="ds-consent">
+            <label for="terms_privacy_consent">
+              <input type="checkbox" id="terms_privacy_consent" name="terms_privacy_consent" value="agreed" required>
+              <span><a href="/terms/" target="_blank" rel="noopener">利用規約</a>および<a href="/privacy-policy/" target="_blank" rel="noopener">プライバシーポリシー</a>を確認し、同意します。</span>
+            </label>
+          </div>
+
+          <p class="ds-form-error" id="bc-form-error" role="alert" hidden></p>
+
+          <button type="submit" id="bc-submit">送信する</button>
+        </form>
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="site-footer-inner">
+
+      <div class="footer-brand">
+        <span class="brand-name">BEAT EIGHT EMOTION株式会社</span>
+        <p>
+          テクノロジーと人間の内側が交わる場所で、<br>
+          変容を共にする。
+        </p>
+      </div>
+
+      <nav class="footer-links">
+        <a href="/index.html">TOP</a>
+        <a href="/dx.html">DX支援</a>
+        <a href="/dc.html">企業型DC</a>
+        <a href="/dreamin-spiral/">Dreamin' Spiral 🌱</a>
+        <a href="/about.html">About</a>
+        <a href="mailto:contact@b8e.co.jp">お問い合わせ</a>
+        <a href="/privacy-policy/">プライバシーポリシー</a>
+        <a href="/terms/">利用規約</a>
+        <a href="/legal/">特定商取引法に基づく表記</a>
+      </nav>
+
+    </div>
+    <div class="footer-bottom">
+      © 2026 BEAT EIGHT EMOTION株式会社
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      // Business Creation 専用 Formspree endpoint（Owner が Dashboard で作成後に設定する。例: 'https://formspree.io/f/xxxxxxxx'）
+      // 空の間は Preview 用の非送信モード（送信せず、Thanks へも進まない）
+      var ENDPOINT = '';
+      var THANKS = '/dreamin-spiral/business-creation/thanks/';   // ルート相対。Preview / Production どちらでも解決する
+      // 既存 Form と同じ Owner Approved Error Copy
+      var ERROR_TEXT = '送信できませんでした。お手数ですが、もう一度お試しください。';
+      var PREVIEW_TEXT = 'Preview：送信先（Formspree）の設定前のため、この画面からはまだ送信されません。';
+
+      var form     = document.getElementById('bc-inquiry-form');
+      var sendBtn  = document.getElementById('bc-submit');
+      var errorBox = document.getElementById('bc-form-error');
+      if (!form) { return; }
+
+      // 運用トラッキング用 hidden 項目（利用者には表示しない）
+      var ref = document.referrer || '';
+      var src = document.getElementById('source_page');
+      if (src && ref) {
+        try { src.value = new URL(ref).pathname || 'direct'; } catch (e) { src.value = 'direct'; }
+      }
+
+      function trimField(id) {
+        var el = document.getElementById(id);
+        if (el) { el.value = el.value.trim(); }
+      }
+
+      form.addEventListener('submit', function (event) {
+        event.preventDefault();
+        if (sendBtn.disabled) { return; }   // 二重送信防止
+
+        // 前後空白を除去してからブラウザ標準 Validation にかける（既存 Form と同じ）
+        ['name', 'email', 'current_concern', 'business_current', 'it_ai_current', 'conversation_topic'].forEach(trimField);
+        if (!form.reportValidity()) { return; }
+
+        errorBox.hidden = true;
+        errorBox.textContent = '';
+
+        if (!ENDPOINT) {
+          errorBox.textContent = PREVIEW_TEXT;
+          errorBox.hidden = false;
+          return;
+        }
+
+        sendBtn.disabled = true;
+        var at = document.getElementById('submitted_at');
+        if (at) { at.value = new Date().toISOString(); }
+
+        fetch(ENDPOINT, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { 'Accept': 'application/json' }
+        })
+          .then(function (response) {
+            return response.json().catch(function () { return {}; })
+              .then(function (data) { return { ok: response.ok, data: data }; });
+          })
+          .then(function (result) {
+            if (result.ok && result.data && result.data.ok !== false) {
+              // 送信成功時のみ Thanks へ進む
+              window.location.assign(THANKS);
+              return;
+            }
+            throw new Error('submission failed');
+          })
+          .catch(function () {
+            // 失敗時は Thanks へ進ませず、入力内容を保持したまま再送信できるようにする
+            sendBtn.disabled = false;
+            errorBox.textContent = ERROR_TEXT;
+            errorBox.hidden = false;
+          });
+      });
+    })();
+  </script>
+
+</body>
+</html>
