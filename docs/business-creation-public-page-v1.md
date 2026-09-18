@@ -53,7 +53,8 @@
 - **2026-09-18 更新（Dialogue Entry Integration・Architect Decision）:** Formspree の Inquiry Form → Thanks → 日程調整（name ／ email の二重入力）をやめ、Primary CTA（Hero ・ Final）を GAS の **Business Creation Dialogue Form**（Step 1 Reality → Step 2 90分の対話日時 → 予約確定）へ接続した。
   `/dreamin-spiral/business-creation/inquiry/` ・ `/thanks/` は Production 未公開のまま削除（Superseded）。意味の正本: OS `constitution/brand-architecture/business-creation-architecture.md` §9.5.3、実装: dreamin-spiral-academy `integrations/free-guide-session-console-gas/DialogueIntake.gs`
 - **Transition View（2026-09-18）:** Primary CTA を押した瞬間に「Business Creationの対話ページを開いています。／今、気になっていることを、そのまま聞かせてください。」を出してから Dialogue Form へ移動する（`/gas-transition.js`・OS Vercel → GAS Transition Standard v1・実装記録 [vercel-gas-transition-v1.md](vercel-gas-transition-v1.md)）
-- **Production Gate（追加）:** いまの href は **Safe Review 用の Dialogue Form**（Review deployment・架空データ・本番の Sheet ／ Calendar ／ メールに触れない）。Production 公開時に、Production の Dialogue Form（Guide の Production Web App を Phase 1 版へ更新した後の `?page=booking&type=business_creation_initial`）へ href を置き換える
+- **Production Gate（2026-09-19 更新）:** href は **Production の Dialogue Form**（Guide の Production Web App・M5 で Phase 1 版へ更新済み・URL 不変の `?page=booking&type=business_creation_initial`）。
+  Production の Business Creation guard が OFF の間、この行き先は「現在ご予約を受け付けていません」だけを表示する（予約できない）。公開は guard ON と同時（OS Production Migration v1 M6）
 
 ## 4. 載せていないもの
 
@@ -111,3 +112,4 @@ Owner は Preview 全体を「その他は、とてもいい感じ」と確認�
 | 2026-09-18 | Primary CTA を Inquiry Form（Preview）へ接続（§3） |
 | 2026-09-18 | Primary CTA を Business Creation Dialogue Form（GAS・Safe Review）へ接続。Inquiry Form ／ Thanks は Superseded として削除（Production 未公開）。Production Gate に CTA の URL 置き換えを追加（§3） |
 | 2026-09-18 | Primary CTA に Vercel → GAS Transition View を適用（§3） |
+| 2026-09-19 | Primary CTA（2 件）を Safe Review の Dialogue Form から **Production の Dialogue Form**（Guide の Production Web App・`&type=business_creation_initial`）へ置き換え（M6 準備・未 merge） |
