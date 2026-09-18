@@ -6,6 +6,16 @@
 ---
 
 ---
+## [2026-09-18] — Business Creation Public Page v1：`/dreamin-spiral/business-creation/` を新設（Preview のみ・Owner Reality Review 待ち）
+
+**Scope:** `dreamin-spiral/business-creation/index.html`（新規）, `dreamin-spiral/index.html` ・ `index.html`（Business Creation item に「詳しく見る」link）, `style.css`（Business Creation 用の scoped rule のみ）, `docs/business-creation-public-page-v1.md`（新規）, `docs/site-structure.md`
+**Triggered by:** Business Creation Public Page v1 Information Architecture / Copy（Owner Approved）。正本は OS repo `constitution/brand-architecture/business-creation-architecture.md` §9.5 ・ `docs/repository-architecture/dreamin-spiral-offer-definition.md` §5
+
+- 既存 Service Page pattern（`.ds-service-hero` ・ `.ds-service-section` ・ `.ds-service-list` ・ `.ds-offer-summary` ・ `.ds-service-note` ・ `.ds-phrase`）を再利用。card ・ 画像 ・ 図は追加していない
+- Primary CTA は Inquiry Form 未実装のため link ではない要素（見え方は同じ）。Payment Link ・ 振込先 ・ 分割 ・ 追加6か月の価格は載せていない
+- **Production merge ・ 公開はしていない**（Owner Reality Review で停止）
+
+---
 ## [2026-09-17] — Production Release / Closeout：Dreamin' Spiral 🌱 Home v1 ・ Library Wording Currentization を CLOSED
 
 **Scope:** PR #102（`79d927b`）の Production 反映・実装記録の Status

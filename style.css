@@ -1723,6 +1723,54 @@ a:hover {
   color: #2f2b27;
 }
 
+/* Business Creation（Public Page v1）：本文中で明確に読ませる一文。Guide の .ds-offer-summary + .ds-service-statement と同じ色（Guide の見え方は変わらない） */
+.ds-service-section .ds-service-statement {
+  color: #2f2b27;
+}
+
+/* Business Creation（Public Page v1）：Primary CTA の下に置く静かな Secondary link（Guide は Optional path。Primary と同じ見え方にしない） */
+.ds-service-secondary {
+  display: table;
+  margin: 20px auto 0;
+  font-size: 0.85rem;
+  letter-spacing: 0.03em;
+}
+.ds-service-hero .ds-service-secondary {
+  color: #a9a49d;
+}
+.ds-service-hero .ds-service-secondary:hover {
+  color: #c9c5bf;
+}
+.ds-service-section .ds-service-secondary {
+  margin: 20px 0 0;
+  color: #666;
+}
+.ds-service-section .ds-service-secondary + .ds-service-note {
+  margin-top: 28px;
+}
+
+/* Business Creation（Public Page v1）：Partner の肩書き ・ 名前（Portrait なし・text のみ） */
+.ds-service-section .ds-service-profile {
+  margin-top: 40px;
+  padding-top: 32px;
+  border-top: 1px solid #efedea;
+}
+.ds-service-section .ds-service-profile-title {
+  font-size: 0.85rem;
+  color: #9b7b5c;
+  letter-spacing: 0.05em;
+  line-height: 1.9;
+}
+.ds-service-section .ds-service-profile-name {
+  margin-top: 12px;
+  font-size: 1rem;
+  color: #2a2a2a;
+  letter-spacing: 0.08em;
+}
+.ds-service-section .ds-service-profile-name + .ds-service-note {
+  margin-top: 16px;
+}
+
 /* Library（Phase 10-B2）：Resource 一覧は TOP の .ds-family-* を再利用する。
    .page-content 内では汎用の .section-block h3（小さな大文字見出し）が優先されるため、TOP と同じ見え方に戻す */
 .ds-service-section .ds-family-list {
