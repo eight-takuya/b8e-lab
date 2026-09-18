@@ -7,7 +7,7 @@
 
 | 項目 | 内容 |
 |---|---|
-| Status | **PREVIEW IMPLEMENTED ／ OWNER REALITY REVIEW PENDING** |
+| Status | **OWNER APPROVED COPY REVISION ／ PREVIEW UPDATE**（Owner Reality Review #1 の Copy Revision を反映・§7）。Owner Reality Review #2：**PENDING RECHECK** |
 | Production | **NOT RELEASED**（main へ merge していない） |
 | 実装日 | 2026-09-18 |
 | Branch | `feature/business-creation-public-page-v1` |
@@ -27,11 +27,11 @@
 
 | # | Section | 使った既存 pattern |
 |---|---|---|
-| 1 | Hero（Businessを、一緒に創る。） | `.ds-service-hero` ・ `.ds-service-eyebrow` ・ `.ds-service-title` ・ `.ds-service-lead` ×2 ・ `.ds-service-cta` |
+| 1 | Hero（あなたのBusinessを、一緒に創る。） | `.ds-service-hero` ・ `.ds-service-eyebrow` ・ `.ds-service-title` ・ `.ds-service-lead` ×2 ・ `.ds-service-cta` |
 | 2 | Starting Reality（今、どこにいても。そこから始められます。） | `.ds-service-list`（4 つの Starting Reality。card にしない） |
 | 3 | 創るのは、Businessだけではありません。 | 本文 ＋ 明確に読ませる一文 `.ds-service-statement` |
 | 4 | 現実（リアリティ）から始まるCreation。 | 本文 ＋ `.ds-service-statement` |
-| 5 | Technologyは、必要な分だけ。 | 本文 ＋ 外部費用の一文 `.ds-service-note` |
+| 5 | テクノロジーは、必要な分だけ。 | 本文 ＋ 外部費用の一文 `.ds-service-note` |
 | 6 | 構想を、現実の仕組みへ。（Partner） | 本文 ＋ Partner の肩書き ・ 名前 ・ 説明（text のみ） |
 | 7 | Business Creationについて（内容・料金） | `.ds-service-list`（共通の内容）・ `.ds-offer-summary`（6か月 ／ 12か月を同じ表の並列の行）・ `.ds-service-note` ×2 |
 | 8 | まず、今の現実（リアリティ）から話してみませんか。 | 本文 ・ `.ds-service-cta` ・ Secondary link ・ `.ds-service-note` |
@@ -74,8 +74,30 @@
 | `.ds-service-secondary`（Hero ／ section） | 静かな Secondary link |
 | `.ds-service-profile` ・ `-title` ・ `-name` | Partner の肩書き ・ 名前 |
 
-## 7. Change History
+## 7. Owner Reality Review #1 — Copy Revision（Owner Approved・2026-09-18）
+
+Owner は Preview 全体を「その他は、とてもいい感じ」と確認。一般の読者に理解負荷を与える英語表記だけを、自然な日本語へ整えた。
+**Business ／ Creation ／ Creation System は Business Creation の Core language として残す。** 機械的な全置換はしていない（文脈ごとに判断）。
+
+| 箇所 | Before | After |
+|---|---|---|
+| Hero H1 | Businessを、一緒に創る。 | **あなたのBusinessを、一緒に創る。** |
+| Hero Lead | そして、その後も自分でBusinessを創り、 | そして、その後も自分でBusinessを**創り続け**、 |
+| Starting Reality（1 ・ 2） | Offer ／ OfferやService | 商品・サービス |
+| Starting Reality（3） | WebsiteやServiceはある。 | Webサイトやサービスはある。 |
+| Starting Reality の結び | 今ここからCreationを始めるためのStarting Realityです。 | ここからCreationを始めるための**現在地**です。 |
+| 創るものの例示 | Offer、Website、申込、決済、Portal、Content、Operation、AI活用。 | 商品・サービス、Webサイト、申込、決済、クライアント専用ページ、発信コンテンツ、ビジネスの運営やサービスの運用、AI活用。 |
+| Technology 見出し | Technologyは、必要な分だけ。 | **テクノロジーは、必要な分だけ。** |
+| Technology 本文 | …GAS、Website、Automationなども、 | …GAS、Webサイト、Automationなども、 |
+
+- 公開ページの表示文言のみの変更。OS の Canonical 概念（Starting Reality ・ Offer Definition ・ Creation Portal ／ Workspace 等）・ 技術用語 ・ HTML comment ・ CSS class は変えていない
+- 「Creation Portal / Workspace」（内容・料金の提供内容）・ Automation は Owner の変更指定がないため維持
+- Layout ・ CSS ・ CTA ・ 料金 ・ Guide の Secondary path ・ Partner ・ Final CTA ・ SEO は変更なし
+- Production：**NOT RELEASED**
+
+## 8. Change History
 
 | Date | 内容 |
 |---|---|
 | 2026-09-18 | **新規作成。** Public Page v1 を Preview として実装。Owner Reality Review 待ち。Production 未公開 |
+| 2026-09-18 | Owner Reality Review #1 の Copy Revision（Owner Approved）を Preview に反映（§7）。Owner Reality Review #2 待ち。Production 未公開 |

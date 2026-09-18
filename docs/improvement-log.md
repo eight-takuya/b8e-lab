@@ -6,6 +6,15 @@
 ---
 
 ---
+## [2026-09-18] — Business Creation Public Page v1：Owner Reality Review #1 の Copy Revision を Preview に反映（Owner Reality Review #2 待ち）
+
+**Scope:** `dreamin-spiral/business-creation/index.html`（表示文言のみ）, `docs/business-creation-public-page-v1.md` §7
+**Triggered by:** Owner Reality Review #1（Owner Approved Copy Revision）
+
+- H1「あなたのBusinessを、一緒に創る。」・ Lead「創り続け」・ Offer → 商品・サービス ・ Website → Webサイト ・ Service → サービス ・ 結び「現在地」・ 例示（クライアント専用ページ ／ 発信コンテンツ ／ ビジネスの運営やサービスの運用）・ 見出し「テクノロジーは、必要な分だけ。」
+- Business ／ Creation ／ Creation System は維持。Layout ・ CSS ・ CTA ・ 料金は変更なし。Production 未公開
+
+---
 ## [2026-09-18] — Business Creation Public Page v1：`/dreamin-spiral/business-creation/` を新設（Preview のみ・Owner Reality Review 待ち）
 
 **Scope:** `dreamin-spiral/business-creation/index.html`（新規）, `dreamin-spiral/index.html` ・ `index.html`（Business Creation item に「詳しく見る」link）, `style.css`（Business Creation 用の scoped rule のみ）, `docs/business-creation-public-page-v1.md`（新規）, `docs/site-structure.md`
