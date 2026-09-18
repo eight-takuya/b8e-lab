@@ -5,7 +5,7 @@
 
 | 項目 | 内容 |
 |---|---|
-| Status | **PREVIEW IMPLEMENTED** ／ Owner Reality Review：PENDING |
+| Status | **Guide: PRODUCTION RELEASED**（2026-09-18・PR #105・Owner Reality Review APPROVED・Production Verification PASS）／ Business Creation: APPROVED IN PREVIEW（PR #104・未公開） |
 | 共通の振る舞い | `/gas-transition.js`（1 ファイル・style も同梱。`style.css` は変更しない） |
 | 実装日 | 2026-09-18 |
 
@@ -39,13 +39,24 @@
 
 | Page | CTA | 行き先 | 状態 |
 |---|---|---|---|
-| `/dreamin-spiral/business-creation/`（Hero ・ Final） | Business Creationについて話してみる | Business Creation Dialogue Form（GAS・いまは Safe Review 用） | PR #104（Preview のみ・Production 未公開） |
-| `/dreamin-spiral/guide/`（Hero ・ Final） | Guide（無料）に申し込む | Guide 予約ページ（GAS・Production） | Guide Transition PR（Preview。merge ＝ Production 反映のため Owner Reality Review 後） |
+| `/dreamin-spiral/business-creation/`（Hero ・ Final） | Business Creationについて話してみる | Business Creation Dialogue Form（GAS・いまは Safe Review 用） | Owner Reality Review APPROVED・PR #104（Preview のみ・Production 未公開） |
+| `/dreamin-spiral/guide/`（Hero ・ Final） | Guide（無料）に申し込む | Guide 予約ページ（GAS・Production・行き先は release 前と同一） | **Production Released**（PR #105 merge `2f04537`・2026-09-18） |
 
 - B8E Owner Portal のカードは新しいタブで開く launcher のため、適用しない（正本 §2-1）
 
-## 4. Change History
+## 4. Production Verification（Guide・2026-09-18）
+
+`https://www.b8e.co.jp/dreamin-spiral/guide/` で実施（headless Chromium・実際の mouse 入力。予約は送信していない）:
+
+- 配信中の `gas-transition.js` ・ Guide Page が merge 後の main と一致
+- 「Guide（無料）に申し込む」（2 箇所）の行き先が release 前と同一の Guide 予約ページ（GAS Production）
+- 押した瞬間に承認済みの Transition View（見出し ・ 添える一文 ・ `role="status"`）
+- 移動は 1 回だけ ・ 押してから 400ms 以内に開始 ・ Guide 予約ページ（「Guide（無料） 日程選択」）が開く
+- 戻るで Guide Page に戻る（Transition View は残らない）・ 他の link は通常どおり
+
+## 5. Change History
 
 | Date | 内容 |
 |---|---|
 | 2026-09-18 | **新規作成。** `gas-transition.js` を追加（Preview）。Business Creation（PR #104）・ Guide（別 PR）へ適用 |
+| 2026-09-18 | **Guide: Production Released。** Owner Reality Review（Business Creation ・ Guide とも APPROVED）後に PR #105 を merge。Production Verification PASS（§4）。Business Creation は PR #104 のまま（未公開） |
