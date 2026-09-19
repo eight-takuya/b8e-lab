@@ -6,6 +6,17 @@
 ---
 
 ---
+## [2026-09-19] — Legal Pages v0.4：Dreamin' Spiral Business Creation（無料の初回対話）を 3 ページへ追加（Preview・Owner 確認待ち）
+
+**Scope:** `legal/index.html`, `terms/index.html`, `privacy-policy/index.html`, `docs/sales-foundation-v1.md`
+**Triggered by:** OS Business Creation Legal Design v1 §18（Production Launch Gate）・ Legal Review（D-1 ・ D-2 問題なし・2026-09-19）
+
+- 特定商取引法に基づく表記: 「Offer確定後に追加します」を置き換え。価格（6か月 880,000円 ／ 12か月 1,600,000円（税込））・ 無料の初回対話（90分・申込 ／ 契約 ／ 支払いではない）・ 外部サービス費用（有料サービス開始後）・ 支払方法 ・ 支払時期 ・ 役務の提供時期 ・ キャンセル（自動更新なし）
+- 利用規約: 第1条に Business Creation を追加（有料サービスは個別契約が優先）・ 第3条（初回対話の予約は申込 ／ 契約ではない）・ 第4条（有料サービスは個別契約の合意で成立 → 支払い）・ 最終改定日
+- プライバシーポリシー: 取得する情報（Business に関する情報）・ 利用目的（初回対話の日程調整 ・ 準備 ・ 実施 ・ ご提案の作成）・ 最終改定日。外部サービスの一覧は変更なし
+- Business Creation の公開（PR #104）とは別の PR。**この PR を先に（または同時に）merge してから Business Creation を公開する**
+
+---
 ## [2026-09-18] — Production Release：Guide Page の Vercel → GAS Transition（PR #105）
 
 **Scope:** `gas-transition.js`, `dreamin-spiral/guide/index.html`, `docs/vercel-gas-transition-v1.md`
