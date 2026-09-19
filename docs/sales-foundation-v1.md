@@ -21,9 +21,9 @@
 
 | Public URL（Canonical） | Source | 文書版 | 日付表示 | 対象 |
 |---|---|---|---|---|
-| `https://www.b8e.co.jp/privacy-policy/` | `privacy-policy/index.html` | Privacy Policy **v0.3** | 制定日：2026年9月15日 | BEAT EIGHT EMOTION株式会社の Web サイト・各種サービス |
-| `https://www.b8e.co.jp/terms/` | `terms/index.html` | Dreamin' Spiral 利用規約 **v0.3** | 制定日：2026年9月15日 | Dreamin' Spiral Guide / 3 Weeks / Community / My Life |
-| `https://www.b8e.co.jp/legal/` | `legal/index.html` | 特定商取引法に基づく表記 **v0.3** | 最終更新日：2026年9月15日 | 有料サービス（3 Weeks / Community / My Life） |
+| `https://www.b8e.co.jp/privacy-policy/` | `privacy-policy/index.html` | Privacy Policy **v0.4** | 制定日：2026年9月15日 ／ 最終改定日：2026年9月19日 | BEAT EIGHT EMOTION株式会社の Web サイト・各種サービス |
+| `https://www.b8e.co.jp/terms/` | `terms/index.html` | Dreamin' Spiral 利用規約 **v0.4** | 制定日：2026年9月15日 ／ 最終改定日：2026年9月19日 | Dreamin' Spiral Guide / 3 Weeks / Community / My Life / Business Creation |
+| `https://www.b8e.co.jp/legal/` | `legal/index.html` | 特定商取引法に基づく表記 **v0.4** | 最終更新日：2026年9月19日 | 有料サービス（3 Weeks / Community / My Life / Business Creation） |
 
 - URL は **末尾スラッシュのディレクトリ URL**（`/privacy-policy/` 等）を Public Canonical とする。
   サイトは `vercel.json` を持たず Clean URLs も無効のため、`<dir>/index.html` の静的配置で実現している（新しい Routing の導入なし）
@@ -72,7 +72,7 @@ Sales Foundation v1 で **Owner Approved（2026-09-15）となった次の価格
 | Dreamin' Spiral My Life | 600,000円（税込） | OS Offer Definition §2（Offer v1） |
 
 - **Dreamin' Spiral Guide** は無料サービス。利用規約の対象には含め、特商法の有料サービス一覧には載せない
-- **Dreamin' Spiral Business Creation** は Offer Detail が Current Canonical ではないため、価格・販売条件を載せていない。**Offer 確定後に利用規約・特商法表記へ追加する**
+- **Dreamin' Spiral Business Creation**（2026-09-19・v0.4）: 無料の初回対話（90分・申込 ／ 契約 ／ 支払いではない）と、有料サービス（6か月 880,000円 ／ 12か月 1,600,000円（税込）・ご提案 → 個別契約 → 支払い）を分けて、特商法表記 ・ 利用規約 ・ プライバシーポリシーへ追加した（Legal Review で問題なし・OS Business Creation Legal Design v1 §18 の Production Launch Gate）。有料サービスの中途終了 ・ 分割 ・ 延長 ・ IP 等の詳細は、有料の受入開始の前に別途扱う
 - 旧 Academy / Premium 等の Historical ページ（`academy/*`）の文言・価格表示方針は本 Sales Foundation では変更していない
 
 ## 5. Dreamin' Spiral Community の解約運用（Legal 文言との整合）
@@ -155,6 +155,7 @@ Hidden：`form_type = dreamin_spiral_my_life`・`source_page`・`submitted_at`�
 
 | Date | 内容 |
 |---|---|
+| 2026-09-19 | **Legal Pages v0.4:** Dreamin' Spiral Business Creation を 3 ページへ追加（特商法表記: 価格 ・ 無料の初回対話 ・ 外部サービス費用 ・ 支払方法 ／ 時期 ・ 提供時期 ・ キャンセル／ 利用規約: 第1条 ・ 第3条 ・ 第4条／ プライバシーポリシー: 取得する情報 ・ 利用目的）。Legal Review（D-1 特商法 ・ D-2 利用規約）問題なし。最終更新日 ／ 最終改定日 2026年9月19日 |
 | 2026-09-15 | **Legal Foundation v1 CLOSED。** PR #84（b8e-lab・`081fa8a`）・PR #132（academy・`483e5a2`）を merge。本番で 3 Legal Page・Footer Legal リンク・© 2026・日付表示を確認 |
 | 2026-09-15 | Legal Page に制定日 / 最終更新日（2026年9月15日）を追加。全公開ページの Footer 著作権表示を © 2026 へ更新（Owner / Architect Approved） |
 | 2026-09-15 | 新規作成。Legal Page 3 本（v0.3）・Footer Legal Navigation・正式窓口・Community 解約運用・Form Consent v1.1・Form v1.1 Reference を記録 |
