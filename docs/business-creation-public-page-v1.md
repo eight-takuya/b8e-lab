@@ -7,8 +7,8 @@
 
 | 項目 | 内容 |
 |---|---|
-| Status | **OWNER APPROVED**（Owner Reality Review #1 ・ #2 COMPLETE・Copy Revision APPLIED）。Primary CTA は **Business Creation Dialogue Form（GAS・Safe Review）** へ接続（§3・2026-09-18 Dialogue Entry Integration） |
-| Production | **NOT RELEASED**（main へ merge していない。PR #104 ＝ Public Entrance 全体の release branch） |
+| Status | **OWNER APPROVED**（Owner Reality Review #1 ・ #2 COMPLETE・Copy Revision APPLIED）。Primary CTA は **Business Creation Dialogue Form（GAS・Production）** へ接続（§3） |
+| Production | **LIVE**（2026-09-19・PR #104 merge・法的ページ（PR #107）と Business Creation の受付開始の後に公開） |
 | 実装日 | 2026-09-18 |
 | Branch | `feature/business-creation-public-page-v1` |
 | Copy | Business Creation Public Page v1 Information Architecture / Copy（Owner Approved） |
@@ -113,3 +113,4 @@ Owner は Preview 全体を「その他は、とてもいい感じ」と確認�
 | 2026-09-18 | Primary CTA を Business Creation Dialogue Form（GAS・Safe Review）へ接続。Inquiry Form ／ Thanks は Superseded として削除（Production 未公開）。Production Gate に CTA の URL 置き換えを追加（§3） |
 | 2026-09-18 | Primary CTA に Vercel → GAS Transition View を適用（§3） |
 | 2026-09-19 | Primary CTA（2 件）を Safe Review の Dialogue Form から **Production の Dialogue Form**（Guide の Production Web App・`&type=business_creation_initial`）へ置き換え（M6 準備・未 merge） |
+| 2026-09-19 | **Production Live**（PR #104 merge）。Status ・ Production 欄を現在の状態へ（M7 の古い記載の整理） |

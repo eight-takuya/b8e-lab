@@ -39,7 +39,7 @@
 
 | Page | CTA | 行き先 | 状態 |
 |---|---|---|---|
-| `/dreamin-spiral/business-creation/`（Hero ・ Final） | Business Creationについて話してみる | Business Creation Dialogue Form（GAS・いまは Safe Review 用） | Owner Reality Review APPROVED・PR #104（Preview のみ・Production 未公開） |
+| `/dreamin-spiral/business-creation/`（Hero ・ Final） | Business Creationについて話してみる | Business Creation Dialogue Form（GAS・Production） | Owner Reality Review APPROVED・PR #104 merge（2026-09-19・Production Live） |
 | `/dreamin-spiral/guide/`（Hero ・ Final） | Guide（無料）に申し込む | Guide 予約ページ（GAS・Production・行き先は release 前と同一） | **Production Released**（PR #105 merge `2f04537`・2026-09-18） |
 
 - B8E Owner Portal のカードは新しいタブで開く launcher のため、適用しない（正本 §2-1）
