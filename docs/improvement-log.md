@@ -34,6 +34,12 @@
 
 - 押した瞬間に「Guide（無料）の予約ページを開いています。」を出してから、既存の Guide 予約ページ（GAS・Production deployment のまま）へ移動する。href ・ 行き先は変更なし
 - **merge ＝ Production 反映のため、Owner Reality Review 後に merge する**
+## [2026-09-18] — Business Creation Page：Primary CTA に Vercel → GAS Transition を適用（Preview のみ）
+
+**Scope:** `dreamin-spiral/business-creation/index.html`（Hero ・ Final の CTA に `data-gas-transition` と言葉・`/gas-transition.js` を読み込み）, `docs/business-creation-public-page-v1.md`
+**Triggered by:** Owner Reality Review（押したのに何も起きない間）→ OS `vercel-gas-transition-standard-v1.md`
+
+- 押した瞬間に「Business Creationの対話ページを開いています。」を出してから、Safe Review 用の Dialogue Form（GAS）へ移動する。行き先は変更なし（Production の URL への置き換えは Production Gate）
 
 ---
 ## [2026-09-18] — Vercel → GAS Transition Standard v1：共通の `gas-transition.js` を追加（Preview のみ）
@@ -44,6 +50,46 @@
 - `data-gas-transition` を付けた GAS link を押した瞬間に、行き先につながる短い言葉の Transition View を出してから同じタブで移動する（人工的な待ちなし・移動は 1 回だけ・href は本物の GAS URL のまま）
 - ページへの適用は Business Creation（PR #104）と Guide（別 PR）で行う
 
+---
+## [2026-09-18] — Business Creation Dialogue Entry Integration：Primary CTA を GAS Dialogue Form へ ・ Inquiry Form ／ Thanks を削除（Preview のみ）
+
+**Scope:** `dreamin-spiral/business-creation/index.html`（Primary CTA の href）, `dreamin-spiral/business-creation/inquiry/index.html`（削除）, `dreamin-spiral/business-creation/thanks/index.html`（削除）, `docs/business-creation-public-page-v1.md`, `docs/business-creation-inquiry-form-v1.md`（Superseded）, `docs/site-structure.md`
+**Triggered by:** Owner Reality Review（name ／ email の二重入力）→ Architect Decision（OS `business-creation-architecture.md` §9.5.3）
+
+- Formspree Inquiry → Thanks → 日程調整の 2 段をやめ、GAS の Business Creation Dialogue Form（Step 1 Reality → Step 2 90分の対話日時 → 予約）へ一続きにした
+- `inquiry/` ・ `thanks/` は Production 未公開のため削除（Formspree endpoint は作成しない）
+- Primary CTA の href はいま Safe Review 用の Dialogue Form（架空データ）。**Production 公開時に Production の Dialogue Form の URL へ置き換える**（Production Gate）
+
+---
+## [2026-09-18] — Business Creation Inquiry Form v1：`/dreamin-spiral/business-creation/inquiry/` ・ `/thanks/` を新設（Preview のみ・Owner Reality Review 待ち）
+
+**Scope:** `dreamin-spiral/business-creation/inquiry/index.html`（新規）, `dreamin-spiral/business-creation/thanks/index.html`（新規）, `dreamin-spiral/business-creation/index.html`（Primary CTA を接続）, `docs/business-creation-inquiry-form-v1.md`（新規）, `docs/business-creation-public-page-v1.md`, `docs/site-structure.md`
+**Triggered by:** Business Creation Public Entrance（OS `business-creation-architecture.md` §9.5.3 の 6 fields）
+
+- 既存 apply ／ thanks pattern ・ Form Consent v1.1 ・ `_gotcha` honeypot ・ AJAX 送信を再利用。style.css は変更なし
+- Formspree 専用 endpoint は Owner が作成（未作成）。設定までは非送信モード
+- **Production merge ・ 公開はしていない**（PR #104 を release branch として継続）
+
+---
+## [2026-09-18] — Business Creation Public Page v1：Owner Reality Review #1 の Copy Revision を Preview に反映（Owner Reality Review #2 待ち）
+
+**Scope:** `dreamin-spiral/business-creation/index.html`（表示文言のみ）, `docs/business-creation-public-page-v1.md` §7
+**Triggered by:** Owner Reality Review #1（Owner Approved Copy Revision）
+
+- H1「あなたのBusinessを、一緒に創る。」・ Lead「創り続け」・ Offer → 商品・サービス ・ Website → Webサイト ・ Service → サービス ・ 結び「現在地」・ 例示（クライアント専用ページ ／ 発信コンテンツ ／ ビジネスの運営やサービスの運用）・ 見出し「テクノロジーは、必要な分だけ。」
+- Business ／ Creation ／ Creation System は維持。Layout ・ CSS ・ CTA ・ 料金は変更なし。Production 未公開
+
+---
+## [2026-09-18] — Business Creation Public Page v1：`/dreamin-spiral/business-creation/` を新設（Preview のみ・Owner Reality Review 待ち）
+
+**Scope:** `dreamin-spiral/business-creation/index.html`（新規）, `dreamin-spiral/index.html` ・ `index.html`（Business Creation item に「詳しく見る」link）, `style.css`（Business Creation 用の scoped rule のみ）, `docs/business-creation-public-page-v1.md`（新規）, `docs/site-structure.md`
+**Triggered by:** Business Creation Public Page v1 Information Architecture / Copy（Owner Approved）。正本は OS repo `constitution/brand-architecture/business-creation-architecture.md` §9.5 ・ `docs/repository-architecture/dreamin-spiral-offer-definition.md` §5
+
+- 既存 Service Page pattern（`.ds-service-hero` ・ `.ds-service-section` ・ `.ds-service-list` ・ `.ds-offer-summary` ・ `.ds-service-note` ・ `.ds-phrase`）を再利用。card ・ 画像 ・ 図は追加していない
+- Primary CTA は Inquiry Form 未実装のため link ではない要素（見え方は同じ）。Payment Link ・ 振込先 ・ 分割 ・ 追加6か月の価格は載せていない
+- **Production merge ・ 公開はしていない**（Owner Reality Review で停止）
+
+---
 ## [2026-09-17] — Production Release / Closeout：Dreamin' Spiral 🌱 Home v1 ・ Library Wording Currentization を CLOSED
 
 **Scope:** PR #102（`79d927b`）の Production 反映・実装記録の Status
