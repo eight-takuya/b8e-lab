@@ -2016,6 +2016,13 @@ a:hover {
 .ds-service-section .pc-summary + p {
   margin-top: 28px;
 }
+/* complete/｜開始案内を Hero ・ 完了メッセージと同じ中央揃えにする（本文幅は狭いまま・このページのみ） */
+.pc-complete-body {
+  max-width: 520px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
 /* 17｜FAQ */
 .pc-faq {
   margin: 0;
