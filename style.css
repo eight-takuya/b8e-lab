@@ -1824,3 +1824,246 @@ a:hover {
     grid-template-columns: 1fr;
   }
 }
+
+/* ------------------------------------------------------------
+   A13. Project Creation（2026-09）
+   /dreamin-spiral/project-creation/ の LP ・ 申込専用（.pc-*）。既存ページには影響しない
+   A11（.ds-offer-summary ・ Form ・ Thanks）・ A12（.ds-service-*）を再利用し、足りない表現だけをここで定義する
+   正本: dreamin-spiral-os docs/repository-architecture/project-creation-launch-v1.md
+   ------------------------------------------------------------ */
+/* 受付終了の切り替え（cohort.js）。.ds-service-cta などの display 指定より hidden を優先する */
+[data-pc-apply][hidden],
+[data-pc-closed][hidden] {
+  display: none !important;
+}
+.ds-service-hero .pc-hero-title {
+  font-size: 1.9rem;
+  font-weight: 300;
+  letter-spacing: 0.08em;
+}
+.ds-service-hero .pc-hero-copy {
+  margin-top: 20px;
+  font-size: 1.1rem;
+  color: #f0eeeb;
+  letter-spacing: 0.04em;
+}
+.pc-hero-positioning {
+  margin-top: 20px;
+  font-size: 0.82rem;
+  color: #dcc3a0;
+  letter-spacing: 0.12em;
+}
+.pc-closed-note {
+  margin-top: 40px;
+  font-size: 0.92rem;
+  letter-spacing: 0.03em;
+}
+.ds-service-hero .pc-closed-note {
+  color: #dcc3a0;
+}
+.ds-service-section .pc-closed-note,
+.ds-closed-message {
+  color: #2f2b27;
+}
+.ds-service-section .pc-closed-note {
+  margin-top: 24px;
+}
+/* 04｜Before / After（2 列・狭い画面では縦に並べる） */
+.pc-shift {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-bottom: 32px;
+}
+.pc-shift-col {
+  padding: 24px;
+  border: 1px solid #e6e4e1;
+  border-radius: 2px;
+}
+.pc-shift-after {
+  border-color: #c9a882;
+}
+.ds-service-section .pc-shift-label {
+  font-size: 0.75rem;
+  color: #9b7b5c;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+.pc-shift-col p + p {
+  margin-top: 0;
+}
+/* 05 ・ 09｜流れ（縦に並べ、間に静かな ↓ を置く） */
+.pc-flow {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.pc-flow li {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 4px 16px;
+  padding: 10px 0;
+}
+.pc-flow li + li::before {
+  content: "↓";
+  display: block;
+  width: 100%;
+  margin-bottom: 10px;
+  color: #c9a882;
+  font-size: 0.85rem;
+}
+.pc-flow-term {
+  font-size: 0.98rem;
+  font-weight: 500;
+  color: #2a2a2a;
+  letter-spacing: 0.04em;
+  min-width: 8.5em;
+}
+.pc-flow-desc {
+  font-size: 0.93rem;
+  color: #555;
+  line-height: 1.9;
+}
+.pc-flow-simple li {
+  justify-content: center;
+}
+.pc-flow-simple .pc-flow-term {
+  min-width: 0;
+  font-weight: 400;
+}
+.pc-flow-simple li + li::before {
+  text-align: center;
+}
+/* 06｜Role（.ds-offer-summary の再利用。見出し列だけ短くする） */
+.ds-service-section .pc-roles {
+  grid-template-columns: 5em 1fr;
+}
+/* 07｜AI Practice の例 */
+.pc-tags {
+  list-style: none;
+  margin: 0 0 32px;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.pc-tags li {
+  font-size: 0.86rem;
+  color: #444;
+  padding: 6px 14px;
+  border: 1px solid #e0dcd6;
+  border-radius: 999px;
+  line-height: 1.6;
+}
+/* 08｜12 Weeks（3 か月を並べる・狭い画面では縦に並べる） */
+.pc-months {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.pc-month {
+  padding-top: 16px;
+  border-top: 1px solid #c9a882;
+}
+.ds-service-section .pc-month-label {
+  font-size: 0.75rem;
+  color: #9b7b5c;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+.ds-service-section .pc-month-name {
+  margin-top: 4px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #2a2a2a;
+  line-height: 1.7;
+}
+.pc-weeks {
+  list-style: none;
+  margin: 16px 0 0;
+  padding: 0;
+}
+.pc-weeks li {
+  padding: 8px 0;
+  border-top: 1px solid #efedea;
+  line-height: 1.7;
+}
+.pc-week-no {
+  display: block;
+  font-size: 0.75rem;
+  color: #8d8781;
+  letter-spacing: 0.06em;
+}
+.pc-week-theme {
+  display: block;
+  font-size: 0.9rem;
+  color: #444;
+}
+/* 11｜Portfolio（番号付き） */
+.ds-service-section .pc-outputs {
+  padding-left: 1.8em;
+  margin-bottom: 32px;
+}
+/* 16 ・ 19｜Founding Cohort 価格 */
+.pc-price {
+  font-size: 1.05rem;
+  color: #2f2b27;
+  letter-spacing: 0.03em;
+}
+/* 16｜Founding Cohort：表の直後の本文に余白を置く（このページのみ） */
+.ds-service-section .pc-summary + p {
+  margin-top: 28px;
+}
+/* complete/｜開始案内を Hero ・ 完了メッセージと同じ中央揃えにする（本文幅は狭いまま・このページのみ） */
+.pc-complete-body {
+  max-width: 520px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+/* 17｜FAQ */
+.pc-faq {
+  margin: 0;
+}
+.pc-faq dt {
+  font-size: 0.97rem;
+  font-weight: 500;
+  color: #2a2a2a;
+  line-height: 1.9;
+  padding-top: 24px;
+  border-top: 1px solid #efedea;
+}
+.pc-faq dt:first-child {
+  padding-top: 0;
+  border-top: none;
+}
+.pc-faq dt::before {
+  content: "Q. ";
+  color: #9b7b5c;
+}
+.pc-faq dd {
+  margin: 8px 0 24px;
+  font-size: 0.94rem;
+  color: #555;
+  line-height: 2.0;
+}
+@media (max-width: 768px) {
+  .pc-months {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}
+@media (max-width: 600px) {
+  .ds-service-hero .pc-hero-title {
+    font-size: 1.6rem;
+  }
+  .pc-shift {
+    grid-template-columns: 1fr;
+  }
+  .pc-flow-term {
+    min-width: 0;
+    width: 100%;
+  }
+}

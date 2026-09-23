@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Project Creation｜Founding Cohort のお申し込みフォーム。3ヶ月・Zoom 90分 × 12回・1on1 45分 × 3回。">
+  <title>お申し込み | Project Creation | B8E</title>
+  <link rel="canonical" href="https://www.b8e.co.jp/dreamin-spiral/project-creation/apply/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="お申し込み | Project Creation | B8E">
+  <meta property="og:url" content="https://www.b8e.co.jp/dreamin-spiral/project-creation/apply/">
+  <link rel="stylesheet" href="/style.css">
+  <script defer src="/_vercel/insights/script.js"></script>
+</head>
+
+<body class="ds-page">
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="logo-mark">
+      <svg class="logo-lemniscate" viewBox="0 0 80 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M40,16 C40,10.5 48,6 58,6 C68,6 76,10.5 76,16 C76,21.5 68,26 58,26 C48,26 40,21.5 40,16 C40,10.5 32,6 22,6 C12,6 4,10.5 4,16 C4,21.5 12,26 22,26 C32,26 40,21.5 40,16 Z" fill="none" stroke="#c9a882" stroke-width="1.1" stroke-linejoin="round"/>
+      </svg>
+      <p class="logo-wordmark">B8E</p>
+    </div>
+    <p class="tagline">BEAT EIGHT EMOTION</p>
+  </header>
+
+  <!-- Navigation -->
+  <nav class="site-nav">
+    <a href="/index.html">TOP</a>
+    <a href="/dx.html">DX支援</a>
+    <a href="/dc.html">企業型DC</a>
+    <a href="/dreamin-spiral/">Dreamin' Spiral 🌱</a>
+    <a href="/about.html">About</a>
+  </nav>
+
+  <main>
+
+    <!-- Hero -->
+    <section class="thanks-hero">
+      <span class="hero-label">Project Creation｜Founding Cohort</span>
+      <p class="hero-copy">
+        エンジニアから、<br>
+        プロジェクトを創る人へ。
+      </p>
+    </section>
+
+    <div class="page-content">
+
+      <!-- Offer summary（OS Offer Definition §6 の事実のみ） -->
+      <div class="section-block">
+        <h3>お申し込み</h3>
+        <dl class="ds-offer-summary">
+          <dt>期間</dt>
+          <dd>3ヶ月（12週間）</dd>
+          <dt>Group Session</dt>
+          <dd>Zoom 90分 × 12回（毎週木曜日 20:00〜21:30）</dd>
+          <dt>1on1</dt>
+          <dd>45分 × 3回（月1回）</dd>
+          <dt>開始</dt>
+          <dd>2026年10月1日（木）20:00</dd>
+          <dt>定員</dt>
+          <dd>最大6名</dd>
+          <dt>料金</dt>
+          <dd>148,000円（税込）・一括</dd>
+        </dl>
+      </div>
+
+      <!-- 受付終了時の表示（cohort.js が締切 ・ 満席で切り替える） -->
+      <div class="section-block" data-pc-closed hidden>
+        <p class="ds-closed-message">Founding Cohortの受付は終了しました。</p>
+        <p><a class="cta-link" href="/dreamin-spiral/guide/">ガイド（無料）で話してみる</a></p>
+      </div>
+
+      <!-- Application Form（入力ステップ）。3 Weeks Approved Pattern（payment-foundation-v1）の再利用 -->
+      <div class="section-block" id="ds-step-input" data-pc-apply>
+        <!-- Formspree: Project Creation 専用 Form（maenjvpj・2026-09-24 作成・通知先は 3 Weeks と同じ Owner のアドレス。既存 endpoint は流用しない）。
+             正本: dreamin-spiral-os docs/repository-architecture/project-creation-launch-v1.md §7-1 -->
+        <form class="apply-form ds-apply-form" id="ds-apply-form" action="https://formspree.io/f/maenjvpj" method="post" novalidate>
+
+          <input type="hidden" name="form_type" value="project_creation">
+          <input type="hidden" name="cohort" value="founding">
+          <input type="hidden" name="site_version" value="project-creation-v1">
+          <input type="hidden" name="source_page" id="source_page" value="direct">
+          <input type="hidden" name="submitted_at" id="submitted_at" value="">
+
+          <div class="ds-field">
+            <label for="name">お名前<span class="ds-required">必須</span></label>
+            <input type="text" id="name" name="name" placeholder="例）山田　太郎" required autocomplete="name">
+          </div>
+
+          <div class="ds-field">
+            <label for="email">メールアドレス<span class="ds-required">必須</span></label>
+            <input type="email" id="email" name="email" required autocomplete="email"
+                   pattern="[^\s@]+@[^\s@]+\.[^\s@]+">
+            <p class="ds-field-note">お申し込み後のご案内をお送りします。</p>
+          </div>
+
+          <div class="ds-field">
+            <label for="phone">電話番号</label>
+            <input type="tel" id="phone" name="phone" placeholder="例）090-1234-5678" autocomplete="tel"
+                   pattern="(?:\+81(?=(?:\D*\d){9,10}\D*$)[\d\s\(\)\-]+|(?=(?:\D*\d){10,11}\D*$)[\d\s\(\)\-]+)">
+            <p class="ds-field-note">メール等でご連絡がつかない場合や、Zoom当日の緊急連絡などに使用します。</p>
+          </div>
+
+          <div class="ds-field">
+            <label for="role">現在のお仕事 / Role</label>
+            <input type="text" id="role" name="role" autocomplete="organization-title">
+          </div>
+
+          <div class="ds-field">
+            <label for="motivation">Project Creationに興味を持ったきっかけ</label>
+            <textarea id="motivation" name="motivation"></textarea>
+          </div>
+
+          <div class="ds-field">
+            <label for="three_month_intent">3ヶ月で試してみたいこと</label>
+            <textarea id="three_month_intent" name="three_month_intent"></textarea>
+          </div>
+
+          <div class="ds-field">
+            <label for="message">Message</label>
+            <textarea id="message" name="message"></textarea>
+          </div>
+
+          <div class="ds-consent">
+            <label for="terms_privacy_consent">
+              <input type="checkbox" id="terms_privacy_consent" name="terms_privacy_consent" value="agreed" required>
+              <span><a href="/terms/" target="_blank" rel="noopener">利用規約</a>および<a href="/privacy-policy/" target="_blank" rel="noopener">プライバシーポリシー</a>を確認し、同意します。</span>
+            </label>
+          </div>
+
+          <button type="submit" id="ds-submit">Project Creationに申し込む</button>
+        </form>
+      </div>
+
+      <!-- 確認ステップ（既定は非表示。入力ステップの Validation 通過後に表示する） -->
+      <div class="section-block" id="ds-step-confirm" hidden>
+        <h3>入力内容の確認</h3>
+        <dl class="ds-confirm">
+          <dt>お名前</dt>
+          <dd id="ds-c-name"></dd>
+          <dt>メールアドレス</dt>
+          <dd id="ds-c-email"></dd>
+          <dt>電話番号</dt>
+          <dd id="ds-c-phone"></dd>
+          <dt>現在のお仕事 / Role</dt>
+          <dd id="ds-c-role"></dd>
+          <dt>Project Creationに興味を持ったきっかけ</dt>
+          <dd id="ds-c-motivation"></dd>
+          <dt>3ヶ月で試してみたいこと</dt>
+          <dd id="ds-c-three_month_intent"></dd>
+          <dt>Message</dt>
+          <dd id="ds-c-message"></dd>
+          <dt>利用規約およびプライバシーポリシー</dt>
+          <dd id="ds-c-consent"></dd>
+        </dl>
+
+        <p class="ds-form-error" id="ds-form-error" role="alert" hidden></p>
+
+        <div class="ds-confirm-actions">
+          <button type="button" id="ds-back">修正する</button>
+          <button type="button" id="ds-confirm-submit">この内容で申し込む</button>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="site-footer-inner">
+
+      <div class="footer-brand">
+        <span class="brand-name">BEAT EIGHT EMOTION株式会社</span>
+        <p>
+          テクノロジーと人間の内側が交わる場所で、<br>
+          変容を共にする。
+        </p>
+      </div>
+
+      <nav class="footer-links">
+        <a href="/index.html">TOP</a>
+        <a href="/dx.html">DX支援</a>
+        <a href="/dc.html">企業型DC</a>
+        <a href="/dreamin-spiral/">Dreamin' Spiral 🌱</a>
+        <a href="/about.html">About</a>
+        <a href="mailto:contact@b8e.co.jp">お問い合わせ</a>
+        <a href="/privacy-policy/">プライバシーポリシー</a>
+        <a href="/terms/">利用規約</a>
+        <a href="/legal/">特定商取引法に基づく表記</a>
+      </nav>
+
+    </div>
+    <div class="footer-bottom">
+      © 2026 BEAT EIGHT EMOTION株式会社
+    </div>
+  </footer>
+
+  <script src="/dreamin-spiral/project-creation/cohort.js"></script>
+  <script>
+    (function () {
+      var form       = document.getElementById('ds-apply-form');
+      var stepInput  = document.getElementById('ds-step-input');
+      var stepConfirm= document.getElementById('ds-step-confirm');
+      var backBtn    = document.getElementById('ds-back');
+      var sendBtn    = document.getElementById('ds-confirm-submit');
+      var errorBox   = document.getElementById('ds-form-error');
+      var THANKS = '/dreamin-spiral/project-creation/thanks/';   // ルート相対。Preview / Production どちらでも解決する
+      // Owner Approved Error Copy（3 Weeks と同一）
+      var ERROR_TEXT = '送信できませんでした。お手数ですが、もう一度お試しください。';
+      // 確認ステップに表示する項目（任意項目は空なら「—」）
+      var FIELDS = ['name', 'email', 'phone', 'role', 'motivation', 'three_month_intent', 'message'];
+
+      if (!form) { return; }
+
+      // 運用トラッキング用 hidden 項目（利用者には表示しない）
+      var ref = document.referrer || '';
+      var src = document.getElementById('source_page');
+      if (src && ref) {
+        try { src.value = new URL(ref).pathname || 'direct'; } catch (e) { src.value = 'direct'; }
+      }
+
+      function trimField(id) {
+        var el = document.getElementById(id);
+        if (el) { el.value = el.value.trim(); }
+        return el ? el.value : '';
+      }
+
+      // 入力 → 確認
+      form.addEventListener('submit', function (event) {
+        event.preventDefault();
+
+        // 前後空白を除去してからブラウザ標準 Validation にかける（3 Weeks と同じ理由で novalidate）。
+        // 電話番号は任意のため、空なら pattern は評価されない。
+        var values = {};
+        FIELDS.forEach(function (id) { values[id] = trimField(id); });
+        if (!form.reportValidity()) { return; }
+
+        FIELDS.forEach(function (id) {
+          document.getElementById('ds-c-' + id).textContent = values[id] || '—';
+        });
+        document.getElementById('ds-c-consent').textContent =
+          document.getElementById('terms_privacy_consent').checked ? '同意済み' : '';
+
+        errorBox.hidden = true;
+        errorBox.textContent = '';
+        stepInput.hidden = true;
+        stepConfirm.hidden = false;
+        stepConfirm.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+
+      // 修正する → 入力へ戻る（値はそのまま保持される。reload しない）
+      backBtn.addEventListener('click', function () {
+        stepConfirm.hidden = true;
+        stepInput.hidden = false;
+        sendBtn.disabled = false;
+        errorBox.hidden = true;
+        errorBox.textContent = '';
+        stepInput.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+
+      // この内容で申し込む → Formspree へ送信
+      sendBtn.addEventListener('click', function () {
+        if (sendBtn.disabled) { return; }   // 二重送信防止
+        sendBtn.disabled = true;
+        errorBox.hidden = true;
+        errorBox.textContent = '';
+
+        var at = document.getElementById('submitted_at');
+        if (at) { at.value = new Date().toISOString(); }
+
+        fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { 'Accept': 'application/json' }
+        })
+          .then(function (response) {
+            return response.json().catch(function () { return {}; })
+              .then(function (data) { return { ok: response.ok, data: data }; });
+          })
+          .then(function (result) {
+            if (result.ok && result.data && result.data.ok !== false) {
+              // 送信成功時のみ Thanks へ進む
+              window.location.assign(THANKS);
+              return;
+            }
+            throw new Error('submission failed');
+          })
+          .catch(function () {
+            // 失敗時は Thanks へ進ませず、確認画面に留まって再送信できるようにする
+            sendBtn.disabled = false;
+            errorBox.textContent = ERROR_TEXT;
+            errorBox.hidden = false;
+          });
+      });
+    })();
+  </script>
+
+</body>
+</html>

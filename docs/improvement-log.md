@@ -6,6 +6,20 @@
 ---
 
 ---
+## [2026-09-24] — Project Creation：公開 4 ページ（LP ・ 申込 ・ Thanks ・ Complete）（Preview・Owner Review 済み）
+
+**Scope:** `dreamin-spiral/project-creation/{index,apply,thanks,complete}/`, `dreamin-spiral/project-creation/cohort.js`, `style.css`（A13 追加のみ）
+**Triggered by:** OS `project-creation-launch-v1.md`（Owner ／ Architect Approved）
+
+- LP 19 Sections（Copy は OS Launch v1 §4）。Primary「Project Creationに申し込む」→ `/apply/`、Secondary「ガイド（無料）で話してみる」→ `/dreamin-spiral/guide/`
+- 申込: 3 Weeks Approved Pattern（入力 → 確認 → Formspree AJAX → Thanks）。専用 Formspree `maenjvpj`。必須は名前 ・ メールのみ
+- Thanks: Stripe（Live Payment Link `plink_1UIxv88tXYwNlHqEJkFOfNPw`・6 件で自動停止）｜銀行振込（振込期限 2026-09-30 18:00）
+- Complete: Stripe の after_completion 到達先。開始案内を中央揃え（Owner Review・このページのみ）
+- `cohort.js`: 2026-09-30 18:00 で LP ・ `/apply/` を自動で受付終了表示（Primary CTA ・ Form を止め、Guide 導線は残す）。満席時は `STATUS = 'closed'`
+- `style.css` A13（`.pc-*` ・ `[data-pc-*]` のみ）。既存ルールの変更 ・ 削除は 0 行
+- 検証: 375px ／ デスクトップで横はみ出し 0。Validation ・ 確認 ・ 入力保持 ・ 締切の前後の切り替え。Preview で Formspree 実送信 → Thanks（test 値 1 件）
+
+---
 ## [2026-09-23] — Legal Pages v0.5：Project Creation を 3 ページへ追加（Preview・Legal Review Gate ／ Owner 確認待ち）
 
 **Scope:** `legal/index.html`, `terms/index.html`, `privacy-policy/index.html`, `docs/sales-foundation-v1.md`
