@@ -73,6 +73,7 @@ Sales Foundation v1 で **Owner Approved（2026-09-15）となった次の価格
 
 - **Dreamin' Spiral Guide** は無料サービス。利用規約の対象には含め、特商法の有料サービス一覧には載せない
 - **Dreamin' Spiral Business Creation**（2026-09-19・v0.4）: 無料の初回対話（90分・申込 ／ 契約 ／ 支払いではない）と、有料サービス（6か月 880,000円 ／ 12か月 1,600,000円（税込）・ご提案 → 個別契約 → 支払い）を分けて、特商法表記 ・ 利用規約 ・ プライバシーポリシーへ追加した（Legal Review で問題なし・OS Business Creation Legal Design v1 §18 の Production Launch Gate）。有料サービスの中途終了 ・ 分割 ・ 延長 ・ IP 等の詳細は、有料の受入開始の前に別途扱う
+- **Project Creation**（2026-09-23・v0.5）: Founding Cohort 148,000円（税込）・一括払いを特商法表記の価格一覧へ追加し、利用規約（第1条 ・ 第9条の2）・ プライバシーポリシーへ追加した。正本は OS `project-creation-launch-v1.md` §12 ・ Offer Definition §6
 - 旧 Academy / Premium 等の Historical ページ（`academy/*`）の文言・価格表示方針は本 Sales Foundation では変更していない
 
 ## 5. Dreamin' Spiral Community の解約運用（Legal 文言との整合）
@@ -155,6 +156,7 @@ Hidden：`form_type = dreamin_spiral_my_life`・`source_page`・`submitted_at`�
 
 | Date | 内容 |
 |---|---|
+| 2026-09-23 | **Legal Pages v0.5:** Project Creation を 3 ページへ追加（特商法表記: 価格 ・ 提供形態 ・ 支払 ・ 提供時期 ・ キャンセル ／ 利用規約: 第1条 ・ 第2条 ・ 第9条の2 ・ 第11条 ／ プライバシーポリシー: 取得する情報 ・ 利用目的 ・ 外部サービス（AI）・ グループでの共有）。最終更新日 ／ 最終改定日 2026年9月23日 |
 | 2026-09-19 | **Legal Pages v0.4:** Dreamin' Spiral Business Creation を 3 ページへ追加（特商法表記: 価格 ・ 無料の初回対話 ・ 外部サービス費用 ・ 支払方法 ／ 時期 ・ 提供時期 ・ キャンセル／ 利用規約: 第1条 ・ 第3条 ・ 第4条／ プライバシーポリシー: 取得する情報 ・ 利用目的）。Legal Review（D-1 特商法 ・ D-2 利用規約）問題なし。最終更新日 ／ 最終改定日 2026年9月19日 |
 | 2026-09-15 | **Legal Foundation v1 CLOSED。** PR #84（b8e-lab・`081fa8a`）・PR #132（academy・`483e5a2`）を merge。本番で 3 Legal Page・Footer Legal リンク・© 2026・日付表示を確認 |
 | 2026-09-15 | Legal Page に制定日 / 最終更新日（2026年9月15日）を追加。全公開ページの Footer 著作権表示を © 2026 へ更新（Owner / Architect Approved） |

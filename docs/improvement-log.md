@@ -6,6 +6,16 @@
 ---
 
 ---
+## [2026-09-23] — Legal Pages v0.5：Project Creation を 3 ページへ追加（Preview・Legal Review Gate ／ Owner 確認待ち）
+
+**Scope:** `legal/index.html`, `terms/index.html`, `privacy-policy/index.html`, `docs/sales-foundation-v1.md`
+**Triggered by:** OS `project-creation-launch-v1.md` §12（Legal Requirements）・ OS `project-creation-legal-review-v1.md`（Legal Review Gate）
+
+- 特定商取引法に基づく表記: 価格一覧に Project Creation（Founding Cohort）148,000円（税込）・一括払い。提供形態（3か月 ・ グループセッション 90分 × 12 ・ 1on1 45分 × 3 ・ 定員6名）と通常価格の予定（198,000円・現在は販売しない）・ 支払方法 ・ 支払時期（2026-09-30 18:00 まで）・ 提供時期（決済確認後に案内 ・ 10/1 開始 ・ Community は決済確認後から）・ キャンセル（開講日前は全額返金 ／ 開講後は原則返金なし ／ やむを得ない事情は個別相談 ／ 定員到達後 ・ 締切後の支払いは全額返金）・ 最終更新日
+- 利用規約: 第1条に Project Creation。第2条の非保証に「キャリア上の成果」。**第9条の2｜Project Creation**（内容 ・ 開講前キャンセル ・ 開講後の中途解約 ・ 録画は原則しない ・ 情報の取扱い（機密情報 ・ 個人を特定できる情報 ・ AI ・ 参加者間の情報）・ Community）。第11条に「グループセッション」。既存の条番号は変えていない。最終改定日
+- プライバシーポリシー: 取得する情報（お仕事 ・ Role ・ Project に関する情報）・ 利用目的（Project Creation の提供 ・ 運営）・ 外部サービス（生成AI等）と当社の AI 利用の原則（必要な範囲 ・ 原則として匿名化 ・ 抽象化）・ グループセッションでの共有。最終改定日
+- Project Creation の公開ページ（別 PR）より**先に（または同時に）merge する**
+
 ## [2026-09-19] — Legal Pages v0.4：Dreamin' Spiral Business Creation（無料の初回対話）を 3 ページへ追加（Preview・Owner 確認待ち）
 
 **Scope:** `legal/index.html`, `terms/index.html`, `privacy-policy/index.html`, `docs/sales-foundation-v1.md`
