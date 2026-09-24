@@ -2067,3 +2067,332 @@ a:hover {
     width: 100%;
   }
 }
+
+/* ------------------------------------------------------------
+   A14. Dreamin' Spiral 🌱 Visual Direction v1 — Home Visual Implementation v1（2026-09）
+   /dreamin-spiral/ の Home だけに適用する（body.ds-home）。
+   Service Page（.ds-service-hero 等）は次 Phase のため、ここでは一切上書きしない。
+   正本：dreamin'-spiral-os docs/design-systems/dreamin-spiral-visual-direction-v1.md
+   Stillness × Human × Reality × Creation ／ 明るさは「これから何かが始まる余白がある明るさ」
+   ------------------------------------------------------------ */
+
+.ds-home {
+  /* Shared Visual Language §11-2 */
+  --ds-cream: #fbfaf7;
+  --ds-offwhite: #f4f1ec;
+  --ds-beige: #e9dfd1;
+  --ds-green: #8a9e78;
+  --ds-green-deep: #4f6350;
+  --ds-pale-blue: #e3ebf1;
+  --ds-sky: #cadbe7;
+  --ds-gold: #c9a882;
+  --ds-ink: #26251f;
+  --ds-ink-soft: #55524b;
+  --ds-line: #e8e3da;
+  background-color: var(--ds-cream);
+}
+
+/* Home｜Hero — 朝〜午前の自然光。Deep Indigo を使わない（Visual Direction v1 §4 ・ §12） */
+.ds-home-hero {
+  position: relative;
+  overflow: hidden;
+  padding: 128px 40px 112px;
+  text-align: center;
+  color: var(--ds-ink);
+  background:
+    radial-gradient(128% 78% at 50% 2%, rgba(255, 252, 245, 0.95) 0%, rgba(255, 252, 245, 0) 62%),
+    radial-gradient(70% 50% at 14% 4%, rgba(201, 168, 130, 0.24) 0%, rgba(201, 168, 130, 0) 66%),
+    linear-gradient(180deg, #dbe6ee 0%, #edefeb 46%, #fbfaf7 100%);
+}
+
+/* 窓からの光（柔らかい斜めの光） */
+.ds-home-hero::before {
+  content: "";
+  position: absolute;
+  inset: -24% 0 auto 0;
+  height: 130%;
+  background: linear-gradient(112deg,
+    rgba(255, 255, 255, 0) 34%,
+    rgba(255, 255, 255, 0.5) 50%,
+    rgba(255, 255, 255, 0) 66%);
+  pointer-events: none;
+}
+
+/* 遠景 — 地平のやわらかな緑（Nature は背景 ／ 質感。主役にしない §6 ・ §9） */
+.ds-home-hero::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 140px;
+  background: linear-gradient(180deg,
+    rgba(138, 158, 120, 0) 0%,
+    rgba(138, 158, 120, 0.09) 66%,
+    rgba(138, 158, 120, 0.15) 100%);
+  pointer-events: none;
+}
+
+.ds-home-hero-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+/* 明るい Hero の上での可読性（contrast を確保する） */
+.ds-home-hero .ds-service-eyebrow {
+  color: #6f695e;
+}
+
+.ds-home-hero .ds-service-title {
+  font-size: 1.62rem;
+  font-weight: 300;
+  color: var(--ds-ink);
+  line-height: 1.95;
+  letter-spacing: 0.055em;
+  max-width: 560px;
+}
+
+.ds-home-hero .ds-service-lead {
+  max-width: 480px;
+  color: var(--ds-ink-soft);
+}
+
+/* 明るい面の上での link contrast（4.5:1 以上。Home のみ・他ページの #9b7b5c は変えない） */
+.ds-home .ds-family-item a,
+.ds-home .ds-service-cta {
+  color: #8a6a4e;
+}
+
+.ds-home .ds-family-item a:hover,
+.ds-home .ds-service-cta:hover {
+  color: #6f5239;
+  border-color: #9b7b5c;
+}
+
+/* Home｜本文の Visual Rhythm（Visual → White Space → Text → Visual §17）
+   Section の区切りは罫線ではなく余白で作る（Home のみ。Service Page の .section-block は変えない） */
+.ds-home .section-block {
+  padding-top: 0;
+  border-top: none;
+}
+
+.ds-home .page-content {
+  max-width: 760px;
+  padding-top: 88px;
+}
+
+.ds-home .page-content > * + * {
+  margin-top: 88px;
+}
+
+/* Philosophy — Home の中で最も静かな Section（余白多め・背景を置かない §12 ・ §17） */
+.ds-home-philosophy {
+  text-align: center;
+  padding: 8px 0 0;
+}
+
+.ds-home-philosophy h2 {
+  margin-bottom: 36px;
+}
+
+.ds-home-philosophy p + p {
+  margin-top: 26px;
+}
+
+/* Spiral Visual（§10）— 閉じた円にしない ・ 終点は少し外側へ ・ Step 図 ／ Level 図にしない */
+.ds-spiral {
+  margin: 64px auto 0;
+  text-align: center;
+}
+
+.ds-spiral-svg {
+  display: block;
+  width: 100%;
+  max-width: 640px;
+  height: auto;
+  margin: 0 auto;
+}
+
+.ds-spiral-label {
+  font-size: 15px;
+  fill: #55524b;
+  letter-spacing: 0.06em;
+}
+
+.ds-spiral figcaption {
+  margin-top: 12px;
+  font-size: 0.9rem;
+  color: #6b675f;
+  letter-spacing: 0.04em;
+  line-height: 2.0;
+}
+
+/* Empathy ／ Entrance — 「これ、自分かも」。朝の空気の面を置き、現実の言葉を静かに並べる（§12） */
+.ds-home-empathy {
+  padding: 48px 44px 44px;
+  border: 1px solid #eee9e1;
+  border-radius: 20px;
+  background:
+    radial-gradient(118% 88% at 10% 0%, rgba(202, 219, 231, 0.40) 0%, rgba(202, 219, 231, 0) 62%),
+    linear-gradient(180deg, #f6f3ee 0%, #fbfaf7 100%);
+}
+
+.ds-home-empathy h2 {
+  margin-bottom: 28px;
+}
+
+.ds-home-empathy p {
+  position: relative;
+  padding-left: 20px;
+  color: #4a4740;
+}
+
+.ds-home-empathy p + p {
+  margin-top: 14px;
+}
+
+.ds-home-empathy p::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 1.05em;
+  width: 9px;
+  height: 1px;
+  background: #c9a882;
+}
+
+.ds-home-empathy p:last-child {
+  margin-top: 32px;
+  padding-left: 0;
+  color: var(--ds-ink);
+}
+
+.ds-home-empathy p:last-child::before {
+  display: none;
+}
+
+/* 6 Entrances — 6 つは対等（面積 ・ 装飾 ・ 文字の重さをすべて同じにする。番号を付けない）
+   Service 名より「○○な方へ」を上位に置く（§12） */
+.ds-home-family .ds-family-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin: 0;
+}
+
+.ds-home-family .ds-family-item {
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 28px 26px;
+  border: 1px solid var(--ds-line);
+  border-radius: 18px;
+  background: linear-gradient(180deg, #ffffff 0%, #fbf9f5 100%);
+}
+
+.ds-home-family .ds-family-item:last-child {
+  border-bottom: 1px solid var(--ds-line);
+}
+
+/* Self-relevance（○○な方へ）を先に読ませ、Service 名をその下に置く（DOM の見出し順は変えない） */
+.ds-home-family .ds-family-item > div {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 10px;
+}
+
+.ds-home-family .ds-family-desc {
+  font-size: 1rem;
+  color: #3d3a34;
+  line-height: 1.95;
+}
+
+.ds-home-family .ds-family-name {
+  margin: 0;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #6f695e;
+  letter-spacing: 0.08em;
+  line-height: 1.7;
+}
+
+.ds-home-family .ds-family-item a {
+  align-self: flex-start;
+}
+
+/* Library — Service ではない。静かな面のまま置く */
+.ds-home-library {
+  padding: 40px 44px;
+  border: 1px solid #efece5;
+  border-radius: 18px;
+  background: #f8f6f1;
+}
+
+/* Closing — Human ・ Light ・ Nature へ戻る。「今の自分へ戻る」質感（Hero と同じ Visual を使わない §12） */
+.ds-home-closing {
+  position: relative;
+  padding: 56px 44px 52px;
+  text-align: center;
+  border: 1px solid #edeae2;
+  border-radius: 20px;
+  background:
+    radial-gradient(86% 76% at 50% 6%, rgba(255, 252, 245, 0.92) 0%, rgba(255, 252, 245, 0) 64%),
+    linear-gradient(180deg, #f2f0e9 0%, #fbfaf7 72%);
+}
+
+.ds-home-closing .ds-sprout {
+  display: block;
+  width: 40px;
+  height: auto;
+  margin: 0 auto 24px;
+}
+
+.ds-home-closing h2 {
+  margin-bottom: 20px;
+}
+
+.ds-home-closing .ds-service-cta {
+  margin-top: 32px;
+}
+
+@media (max-width: 768px) {
+  .ds-home-hero {
+    padding: 92px 24px 80px;
+  }
+  .ds-home-hero .ds-service-title {
+    font-size: 1.3rem;
+    line-height: 2.0;
+  }
+  .ds-home .page-content {
+    padding-top: 64px;
+  }
+  .ds-home .page-content > * + * {
+    margin-top: 64px;
+  }
+  /* 小さな画面では Spiral の語を読める大きさへ（図の意味は変えない）。
+     図だけ左右の余白いっぱいまで広げ、語が小さくなりすぎないようにする */
+  .ds-spiral-label {
+    font-size: 22px;
+  }
+  .ds-spiral {
+    margin: 48px -24px 0;
+  }
+  .ds-home-empathy {
+    padding: 36px 24px 32px;
+  }
+  .ds-home-family .ds-family-list {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .ds-home-family .ds-family-item {
+    padding: 24px 22px;
+  }
+  .ds-home-library {
+    padding: 32px 24px;
+  }
+  .ds-home-closing {
+    padding: 44px 24px 40px;
+  }
+}

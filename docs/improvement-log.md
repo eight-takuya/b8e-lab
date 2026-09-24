@@ -6,6 +6,22 @@
 ---
 
 ---
+## [2026-09-24] — Dreamin' Spiral 🌱 Home Visual Implementation v1：Visual Direction v1 を Home へ（**Owner Review 待ち**・Preview のみ）
+
+**Scope:** `dreamin-spiral/index.html`, `style.css`（新規 A14 ブロック）
+**Triggered by:** OS Visual Direction v1（`docs/design-systems/dreamin-spiral-visual-direction-v1.md`・Architect 設計 ／ Owner 採用）
+
+- **Copy ・ Section 構成 ・ 並び順 ・ link ・ URL は不変。**変更は Visual のみ（追加した文は Spiral 図の説明 1 行「戻るけれど、同じところには戻っていない。」のみ・Visual Direction v1 §10 の語）
+- Hero を Deep Indigo から **朝〜午前の光**へ（Visual Direction v1 §4「これから何かが始まる余白がある明るさ」）。`.ds-service-hero` は変更せず、Home だけ `.ds-home-hero` を新設（Service Page は次 Phase）
+- **Spiral Visual を公開**（§10）：気になる → 感じる → 気づく → やってみる → また感じる。閉じた円にせず、終点は少し外側 ／ 上へ開いたまま続く。Step 図 ／ Level 図にしない（inline SVG・`role="img"` ・ `title` ／ `desc`・motion なし）
+- **6 Entrances**：Service 名より「○○な方へ」を上に置く Visual Hierarchy（見出しの DOM 順は変えず CSS のみ）。6 枚の Card は面積 ・ 装飾 ・ 文字の重さをすべて同じ（Desktop 実測 332×240 で 6 枚一致）。番号なし ・ 上下なし
+- Empathy ／ Library ／ Closing を静かな面に整理し、Section の区切りを罫線から余白へ（§17 Visual Density）。Closing に芽（Hero とは別の Visual）
+- 明るい面の上の link を `#8a6a4e` へ（contrast 4.5:1 以上・**Home のみ**。他ページの `#9b7b5c` は不変）
+- QA（Desktop 1280 ／ Mobile 375）：横スクロール 0 ・ text clip 0 ・ contrast 不足 0 ・ 内部 link 15 件すべて 200 ・ broken image 0 ・ JS 0（追加なし）
+- **写真（Human ／ Reality ／ Creation）は未実装。** Visual Direction v1 §5 ・ §6 の写真 Asset が未生成のため、Hero ／ Empathy ／ Closing に Photo Slot をコメントで明示し、Asset 確定後に差し込む
+- `og:image` は候補のみ作成し、**HTML には未適用**（Owner Review 前に採用しない）
+
+---
 ## [2026-09-24] — Service Family Card Copy：TOP ・ Home の説明文を Brand Architecture §1.1 の Card Copy へ（Owner Reality Review 済み・**Production Live**・#117）
 
 **Scope:** `index.html`, `dreamin-spiral/index.html`, `docs/site-structure.md`
