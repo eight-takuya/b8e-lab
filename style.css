@@ -1791,15 +1791,6 @@ a:hover {
   border-top: none;
   padding-top: 0;
 }
-/* Project Creation Phase 2A：「今、気になっているところから。」のうち link を持つ入口だけに、hover のない Mobile でも入口と分かる細い下線を常時表示する
-   （色 ・ 太さは変えない。下線色は Service Family の「詳しく見る」と同じ #c9a882）。
-   .ds-phrase は inline-block で親の下線が伝わらないため、phrase 側に付ける */
-.ds-home-entry-link .ds-phrase {
-  text-decoration: underline;
-  text-decoration-thickness: 1px;
-  text-decoration-color: #c9a882;
-  text-underline-offset: 4px;
-}
 
 /* Service Page｜申込 CTA（Payment Foundation の .cta-link と同じ静かな表現） */
 .ds-service-cta {

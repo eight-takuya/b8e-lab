@@ -6,6 +6,15 @@
 ---
 
 ---
+## [2026-09-24] — Phase B Follow-up｜Public Entry Consistency：「今、気になっているところから。」を全行非リンクへ（Owner ／ Architect 確定）
+
+**Scope:** `dreamin-spiral/index.html`, `style.css`（Phase 2A の 1 rule を削除）
+
+- Phase 2A では Project Creation の Public Entry を成立させるため、Project Creation の行だけを LP への link（細い下線を常時表示）にしていた
+- その後 Service Family の Card が TOP ・ Home で Project Creation の入口になった（Phase 2A ・ Phase B）ため、「〜したいとき。」は Navigation ではなく、今の関心 ・ 現在地に触れる言葉として整理し、**全行を非リンクへ統一**（Navigation は Service Family の Card が担う）
+- Project Creation の行から `<a>` ・ `href` ・ `.ds-home-entry-link` を外し、`style.css` の `.ds-home-entry-link .ds-phrase` を削除（`style.css` は Phase 2A の下線追加前と同一）。文言 ・ 順序は不変。Business Creation の行も非リンクのまま
+
+---
 ## [2026-09-24] — Service Family Phase C｜Service Page / Application Flow Naming（Owner ／ Architect Review 済み・**Production Live**・#114）
 
 **Scope:** `dreamin-spiral/{guide,3-weeks,community,my-life,business-creation}/**`, `dreamin-spiral/library/index.html`, `docs/site-structure.md`
