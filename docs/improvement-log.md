@@ -6,6 +6,22 @@
 ---
 
 ---
+## [2026-09-25] — Home Visual Implementation v1：6 Service Visual を組み込み（**Owner 再 Review 待ち**）
+
+**Scope:** `dreamin-spiral/index.html`, `style.css`（A14）, `assets/dreamin-spiral/home/`（新規 24 ファイル）
+**Triggered by:** Owner が Desktop へ配置した 6 枚（Architect が Visual Direction v1 に沿って生成 ・ Owner 採用）
+
+- 6 Service Card に写真を組み込み（Guide ／ 3 Weeks Tuning ／ Community ／ My Life, My Way ／ Project Creation ／ Business Creation）。**対応と画像の内容は変更していない**
+- Engineer が行ったのは中央基準で 2:1 へ Crop ・ 縮小 ・ WebP ／ AVIF 変換のみ。**拡大していない**（2x の幅は Crop 後の実寸と 664px の小さい方）
+- 配信：`<picture>` で AVIF → WebP、`srcset`（332w ／ 2x）＋ `sizes="(max-width: 768px) calc(100vw - 48px), 332px"`、`width` ／ `height` ・ `loading="lazy"` ・ `decoding="async"`。**2x 端末で AVIF 合計 約 107KB**
+- Card は Visual（2:1）＋ Text。読み順は Service 名 →「○○な方へ」→ 短い説明 → CTA のまま
+- 一覧（1 列 ・ 罫線）時代の `.ds-family-item:first-child` の例外（線と上余白を外す）を Card Grid では打ち消し、**6 枚を完全に同じ形**に（Desktop 実測 332×516 ×6 ・ Visual 330×165 ×6）
+- 色味：6 枚共通のごく薄い Cream veil。Project Creation の 1 枚だけ室内で沈むため表示時に `brightness(1.06)`。**画像自体は無加工**・強い Filter なし
+- Source（master PNG）は OS repo `assets/png/dreamin-spiral-home-visual/`。b8e-lab には公開用の最適化版だけを置く（404KB）
+- QA（Desktop 1280 ／ Mobile 375）：broken image 0 ・ 横スクロール 0 ・ text clip 0 ・ contrast 不足 0 ・ 内部 link 15 件 200 ・ CLS 対策（`width`/`height` ＋ `aspect-ratio`）・ LCP は Hero の text のまま
+- Copy ・ Service 名 ・ 並び順 ・ URL ・ CTA は不変
+
+---
 ## [2026-09-24] — Home Visual Implementation v1：Owner / Architect Review 反映（重心 ・ Card 情報階層）（**Owner 再 Review 待ち**）
 
 **Scope:** `dreamin-spiral/index.html`, `style.css`（A14 ブロック）

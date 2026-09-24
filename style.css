@@ -2297,6 +2297,49 @@ a:hover {
   border-bottom: 1px solid var(--ds-line);
 }
 
+/* 一覧（1 列 ・ 罫線区切り）時代の「先頭だけ線と上余白を外す」を Card Grid では戻す。
+   6 枚を完全に同じ形にするため（A12 の :first-child ルールを打ち消す） */
+.ds-home-family .ds-family-item:first-child {
+  border-top: 1px solid var(--ds-line);
+  padding-top: 28px;
+}
+
+/* Service Visual（Architect 生成 ／ Owner 採用・2026-09-24）。
+   6 枚とも同じ比率 ・ 同じ面積 ・ 同じ角丸で置き、写真だけが目立たないようにする（Visual Direction v1 §12 ・ §17） */
+.ds-home-family .ds-family-visual {
+  margin: -28px -26px 24px;
+  border-radius: 17px 17px 0 0;
+  overflow: hidden;
+  background: #efece6;
+}
+
+.ds-home-family .ds-family-visual {
+  position: relative;
+}
+
+.ds-home-family .ds-family-visual img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 2 / 1;
+  object-fit: cover;
+}
+
+/* 6 枚を Home の生成りに馴染ませる、ごく薄い Cream の veil（6 枚とも同じ。画像自体は加工しない） */
+.ds-home-family .ds-family-visual::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(255, 252, 245, 0.10) 0%, rgba(255, 252, 245, 0.02) 100%);
+  pointer-events: none;
+}
+
+/* Project Creation の 1 枚だけ室内で暗く、6 枚の中で沈んで見えるため、表示時だけ明るさを合わせる
+   （元 Asset は無加工のまま。上下関係が出ないようにするための補正） */
+.ds-home-family .ds-family-item:nth-child(5) .ds-family-visual img {
+  filter: brightness(1.06);
+}
+
 /* 読み順：Service 名（左上）→ 「○○な方へ」→ 短い説明 → CTA（Owner ／ Architect Review 2026-09-24） */
 .ds-home-family .ds-family-item > div {
   display: block;
@@ -2394,8 +2437,12 @@ a:hover {
   .ds-home-family .ds-family-list {
     grid-template-columns: minmax(0, 1fr);
   }
-  .ds-home-family .ds-family-item {
+  .ds-home-family .ds-family-item,
+  .ds-home-family .ds-family-item:first-child {
     padding: 24px 22px;
+  }
+  .ds-home-family .ds-family-visual {
+    margin: -24px -22px 20px;
   }
   .ds-home-library {
     padding: 32px 24px;
