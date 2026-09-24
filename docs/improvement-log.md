@@ -6,6 +6,17 @@
 ---
 
 ---
+## [2026-09-24] — Phase E｜Legal 整合：特商法 ・ 利用規約 ・ Privacy Policy を Current の Service ・ 支払運用 ・ 返金へ（Owner Reality Review 待ち）
+
+**Scope:** `legal/`, `terms/`, `privacy-policy/`, `dreamin-spiral/project-creation/{index,apply,thanks}/`
+**Triggered by:** OS Work Package ③｜Phase E Legal 整合
+
+- Service 名を Brand Architecture §1.1 の Display Name へ（Guide ・ 3 Weeks Tuning ・ Community ・ My Life, My Way ・ Project Creation ・ Business Creation）。Brand は `Dreamin' Spiral 🌱`。一覧は Canonical Order
+- Project Creation：申込締切（2026-09-30 18:00）は**新規申込の締切**。支払時期を「お申し込み後、完了ページでご案内する方法で」へ、締切前の申込者は締切後も支払えることを明記。返金の「申込締切後にお支払いがあった場合」を「申込締切後にお申し込みがあった場合」へ。Community は任意
+- Project Creation の Thanks から「振込期限」を削除（締切で支払いを止めない Rule と整合）。LP の FAQ と Apply の概要に返金の要点（開講前は全額 ・ 開講後は原則なし ・ やむを得ない事情は個別に相談）と特商法へのリンク
+- 改定日を 2026年9月24日へ。`<title>` ・ meta ・ og は Phase F
+
+---
 ## [2026-09-24] — Project Creation Recruitment Ready：Thanks の銀行振込に名義の案内（Owner ／ Architect 確定）
 
 **Scope:** `dreamin-spiral/project-creation/thanks/index.html`, `dreamin-spiral/project-creation/cohort.js`（コメントのみ）
