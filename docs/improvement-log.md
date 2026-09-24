@@ -6,6 +6,22 @@
 ---
 
 ---
+## [2026-09-25] — B8E Web Typography Alignment v1（**Owner Review 待ち**・Preview のみ）
+
+**Scope:** `style.css`（新規 A16 のみ。HTML ・ Copy は変更なし）
+**Triggered by:** Owner Review「Dreamin' Spiral 🌱 は読みやすいが、TOP ／ DX支援 ／ 企業型DC ／ About は少し小さく感じる」
+
+- Production 反映済みの **Dreamin' Spiral 🌱 Home ／ LP の Typography を Reference** に、5 階層（Eyebrow ／ Section Title ／ Lead ／ Body ／ Small）を `:root` の custom property として最小限だけ共通化
+- **方向は「Dreamin' Spiral を小さく戻す」ではなく「他ページを上げる」。** Dreamin' Spiral の値は 1 つも変えていない（`body.ds-page` を除外）
+- **最大の原因**：DX支援 ／ 企業型DC ／ About の Section 見出し（`.section-block h3`）が 0.78rem の小さな灰色 ・ 大文字ラベルで、本文（0.97rem）より小さく階層が立っていなかった。**Dreamin' Spiral の Section Title と同じ 1.05rem ／ weight 500 ／ 本文色**へ（実測 12.48px → 16.8px）
+- About：本文の行間 2.1 → 2.15、段落間 24px → 28px（長文の読み疲れ対策）
+- TOP：`.path-card p` 0.88 → 0.95rem、`.path-target` 0.8 → 0.86rem、`.paths-sub` 0.88 → 0.95rem、`.track-bridge` ／ `.entry-points-sub` 0.9〜0.92 → 0.95rem、`.entry-question` → 0.97rem、`.philosophy-about` 0.85 → 0.9rem、`.what-domain` ／ `.track-stat__label` 0.78 → 0.82rem
+- DX支援 ／ 企業型DC：`.dx-scope-items` ／ `.dx-intro-text-*` ／ `.quiet-cta p` を本文と同じ 0.97rem へ
+- Small ／ Caption（`.form-note` ・ `.dx-not-note` ・ `.dc-not-note` ・ Footer）は Body と差を残す。Navigation は現状維持
+- QA（Desktop 1280 ／ Mobile 375 ／ 640＝zoom 200% 相当）：横スクロール 0 ・ text clip 0 ・ Layout 崩れ 0。**Dreamin' Spiral Home は変更前と同一**（h2 16.8px ・ 本文 15.52px／2.1 ・ Card 15.2px）
+- Section Title は 4 ページで 16.8px に統一
+
+---
 ## [2026-09-25] — TOP｜Dreamin' Spiral 🌱 Section Redesign v1（**Owner Review 待ち**・Preview のみ）
 
 **Scope:** `index.html`（`#dreamin-spiral` の section のみ）, `style.css`（新規 A15）, `assets/dreamin-spiral/home/*-560.*`（12 ファイル追加）
