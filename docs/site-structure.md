@@ -69,7 +69,7 @@ B8E  /
 ```
 
 - URL 階層はサイト上の置き場所であり、Service の上下関係 ・ Level ・ 順序ではない（Service Family は並列の入口）
-- **Service Family の Display Name ・ 並び順の正は OS repo の Dreamin' Spiral 🌱 Brand Architecture §1**（`constitution/brand-architecture/README.md`。名称表を本書で複製管理しない）。上のツリーの名前は URL の置き場所を示す短い呼び名で、Display Name ではない。Phase B（2026-09-24）で TOP ・ Home の Service Family を §1 の Display Name ・ Canonical Order に揃え、Parent Brand を名称に付けない形にした。URL ・ Technical ID は変更なし
+- **Service Family の Display Name ・ 並び順の正は OS repo の Dreamin' Spiral 🌱 Brand Architecture §1**（`constitution/brand-architecture/README.md`。名称表を本書で複製管理しない）。上のツリーの名前は URL の置き場所を示す短い呼び名で、Display Name ではない。Phase B（2026-09-24）で TOP ・ Home の Service Family を §1 の Display Name ・ Canonical Order に揃え、Parent Brand を名称に付けない形にした。URL ・ Technical ID は変更なし。Phase C（2026-09-24）で各 Service Page ・ 申込 ・ Thanks ・ Complete の title ・ og:title ・ アイブロウ ・ ラベル ・ CTA ・ 本文中の Service Name を同じ Display Name へ（`meta description` ・ `og:description` は Phase F、Legal は Phase E）
 - TOP の `section#dreamin-spiral` は B8E TOP 上の **summary section** として残る（別 canonical を持たない）。TOP の「Dreamin' Spiral 🌱について」（path card ・ section の Lead 直後 ・「どこから始めますか」の 3 箇所）はすべて `/dreamin-spiral/` を指す
 - 全ページの Header / Footer の `Dreamin' Spiral 🌱` は `/dreamin-spiral/` を指す（Home v1 以前は TOP の `#dreamin-spiral`）。Home 上では `.current`
 - `/academy.html` は `/dreamin-spiral/` へ 308（Home v1 以前は `/#dreamin-spiral`）
