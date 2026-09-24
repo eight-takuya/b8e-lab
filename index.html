@@ -117,62 +117,126 @@
          Service Family 内では Parent Brand（Dreamin' Spiral）を名称に付けない（§1.3）。
          Business Creation は Public Page v1 で接続（Guide は Phase 7・Community は Phase 8 で接続）。
          Project Creation は Phase 2A（Public Entry）で接続。Phase B（Service Family Public Display）で Business Creation の前へ。 -->
-    <section class="ds-family" id="dreamin-spiral">
+    <!-- 3.5 Dreamin' Spiral 🌱 — TOP Section Redesign v1（Visual Direction v1 を TOP へ展開・2026-09）
+         TOP の役割は「理解し切る」ことではなく「これ、自分に関係があるかもしれない」と感じてもらうこと。
+         世界観 ・ Spiral ・ 6 つの入口の理解は /dreamin-spiral/、詳細は各 Service Page が担う。
+         Service Family は上下関係 ・ Level ・ Funnel ではない。名称と並び順は Brand Architecture §1（Canonical Display Name ・ Canonical Order）に従う。
+         Service Family 内では Parent Brand（Dreamin' Spiral）を名称に付けない（§1.3）。
+         「○○な方へ」は Brand Architecture §1.1 Service Family Card Copy のまま（TOP ・ Home ・ Service Page で同一）。
+         写真は Home Visual Implementation v1 の 6 Asset を再利用（新規生成なし・TOP 用の size variant のみ追加）。 -->
+    <section class="ds-family ds-top-spiral" id="dreamin-spiral">
       <div class="ds-family-inner">
-        <h2 class="ds-family-heading">Dreamin' Spiral 🌱</h2>
-        <p class="ds-family-core">自分そのものから、人生と仕事を生きていく。</p>
-        <p class="ds-family-lead">
-          <span class="ds-phrase">「気になること」や</span><span class="ds-phrase">現実の中で生まれる感覚を入口に、</span><br>
-          自分に気づきながら、<br>
-          <span class="ds-phrase">人生や仕事を</span><span class="ds-phrase">創っていくための伴走です。</span>
-        </p>
-        <!-- Dreamin' Spiral 🌱 Home v1：この section は B8E TOP 上の summary。Dreamin' Spiral 🌱 そのものの Home は /dreamin-spiral/ -->
-        <a class="ds-service-cta" href="/dreamin-spiral/">Dreamin' Spiral 🌱について</a>
+
+        <div class="ds-top-spiral-intro">
+          <h2 class="ds-family-heading">Dreamin' Spiral 🌱</h2>
+          <p class="ds-family-core">自分そのものから、人生と仕事を生きていく。</p>
+          <p class="ds-family-lead">
+            <span class="ds-phrase">「このままでいいのかな」</span><br>
+            <span class="ds-phrase">「やりたいことはあるけれど、</span><span class="ds-phrase">まだ形になっていない」</span><br>
+            <span class="ds-phrase">そんな日常の「気になる」から、</span><span class="ds-phrase">自分に気づきながら、</span><br>
+            <span class="ds-phrase">人生や仕事を</span><span class="ds-phrase">実際に創っていくための伴走です。</span>
+          </p>
+        </div>
+
+        <!-- 6 つの入口への小さな Bridge（情報量を増やさない） -->
+        <div class="ds-top-spiral-bridge">
+          <p class="ds-top-spiral-bridge-primary">今の自分に必要なところから。</p>
+          <p class="ds-top-spiral-bridge-secondary">今、どんなことが気になっていますか？</p>
+        </div>
 
         <ul class="ds-family-list">
           <li class="ds-family-item">
-            <div>
+            <figure class="ds-family-visual">
+              <picture>
+                <source type="image/avif" srcset="/assets/dreamin-spiral/home/guide-332.avif 332w, /assets/dreamin-spiral/home/guide-560.avif 560w, /assets/dreamin-spiral/home/guide-664.avif 664w" sizes="(max-width: 768px) calc(100vw - 48px), 280px">
+                <source type="image/webp" srcset="/assets/dreamin-spiral/home/guide-332.webp 332w, /assets/dreamin-spiral/home/guide-560.webp 560w, /assets/dreamin-spiral/home/guide-664.webp 664w" sizes="(max-width: 768px) calc(100vw - 48px), 280px">
+                <img src="/assets/dreamin-spiral/home/guide-560.webp" width="560" height="280" loading="lazy" decoding="async" alt="明るい室内で、向かい合って話している二人">
+              </picture>
+            </figure>
+            <div class="ds-top-spiral-body">
               <h3 class="ds-family-name">Guide</h3>
               <p class="ds-family-desc"><span class="ds-phrase">今、気になっていることを</span><span class="ds-phrase">話してみたい人へ。</span></p>
             </div>
-            <a href="/dreamin-spiral/guide/">詳しく見る</a>
+            <a href="/dreamin-spiral/guide/" aria-label="Guide について詳しく見る">詳しく見る</a>
           </li>
           <li class="ds-family-item">
-            <div>
+            <figure class="ds-family-visual">
+              <picture>
+                <source type="image/avif" srcset="/assets/dreamin-spiral/home/3-weeks-tuning-332.avif 332w, /assets/dreamin-spiral/home/3-weeks-tuning-560.avif 560w, /assets/dreamin-spiral/home/3-weeks-tuning-664.avif 664w" sizes="(max-width: 768px) calc(100vw - 48px), 280px">
+                <source type="image/webp" srcset="/assets/dreamin-spiral/home/3-weeks-tuning-332.webp 332w, /assets/dreamin-spiral/home/3-weeks-tuning-560.webp 560w, /assets/dreamin-spiral/home/3-weeks-tuning-664.webp 664w" sizes="(max-width: 768px) calc(100vw - 48px), 280px">
+                <img src="/assets/dreamin-spiral/home/3-weeks-tuning-560.webp" width="560" height="280" loading="lazy" decoding="async" alt="木漏れ日の道を、ノートを持って歩いている人">
+              </picture>
+            </figure>
+            <div class="ds-top-spiral-body">
               <h3 class="ds-family-name">3 Weeks Tuning</h3>
               <p class="ds-family-desc"><span class="ds-phrase">「気になる」や「悩み」から、</span><br><span class="ds-phrase">3週間かけて</span><span class="ds-phrase">自分そのものに気づいていく人へ。</span></p>
             </div>
-            <a href="/dreamin-spiral/3-weeks/">詳しく見る</a>
+            <a href="/dreamin-spiral/3-weeks/" aria-label="3 Weeks Tuning について詳しく見る">詳しく見る</a>
           </li>
           <li class="ds-family-item">
-            <div>
+            <figure class="ds-family-visual">
+              <picture>
+                <source type="image/avif" srcset="/assets/dreamin-spiral/home/community-332.avif 332w, /assets/dreamin-spiral/home/community-560.avif 560w, /assets/dreamin-spiral/home/community-664.avif 664w" sizes="(max-width: 768px) calc(100vw - 48px), 280px">
+                <source type="image/webp" srcset="/assets/dreamin-spiral/home/community-332.webp 332w, /assets/dreamin-spiral/home/community-560.webp 560w, /assets/dreamin-spiral/home/community-664.webp 664w" sizes="(max-width: 768px) calc(100vw - 48px), 280px">
+                <img src="/assets/dreamin-spiral/home/community-560.webp" width="560" height="280" loading="lazy" decoding="async" alt="自然光の入る場所で、輪になって話している小さなグループ">
+              </picture>
+            </figure>
+            <div class="ds-top-spiral-body">
               <h3 class="ds-family-name">Community</h3>
               <p class="ds-family-desc"><span class="ds-phrase">人とつながりながら、</span><br><span class="ds-phrase">日々の中で</span><span class="ds-phrase">自分に気づき続けていける人へ。</span></p>
             </div>
-            <a href="/dreamin-spiral/community/">詳しく見る</a>
+            <a href="/dreamin-spiral/community/" aria-label="Community について詳しく見る">詳しく見る</a>
           </li>
           <li class="ds-family-item">
-            <div>
+            <figure class="ds-family-visual">
+              <picture>
+                <source type="image/avif" srcset="/assets/dreamin-spiral/home/my-life-my-way-332.avif 332w, /assets/dreamin-spiral/home/my-life-my-way-560.avif 560w, /assets/dreamin-spiral/home/my-life-my-way-632.avif 632w" sizes="(max-width: 768px) calc(100vw - 48px), 280px">
+                <source type="image/webp" srcset="/assets/dreamin-spiral/home/my-life-my-way-332.webp 332w, /assets/dreamin-spiral/home/my-life-my-way-560.webp 560w, /assets/dreamin-spiral/home/my-life-my-way-632.webp 632w" sizes="(max-width: 768px) calc(100vw - 48px), 280px">
+                <img src="/assets/dreamin-spiral/home/my-life-my-way-560.webp" width="560" height="280" loading="lazy" decoding="async" alt="窓辺の机で、海の見える景色の方を見ている人">
+              </picture>
+            </figure>
+            <div class="ds-top-spiral-body">
               <h3 class="ds-family-name">My Life, My Way</h3>
               <p class="ds-family-desc"><span class="ds-phrase">自分の気持ちや望みに</span><span class="ds-phrase">気づきながら、</span><br><span class="ds-phrase">自分の人生を、</span><span class="ds-phrase">自分で選んで生きていく人へ。</span></p>
             </div>
-            <a href="/dreamin-spiral/my-life/">詳しく見る</a>
+            <a href="/dreamin-spiral/my-life/" aria-label="My Life, My Way について詳しく見る">詳しく見る</a>
           </li>
           <li class="ds-family-item">
-            <div>
+            <figure class="ds-family-visual">
+              <picture>
+                <source type="image/avif" srcset="/assets/dreamin-spiral/home/project-creation-332.avif 332w, /assets/dreamin-spiral/home/project-creation-560.avif 560w, /assets/dreamin-spiral/home/project-creation-636.avif 636w" sizes="(max-width: 768px) calc(100vw - 48px), 280px">
+                <source type="image/webp" srcset="/assets/dreamin-spiral/home/project-creation-332.webp 332w, /assets/dreamin-spiral/home/project-creation-560.webp 560w, /assets/dreamin-spiral/home/project-creation-636.webp 636w" sizes="(max-width: 768px) calc(100vw - 48px), 280px">
+                <img src="/assets/dreamin-spiral/home/project-creation-560.webp" width="560" height="280" loading="lazy" decoding="async" alt="画面を見ながら、数人でプロジェクトについて話している様子">
+              </picture>
+            </figure>
+            <div class="ds-top-spiral-body">
               <h3 class="ds-family-name">Project Creation</h3>
               <p class="ds-family-desc"><span class="ds-phrase">エンジニアから、</span><span class="ds-phrase">プロジェクトを創る人へ。</span></p>
             </div>
-            <a href="/dreamin-spiral/project-creation/">詳しく見る</a>
+            <a href="/dreamin-spiral/project-creation/" aria-label="Project Creation について詳しく見る">詳しく見る</a>
           </li>
           <li class="ds-family-item">
-            <div>
+            <figure class="ds-family-visual">
+              <picture>
+                <source type="image/avif" srcset="/assets/dreamin-spiral/home/business-creation-332.avif 332w, /assets/dreamin-spiral/home/business-creation-560.avif 560w, /assets/dreamin-spiral/home/business-creation-640.avif 640w" sizes="(max-width: 768px) calc(100vw - 48px), 280px">
+                <source type="image/webp" srcset="/assets/dreamin-spiral/home/business-creation-332.webp 332w, /assets/dreamin-spiral/home/business-creation-560.webp 560w, /assets/dreamin-spiral/home/business-creation-640.webp 640w" sizes="(max-width: 768px) calc(100vw - 48px), 280px">
+                <img src="/assets/dreamin-spiral/home/business-creation-560.webp" width="560" height="280" loading="lazy" decoding="async" alt="明るい部屋で、ノートパソコンに向かっている人">
+              </picture>
+            </figure>
+            <div class="ds-top-spiral-body">
               <h3 class="ds-family-name">Business Creation</h3>
               <p class="ds-family-desc"><span class="ds-phrase">自分の経験や想いを、</span><span class="ds-phrase">Businessとして形にし、</span><br><span class="ds-phrase">実際に届けながら</span><span class="ds-phrase">育てていく人へ。</span></p>
             </div>
-            <a href="/dreamin-spiral/business-creation/">詳しく見る</a>
+            <a href="/dreamin-spiral/business-creation/" aria-label="Business Creation について詳しく見る">詳しく見る</a>
           </li>
         </ul>
+
+        <!-- Section Ending：Dreamin' Spiral 🌱 Home への導線を 1 本だけ置く（申込 CTA にしない） -->
+        <div class="ds-top-spiral-end">
+          <p><span class="ds-phrase">自分の「気になる」から始まるSpiralと、</span><span class="ds-phrase">6つの入口についてご覧いただけます。</span></p>
+          <a class="ds-service-cta" href="/dreamin-spiral/">Dreamin' Spiral 🌱について</a>
+        </div>
+
       </div>
     </section>
 
