@@ -6,6 +6,17 @@
 ---
 
 ---
+## [2026-09-24] — Service Family Phase B｜Public Display：TOP ・ Home の Service Family を Canonical Display Name ・ Order へ（Preview・Owner Reality Review 待ち）
+
+**Scope:** `index.html`, `dreamin-spiral/index.html`, `docs/site-structure.md`
+**Triggered by:** OS Brand Architecture §1（Service Naming v1・Phase A CLOSED）
+
+- Card 名：Guide ／ 3 Weeks Tuning ／ Community ／ My Life, My Way ／ Project Creation ／ Business Creation（Service Family 内は Parent Brand を付けない・§1.3）。Home の `aria-label` も同じ名前へ
+- 並び順：My Life, My Way → **Project Creation → Business Creation**（Business Creation が最後）
+- Home「今、気になっているところから。」：Project Creation の行 →「Businessを創っていきたいとき。」の順へ入れ替え（他の行は不変）
+- Card Copy ・ URL ・ CTA ・ CSS ・ Technical ID は変更なし。Service Page ・ 申込 ・ title ・ og ・ Legal ・ Nav ・ Footer は Phase C 以降
+
+---
 ## [2026-09-24] — Project Creation Phase 2A｜Public Entry：TOP ・ Home の Service Family に 6 件目として追加（Owner Reality Review 済み）
 
 **Scope:** `index.html`, `dreamin-spiral/index.html`, `style.css`（1 rule 追加）, `docs/site-structure.md`
