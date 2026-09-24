@@ -2453,3 +2453,172 @@ a:hover {
     padding: 44px 24px 40px;
   }
 }
+
+/* ------------------------------------------------------------
+   A15. TOP｜Dreamin' Spiral 🌱 Section Redesign v1（2026-09）
+   TOP の `#dreamin-spiral`（.ds-top-spiral）だけに適用する。
+   Home（body.ds-home）・ Service Page は変更しない。
+   TOP の役割は「気になる ／ 自分事になる」。理解は /dreamin-spiral/、詳細は各 Service Page。
+   正本：dreamin'-spiral-os docs/design-systems/dreamin-spiral-visual-direction-v1.md
+   ------------------------------------------------------------ */
+
+/* Section の外枠は TOP の他 section（.paths-grid ／ .paths-heading）と同じ 720px の visual column に揃える。
+   Text は左揃えのまま。Owner Review（2026-09-25）で「この section だけ左に張り付いて見える」を解消 */
+.ds-top-spiral .ds-family-inner {
+  max-width: 720px;
+}
+
+.ds-top-spiral-intro {
+  max-width: 560px;
+}
+
+/* 幅の狭い Card では語句単位の折り返し固定を外し、自然に折り返す（文言は変えない） */
+.ds-top-spiral .ds-family-desc .ds-phrase {
+  display: inline;
+}
+
+.ds-top-spiral .ds-family-lead {
+  margin-top: 18px;
+}
+
+/* 6 つの入口への Bridge（静かに、情報量を増やさない） */
+.ds-top-spiral-bridge {
+  margin-top: 44px;
+}
+
+.ds-top-spiral-bridge-primary {
+  font-size: 1.02rem;
+  color: #26251f;
+  letter-spacing: 0.03em;
+  line-height: 1.9;
+}
+
+.ds-top-spiral-bridge-secondary {
+  margin-top: 6px;
+  font-size: 0.9rem;
+  color: #5f5b53;
+  line-height: 1.9;
+}
+
+/* 6 Service｜Compact Visual Grid（Desktop 3 列 ×2 段。6 枚は完全に対等） */
+.ds-top-spiral .ds-family-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+  margin: 28px 0 0;
+}
+
+.ds-top-spiral .ds-family-item,
+.ds-top-spiral .ds-family-item:first-child,
+.ds-top-spiral .ds-family-item:last-child {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+  gap: 0;
+  padding: 0;
+  overflow: hidden;
+  border: 1px solid #e6e1d9;
+  border-radius: 14px;
+  background: linear-gradient(180deg, #ffffff 0%, #fbf9f5 100%);
+}
+
+.ds-top-spiral .ds-family-visual {
+  position: relative;
+  margin: 0;
+  background: #efece6;
+}
+
+.ds-top-spiral .ds-family-visual img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 2 / 1;
+  object-fit: cover;
+}
+
+/* Home と同じ Cream の veil（6 枚とも同じ。画像自体は加工しない） */
+.ds-top-spiral .ds-family-visual::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(255, 252, 245, 0.10) 0%, rgba(255, 252, 245, 0.02) 100%);
+  pointer-events: none;
+}
+
+/* Home と同じ補正（Project Creation の 1 枚だけ室内で沈むため。元 Asset は無加工） */
+.ds-top-spiral .ds-family-item:nth-child(5) .ds-family-visual img {
+  filter: brightness(1.06);
+}
+
+.ds-top-spiral-body {
+  flex: 1 1 auto;
+  padding: 18px 18px 0;
+}
+
+.ds-top-spiral .ds-family-name {
+  margin: 0 0 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #26251f;
+  letter-spacing: 0.03em;
+  line-height: 1.7;
+}
+
+.ds-top-spiral .ds-family-desc {
+  font-size: 0.86rem;
+  color: #4a4740;
+  line-height: 1.85;
+}
+
+.ds-top-spiral .ds-family-item > a {
+  align-self: flex-start;
+  margin: 16px 18px 18px;
+  color: #8a6a4e;
+}
+
+.ds-top-spiral .ds-family-item > a:hover {
+  color: #6f5239;
+  border-color: #9b7b5c;
+}
+
+/* Section Ending｜Dreamin' Spiral 🌱 Home への導線を 1 本だけ */
+.ds-top-spiral-end {
+  margin-top: 40px;
+}
+
+.ds-top-spiral-end p {
+  font-size: 0.92rem;
+  color: #5f5b53;
+  line-height: 1.95;
+}
+
+.ds-top-spiral-end .ds-service-cta {
+  margin-top: 18px;
+  color: #8a6a4e;
+}
+
+.ds-top-spiral-end .ds-service-cta:hover {
+  color: #6f5239;
+  border-color: #9b7b5c;
+}
+
+@media (max-width: 768px) {
+  .ds-top-spiral-bridge {
+    margin-top: 36px;
+  }
+  .ds-top-spiral .ds-family-list {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
+    margin-top: 24px;
+  }
+  .ds-top-spiral-body {
+    padding: 16px 16px 0;
+  }
+  .ds-top-spiral .ds-family-item > a {
+    margin: 14px 16px 16px;
+  }
+  .ds-top-spiral-end {
+    margin-top: 32px;
+  }
+}

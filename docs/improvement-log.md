@@ -6,6 +6,23 @@
 ---
 
 ---
+## [2026-09-25] — TOP｜Dreamin' Spiral 🌱 Section Redesign v1（**Owner Review 待ち**・Preview のみ）
+
+**Scope:** `index.html`（`#dreamin-spiral` の section のみ）, `style.css`（新規 A15）, `assets/dreamin-spiral/home/*-560.*`（12 ファイル追加）
+**Triggered by:** OS Visual Direction v1（Home で Owner 承認済み）を TOP へ展開
+
+- TOP の役割を「気になる ／ 自分事になる」に置き、理解は `/dreamin-spiral/`、詳細は各 Service Page という分担のまま Visual を足す
+- Intro：Brand Heading ・ Core Message は不変。説明を「このままでいいのかな」「やりたいことはあるけれど、まだ形になっていない」から始まる Empathy の言い方へ（Visual Direction v1 §12 Empathy に準拠）
+- 6 つの入口への小さな Bridge を追加（今の自分に必要なところから。／ 今、どんなことが気になっていますか？）
+- 横罫線 List を **Compact Visual Grid** へ（**Desktop 3 列 ×2 段 ／ Mobile 1 列**）。Card は 写真 → Service 名 → 「○○な方へ」 → CTA。TOP には Short Description ・ 価格 ・ 期間 ・ Spiral 図を置かない
+- 「○○な方へ」は **Brand Architecture §1.1 Service Family Card Copy のまま不変**（TOP ・ Home ・ Service Page で同一）。Service 名 ・ 並び順 ・ URL ・ CTA も不変
+- 写真は Home の 6 Asset を**再利用**（新規生成なし ・ master 追加なし）。TOP の Card 幅（280px）に合わせた 560px variant だけ追加
+- Section Ending に `/dreamin-spiral/` への導線を 1 本（既存の「Dreamin' Spiral 🌱について」を Section の最後へ移動）
+- Section の外枠は TOP の他 section（THREE PATHS の 720px）と同じ visual column に揃える（Owner Review 2026-09-25：この section だけ左に張り付いて見える件を解消）。Text は左揃えのまま ・ 中央揃えにしない。文章の行長は 560px
+- QA（Desktop 1280 ／ Mobile 375）：**Card 280×331 ×6 完全一致**（Mobile 327 幅 ×6）・ broken image 0 ・ 横スクロール 0 ・ text clip 0 ・ 折り返しの孤立行 0 ・ Section 内 contrast 不足 0 ・ link 6 件正常
+- Home ・ Service Page ・ TOP の他 section の CSS は変更していない（新 CSS はすべて `.ds-top-spiral` に scope）
+
+---
 ## [2026-09-25] — Home Visual Implementation v1：Gradient Section の視覚重心を微調整（**Owner 再 Review 待ち**）
 
 **Scope:** `style.css`（A14 の `.ds-home-empathy` のみ）
