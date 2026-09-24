@@ -15,7 +15,7 @@
 - アイブロウ（`.ds-service-eyebrow`・GAS への Transition View の `data-transition-eyebrow` を含む）・ 申込 ／ Thanks ／ Complete のラベル（`.hero-label`）を Display Name へ（表示は CSS で大文字）
 - CTA：`3 Weeks Tuningに申し込む` ・ `My Life, My Wayに申し込む`（Service Page と申込ボタン）。`Guide（無料）に申し込む` ・ `Communityに参加する` ・ `Business Creationについて話してみる` ・ `Project Creationに申し込む` は不変
 - 本文：Service Name としての `Dreamin' Spiral ○○` を Display Name へ。Business Creation の First View だけ自然文 `Dreamin' Spiral 🌱 の Business Creationは、`（Parent Brand Surface Rule D）。My Life の Concept としての `My Life`（「6か月の日常そのものが、My Lifeです。」等）は残す
-- Library の Guide への静かな link を `Guide` へ
+- Library の Guide への静かな link を `Guideを見る` へ ・ Business Creation の Partner の肩書きを `Business Creation Partner` へ（Owner ／ Architect Review）
 - 不変：URL ・ `form_type` ・ Formspree ・ Stripe ・ GAS ・ `meta description` ／ `og:description`（Phase F）・ Legal（Phase E）・ Project Creation（既に整合）・ Nav ・ Footer ・ CSS
 
 ---
