@@ -69,6 +69,7 @@ B8E  /
 ```
 
 - URL 階層はサイト上の置き場所であり、Service の上下関係 ・ Level ・ 順序ではない（Service Family は並列の入口）
+- **Service Family の Display Name ・ 並び順の正は OS repo の Dreamin' Spiral 🌱 Brand Architecture §1**（`constitution/brand-architecture/README.md`。名称表を本書で複製管理しない）。上のツリーの名前は URL の置き場所を示す短い呼び名で、Display Name ではない。Phase B（2026-09-24）で TOP ・ Home の Service Family を §1 の Display Name ・ Canonical Order に揃え、Parent Brand を名称に付けない形にした。URL ・ Technical ID は変更なし
 - TOP の `section#dreamin-spiral` は B8E TOP 上の **summary section** として残る（別 canonical を持たない）。TOP の「Dreamin' Spiral 🌱について」（path card ・ section の Lead 直後 ・「どこから始めますか」の 3 箇所）はすべて `/dreamin-spiral/` を指す
 - 全ページの Header / Footer の `Dreamin' Spiral 🌱` は `/dreamin-spiral/` を指す（Home v1 以前は TOP の `#dreamin-spiral`）。Home 上では `.current`
 - `/academy.html` は `/dreamin-spiral/` へ 308（Home v1 以前は `/#dreamin-spiral`）
@@ -86,7 +87,7 @@ B8E  /
 | `dreamin-spiral/business-creation/index.html` | `/dreamin-spiral/business-creation/` | Business Creation Service Page（Public Page v1・**Production Live 2026-09-19**）。Primary CTA「Business Creationについて話してみる」→ **Business Creation Dialogue Form**（GAS・Reality → 90分の対話日時 → 予約。Production の Dialogue Form）。旧 Inquiry Form ／ Thanks（`inquiry/` ・ `thanks/`）は Superseded として削除（Production 未公開）／ Secondary「Guide（無料）について見る」→ `/dreamin-spiral/guide/`。実装記録：[business-creation-public-page-v1.md](business-creation-public-page-v1.md) |
 | `dreamin-spiral/project-creation/index.html` | `/dreamin-spiral/project-creation/` | Project Creation LP（Founding Cohort・Launch v1）。Primary CTA「Project Creationに申し込む」→ `/dreamin-spiral/project-creation/apply/` → `thanks/` → Stripe ／ 銀行振込 → `complete/`。Secondary → `/dreamin-spiral/guide/`。`cohort.js` で締切（2026-09-30 18:00）後は受付終了表示。**Public Entry（Phase 2A・2026-09-24）：** TOP `section#dreamin-spiral` と Home の Service Family 6 件目（Business Creation の直後・Card「Project Creation ／ エンジニアから、プロジェクトを創る人へ。／ 詳しく見る」）と、Home「今、気になっているところから。」の 1 行「エンジニアとしての経験を活かしながら、Projectを動かす側へ進みたいとき。」から link。設計・記録の正本は OS repo `docs/repository-architecture/project-creation-launch-v1.md` |
 
-入口は TOP の `section#dreamin-spiral`（Dreamin' Spiral 🌱・Service Family 6 件。Project Creation は Phase 2A で追加）と、2026-09-17 以降は Dreamin' Spiral 🌱 Home（`/dreamin-spiral/`）。Header / Footer の `Dreamin' Spiral 🌱` は Home v1 まではこの anchor を、以降は `/dreamin-spiral/` を指す（旧 `academy.html` / `academy/*` は Phase 10-B3 で退役）。
+入口は TOP の `section#dreamin-spiral`（Dreamin' Spiral 🌱・Service Family 6 件。Project Creation は Phase 2A で追加。名称 ・ 並び順は Brand Architecture §1）と、2026-09-17 以降は Dreamin' Spiral 🌱 Home（`/dreamin-spiral/`）。Header / Footer の `Dreamin' Spiral 🌱` は Home v1 まではこの anchor を、以降は `/dreamin-spiral/` を指す（旧 `academy.html` / `academy/*` は Phase 10-B3 で退役）。
 Community は Community Current Entrance v1 で接続。Business Creation は Public Page v1 で TOP ・ Home の item から link する（2026-09-19 Production Live）（Guide は [guide-current-entrance-v1.md](guide-current-entrance-v1.md)、Community は [community-current-entrance-v1.md](community-current-entrance-v1.md) で接続）。
 実装詳細は [current-sales-entrance-v1.md](current-sales-entrance-v1.md)、設計の正本は OS repo の `docs/repository-architecture/current-sales-entrance-v1.md`。
 
