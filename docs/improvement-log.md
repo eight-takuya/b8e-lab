@@ -6,6 +6,18 @@
 ---
 
 ---
+## [2026-09-25] — Home Visual Implementation v1：Gradient Section の視覚重心を微調整（**Owner 再 Review 待ち**）
+
+**Scope:** `style.css`（A14 の `.ds-home-empathy` のみ）
+**Triggered by:** Owner Review（「今、気になっているところから。」の Block がやや上寄りに見える）
+
+- 原因は、余白で Section を区切るために入れた `.ds-home .section-block { padding-top: 0 }` が `.ds-home-empathy` の上 padding を打ち消していたこと（上 padding が実測 0px だった）
+- scope を `.ds-home .ds-home-empathy` に揃えて上 padding を復帰。**Desktop 44px ／ Mobile 30px**（下 padding 44px ／ 32px と揃える）
+- 結果（実測・行間の half-leading を含めた見た目の余白）：Desktop 上 53px ／ 下 54px、Mobile 上 39px ／ 下 42px
+- Section の高さは Desktop 435px → 480px。**前後 Section との間隔は 88px のまま不変**。余白は削っていない
+- 文言 ・ Service Card ・ 6 Service 画像 ・ Spiral ・ Hero ・ Library ・ Closing ・ Typography ・ Color は不変
+
+---
 ## [2026-09-25] — Home Visual Implementation v1：6 Service Visual を組み込み（**Owner 再 Review 待ち**）
 
 **Scope:** `dreamin-spiral/index.html`, `style.css`（A14）, `assets/dreamin-spiral/home/`（新規 24 ファイル）

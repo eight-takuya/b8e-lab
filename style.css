@@ -2230,8 +2230,10 @@ a:hover {
 }
 
 /* Empathy ／ Entrance — 「これ、自分かも」。朝の空気の面を置き、現実の言葉を静かに並べる（§12） */
-.ds-home-empathy {
-  padding: 48px 44px 44px;
+/* 上下の余白を同じにして、面の中で文章 Block の重心を合わせる。
+   `.ds-home .section-block` の padding-top: 0 に負けないよう scope を合わせる（Owner Review 2026-09-25） */
+.ds-home .ds-home-empathy {
+  padding: 44px 44px 44px;
   border: 1px solid #eee9e1;
   border-radius: 20px;
   background:
@@ -2431,8 +2433,8 @@ a:hover {
   .ds-spiral {
     margin: 48px -24px 0;
   }
-  .ds-home-empathy {
-    padding: 36px 24px 32px;
+  .ds-home .ds-home-empathy {
+    padding: 30px 24px 32px;
   }
   .ds-home-family .ds-family-list {
     grid-template-columns: minmax(0, 1fr);
