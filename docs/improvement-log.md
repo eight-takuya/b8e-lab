@@ -22,6 +22,15 @@
 - `og:image` は候補のみ作成し、**HTML には未適用**（Owner Review 前に採用しない）
 
 ---
+## [2026-09-24] — Project Creation Recruitment Ready：Thanks の銀行振込に名義の案内（Owner ／ Architect 確定）
+
+**Scope:** `dreamin-spiral/project-creation/thanks/index.html`, `dreamin-spiral/project-creation/cohort.js`（コメントのみ）
+**Triggered by:** OS Work Package ②｜Project Creation Recruitment Ready End-to-End Reality Review
+
+- 銀行振込のブロックに「銀行振込の場合は、お申し込み時のお名前でお振り込みください。」（Owner が申込者と振込人名義を照合するため）。振込先 ・ 金額 ・ 期限 ・ Stripe ・ 他 Service の Thanks は不変
+- `cohort.js` のコメント：締切（2026-09-30 18:00）は**新規申込の受付**の締切。締切前に申し込んだ方の支払いのため、Stripe Payment Link は締切で止めない（挙動は不変）
+
+---
 ## [2026-09-24] — Service Family Card Copy：TOP ・ Home の説明文を Brand Architecture §1.1 の Card Copy へ（Owner Reality Review 済み・**Production Live**・#117）
 
 **Scope:** `index.html`, `dreamin-spiral/index.html`, `docs/site-structure.md`

@@ -6,7 +6,8 @@
  *  - 6名に達したとき（Owner の判断）は STATUS を 'closed' にする（1 行の変更）
  *  - 受付終了時: [data-pc-apply]（Primary 申込 CTA ・ 申込 Form）を隠し、[data-pc-closed]（受付終了の表示）を出す。
  *    Guide（無料）の導線 ・ LP の本文はそのまま残す
- *  - JavaScript が動かない場合は受付中の表示のまま（締切後は Stripe Payment Link も無効化する — §11）
+ *  - 締切は**新規申込の受付**の締切。締切前に申し込んだ方の支払いのため、Stripe Payment Link は締切で止めない（§11）
+ *  - JavaScript が動かない場合は受付中の表示のまま
  */
 (function () {
   var STATUS = 'open';                                       // 'open' ／ 'closed'（満席時）
