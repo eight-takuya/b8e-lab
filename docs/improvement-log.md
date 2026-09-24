@@ -6,7 +6,7 @@
 ---
 
 ---
-## [2026-09-24] — Service Family Phase B｜Public Display：TOP ・ Home の Service Family を Canonical Display Name ・ Order へ（Preview・Owner Reality Review 待ち）
+## [2026-09-24] — Service Family Phase B｜Public Display：TOP ・ Home の Service Family を Canonical Display Name ・ Order へ（Owner Reality Review 済み・**Production Live**・#112）
 
 **Scope:** `index.html`, `dreamin-spiral/index.html`, `docs/site-structure.md`
 **Triggered by:** OS Brand Architecture §1（Service Naming v1・Phase A CLOSED）
@@ -15,6 +15,7 @@
 - 並び順：My Life, My Way → **Project Creation → Business Creation**（Business Creation が最後）
 - Home「今、気になっているところから。」：Project Creation の行 →「Businessを創っていきたいとき。」の順へ入れ替え（他の行は不変）
 - Card Copy ・ URL ・ CTA ・ CSS ・ Technical ID は変更なし。Service Page ・ 申込 ・ title ・ og ・ Legal ・ Nav ・ Footer は Phase C 以降
+- Production（Desktop 1280 ／ 375px）：両ページ 6 件 ・ 名称 ・ 順序一致 ・ 横スクロール 0 ・ JS error 0 ・ Project Creation ／ Business Creation の Card と「〜したいとき。」の入口が正しく遷移。記録の正本は OS repo `docs/architecture/decisions/brand-architecture-service-naming-v1.md`「Phase B Close」
 
 ---
 ## [2026-09-24] — Project Creation Phase 2A｜Public Entry：TOP ・ Home の Service Family に 6 件目として追加（Owner Reality Review 済み）
