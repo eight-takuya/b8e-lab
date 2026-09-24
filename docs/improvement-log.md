@@ -6,15 +6,15 @@
 ---
 
 ---
-## [2026-09-24] — Project Creation Phase 2A｜Public Entry：TOP ・ Home の Service Family に 6 件目として追加（Preview・Owner Reality Review 待ち）
+## [2026-09-24] — Project Creation Phase 2A｜Public Entry：TOP ・ Home の Service Family に 6 件目として追加（Owner Reality Review 済み）
 
-**Scope:** `index.html`, `dreamin-spiral/index.html`, `docs/site-structure.md`
+**Scope:** `index.html`, `dreamin-spiral/index.html`, `style.css`（1 rule 追加）, `docs/site-structure.md`
 **Triggered by:** Architect Phase 2A 依頼（Phase 2 Read-only 調査で LP への inbound link が 0 件と判明）
 
 - TOP `section#dreamin-spiral` の Service Family：Business Creation の直後に「Project Creation ／ エンジニアから、プロジェクトを創る人へ。／ 詳しく見る」→ `/dreamin-spiral/project-creation/`
 - `/dreamin-spiral/` の Service Family：同じ Card（Name ・ Copy ・ CTA は TOP と同一。aria-label は Home の既存形式）
-- `/dreamin-spiral/`「今、気になっているところから。」：「Businessを創っていきたいとき。」の直後に「エンジニアとしての経験を活かしながら、Projectを動かす側へ進みたいとき。」を 1 行追加し、LP へ link（既存の `<p>` ・ `.ds-phrase` を再利用。汎用 `a` の見え方）
-- 既存の `.ds-family-*` をそのまま再利用。`style.css` の変更は 0 行。Creation Program の分類 UI ・ 比較 Section は作らない
+- `/dreamin-spiral/`「今、気になっているところから。」：「Businessを創っていきたいとき。」の直後に「エンジニアとしての経験を活かしながら、Projectを動かす側へ進みたいとき。」を 1 行追加し、LP へ link（既存の `<p>` ・ `.ds-phrase` を再利用）。Owner Reality Review（B 採用）で、この入口だけに細い下線を常時表示（`.ds-home-entry-link .ds-phrase`・1px ・ 下線色 #c9a882 ・ 文字色 ・ 太さは不変。既存 5 行は不変）
+- 既存の `.ds-family-*` をそのまま再利用。`style.css` は入口の下線 1 rule の追加のみ（既存 rule の変更 0 行）。Creation Program の分類 UI ・ 比較 Section は作らない
 - 変更しない：Global Navigation ・ Footer ・ About ・ DX支援 ・ Project Creation LP ・ 申込 ・ Thanks ・ Complete ・ Legal ・ Stripe ・ Booking ・ Analytics
 - Phase 2B 候補（今回範囲外）：og:image ・ sitemap.xml ／ robots.txt ・ structured data
 
