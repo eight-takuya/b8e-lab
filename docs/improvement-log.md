@@ -6,6 +6,63 @@
 ---
 
 ---
+## [2026-09-25] — Home Visual Implementation v1：Gradient Section の視覚重心を微調整（**Owner 再 Review 待ち**）
+
+**Scope:** `style.css`（A14 の `.ds-home-empathy` のみ）
+**Triggered by:** Owner Review（「今、気になっているところから。」の Block がやや上寄りに見える）
+
+- 原因は、余白で Section を区切るために入れた `.ds-home .section-block { padding-top: 0 }` が `.ds-home-empathy` の上 padding を打ち消していたこと（上 padding が実測 0px だった）
+- scope を `.ds-home .ds-home-empathy` に揃えて上 padding を復帰。**Desktop 44px ／ Mobile 30px**（下 padding 44px ／ 32px と揃える）
+- 結果（実測・行間の half-leading を含めた見た目の余白）：Desktop 上 53px ／ 下 54px、Mobile 上 39px ／ 下 42px
+- Section の高さは Desktop 435px → 480px。**前後 Section との間隔は 88px のまま不変**。余白は削っていない
+- 文言 ・ Service Card ・ 6 Service 画像 ・ Spiral ・ Hero ・ Library ・ Closing ・ Typography ・ Color は不変
+
+---
+## [2026-09-25] — Home Visual Implementation v1：6 Service Visual を組み込み（**Owner 再 Review 待ち**）
+
+**Scope:** `dreamin-spiral/index.html`, `style.css`（A14）, `assets/dreamin-spiral/home/`（新規 24 ファイル）
+**Triggered by:** Owner が Desktop へ配置した 6 枚（Architect が Visual Direction v1 に沿って生成 ・ Owner 採用）
+
+- 6 Service Card に写真を組み込み（Guide ／ 3 Weeks Tuning ／ Community ／ My Life, My Way ／ Project Creation ／ Business Creation）。**対応と画像の内容は変更していない**
+- Engineer が行ったのは中央基準で 2:1 へ Crop ・ 縮小 ・ WebP ／ AVIF 変換のみ。**拡大していない**（2x の幅は Crop 後の実寸と 664px の小さい方）
+- 配信：`<picture>` で AVIF → WebP、`srcset`（332w ／ 2x）＋ `sizes="(max-width: 768px) calc(100vw - 48px), 332px"`、`width` ／ `height` ・ `loading="lazy"` ・ `decoding="async"`。**2x 端末で AVIF 合計 約 107KB**
+- Card は Visual（2:1）＋ Text。読み順は Service 名 →「○○な方へ」→ 短い説明 → CTA のまま
+- 一覧（1 列 ・ 罫線）時代の `.ds-family-item:first-child` の例外（線と上余白を外す）を Card Grid では打ち消し、**6 枚を完全に同じ形**に（Desktop 実測 332×516 ×6 ・ Visual 330×165 ×6）
+- 色味：6 枚共通のごく薄い Cream veil。Project Creation の 1 枚だけ室内で沈むため表示時に `brightness(1.06)`。**画像自体は無加工**・強い Filter なし
+- Source（master PNG）は OS repo `assets/png/dreamin-spiral-home-visual/`。b8e-lab には公開用の最適化版だけを置く（404KB）
+- QA（Desktop 1280 ／ Mobile 375）：broken image 0 ・ 横スクロール 0 ・ text clip 0 ・ contrast 不足 0 ・ 内部 link 15 件 200 ・ CLS 対策（`width`/`height` ＋ `aspect-ratio`）・ LCP は Hero の text のまま
+- Copy ・ Service 名 ・ 並び順 ・ URL ・ CTA は不変
+
+---
+## [2026-09-24] — Home Visual Implementation v1：Owner / Architect Review 反映（重心 ・ Card 情報階層）（**Owner 再 Review 待ち**）
+
+**Scope:** `dreamin-spiral/index.html`, `style.css`（A14 ブロック）
+**Triggered by:** Owner が Preview を確認した Review 結果（3 点採用）
+
+- **Gradient Section の重心**：Hero の光の重心を上端から Content の高さへ（白い glow `50% 2%` → `50% 46%`、暖色 `14% 4%` → `12% 28%`）。地平の緑を 140px → 190px にして Section の下端まで届かせ、padding を 126 ／ 134 へ。**余白は削っていない**
+- **Service Card の情報階層**：CSS の `column-reverse` をやめ、**Service 名（左上）→「○○な方へ」→ 短い説明 → CTA** の読み順へ
+- **Short Description を 6 件追加**。すべて各 Service Page の Hero（Owner Approved Copy）からの引用 ／ 最小限の短縮で、**Home で新しく書き起こした文はない**。Service 名 ・ 並び順 ・ URL ・ CTA ・「○○な方へ」は不変
+- 文章と Spiral を 1 つのまとまりに（Spiral 上の余白 64px → 44px、SVG viewBox の上下の空きを詰める。図の意味 ・ 語 ・ 順序は不変）
+- QA（Desktop 1280 ／ Mobile 375）：6 Card は 332×337 ×6 ／ 327 幅 ×6 で完全一致 ・ 横スクロール 0 ・ text clip 0 ・ contrast 不足 0 ・ 内部 link 15 件 200 ・ broken image 0
+- **6 Service Card の写真は未実装**（画像生成の手段が無く、外部 Stock Photo は Visual Direction v1 §18 で NG）。仕様 ・ Prompt ・ markup ・ CSS は OS `docs/design-systems/dreamin-spiral-home-visual-implementation-v1.md` §5-2 に用意済み
+
+---
+## [2026-09-24] — Dreamin' Spiral 🌱 Home Visual Implementation v1：Visual Direction v1 を Home へ（**Owner Review 待ち**・Preview のみ）
+
+**Scope:** `dreamin-spiral/index.html`, `style.css`（新規 A14 ブロック）
+**Triggered by:** OS Visual Direction v1（`docs/design-systems/dreamin-spiral-visual-direction-v1.md`・Architect 設計 ／ Owner 採用）
+
+- **Copy ・ Section 構成 ・ 並び順 ・ link ・ URL は不変。**変更は Visual のみ（追加した文は Spiral 図の説明 1 行「戻るけれど、同じところには戻っていない。」のみ・Visual Direction v1 §10 の語）
+- Hero を Deep Indigo から **朝〜午前の光**へ（Visual Direction v1 §4「これから何かが始まる余白がある明るさ」）。`.ds-service-hero` は変更せず、Home だけ `.ds-home-hero` を新設（Service Page は次 Phase）
+- **Spiral Visual を公開**（§10）：気になる → 感じる → 気づく → やってみる → また感じる。閉じた円にせず、終点は少し外側 ／ 上へ開いたまま続く。Step 図 ／ Level 図にしない（inline SVG・`role="img"` ・ `title` ／ `desc`・motion なし）
+- **6 Entrances**：Service 名より「○○な方へ」を上に置く Visual Hierarchy（見出しの DOM 順は変えず CSS のみ）。6 枚の Card は面積 ・ 装飾 ・ 文字の重さをすべて同じ（Desktop 実測 332×240 で 6 枚一致）。番号なし ・ 上下なし
+- Empathy ／ Library ／ Closing を静かな面に整理し、Section の区切りを罫線から余白へ（§17 Visual Density）。Closing に芽（Hero とは別の Visual）
+- 明るい面の上の link を `#8a6a4e` へ（contrast 4.5:1 以上・**Home のみ**。他ページの `#9b7b5c` は不変）
+- QA（Desktop 1280 ／ Mobile 375）：横スクロール 0 ・ text clip 0 ・ contrast 不足 0 ・ 内部 link 15 件すべて 200 ・ broken image 0 ・ JS 0（追加なし）
+- **写真（Human ／ Reality ／ Creation）は未実装。** Visual Direction v1 §5 ・ §6 の写真 Asset が未生成のため、Hero ／ Empathy ／ Closing に Photo Slot をコメントで明示し、Asset 確定後に差し込む
+- `og:image` は候補のみ作成し、**HTML には未適用**（Owner Review 前に採用しない）
+
+---
 ## [2026-09-24] — Phase E｜Legal 整合：特商法 ・ 利用規約 ・ Privacy Policy を Current の Service ・ 支払運用 ・ 返金へ（Owner Reality Review 承認）
 
 **Scope:** `legal/`, `terms/`, `privacy-policy/`, `dreamin-spiral/project-creation/{index,apply,thanks}/`

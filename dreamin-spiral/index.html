@@ -14,7 +14,7 @@
   <script defer src="/_vercel/insights/script.js"></script>
 </head>
 
-<body class="ds-page">
+<body class="ds-page ds-home">
 
   <!-- Header -->
   <header class="site-header">
@@ -40,26 +40,33 @@
 
     <!-- Dreamin' Spiral 🌱 Home v1（Owner Approved Copy）
          Dreamin' Spiral 🌱 そのものの Canonical Home。TOP の #dreamin-spiral は B8E TOP 上の summary section として共存する。
-         Service Family は並列の入口であり、Level ・ Funnel ・ Progression ではない。Library は Service ではない（別 section）。 -->
+         Service Family は並列の入口であり、Level ・ Funnel ・ Progression ではない。Library は Service ではない（別 section）。
 
-    <!-- Section 1｜Hero -->
-    <section class="ds-service-hero">
-      <span class="ds-service-eyebrow">DREAMIN' SPIRAL</span>
-      <h1 class="ds-service-title">
-        自分そのものから、<br>
-        人生と仕事を生きていく。
-      </h1>
-      <p class="ds-service-lead">
-        <span class="ds-phrase">「気になること」や</span><span class="ds-phrase">現実の中で生まれる感覚を入口に、</span><br>
-        自分に気づきながら、<br>
-        <span class="ds-phrase">人生や仕事を</span><span class="ds-phrase">創っていくための伴走です。</span>
-      </p>
+         Visual：Visual Direction v1（OS repo docs/design-systems/dreamin-spiral-visual-direction-v1.md）に従う。
+         Copy ・ Section 構成 ・ 並び順は Home v1 のまま変更していない（Visual のみ）。 -->
+
+    <!-- Section 1｜Hero｜Visual Direction v1 §12 Hero「今の私」：朝〜午前の光。Deep Indigo をやめ、これから何かが始まる余白のある明るさへ -->
+    <section class="ds-home-hero">
+      <!-- Photo Slot A（Hero・Human + Daily Life + Light）：Visual Direction v1 §5 ・ §12。写真 Asset 確定後にここへ入る -->
+      <div class="ds-home-hero-inner">
+        <span class="ds-service-eyebrow">DREAMIN' SPIRAL</span>
+        <h1 class="ds-service-title">
+          自分そのものから、<br>
+          人生と仕事を生きていく。
+        </h1>
+        <p class="ds-service-lead">
+          <span class="ds-phrase">「気になること」や</span><span class="ds-phrase">現実の中で生まれる感覚を入口に、</span><br>
+          自分に気づきながら、<br>
+          <span class="ds-phrase">人生や仕事を</span><span class="ds-phrase">創っていくための伴走です。</span>
+        </p>
+      </div>
     </section>
 
     <div class="page-content">
 
-      <!-- Section 2｜Dreamin' Spiral 🌱とは -->
-      <div class="section-block ds-service-section">
+      <!-- Section 2｜Dreamin' Spiral 🌱とは｜Visual Direction v1 §12 Philosophy（Home で最も静かな Section・Visual Density を下げる）
+           ＋ §10 Spiral Visual（「どうやって？」を文章だけで説明しない） -->
+      <div class="section-block ds-service-section ds-home-philosophy">
         <h2>Dreamin' Spiral 🌱とは</h2>
         <p>
           現実を生きていると、<br>
@@ -79,10 +86,43 @@
           Dreamin' Spiral 🌱は、<br>
           <span class="ds-phrase">そのプロセスを</span><span class="ds-phrase">一緒に見ていくための場です。</span>
         </p>
+
+        <!-- Spiral Visual（Visual Direction v1 §10）：閉じた円にしない・終点は少し外側へ・Step 図 ／ Level 図にしない -->
+        <figure class="ds-spiral">
+          <svg class="ds-spiral-svg" viewBox="40 70 610 236" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="ds-spiral-t ds-spiral-d">
+      <title id="ds-spiral-t">Dreamin&#39; Spiral 🌱 のめぐり</title>
+      <desc id="ds-spiral-d">気になる、感じる、気づく、やってみる、また感じる。線はひとめぐりして、始めた場所より少し外側へ開いたまま続いていく。</desc>
+      <defs>
+        <linearGradient id="ds-spiral-tail" x1="0" y1="1" x2="1" y2="0">
+          <stop offset="0%" stop-color="#8a9e78" stop-opacity="0.85"/>
+          <stop offset="100%" stop-color="#8a9e78" stop-opacity="0"/>
+        </linearGradient>
+        <radialGradient id="ds-spiral-glow" cx="50%" cy="55%" r="55%">
+          <stop offset="0%" stop-color="#ffffff" stop-opacity="0.9"/>
+          <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+        </radialGradient>
+      </defs>
+      <ellipse cx="300" cy="200" rx="215" ry="130" fill="url(#ds-spiral-glow)"/>
+      <path d="M 292.0 236.8 L 292.9 236.9 L 293.8 237.1 L 294.7 237.2 L 295.6 237.3 L 296.6 237.4 L 297.5 237.5 L 298.5 237.5 L 299.5 237.6 L 300.5 237.6 L 301.5 237.6 L 302.5 237.6 L 303.5 237.6 L 304.5 237.6 L 305.6 237.6 L 306.6 237.5 L 307.7 237.4 L 308.7 237.3 L 309.8 237.2 L 310.9 237.1 L 311.9 237.0 L 313.0 236.8 L 314.1 236.6 L 315.2 236.4 L 316.3 236.2 L 317.4 236.0 L 318.5 235.8 L 319.6 235.5 L 320.7 235.2 L 321.8 234.9 L 322.9 234.6 L 324.0 234.3 L 325.1 233.9 L 326.2 233.5 L 327.3 233.2 L 328.3 232.7 L 329.4 232.3 L 330.5 231.9 L 331.6 231.4 L 332.7 230.9 L 333.7 230.4 L 334.8 229.9 L 335.8 229.4 L 336.9 228.8 L 337.9 228.2 L 338.9 227.6 L 339.9 227.0 L 340.9 226.4 L 341.9 225.8 L 342.9 225.1 L 343.9 224.4 L 344.8 223.7 L 345.8 223.0 L 346.7 222.3 L 347.6 221.5 L 348.5 220.7 L 349.4 219.9 L 350.2 219.1 L 351.1 218.3 L 351.9 217.5 L 352.7 216.6 L 353.5 215.8 L 354.2 214.9 L 355.0 214.0 L 355.7 213.1 L 356.4 212.2 L 357.1 211.2 L 357.7 210.3 L 358.4 209.3 L 359.0 208.3 L 359.6 207.3 L 360.1 206.3 L 360.7 205.3 L 361.2 204.2 L 361.6 203.2 L 362.1 202.1 L 362.5 201.1 L 362.9 200.0 L 363.3 198.9 L 363.6 197.8 L 364.0 196.7 L 364.2 195.6 L 364.5 194.4 L 364.7 193.3 L 364.9 192.2 L 365.1 191.0 L 365.2 189.9 L 365.3 188.7 L 365.4 187.5 L 365.4 186.3 L 365.4 185.2 L 365.4 184.0 L 365.3 182.8 L 365.2 181.6 L 365.1 180.4 L 364.9 179.2 L 364.7 178.0 L 364.5 176.8 L 364.2 175.6 L 363.9 174.4 L 363.6 173.2 L 363.2 172.0 L 362.8 170.8 L 362.4 169.6 L 361.9 168.4 L 361.4 167.2 L 360.9 166.0 L 360.3 164.8 L 359.7 163.6 L 359.0 162.4 L 358.3 161.3 L 357.6 160.1 L 356.8 158.9 L 356.0 157.8 L 355.2 156.6 L 354.4 155.5 L 353.5 154.4 L 352.5 153.2 L 351.6 152.1 L 350.6 151.0 L 349.5 149.9 L 348.5 148.9 L 347.4 147.8 L 346.2 146.7 L 345.1 145.7 L 343.9 144.7 L 342.7 143.6 L 341.4 142.6 L 340.1 141.7 L 338.8 140.7 L 337.4 139.7 L 336.0 138.8 L 334.6 137.9 L 333.2 137.0 L 331.7 136.1 L 330.2 135.2 L 328.7 134.4 L 327.1 133.6 L 325.5 132.8 L 323.9 132.0 L 322.3 131.2 L 320.6 130.5 L 318.9 129.8 L 317.2 129.1 L 315.5 128.4 L 313.7 127.7 L 311.9 127.1 L 310.1 126.5 L 308.3 125.9 L 306.5 125.4 L 304.6 124.9 L 302.7 124.4 L 300.8 123.9 L 298.9 123.4 L 297.0 123.0 L 295.0 122.6 L 293.0 122.3 L 291.1 121.9 L 289.1 121.6 L 287.0 121.3 L 285.0 121.1 L 283.0 120.8 L 280.9 120.6 L 278.9 120.5 L 276.8 120.3 L 274.8 120.2 L 272.7 120.1 L 270.6 120.1 L 268.5 120.1 L 266.4 120.1 L 264.3 120.1 L 262.2 120.2 L 260.1 120.3 L 258.0 120.4 L 256.0 120.6 L 253.9 120.8 L 251.8 121.0 L 249.7 121.3 L 247.6 121.6 L 245.5 121.9 L 243.4 122.3 L 241.4 122.6 L 239.3 123.1 L 237.2 123.5 L 235.2 124.0 L 233.2 124.5 L 231.2 125.0 L 229.1 125.6 L 227.2 126.2 L 225.2 126.9 L 223.2 127.5 L 221.3 128.2 L 219.3 128.9 L 217.4 129.7 L 215.5 130.5 L 213.7 131.3 L 211.8 132.1 L 210.0 133.0 L 208.2 133.9 L 206.4 134.9 L 204.7 135.8 L 202.9 136.8 L 201.2 137.8 L 199.6 138.9 L 197.9 139.9 L 196.3 141.0 L 194.7 142.2 L 193.2 143.3 L 191.7 144.5 L 190.2 145.7 L 188.7 146.9 L 187.3 148.2 L 185.9 149.4 L 184.6 150.7 L 183.3 152.1 L 182.0 153.4 L 180.8 154.8 L 179.6 156.2 L 178.5 157.6 L 177.4 159.0 L 176.3 160.5 L 175.3 161.9 L 174.3 163.4 L 173.3 164.9 L 172.5 166.4 L 171.6 168.0 L 170.8 169.5 L 170.1 171.1 L 169.3 172.7 L 168.7 174.3 L 168.1 175.9 L 167.5 177.6 L 167.0 179.2 L 166.5 180.9 L 166.1 182.5 L 165.8 184.2 L 165.4 185.9 L 165.2 187.6 L 165.0 189.3 L 164.8 191.0 L 164.7 192.7 L 164.6 194.4 L 164.6 196.1 L 164.7 197.9 L 164.8 199.6 L 165.0 201.4 L 165.2 203.1 L 165.5 204.8 L 165.8 206.6 L 166.2 208.3 L 166.6 210.1 L 167.1 211.8 L 167.6 213.5 L 168.2 215.3 L 168.9 217.0 L 169.6 218.7 L 170.3 220.5 L 171.1 222.2 L 172.0 223.9 L 172.9 225.6 L 173.9 227.3 L 175.0 228.9 L 176.0 230.6 L 177.2 232.3 L 178.4 233.9 L 179.6 235.5 L 180.9 237.2 L 182.3 238.8 L 183.7 240.3 L 185.2 241.9 L 186.7 243.5 L 188.2 245.0 L 189.9 246.5 L 191.5 248.0 L 193.2 249.5 L 195.0 250.9 L 196.8 252.4 L 198.7 253.8 L 200.6 255.2 L 202.6 256.5 L 204.6 257.9 L 206.6 259.2 L 208.7 260.5 L 210.9 261.7 L 213.1 263.0 L 215.3 264.2 L 217.6 265.4 L 219.9 266.5 L 222.2 267.6 L 224.6 268.7 L 227.1 269.8 L 229.6 270.8 L 232.1 271.8 L 234.6 272.7 L 237.2 273.6 L 239.8 274.5 L 242.5 275.4 L 245.2 276.2 L 247.9 277.0 L 250.7 277.7 L 253.4 278.4 L 256.2 279.1 L 259.1 279.7 L 262.0 280.3 L 264.8 280.8 L 267.8 281.3 L 270.7 281.8 L 273.7 282.2 L 276.7 282.6 L 279.7 283.0 L 282.7 283.3 L 285.7 283.5 L 288.8 283.7 L 291.9 283.9 L 295.0 284.1 L 298.1 284.1 L 301.2 284.2 L 304.3 284.2 L 307.4 284.1 L 310.6 284.0 L 313.7 283.9 L 316.9 283.7 L 320.0 283.5 L 323.2 283.2 L 326.3 282.9 L 329.5 282.6 L 332.7 282.2 L 335.8 281.7 L 339.0 281.2 L 342.1 280.7 L 345.2 280.1 L 348.4 279.4 L 351.5 278.8 L 354.6 278.0 L 357.7 277.3 L 360.8 276.5 L 363.9 275.6 L 366.9 274.7 L 369.9 273.7 L 373.0 272.7 L 376.0 271.7 L 378.9 270.6 L 381.9 269.5 L 384.8 268.3 L 387.7 267.1 L 390.6 265.8 L 393.4 264.5 L 396.2 263.2 L 399.0 261.8 L 401.8 260.3 L 404.5 258.9 L 407.2 257.4 L 409.8 255.8 L 412.4 254.2 L 415.0 252.6 L 417.5 250.9 L 420.0 249.2 L 422.5 247.4 L 424.9 245.6 L 427.2 243.8 L 429.5 241.9" fill="none" stroke="#8a9e78" stroke-width="1.7" stroke-linecap="round" opacity="0.88"/>
+      <path d="M 429.5 241.9 L 432.3 240.5 L 435.1 239.1 L 437.9 237.6 L 440.7 236.1 L 443.5 234.5 L 446.2 232.9 L 449.0 231.2 L 451.7 229.5 L 454.4 227.7 L 457.1 225.9 L 459.8 224.0 L 462.5 222.2 L 465.1 220.2 L 467.7 218.2 L 470.3 216.2 L 472.9 214.1 L 475.4 212.0 L 477.9 209.9 L 480.4 207.7 L 482.8 205.4 L 485.3 203.1 L 487.6 200.8 L 490.0 198.4 L 492.3 196.0 L 494.6 193.5 L 496.8 191.0 L 499.0 188.5 L 501.2 185.9 L 503.3 183.3 L 505.3 180.7 L 507.4 178.0 L 509.3 175.2 L 511.3 172.4 L 513.1 169.6 L 515.0 166.8 L 516.8 163.9 L 518.5 161.0 L 520.2 158.0 L 521.8 155.0 L 523.3 152.0 L 524.8 148.9 L 526.3 145.8 L 527.7 142.7 L 529.0 139.6 L 530.3 136.4 L 531.5 133.2 L 532.6 129.9 L 533.7 126.6 L 534.7 123.3 L 535.6 120.0 L 536.5 116.6 L 537.3 113.2 L 538.0 109.8 L 538.7 106.4 L 539.3 102.9 L 539.8 99.5 L 540.3 96.0 L 540.7 92.4 L 541.0 88.9 L 541.2 85.3" fill="none" stroke="url(#ds-spiral-tail)" stroke-width="1.7" stroke-linecap="round"/>
+      <circle cx="292.0" cy="236.8" r="5.5" fill="#fbfaf7" stroke="#8a9e78" stroke-width="1.6"/>
+      <text x="292.0" y="263.8" text-anchor="middle" class="ds-spiral-label">気になる</text>
+      <circle cx="365.4" cy="185.2" r="5.5" fill="#fbfaf7" stroke="#8a9e78" stroke-width="1.6"/>
+      <text x="382.4" y="191.2" text-anchor="start" class="ds-spiral-label">感じる</text>
+      <circle cx="243.4" cy="122.3" r="5.5" fill="#fbfaf7" stroke="#8a9e78" stroke-width="1.6"/>
+      <text x="243.4" y="103.3" text-anchor="middle" class="ds-spiral-label">気づく</text>
+      <circle cx="186.7" cy="243.5" r="5.5" fill="#fbfaf7" stroke="#8a9e78" stroke-width="1.6"/>
+      <text x="169.7" y="249.5" text-anchor="end" class="ds-spiral-label">やってみる</text>
+      <circle cx="429.5" cy="241.9" r="5.5" fill="#fbfaf7" stroke="#8a9e78" stroke-width="1.6"/>
+      <text x="446.5" y="247.9" text-anchor="start" class="ds-spiral-label">また感じる</text>
+    </svg>
+          <figcaption><span class="ds-phrase">戻るけれど、</span><span class="ds-phrase">同じところには戻っていない。</span></figcaption>
+        </figure>
       </div>
 
-      <!-- Section 3｜入口はひとつではない -->
-      <div class="section-block ds-service-section">
+      <!-- Section 3｜入口はひとつではない｜Visual Direction v1 §12 Empathy「これ、自分かも」 -->
+      <div class="section-block ds-service-section ds-home-empathy">
+        <!-- Photo Slot B（Empathy・Human ／ PC ／ Daily Life）：Visual Direction v1 §5 ・ §6。写真 Asset 確定後にここへ入る -->
         <h2>今、気になっているところから。</h2>
         <p>話してみたいことがあるとき。</p>
         <p><span class="ds-phrase">少し時間をかけて</span><span class="ds-phrase">自分を見てみたいとき。</span></p>
@@ -94,48 +134,97 @@
       </div>
 
       <!-- Section 4｜Service Family（TOP と同じ .ds-family-* を再利用。名称と並び順は Brand Architecture §1 に従い、推奨順 ・ 段階ではない。Parent Brand を名称に付けない。番号を付けない）
-           Business Creation は Public Page v1（/dreamin-spiral/business-creation/）へ、Project Creation（Phase 2A）は /dreamin-spiral/project-creation/ へ link する -->
+           Business Creation は Public Page v1（/dreamin-spiral/business-creation/）へ、Project Creation（Phase 2A）は /dreamin-spiral/project-creation/ へ link する
+           Visual Direction v1 §12 6 Entrances：Service 名より「○○な方へ」（Self-relevance）を上位に置く。6 つは対等・順番 ／ 上下なし（見た目 ・ 面積 ・ 装飾をすべて同じにする） -->
       <div class="section-block ds-service-section ds-home-family">
         <ul class="ds-family-list">
           <li class="ds-family-item">
+            <figure class="ds-family-visual">
+              <picture>
+                <source type="image/avif" srcset="/assets/dreamin-spiral/home/guide-332.avif 332w, /assets/dreamin-spiral/home/guide-664.avif 664w" sizes="(max-width: 768px) calc(100vw - 48px), 332px">
+                <source type="image/webp" srcset="/assets/dreamin-spiral/home/guide-332.webp 332w, /assets/dreamin-spiral/home/guide-664.webp 664w" sizes="(max-width: 768px) calc(100vw - 48px), 332px">
+                <img src="/assets/dreamin-spiral/home/guide-664.webp" width="664" height="332" loading="lazy" decoding="async" alt="明るい室内で、向かい合って話している二人">
+              </picture>
+            </figure>
             <div>
               <h3 class="ds-family-name">Guide</h3>
               <p class="ds-family-desc"><span class="ds-phrase">今、気になっていることを</span><span class="ds-phrase">話してみたい人へ。</span></p>
+              <p class="ds-family-summary">今、少し気になっていることから、一緒に話してみる時間です。</p>
             </div>
             <a href="/dreamin-spiral/guide/" aria-label="Guide について詳しく見る">詳しく見る</a>
           </li>
           <li class="ds-family-item">
+            <figure class="ds-family-visual">
+              <picture>
+                <source type="image/avif" srcset="/assets/dreamin-spiral/home/3-weeks-tuning-332.avif 332w, /assets/dreamin-spiral/home/3-weeks-tuning-664.avif 664w" sizes="(max-width: 768px) calc(100vw - 48px), 332px">
+                <source type="image/webp" srcset="/assets/dreamin-spiral/home/3-weeks-tuning-332.webp 332w, /assets/dreamin-spiral/home/3-weeks-tuning-664.webp 664w" sizes="(max-width: 768px) calc(100vw - 48px), 332px">
+                <img src="/assets/dreamin-spiral/home/3-weeks-tuning-664.webp" width="664" height="332" loading="lazy" decoding="async" alt="木漏れ日の道を、ノートを持って歩いている人">
+              </picture>
+            </figure>
             <div>
               <h3 class="ds-family-name">3 Weeks Tuning</h3>
               <p class="ds-family-desc"><span class="ds-phrase">「気になる」や「悩み」から、</span><br><span class="ds-phrase">3週間かけて</span><span class="ds-phrase">自分そのものに気づいていく人へ。</span></p>
+              <p class="ds-family-summary">今、現実の中で起きていることを一緒に見ながら、そこに現れている自分に気づいていく3週間です。</p>
             </div>
             <a href="/dreamin-spiral/3-weeks/" aria-label="3 Weeks Tuning について詳しく見る">詳しく見る</a>
           </li>
           <li class="ds-family-item">
+            <figure class="ds-family-visual">
+              <picture>
+                <source type="image/avif" srcset="/assets/dreamin-spiral/home/community-332.avif 332w, /assets/dreamin-spiral/home/community-664.avif 664w" sizes="(max-width: 768px) calc(100vw - 48px), 332px">
+                <source type="image/webp" srcset="/assets/dreamin-spiral/home/community-332.webp 332w, /assets/dreamin-spiral/home/community-664.webp 664w" sizes="(max-width: 768px) calc(100vw - 48px), 332px">
+                <img src="/assets/dreamin-spiral/home/community-664.webp" width="664" height="332" loading="lazy" decoding="async" alt="自然光の入る場所で、輪になって話している小さなグループ">
+              </picture>
+            </figure>
             <div>
               <h3 class="ds-family-name">Community</h3>
               <p class="ds-family-desc"><span class="ds-phrase">人とつながりながら、</span><br><span class="ds-phrase">日々の中で</span><span class="ds-phrase">自分に気づき続けていける人へ。</span></p>
+              <p class="ds-family-summary">日常の中で起きたことや、そこで生まれた感覚を持ち寄りながら、自分に気づき続けていくCommunityです。</p>
             </div>
             <a href="/dreamin-spiral/community/" aria-label="Community について詳しく見る">詳しく見る</a>
           </li>
           <li class="ds-family-item">
+            <figure class="ds-family-visual">
+              <picture>
+                <source type="image/avif" srcset="/assets/dreamin-spiral/home/my-life-my-way-332.avif 332w, /assets/dreamin-spiral/home/my-life-my-way-632.avif 632w" sizes="(max-width: 768px) calc(100vw - 48px), 332px">
+                <source type="image/webp" srcset="/assets/dreamin-spiral/home/my-life-my-way-332.webp 332w, /assets/dreamin-spiral/home/my-life-my-way-632.webp 632w" sizes="(max-width: 768px) calc(100vw - 48px), 332px">
+                <img src="/assets/dreamin-spiral/home/my-life-my-way-632.webp" width="632" height="316" loading="lazy" decoding="async" alt="窓辺の机で、海の見える景色の方を見ている人">
+              </picture>
+            </figure>
             <div>
               <h3 class="ds-family-name">My Life, My Way</h3>
               <p class="ds-family-desc"><span class="ds-phrase">自分の気持ちや望みに</span><span class="ds-phrase">気づきながら、</span><br><span class="ds-phrase">自分の人生を、</span><span class="ds-phrase">自分で選んで生きていく人へ。</span></p>
+              <p class="ds-family-summary">6か月の現実を一緒に歩きながら、自分の人生を、自分そのものから生きていくための伴走です。</p>
             </div>
             <a href="/dreamin-spiral/my-life/" aria-label="My Life, My Way について詳しく見る">詳しく見る</a>
           </li>
           <li class="ds-family-item">
+            <figure class="ds-family-visual">
+              <picture>
+                <source type="image/avif" srcset="/assets/dreamin-spiral/home/project-creation-332.avif 332w, /assets/dreamin-spiral/home/project-creation-636.avif 636w" sizes="(max-width: 768px) calc(100vw - 48px), 332px">
+                <source type="image/webp" srcset="/assets/dreamin-spiral/home/project-creation-332.webp 332w, /assets/dreamin-spiral/home/project-creation-636.webp 636w" sizes="(max-width: 768px) calc(100vw - 48px), 332px">
+                <img src="/assets/dreamin-spiral/home/project-creation-636.webp" width="636" height="318" loading="lazy" decoding="async" alt="画面を見ながら、数人でプロジェクトについて話している様子">
+              </picture>
+            </figure>
             <div>
               <h3 class="ds-family-name">Project Creation</h3>
               <p class="ds-family-desc"><span class="ds-phrase">エンジニアから、</span><span class="ds-phrase">プロジェクトを創る人へ。</span></p>
+              <p class="ds-family-summary">3ヶ月間、実際のProjectを題材に、Projectが前に進む状態を創れる人になるための実践プログラムです。</p>
             </div>
             <a href="/dreamin-spiral/project-creation/" aria-label="Project Creation について詳しく見る">詳しく見る</a>
           </li>
           <li class="ds-family-item">
+            <figure class="ds-family-visual">
+              <picture>
+                <source type="image/avif" srcset="/assets/dreamin-spiral/home/business-creation-332.avif 332w, /assets/dreamin-spiral/home/business-creation-640.avif 640w" sizes="(max-width: 768px) calc(100vw - 48px), 332px">
+                <source type="image/webp" srcset="/assets/dreamin-spiral/home/business-creation-332.webp 332w, /assets/dreamin-spiral/home/business-creation-640.webp 640w" sizes="(max-width: 768px) calc(100vw - 48px), 332px">
+                <img src="/assets/dreamin-spiral/home/business-creation-640.webp" width="640" height="320" loading="lazy" decoding="async" alt="明るい部屋で、ノートパソコンに向かっている人">
+              </picture>
+            </figure>
             <div>
               <h3 class="ds-family-name">Business Creation</h3>
               <p class="ds-family-desc"><span class="ds-phrase">自分の経験や想いを、</span><span class="ds-phrase">Businessとして形にし、</span><br><span class="ds-phrase">実際に届けながら</span><span class="ds-phrase">育てていく人へ。</span></p>
+              <p class="ds-family-summary">今ここにあるビジネスの現実から、自分そのもののBusinessを一緒に創り、育てていく伴走です。</p>
             </div>
             <a href="/dreamin-spiral/business-creation/" aria-label="Business Creation について詳しく見る">詳しく見る</a>
           </li>
@@ -143,7 +232,7 @@
       </div>
 
       <!-- Section 5｜Library（Service ではない。Service Family とは別 section） -->
-      <div class="section-block ds-service-section">
+      <div class="section-block ds-service-section ds-home-library">
         <h2>Dreamin' Spiral 🌱 Library</h2>
         <p>
           日々の中で、自分に気づくための<br>
@@ -156,8 +245,15 @@
         <a class="ds-service-cta" href="/dreamin-spiral/library/">Libraryを見る</a>
       </div>
 
-      <!-- Section 6｜Closing（Guide への静かな導線のみ。申込を促す CTA にしない） -->
-      <div class="section-block ds-service-section">
+      <!-- Section 6｜Closing（Guide への静かな導線のみ。申込を促す CTA にしない）
+           Visual Direction v1 §12 Closing：Human ・ Light ・ Nature へ戻る。Hero と同じ Visual を使わない。「未来へ向かう」より「今の自分へ戻る」質感 -->
+      <div class="section-block ds-service-section ds-home-closing">
+        <!-- Photo Slot C（Closing・Human ／ Light ／ Nature）：Visual Direction v1 §12。Hero とは別の Asset を使う -->
+        <svg class="ds-sprout" viewBox="0 0 64 56" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+          <path d="M32 54 C32 40 32 32 32 24" fill="none" stroke="#8a9e78" stroke-width="1.6" stroke-linecap="round"/>
+          <path d="M32 30 C24 30 17 25 14 17 C23 15 30 19 32 27 Z" fill="#c3cfb4" opacity="0.85"/>
+          <path d="M32 26 C39 25 45 19 47 12 C39 11 33 15 32 23 Z" fill="#8a9e78" opacity="0.7"/>
+        </svg>
         <h2><span class="ds-phrase">今、気になっていることは</span><span class="ds-phrase">何でしょう。</span></h2>
         <p><span class="ds-phrase">そこから始めてみても</span><span class="ds-phrase">いいのかもしれません。</span></p>
         <a class="ds-service-cta" href="/dreamin-spiral/guide/">Guide（無料）について見る</a>
