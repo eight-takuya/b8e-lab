@@ -6,7 +6,7 @@
 ---
 
 ---
-## [2026-09-24] — Service Family Phase C｜Service Page / Application Flow Naming（Preview・Owner Reality Review 待ち）
+## [2026-09-24] — Service Family Phase C｜Service Page / Application Flow Naming（Owner ／ Architect Review 済み・**Production Live**・#114）
 
 **Scope:** `dreamin-spiral/{guide,3-weeks,community,my-life,business-creation}/**`, `dreamin-spiral/library/index.html`, `docs/site-structure.md`
 **Triggered by:** OS Brand Architecture §1（Service Naming v1）
@@ -17,6 +17,7 @@
 - 本文：Service Name としての `Dreamin' Spiral ○○` を Display Name へ。Business Creation の First View だけ自然文 `Dreamin' Spiral 🌱 の Business Creationは、`（Parent Brand Surface Rule D）。My Life の Concept としての `My Life`（「6か月の日常そのものが、My Lifeです。」等）は残す
 - Library の Guide への静かな link を `Guideを見る` へ ・ Business Creation の Partner の肩書きを `Business Creation Partner` へ（Owner ／ Architect Review）
 - 不変：URL ・ `form_type` ・ Formspree ・ Stripe ・ GAS ・ `meta description` ／ `og:description`（Phase F）・ Legal（Phase E）・ Project Creation（既に整合）・ Nav ・ Footer ・ CSS
+- Production（Desktop 1280 ／ 375px）：19 ページ 200 ・ 横スクロール 0 ・ JS error 0 ・ 申込 3 件の確認画面の切り替え正常 ・ 内部 link 切れ 0。記録の正本は OS repo `docs/architecture/decisions/brand-architecture-service-naming-v1.md`「Phase C Close」
 
 ---
 ## [2026-09-24] — Service Family Phase B｜Public Display：TOP ・ Home の Service Family を Canonical Display Name ・ Order へ（Owner Reality Review 済み・**Production Live**・#112）
