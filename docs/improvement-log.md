@@ -6,6 +6,19 @@
 ---
 
 ---
+## [2026-09-24] — Home Visual Implementation v1：Owner / Architect Review 反映（重心 ・ Card 情報階層）（**Owner 再 Review 待ち**）
+
+**Scope:** `dreamin-spiral/index.html`, `style.css`（A14 ブロック）
+**Triggered by:** Owner が Preview を確認した Review 結果（3 点採用）
+
+- **Gradient Section の重心**：Hero の光の重心を上端から Content の高さへ（白い glow `50% 2%` → `50% 46%`、暖色 `14% 4%` → `12% 28%`）。地平の緑を 140px → 190px にして Section の下端まで届かせ、padding を 126 ／ 134 へ。**余白は削っていない**
+- **Service Card の情報階層**：CSS の `column-reverse` をやめ、**Service 名（左上）→「○○な方へ」→ 短い説明 → CTA** の読み順へ
+- **Short Description を 6 件追加**。すべて各 Service Page の Hero（Owner Approved Copy）からの引用 ／ 最小限の短縮で、**Home で新しく書き起こした文はない**。Service 名 ・ 並び順 ・ URL ・ CTA ・「○○な方へ」は不変
+- 文章と Spiral を 1 つのまとまりに（Spiral 上の余白 64px → 44px、SVG viewBox の上下の空きを詰める。図の意味 ・ 語 ・ 順序は不変）
+- QA（Desktop 1280 ／ Mobile 375）：6 Card は 332×337 ×6 ／ 327 幅 ×6 で完全一致 ・ 横スクロール 0 ・ text clip 0 ・ contrast 不足 0 ・ 内部 link 15 件 200 ・ broken image 0
+- **6 Service Card の写真は未実装**（画像生成の手段が無く、外部 Stock Photo は Visual Direction v1 §18 で NG）。仕様 ・ Prompt ・ markup ・ CSS は OS `docs/design-systems/dreamin-spiral-home-visual-implementation-v1.md` §5-2 に用意済み
+
+---
 ## [2026-09-24] — Dreamin' Spiral 🌱 Home Visual Implementation v1：Visual Direction v1 を Home へ（**Owner Review 待ち**・Preview のみ）
 
 **Scope:** `dreamin-spiral/index.html`, `style.css`（新規 A14 ブロック）
