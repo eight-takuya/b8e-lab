@@ -18,7 +18,7 @@
 - 「○○な方へ」は **Brand Architecture §1.1 Service Family Card Copy のまま不変**（TOP ・ Home ・ Service Page で同一）。Service 名 ・ 並び順 ・ URL ・ CTA も不変
 - 写真は Home の 6 Asset を**再利用**（新規生成なし ・ master 追加なし）。TOP の Card 幅（280px）に合わせた 560px variant だけ追加
 - Section Ending に `/dreamin-spiral/` への導線を 1 本（既存の「Dreamin' Spiral 🌱について」を Section の最後へ移動）
-- 文章の行長は 560px（TOP の他 section と同じ）、Grid だけ 880px。Dreamin' Spiral だけが LP のように突出しないことを確認
+- Section の外枠は TOP の他 section（THREE PATHS の 720px）と同じ visual column に揃える（Owner Review 2026-09-25：この section だけ左に張り付いて見える件を解消）。Text は左揃えのまま ・ 中央揃えにしない。文章の行長は 560px
 - QA（Desktop 1280 ／ Mobile 375）：**Card 280×331 ×6 完全一致**（Mobile 327 幅 ×6）・ broken image 0 ・ 横スクロール 0 ・ text clip 0 ・ 折り返しの孤立行 0 ・ Section 内 contrast 不足 0 ・ link 6 件正常
 - Home ・ Service Page ・ TOP の他 section の CSS は変更していない（新 CSS はすべて `.ds-top-spiral` に scope）
 

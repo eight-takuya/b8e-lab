@@ -2462,13 +2462,19 @@ a:hover {
    正本：dreamin'-spiral-os docs/design-systems/dreamin-spiral-visual-direction-v1.md
    ------------------------------------------------------------ */
 
-/* 文章の行長は TOP の他 section と揃え（560px）、Grid だけ 6 枚が一目で並ぶ幅にする */
+/* Section の外枠は TOP の他 section（.paths-grid ／ .paths-heading）と同じ 720px の visual column に揃える。
+   Text は左揃えのまま。Owner Review（2026-09-25）で「この section だけ左に張り付いて見える」を解消 */
 .ds-top-spiral .ds-family-inner {
-  max-width: 880px;
+  max-width: 720px;
 }
 
 .ds-top-spiral-intro {
   max-width: 560px;
+}
+
+/* 幅の狭い Card では語句単位の折り返し固定を外し、自然に折り返す（文言は変えない） */
+.ds-top-spiral .ds-family-desc .ds-phrase {
+  display: inline;
 }
 
 .ds-top-spiral .ds-family-lead {
