@@ -2622,3 +2622,132 @@ a:hover {
     margin-top: 32px;
   }
 }
+
+/* ------------------------------------------------------------
+   A16. B8E Web Typography Alignment v1（2026-09）
+   Dreamin' Spiral 🌱 Home ／ LP（Production 反映済み）の読みやすさを基準に、
+   TOP ・ DX支援 ・ 企業型DC ・ About の Typography を同じ階層 ・ 同じ scale へ揃える。
+   方向は「Dreamin' Spiral を小さく戻す」ではなく「他ページを Dreamin' Spiral の読みやすさへ上げる」。
+   Copy ・ Layout ・ Section 構成 ・ Visual は変更しない。
+   ------------------------------------------------------------ */
+
+:root {
+  /* 1. Eyebrow / Label */
+  --fs-eyebrow: 0.72rem;
+  --ls-eyebrow: 0.14em;
+  /* 2. Section Title（Dreamin' Spiral の .ds-service-section h2 と同じ） */
+  --fs-section-title: 1.05rem;
+  --lh-section-title: 1.9;
+  /* 3. Lead */
+  --fs-lead: 1.05rem;
+  --lh-lead: 2.2;
+  /* 4. Body（Dreamin' Spiral の .section-block p と同じ） */
+  --fs-body: 0.97rem;
+  --lh-body: 2.1;
+  /* 5. Small / Caption */
+  --fs-small: 0.88rem;
+  --lh-small: 2.0;
+  /* Card（Dreamin' Spiral の Service Card と同じ） */
+  --fs-card-title: 0.95rem;
+  --lh-card-title: 1.8;
+  --fs-card-body: 0.95rem;
+  --lh-card-body: 2.0;
+}
+
+/* Section Title — DX支援 ・ 企業型DC ・ About ・ Legal の見出しが
+   小さな灰色ラベルのままで本文との階層が立っていなかったため、
+   Dreamin' Spiral の Section Title と同じ視認性へ上げる（body.ds-page は現状維持） */
+body:not(.ds-page) .section-block h3,
+body:not(.ds-page) .resonance-questions h3 {
+  font-size: var(--fs-section-title);
+  font-weight: 500;
+  color: #2a2a2a;
+  letter-spacing: 0.03em;
+  line-height: var(--lh-section-title);
+  text-transform: none;
+  margin-bottom: 24px;
+}
+
+/* Body ・ 段落の Rhythm（長文の About を含む） */
+body:not(.ds-page) .section-block p,
+body:not(.ds-page) .resonance-questions p {
+  font-size: var(--fs-body);
+  line-height: 2.15;
+}
+
+body:not(.ds-page) .section-block p + p,
+body:not(.ds-page) .resonance-questions p + p {
+  margin-top: 28px;
+}
+
+/* TOP｜THREE PATHS */
+.paths-sub {
+  font-size: var(--fs-card-body);
+  line-height: 2.05;
+}
+
+.path-card h3 {
+  font-size: var(--fs-card-title);
+  line-height: var(--lh-card-title);
+  margin-bottom: 12px;
+}
+
+.path-card p {
+  font-size: var(--fs-card-body);
+  line-height: var(--lh-card-body);
+}
+
+.path-card .path-target {
+  font-size: 0.86rem;
+  line-height: 1.9;
+}
+
+/* TOP｜B8Eとは（activity tag）・ 積み重ねてきたもの ・ どこから始めますか */
+.what-domain {
+  font-size: 0.82rem;
+}
+
+.track-stat__label {
+  font-size: 0.82rem;
+}
+
+.track-bridge {
+  font-size: var(--fs-card-body);
+}
+
+.entry-points-sub {
+  font-size: var(--fs-card-body);
+}
+
+.entry-question {
+  font-size: var(--fs-body);
+  line-height: 1.95;
+}
+
+/* TOP｜B8Eとして在るということ（About への静かな link） */
+.philosophy-about {
+  font-size: 0.9rem;
+}
+
+/* DX支援 ・ 企業型DC｜本文と同じ大きさに満たなかった補助 text */
+.dx-scope-items,
+.dx-intro-text-pc,
+.dx-intro-text-sp {
+  font-size: var(--fs-body);
+}
+
+.quiet-cta p {
+  font-size: var(--fs-body);
+}
+
+.quiet-cta .cta-link {
+  font-size: 0.92rem;
+}
+
+/* Small / Caption は Body と差を残す（Footer ・ 注記 ・ 法務） */
+.form-note,
+.dx-not-note,
+.dc-not-note {
+  font-size: var(--fs-small);
+  line-height: var(--lh-small);
+}
