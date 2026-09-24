@@ -6,7 +6,7 @@
 ---
 
 ---
-## [2026-09-24] — Service Family Card Copy：TOP ・ Home の説明文を Brand Architecture §1.1 の Card Copy へ（Preview・Owner Reality Review 待ち）
+## [2026-09-24] — Service Family Card Copy：TOP ・ Home の説明文を Brand Architecture §1.1 の Card Copy へ（Owner Reality Review 済み・**Production Live**・#117）
 
 **Scope:** `index.html`, `dreamin-spiral/index.html`, `docs/site-structure.md`
 **Triggered by:** OS Brand Architecture §1.1 ・ §1.9（Service Family Card Copy・Owner ／ Architect 確定）
@@ -14,6 +14,7 @@
 - 6 件の `.ds-family-desc` を Client-facing な Card Copy へ（「〜人へ。」）。Project Creation は既存のまま
 - 2 行の Copy は意味の区切りで `<br>`、行の中は `.ds-phrase` で折り返し位置を揃える（狭い幅では句の区切りで 3 行になる）
 - Display Name ・ 並び順 ・ URL ・ CTA ・ CSS ・「〜したいとき。」は不変
+- Production（Desktop 1280 ／ 375px）：両ページの 6 件が正本と一致 ・ link 正常 ・ 横スクロール 0 ・ JS error 0。記録の正本は OS repo `docs/architecture/decisions/brand-architecture-service-naming-v1.md`「Service Family Card Copy Close」
 
 ---
 ## [2026-09-24] — Phase B Follow-up｜Public Entry Consistency：「今、気になっているところから。」を全行非リンクへ（Owner ／ Architect 確定）
