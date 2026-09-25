@@ -121,7 +121,9 @@
       line-height: 2.1;
     }
 
-    /* 導入の考え方 — ステップ */
+    /* 導入の考え方 — DC-PROCESS-01（Process）
+       段や階段ではなく、ゆるやかな Curve 上に 4 つの Point を置く。
+       Copy（01〜04 と各行の文言）は現行のまま変更しない。 */
     .dc-steps {
       margin-top: 32px;
       display: flex;
@@ -131,29 +133,54 @@
 
     .dc-step {
       display: flex;
-      align-items: flex-start;
-      gap: 20px;
-      padding: 20px 0;
-      border-bottom: 1px solid #ece9e5;
+      align-items: stretch;
+      gap: 16px;
+      padding: 0;
     }
 
-    .dc-step:last-child {
-      border-bottom: none;
+    .dc-step__mark {
+      position: relative;
+      flex: 0 0 44px;
+      width: 44px;
+      min-height: 58px;
+    }
+
+    .dc-step__line {
+      position: absolute;
+      inset: 0;
+      display: block;
+      width: 44px;
+      height: 100%;
     }
 
     .dc-step__num {
-      font-size: 0.72rem;
-      color: #c9a882;
-      letter-spacing: 0.1em;
-      min-width: 28px;
-      padding-top: 4px;
-      font-weight: 600;
+      position: absolute;
+      top: 11px;
+      width: 26px;
+      height: 26px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: #f7f6f4;
+      font-size: 0.68rem;
+      color: #a29b93;
+      letter-spacing: 0.06em;
+      font-weight: 400;
     }
+
+    .dc-step--a .dc-step__num { left: 0; }
+    .dc-step--b .dc-step__num { left: 15px; }
 
     .dc-step__text {
       font-size: 0.9rem;
       color: #555;
       line-height: 1.9;
+      padding: 12px 0 28px;
+    }
+
+    .dc-step:last-child .dc-step__text {
+      padding-bottom: 0;
     }
 
     /* 企業型DCという選択肢 — リード文 */
@@ -265,6 +292,228 @@
         gap: 8px;
       }
     }
+
+    /* ------------------------------------------------------------
+       企業型DC Visual Experience v1（2026-09）
+       正本：dreamin'-spiral-os docs/design-systems/b8e-public-visual-experience-v1.md
+       Copy ・ Section 順 ・ Navigation ・ CTA ・ Typography Standard は変更しない。
+       ------------------------------------------------------------ */
+
+    /* Hero｜DC-HERO-01（Atmosphere）：Image box を見せない ・ Hero の高さを変えない ・ 文字の contrast を最優先 */
+    .dc-hero {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .dc-hero-visual {
+      position: absolute;
+      inset: 0;
+      display: block;
+      pointer-events: none;
+    }
+
+    .dc-hero-visual img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      opacity: 0.40;
+    }
+
+    /* 文字が載る中央にだけ、元の紺（#0c1020）の scrim を重ねて contrast を確保する。端の奥行きは残す */
+    .dc-hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 60% 72% at 50% 46%, rgba(12, 16, 32, 0.82) 0%, rgba(12, 16, 32, 0.50) 55%, rgba(12, 16, 32, 0) 78%);
+      pointer-events: none;
+    }
+
+    .dc-hero .hero-label,
+    .dc-hero .hero-copy {
+      position: relative;
+      z-index: 1;
+    }
+
+    /* 本文中の補助 Visual（枠 ・ 影 ・ 装飾を付けない。Crop しないため元の比率のまま表示する） */
+    .dc-visual {
+      margin: 32px 0 0;
+    }
+
+    .dc-visual picture {
+      display: block;
+      border-radius: 14px;
+      overflow: hidden;
+      background: #eef0f1;
+    }
+
+    .dc-visual img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    /* この制度を伝えている理由｜会社と人の将来を考える時間の Reality */
+    .dc-visual--reason {
+      max-width: 520px;
+      margin-top: 36px;
+    }
+
+    /* B8Eが支援すること｜一緒に判断材料を整理する時間 */
+    .dc-visual--support {
+      max-width: 560px;
+    }
+
+    /* DC-STRUCTURE-01｜企業型DCという選択肢（Structure）
+       会社 ・ 人 と 企業型DC と 将来への準備の関係を示す。画像化しない ・ 一直線の Flow にしない */
+    .dc-structure {
+      margin: 36px 0 0;
+    }
+
+    .dc-structure-body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 34px 10px 30px;
+      background: #fbfaf8;
+      border-radius: 14px;
+    }
+
+    .dc-st-side {
+      display: flex;
+      flex-direction: column;
+      gap: 34px;
+    }
+
+    .dc-st-node {
+      display: block;
+      min-width: 104px;
+      text-align: center;
+      padding: 13px 20px;
+      border: 1px solid #dfe3e1;
+      border-radius: 999px;
+      background: #fff;
+      font-size: 0.86rem;
+      color: #6b6b6b;
+      line-height: 1.6;
+      letter-spacing: 0.04em;
+    }
+
+    .dc-st-core {
+      display: block;
+      text-align: center;
+      padding: 26px 26px;
+      border: 1px solid #b7c7c0;
+      border-radius: 999px;
+      background: #fff;
+      font-size: 0.97rem;
+      color: #3f5a52;
+      line-height: 1.6;
+      letter-spacing: 0.06em;
+    }
+
+    /* 制度の先。閉じた箱にせず、開いたまま置く */
+    .dc-st-future {
+      display: block;
+      text-align: center;
+      font-size: 0.86rem;
+      color: #7e7870;
+      line-height: 1.7;
+      letter-spacing: 0.04em;
+    }
+
+    .dc-st-future::before {
+      content: "";
+      display: inline-block;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: #c9a882;
+      margin-right: 10px;
+      vertical-align: middle;
+    }
+
+    .dc-st-join,
+    .dc-st-open {
+      display: block;
+      flex: 0 0 auto;
+      height: 140px;
+    }
+
+    .dc-st-join { width: 46px; }
+    .dc-st-open { width: 58px; }
+
+    .dc-structure-caption {
+      margin-top: 18px;
+      font-size: 0.85rem;
+      color: #8b857e;
+      line-height: 2.0;
+    }
+
+    @media (max-width: 768px) {
+      .dc-visual {
+        margin-top: 24px;
+      }
+      .dc-visual--reason,
+      .dc-visual--support {
+        max-width: 100%;
+      }
+      .dc-visual--reason {
+        margin-top: 28px;
+      }
+      .dc-hero-visual img {
+        opacity: 0.34;
+      }
+
+      /* Structure — 単純縮小せず、縦方向へ自然に置き直す */
+      .dc-structure-body {
+        flex-direction: column;
+        padding: 30px 18px 26px;
+      }
+      .dc-st-side {
+        flex-direction: row;
+        justify-content: center;
+        gap: 14px;
+        width: 100%;
+      }
+      .dc-st-node {
+        flex: 0 1 auto;
+        min-width: 104px;
+        max-width: 160px;
+        padding: 12px 16px;
+      }
+      .dc-st-join,
+      .dc-st-open {
+        display: none;
+      }
+      .dc-st-core {
+        position: relative;
+        margin-top: 50px;
+        padding: 22px 24px;
+      }
+      .dc-st-core::before {
+        content: "";
+        position: absolute;
+        left: 50%;
+        top: -38px;
+        width: 1px;
+        height: 28px;
+        background: #cfd8d4;
+      }
+      .dc-st-future {
+        position: relative;
+        margin-top: 48px;
+      }
+      .dc-st-future::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        top: -36px;
+        width: 1px;
+        height: 26px;
+        background: repeating-linear-gradient(to bottom, #dcd6cc 0 2px, transparent 2px 7px);
+      }
+    }
   </style>
 </head>
 
@@ -293,7 +542,13 @@
   <main>
 
     <!-- 1. Hero -->
+    <!-- Hero｜DC-HERO-01（Atmosphere）：写真として主張させず、深い紺の空間に奥行きだけを足す -->
     <section class="dc-hero">
+      <picture class="dc-hero-visual">
+        <source type="image/avif" srcset="/assets/dc/hero-960.avif 960w, /assets/dc/hero-1440.avif 1440w, /assets/dc/hero-1996.avif 1996w" sizes="100vw">
+        <source type="image/webp" srcset="/assets/dc/hero-960.webp 960w, /assets/dc/hero-1440.webp 1440w, /assets/dc/hero-1996.webp 1996w" sizes="100vw">
+        <img src="/assets/dc/hero-1440.webp" width="1996" height="788" fetchpriority="high" decoding="async" alt="" aria-hidden="true">
+      </picture>
       <span class="hero-label">企業型DC</span>
       <p class="hero-copy">
         会社のことを、考え続けている。<br>
@@ -349,6 +604,14 @@
         <h3>この制度を伝えている理由</h3>
         <p>会社の変革を支援していると、<br>経営者自身の将来準備が<br>後回しになっている場面に、<br>何度も出会いました。<br>会社のことは考えている。<br>従業員のことも考えている。<br>でも、自分自身のことは、<br>気づけば後回しになっている。</p>
         <p>DXも制度も、<br>本質は同じ問いだと考えています。<br>人と組織が、本来あるべき流れの中にいるか。<br>企業型DCも、その問いへの選択肢です。</p>
+        <!-- DC-REASON-01（Human ＋ Reality）：会社と人の将来を静かに考える時間 -->
+        <figure class="dc-visual dc-visual--reason">
+          <picture>
+            <source type="image/avif" srcset="/assets/dc/reason-560.avif 560w, /assets/dc/reason-1120.avif 1120w" sizes="(max-width: 768px) calc(100vw - 48px), 520px">
+            <source type="image/webp" srcset="/assets/dc/reason-560.webp 560w, /assets/dc/reason-1120.webp 1120w" sizes="(max-width: 768px) calc(100vw - 48px), 520px">
+            <img src="/assets/dc/reason-560.webp" width="1997" height="787" loading="lazy" decoding="async" alt="夜明けの窓辺の机。ノートパソコンと手帳とコーヒーが置かれ、窓の外に街と山並みが広がっている">
+          </picture>
+        </figure>
       </div>
 
       <!-- 4.6. 動画補足導線 -->
@@ -384,6 +647,28 @@
           大切なのは、制度のメリットだけを見ることではなく、<br>
           自社に合うかどうかを整理することです。
         </p>
+        <!-- DC-STRUCTURE-01（Structure）：会社 ・ 人 と 企業型DC と 将来への準備の関係。画像ではなく HTML ＋ CSS -->
+        <figure class="dc-structure">
+          <div class="dc-structure-body">
+            <div class="dc-st-side">
+              <span class="dc-st-node">会社</span>
+              <span class="dc-st-node">人</span>
+            </div>
+            <svg class="dc-st-join" viewBox="0 0 46 140" fill="none" aria-hidden="true" focusable="false">
+              <path d="M0,34 C24,34 22,70 46,70" stroke="#cfd8d4" stroke-width="1"/>
+              <path d="M0,106 C24,106 22,70 46,70" stroke="#cfd8d4" stroke-width="1"/>
+            </svg>
+            <span class="dc-st-core">企業型DC</span>
+            <svg class="dc-st-open" viewBox="0 0 58 140" fill="none" aria-hidden="true" focusable="false">
+              <path d="M0,70 C22,70 30,60 58,54" stroke="#dcd6cc" stroke-width="1" stroke-dasharray="1.5 5" stroke-linecap="round"/>
+            </svg>
+            <span class="dc-st-future">将来への準備</span>
+          </div>
+          <figcaption class="dc-structure-caption">
+            会社と人のあいだに、企業型DCという制度があります。<br>
+            その先に続くのは、会社の将来準備でもあり、人それぞれの将来準備でもあります。
+          </figcaption>
+        </figure>
       </div>
 
       <!-- 6. B8Eが支援すること -->
@@ -401,6 +686,14 @@
           <div class="dc-service-item">必要に応じて専門家や運営管理機関につなぐ</div>
           <div class="dc-service-item">経営者が制度を理解し、判断できる状態をつくる</div>
         </div>
+        <!-- DC-SUPPORT-01（Human ＋ Reality）：売る / 買うではなく、一緒に判断材料を整理する時間 -->
+        <figure class="dc-visual dc-visual--support">
+          <picture>
+            <source type="image/avif" srcset="/assets/dc/support-560.avif 560w, /assets/dc/support-1120.avif 1120w" sizes="(max-width: 768px) calc(100vw - 48px), 560px">
+            <source type="image/webp" srcset="/assets/dc/support-560.webp 560w, /assets/dc/support-1120.webp 1120w" sizes="(max-width: 768px) calc(100vw - 48px), 560px">
+            <img src="/assets/dc/support-560.webp" width="1997" height="787" loading="lazy" decoding="async" alt="机に広げた資料とノート、ペン。窓の外には朝の街並みと山が見えている">
+          </picture>
+        </figure>
       </div>
 
       <!-- 7. B8Eが支援しないこと -->
@@ -429,21 +722,43 @@
         <p>
           まずは、制度の概要を知るところから。
         </p>
+        <!-- DC-PROCESS-01（Process）：営業 Step ではなく、判断する時間も含めた伴走。
+             Copy（01〜04 と各行の文言）は現行のまま。線は装飾のため SVG は aria-hidden -->
         <div class="dc-steps">
-          <div class="dc-step">
-            <span class="dc-step__num">01</span>
+          <div class="dc-step dc-step--a">
+            <span class="dc-step__mark">
+              <svg class="dc-step__line" viewBox="0 0 44 100" preserveAspectRatio="none" fill="none" aria-hidden="true" focusable="false">
+                <path d="M13,30 C13,74 28,48 28,100" stroke="#ddd9d4" stroke-width="1" vector-effect="non-scaling-stroke"/>
+              </svg>
+              <span class="dc-step__num">01</span>
+            </span>
             <span class="dc-step__text">制度の概要を知る</span>
           </div>
-          <div class="dc-step">
-            <span class="dc-step__num">02</span>
+          <div class="dc-step dc-step--b">
+            <span class="dc-step__mark">
+              <svg class="dc-step__line" viewBox="0 0 44 100" preserveAspectRatio="none" fill="none" aria-hidden="true" focusable="false">
+                <path d="M28,0 L28,100" stroke="#ddd9d4" stroke-width="1" vector-effect="non-scaling-stroke"/>
+              </svg>
+              <span class="dc-step__num">02</span>
+            </span>
             <span class="dc-step__text">自社に合うかどうかを整理する</span>
           </div>
-          <div class="dc-step">
-            <span class="dc-step__num">03</span>
+          <div class="dc-step dc-step--b">
+            <span class="dc-step__mark">
+              <svg class="dc-step__line" viewBox="0 0 44 100" preserveAspectRatio="none" fill="none" aria-hidden="true" focusable="false">
+                <path d="M28,0 C28,62 13,42 13,100" stroke="#ddd9d4" stroke-width="1" vector-effect="non-scaling-stroke"/>
+              </svg>
+              <span class="dc-step__num">03</span>
+            </span>
             <span class="dc-step__text">必要であれば、専門家や運営管理機関とつながる</span>
           </div>
-          <div class="dc-step">
-            <span class="dc-step__num">04</span>
+          <div class="dc-step dc-step--a">
+            <span class="dc-step__mark">
+              <svg class="dc-step__line" viewBox="0 0 44 100" preserveAspectRatio="none" fill="none" aria-hidden="true" focusable="false">
+                <path d="M13,0 L13,30" stroke="#ddd9d4" stroke-width="1" vector-effect="non-scaling-stroke"/>
+              </svg>
+              <span class="dc-step__num">04</span>
+            </span>
             <span class="dc-step__text">導入するかどうかは、その後に決めれば大丈夫です</span>
           </div>
         </div>
