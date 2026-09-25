@@ -317,15 +317,16 @@
       height: 100%;
       object-fit: cover;
       object-position: center;
-      opacity: 0.40;
+      opacity: 0.55;
     }
 
-    /* 文字が載る中央にだけ、元の紺（#0c1020）の scrim を重ねて contrast を確保する。端の奥行きは残す */
+    /* 暗さで静けさをつくらず、風景そのものに語らせる。scrim は Hero 全体ではなく
+       文字が載る範囲にだけ局所的にかけ、右側の光 ・ 山並み ・ 水面を残す */
     .dc-hero::after {
       content: "";
       position: absolute;
       inset: 0;
-      background: radial-gradient(ellipse 60% 72% at 50% 46%, rgba(12, 16, 32, 0.82) 0%, rgba(12, 16, 32, 0.50) 55%, rgba(12, 16, 32, 0) 78%);
+      background: radial-gradient(ellipse 42% 58% at 50% 46%, rgba(12, 16, 32, 0.68) 0%, rgba(12, 16, 32, 0.34) 50%, rgba(12, 16, 32, 0) 78%);
       pointer-events: none;
     }
 
@@ -462,7 +463,8 @@
         margin-top: 28px;
       }
       .dc-hero-visual img {
-        opacity: 0.34;
+        opacity: 0.45;
+        object-position: 62% center;
       }
 
       /* Structure — 単純縮小せず、縦方向へ自然に置き直す */
