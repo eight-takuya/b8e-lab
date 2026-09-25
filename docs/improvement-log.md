@@ -6,6 +6,26 @@
 ---
 
 ---
+## [2026-09-25] — About｜Visual Experience v1（**Owner Review 待ち**・Preview のみ）
+
+**Scope:** `about.html`（Hero ＋ 6 箇所に Visual を追加 ・ ページ内 `<style>` に About Visual の CSS）, `assets/about/`（新規 26 ファイル）
+**Triggered by:** Architect の About Visual Experience 設計 ＋ Owner が格納した 6 Master Asset
+
+- 写真 Master（OS repo `assets/png/b8e-public-visual/about/`）を **1 掲載箇所 = 1 画像**で配置。分割 ・ コラージュ化 ・ 合成 ・ 再編集 ・ 一部切り出しはしていない（**Crop せず元の比率のまま表示**）
+- **Hero（`ABOUT-HERO-OWNER-01` / Owner Presence）**：Owner 本人の実写真を、Corporate Profile のように大きく出さず、**Copy の隣に 184px（Mobile 168px）**で静かに置く。Hero 全面 Background にして Copy を弱めることはしていない。下端を Hero の暗い背景へ溶かし、額装写真に見せない。Mobile は **Text → Portrait** の順で顔を Crop しない。contrast は **label 4.52:1 ・ copy 13.20:1**（Mobile 4.57:1 / 12.68:1）で、**現行 Production（4.41:1 / 12.94:1）より良い**
+- **積み重ねてきたもの（`ABOUT-CAREER-01` / Artifact ＋ Reality）**：本文の後に 560px
+- **転換（`ABOUT-TURNING-01` / Atmosphere）**：本文の後に 560px で Section を静かに閉じる（decorative）
+- **なぜ、この三つが一つの場所にあるのか（`ABOUT-THREE-01` / Structure）**：**画像化せず HTML ＋ CSS ＋ 装飾 SVG**。「ひとつの問い」から DX支援 ・ 企業型DC ・ Dreamin' Spiral 🌱 へ、細い線が薄れながら広がる形。3 つの箱 ・ 組織図 ・ Funnel ・ 階段 ・ 比較表にしていない。`figcaption` に同じ内容を文章で置き、情報を Visual だけに閉じ込めない
+- **今も続いている問い（`ABOUT-QUESTION-01` / Technology ＋ Human）**：本文の後に 460px
+- **BEAT EIGHT EMOTION（`ABOUT-BEAT-01` / Structure ＋ Atmosphere）**：象徴 Visual として 480px ・ 中央 ・ 広い余白。明るい Infinity を B8E の Tone へ馴染ませるため `rgba(247,246,244,.14)` の veil のみ（**画像自体は再編集していない**）
+- **B8Eとして在るということ（`ABOUT-CLOSING-ATMOSPHERE-01` / Atmosphere）**：本文の後に 560px で About を静かに閉じる
+- 「ひとつの問い（Hero 直後の導入）」・「Contact ／ 会社情報」には **Visual を追加していない**
+- Copy ・ Section 順 ・ Navigation ・ CTA ・ URL ・ Typography Standard（A16）・ 公開 Service Architecture は変更していない
+- **QA**：Desktop 1280 ／ Tablet 768 ／ Mobile 375 ・ 320 ・ 640 で横スクロール 0 ・ overflow 0 ・ text clip 0 ・ broken image 0 ・ 404 asset 0 ・ 内部 link 9 件すべて 200
+- **Performance**：AVIF ＋ WebP ・ `srcset` / `sizes` ・ `width` / `height`（CLS）・ Hero Portrait のみ `fetchpriority="high"`、他 5 枚は `loading="lazy"` ＋ `decoding="async"`。`assets/about/` 追加分は計 533KB
+- TOP ・ DX支援 ・ 企業型DC ・ Dreamin' Spiral 🌱 は変更していない
+
+---
 ## [2026-09-25] — 企業型DC｜Visual Experience v1（**Owner Review 待ち**・Preview のみ）
 
 **Scope:** `dc.html`（Hero ＋ 4 箇所に Visual を追加 ・ ページ内 `<style>` に企業型DC Visual の CSS）, `assets/dc/`（新規 14 ファイル）

@@ -51,6 +51,207 @@
         font-size: 1.1rem;
       }
     }
+
+    /* ------------------------------------------------------------
+       About Visual Experience v1（2026-09）
+       正本：dreamin'-spiral-os docs/design-systems/b8e-public-visual-experience-v1.md
+       Copy ・ Section 順 ・ Navigation ・ CTA ・ URL ・ Typography Standard は変更しない。
+       ------------------------------------------------------------ */
+
+    /* Hero｜ABOUT-HERO-OWNER-01（Owner Presence）
+       本人写真を Corporate Profile のように大きく出さない。Copy ・ 余白 ・ Typography を主役のまま保ち、
+       その隣に静かに在る大きさに留める */
+    .about-hero {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 56px;
+    }
+
+    .about-hero-text {
+      flex: 0 1 auto;
+    }
+
+    .about-portrait {
+      flex: 0 0 auto;
+      width: 184px;
+      margin: 0;
+    }
+
+    .about-portrait img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 14px;
+      /* 下端を暗い Hero へ溶かし、額装した Profile 写真に見せない */
+      -webkit-mask-image: linear-gradient(180deg, #000 0%, #000 58%, rgba(0, 0, 0, 0) 100%);
+      mask-image: linear-gradient(180deg, #000 0%, #000 58%, rgba(0, 0, 0, 0) 100%);
+    }
+
+    /* 本文中の補助 Visual（枠 ・ 影 ・ 装飾を付けない。Crop しないため元の比率のまま表示する） */
+    .about-visual {
+      margin: 32px 0 0;
+    }
+
+    .about-visual picture {
+      display: block;
+      border-radius: 14px;
+      overflow: hidden;
+      background: #eceae7;
+    }
+
+    .about-visual img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    /* 積み重ねてきたもの｜長い仕事の蓄積。実績アピールにしない */
+    .about-visual--career { max-width: 560px; }
+
+    /* 転換｜Section を静かに閉じる Atmosphere */
+    .about-visual--turning { max-width: 560px; margin-top: 40px; }
+
+    /* 今も続いている問い｜Technology ＋ Human。本文が主役 */
+    .about-visual--question { max-width: 460px; }
+
+    /* BEAT EIGHT EMOTION｜象徴 Visual。写真のように扱わず、広い余白で B8E の Tone へ馴染ませる */
+    .about-visual--beat {
+      max-width: 480px;
+      margin: 48px auto 4px;
+      position: relative;
+    }
+
+    .about-visual--beat picture::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(247, 246, 244, 0.14);
+      pointer-events: none;
+    }
+
+    /* B8Eとして在るということ｜About の余韻 */
+    .about-visual--closing { max-width: 560px; margin-top: 44px; }
+
+    /* ABOUT-THREE-01｜なぜ、この三つが一つの場所にあるのか（Structure）
+       3 つの Product ・ 営業導線 ・ Hierarchy に見せない。ひとつの問いから静かに広がる形 */
+    .about-three {
+      margin: 40px 0 0;
+    }
+
+    .about-three-body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 32px 10px 30px;
+      background: #fbfaf8;
+      border-radius: 14px;
+    }
+
+    .a3-origin {
+      flex: 0 0 auto;
+      display: block;
+      text-align: center;
+      padding: 22px 24px;
+      border: 1px solid #b7c7c0;
+      border-radius: 999px;
+      background: #fff;
+      font-size: 0.95rem;
+      color: #3f5a52;
+      line-height: 1.6;
+      letter-spacing: 0.06em;
+    }
+
+    .a3-fan {
+      flex: 0 0 auto;
+      display: block;
+      width: 96px;
+      height: 168px;
+    }
+
+    .a3-branches {
+      flex: 0 1 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
+
+    .a3-branch {
+      display: block;
+      font-size: 0.88rem;
+      color: #6f6a64;
+      line-height: 1.7;
+      letter-spacing: 0.04em;
+    }
+
+    .a3-branch::before {
+      content: "";
+      display: inline-block;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: #c9a882;
+      margin-right: 10px;
+      vertical-align: middle;
+    }
+
+    .about-three-caption {
+      margin-top: 18px;
+      font-size: 0.85rem;
+      color: #8b857e;
+      line-height: 2.0;
+    }
+
+    @media (max-width: 768px) {
+      /* Hero — Text → Portrait の順で縦に置く。顔が Crop されないよう元の比率のまま */
+      .about-hero {
+        flex-direction: column;
+        gap: 36px;
+      }
+      .about-portrait {
+        width: 168px;
+      }
+
+      .about-visual {
+        margin-top: 24px;
+      }
+      .about-visual--career,
+      .about-visual--turning,
+      .about-visual--question,
+      .about-visual--closing {
+        max-width: 100%;
+      }
+      .about-visual--turning { margin-top: 30px; }
+      .about-visual--closing { margin-top: 32px; }
+      .about-visual--beat {
+        max-width: 100%;
+        margin-top: 38px;
+      }
+
+      /* Structure — 単純縮小せず、縦方向へ自然に置き直す。文字サイズは保つ */
+      .about-three-body {
+        flex-direction: column;
+        padding: 30px 20px 28px;
+      }
+      .a3-fan {
+        display: none;
+      }
+      .a3-branches {
+        position: relative;
+        margin-top: 48px;
+        gap: 22px;
+        align-self: center;
+      }
+      .a3-branches::before {
+        content: "";
+        position: absolute;
+        left: 50%;
+        top: -36px;
+        width: 1px;
+        height: 26px;
+        background: #cfd8d4;
+      }
+    }
   </style>
 </head>
 
@@ -79,12 +280,22 @@
   <main>
 
     <!-- 1. Hero -->
+    <!-- Hero｜ABOUT-HERO-OWNER-01（Owner Presence）：Copy と余白が主役。Profile 写真として大きく出さない -->
     <section class="about-hero">
-      <span class="hero-label">About</span>
-      <h1 class="hero-copy">
-        一人の問いが、<br>
-        場所になった。
-      </h1>
+      <div class="about-hero-text">
+        <span class="hero-label">About</span>
+        <h1 class="hero-copy">
+          一人の問いが、<br>
+          場所になった。
+        </h1>
+      </div>
+      <figure class="about-portrait">
+        <picture>
+          <source type="image/avif" srcset="/assets/about/owner-240.avif 240w, /assets/about/owner-480.avif 480w, /assets/about/owner-720.avif 720w" sizes="(max-width: 768px) 168px, 184px">
+          <source type="image/webp" srcset="/assets/about/owner-240.webp 240w, /assets/about/owner-480.webp 480w, /assets/about/owner-720.webp 720w" sizes="(max-width: 768px) 168px, 184px">
+          <img src="/assets/about/owner-480.webp" width="2970" height="3960" fetchpriority="high" decoding="async" alt="BEAT EIGHT EMOTION 中村琢八">
+        </picture>
+      </figure>
     </section>
 
     <div class="page-content">
@@ -121,6 +332,14 @@
         <p>
           2015年の創業以来、技術と人をつなぐ支援を続けています。
         </p>
+        <!-- ABOUT-CAREER-01（Artifact ＋ Reality）：実績アピールではなく、長い仕事の蓄積 -->
+        <figure class="about-visual about-visual--career">
+          <picture>
+            <source type="image/avif" srcset="/assets/about/career-560.avif 560w, /assets/about/career-1120.avif 1120w" sizes="(max-width: 768px) calc(100vw - 48px), 560px">
+            <source type="image/webp" srcset="/assets/about/career-560.webp 560w, /assets/about/career-1120.webp 1120w" sizes="(max-width: 768px) calc(100vw - 48px), 560px">
+            <img src="/assets/about/career-560.webp" width="1997" height="788" loading="lazy" decoding="async" alt="資料と本とノートパソコンが並ぶ机、窓の外に街と山並みが見えている">
+          </picture>
+        </figure>
       </div>
 
       <!-- 4. The Turning Point — 転換 -->
@@ -168,6 +387,14 @@
           人が安心して、自分本来の流れを取り戻していくための、<br>
           ひとつながりの入口だと考えています。
         </p>
+        <!-- ABOUT-TURNING-01（Atmosphere）：説明図ではなく、空間と光で Section を静かに閉じる -->
+        <figure class="about-visual about-visual--turning">
+          <picture>
+            <source type="image/avif" srcset="/assets/about/turning-560.avif 560w, /assets/about/turning-1120.avif 1120w" sizes="(max-width: 768px) calc(100vw - 48px), 560px">
+            <source type="image/webp" srcset="/assets/about/turning-560.webp 560w, /assets/about/turning-1120.webp 1120w" sizes="(max-width: 768px) calc(100vw - 48px), 560px">
+            <img src="/assets/about/turning-560.webp" width="1997" height="788" loading="lazy" decoding="async" alt="" aria-hidden="true">
+          </picture>
+        </figure>
       </div>
 
       <!-- 5. Why Three — なぜ、この三つが一つの場所にあるのか -->
@@ -206,6 +433,31 @@
           その根っこにあるのは、<br>
           心と身体と社会の調和という、ひとつの願いです。
         </p>
+        <!-- ABOUT-THREE-01（Structure）：画像ではなく HTML ＋ CSS ＋ 装飾 SVG -->
+        <figure class="about-three">
+          <div class="about-three-body">
+            <span class="a3-origin">ひとつの問い</span>
+            <svg class="a3-fan" viewBox="0 0 96 168" fill="none" aria-hidden="true" focusable="false">
+              <defs>
+                <linearGradient id="a3fade" x1="0" y1="0" x2="1" y2="0">
+                  <stop offset="0" stop-color="#cfd8d4" stop-opacity="1"/>
+                  <stop offset="1" stop-color="#cfd8d4" stop-opacity="0.35"/>
+                </linearGradient>
+              </defs>
+              <path d="M0,84 C34,84 44,30 96,26" stroke="url(#a3fade)" stroke-width="1"/>
+              <path d="M0,84 C34,84 52,84 96,84" stroke="url(#a3fade)" stroke-width="1"/>
+              <path d="M0,84 C34,84 44,138 96,142" stroke="url(#a3fade)" stroke-width="1"/>
+            </svg>
+            <div class="a3-branches">
+              <span class="a3-branch">DX支援</span>
+              <span class="a3-branch">企業型DC</span>
+              <span class="a3-branch"><span class="ds-phrase">Dreamin' Spiral 🌱</span></span>
+            </div>
+          </div>
+          <figcaption class="about-three-caption">
+            三つは別々の事業ではなく、ひとつの問いから広がった入口です。
+          </figcaption>
+        </figure>
       </div>
 
       <!-- 6. Now — 今も続いている問い -->
@@ -224,6 +476,14 @@
           その問いは、<br>
           創業当初から続いている問いの延長線上にあります。
         </p>
+        <!-- ABOUT-QUESTION-01（Technology ＋ Human）：人が考える余白と、Technology のある現実 -->
+        <figure class="about-visual about-visual--question">
+          <picture>
+            <source type="image/avif" srcset="/assets/about/question-520.avif 520w, /assets/about/question-1040.avif 1040w" sizes="(max-width: 768px) calc(100vw - 48px), 520px">
+            <source type="image/webp" srcset="/assets/about/question-520.webp 520w, /assets/about/question-1040.webp 1040w" sizes="(max-width: 768px) calc(100vw - 48px), 520px">
+            <img src="/assets/about/question-520.webp" width="1997" height="788" loading="lazy" decoding="async" alt="窓辺の静かな部屋。椅子と机の向こうに、街と山並みと朝の光が広がっている">
+          </picture>
+        </figure>
       </div>
 
       <!-- 7. The Name — BEAT EIGHT EMOTION -->
@@ -245,6 +505,14 @@
           無限に循環しながら、鼓動し、動かされ続けること。<br>
           それが、この場所の在り方です。
         </p>
+        <!-- ABOUT-BEAT-01（Structure ＋ Atmosphere）：説明図ではなく象徴。広い余白で Tone へ馴染ませる -->
+        <figure class="about-visual about-visual--beat">
+          <picture>
+            <source type="image/avif" srcset="/assets/about/beat-480.avif 480w, /assets/about/beat-960.avif 960w" sizes="(max-width: 768px) calc(100vw - 48px), 480px">
+            <source type="image/webp" srcset="/assets/about/beat-480.webp 480w, /assets/about/beat-960.webp 960w" sizes="(max-width: 768px) calc(100vw - 48px), 480px">
+            <img src="/assets/about/beat-480.webp" width="1997" height="787" loading="lazy" decoding="async" alt="" aria-hidden="true">
+          </picture>
+        </figure>
       </div>
 
       <!-- 8. Presence — B8Eとして在るということ -->
@@ -271,6 +539,14 @@
         <p>
           それが、B8Eの在り方です。
         </p>
+        <!-- ABOUT-CLOSING-ATMOSPHERE-01（Atmosphere）：About の余韻。Hero のように強くしない -->
+        <figure class="about-visual about-visual--closing">
+          <picture>
+            <source type="image/avif" srcset="/assets/about/closing-560.avif 560w, /assets/about/closing-1120.avif 1120w" sizes="(max-width: 768px) calc(100vw - 48px), 560px">
+            <source type="image/webp" srcset="/assets/about/closing-560.webp 560w, /assets/about/closing-1120.webp 1120w" sizes="(max-width: 768px) calc(100vw - 48px), 560px">
+            <img src="/assets/about/closing-560.webp" width="1997" height="787" loading="lazy" decoding="async" alt="" aria-hidden="true">
+          </picture>
+        </figure>
       </div>
 
       <!-- 8.5. Quiet bridge + form -->
