@@ -6,6 +6,24 @@
 ---
 
 ---
+## [2026-09-25] — TOP｜B8E TOP Visual Experience v1（**Owner Review 待ち**・Preview のみ）
+
+**Scope:** `index.html`（6 Section に Visual を追加）, `style.css`（新規 A17）, `assets/top/`（新規 26 ファイル）
+**Triggered by:** Architect の Visual Placement 設計 ＋ Owner が格納した 6 Master Asset
+
+- Master（OS repo `assets/png/b8e-public-visual/top/*.png`・各 1672×941）を **1 掲載箇所 = 1 画像**で配置。コラージュ化 ・ 分割 ・ 合成 ・ 切り出し ・ 再編集はしていない
+- **Hero（TOP-HERO-01 / Atmosphere）**：写真枠を作らず背景層として `opacity .6`（Mobile .5）。Hero の高さ ・ 余白 ・ 中央 Typography は不変。**文字が載る帯の背景輝度は実測 24〜39**（文字 #f0eeeb）で contrast 十分。`fetchpriority="high"` ・ 遅延読み込みしない
+- **B8Eとは（TOP-B8E-01 / Human ＋ Reality）**：`.what-inner` を 2 column（本文 ／ 220px の Visual）。**本文の左端 ・ 幅 ・ 改行位置は不変**。Mobile は Text → Visual の縦 Stack
+- **THREE PATHS（TOP-THREE-PATHS-01 / Structure ＋ Reality）**：lead と 3 column の間に 360px で静かに配置。3 column より目立たせない
+- **Dreamin' Spiral 🌱（TOP-DREAMIN-SPIRAL-01 / Human ＋ Reality）**：Intro の補助として 360px。6 Service Card が主役のまま
+- **積み重ねてきたもの（TOP-TRACK-RECORD-01 / Artifact ＋ Reality）**：数字の後に 440px。**数字は HTML のまま ・ 画像に焼き込んでいない**
+- **B8Eとして在るということ（TOP-CLOSING-01 / Human ＋ Atmosphere）**：本文の後に 460px の余韻
+- 「どこから始めますか」・ Contact ／ Footer には Visual を追加していない
+- 最適化：AVIF ＋ WebP、Hero は 960 ／ 1440 ／ 1672、他は 480 ／ 960。`srcset` ・ `sizes` ・ `width` ／ `height`（1672×941）＋ `aspect-ratio 16/9` で CLS 対策、Hero 以外は `loading="lazy"` ・ `decoding="async"`
+- QA（Desktop 1280 ／ Mobile 375）：broken image 0 ・ 横スクロール 0 ・ text clip 0 ・ 各 Visual が所属 Section の column に整列（paths 280 ／ ds 280 ／ track 320 ／ closing 320）・ Mobile は 327 幅 1 列で Text → Visual の順
+- **Copy ・ Section 順 ・ Navigation ・ URL ・ CTA ・ Typography Standard ・ 6 Service Card の内容は不変**
+
+---
 ## [2026-09-25] — B8E Web Typography Alignment v1（**Owner Review 待ち**・Preview のみ）
 
 **Scope:** `style.css`（新規 A16 のみ。HTML ・ Copy は変更なし）
