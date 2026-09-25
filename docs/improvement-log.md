@@ -6,6 +6,25 @@
 ---
 
 ---
+## [2026-09-25] — 企業型DC｜Visual Experience v1（**Owner Review 待ち**・Preview のみ）
+
+**Scope:** `dc.html`（Hero ＋ 4 箇所に Visual を追加 ・ ページ内 `<style>` に企業型DC Visual の CSS）, `assets/dc/`（新規 14 ファイル）
+**Triggered by:** Architect の企業型DC Visual Experience 設計 ＋ Owner が格納した 3 Master Asset
+
+- 写真 Master（OS repo `assets/png/b8e-public-visual/dc/*.png`）を **1 掲載箇所 = 1 画像**で配置。分割 ・ コラージュ化 ・ 合成 ・ 再編集 ・ 一部切り出しはしていない（**Crop せず元の比率のまま表示**）
+- **Hero（DC-HERO-01 / Atmosphere）**：深い紺（`#182038 → #0c1020`）はそのまま、背景層として **`opacity .55`（Mobile `.45` ＋ `object-position: 62% center`）**。**Hero の高さ ・ 余白 ・ 中央 Typography は不変**。scrim は Hero 全体ではなく**文字が載る範囲だけの局所 radial**（`42% 58%` ・ 中心 `rgba(12,16,32,.68)`）にし、Master Asset の右側の光 ・ 山並み ・ 水面を残す。**hero-label の contrast は実測 4.82:1**（Mobile 4.68:1・いずれも AA 4.5:1 以上、変更前 Production の 4.49:1 より良い）、hero-copy は 9.6:1（Mobile 8.6:1）。`fetchpriority="high"`
+  - Owner Preview Feedback（暗く見えすぎる）を受け、`opacity .40 / .34` ＋ 全面寄りの強い scrim から上記へ調整。Hero 右側の平均輝度は L=0.040 → **0.084**（Mobile 0.023 → 0.050）
+- **この制度を伝えている理由（DC-REASON-01 / Human ＋ Reality）**：本文の後に 520px
+- **B8Eが支援すること（DC-SUPPORT-01 / Human ＋ Reality）**：支援項目の後に 560px
+- **企業型DCという選択肢（DC-STRUCTURE-01 / Structure）**：**画像化せず HTML ＋ CSS ＋ 装飾 SVG** で実装。会社 ・ 人 → 企業型DC → 将来への準備を、一直線の Flow ではなく「会社と人のあいだに制度があり、その先が開いている」関係として置く。`figcaption` に同じ内容を文章で書き、情報を Visual だけに閉じ込めない。Mobile は単純縮小せず縦方向へ再配置
+- **導入までの考え方（DC-PROCESS-01 / Process）**：**画像化せず HTML ＋ CSS ＋ 装飾 SVG**。01〜04 と各行の Copy は現行のまま、区切り線の Step List をやめ、ゆるやかな Curve 上の 4 Point へ。番号は金色 600 から灰色 400 の小さな node へ落とし、営業 Step に見せない
+- 「こんな状況はありませんか」・「こんな方へ」・「動画」・「B8Eが支援しないこと」・「CTA」には **Visual を追加していない**
+- Copy ・ Section 順 ・ Navigation ・ CTA ・ URL ・ Typography Standard（A16）・ 制度内容は変更していない
+- **QA**：Desktop 1280 ／ Tablet 768 ／ Mobile 375 ・ 320 ・ 640 で横スクロール 0 ・ overflow 0 ・ text clip 0 ・ broken image 0 ・ 404 asset 0 ・ 内部 link 正常
+- **Performance**：AVIF ＋ WebP ・ `srcset` / `sizes` ・ `width` / `height`（CLS）・ Hero 以外は `loading="lazy"` ＋ `decoding="async"`。`assets/dc/` 追加分は計 184KB
+- TOP ・ DX支援 ・ About ・ Dreamin' Spiral 🌱 は変更していない
+
+---
 ## [2026-09-25] — DX支援｜Visual Experience v1（**Owner Review 待ち**・Preview のみ）
 
 **Scope:** `dx.html`（Hero ＋ 4 Section に Visual を追加 ・ ページ内 `<style>` に DX Visual の CSS）, `assets/dx/`（新規 22 ファイル）
