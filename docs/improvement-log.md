@@ -6,6 +6,23 @@
 ---
 
 ---
+## [2026-09-25] — DX支援｜Visual Experience v1（**Owner Review 待ち**・Preview のみ）
+
+**Scope:** `dx.html`（Hero ＋ 4 Section に Visual を追加 ・ ページ内 `<style>` に DX Visual の CSS）, `assets/dx/`（新規 22 ファイル）
+**Triggered by:** Architect の Visual Experience 設計 ＋ Owner が格納した 5 Master Asset
+
+- Master（OS repo `assets/png/b8e-public-visual/dx/*.png`・各 1983×793）を **1 掲載箇所 = 1 画像**で配置。分割 ・ コラージュ化 ・ 合成 ・ 再編集 ・ 一部切り出しはしていない（**Crop せず元の比率のまま表示**）
+- **Hero（DX-HERO-01 / Atmosphere）**：深い青緑（`#102e36 → #091a1f`）はそのまま、背景層として `opacity .45`（Mobile `.38`）。**Hero の高さ ・ 余白 ・ 中央 Typography は不変**。文字が載る中央にだけ `#091a1f` の radial scrim を重ね、**hero-label の contrast を実測 6.1:1 ・ hero-copy を 10.3:1 以上**に確保（画像追加前の 5.7:1 を下回らない）。`fetchpriority="high"`
+- **B8Eが支援すること（DX-SUPPORT-01 / Process ＋ Reality）**：Section 本文と支援項目の後に 560px
+- **なぜ支援できるのか（DX-WHY-01 / Artifact ＋ Reality）**：本文の後に 460px
+- **伴走という在り方（DX-COMPANION-01 / Human ＋ Atmosphere）**：本文の後に 520px で Section を静かに閉じる
+- **支援実績（DX-TRACK-RECORD-01 / Artifact ＋ Reality）**：実績の文章の後に 460px（文章が主役 ・ Visual は補助）
+- 「こんな状況はありませんか」・「こんな方へ」・「B8Eが支援しないこと」・「支援の形 ／ CTA」には **Visual を追加していない**
+- 最適化：AVIF ＋ WebP、Hero は 960 ／ 1440 ／ 1983、他は 560 ／ 1120。`srcset` ・ `sizes` ・ `width`/`height`（1983×793）で CLS 対策、Hero 以外は `loading="lazy"` ・ `decoding="async"`。公開 asset 合計 441KB（2x 端末で取得されるのは約 104KB）
+- QA（Desktop 1280 ／ Mobile 375 ／ 640＝zoom 200%）：broken image 0 ・ 横スクロール 0 ・ text clip 0 ・ 4 Visual が本文 column（左 320px）に整列 ・ Mobile は 327 幅 1 列で Text → Visual の順
+- **Copy ・ Section 順 ・ Navigation ・ Service 内容 ・ CTA 文言 ・ URL ・ Typography Standard は不変**
+
+---
 ## [2026-09-25] — TOP｜B8E TOP Visual Experience v1（**Owner Review 待ち**・Preview のみ）
 
 **Scope:** `index.html`（6 Section に Visual を追加）, `style.css`（新規 A17）, `assets/top/`（新規 26 ファイル）
