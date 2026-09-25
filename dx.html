@@ -152,6 +152,103 @@
       }
       .br-pc { display: none; }
     }
+
+    /* ------------------------------------------------------------
+       DX支援｜Visual Experience v1（2026-09）
+       Master Asset（OS repo assets/png/b8e-public-visual/dx/）を 1 箇所 1 枚で置く。
+       写真を主役にしない。静けさ ・ 余白 ・ Typography ・ 深い青緑を主役のまま保つ。
+       正本：dreamin'-spiral-os docs/design-systems/b8e-public-visual-experience-v1.md
+       ------------------------------------------------------------ */
+
+    /* Hero｜DX-HERO-01（Atmosphere）：Image box を見せない ・ Hero の高さを変えない ・ 文字の contrast を最優先 */
+    .dx-hero {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .dx-hero-visual {
+      position: absolute;
+      inset: 0;
+      display: block;
+      pointer-events: none;
+    }
+
+    .dx-hero-visual img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      opacity: 0.45;
+    }
+
+    /* 文字が載る中央にだけ、元の深い青緑（#091a1f）の scrim を重ねて contrast を確保する。
+       端の流れ ・ 奥行きは残す */
+    .dx-hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 62% 74% at 50% 46%, rgba(9, 26, 31, 0.78) 0%, rgba(9, 26, 31, 0.45) 55%, rgba(9, 26, 31, 0) 78%);
+      pointer-events: none;
+    }
+
+    .dx-hero .hero-label,
+    .dx-hero .hero-copy {
+      position: relative;
+      z-index: 1;
+    }
+
+    /* 本文中の補助 Visual（枠 ・ 影 ・ 装飾を付けない。Crop しないため元の比率のまま表示する） */
+    .dx-visual {
+      margin: 32px 0 0;
+    }
+
+    .dx-visual picture {
+      display: block;
+      border-radius: 14px;
+      overflow: hidden;
+      background: #eef1f0;
+    }
+
+    .dx-visual img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .dx-visual--support {
+      max-width: 560px;
+    }
+
+    .dx-visual--why {
+      max-width: 460px;
+    }
+
+    /* 伴走という在り方｜Section を静かに閉じる */
+    .dx-visual--companion {
+      max-width: 520px;
+      margin-top: 36px;
+    }
+
+    /* 支援実績｜実績の文章が主役。Visual は補助 */
+    .dx-visual--track {
+      max-width: 460px;
+      margin-top: 28px;
+    }
+
+    @media (max-width: 768px) {
+      .dx-visual {
+        margin-top: 24px;
+      }
+      .dx-visual--support,
+      .dx-visual--why,
+      .dx-visual--companion,
+      .dx-visual--track {
+        max-width: 100%;
+      }
+      .dx-hero-visual img {
+        opacity: 0.38;
+      }
+    }
   </style>
 </head>
 
@@ -180,7 +277,13 @@
   <main>
 
     <!-- 1. Hero -->
+    <!-- Hero｜DX-HERO-01（Atmosphere）：写真として主張させず、深い青緑の空間に奥行きだけを足す -->
     <section class="dx-hero">
+      <picture class="dx-hero-visual">
+        <source type="image/avif" srcset="/assets/dx/hero-960.avif 960w, /assets/dx/hero-1440.avif 1440w, /assets/dx/hero-1983.avif 1983w" sizes="100vw">
+        <source type="image/webp" srcset="/assets/dx/hero-960.webp 960w, /assets/dx/hero-1440.webp 1440w, /assets/dx/hero-1983.webp 1983w" sizes="100vw">
+        <img src="/assets/dx/hero-1440.webp" width="1983" height="793" fetchpriority="high" decoding="async" alt="" aria-hidden="true">
+      </picture>
       <span class="hero-label">DX支援</span>
       <p class="hero-copy">
         ツールの問題ではない、<br>
@@ -247,6 +350,13 @@
           <div class="dx-service-item">組織の言葉を揃え、温度差を縮める</div>
           <div class="dx-service-item">AI活用の入口をつくる</div>
         </div>
+        <figure class="dx-visual dx-visual--support">
+          <picture>
+            <source type="image/avif" srcset="/assets/dx/support-560.avif 560w, /assets/dx/support-1120.avif 1120w" sizes="(max-width: 768px) calc(100vw - 48px), 560px">
+            <source type="image/webp" srcset="/assets/dx/support-560.webp 560w, /assets/dx/support-1120.webp 1120w" sizes="(max-width: 768px) calc(100vw - 48px), 560px">
+            <img src="/assets/dx/support-560.webp" width="1983" height="793" loading="lazy" decoding="async" alt="窓辺の机に広げた資料とノートパソコン、奥のホワイトボードに書き出された図">
+          </picture>
+        </figure>
       </div>
 
       <!-- 6. B8Eが支援しないこと -->
@@ -291,6 +401,13 @@
           理想論でもなく、場当たり的でもない。<br>
           現場が動く変化を、一緒につくります。
         </p>
+        <figure class="dx-visual dx-visual--why">
+          <picture>
+            <source type="image/avif" srcset="/assets/dx/why-560.avif 560w, /assets/dx/why-1120.avif 1120w" sizes="(max-width: 768px) calc(100vw - 48px), 460px">
+            <source type="image/webp" srcset="/assets/dx/why-560.webp 560w, /assets/dx/why-1120.webp 1120w" sizes="(max-width: 768px) calc(100vw - 48px), 460px">
+            <img src="/assets/dx/why-560.webp" width="1983" height="793" loading="lazy" decoding="async" alt="ホワイトボードの前で、資料を見ながら話し合う三人">
+          </picture>
+        </figure>
       </div>
 
       <!-- 8. 伴走という在り方 -->
@@ -309,6 +426,13 @@
           自分たちの言葉になっているとき。<br>
           変化は、自然に根づいていきます。
         </p>
+        <figure class="dx-visual dx-visual--companion">
+          <picture>
+            <source type="image/avif" srcset="/assets/dx/companion-560.avif 560w, /assets/dx/companion-1120.avif 1120w" sizes="(max-width: 768px) calc(100vw - 48px), 520px">
+            <source type="image/webp" srcset="/assets/dx/companion-560.webp 560w, /assets/dx/companion-1120.webp 1120w" sizes="(max-width: 768px) calc(100vw - 48px), 520px">
+            <img src="/assets/dx/companion-560.webp" width="1983" height="793" loading="lazy" decoding="async" alt="夜明けの空の下に広がる街と山並みの遠景">
+          </picture>
+        </figure>
       </div>
 
       <!-- 9. 支援実績 -->
@@ -328,6 +452,13 @@
             個別の事例は、ご相談時に必要に応じてお伝えしています。
           </p>
         </div>
+        <figure class="dx-visual dx-visual--track">
+          <picture>
+            <source type="image/avif" srcset="/assets/dx/track-record-560.avif 560w, /assets/dx/track-record-1120.avif 1120w" sizes="(max-width: 768px) calc(100vw - 48px), 460px">
+            <source type="image/webp" srcset="/assets/dx/track-record-560.webp 560w, /assets/dx/track-record-1120.webp 1120w" sizes="(max-width: 768px) calc(100vw - 48px), 460px">
+            <img src="/assets/dx/track-record-560.webp" width="1983" height="793" loading="lazy" decoding="async" alt="机に広げた資料とノートパソコンを囲んで進めている手元">
+          </picture>
+        </figure>
       </div>
 
       <!-- 10. 支援の形 -->
