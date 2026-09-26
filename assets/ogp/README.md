@@ -6,6 +6,15 @@
 
 ## Version History
 
+### Phase F — Dreamin' Spiral 🌱 Home と 6 Service を追加
+2026-09-26
+
+- **Slide 14〜20 を追加**（Slide 06 を複製し、ブランドライン ・ タイトル ・ サブコピー ・ スライド名だけを変更）。背景 ・ ロゴ ・ 配色 ・ 余白 ・ フォントサイズ ・ Slide 01〜13 は変更していない
+- ブランドラインは現行の Parent Brand `DREAMIN' SPIRAL 🌱`（旧 `DREAMIN' SPIRAL ACADEMY` は Slide 04〜13 に当時の記録として残る）。タイトル = Canonical Display Name、サブコピー = Service Family Card Copy（OS `constitution/brand-architecture/README.md` §1.9。Home は Home 冒頭の文）
+- 生成：`dreamin-spiral-home.png` ・ `dreamin-spiral-guide.png` ・ `dreamin-spiral-3-weeks.png` ・ `dreamin-spiral-community.png` ・ `dreamin-spiral-my-life.png` ・ `dreamin-spiral-project-creation.png` ・ `dreamin-spiral-business-creation.png`（page-key は URL の slug に合わせた。1 語にしない理由：旧 `community` ・ `premium` のスライド名と重ならないため）
+- 書き出しは LibreOffice（PDF → 1200 × 630 PNG）。既存の `top.png` と同じ方法で書き出したものと画素単位でほぼ一致することを確認
+- 反映先：`/dreamin-spiral/` ・ Library ・ 6 Service の LP と、その申込 ・ Thanks ・ Complete（Phase F・`docs/improvement-log.md`）
+
 ### Phase 10-B3 — 旧 Academy ページ用 OGP の削除
 2026-09-17
 
@@ -159,6 +168,13 @@ Slide 01（Brand Manual）も同じ`OGP_MASTER`レイアウトを使用する。
 | 11 | Community Apply | `community-apply` |
 | 12 | Premium Apply | `premium-apply` |
 | **13** | **Owner Program** | **`owner-program`** |
+| 14 | Dreamin' Spiral 🌱 Home | `dreamin-spiral-home` |
+| 15 | Guide | `dreamin-spiral-guide` |
+| 16 | 3 Weeks Tuning | `dreamin-spiral-3-weeks` |
+| 17 | Community | `dreamin-spiral-community` |
+| 18 | My Life, My Way | `dreamin-spiral-my-life` |
+| 19 | Project Creation | `dreamin-spiral-project-creation` |
+| 20 | Business Creation | `dreamin-spiral-business-creation` |
 
 運用ルール：
 

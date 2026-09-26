@@ -6,7 +6,22 @@
 ---
 
 ---
-## [2026-09-25] — 企業型DC｜Visual Experience v1（**Owner Review 待ち**・Preview のみ）
+## [2026-09-26] — Phase F｜Metadata ／ OGP ／ SEO（Work Package ⑤・**Owner Review 待ち**・Preview のみ）
+
+**Scope:** Dreamin' Spiral 🌱 関連の公開 21 ページ ＋ TOP の `<head>`、`assets/ogp/`（Slide 14〜20 ・ 生成 PNG 7 枚）、`sitemap.xml` ・ `robots.txt`（新規）
+**Triggered by:** Brand Architecture vNext の Surface 別移行（Phase C〜E の Deferred：meta ／ og description の旧名称 ・ og:image ・ sitemap 等）
+
+- **Browser title** は `ページ名 | B8E` のまま（Brand Architecture §1.3 C）。変えたのは Terms だけ（本文の見出しと同じ `Dreamin' Spiral 🌱 利用規約 | B8E`）
+- **og:title**：6 Service の LP は `Dreamin' Spiral 🌱 | Service Name`（§1.3 B：SNS で単独で出る Surface）。Dreamin' Spiral 🌱 Home は `Dreamin' Spiral 🌱`。申込 ・ Thanks ・ Complete ・ Legal は Browser title と同じ
+- **meta description ／ og:description**：旧名称（`Dreamin' Spiral 3 Weeks` ・ `Dreamin' Spiral My Life` ・ `Dreamin' Spiral Community` ・ `Dreamin' Spiral Guide`）を現行名へ。LP は「Dreamin' Spiral 🌱 の Service Name。」＋ 各ページの Hero の文（§1.3 D）。新しい Copy は作っていない。Project Creation Complete の「ここから3週間が始まります。」（3 Weeks の文の転記ミス）をページ本文の内容へ
+- **og:image**：Brand OGP System（`assets/ogp/`・Master から書き出し）に Dreamin' Spiral 🌱 Home と 6 Service のスライドを追加。背景 ・ ロゴ ・ 配色 ・ 余白は不変。ブランドライン `DREAMIN' SPIRAL 🌱`、タイトル = Display Name、サブコピー = Service Family Card Copy（§1.9）。各 Service の申込 ・ Thanks ・ Complete も同じ画像、TOP ・ Legal は `top.png`
+- **og:site_name `B8E`** ・ **`twitter:card` summary_large_image** を対象ページへ
+- **sitemap.xml ／ robots.txt**（新規・これまで 404）：index 対象の公開ページ 19 件だけ。noindex の Thanks ・ Complete、Owner 専用の画面（Owner Console ・ Owner Operation Manual ・ Owner Portal ・ Review 用 URL）は含めない
+- **canonical**：既存の自己参照（https ・ www ・ 末尾スラッシュ）が全対象ページで正しいことを確認。変更なし
+- **structured data**：既存になし。新設していない
+- URL ・ `form_type` ・ `metadata.service` ・ Stripe ・ GAS ・ 本文 ・ Legal の条件は変更していない
+
+｜Visual Experience v1（**Owner Review 待ち**・Preview のみ）
 
 **Scope:** `dc.html`（Hero ＋ 4 箇所に Visual を追加 ・ ページ内 `<style>` に企業型DC Visual の CSS）, `assets/dc/`（新規 14 ファイル）
 **Triggered by:** Architect の企業型DC Visual Experience 設計 ＋ Owner が格納した 3 Master Asset
