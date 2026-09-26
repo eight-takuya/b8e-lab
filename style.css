@@ -2933,10 +2933,14 @@ body:not(.ds-page) .resonance-questions p + p {
   /* 1. 日本語の行分割を「文節」単位にする（word-break: auto-phrase）。
         「〜しなが／ら、」「〜ため／の」のような、意味の途中で切れる折返しを根本から減らす。
         text-wrap: pretty は最終行が極端に短くなるのを抑える。
-        どちらも継承プロパティなので、body に 1 度だけ置く（ページごとの個別 hack を作らない） */
+        line-break: strict は JIS の行頭禁則を厳密に適用する。
+        WebKit（iOS Safari）は auto-phrase 未対応で、既定では長音記号「ー」や小書き文字が
+        行頭に落ちる（「プライバシーポリ／シー」「サ／ービス」）。strict はその再発を防ぐ。
+        いずれも継承プロパティなので body に 1 度だけ置く（ページごとの個別 hack を作らない） */
   body {
     word-break: auto-phrase;
     text-wrap: pretty;
+    line-break: strict;
   }
 
   /* 2. 見出し ・ Hero Copy ・ 短いリード文は行数が少ないため、

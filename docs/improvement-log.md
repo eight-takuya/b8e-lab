@@ -17,12 +17,15 @@
 - **A18（`@media (max-width: 768px)` のみ）**：
   - `body { word-break: auto-phrase; text-wrap: pretty; }` — 日本語の行分割を**文節単位**にし、「〜しなが／ら、」のような意味の途中での折返しを根本から減らす
   - 見出し ・ Hero Copy ・ 短いリード文に `text-wrap: balance`
+  - `line-break: strict`（JIS の行頭禁則）— **WebKit ／ iOS Safari は `word-break: auto-phrase` 未対応**で、既定では長音記号「ー」や小書き文字が行頭に落ちる（「プライバシーポリ／シー」「サ／ービス」「メ／ール」）。strict がその再発を防ぐ
   - `.keep-together { white-space: nowrap; }` Utility を追加（短い固有名称にだけ付ける）
   - すべて Progressive Enhancement。未対応ブラウザは従来どおり描画され、レイアウトは壊れない
 - **Desktop（1024 / 1280）は CSS が 1 行も変わらず、実測でも高さ ・ 行構成ともに完全不変**。768px だけが A18 の適用境界で、変化は Legal ・ dc-guide の +32〜33px のみ
 - **結果**：虚しい改行（1〜2 文字行 ・ 助詞のみ ・ 句読点始まり）は **353 件 → 1 件**（ユニーク 259 箇所 → 0 箇所）。
   固有名称の行またぎ分断は **8 件 → 0 件**。残り 1 件は本文中の inline link を 1 ブロックとして測っている検出側の偽陽性
-- **QA**：320 / 360 / 375 / 390 / 412 / 430 / 640（zoom 200% 相当）・ 768 / 1024 / 1280 で **横スクロール 0 ・ overflow 0**。ページ全長の合計増加は +0.50%
+- **WebKit ／ iOS Safari 相当 QA**（Playwright WebKit 26.6・27 ページ × 320/360/375/390/393/412/430 ＝ 189 render）：
+  `line-break: strict` 追加前は「ー」行頭落ちが **33 件**あったが、追加後は **4 件（すべて inline link の検出側偽陽性）**・固有名称の分断 0・overflow 0・button overflow 0
+- **QA**：320 / 360 / 375 / 390 / 393 / 412 / 430 / 640（zoom 200% 相当）・ 768 / 1024 / 1280 で **横スクロール 0 ・ overflow 0**。ページ全長の合計増加は +0.50%
 - Visual Experience v1（TOP ・ DX支援 ・ 企業型DC ・ About ・ Dreamin' Spiral 🌱）の Visual ・ Copy ・ Section 構成には触れていない
 
 ---
