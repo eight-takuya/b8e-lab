@@ -6,6 +6,24 @@
 ---
 
 ---
+## [2026-09-26] — Dreamin' Spiral 🌱 Home ＋ TOP Section｜Visual Experience v1（**Owner Review 待ち**・Preview のみ）
+
+**Scope:** `dreamin-spiral/index.html`（Hero Visual を追加）, `index.html`（Dreamin' Spiral 🌱 Section の 6 Visual のみ）, `style.css`（A14 ・ A15）, `assets/dreamin-spiral/`（Hero 6 ファイル新規 ・ Service 36 ファイル差し替え）
+**Triggered by:** Owner が制作した Dreamin' Spiral 🌱 Master Asset 9 点（OS repo `assets/png/b8e-public-visual/ds/`）
+
+- **Hero（`DS-HERO-01` / Atmosphere）**：これまで CSS Gradient だけだった Home Hero に、背景層として Atmosphere Visual を追加（`opacity .76`／Mobile `.70`）。**Hero の高さ ・ 余白 ・ Typography は不変**（Desktop 544px ・ Mobile 468px で変更前と同一）。明るい Asset なので「全体を暗くする」のではなく、**文字が載る範囲にだけ Cream の局所 scrim**（`rgba(255,253,248,…)`）を置いた。Mobile は中央 Crop で右側の光と流れが切れるため `object-position: 68% 46%`。contrast 実測 eyebrow 4.74:1 ・ title 13.97:1 ・ lead 5.98:1（Mobile 4.75 / 13.86 / 5.11）＝ すべて AA 以上。`fetchpriority="high"`
+- **6 Service Visual を Owner の新 Master へ差し替え**（Home と TOP で**同じ Master を共用**）。Visual Role を分け、以前の「全部 人物 ＋ Laptop ＋ 自然光」という同質化を解消：
+  Guide＝**Dialogue**（1 対 1）／ 3 Weeks Tuning＝**Process ・ Time**／ Community＝**Connection**（複数人の場）／ My Life, My Way＝**Life**／ Project Creation＝**Structure ＋ Project**／ Business Creation＝**Artifact ＋ Creation**
+- Master 6 枚が 1672×941（16:9）で揃ったため、Service Visual の `aspect-ratio` を `2 / 1` → **`16 / 9`** に変更し、**Crop せずそのまま表示**（人物の顔 ・ 主要 Artifact ・ Scene の意味が Crop で失われない）。旧 Asset 用の `brightness(1.06)` 補正は不要になったため撤去
+- **Project Creation は Owner Priority に従い `DS-PROJECT-01` を使用**。`02` ／ `03` は Master として保持のみで、Web Variant も生成していない
+- Card 高さの増分は Desktop +20px（Home）／ +14px（TOP）、ページ全長は Home +62px ・ TOP +28px。TOP Hero ・ B8Eとは ・ THREE PATHS ・ Track Record ・ Closing ・ Header ・ Footer には触れていない
+- Philosophy ・ Spiral ・ Library ・ Closing は Current 実装のまま（新規 Visual を増やしていない）
+- Copy ・ Section 順 ・ Service 名称 ・ Service 順 ・ Link ・ CTA ・ 価格 ・ Typography Standard は変更していない
+- **QA**：Desktop 1280 ／ Tablet 768 ・ 640 ／ Mobile 375 ・ 320 の両ページで横スクロール 0 ・ overflow 0 ・ text clip 0 ・ broken image 0 ・ 404 asset 0 ・ Console Error 0
+- **Performance**：AVIF ＋ WebP ・ `srcset`（332 / 560 / 664）・ `sizes` ・ `width`/`height`（1672×941）で CLS 対策。Hero のみ `fetchpriority="high"`、Service は `loading="lazy"` ＋ `decoding="async"`。`assets/dreamin-spiral/` は Hero 6 ファイル計 104KB ＋ Service 36 ファイル計 772KB
+- DX支援 ・ 企業型DC ・ About は変更していない
+
+---
 ## [2026-09-26] — Phase F｜Metadata ／ OGP ／ SEO（Work Package ⑤・**CLOSED**）
 
 **Scope:** Dreamin' Spiral 🌱 関連の公開 21 ページ ＋ TOP の `<head>`、`assets/ogp/`（Slide 14〜20 ・ 生成 PNG 7 枚）、`sitemap.xml` ・ `robots.txt`（新規）

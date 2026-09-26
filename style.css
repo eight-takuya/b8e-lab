@@ -2133,6 +2133,32 @@ a:hover {
   pointer-events: none;
 }
 
+/* Hero Visual｜DS-HERO-01（Atmosphere・2026-09-26）
+   画像そのものを見せる Hero にしない。Typography の背後に、静かな奥行き ・ 光 ・ 柔らかな流れを足す。
+   明るい Asset なので「全体を暗くする」のではなく、文字が載る範囲にだけ Cream の scrim を置く */
+.ds-home-hero-visual {
+  position: absolute;
+  inset: 0;
+  display: block;
+  pointer-events: none;
+}
+
+.ds-home-hero-visual img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 46%;
+  opacity: 0.76;
+}
+
+.ds-home-hero-visual::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 56% 74% at 50% 44%, rgba(255, 253, 248, 0.88) 0%, rgba(255, 253, 248, 0.52) 54%, rgba(255, 253, 248, 0) 84%);
+  pointer-events: none;
+}
+
 .ds-home-hero-inner {
   position: relative;
   z-index: 1;
@@ -2319,11 +2345,13 @@ a:hover {
   position: relative;
 }
 
+/* 6 Master は 1672×941（16:9）で揃っているため、Crop せずそのまま見せる。
+   人物の顔 ・ 主要 Artifact ・ Scene の意味が Crop で失われないようにする（2026-09-26） */
 .ds-home-family .ds-family-visual img {
   display: block;
   width: 100%;
   height: auto;
-  aspect-ratio: 2 / 1;
+  aspect-ratio: 16 / 9;
   object-fit: cover;
 }
 
@@ -2334,12 +2362,6 @@ a:hover {
   inset: 0;
   background: linear-gradient(180deg, rgba(255, 252, 245, 0.10) 0%, rgba(255, 252, 245, 0.02) 100%);
   pointer-events: none;
-}
-
-/* Project Creation の 1 枚だけ室内で暗く、6 枚の中で沈んで見えるため、表示時だけ明るさを合わせる
-   （元 Asset は無加工のまま。上下関係が出ないようにするための補正） */
-.ds-home-family .ds-family-item:nth-child(5) .ds-family-visual img {
-  filter: brightness(1.06);
 }
 
 /* 読み順：Service 名（左上）→ 「○○な方へ」→ 短い説明 → CTA（Owner ／ Architect Review 2026-09-24） */
@@ -2414,6 +2436,14 @@ a:hover {
 @media (max-width: 768px) {
   .ds-home-hero {
     padding: 92px 24px 80px;
+  }
+  /* 単純な中央 Crop では右側の光と流れが切れるため、そこが残る位置で見せる */
+  .ds-home-hero-visual img {
+    object-position: 68% 46%;
+    opacity: 0.70;
+  }
+  .ds-home-hero-visual::after {
+    background: radial-gradient(ellipse 78% 66% at 50% 46%, rgba(255, 253, 248, 0.90) 0%, rgba(255, 253, 248, 0.58) 54%, rgba(255, 253, 248, 0) 86%);
   }
   .ds-home-hero .ds-service-title {
     font-size: 1.3rem;
@@ -2529,11 +2559,12 @@ a:hover {
   background: #efece6;
 }
 
+/* Home と同じ Master ・ 同じ比率（16:9）。Home と TOP で別の意味になるほど Crop しない */
 .ds-top-spiral .ds-family-visual img {
   display: block;
   width: 100%;
   height: auto;
-  aspect-ratio: 2 / 1;
+  aspect-ratio: 16 / 9;
   object-fit: cover;
 }
 
@@ -2544,11 +2575,6 @@ a:hover {
   inset: 0;
   background: linear-gradient(180deg, rgba(255, 252, 245, 0.10) 0%, rgba(255, 252, 245, 0.02) 100%);
   pointer-events: none;
-}
-
-/* Home と同じ補正（Project Creation の 1 枚だけ室内で沈むため。元 Asset は無加工） */
-.ds-top-spiral .ds-family-item:nth-child(5) .ds-family-visual img {
-  filter: brightness(1.06);
 }
 
 .ds-top-spiral-body {
