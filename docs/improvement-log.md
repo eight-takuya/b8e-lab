@@ -6,38 +6,23 @@
 ---
 
 ---
-## [2026-09-26] — Phase F｜Metadata ／ OGP ／ SEO（Work Package ⑤・**Owner Review 待ち**・Preview のみ）
+## [2026-09-26] — Phase F｜Metadata ／ OGP ／ SEO（Work Package ⑤・**CLOSED**）
 
 **Scope:** Dreamin' Spiral 🌱 関連の公開 21 ページ ＋ TOP の `<head>`、`assets/ogp/`（Slide 14〜20 ・ 生成 PNG 7 枚）、`sitemap.xml` ・ `robots.txt`（新規）
 **Triggered by:** Brand Architecture vNext の Surface 別移行（Phase C〜E の Deferred：meta ／ og description の旧名称 ・ og:image ・ sitemap 等）
 
-- **Browser title** は `ページ名 | B8E` のまま（Brand Architecture §1.3 C）。変えたのは Terms だけ（本文の見出しと同じ `Dreamin' Spiral 🌱 利用規約 | B8E`）
+- **Browser title** は `ページ名 | B8E` のまま（Brand Architecture §1.3 C）。6 Service は `Guide | B8E` ・ `3 Weeks Tuning | B8E` ・ `Community | B8E` ・ `My Life, My Way | B8E` ・ `Project Creation | B8E` ・ `Business Creation | B8E`。申込等は Phase C の `お申し込み | <Service> | B8E`。変えたのは Terms だけ（本文の見出しと同じ `Dreamin' Spiral 🌱 利用規約 | B8E`）
 - **og:title**：6 Service の LP は `Dreamin' Spiral 🌱 | Service Name`（§1.3 B：SNS で単独で出る Surface）。Dreamin' Spiral 🌱 Home は `Dreamin' Spiral 🌱`。申込 ・ Thanks ・ Complete ・ Legal は Browser title と同じ
 - **meta description ／ og:description**：旧名称（`Dreamin' Spiral 3 Weeks` ・ `Dreamin' Spiral My Life` ・ `Dreamin' Spiral Community` ・ `Dreamin' Spiral Guide`）を現行名へ。LP は「Dreamin' Spiral 🌱 の Service Name。」＋ 各ページの Hero の文（§1.3 D）。新しい Copy は作っていない。Project Creation Complete の「ここから3週間が始まります。」（3 Weeks の文の転記ミス）をページ本文の内容へ
 - **og:image**：Brand OGP System（`assets/ogp/`・Master から書き出し）に Dreamin' Spiral 🌱 Home と 6 Service のスライドを追加。背景 ・ ロゴ ・ 配色 ・ 余白は不変。ブランドライン `DREAMIN' SPIRAL 🌱`、タイトル = Display Name、サブコピー = Service Family Card Copy（§1.9）。各 Service の申込 ・ Thanks ・ Complete も同じ画像、TOP ・ Legal は `top.png`
-- **og:site_name `B8E`** ・ **`twitter:card` summary_large_image** を対象ページへ
+- **og:site_name `B8E`** ・ **`twitter:card` summary_large_image** を対象ページへ。og:url は全ページで canonical と一致
 - **sitemap.xml ／ robots.txt**（新規・これまで 404）：index 対象の公開ページ 19 件だけ。noindex の Thanks ・ Complete、Owner 専用の画面（Owner Console ・ Owner Operation Manual ・ Owner Portal ・ Review 用 URL）は含めない
 - **canonical**：既存の自己参照（https ・ www ・ 末尾スラッシュ）が全対象ページで正しいことを確認。変更なし
 - **structured data**：既存になし。新設していない
-- URL ・ `form_type` ・ `metadata.service` ・ Stripe ・ GAS ・ 本文 ・ Legal の条件は変更していない
-
-｜Visual Experience v1（**Owner Review 待ち**・Preview のみ）
-
-**Scope:** `dc.html`（Hero ＋ 4 箇所に Visual を追加 ・ ページ内 `<style>` に企業型DC Visual の CSS）, `assets/dc/`（新規 14 ファイル）
-**Triggered by:** Architect の企業型DC Visual Experience 設計 ＋ Owner が格納した 3 Master Asset
-
-- 写真 Master（OS repo `assets/png/b8e-public-visual/dc/*.png`）を **1 掲載箇所 = 1 画像**で配置。分割 ・ コラージュ化 ・ 合成 ・ 再編集 ・ 一部切り出しはしていない（**Crop せず元の比率のまま表示**）
-- **Hero（DC-HERO-01 / Atmosphere）**：深い紺（`#182038 → #0c1020`）はそのまま、背景層として **`opacity .55`（Mobile `.45` ＋ `object-position: 62% center`）**。**Hero の高さ ・ 余白 ・ 中央 Typography は不変**。scrim は Hero 全体ではなく**文字が載る範囲だけの局所 radial**（`42% 58%` ・ 中心 `rgba(12,16,32,.68)`）にし、Master Asset の右側の光 ・ 山並み ・ 水面を残す。**hero-label の contrast は実測 4.82:1**（Mobile 4.68:1・いずれも AA 4.5:1 以上、変更前 Production の 4.49:1 より良い）、hero-copy は 9.6:1（Mobile 8.6:1）。`fetchpriority="high"`
-  - Owner Preview Feedback（暗く見えすぎる）を受け、`opacity .40 / .34` ＋ 全面寄りの強い scrim から上記へ調整。Hero 右側の平均輝度は L=0.040 → **0.084**（Mobile 0.023 → 0.050）
-- **この制度を伝えている理由（DC-REASON-01 / Human ＋ Reality）**：本文の後に 520px
-- **B8Eが支援すること（DC-SUPPORT-01 / Human ＋ Reality）**：支援項目の後に 560px
-- **企業型DCという選択肢（DC-STRUCTURE-01 / Structure）**：**画像化せず HTML ＋ CSS ＋ 装飾 SVG** で実装。会社 ・ 人 → 企業型DC → 将来への準備を、一直線の Flow ではなく「会社と人のあいだに制度があり、その先が開いている」関係として置く。`figcaption` に同じ内容を文章で書き、情報を Visual だけに閉じ込めない。Mobile は単純縮小せず縦方向へ再配置
-- **導入までの考え方（DC-PROCESS-01 / Process）**：**画像化せず HTML ＋ CSS ＋ 装飾 SVG**。01〜04 と各行の Copy は現行のまま、区切り線の Step List をやめ、ゆるやかな Curve 上の 4 Point へ。番号は金色 600 から灰色 400 の小さな node へ落とし、営業 Step に見せない
-- 「こんな状況はありませんか」・「こんな方へ」・「動画」・「B8Eが支援しないこと」・「CTA」には **Visual を追加していない**
-- Copy ・ Section 順 ・ Navigation ・ CTA ・ URL ・ Typography Standard（A16）・ 制度内容は変更していない
-- **QA**：Desktop 1280 ／ Tablet 768 ／ Mobile 375 ・ 320 ・ 640 で横スクロール 0 ・ overflow 0 ・ text clip 0 ・ broken image 0 ・ 404 asset 0 ・ 内部 link 正常
-- **Performance**：AVIF ＋ WebP ・ `srcset` / `sizes` ・ `width` / `height`（CLS）・ Hero 以外は `loading="lazy"` ＋ `decoding="async"`。`assets/dc/` 追加分は計 184KB
-- TOP ・ DX支援 ・ About ・ Dreamin' Spiral 🌱 は変更していない
+- URL ・ `form_type` ・ `metadata.service` ・ Stripe ・ GAS ・ 本文 ・ Legal の条件は変更していない（HTML の差分は `<title>` ・ `<meta>` の行だけ）
+- **Owner Reality Review**：Metadata Review ページ ＋ Preview で確認し承認（2026-09-26）→ PR #128 merge（`4b73f68`）
+- **Production verification（www.b8e.co.jp）**：公開 27 ページ 200 ・ title ／ meta ／ og ／ canonical が Review 時の値と完全一致 ・ 本番 HTML ＝ main ・ og:image 9 枚 200 image/png（95〜117 KB）・ robots.txt ／ sitemap.xml 配信（19 URL すべて 200 ・ noindex なし ・ 内部 URL なし）・ Thanks ／ Complete は `noindex, follow` ・ 内部リンク 71 件 200 ・ 375px ／ 1280px で横はみ出し 0 ・ Console error 0 ・ Project Creation の Form（`form_type=project_creation`）不変。検索エンジン ・ SNS キャッシュの反映は Close の条件にしない
+- この merge で起きたこのログの重複（企業型DC の記録の本文が壊れた見出しとともに二重に入った）を、本記録で直した
 
 ---
 ## [2026-09-25] — About｜Visual Experience v1（**Owner Review 待ち**・Preview のみ）
