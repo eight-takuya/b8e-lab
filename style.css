@@ -2915,3 +2915,60 @@ body:not(.ds-page) .resonance-questions p + p {
     opacity: 0.5;
   }
 }
+
+/* ------------------------------------------------------------
+   A18. Mobile Typography ／ Orphan Line Quality v1（2026-09）
+   Owner が外出先の Mobile で見つけた「虚しい改行」
+   （自動折返しの結果 1〜2 文字 ・ 助詞だけ ・ 句読点だけが次行に残る）を減らす。
+   正本：dreamin'-spiral-os docs/design-systems/mobile-typography-orphan-line-quality-v1.md
+
+   方針：
+   - **Copy ・ <br> ・ font-size ・ Typography Standard（A16）を変更しない。** 折返し方だけを整える
+   - **Mobile（≤768px）だけに適用する。** Production で CLOSED 済みの Desktop Typography には触れない
+   - すべて Progressive Enhancement。未対応ブラウザは従来どおりに描画される（レイアウトは壊れない）
+   - overflow を起こしうる無差別 nowrap は入れない
+   ------------------------------------------------------------ */
+
+@media (max-width: 768px) {
+  /* 1. 日本語の行分割を「文節」単位にする（word-break: auto-phrase）。
+        「〜しなが／ら、」「〜ため／の」のような、意味の途中で切れる折返しを根本から減らす。
+        text-wrap: pretty は最終行が極端に短くなるのを抑える。
+        どちらも継承プロパティなので、body に 1 度だけ置く（ページごとの個別 hack を作らない） */
+  body {
+    word-break: auto-phrase;
+    text-wrap: pretty;
+  }
+
+  /* 2. 見出し ・ Hero Copy ・ 短いリード文は行数が少ないため、
+        balance で行長を揃え、意味のまとまりを壊す折返しを避ける。
+        <br> による意図した改行はそのまま残る（balance は強制改行を動かさない） */
+  h1,
+  h2,
+  h3,
+  .hero-copy,
+  .hero-label,
+  .ds-service-title,
+  .ds-service-lead,
+  .ds-family-name,
+  .ds-family-core,
+  .paths-sub,
+  .entry-points-sub,
+  .path-target,
+  .track-bridge,
+  .quiet-cta p,
+  .form-note,
+  .dc-intro p,
+  .dx-intro p,
+  .ds-top-spiral-intro,
+  .ds-top-spiral-bridge-primary,
+  .ds-top-spiral-bridge-secondary {
+    text-wrap: balance;
+  }
+
+  /* 3. 意味上ひとまとまりの短い固有名称だけを分断しないための Utility。
+        Mobile 幅（320px）で必ず収まる短い語にだけ付ける。長い句に付けて overflow させない
+        （`.ds-phrase` は長い節にも使われているため、ここでは nowrap にしない） */
+  .keep-together {
+    white-space: nowrap;
+  }
+}
