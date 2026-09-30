@@ -2130,10 +2130,11 @@ a:hover {
   line-height: 2.0;
 }
 
-/* Empathy ／ Entrance — 「これ、自分かも」。朝の空気の面を置き、現実の言葉を静かに並べる（§12） */
+/* Recognition — 「日々の中で、ふと心に残ること。」。朝の空気の面を置き、現実の言葉を静かに並べる。
+   Entry Architecture vNext（2026-09-30）で Role を Empathy から Recognition へ REFRAME し、First Scroll へ MOVE した */
 /* 上下の余白を同じにして、面の中で文章 Block の重心を合わせる。
    `.ds-home .section-block` の padding-top: 0 に負けないよう scope を合わせる（Owner Review 2026-09-25） */
-.ds-home .ds-home-empathy {
+.ds-home .ds-home-recognition {
   padding: 44px 44px 44px;
   border: 1px solid #eee9e1;
   border-radius: 20px;
@@ -2142,21 +2143,21 @@ a:hover {
     linear-gradient(180deg, #f6f3ee 0%, #fbfaf7 100%);
 }
 
-.ds-home-empathy h2 {
+.ds-home-recognition h2 {
   margin-bottom: 28px;
 }
 
-.ds-home-empathy p {
+.ds-home-recognition p {
   position: relative;
   padding-left: 20px;
   color: #4a4740;
 }
 
-.ds-home-empathy p + p {
+.ds-home-recognition p + p {
   margin-top: 14px;
 }
 
-.ds-home-empathy p::before {
+.ds-home-recognition p::before {
   content: "";
   position: absolute;
   left: 0;
@@ -2166,13 +2167,13 @@ a:hover {
   background: #c9a882;
 }
 
-.ds-home-empathy p:last-child {
+.ds-home-recognition p:last-child {
   margin-top: 32px;
   padding-left: 0;
   color: var(--ds-ink);
 }
 
-.ds-home-empathy p:last-child::before {
+.ds-home-recognition p:last-child::before {
   display: none;
 }
 
@@ -2338,7 +2339,7 @@ a:hover {
   .ds-spiral {
     margin: 48px -24px 0;
   }
-  .ds-home .ds-home-empathy {
+  .ds-home .ds-home-recognition {
     padding: 30px 24px 32px;
   }
   .ds-home-family .ds-family-list {
@@ -3085,6 +3086,212 @@ body:not(.ds-page) .resonance-questions p + p {
   .paths-about,
   .what-heading,
   .ds-family-reality {
+    text-wrap: balance;
+  }
+}
+
+/* ------------------------------------------------------------
+   A20. Dreamin' Spiral 🌱 Home｜Entry Architecture vNext（2026-09-30 ・ ACR-20260930-023）
+   Home を「Dreamin' Spiral 🌱 を説明するページ」から「訪れた人が自分の今に気づくページ」へ。
+   Experience を Reality → Recognition → Meaning → Spiral → Six Entrances → Creation → Library → Open Closing にする。
+   正本：docs/dreamin-spiral-home-entry-architecture-vnext.md
+
+   方針：
+   - **思想を弱めるのではない。思想が届く順番を変える。** Copy ・ Section 順序 ・ Card の読み順 ・ CTA 階層だけを変更する
+   - **Visual Direction v1（A14 ・ A15）・ Typography Standard（A16）・ Mobile Orphan Line Quality（A18）の定義は変更しない**
+   - 6 Service の Canonical Display Name ・ Order ・ Self-relevance Copy ・ Summary ・ Visual は変更しない
+   - CTA は 3 階層。Level 1 Continue（Hero の Scroll Cue）・ Level 2 Explore（各 Service ・ Library）・ Level 3 Return（Closing → Six Entrances）
+   ------------------------------------------------------------ */
+
+/* 01 Hero｜Reality。Headline が 2 行の現実文になり、Lead が 3 block に増えるため、
+   Typography の重心だけを調整する（Hero の gradient ・ 光 ・ padding ・ Visual 実装は A15 のまま） */
+.ds-home-hero .ds-service-title {
+  font-size: 1.42rem;
+  line-height: 2.05;
+  max-width: 620px;
+}
+
+.ds-home-hero .ds-service-lead + .ds-service-lead {
+  margin-top: 18px;
+}
+
+/* Level 1 CTA（Continue）｜Conversion Button にしない。
+   目的は Scroll を強制することではなく、次に何があるかが分かる状態にすること */
+/* 色は Home 標準の #8a6a4e ではなく、暗い #42301f。
+   Hero は写真面で、Cue が載る下部は cream scrim が薄くなる範囲にあり、#8a6a4e は worst-case 3.11:1（AA 未満）だった。
+   Mobile は crop（object-position 68% 46%）と scrim の減衰でさらに厳しく、中間色では届かない。
+   Closing の Return も panel の最暗部 #f2f0e9 上で #8a6a4e は 4.36:1 と AA に届かないため、同じ色で揃える。
+   実測：Desktop Cue 7.89:1 ・ Mobile Cue 5.25:1 ・ Closing Return 11.00:1（いずれも AA 以上）。
+   Library の `.ds-service-cta`（#8a6a4e ・ #f8f6f1 上で 4.62:1）は変更しない */
+.ds-home-cue,
+.ds-home-return {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 10px;
+  font-size: 0.9rem;
+  letter-spacing: 0.06em;
+  color: #42301f;
+  border-bottom: 1px solid rgba(201, 168, 130, 0.62);
+  padding-bottom: 7px;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.ds-home-cue {
+  margin-top: 40px;
+}
+
+.ds-home-return {
+  margin-top: 30px;
+}
+
+.ds-home-cue:hover,
+.ds-home-return:hover {
+  color: #26251f;
+  border-color: #8a6a4e;
+  text-decoration: none;
+}
+
+.ds-home-cue-arrow {
+  animation: ds-home-cue-drift 2.8s ease-in-out infinite;
+}
+
+@keyframes ds-home-cue-drift {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(3px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ds-home-cue-arrow {
+    animation: none;
+  }
+}
+
+/* Scroll Cue ・ Return CTA の着地点（Header ・ Nav は static なので offset は小さくてよい） */
+#recognition,
+#entrances {
+  scroll-margin-top: 16px;
+}
+
+/* 03 Meaning / Philosophy｜旧 Hero の Core Message をここへ MOVE。
+   Home で最も静かな Section のまま。Visual Density を上げない */
+/* Eyebrow は「Dreamin' Spiral 🌱とは」— 日本語を含むので uppercase 変換をかけない
+   （Hero の `DREAMIN' SPIRAL 🌱` は従来どおり `.ds-service-eyebrow` の大文字のまま） */
+.ds-home-philosophy .ds-service-eyebrow {
+  display: block;
+  margin-bottom: 18px;
+  color: #6f695e;
+  text-transform: none;
+  letter-spacing: 0.1em;
+}
+
+.ds-home-philosophy h2 {
+  font-size: 1.24rem;
+  font-weight: 400;
+  color: var(--ds-ink);
+  line-height: 2.0;
+  letter-spacing: 0.05em;
+  margin-bottom: 40px;
+}
+
+/* 04 Spiral｜Philosophy から独立した Section にした（Spiral ・ wording ・ figcaption は KEEP）。
+   Lead だけを ADD する。Step 図に見せないため、番号 ・ 矢印 ・ 見出しを付けない */
+.ds-home-spiral {
+  text-align: center;
+}
+
+.ds-home-spiral-lead {
+  max-width: 520px;
+  margin: 0 auto;
+  color: var(--ds-ink-soft);
+}
+
+.ds-home-spiral .ds-spiral {
+  margin-top: 32px;
+}
+
+/* 05 Six Entrances｜Home の中心。Headline と Lead を ADD（6 つが順番でも段階でもないことを明示する） */
+.ds-home-family h2 {
+  margin-bottom: 18px;
+}
+
+.ds-home-family-lead {
+  color: var(--ds-ink-soft);
+  margin-bottom: 36px;
+}
+
+/* Card の読み順を Self-relevance → Service Name → Meaning → CTA へ。
+   訪問者は Service 名ではなく「これ、自分かも」から Card に入る（Visual Direction v1 §12）。
+   面積 ・ Visual 強度 ・ CTA 強度 ・ 装飾は 6 枚とも同じまま — 上下関係を作らない */
+.ds-home-family .ds-family-desc {
+  margin-bottom: 14px;
+  color: #26251f;
+}
+
+.ds-home-family .ds-family-name {
+  margin: 0;
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: #5f5b53;
+  letter-spacing: 0.05em;
+}
+
+.ds-home-family .ds-family-summary {
+  margin-top: 12px;
+  padding-top: 12px;
+}
+
+/* 06 Creation（ADD）｜内省と現実の創造を分けない、という意味を Home 全体へ接続する。
+   Recognition と対になる面だが、同じ見え方にはしない（こちらは動きのある側） */
+.ds-home .ds-home-creation {
+  padding: 44px 44px;
+  border: 1px solid #eae6dd;
+  border-radius: 20px;
+  background:
+    radial-gradient(118% 88% at 88% 0%, rgba(201, 168, 130, 0.16) 0%, rgba(201, 168, 130, 0) 62%),
+    linear-gradient(180deg, #faf8f3 0%, #fbfaf7 100%);
+}
+
+.ds-home-creation h2 {
+  margin-bottom: 28px;
+}
+
+.ds-home-creation p + p {
+  margin-top: 24px;
+}
+
+@media (max-width: 768px) {
+  .ds-home-hero .ds-service-title {
+    font-size: 1.24rem;
+    line-height: 1.95;
+  }
+  .ds-home-hero .ds-service-lead + .ds-service-lead {
+    margin-top: 16px;
+  }
+  .ds-home-cue {
+    margin-top: 32px;
+    font-size: 0.86rem;
+  }
+  .ds-home-return {
+    margin-top: 26px;
+    font-size: 0.86rem;
+  }
+  .ds-home-philosophy h2 {
+    font-size: 1.14rem;
+    margin-bottom: 32px;
+  }
+  .ds-home-family-lead {
+    margin-bottom: 28px;
+  }
+  .ds-home .ds-home-creation {
+    padding: 36px 24px;
+  }
+
+  /* A18｜Mobile Orphan Line Quality を vNext で追加した要素へも同じ条件で適用する */
+  .ds-home-cue,
+  .ds-home-return,
+  .ds-home-spiral-lead,
+  .ds-home-family-lead,
+  .ds-home-creation p {
     text-wrap: balance;
   }
 }

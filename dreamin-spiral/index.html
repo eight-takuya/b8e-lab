@@ -41,62 +41,124 @@
 
   <main>
 
-    <!-- Dreamin' Spiral 🌱 Home v1（Owner Approved Copy）
-         Dreamin' Spiral 🌱 そのものの Canonical Home。TOP の #dreamin-spiral は B8E TOP 上の summary section として共存する。
+    <!-- Dreamin' Spiral 🌱 Home Entry Architecture vNext（2026-09-30 ・ ACR-20260930-023）
+         Experience を Reality → Recognition → Meaning → Spiral → Six Entrances → Creation → Library → Open Closing へ。
+         「Dreamin' Spiral 🌱 を説明する前に、訪れた人が自分の今に気づく。」
+         「思想を弱めるのではない。思想が届く順番を変える。」
+         正本：docs/dreamin-spiral-home-entry-architecture-vnext.md
+
+         Provenance｜Dreamin' Spiral 🌱 Home v1（Owner Approved Copy）・ Visual Direction v1
          Service Family は並列の入口であり、Level ・ Funnel ・ Progression ではない。Library は Service ではない（別 section）。
+         6 Service の Canonical Display Name ・ Canonical Order ・ Self-relevance Copy ・ Summary ・ Visual は本 vNext でも変更していない。 -->
 
-         Visual：Visual Direction v1（OS repo docs/design-systems/dreamin-spiral-visual-direction-v1.md）に従う。
-         Copy ・ Section 構成 ・ 並び順は Home v1 のまま変更していない（Visual のみ）。 -->
-
-    <!-- Section 1｜Hero｜Visual Direction v1 §12 Hero「今の私」：朝〜午前の光。Deep Indigo をやめ、これから何かが始まる余白のある明るさへ -->
-    <!-- Hero｜DS-HERO-01（Atmosphere）：画像を主役にせず、Typography の背後に奥行きと光を足す -->
+    <!-- 01 Hero — Reality / Recognition
+         Role：Dreamin' Spiral 🌱 を説明しきる場所ではなく、「これ、自分にもあるかもしれない」と感じる場所。
+         Copy が Reality を言語化し、Visual は「これは現実の生活の話だ」と補強する（1 Visual = 1 Message）。
+         Visual｜DS-HERO-01 は Atmosphere（抽象）で、本 Decision が求める Human ＋ Daily Life ＋ Reality を満たしていない。
+         勝手に生成 ・ 差し替えせず、Asset Role ・ Direction ・ Prompt 案を architect-report.md へ返している（暫定で現行 Asset を継続）。
+         正本：docs/dreamin-spiral-home-entry-architecture-vnext.md §5 ・ §6 -->
     <section class="ds-home-hero">
       <picture class="ds-home-hero-visual">
         <source type="image/avif" srcset="/assets/dreamin-spiral/hero-960.avif 960w, /assets/dreamin-spiral/hero-1440.avif 1440w, /assets/dreamin-spiral/hero-2135.avif 2135w" sizes="100vw">
         <source type="image/webp" srcset="/assets/dreamin-spiral/hero-960.webp 960w, /assets/dreamin-spiral/hero-1440.webp 1440w, /assets/dreamin-spiral/hero-2135.webp 2135w" sizes="100vw">
         <img src="/assets/dreamin-spiral/hero-1440.webp" width="2135" height="736" fetchpriority="high" decoding="async" alt="" aria-hidden="true">
       </picture>
-      <!-- Photo Slot A（Hero・Human + Daily Life + Light）：Visual Direction v1 §5 ・ §12。写真 Asset 確定後にここへ入る -->
       <div class="ds-home-hero-inner">
-        <span class="ds-service-eyebrow">DREAMIN' SPIRAL</span>
+        <span class="ds-service-eyebrow">DREAMIN' SPIRAL 🌱</span>
         <h1 class="ds-service-title">
-          自分そのものから、<br>
-          人生と仕事を生きていく。
+          <span class="ds-phrase">仕事も、暮らしも、</span><span class="ds-phrase">それなりに進んでいる。</span><br>
+          <span class="ds-phrase">でも、ふと</span><span class="ds-phrase">「このままでいいのかな」と</span><span class="ds-phrase">思うことがある。</span>
         </h1>
         <p class="ds-service-lead">
-          <span class="ds-phrase">「気になること」や</span><span class="ds-phrase">現実の中で生まれる感覚を入口に、</span><br>
-          自分に気づきながら、<br>
-          <span class="ds-phrase">人生や仕事を</span><span class="ds-phrase">創っていくための伴走です。</span>
+          <span class="ds-phrase">その「気になる」を、</span><span class="ds-phrase">すぐに答えにしなくてもいい。</span>
         </p>
+        <p class="ds-service-lead">
+          <span class="ds-phrase">今の現実から、</span><span class="ds-phrase">自分に気づきながら、</span><br>
+          <span class="ds-phrase">人生や仕事を創っていく。</span>
+        </p>
+        <p class="ds-service-lead">
+          Dreamin' Spiral 🌱は、<br>
+          <span class="ds-phrase">そのプロセスを</span><span class="ds-phrase">一緒に見ていくための場です。</span>
+        </p>
+        <!-- Level 1 CTA（Continue）：Conversion Button にしない。Hero → Recognition をつなぐ静かな Scroll Cue -->
+        <a class="ds-home-cue" href="#recognition">
+          <span class="ds-home-cue-text">今の自分から見てみる</span>
+          <span class="ds-home-cue-arrow" aria-hidden="true">↓</span>
+        </a>
       </div>
     </section>
 
     <div class="page-content">
 
-      <!-- Section 2｜Dreamin' Spiral 🌱とは｜Visual Direction v1 §12 Philosophy（Home で最も静かな Section・Visual Density を下げる）
-           ＋ §10 Spiral Visual（「どうやって？」を文章だけで説明しない） -->
+      <!-- 02 Recognition
+           旧「今、気になっているところから。」の Reality Role を First Scroll へ MOVE し、Recognition として再構成。
+           ここではまだ Service 名を前面に出さない。Role は Recognition。
+           Visual｜Human ／ PC ／ Daily Life（Hero とは別 Scene）は現行 Asset になく、Photo Slot B は未充填のまま。
+           Asset Role ・ Direction ・ Prompt 案は architect-report.md へ返している。
+           正本：docs/dreamin-spiral-home-entry-architecture-vnext.md §7 ・ §8 -->
+      <div class="section-block ds-service-section ds-home-recognition" id="recognition">
+        <h2>日々の中で、ふと心に残ること。</h2>
+        <p>
+          <span class="ds-phrase">ちゃんとやっているのに、</span><br>
+          <span class="ds-phrase">ふと「このままでいいのかな」と思う。</span>
+        </p>
+        <p>
+          <span class="ds-phrase">やってみたいことはあるけれど、</span><br>
+          <span class="ds-phrase">まだ言葉にも、形にもなっていない。</span>
+        </p>
+        <p>
+          <span class="ds-phrase">誰かとの会話や出来事が、</span><br>
+          <span class="ds-phrase">なぜか心に残っている。</span>
+        </p>
+        <p>
+          <span class="ds-phrase">仕事やAIが</span><span class="ds-phrase">大きく変わっていく中で、</span><br>
+          <span class="ds-phrase">自分はこれから</span><span class="ds-phrase">どう生きたいんだろうと思う。</span>
+        </p>
+        <p>
+          <span class="ds-phrase">答えを急がなくても、</span><br>
+          <span class="ds-phrase">その「気になる」は、</span><br>
+          <span class="ds-phrase">今の自分を知る入口なのかもしれません。</span>
+        </p>
+      </div>
+
+      <!-- 03 Meaning / Philosophy
+           旧 Hero の Core Message「自分そのものから、人生と仕事を生きていく。」をここへ MOVE（削除しない）。
+           Home の中で最も静かな Section の一つ。Visual Density を上げない。
+           正本：docs/dreamin-spiral-home-entry-architecture-vnext.md §9 -->
       <div class="section-block ds-service-section ds-home-philosophy">
-        <h2>Dreamin' Spiral 🌱とは</h2>
+        <span class="ds-service-eyebrow">Dreamin' Spiral 🌱とは</span>
+        <h2>
+          自分そのものから、<br>
+          人生と仕事を生きていく。
+        </h2>
         <p>
           現実を生きていると、<br>
           気になることや、心が動くこと、<br>
           なぜか引っかかることがあります。
         </p>
         <p>
-          <span class="ds-phrase">それを正解や不正解で</span><span class="ds-phrase">判断するのではなく、</span><br>
+          <span class="ds-phrase">それをすぐに</span><span class="ds-phrase">正解や不正解で判断するのではなく、</span><br>
           <span class="ds-phrase">そこで生まれている</span><span class="ds-phrase">自分の感覚を感じてみる。</span>
         </p>
         <p>
-          その感覚を入口に、<br>
-          自分の内側に気づきながら、<br>
+          そこから自分に気づきながら、<br>
           人生や仕事を生きていく。
         </p>
         <p>
           Dreamin' Spiral 🌱は、<br>
           <span class="ds-phrase">そのプロセスを</span><span class="ds-phrase">一緒に見ていくための場です。</span>
         </p>
+      </div>
 
-        <!-- Spiral Visual（Visual Direction v1 §10）：閉じた円にしない・終点は少し外側へ・Step 図 ／ Level 図にしない -->
+      <!-- 04 Spiral
+           Spiral ・ wording ・ figcaption は完全 KEEP（Visual Direction v1 §10）。
+           Step 図 ・ 正しい手順 ・ Level ・ Stage ・ 成長階段 に見せない。Lead だけを ADD。
+           正本：docs/dreamin-spiral-home-entry-architecture-vnext.md §10 -->
+      <div class="section-block ds-service-section ds-home-spiral">
+        <p class="ds-home-spiral-lead">
+          <span class="ds-phrase">気づいて終わるのではなく、</span><br>
+          <span class="ds-phrase">小さくやってみて、また感じていく。</span>
+        </p>
         <figure class="ds-spiral">
           <svg class="ds-spiral-svg" viewBox="40 70 610 236" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="ds-spiral-t ds-spiral-d">
       <title id="ds-spiral-t">Dreamin&#39; Spiral 🌱 のめぐり</title>
@@ -129,23 +191,19 @@
         </figure>
       </div>
 
-      <!-- Section 3｜入口はひとつではない｜Visual Direction v1 §12 Empathy「これ、自分かも」 -->
-      <div class="section-block ds-service-section ds-home-empathy">
-        <!-- Photo Slot B（Empathy・Human ／ PC ／ Daily Life）：Visual Direction v1 §5 ・ §6。写真 Asset 確定後にここへ入る -->
-        <h2>今、気になっているところから。</h2>
-        <p>話してみたいことがあるとき。</p>
-        <p><span class="ds-phrase">少し時間をかけて</span><span class="ds-phrase">自分を見てみたいとき。</span></p>
-        <p><span class="ds-phrase">日常の中で一緒に</span><span class="ds-phrase">気づき続けたいとき。</span></p>
-        <p>人生そのものを見ていきたいとき。</p>
-        <p><span class="ds-phrase">エンジニアとしての経験を活かしながら、</span><span class="ds-phrase">Projectを動かす側へ進みたいとき。</span></p>
-        <p>Businessを創っていきたいとき。</p>
-        <p>入口は、ひとつではありません。</p>
-      </div>
-
-      <!-- Section 4｜Service Family（TOP と同じ .ds-family-* を再利用。名称と並び順は Brand Architecture §1 に従い、推奨順 ・ 段階ではない。Parent Brand を名称に付けない。番号を付けない）
-           Business Creation は Public Page v1（/dreamin-spiral/business-creation/）へ、Project Creation（Phase 2A）は /dreamin-spiral/project-creation/ へ link する
-           Visual Direction v1 §12 6 Entrances：Service 名より「○○な方へ」（Self-relevance）を上位に置く。6 つは対等・順番 ／ 上下なし（見た目 ・ 面積 ・ 装飾をすべて同じにする） -->
-      <div class="section-block ds-service-section ds-home-family">
+      <!-- 05 Six Entrances — Dreamin' Spiral 🌱 Home の中心
+           6 Service は完全に対等。Canonical Display Name ・ Canonical Order（Brand Architecture §1）を KEEP。推奨順ではない。
+           Card の読み順を Self-relevance → Service Name → Meaning → CTA へ REFRAME した
+           （Visual Direction v1 §12「Service 名より『○○な方へ』を上位に置く」に実装を合わせる。
+             2026-09-24 の実装時 comment「Service 名（左上）→…」はこの Decision で supersede）。
+           Self-relevance Copy ・ Summary ・ 6 Service Visual は KEEP。
+           正本：docs/dreamin-spiral-home-entry-architecture-vnext.md §11 ・ §12 ・ §13 ・ §14 -->
+      <div class="section-block ds-service-section ds-home-family" id="entrances">
+        <h2>今の自分に近い入口から。</h2>
+        <p class="ds-home-family-lead">
+          <span class="ds-phrase">6つは、</span><span class="ds-phrase">順番でも段階でもありません。</span><br>
+          <span class="ds-phrase">今、自然に気になるところから</span><span class="ds-phrase">見てみてください。</span>
+        </p>
         <ul class="ds-family-list">
           <li class="ds-family-item">
             <figure class="ds-family-visual">
@@ -156,8 +214,8 @@
               </picture>
             </figure>
             <div>
-              <h3 class="ds-family-name">Guide</h3>
               <p class="ds-family-desc"><span class="ds-phrase">今、気になっていることを</span><span class="ds-phrase">話してみたい人へ。</span></p>
+              <h3 class="ds-family-name">Guide</h3>
               <p class="ds-family-summary">今、少し気になっていることから、一緒に話してみる時間です。</p>
             </div>
             <a href="/dreamin-spiral/guide/" aria-label="Guide について詳しく見る">詳しく見る</a>
@@ -171,8 +229,8 @@
               </picture>
             </figure>
             <div>
-              <h3 class="ds-family-name">3 Weeks Tuning</h3>
               <p class="ds-family-desc"><span class="ds-phrase">「気になる」や「悩み」から、</span><br><span class="ds-phrase">3週間かけて</span><span class="ds-phrase">自分そのものに気づいていく人へ。</span></p>
+              <h3 class="ds-family-name">3 Weeks Tuning</h3>
               <p class="ds-family-summary">今、現実の中で起きていることを一緒に見ながら、そこに現れている自分に気づいていく3週間です。</p>
             </div>
             <a href="/dreamin-spiral/3-weeks/" aria-label="3 Weeks Tuning について詳しく見る">詳しく見る</a>
@@ -186,8 +244,8 @@
               </picture>
             </figure>
             <div>
-              <h3 class="ds-family-name">Community</h3>
               <p class="ds-family-desc"><span class="ds-phrase">人とつながりながら、</span><br><span class="ds-phrase">日々の中で</span><span class="ds-phrase">自分に気づき続けていける人へ。</span></p>
+              <h3 class="ds-family-name">Community</h3>
               <p class="ds-family-summary">日常の中で起きたことや、そこで生まれた感覚を持ち寄りながら、自分に気づき続けていくCommunityです。</p>
             </div>
             <a href="/dreamin-spiral/community/" aria-label="Community について詳しく見る">詳しく見る</a>
@@ -201,8 +259,8 @@
               </picture>
             </figure>
             <div>
-              <h3 class="ds-family-name">My Life, My Way</h3>
               <p class="ds-family-desc"><span class="ds-phrase">自分の気持ちや望みに</span><span class="ds-phrase">気づきながら、</span><br><span class="ds-phrase">自分の人生を、</span><span class="ds-phrase">自分で選んで生きていく人へ。</span></p>
+              <h3 class="ds-family-name">My Life, My Way</h3>
               <p class="ds-family-summary">6か月の現実を一緒に歩きながら、自分の人生を、自分そのものから生きていくための伴走です。</p>
             </div>
             <a href="/dreamin-spiral/my-life/" aria-label="My Life, My Way について詳しく見る">詳しく見る</a>
@@ -216,8 +274,8 @@
               </picture>
             </figure>
             <div>
-              <h3 class="ds-family-name">Project Creation</h3>
               <p class="ds-family-desc"><span class="ds-phrase">エンジニアから、</span><span class="ds-phrase">プロジェクトを創る人へ。</span></p>
+              <h3 class="ds-family-name">Project Creation</h3>
               <p class="ds-family-summary">3ヶ月間、実際のProjectを題材に、Projectが前に進む状態を創れる人になるための実践プログラムです。</p>
             </div>
             <a href="/dreamin-spiral/project-creation/" aria-label="Project Creation について詳しく見る">詳しく見る</a>
@@ -231,8 +289,8 @@
               </picture>
             </figure>
             <div>
-              <h3 class="ds-family-name">Business Creation</h3>
               <p class="ds-family-desc"><span class="ds-phrase">自分の経験や想いを、</span><span class="ds-phrase">Businessとして形にし、</span><br><span class="ds-phrase">実際に届けながら</span><span class="ds-phrase">育てていく人へ。</span></p>
+              <h3 class="ds-family-name">Business Creation</h3>
               <p class="ds-family-summary">今ここにあるビジネスの現実から、自分そのもののBusinessを一緒に創り、育てていく伴走です。</p>
             </div>
             <a href="/dreamin-spiral/business-creation/" aria-label="Business Creation について詳しく見る">詳しく見る</a>
@@ -240,7 +298,34 @@
         </ul>
       </div>
 
-      <!-- Section 5｜Library（Service ではない。Service Family とは別 section） -->
+      <!-- 06 Creation（ADD）
+           Dreamin' Spiral 🌱 を内省 ・ Healing ・ Mindset だけの Brand に見せない。
+           Reality / Work / Technology / Creation を Home 全体の意味として接続する。
+           Visual｜Reality ＋ Work ＋ Technology ＋ Creation は現行 Asset になく、AI を Brand の主役にしない Direction が要る。
+           勝手に生成せず、Asset Role ・ Direction ・ Prompt 案を architect-report.md へ返している。
+           正本：docs/dreamin-spiral-home-entry-architecture-vnext.md §15 ・ §16 -->
+      <div class="section-block ds-service-section ds-home-creation">
+        <h2>気づくだけで、終わらない。</h2>
+        <p>
+          話してみる。<br>
+          書いてみる。<br>
+          やってみる。
+        </p>
+        <p>
+          <span class="ds-phrase">働き方を少し変えてみる。</span><br>
+          <span class="ds-phrase">Projectを動かしてみる。</span><br>
+          <span class="ds-phrase">Businessを形にして、</span><span class="ds-phrase">実際に届けてみる。</span>
+        </p>
+        <p>
+          Dreamin' Spiral 🌱では、<br>
+          <span class="ds-phrase">自分の内側を見ることと、</span><br>
+          <span class="ds-phrase">現実を創ることを分けません。</span>
+        </p>
+      </div>
+
+      <!-- 07 Library — Service ではない。Service Family とは分離したまま KEEP。
+           「無料」を Primary framing に足さない。
+           正本：docs/dreamin-spiral-home-entry-architecture-vnext.md §17 -->
       <div class="section-block ds-service-section ds-home-library">
         <h2>Dreamin' Spiral 🌱 Library</h2>
         <p>
@@ -254,10 +339,13 @@
         <a class="ds-service-cta" href="/dreamin-spiral/library/">Libraryを見る</a>
       </div>
 
-      <!-- Section 6｜Closing（Guide への静かな導線のみ。申込を促す CTA にしない）
-           Visual Direction v1 §12 Closing：Human ・ Light ・ Nature へ戻る。Hero と同じ Visual を使わない。「未来へ向かう」より「今の自分へ戻る」質感 -->
+      <!-- 08 Open Closing
+           Closing Copy は KEEP。旧 CTA「Guide（無料）について見る」は REMOVE
+           （6 Service は Canonical 上対等であり、Home の最後だけ Guide を標準入口に見せないため）。
+           Level 3 CTA（Return）として Six Entrances へ戻す。Guide は 6 つの入口の 1 つとして自然に存在させる。
+           Visual｜Human ＋ Light ＋ Nature（Hero と同じ画像を使わない）は現行 Asset になく、Photo Slot C は未充填のまま。
+           正本：docs/dreamin-spiral-home-entry-architecture-vnext.md §18 ・ §19 -->
       <div class="section-block ds-service-section ds-home-closing">
-        <!-- Photo Slot C（Closing・Human ／ Light ／ Nature）：Visual Direction v1 §12。Hero とは別の Asset を使う -->
         <svg class="ds-sprout" viewBox="0 0 64 56" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
           <path d="M32 54 C32 40 32 32 32 24" fill="none" stroke="#8a9e78" stroke-width="1.6" stroke-linecap="round"/>
           <path d="M32 30 C24 30 17 25 14 17 C23 15 30 19 32 27 Z" fill="#c3cfb4" opacity="0.85"/>
@@ -265,7 +353,10 @@
         </svg>
         <h2><span class="ds-phrase">今、気になっていることは</span><span class="ds-phrase">何でしょう。</span></h2>
         <p><span class="ds-phrase">そこから始めてみても</span><span class="ds-phrase">いいのかもしれません。</span></p>
-        <a class="ds-service-cta" href="/dreamin-spiral/guide/">Guide（無料）について見る</a>
+        <a class="ds-home-return" href="#entrances">
+          <span class="ds-home-return-text">今の自分に近い入口を見る</span>
+          <span class="ds-home-return-arrow" aria-hidden="true">↑</span>
+        </a>
       </div>
 
     </div>
