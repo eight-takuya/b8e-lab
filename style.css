@@ -3426,3 +3426,145 @@ body:not(.ds-page) .resonance-questions p + p {
     margin: -44px -24px 32px;
   }
 }
+
+/* ------------------------------------------------------------
+   A21. My Life, My Way｜Entry Architecture vNext（2026-10-01 ・ ACR-20261001-001）
+   Hero を Reality-first に、Hero の CTA を Apply から Continue（Scroll Cue）へ。
+   Service Page の Hero（Deep Indigo）・ Typography ・ 本文の型は変えない。
+   正本：docs/mylife-entry-architecture-vnext.md
+   ------------------------------------------------------------ */
+
+/* Hero｜Headline が 3 行の現実文になるため、行長だけ少し広げる（font scale は既存のまま） */
+.ds-service-hero--reality .ds-service-title {
+  max-width: 600px;
+}
+
+.ds-service-hero--reality .ds-service-lead {
+  max-width: 520px;
+}
+
+.ds-service-hero--reality .ds-service-lead + .ds-service-lead {
+  margin-top: 20px;
+}
+
+/* Level 1 CTA（Continue）｜Conversion Button にしない。Hero → Recognition の静かな Scroll Cue。
+   色は既存の Hero CTA と同じ #dcc3a0（Deep Indigo 上で AA） */
+.ds-service-cue {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 10px;
+  margin-top: 40px;
+  font-size: 0.9rem;
+  letter-spacing: 0.06em;
+  color: #dcc3a0;
+  border-bottom: 1px solid rgba(201, 168, 130, 0.6);
+  padding-bottom: 7px;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.ds-service-cue:hover {
+  color: #f0e2cc;
+  border-color: #dcc3a0;
+  text-decoration: none;
+}
+
+.ds-service-cue-arrow {
+  animation: ds-service-cue-drift 2.8s ease-in-out infinite;
+}
+
+@keyframes ds-service-cue-drift {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(3px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ds-service-cue-arrow {
+    animation: none;
+  }
+}
+
+#recognition {
+  scroll-margin-top: 16px;
+}
+
+/* Offer｜一覧の前に置く「6か月全体の伴走」という意味（本文と同じ重さ） */
+.ds-service-section .ds-offer-lead {
+  margin-bottom: 28px;
+  color: #2f2b27;
+}
+
+@media (max-width: 768px) {
+  .ds-service-cue {
+    margin-top: 32px;
+    font-size: 0.86rem;
+  }
+  .ds-service-cue,
+  .ds-offer-lead {
+    text-wrap: balance;
+  }
+}
+
+/* A21-b｜My Life, My Way Hero Visual（DS-MYLIFE-HERO-01 ・ 16:9 ・ 2026-10-01）
+   Desktop（≥ 880px）は Visual ｜ Copy の 2 列（Dreamin' Spiral 🌱 Home Hero と同じ考え方）。
+   それ未満は Visual → Copy の縦積み。**画像に max-width 560px を持たせ、Tablet ／ 中間幅で container いっぱいに巨大化させない**。
+   Deep Indigo の Hero ・ Typography scale は既存のまま */
+.ds-service-hero--scene {
+  padding: 88px 40px 104px;
+}
+
+.ds-service-hero--scene .ds-service-hero-inner {
+  max-width: 1080px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 56px;
+  align-items: center;
+}
+
+.ds-service-hero--scene .ds-service-hero-copy {
+  text-align: left;
+}
+
+.ds-service-hero--scene .ds-service-title,
+.ds-service-hero--scene .ds-service-lead {
+  margin-left: 0;
+  margin-right: 0;
+  max-width: none;
+}
+
+.ds-service-hero-figure {
+  margin: 0;
+  width: 100%;
+  max-width: 560px;
+  justify-self: center;
+  border-radius: 18px;
+  overflow: hidden;
+  background: #16244a;
+}
+
+.ds-service-hero-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+@media (max-width: 879px) {
+  .ds-service-hero--scene {
+    padding: 48px 24px 72px;
+  }
+  .ds-service-hero--scene .ds-service-hero-inner {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 36px;
+    max-width: 600px;
+  }
+  .ds-service-hero--scene .ds-service-hero-copy {
+    text-align: center;
+  }
+  .ds-service-hero--scene .ds-service-title,
+  .ds-service-hero--scene .ds-service-lead {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
