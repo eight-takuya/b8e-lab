@@ -6,6 +6,20 @@
 ---
 
 ---
+## [2026-10-01] — My Life, My Way Entry Architecture vNext（**Architect Review 待ち**・Preview のみ）
+
+**Scope:** `dreamin-spiral/my-life/index.html`, `style.css`（A21）, `docs/mylife-entry-architecture-vnext.md`（新規）
+**Triggered by:** Architect Decision（ACR-20261001-001）
+
+- Experience を **Reality → Recognition → Meaning → Six Months → Open Future → Values → Offer → Action** に
+- **Hero を Reality-first に REFRAME し、Hero の申込 CTA を REMOVE**。代わりに Continue Cue「この6か月について見てみる ↓」
+- 「自分そのものから、自分の人生を生きる伴走。」は削除せず Meaning Section へ MOVE
+- Six Months は Meaning → Daily Reality → Contents の順に。Offer は「6か月全体を通した伴走です。」を一覧の前へ
+- **Open Future ・ Values ・ Offer 一覧 ・ 600,000円（税込）・ Final CTA ・ Apply URL ・ Meta / OGP は無変更**（byte ／ text で確認）
+- Visual は生成していない（既存 `DS-MYLIFE-01` は LP の Direction に合わないため再利用せず、Asset 案を Architect へ）
+- QA：7 幅で overflow 0 ・ 孤立行 0。Apply flow に regression なし
+
+---
 ## [2026-10-01] — Dreamin' Spiral 🌱 Home｜Visual 4 Asset を 16:9 に統一（**Owner Review 待ち**・Preview のみ）
 
 **Scope:** `style.css`（A20-b の `aspect-ratio` と `object-position` のみ）
