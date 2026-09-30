@@ -6,6 +6,17 @@
 ---
 
 ---
+## [2026-10-01] — Dreamin' Spiral 🌱 Home｜Visual 4 Asset を 16:9 に統一（**Owner Review 待ち**・Preview のみ）
+
+**Scope:** `style.css`（A20-b の `aspect-ratio` と `object-position` のみ）
+**Triggered by:** Owner「画像のサイズが合っていない」（ACR-20260930-025）— 新しい 4 枚だけ 3:2 で、既存の 6 Service ・ TOP の写真（16:9）と比率が違っていた
+
+- Hero ・ Recognition ・ Creation ・ Closing の表示を **3:2 → 16:9** に。Master ・ 配信ファイルは無変更（CSS の `object-fit: cover` だけ）
+- 切り抜き位置は顔が切れないよう画像ごとに指定（Hero ・ Recognition ・ Creation `50% 0%`、Closing `50% 30%`）
+- Desktop：Hero 512×288 ・ 各 Section 678×381 ／ Mobile：全て 325〜327×183〜184。6 Service Card（330×186）と同じ比率 1.78。overflow 0
+- Copy ・ Section ・ Spiral ・ 6 Service ・ Meta / OGP は無変更
+
+---
 ## [2026-09-30] — Dreamin' Spiral 🌱 Home｜Visual 4 Asset（**Architect Review 待ち**・Preview のみ）
 
 **Scope:** `dreamin-spiral/index.html`（Visual の figure のみ）, `style.css`（A20-b 追加）, `assets/dreamin-spiral/`（`hero-*` を DS-HERO-02 へ置き換え ・ `home/recognition-*` ・ `home/creation-*` ・ `home/closing-*` を新規）

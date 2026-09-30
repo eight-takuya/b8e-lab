@@ -3304,7 +3304,9 @@ body:not(.ds-page) .resonance-questions p + p {
 
    方針：
    - **Copy ・ Section 順序には触れない。** Visual を入れるための調整は Layout 側だけで行う
-   - 4 枚とも Master（1536×1024 ・ 3:2）を **Crop せずそのまま** 見せる（1 掲載箇所 ＝ 1 画像 ・ 切り出しをしない — Master README）
+   - 4 枚とも **16:9 で見せる**（Owner Decision 2026-10-01 ・ ACR-20260930-025）。Master は 1536×1024（3:2）のまま加工せず、
+     CSS の object-fit で表示だけを 16:9 に揃える。既存の 6 Service Visual ・ TOP の写真がすべて 16:9 で、
+     4 枚だけ 3:2 だと「画像のサイズが合っていない」（Owner）。切り抜き位置は顔が切れないよう画像ごとに上寄せで指定する
    - 6 Service Visual ・ Spiral と同じ角丸 ・ 同じ生成り背景。写真だけが目立たないようにする
    ------------------------------------------------------------ */
 
@@ -3335,8 +3337,10 @@ body:not(.ds-page) .resonance-questions p + p {
   display: block;
   width: 100%;
   height: auto;
-  aspect-ratio: 3 / 2;
+  aspect-ratio: 16 / 9;
   object-fit: cover;
+  /* 人物の頭が上端近く（約 7%）にあるため上寄せ。切れるのは机の手前側だけ */
+  object-position: 50% 0%;
 }
 
 .ds-home-hero--scene .ds-service-title {
@@ -3368,8 +3372,15 @@ body:not(.ds-page) .resonance-questions p + p {
   display: block;
   width: 100%;
   height: auto;
-  aspect-ratio: 3 / 2;
+  aspect-ratio: 16 / 9;
   object-fit: cover;
+  /* Recognition ・ Creation は頭が上寄りなので上端を残す（切れるのは手前のテーブル ・ ノート） */
+  object-position: 50% 0%;
+}
+
+/* Closing は頭が中段（約 30%）で上に空があるため、少しだけ下げて空と人物の両方を残す */
+.ds-home-section-visual--quiet img {
+  object-position: 50% 30%;
 }
 
 /* 6 Service Visual と同じ、ごく薄い Cream の veil（画像自体は加工しない） */
