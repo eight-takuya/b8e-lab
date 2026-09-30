@@ -6,6 +6,29 @@
 ---
 
 ---
+## [2026-10-01] — Community｜Hero Visual（DS-COMMUNITY-HERO-01）（**Architect Review 待ち**・Preview のみ）
+
+**Scope:** `dreamin-spiral/community/index.html`（Hero の figure のみ）, `assets/dreamin-spiral/community/hero-*`, `docs/community-entry-architecture-vnext.md`
+**Triggered by:** ACR-20261001-003 AD-1 決着（新規 `DS-COMMUNITY-HERO-01` を Hero に採用）
+
+- Hero に `DS-COMMUNITY-HERO-01`（16:9）。My Life と同じ A21-b：Desktop は Visual ｜ Copy の 2 列、880px 未満は縦積みで **max-width 560px**（中間幅での巨大化を防止）
+- Home の Community Card は `DS-COMMUNITY-01` のまま（Role separation）
+- Copy ・ Continue Cue ・ Offer ・ 料金 ・ Final CTA ・ Stripe URL ・ Meta / OGP ・ `style.css` は無変更（可視テキストが前回と完全一致）
+- QA：320 〜 1440 の 10 幅で 16:9 維持 ・ 画像サイズ（最大 560px）・ overflow 0 ・ 孤立行 0
+
+## [2026-10-01] — Community Entry Architecture vNext（**Architect Review 待ち**・Preview のみ）
+
+**Scope:** `dreamin-spiral/community/index.html`, `docs/community-entry-architecture-vnext.md`（新規）
+**Triggered by:** Architect Decision（ACR-20261001-003）
+
+- Experience を **Reality → Recognition → Meaning → Togetherness → Rhythm / Contents → Offer → Action** に
+- **Hero を Reality-first に REFRAME し、Hero の Stripe CTA を REMOVE**。代わりに Continue Cue「Communityについて見てみる ↓」
+- 「日々の現実を生きながら、共に気づき続ける場。」は削除せず Meaning Section へ MOVE
+- 月1回を「日常 → Community → 日常」の Rhythm として見せる Section を追加（その後に Contents）。Offer は一覧の前に意味の一文
+- **Offer 一覧 ・ 20,000円（税込）／月 ・ Final CTA ・ Stripe URL ・ Meta / OGP は無変更**。`style.css` も無変更（A21 と既存 Class を再利用）
+- Visual は生成していない（既存 `DS-COMMUNITY-01` は Hero の Direction に合わないため再利用せず、Asset 案を Architect へ）
+- QA：10 幅で overflow 0 ・ 孤立行 0
+
 ## [2026-10-01] — My Life, My Way｜Hero Visual（DS-MYLIFE-HERO-01）（**Architect Review 待ち**・Preview のみ）
 
 **Scope:** `dreamin-spiral/my-life/index.html`（Hero の figure のみ）, `style.css`（A21-b）, `assets/dreamin-spiral/my-life/hero-*`
