@@ -6,6 +6,21 @@
 ---
 
 ---
+## [2026-09-30] — Dreamin' Spiral 🌱 Home｜Visual 4 Asset（**Architect Review 待ち**・Preview のみ）
+
+**Scope:** `dreamin-spiral/index.html`（Visual の figure のみ）, `style.css`（A20-b 追加）, `assets/dreamin-spiral/`（`hero-*` を DS-HERO-02 へ置き換え ・ `home/recognition-*` ・ `home/creation-*` ・ `home/closing-*` を新規）
+**Triggered by:** Owner / Architect が採用した Visual 4 Asset（ACR-20260930-023 ・ AD-1 の決着）
+**正本:** [docs/dreamin-spiral-home-entry-architecture-vnext.md](dreamin-spiral-home-entry-architecture-vnext.md) §4
+
+- **4 Asset を実装**：`DS-HERO-02`（Hero ・ 今の私）・ `DS-RECOGNITION-01`（Recognition ・ ふと自分に戻る）・ `DS-CREATION-01`（Creation ・ そこから実際に創る）・ `DS-CLOSING-01`（Closing ・ もう一度、今の自分へ戻る）
+- **Copy ・ Section 順序 ・ Spiral ・ 6 Service Canonical ・ 6 Service Visual ・ Meta / OGP は 1 文字も変えていない**（可視テキスト 113 行が前後で完全一致を機械的に確認）
+- **Hero**：人物の Scene なので Copy の背後へ敷かず、Desktop は Visual ｜ Copy の 2 列、Mobile は Visual → Copy の縦積みにした。旧 `DS-HERO-01`（抽象 Atmosphere）の公開版は同じ命名系列 `hero-{w}` で置き換え、作り直さない幅（1440 ・ 2135）は撤去
+- **Recognition ・ Creation ・ Closing**：6 Service Card と同じ作りで Section の面の先頭へ。4 枚とも **Master の 3:2 を Crop せずそのまま**。Closing は veil を少し強めて Hero より引いた質感に
+- **Master PNG は dreamin-spiral-os `assets/png/b8e-public-visual/ds/`**（README Inventory に追記）。b8e-lab には AVIF ／ WebP の responsive variant だけを置く
+- **Hero Eyebrow の色**：Copy が gradient 上端に来たため A15 の `#6f695e` では worst-case 4.27:1 だった。この Hero でだけ `#5f5a50` に（5.38:1）
+- **QA**：320 / 375 / 390 / 430 / 768 / 1024 / 1280 の 7 幅で **Crop 0 ・ overflow 0 ・ 孤立行 0**。Hero Copy はすべて AA 以上。参照 asset 62 件すべて 200。6 Service ・ Library ・ TOP ・ DX ・ DC ・ About に regression なし
+
+---
 ## [2026-09-30] — Dreamin' Spiral 🌱 Home Entry Architecture vNext（**Architect Review 待ち**・Preview のみ）
 
 **Scope:** `dreamin-spiral/index.html`（Section 順序 ・ Copy ・ Card 読み順）, `style.css`（A20 追加 ・ `.ds-home-empathy` → `.ds-home-recognition`）, `docs/dreamin-spiral-home-entry-architecture-vnext.md`（新規）

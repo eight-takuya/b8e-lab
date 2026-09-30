@@ -54,16 +54,20 @@
     <!-- 01 Hero — Reality / Recognition
          Role：Dreamin' Spiral 🌱 を説明しきる場所ではなく、「これ、自分にもあるかもしれない」と感じる場所。
          Copy が Reality を言語化し、Visual は「これは現実の生活の話だ」と補強する（1 Visual = 1 Message）。
-         Visual｜DS-HERO-01 は Atmosphere（抽象）で、本 Decision が求める Human ＋ Daily Life ＋ Reality を満たしていない。
-         勝手に生成 ・ 差し替えせず、Asset Role ・ Direction ・ Prompt 案を architect-report.md へ返している（暫定で現行 Asset を継続）。
+         Visual｜DS-HERO-02（Human ＋ Daily Life ＋ Light ＋ Reality ／「今の私」・ Owner / Architect 採用 2026-09-30）。
+         人物の Scene なので旧 DS-HERO-01 のように Copy の背後へ敷かず、画像として見せる（顔に Copy を重ねない）。
+         Desktop は Visual ｜ Copy の 2 列（人物の視線が Copy へ向かう）、Mobile は Visual → Copy の縦積み。
          正本：docs/dreamin-spiral-home-entry-architecture-vnext.md §5 ・ §6 -->
-    <section class="ds-home-hero">
-      <picture class="ds-home-hero-visual">
-        <source type="image/avif" srcset="/assets/dreamin-spiral/hero-960.avif 960w, /assets/dreamin-spiral/hero-1440.avif 1440w, /assets/dreamin-spiral/hero-2135.avif 2135w" sizes="100vw">
-        <source type="image/webp" srcset="/assets/dreamin-spiral/hero-960.webp 960w, /assets/dreamin-spiral/hero-1440.webp 1440w, /assets/dreamin-spiral/hero-2135.webp 2135w" sizes="100vw">
-        <img src="/assets/dreamin-spiral/hero-1440.webp" width="2135" height="736" fetchpriority="high" decoding="async" alt="" aria-hidden="true">
-      </picture>
+    <section class="ds-home-hero ds-home-hero--scene">
       <div class="ds-home-hero-inner">
+        <figure class="ds-home-hero-figure">
+          <picture>
+            <source type="image/avif" srcset="/assets/dreamin-spiral/hero-640.avif 640w, /assets/dreamin-spiral/hero-960.avif 960w, /assets/dreamin-spiral/hero-1280.avif 1280w, /assets/dreamin-spiral/hero-1536.avif 1536w" sizes="(max-width: 879px) calc(100vw - 48px), 540px">
+            <source type="image/webp" srcset="/assets/dreamin-spiral/hero-640.webp 640w, /assets/dreamin-spiral/hero-960.webp 960w, /assets/dreamin-spiral/hero-1280.webp 1280w, /assets/dreamin-spiral/hero-1536.webp 1536w" sizes="(max-width: 879px) calc(100vw - 48px), 540px">
+            <img src="/assets/dreamin-spiral/hero-960.webp" width="1536" height="1024" fetchpriority="high" decoding="async" alt="朝の光が入る部屋で、ノートパソコンを前に手を止めて、窓の外を見ている人">
+          </picture>
+        </figure>
+        <div class="ds-home-hero-copy">
         <span class="ds-service-eyebrow">DREAMIN' SPIRAL 🌱</span>
         <h1 class="ds-service-title">
           <span class="ds-phrase">仕事も、暮らしも、</span><span class="ds-phrase">それなりに進んでいる。</span><br>
@@ -85,6 +89,7 @@
           <span class="ds-home-cue-text">今の自分から見てみる</span>
           <span class="ds-home-cue-arrow" aria-hidden="true">↓</span>
         </a>
+        </div>
       </div>
     </section>
 
@@ -93,10 +98,17 @@
       <!-- 02 Recognition
            旧「今、気になっているところから。」の Reality Role を First Scroll へ MOVE し、Recognition として再構成。
            ここではまだ Service 名を前面に出さない。Role は Recognition。
-           Visual｜Human ／ PC ／ Daily Life（Hero とは別 Scene）は現行 Asset になく、Photo Slot B は未充填のまま。
-           Asset Role ・ Direction ・ Prompt 案は architect-report.md へ返している。
+           Visual｜DS-RECOGNITION-01（Human ＋ Daily Life ＋ Recognition ／「ふと自分に戻る」）。
+           Hero（机で手を止める）とは別 Scene — 仕事の場を離れ、自宅のソファで意識が自分へ戻る瞬間。Visual → White Space → Text。
            正本：docs/dreamin-spiral-home-entry-architecture-vnext.md §7 ・ §8 -->
       <div class="section-block ds-service-section ds-home-recognition" id="recognition">
+        <figure class="ds-home-section-visual">
+          <picture>
+            <source type="image/avif" srcset="/assets/dreamin-spiral/home/recognition-480.avif 480w, /assets/dreamin-spiral/home/recognition-960.avif 960w, /assets/dreamin-spiral/home/recognition-1440.avif 1440w" sizes="(max-width: 768px) calc(100vw - 48px), 720px">
+            <source type="image/webp" srcset="/assets/dreamin-spiral/home/recognition-480.webp 480w, /assets/dreamin-spiral/home/recognition-960.webp 960w, /assets/dreamin-spiral/home/recognition-1440.webp 1440w" sizes="(max-width: 768px) calc(100vw - 48px), 720px">
+            <img src="/assets/dreamin-spiral/home/recognition-960.webp" width="1536" height="1024" loading="lazy" decoding="async" alt="自宅のソファで膝を抱え、窓の外の景色を眺めている人">
+          </picture>
+        </figure>
         <h2>日々の中で、ふと心に残ること。</h2>
         <p>
           <span class="ds-phrase">ちゃんとやっているのに、</span><br>
@@ -301,10 +313,17 @@
       <!-- 06 Creation（ADD）
            Dreamin' Spiral 🌱 を内省 ・ Healing ・ Mindset だけの Brand に見せない。
            Reality / Work / Technology / Creation を Home 全体の意味として接続する。
-           Visual｜Reality ＋ Work ＋ Technology ＋ Creation は現行 Asset になく、AI を Brand の主役にしない Direction が要る。
-           勝手に生成せず、Asset Role ・ Direction ・ Prompt 案を architect-report.md へ返している。
+           Visual｜DS-CREATION-01（Reality ＋ Work ＋ Technology ＋ Creation ／「そこから実際に創る」）。
+           AI ・ Digital を主役にせず、実際に Web を創っている現実の仕事風景。内省 → 現実の Creation への Bridge。
            正本：docs/dreamin-spiral-home-entry-architecture-vnext.md §15 ・ §16 -->
       <div class="section-block ds-service-section ds-home-creation">
+        <figure class="ds-home-section-visual">
+          <picture>
+            <source type="image/avif" srcset="/assets/dreamin-spiral/home/creation-480.avif 480w, /assets/dreamin-spiral/home/creation-960.avif 960w, /assets/dreamin-spiral/home/creation-1440.avif 1440w" sizes="(max-width: 768px) calc(100vw - 48px), 720px">
+            <source type="image/webp" srcset="/assets/dreamin-spiral/home/creation-480.webp 480w, /assets/dreamin-spiral/home/creation-960.webp 960w, /assets/dreamin-spiral/home/creation-1440.webp 1440w" sizes="(max-width: 768px) calc(100vw - 48px), 720px">
+            <img src="/assets/dreamin-spiral/home/creation-960.webp" width="1536" height="1024" loading="lazy" decoding="async" alt="自然光の入る机で、ノートパソコンとモニターに向かい、Webサイトをつくっている人">
+          </picture>
+        </figure>
         <h2>気づくだけで、終わらない。</h2>
         <p>
           話してみる。<br>
@@ -343,9 +362,17 @@
            Closing Copy は KEEP。旧 CTA「Guide（無料）について見る」は REMOVE
            （6 Service は Canonical 上対等であり、Home の最後だけ Guide を標準入口に見せないため）。
            Level 3 CTA（Return）として Six Entrances へ戻す。Guide は 6 つの入口の 1 つとして自然に存在させる。
-           Visual｜Human ＋ Light ＋ Nature（Hero と同じ画像を使わない）は現行 Asset になく、Photo Slot C は未充填のまま。
+           Visual｜DS-CLOSING-01（Human ＋ Light ＋ Nature ／「もう一度、今の自分へ戻る」）。Hero と別 Asset。
+           達成して未来へ進む演出ではなく、日常と今の自分へ戻る質感。Hero より引いた静かな見せ方にする。
            正本：docs/dreamin-spiral-home-entry-architecture-vnext.md §18 ・ §19 -->
       <div class="section-block ds-service-section ds-home-closing">
+        <figure class="ds-home-section-visual ds-home-section-visual--quiet">
+          <picture>
+            <source type="image/avif" srcset="/assets/dreamin-spiral/home/closing-480.avif 480w, /assets/dreamin-spiral/home/closing-960.avif 960w, /assets/dreamin-spiral/home/closing-1440.avif 1440w" sizes="(max-width: 768px) calc(100vw - 48px), 720px">
+            <source type="image/webp" srcset="/assets/dreamin-spiral/home/closing-480.webp 480w, /assets/dreamin-spiral/home/closing-960.webp 960w, /assets/dreamin-spiral/home/closing-1440.webp 1440w" sizes="(max-width: 768px) calc(100vw - 48px), 720px">
+            <img src="/assets/dreamin-spiral/home/closing-960.webp" width="1536" height="1024" loading="lazy" decoding="async" alt="川沿いのベンチでカップを手に、街と空を眺めている人">
+          </picture>
+        </figure>
         <svg class="ds-sprout" viewBox="0 0 64 56" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
           <path d="M32 54 C32 40 32 32 32 24" fill="none" stroke="#8a9e78" stroke-width="1.6" stroke-linecap="round"/>
           <path d="M32 30 C24 30 17 25 14 17 C23 15 30 19 32 27 Z" fill="#c3cfb4" opacity="0.85"/>

@@ -1,8 +1,8 @@
 # Dreamin' Spiral 🌱 Home Entry Architecture vNext
 
-**Status:** Implemented（Preview・Architect Review 待ち）
+**Status:** Implemented ・ Visual 4 Asset 実装済み（Preview・Architect Review 待ち）
 **Date:** 2026-09-30
-**Scope:** `dreamin-spiral/index.html`, `style.css`（A20 追加 ・ `.ds-home-empathy` → `.ds-home-recognition`）
+**Scope:** `dreamin-spiral/index.html`, `style.css`（A20 ・ A20-b 追加 ・ `.ds-home-empathy` → `.ds-home-recognition`）, `assets/dreamin-spiral/`（Visual 4 Asset の公開版）
 **Decision by:** Architect（Owner 採用）
 **AI Creation Request:** ACR-20260930-023
 
@@ -133,28 +133,43 @@ Closing Copy（今、気になっていることは何でしょう。／ そこ�
 
 ---
 
-## 4. Visual — 現状と未解決
+## 4. Visual — 4 Asset（Owner / Architect 採用 ・ 2026-09-30）
 
-Visual Direction v1 が求める Role に対し、**現行 Asset で成立しない Section が 4 つある。**
-`勝手に AI 画像を生成して差し替えない` という Decision に従い、**1 枚も生成していない。**
-Asset Role ・ Direction ・ Prompt 案は `architect-report.md` の `## Architect Decision Needed` に設計して返している。
+初回実装時は Visual Direction v1 の Role に対し 4 Section が現行 Asset で成立しなかった（旧 `DS-HERO-01` は抽象 Atmosphere）。
+Engineer は生成せず Asset Role ・ Prompt 案を Architect へ返し（AD-1）、**Owner / Architect が 4 枚を採用**した。
 
-| Section | 必要な Role | 現状 |
-|---|---|---|
-| 01 Hero | Human ＋ Daily Life ＋ Light ＋ Reality | `DS-HERO-01` は**抽象の Atmosphere**（光と稜線のみ ・ 人物 ・ 生活空間 ・ PC なし）で Role を満たさない。暫定で継続表示 |
-| 02 Recognition | Human ／ PC ／ Daily Life（Hero と別 Scene）| Asset なし（Photo Slot B は未充填のまま）|
-| 06 Creation | Reality ＋ Work ＋ Technology ＋ Creation | Asset なし（新規 Section）|
-| 08 Closing | Human ＋ Light ＋ Nature（Hero と別 Asset）| Asset なし（Photo Slot C は未充填のまま）|
+| Asset ID | Section | Visual Role | Meaning | 公開版 |
+|---|---|---|---|---|
+| `DS-HERO-02` | 01 Hero | Human ＋ Daily Life ＋ Light ＋ Reality | 今の私 | `assets/dreamin-spiral/hero-{640,960,1280,1536}.{avif,webp}` |
+| `DS-RECOGNITION-01` | 02 Recognition | Human ＋ Daily Life ＋ Recognition | ふと自分に戻る | `assets/dreamin-spiral/home/recognition-{480,960,1440}.{avif,webp}` |
+| `DS-CREATION-01` | 06 Creation | Reality ＋ Work ＋ Technology ＋ Creation | そこから実際に創る | `assets/dreamin-spiral/home/creation-{480,960,1440}.{avif,webp}` |
+| `DS-CLOSING-01` | 08 Closing | Human ＋ Light ＋ Nature | もう一度、今の自分へ戻る | `assets/dreamin-spiral/home/closing-{480,960,1440}.{avif,webp}` |
 
-**KEEP:** Spiral Visual ・ 6 Service Visual（Guide / 3 Weeks Tuning / Community / My Life, My Way / Project Creation / Business Creation）。
+- **Master（PNG ・ 1536×1024）は dreamin-spiral-os `assets/png/b8e-public-visual/ds/`**（README が Inventory）。b8e-lab には最適化済みの公開版だけを置く（既存 Standard どおり）
+- **Hero の公開版は旧 `DS-HERO-01` と同じ命名系列（`hero-{w}`）で置き換えた。** DS-HERO-02 で作り直さない幅（`hero-1440` ・ `hero-2135`）は、同じ命名系列に別 Asset が混ざらないよう撤去した。`DS-HERO-01` の Master は OS repo に残っている
+- **KEEP:** Spiral Visual ・ 6 Service Visual（Guide / 3 Weeks Tuning / Community / My Life, My Way / Project Creation / Business Creation）
+
+### Hero の見せ方
+
+`DS-HERO-02` は人物の Scene なので、旧 `DS-HERO-01` のように Copy の背後へ敷かない（顔に Copy が重なり、contrast も取れない）。
+**Desktop は Visual ｜ Copy の 2 列**（人物の視線が Copy の方へ向かう）、**Mobile ／ Tablet（≤ 879px）は Visual → Copy の縦積み**（Copy は従来どおり中央揃え）。
+Copy は 1 文字も変えていない — Layout 側だけで解決した。
+
+### Recognition ・ Creation ・ Closing の見せ方
+
+6 Service Card と同じ作り — Section の面の先頭に面いっぱいで置き、上の角だけを丸める（Visual → White Space → Text）。
+4 枚とも **Master の 3:2 を Crop せずそのまま** 見せる（Master README「1 掲載箇所 ＝ 1 画像 ・ 切り出しをしない」）。
+Closing は **Hero より引いた静かな質感** にするため、6 Service と同じ Cream の veil を少しだけ強めた（画像自体は加工しない）。
+
+### Visual Story
+
+`Hero「今の私」（机で手を止める）→ Recognition「ふと自分に戻る」（自宅のソファ）→ Creation「そこから実際に創る」（Web を創っている）→ Closing「もう一度、今の自分へ戻る」（川沿いのベンチ）`
+
+4 枚は同じ人物で、場所と行為がすべて違う。Hero と Recognition は「仕事の机」と「自宅のソファ」で明確に別 Scene。
 
 ### Visual Rhythm
 
-`Hero Visual → Recognition（Text）→ Quiet Philosophy → Spiral → 6 Service Visuals → Creation（Text）→ Library / White Space → Closing（Text）`
-
-全 Section を写真で埋めていない。Stillness と Reality が交互に現れる（Visual Direction v1）。
-
----
+`Hero Visual → Recognition Visual ＋ Text → Quiet Philosophy（Text）→ Spiral → 6 Service Visuals → Creation Visual ＋ Text → Library（White Space）→ Closing Visual ＋ Text`
 
 ## 5. 実装ノート
 
@@ -191,6 +206,10 @@ Library の `.ds-service-cta`（`#8a6a4e` ・ `#f8f6f1` 上で 4.62:1）は変�
 | Orphan Line ／ overflow | 320 / 375 / 430 / 768 / 1024 / 1280 の 6 幅で **虚しい改行 0 件 ・ horizontal overflow 0** |
 | 既存 link | 6 Service ＋ Library の href は main と完全一致（追加は `#recognition` ・ `#entrances` のみ）|
 | Regression | `/dreamin-spiral/guide/` ・ `/dreamin-spiral/3-weeks/` ・ `/dreamin-spiral/library/` ・ TOP に影響なし |
+| **Visual 4 Asset（2026-09-30）** | 320 / 375 / 390 / 430 / 768 / 1024 / 1280 の **7 幅で 4 枚とも 3:2 のまま（Crop 0）・ overflow 0 ・ 孤立行 0** |
+| Hero Copy contrast（Visual 実装後） | 写真の上から外れ、gradient 上になった。Desktop Eyebrow 5.38 / Title 12.26 / Lead 6.56 / Cue 10.96 ・ Mobile 5.61 / 12.73 / 6.82 / 10.87 — **すべて AA 以上** |
+| Performance | Master PNG（約 2MB）は配信しない。AVIF ／ WebP の responsive variant（Hero AVIF 16〜44KB ・ Section AVIF 12〜48KB）・ `width` / `height` 指定で CLS なし ・ Hero のみ `fetchpriority="high"` ・ 他は `loading="lazy"` |
+| Copy | Visual 実装の前後で可視テキスト 113 行が完全一致（Copy 無変更） |
 
 ---
 

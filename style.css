@@ -3295,3 +3295,123 @@ body:not(.ds-page) .resonance-questions p + p {
     text-wrap: balance;
   }
 }
+
+/* ------------------------------------------------------------
+   A20-b. Dreamin' Spiral 🌱 Home｜Visual 4 Asset（2026-09-30 ・ ACR-20260930-023）
+   Owner / Architect 採用の 4 Visual を Hero ・ Recognition ・ Creation ・ Closing へ置く。
+   Visual Story：Hero「今の私」→ Recognition「ふと自分に戻る」→ Creation「そこから実際に創る」→ Closing「もう一度、今の自分へ戻る」
+   Master：dreamin-spiral-os `assets/png/b8e-public-visual/ds/`（README に Inventory）。ここは最適化済みの公開版だけを使う
+
+   方針：
+   - **Copy ・ Section 順序には触れない。** Visual を入れるための調整は Layout 側だけで行う
+   - 4 枚とも Master（1536×1024 ・ 3:2）を **Crop せずそのまま** 見せる（1 掲載箇所 ＝ 1 画像 ・ 切り出しをしない — Master README）
+   - 6 Service Visual ・ Spiral と同じ角丸 ・ 同じ生成り背景。写真だけが目立たないようにする
+   ------------------------------------------------------------ */
+
+/* 01 Hero｜DS-HERO-02。人物の Scene なので、旧 DS-HERO-01（抽象 Atmosphere）のように Copy の背後へ敷かない。
+   顔に Copy を重ねず、写真は写真として見せる。Hero の gradient ・ 光の帯 ・ 下端の緑（A15）はそのまま残す。
+   旧 `.ds-home-hero-visual`（背景 picture）と scrim は DS-HERO-02 では使わない */
+.ds-home-hero--scene {
+  padding: 76px 40px 92px;
+  text-align: left;
+}
+
+.ds-home-hero--scene .ds-home-hero-inner {
+  max-width: 1080px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 56px;
+  align-items: center;
+}
+
+.ds-home-hero-figure {
+  margin: 0;
+  border-radius: 18px;
+  overflow: hidden;
+  background: #efece6;
+}
+
+.ds-home-hero-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+}
+
+.ds-home-hero--scene .ds-service-title {
+  max-width: none;
+}
+
+/* Eyebrow は Hero 上端（gradient の最も暗い #d7e3ed 寄り）に来るため、A15 の #6f695e では worst-case 4.27:1 と AA に届かない。
+   Lead（#55524b）より 1 段淡い #5f5a50 にして階層を保つ（実測 worst-case 5.3:1 以上） */
+.ds-home-hero--scene .ds-service-eyebrow {
+  color: #5f5a50;
+}
+
+.ds-home-hero--scene .ds-service-lead {
+  max-width: none;
+}
+
+/* 02 Recognition ・ 06 Creation ・ 08 Closing｜Section の面の先頭に置く Visual。
+   6 Service Card（`.ds-home-family .ds-family-visual`）と同じ作り — 面いっぱいに広げ、上の角だけを丸める。
+   Visual → White Space → Text（Visual Direction v1） */
+.ds-home-section-visual {
+  position: relative;
+  margin: -44px -44px 36px;
+  border-radius: 19px 19px 0 0;
+  overflow: hidden;
+  background: #efece6;
+}
+
+.ds-home-section-visual img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+}
+
+/* 6 Service Visual と同じ、ごく薄い Cream の veil（画像自体は加工しない） */
+.ds-home-section-visual::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(255, 252, 245, 0.10) 0%, rgba(255, 252, 245, 0.02) 100%);
+  pointer-events: none;
+}
+
+/* Closing は Hero より引いた静かな質感にする — veil を少しだけ強め、面の生成りへ馴染ませる */
+.ds-home-section-visual--quiet::after {
+  background: linear-gradient(180deg, rgba(255, 252, 245, 0.20) 0%, rgba(255, 252, 245, 0.12) 100%);
+}
+
+/* Closing の面は padding-top が 56px */
+.ds-home-closing .ds-home-section-visual {
+  margin: -56px -44px 40px;
+}
+
+@media (max-width: 879px) {
+  /* Mobile ・ Tablet は Visual → Copy の縦積み。Copy は従来どおり中央揃え */
+  .ds-home-hero--scene {
+    padding: 40px 24px 64px;
+    text-align: center;
+  }
+  .ds-home-hero--scene .ds-home-hero-inner {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 36px;
+    max-width: 640px;
+  }
+}
+
+@media (max-width: 768px) {
+  .ds-home .ds-home-recognition .ds-home-section-visual {
+    margin: -30px -24px 28px;
+  }
+  .ds-home .ds-home-creation .ds-home-section-visual {
+    margin: -36px -24px 28px;
+  }
+  .ds-home-closing .ds-home-section-visual {
+    margin: -44px -24px 32px;
+  }
+}
