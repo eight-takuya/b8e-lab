@@ -307,13 +307,6 @@ a:hover {
   line-height: 1.95;
 }
 
-.path-card .path-target {
-  font-size: 0.8rem;
-  color: #999;
-  line-height: 1.7;
-  margin-top: 12px;
-}
-
 .path-card a {
   display: inline-block;
   margin-top: 16px;
@@ -643,7 +636,7 @@ a:hover {
 }
 
 /* ------------------------------------------------------------
-   19. TOP page — What / Track Record / Entry Points
+   19. TOP page — What / Three Paths / Track Record
    ------------------------------------------------------------ */
 
 /* shared section label (small uppercase) */
@@ -675,35 +668,6 @@ a:hover {
 
 .what-inner p + p {
   margin-top: 28px;
-}
-
-/* What domains — activity area tags */
-.what-domains {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 36px;
-}
-
-.what-domain {
-  font-size: 0.78rem;
-  color: #888;
-  letter-spacing: 0.05em;
-  border: 1px solid #e0ddd9;
-  padding: 5px 14px;
-  line-height: 1.6;
-}
-
-@media (max-width: 768px) {
-  .what-domains {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 8px;
-  }
-  .what-domain {
-    font-size: 0.74rem;
-    padding: 4px 12px;
-  }
 }
 
 /* Paths sub-copy */
@@ -772,95 +736,6 @@ a:hover {
   .track-stat__num {
     font-size: 1.3rem;
     min-width: 40px;
-  }
-}
-
-/* Entry Points */
-.entry-points {
-  background-color: #faf9f7;
-  padding: 80px 40px;
-}
-
-.entry-points-inner {
-  max-width: 640px;
-  margin: 0 auto;
-}
-
-.entry-points-sub {
-  font-size: 0.92rem;
-  color: #888;
-  line-height: 2.0;
-  margin-bottom: 36px;
-}
-
-.entry-points-inner .section-label {
-  margin-top: 28px;
-}
-
-.entry-list {
-  display: flex;
-  flex-direction: column;
-}
-
-.entry-item {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 24px;
-  padding: 22px 0;
-  border-top: 1px solid #e6e4e1;
-  transition: none;
-}
-
-.entry-item:hover .entry-question {
-  color: #333;
-  transition: color 0.2s ease;
-}
-
-.entry-item:hover a {
-  color: #7a5f44;
-  border-color: #9b7b5c;
-}
-
-.entry-item:last-child {
-  border-bottom: 1px solid #e6e4e1;
-}
-
-.entry-question {
-  font-size: 0.92rem;
-  color: #555;
-  line-height: 1.8;
-  flex: 1;
-}
-
-.entry-item a {
-  flex-shrink: 0;
-  font-size: 0.82rem;
-  color: #9b7b5c;
-  border-bottom: 1px solid #c9a882;
-  padding-bottom: 2px;
-  letter-spacing: 0.03em;
-  white-space: nowrap;
-  transition: color 0.2s ease, border-color 0.2s ease;
-}
-
-.entry-item a:hover {
-  color: #7a5f44;
-  border-color: #9b7b5c;
-  text-decoration: none;
-}
-
-@media (max-width: 768px) {
-  .entry-points {
-    padding: 56px 24px;
-  }
-  .entry-item {
-    flex-direction: column;
-    gap: 8px;
-    padding: 20px 0;
-  }
-  .entry-item a {
-    align-self: flex-start;
   }
 }
 
@@ -2723,15 +2598,7 @@ body:not(.ds-page) .resonance-questions p + p {
   line-height: var(--lh-card-body);
 }
 
-.path-card .path-target {
-  font-size: 0.86rem;
-  line-height: 1.9;
-}
-
-/* TOP｜B8Eとは（activity tag）・ 積み重ねてきたもの ・ どこから始めますか */
-.what-domain {
-  font-size: 0.82rem;
-}
+/* TOP｜積み重ねてきたもの */
 
 .track-stat__label {
   font-size: 0.82rem;
@@ -2739,15 +2606,6 @@ body:not(.ds-page) .resonance-questions p + p {
 
 .track-bridge {
   font-size: var(--fs-card-body);
-}
-
-.entry-points-sub {
-  font-size: var(--fs-card-body);
-}
-
-.entry-question {
-  font-size: var(--fs-body);
-  line-height: 1.95;
 }
 
 /* TOP｜B8Eとして在るということ（About への静かな link） */
@@ -2956,8 +2814,6 @@ body:not(.ds-page) .resonance-questions p + p {
   .ds-family-name,
   .ds-family-core,
   .paths-sub,
-  .entry-points-sub,
-  .path-target,
   .track-bridge,
   .quiet-cta p,
   .form-note,
@@ -2974,5 +2830,261 @@ body:not(.ds-page) .resonance-questions p + p {
         （`.ds-phrase` は長い節にも使われているため、ここでは nowrap にしない） */
   .keep-together {
     white-space: nowrap;
+  }
+}
+
+/* ------------------------------------------------------------
+   A19. TOP｜B8E TOP Entry Architecture vNext（2026-09-30）
+   B8E TOP を「Brand を説明するページ」から「訪問者が自分の『今』に気づくページ」へ。
+   Experience の順序を Reality → Recognition → Routing → Meaning → Trust → Resonance → Action にする。
+   正本：docs/b8e-top-entry-architecture-vnext.md
+
+   方針：
+   - **思想を弱くするのではない。思想が届く順番を変える。** Copy ・ Section 順序 ・ CTA 階層だけを変更する
+   - **Visual Asset は 6 点すべて KEEP（新規生成なし）。** Visual Standard（A17）は変更しない
+   - Typography Standard（A16）・ Mobile Orphan Line Quality（A18）の scale ・ 階層も変更しない
+   - CTA は 3 階層。Level 1 Continue（Hero の Scroll Cue）・ Level 2 Explore（各 Path ・ About）・ Level 3 Contact
+   ------------------------------------------------------------ */
+
+/* 01 Hero｜Reality
+   Hero の Gradient ・ Visual ・ padding は A17 のまま。Copy 層だけが増える。
+   TOP-HERO-01 は実測で非常に暗い Asset（mean 23/255 ・ max 154/255）なので、
+   0.6 の合成後でも小さい文字の contrast が AA を満たす。追加の scrim は置かない */
+/* Copy が載る範囲にだけ置く局所 scrim。Asset は差し替えず、Hero 全体を暗くもしない。
+   Copy 層が Headline 1 行から 4 ブロックへ増えたことで、Asset の明るい streak と
+   小さい文字が重なる幅が出る（実測 worst-case 3.62:1）。中央だけを静かに沈めて AA を保つ。
+   Dreamin' Spiral 🌱 Home Hero（A14）の局所 scrim と同じ考え方 */
+.hero--reality::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: radial-gradient(ellipse 72% 64% at 50% 50%,
+    rgba(14, 13, 12, 0.30) 0%,
+    rgba(14, 13, 12, 0.16) 52%,
+    rgba(14, 13, 12, 0) 78%);
+  pointer-events: none;
+}
+
+.hero-inner {
+  position: relative;
+  z-index: 2;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* 幅は .hero-inner が持つ（h1 側の max-width は解除する） */
+.hero--reality .hero-copy {
+  max-width: none;
+}
+
+.hero-reality {
+  margin-top: 30px;
+  font-size: 0.98rem;
+  font-weight: 300;
+  line-height: 2.25;
+  letter-spacing: 0.04em;
+  color: #e4dfd7;
+}
+
+.hero-reality-close {
+  margin-top: 24px;
+  font-size: 0.98rem;
+  font-weight: 300;
+  line-height: 2.25;
+  letter-spacing: 0.04em;
+  color: #d8d1c7;
+}
+
+/* Level 1 CTA（Continue）｜Button 型の Conversion CTA にしない。
+   目的は Scroll を強制することではなく、「次に何があるか分かる状態にする」こと（§12） */
+.hero-scroll-cue {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 10px;
+  margin-top: 46px;
+  font-size: 0.88rem;
+  letter-spacing: 0.06em;
+  color: #d9cebc;
+  border-bottom: 1px solid rgba(201, 168, 130, 0.45);
+  padding-bottom: 7px;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.hero-scroll-cue:hover {
+  color: #f0eeeb;
+  border-color: #c9a882;
+  text-decoration: none;
+}
+
+.hero-scroll-cue-arrow {
+  animation: hero-scroll-cue-drift 2.8s ease-in-out infinite;
+}
+
+@keyframes hero-scroll-cue-drift {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(3px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-scroll-cue-arrow {
+    animation: none;
+  }
+}
+
+/* Scroll Cue の着地点｜Header ・ Nav は static なので offset は小さくてよい */
+#paths {
+  scroll-margin-top: 8px;
+}
+
+/* 02 Reality Routing｜Three Paths
+   Eyebrow（THREE PATHS）は残すが、最初に見せる意味は「3事業あります」ではない。
+   Headline が Reality を問い、Card は Reality → Service → Meaning → CTA の順で読ませる */
+.paths-title {
+  max-width: 720px;
+  margin: -16px auto 0;
+  font-size: 1.18rem;
+  font-weight: 500;
+  color: #1a1a1a;
+  letter-spacing: 0.04em;
+  line-height: 1.95;
+}
+
+/* Lead｜Eyebrow の直下ではなく Headline の直下に来るため、A16 の負 margin を打ち消す */
+.paths-title + .paths-sub {
+  margin-top: 18px;
+  margin-bottom: 40px;
+  color: #6f6b64;
+}
+
+/* Reality statement｜Card の中で最初に読まれる。Service 名より前に出るが、主張はさせない */
+.path-reality {
+  font-size: var(--fs-card-body);
+  line-height: 2.0;
+  color: #2f2b27;
+  letter-spacing: 0.02em;
+  margin-bottom: 16px;
+}
+
+/* Service 名｜Reality のあとに置くので、上の余白は .path-reality が持つ */
+.path-card h3 {
+  margin-top: 0;
+}
+
+/* Card は 720px を 3 分割した狭い column なので、Meaning の改行は Browser に任せる
+   （手動 <br> は狭い column で「す。」だけの行を生む）。
+   pretty は最終行が極端に短くなるのを抑える。A18 と同じ考え方だが、
+   Desktop Typography には触れないという A18 の制約を守るため、
+   この Decision が実際に Copy を変更した Section の中だけに閉じて適用する */
+.path-reality,
+.path-card p {
+  word-break: auto-phrase;
+  text-wrap: pretty;
+}
+
+/* Secondary Link｜旧「どこから始めますか」の About 導線だけをここに残す（Conversion にしない） */
+.paths-about {
+  max-width: 720px;
+  margin: 40px auto 0;
+  font-size: 0.9rem;
+  color: #aaa;
+  line-height: 2.0;
+}
+
+.paths-about a {
+  color: #9b7b5c;
+  border-bottom: 1px solid #c9a882;
+  padding-bottom: 1px;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.paths-about a:hover {
+  color: #7a5f44;
+  border-color: #9b7b5c;
+  text-decoration: none;
+}
+
+/* Structure Visual｜Card の後に置く（Reality → 3 Paths → Structure Visual）。
+   A17 の .top-visual--intro（margin-top 28px）ではなく、Card Grid からの間を取る */
+.paths .top-visual--paths {
+  margin-top: 44px;
+}
+
+/* 03 B8E Meaning｜旧 Hero Headline を MOVE。Light な背景の上で同じ強さを持たせる */
+.what-heading {
+  font-size: 1.22rem;
+  font-weight: 500;
+  color: #1a1a1a;
+  letter-spacing: 0.04em;
+  line-height: 2.05;
+  margin-bottom: 34px;
+}
+
+/* 05 Dreamin' Spiral 🌱｜Section 内部を Reality → Meaning → Philosophy の順にする。
+   Copy ・ font scale は変更せず、順序と間だけを変える */
+.ds-top-spiral .ds-family-reality {
+  margin-top: 18px;
+  font-size: 1.02rem;
+  color: #2f2b27;
+  line-height: 2.1;
+}
+
+/* Philosophy は Section 内の最後（旧 Reality の位置から移動したため上の余白を持たせる） */
+.ds-top-spiral .ds-family-core {
+  margin-top: 28px;
+  color: #2f2b27;
+}
+
+@media (max-width: 768px) {
+  /* Hero｜First View → First Scroll のつながりを保つ。Cue を畳の下に落とさない */
+  .hero-reality {
+    margin-top: 26px;
+    font-size: 0.94rem;
+    line-height: 2.15;
+  }
+  .hero-reality-close {
+    margin-top: 20px;
+    font-size: 0.94rem;
+    line-height: 2.15;
+  }
+  .hero-scroll-cue {
+    margin-top: 36px;
+    font-size: 0.85rem;
+  }
+  .paths-title {
+    margin-top: 0;
+    font-size: 1.1rem;
+  }
+  .paths-title + .paths-sub {
+    margin-top: 14px;
+    margin-bottom: 28px;
+  }
+  .path-reality {
+    margin-bottom: 14px;
+  }
+  .paths .top-visual--paths {
+    margin-top: 36px;
+  }
+  .paths-about {
+    margin-top: 32px;
+  }
+  .what-heading {
+    font-size: 1.12rem;
+    line-height: 1.95;
+    margin-bottom: 28px;
+  }
+  .ds-top-spiral .ds-family-reality {
+    font-size: 0.98rem;
+  }
+
+  /* A18｜Mobile Orphan Line Quality を vNext で追加した要素へも同じ条件で適用する */
+  .hero-reality,
+  .hero-reality-close,
+  .paths-title,
+  .path-reality,
+  .paths-about,
+  .what-heading,
+  .ds-family-reality {
+    text-wrap: balance;
   }
 }

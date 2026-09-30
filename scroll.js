@@ -24,8 +24,7 @@
     '.resonance-questions, ' +
     '.quiet-cta, ' +
     '.what-inner, ' +
-    '.track-record-inner, ' +
-    '.entry-points-inner'
+    '.track-record-inner'
   );
 
   targets.forEach(function (el) {

@@ -41,25 +41,116 @@
 
   <main>
 
-    <!-- 1. Hero -->
-    <!-- Hero｜TOP-HERO-01（Atmosphere）：写真として主張させず、背景にわずかな奥行きだけを足す -->
-    <section class="hero">
+    <!-- 01 Hero — Reality / Recognition
+         Role：思想を理解させる場所ではなく、「あ、自分にも関係があるかもしれない」と感じる場所。
+         Visual は静けさを担当し、Copy が Reality を担当する（Hero Visual だけで Reality を説明しない）。
+         Visual｜TOP-HERO-01（Atmosphere）は KEEP。写真として主張させず、背景にわずかな奥行きだけを足す。
+         正本：docs/b8e-top-entry-architecture-vnext.md §3 ・ §12 -->
+    <section class="hero hero--reality">
       <picture class="hero-visual">
         <source type="image/avif" srcset="/assets/top/hero-960.avif 960w, /assets/top/hero-1440.avif 1440w, /assets/top/hero-1672.avif 1672w" sizes="100vw">
         <source type="image/webp" srcset="/assets/top/hero-960.webp 960w, /assets/top/hero-1440.webp 1440w, /assets/top/hero-1672.webp 1672w" sizes="100vw">
         <img src="/assets/top/hero-1440.webp" width="1672" height="941" fetchpriority="high" decoding="async" alt="" aria-hidden="true">
       </picture>
-      <h1 class="hero-copy">
-        変容には、外側と内側がある。<br>
-        どちらも、同じ問いから始まる。
-      </h1>
+      <div class="hero-inner">
+        <h1 class="hero-copy">
+          今、少し気になっていることは何でしょう。
+        </h1>
+        <p class="hero-reality">
+          会社のITや業務のこと。<br>
+          社員や社長の将来のこと。<br>
+          自分自身の生き方や働き方のこと。
+        </p>
+        <p class="hero-reality-close">
+          B8Eは、今の現実に近いところから、<br>
+          一緒に見ていきます。
+        </p>
+        <!-- Level 1 CTA（Continue）：Conversion Button にしない。Hero → First Scroll をつなぐ最も軽い Action -->
+        <a class="hero-scroll-cue" href="#paths">
+          <span class="hero-scroll-cue-text">今の気になるところから</span>
+          <span class="hero-scroll-cue-arrow" aria-hidden="true">↓</span>
+        </a>
+      </div>
     </section>
 
-    <!-- 2. What — B8Eとは -->
+    <!-- 02 Reality Routing — Three Paths
+         Role：Reality / Routing。First Scroll の中心 Section。
+         最初に見せる意味は「B8Eには3事業あります」ではなく「今、どこが少し気になっているか」。
+         各 Path は Reality → Service → Meaning → CTA の順。3つは完全に対等で、上下関係にしない。
+         Visual｜TOP-THREE-PATHS-01（Structure ＋ Reality）は KEEP。ただし Visual Hierarchy を変更し、
+         Reality → 3 Paths → Structure Visual の順にする（Visual は入口を説明せず、後から補強する）。
+         旧「どこから始めますか」Section の Routing 機能はここへ統合した。
+         正本：docs/b8e-top-entry-architecture-vnext.md §4 ・ §10 -->
+    <section class="paths" id="paths">
+      <p class="paths-heading">Three Paths</p>
+      <h2 class="paths-title">今、どこが少し気になっていますか？</h2>
+      <p class="paths-sub">
+        大きな問題になってからでなくても。<br>
+        少し立ち止まって見てみたいところから。
+      </p>
+      <div class="paths-grid">
+
+        <div class="path-card">
+          <p class="path-reality">
+            会社のITや業務の進め方を、<br>
+            もう少し自然にしたい。
+          </p>
+          <h3>DX支援</h3>
+          <p>組織のIT活用・DX化・プロジェクト推進を、戦略から現場実装まで伴走します。</p>
+          <a href="dx.html">DX支援を見る</a>
+        </div>
+
+        <div class="path-card">
+          <p class="path-reality">
+            社員や自分の将来に向けて、<br>
+            会社の制度を整えておきたい。
+          </p>
+          <h3>企業型DC</h3>
+          <p>将来準備と会社の制度を、現実に合う形で一緒に整えていきます。</p>
+          <a href="dc.html">企業型DCについて</a>
+        </div>
+
+        <div class="path-card">
+          <p class="path-reality">
+            仕事や生き方について、<br>
+            ふと「このままでいいのかな」と思うことがある。
+          </p>
+          <h3>Dreamin' Spiral 🌱</h3>
+          <p>日常の「気になる」から、自分に気づきながら人生や仕事を創っていくための伴走です。</p>
+          <a href="/dreamin-spiral/">Dreamin' Spiral 🌱について</a>
+        </div>
+
+      </div>
+      <!-- THREE PATHS｜TOP-THREE-PATHS-01（Structure ＋ Reality）：3 column が主役。
+           3つの異なる入口が、B8Eというひとつの場所につながっていることを後から補強する -->
+      <figure class="top-visual top-visual--paths">
+        <picture>
+            <source type="image/avif" srcset="/assets/top/three-paths-480.avif 480w, /assets/top/three-paths-960.avif 960w" sizes="(max-width: 768px) calc(100vw - 48px), 420px">
+            <source type="image/webp" srcset="/assets/top/three-paths-480.webp 480w, /assets/top/three-paths-960.webp 960w" sizes="(max-width: 768px) calc(100vw - 48px), 420px">
+            <img src="/assets/top/three-paths-480.webp" width="1672" height="941" loading="lazy" decoding="async" alt="三つの線がひとつの点へ集まり、また外へ開いていく図">
+          </picture>
+      </figure>
+      <!-- Secondary Link（Level 2 Explore）：旧「どこから始めますか」の About 導線だけをここに残す -->
+      <p class="paths-about">
+        B8Eという会社について知りたい — <a href="about.html">About</a>
+      </p>
+    </section>
+
+    <!-- 03 B8E Meaning — B8Eとは
+         Role：Meaning。ここで初めて B8E の思想を出す。
+         「変容には、外側と内側がある。どちらも、同じ問いから始まる。」は旧 Hero Headline を MOVE したもの（削除しない）。
+         旧 .what-domains（DX支援・IT推進／企業型DC・制度設計／人材育成・内面探究）は REMOVE。
+         Reality Routing で3つの入口を具体的に理解しているため、ここで再び分類語を並べない。この Section は説明ではなく Meaning に集中する。
+         Visual｜TOP-B8E-01（Human ＋ Reality）は KEEP。本文と釣り合う静かなサイズ。Section いっぱいに広げない。
+         正本：docs/b8e-top-entry-architecture-vnext.md §5 -->
     <section class="what-block">
       <div class="what-inner">
         <div class="what-text">
         <p class="section-label">B8Eとは</p>
+        <h2 class="what-heading">
+          変容には、外側と内側がある。<br>
+          どちらも、同じ問いから始まる。
+        </h2>
         <p>
           <span class="keep-together">BEAT EIGHT EMOTION株式会社は、</span><br>
           テクノロジーと人間の内側が交わる場所で、<br>
@@ -74,11 +165,6 @@
           外側と内側、<br>
           どちらの変容も同じ場所から支援しています。
         </p>
-        <div class="what-domains">
-          <span class="what-domain">DX支援・IT推進</span>
-          <span class="what-domain">企業型DC・制度設計</span>
-          <span class="what-domain">人材育成・内面探究</span>
-        </div>
         </div>
         <!-- B8Eとは｜TOP-B8E-01（Human ＋ Reality）：本文と釣り合う静かなサイズ。Section いっぱいに広げない -->
         <figure class="top-visual top-visual--side">
@@ -91,59 +177,59 @@
       </div>
     </section>
 
-    <!-- 3. Three Paths — 3つの支援領域 -->
-    <section class="paths" id="paths">
-      <p class="paths-heading">Three Paths</p>
-      <p class="paths-sub">B8Eは、3つの入口から変容を支援しています。</p>
-      <!-- THREE PATHS｜TOP-THREE-PATHS-01（Structure ＋ Reality）：3 column が主役。Visual は補助 -->
-      <figure class="top-visual top-visual--intro top-visual--paths">
-        <picture>
-            <source type="image/avif" srcset="/assets/top/three-paths-480.avif 480w, /assets/top/three-paths-960.avif 960w" sizes="(max-width: 768px) calc(100vw - 48px), 420px">
-            <source type="image/webp" srcset="/assets/top/three-paths-480.webp 480w, /assets/top/three-paths-960.webp 960w" sizes="(max-width: 768px) calc(100vw - 48px), 420px">
-            <img src="/assets/top/three-paths-480.webp" width="1672" height="941" loading="lazy" decoding="async" alt="三つの線がひとつの点へ集まり、また外へ開いていく図">
+    <!-- 04 Track Record — Trust
+         Role：Trust。Dreamin' Spiral 🌱 の大きな Section より前へ置く（TOP は Dreamin' Spiral 🌱 だけの Home ではない）。
+         Reality Routing で3つの入口を示し、B8E の Meaning を理解した直後に「この会社は実際に何を積み重ねてきたのか」を静かに見せる。
+         数値は現行値を KEEP。Closing Copy は Hero の言葉（今の現実に近いところから）とつなぐ。
+         正本：docs/b8e-top-entry-architecture-vnext.md §6 -->
+    <section class="track-record">
+      <div class="track-record-inner">
+        <p class="section-label">積み重ねてきたもの</p>
+        <div class="track-stats">
+          <div class="track-stat">
+            <span class="track-stat__num">25+</span>
+            <span class="track-stat__label">IT業界歴</span>
+          </div>
+          <div class="track-stat">
+            <span class="track-stat__num">10+</span>
+            <span class="track-stat__label">B8E起業・伴走</span>
+          </div>
+          <div class="track-stat">
+            <span class="track-stat__num">50+</span>
+            <span class="track-stat__label">企業支援</span>
+          </div>
+          <div class="track-stat">
+            <span class="track-stat__num">50+</span>
+            <span class="track-stat__label">プロジェクト</span>
+          </div>
+        </div>
+        <p class="track-bridge">
+          積み重ねてきた経験をもとに、<br>
+          今の現実に近いところから、静かに伴走します。
+        </p>
+        <!-- 積み重ねてきたもの｜TOP-TRACK-RECORD-01（Artifact ＋ Reality）：数字が主役。Visual は補助（数字を画像に焼き込まない） -->
+        <figure class="top-visual top-visual--track">
+          <picture>
+            <source type="image/avif" srcset="/assets/top/track-record-480.avif 480w, /assets/top/track-record-960.avif 960w" sizes="(max-width: 768px) calc(100vw - 48px), 440px">
+            <source type="image/webp" srcset="/assets/top/track-record-480.webp 480w, /assets/top/track-record-960.webp 960w" sizes="(max-width: 768px) calc(100vw - 48px), 440px">
+            <img src="/assets/top/track-record-480.webp" width="1672" height="941" loading="lazy" decoding="async" alt="夕暮れの街をひとりで眺めている人の後ろ姿">
           </picture>
-      </figure>
-      <div class="paths-grid">
-
-        <div class="path-card">
-          <h3>DX支援</h3>
-          <p>
-            組織のIT活用・DX化・プロジェクト推進を支援します。<br>
-            戦略立案から現場実装まで、プロセスの外側を整える伴走です。
-          </p>
-          <p class="path-target">中小企業・現場部門・経営者・プロジェクト責任者へ</p>
-          <a href="dx.html">DX支援を見る</a>
-        </div>
-
-        <div class="path-card">
-          <h3>企業型DC</h3>
-          <p>
-            会社の制度として、社員・社長の将来準備と<br>
-            社会保険料の見直しを同時に支援します。
-          </p>
-          <p class="path-target">社員の将来準備と会社の制度を整えたい経営者へ</p>
-          <a href="dc.html">企業型DCについて</a>
-        </div>
-
-        <div class="path-card">
-          <h3>Dreamin' Spiral 🌱</h3>
-          <p>
-            自分そのものから、<br>
-            人生と仕事を生きていく。
-          </p>
-          <p class="path-target">自分の内側を整え、人生や働き方を見直したい方へ</p>
-          <a href="/dreamin-spiral/">Dreamin' Spiral 🌱について</a>
-        </div>
-
+        </figure>
       </div>
     </section>
 
-    <!-- 3.5 Dreamin' Spiral 🌱 — Current Sales Entrance v1（Owner Approved Copy）
+    <!-- 05 Dreamin' Spiral 🌱 Summary
+         Section 自体は KEEP（dreamin-spiral-home-v1 が定める B8E TOP 上の Summary）。
+         Section 内部の認知順序だけを Philosophy → Reality から Reality → Meaning → Philosophy へ変更した。
+         6 Service の Canonical Display Name ・ Canonical Order ・ Card Copy は完全 KEEP（新しい Copy を作らない）。
+         正本：docs/b8e-top-entry-architecture-vnext.md §7 -->
+    <!-- Provenance｜Dreamin' Spiral 🌱 — Current Sales Entrance v1（Owner Approved Copy）
          Service Family は上下関係・Level・Funnel ではない。名称と並び順は Brand Architecture §1（Canonical Display Name ・ Canonical Order）に従い、推奨順ではない。
          Service Family 内では Parent Brand（Dreamin' Spiral）を名称に付けない（§1.3）。
          Business Creation は Public Page v1 で接続（Guide は Phase 7・Community は Phase 8 で接続）。
          Project Creation は Phase 2A（Public Entry）で接続。Phase B（Service Family Public Display）で Business Creation の前へ。 -->
-    <!-- 3.5 Dreamin' Spiral 🌱 — TOP Section Redesign v1（Visual Direction v1 を TOP へ展開・2026-09）
+    <!-- Provenance｜Dreamin' Spiral 🌱 — TOP Section Redesign v1（Visual Direction v1 を TOP へ展開・2026-09）
+         Entry Architecture vNext（2026-09-30）で Section 内部の認知順序のみ変更。Visual ・ 6 Service Canonical は不変。
          TOP の役割は「理解し切る」ことではなく「これ、自分に関係があるかもしれない」と感じてもらうこと。
          世界観 ・ Spiral ・ 6 つの入口の理解は /dreamin-spiral/、詳細は各 Service Page が担う。
          Service Family は上下関係 ・ Level ・ Funnel ではない。名称と並び順は Brand Architecture §1（Canonical Display Name ・ Canonical Order）に従う。
@@ -155,13 +241,15 @@
 
         <div class="ds-top-spiral-intro">
           <h2 class="ds-family-heading">Dreamin' Spiral 🌱</h2>
-          <p class="ds-family-core">自分そのものから、人生と仕事を生きていく。</p>
-          <p class="ds-family-lead">
+          <p class="ds-family-reality">
             <span class="ds-phrase">「このままでいいのかな」</span><br>
-            <span class="ds-phrase">「やりたいことはあるけれど、</span><span class="ds-phrase">まだ形になっていない」</span><br>
+            <span class="ds-phrase">「やりたいことはあるけれど、</span><span class="ds-phrase">まだ形になっていない」</span>
+          </p>
+          <p class="ds-family-lead">
             <span class="ds-phrase">そんな日常の「気になる」から、</span><span class="ds-phrase">自分に気づきながら、</span><br>
             <span class="ds-phrase">人生や仕事を</span><span class="ds-phrase">実際に創っていくための伴走です。</span>
           </p>
+          <p class="ds-family-core">自分そのものから、人生と仕事を生きていく。</p>
           <!-- Dreamin' Spiral 🌱｜TOP-DREAMIN-SPIRAL-01（Human ＋ Reality）：6 Service Card が主役。Intro の補助 Visual -->
           <figure class="top-visual top-visual--intro top-visual--ds">
             <picture>
@@ -273,73 +361,11 @@
 
       </div>
     </section>
-
-    <!-- 4. Track Record — 実績と信頼 -->
-    <section class="track-record">
-      <div class="track-record-inner">
-        <p class="section-label">積み重ねてきたもの</p>
-        <div class="track-stats">
-          <div class="track-stat">
-            <span class="track-stat__num">25+</span>
-            <span class="track-stat__label">IT業界歴</span>
-          </div>
-          <div class="track-stat">
-            <span class="track-stat__num">10+</span>
-            <span class="track-stat__label">B8E起業・伴走</span>
-          </div>
-          <div class="track-stat">
-            <span class="track-stat__num">50+</span>
-            <span class="track-stat__label">企業支援</span>
-          </div>
-          <div class="track-stat">
-            <span class="track-stat__num">50+</span>
-            <span class="track-stat__label">プロジェクト</span>
-          </div>
-        </div>
-        <!-- 積み重ねてきたもの｜TOP-TRACK-RECORD-01（Artifact ＋ Reality）：数字が主役。Visual は補助（数字を画像に焼き込まない） -->
-        <figure class="top-visual top-visual--track">
-          <picture>
-            <source type="image/avif" srcset="/assets/top/track-record-480.avif 480w, /assets/top/track-record-960.avif 960w" sizes="(max-width: 768px) calc(100vw - 48px), 440px">
-            <source type="image/webp" srcset="/assets/top/track-record-480.webp 480w, /assets/top/track-record-960.webp 960w" sizes="(max-width: 768px) calc(100vw - 48px), 440px">
-            <img src="/assets/top/track-record-480.webp" width="1672" height="941" loading="lazy" decoding="async" alt="夕暮れの街をひとりで眺めている人の後ろ姿">
-          </picture>
-        </figure>
-      </div>
-    </section>
-
-    <!-- 5. Entry Points — どこから始めますか -->
-    <section class="entry-points">
-      <div class="entry-points-inner">
-        <p class="track-bridge">
-          積み重ねてきた経験をもとに、<br>
-          今必要な入口から、静かに伴走します。
-        </p>
-        <p class="section-label">どこから始めますか</p>
-        <p class="entry-points-sub">
-          今、気になっていることに近い入口から、<br>
-          必要なページへ進んでください。
-        </p>
-        <div class="entry-list">
-          <div class="entry-item">
-            <p class="entry-question">DXや業務改善のことを相談したい</p>
-            <a href="dx.html">DX支援を見る</a>
-          </div>
-          <div class="entry-item">
-            <p class="entry-question">会社の制度や社員の将来準備について知りたい</p>
-            <a href="dc.html">企業型DCについて</a>
-          </div>
-          <div class="entry-item">
-            <p class="entry-question">自分自身の内側を深めたい</p>
-            <a href="/dreamin-spiral/">Dreamin' Spiral 🌱について</a>
-          </div>
-          <div class="entry-item">
-            <p class="entry-question">B8Eという会社をもっと知りたい</p>
-            <a href="about.html">Aboutを読む</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
+    <!-- 06 B8E Philosophy / Resonance — B8Eとして在るということ
+         KEEP。入口ではなく、読み進めた人が「なるほど、この会社はこういう場所なのか」と感じる場所。
+         About への CTA は Conversion ではなく Resonance をさらに深めるもの。
+         Visual｜TOP-CLOSING-01（Human ＋ Atmosphere）は KEEP。
+         正本：docs/b8e-top-entry-architecture-vnext.md §8 -->
     <!-- 6. Philosophy — B8Eとして在るということ -->
     <section class="philosophy">
       <div class="philosophy-inner">
@@ -386,6 +412,9 @@
       </div>
     </section>
 
+    <!-- 07 Contact / Action — 話してみたいと思ったら
+         KEEP。Level 3 CTA。「問い合わせる」「無料相談はこちら」等には変えない。
+         正本：docs/b8e-top-entry-architecture-vnext.md §9 -->
     <!-- 7. Contact — 問い合わせ導線 -->
     <section class="philosophy">
       <div class="philosophy-inner">

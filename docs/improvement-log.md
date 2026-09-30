@@ -6,6 +6,40 @@
 ---
 
 ---
+## [2026-09-30] — B8E TOP Entry Architecture vNext（**Owner Review 待ち**・Preview のみ）
+
+**Scope:** `index.html`（TOP の Section 順序 ・ Copy）, `style.css`（A19 追加 ・ 不要になった rule を撤去）, `scroll.js`, `docs/b8e-top-entry-architecture-vnext.md`（新規）
+**Triggered by:** Architect Decision — B8E TOP Entry Architecture vNext（ACR-20260930-019）
+**正本:** [docs/b8e-top-entry-architecture-vnext.md](b8e-top-entry-architecture-vnext.md)
+
+- **B8E TOP を「Brand を説明するページ」から「訪問者が自分の『今』に気づくページ」へ。**
+  Experience の順序を **Reality → Recognition → Routing → Meaning → Trust → Resonance → Action** にした（内部設計名：Reality Routing）。
+  **思想を弱くするのではなく、思想が届く順番を変える。** 思想 ・ Visual ・ Service Architecture はそのまま残している
+- **Section 順序**：`Hero → Reality Routing → B8E Meaning → Track Record → Dreamin' Spiral 🌱 → Philosophy → Contact`
+  （Before: `Hero → B8Eとは → Three Paths → Dreamin' Spiral 🌱 → Track Record → どこから始めますか → Philosophy → Contact`）
+- **Hero を Philosophy から Reality へ REFRAME**。「今、少し気になっていることは何でしょう。」＋ 具体的な 3 つの現実（会社のIT ／ 社員と社長の将来 ／ 自分の生き方）。
+  Level 1 CTA として Button ではない Scroll Cue「今の気になるところから ↓」を置いた（Conversion CTA を Hero に持ってこない）
+- **Three Paths を First Scroll へ MOVE ＋ REFRAME**。「B8Eには3事業あります」ではなく「今、どこが少し気になっていますか？」から入る。
+  各 Card は **Reality → Service → Meaning → CTA** の順。3つは完全に対等。Visual Hierarchy も `Reality → 3 Paths → Structure Visual` へ変更
+- **旧 Hero Headline「変容には、外側と内側がある。／ どちらも、同じ問いから始まる。」は削除せず B8E Meaning へ MOVE。** B8E の核は失われていない
+- **ページ後半の独立 Section「どこから始めますか」を REMOVE**（Routing 機能は First Scroll へ統合済み。About 導線だけ Secondary Link として残した）。
+  B8E Meaning 内の重複するカテゴリ列挙（`.what-domains`）も REMOVE
+- **Track Record を Dreamin' Spiral 🌱 Section の前へ MOVE**。TOP は Dreamin' Spiral 🌱 だけの Home ではないため、DX / DC 訪問者にも Balance が保たれる。数値は現行値を KEEP
+- **Dreamin' Spiral 🌱 Section は内部の認知順序だけを変更**（Philosophy → Reality から **Reality → Meaning → Philosophy** へ）。
+  **6 Service の Canonical Display Name ・ Canonical Order ・ Card Copy は完全 KEEP**（新しい Copy を作らない ・ Funnel でも Level でもない）
+- **Visual Asset 6 点はすべて KEEP。新規生成なし。** 今回検証したいのは Copy + Order + Relevance であり、Visual まで同時に交換すると改善要因が混ざるため
+- **Visual Experience v1（2026-09-25 CLOSED）との関係を明示**：v1 は Copy ・ Section 順を変更しない前提だった。
+  今回は意図的にそれを変更する**新しい Decision** として文書化し、v1 は Historical / Provenance として保持している
+- **A19（`style.css`）を新設**。A16 Typography Standard ・ A17 Visual Standard ・ A18 Mobile Orphan Line Quality の**定義は変更していない**
+  （A18 の balance list からは REMOVE した element の selector だけを外した）。使われなくなった `.entry-points` 系 ・ `.what-domains` ・ `.path-target` を撤去
+- **Hero contrast**：Copy 層が 1 行から 4 ブロックに増え、Asset の明るい streak と重なる箇所で worst-case **3.62:1**（AA 未満）になった。
+  Asset は差し替えず、**Copy が載る中央だけの局所 scrim**（Dreamin' Spiral 🌱 Home Hero / A14 と同じ考え方）で解決。
+  結果：Desktop 14.26 / 12.46 / **5.53** / 11.07・Mobile 14.18 / 12.25 / **6.37** / 11.73 ＝ **すべて AA 以上**
+- **QA**：320 / 375 / 390 / 430 / 768 / 880 / 1024 / 1280 の 8 幅で **虚しい改行 0 件 ・ horizontal overflow 0**。
+  Scroll Cue → Reality Routing の着地も確認。DX支援 ・ 企業型DC ・ About ・ Dreamin' Spiral 🌱 Home に regression なし
+- **First View Requirement**：Hero だけが閉じた一画面にならないことを実測で確認（1280×800 で Reality Routing が 25px ・ 375×812 で 102px 見えている）
+
+---
 ## [2026-09-26] — Mobile Typography ／ Orphan Line Quality v1（**Owner Review 待ち**・Preview のみ）
 
 **Scope:** `style.css`（A18 を追加）, `index.html` ・ `terms/index.html` ・ `privacy-policy/index.html` ・ `legal/index.html` ・ `dreamin-spiral/project-creation/index.html`（固有名称を `.keep-together` で包む 20 箇所）
