@@ -41,27 +41,43 @@
 
   <main>
 
-    <!-- Section 1｜Hero -->
-    <section class="ds-service-hero">
+    <!-- Community Entry Architecture vNext（2026-10-01 ・ ACR-20261001-003）
+         Experience：Reality → Recognition → Meaning → Togetherness → Rhythm / Contents → Offer → Action。
+         「Communityに入りませんか」から始めず、日常の中で誰かと一緒に見てみたくなる瞬間から始める。
+         思想を弱めるのではない。思想が届く順番を変える。
+         正本：docs/community-entry-architecture-vnext.md -->
+
+    <!-- 01 Hero — Reality / Relevance。Stripe CTA は置かない（Level 1 Continue のみ） -->
+    <section class="ds-service-hero ds-service-hero--reality">
       <span class="ds-service-eyebrow">Community</span>
       <h1 class="ds-service-title">
-        日々の現実を生きながら、<br>
-        共に気づき続ける場。
+        日々の中で、<br>
+        <span class="ds-phrase">ふと誰かと</span><span class="ds-phrase">話してみたくなることがある。</span><br>
+        <span class="ds-phrase">答えがほしいわけでは</span><span class="ds-phrase">ないけれど。</span>
       </h1>
       <p class="ds-service-lead">
-        日常の中で起きたことや、<br>
-        そこで生まれた感覚を持ち寄りながら、<br>
-        <span class="ds-phrase">自分に気づき続けていく</span><span class="ds-phrase">Communityです。</span>
+        仕事のこと。<br>
+        人との関わり。<br>
+        <span class="ds-phrase">最近、なぜか</span><span class="ds-phrase">心に残っていること。</span>
       </p>
-      <!-- Current Community Stripe LIVE Payment Link（月額 Subscription・plink_1UGIUV8tXYwNlHqE2OJhlGvs）。旧 Academy Community の Payment Link は使わない -->
-      <a class="ds-service-cta" href="https://buy.stripe.com/28E4gt7IoftW8my5bS0x208">Communityに参加する</a>
+      <p class="ds-service-lead">
+        <span class="ds-phrase">そんな日常の出来事を</span><span class="ds-phrase">持ち寄りながら、</span><br>
+        <span class="ds-phrase">自分に気づいていく場です。</span>
+      </p>
+      <a class="ds-service-cue" href="#recognition">
+        <span>Communityについて見てみる</span>
+        <span class="ds-service-cue-arrow" aria-hidden="true">↓</span>
+      </a>
     </section>
 
     <div class="page-content">
 
-      <!-- Section 2 -->
-      <div class="section-block ds-service-section">
-        <h2>日常そのものを、一緒に見ていく。</h2>
+      <!-- 02 Recognition — Daily Reality（旧 Section 2 を KEEP）。Offer ・ 料金 ・ Stripe CTA はまだ出さない -->
+      <div class="section-block ds-service-section" id="recognition">
+        <h2>
+          日常そのものを、<br>
+          一緒に見ていく。
+        </h2>
         <p>
           特別なテーマを学んで終わる場所ではありません。
         </p>
@@ -77,9 +93,25 @@
         </p>
       </div>
 
-      <!-- Section 3 -->
+      <!-- 03 Meaning — 旧 Hero の Core Message を MOVE（削除しない）。「所属するコミュニティ」を強調しない -->
       <div class="section-block ds-service-section">
-        <h2>それぞれの人生を生きながら、共にいる。</h2>
+        <h2>
+          日々の現実を生きながら、<br>
+          共に気づき続ける場。
+        </h2>
+        <p>
+          日常の中で起きたことや、<br>
+          そこで生まれた感覚を持ち寄りながら、<br>
+          <span class="ds-phrase">自分に気づき続けていく</span><span class="ds-phrase">Communityです。</span>
+        </p>
+      </div>
+
+      <!-- 04 Togetherness — KEEP（Community の核。「また日常へ戻っていく」を削らない） -->
+      <div class="section-block ds-service-section">
+        <h2>
+          それぞれの人生を生きながら、<br>
+          共にいる。
+        </h2>
         <p>
           誰かの正解に合わせるのではなく、<br>
           それぞれが自分の現実を生きながら、<br>
@@ -96,9 +128,42 @@
         </p>
       </div>
 
-      <!-- Section 4｜内容（既存 Canonical / Legal で確認した事実のみ） -->
+      <!-- 05 Rhythm / Contents — 月1回を頻度ではなく「日常 → Community → 日常」の Rhythm として。その後に Contents -->
       <div class="section-block ds-service-section">
-        <h2>内容</h2>
+        <h2>
+          月に一度集まり、<br>
+          また、それぞれの日常へ戻っていく。
+        </h2>
+        <p class="ds-service-relation">日常 → Community → 日常</p>
+        <p>
+          Communityの日だけが<br>
+          特別なのではありません。
+        </p>
+        <p>
+          日常を生きながら、<br>
+          月に一度集まり、<br>
+          <span class="ds-phrase">そこで起きたことや</span><span class="ds-phrase">感じたことを一緒に見て、</span>
+        </p>
+        <p>
+          <span class="ds-phrase">また、それぞれの日常へ</span><span class="ds-phrase">戻っていきます。</span>
+        </p>
+        <ul class="ds-service-list">
+          <li>オンライン（Zoom）</li>
+          <li>Group Session 月1回</li>
+          <li>Archive</li>
+          <li>Learning Resources</li>
+          <li>Community Portal</li>
+        </ul>
+      </div>
+
+      <!-- 06 Offer — 内容 ・ 料金は KEEP（既存 Canonical / Legal で確認した事実のみ）。一覧の前に意味を置く。Primary CTA は置かない -->
+      <div class="section-block ds-service-section">
+        <h2>内容・料金</h2>
+        <p class="ds-offer-lead">
+          <span class="ds-phrase">継続して誰かとつながるためではなく、</span><br>
+          <span class="ds-phrase">日々を生きながら、</span><br>
+          <span class="ds-phrase">自分に気づき続けるための場です。</span>
+        </p>
         <dl class="ds-offer-summary">
           <dt>形式</dt>
           <dd>オンライン（Zoom）</dd>
@@ -111,9 +176,10 @@
         </dl>
       </div>
 
-      <!-- Final CTA -->
+      <!-- 07 Final Action — ここで初めて Primary Conversion CTA（Level 3 Join） -->
       <div class="section-block ds-service-section">
         <h2>日々を生きながら、共に気づいていく。</h2>
+        <!-- Current Community Stripe LIVE Payment Link（月額 Subscription・plink_1UGIUV8tXYwNlHqE2OJhlGvs）。旧 Academy Community の Payment Link は使わない -->
         <a class="ds-service-cta" href="https://buy.stripe.com/28E4gt7IoftW8my5bS0x208">Communityに参加する</a>
       </div>
 
