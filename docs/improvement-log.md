@@ -6,6 +6,18 @@
 ---
 
 ---
+## [2026-10-01] — 3 Weeks Tuning Entry Architecture vNext（**Architect Review 待ち**・Preview のみ）
+
+**Scope:** `dreamin-spiral/3-weeks/index.html`, `docs/3weeks-entry-architecture-vnext.md`（新規）
+**Triggered by:** Architect Decision（ACR-20261001-005）
+
+- Experience を **Reality → Recognition → Meaning → Three Weeks Rhythm → What We Hold → Offer → Action** に
+- **Hero を Reality-first に REFRAME し、Hero の申込 CTA を REMOVE**。代わりに Continue Cue「3週間について見てみる ↓」
+- 「「気になる」や「悩み」から自分に気づく3週間」は削除せず Meaning Section へ MOVE。「この時間で大切にしていること」を Offer の前へ MOVE
+- **Recognition list ・ Rhythm（セッション ⇄ 日常のリアリティ）・ Offer ・ 60,000円（税込）・ Note ・ Final CTA ・ Apply URL ・ Meta / OGP は無変更**（block ごと byte 一致）。`style.css` も無変更
+- Visual は生成していない（既存 `DS-3WEEKS-01` は Hero の Direction に合わないため再利用せず、Asset 案を Architect へ）
+- QA：10 幅で overflow 0 ・ 孤立行 0
+
 ## [2026-10-01] — Community｜Hero Visual（DS-COMMUNITY-HERO-01）（**Architect Review 待ち**・Preview のみ）
 
 **Scope:** `dreamin-spiral/community/index.html`（Hero の figure のみ）, `assets/dreamin-spiral/community/hero-*`, `docs/community-entry-architecture-vnext.md`
