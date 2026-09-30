@@ -158,7 +158,11 @@ Copy は 1 文字も変えていない — Layout 側だけで解決した。
 ### Recognition ・ Creation ・ Closing の見せ方
 
 6 Service Card と同じ作り — Section の面の先頭に面いっぱいで置き、上の角だけを丸める（Visual → White Space → Text）。
-4 枚とも **Master の 3:2 を Crop せずそのまま** 見せる（Master README「1 掲載箇所 ＝ 1 画像 ・ 切り出しをしない」）。
+4 枚とも **16:9 で見せる**（**Owner Decision 2026-10-01 ・ ACR-20260930-025**）。
+当初は Master の 3:2 をそのまま見せていたが、既存の 6 Service Visual ・ TOP の写真がすべて 16:9 のため、4 枚だけ比率が違い
+「画像のサイズが合っていない」（Owner）。Master ・ 配信ファイルは加工せず、CSS の `aspect-ratio: 16 / 9` ＋ `object-fit: cover` で表示だけを揃えた。
+切り抜き位置は顔が切れないよう画像ごとに指定（Hero ・ Recognition ・ Creation は上寄せ `50% 0%`、Closing は空と人物を残す `50% 30%`）。
+Desktop の表示は Hero 512×288 ・ 各 Section 678×381（6 Service Card 330×186 と同じ比率）。
 Closing は **Hero より引いた静かな質感** にするため、6 Service と同じ Cream の veil を少しだけ強めた（画像自体は加工しない）。
 
 ### Visual Story
@@ -207,6 +211,7 @@ Library の `.ds-service-cta`（`#8a6a4e` ・ `#f8f6f1` 上で 4.62:1）は変�
 | 既存 link | 6 Service ＋ Library の href は main と完全一致（追加は `#recognition` ・ `#entrances` のみ）|
 | Regression | `/dreamin-spiral/guide/` ・ `/dreamin-spiral/3-weeks/` ・ `/dreamin-spiral/library/` ・ TOP に影響なし |
 | **Visual 4 Asset（2026-09-30）** | 320 / 375 / 390 / 430 / 768 / 1024 / 1280 の **7 幅で 4 枚とも 3:2 のまま（Crop 0）・ overflow 0 ・ 孤立行 0** |
+| **16:9 統一（2026-10-01 ・ ACR-025）** | Desktop 1280 ・ Mobile 375 で 4 枚とも比率 1.78（6 Service Card と同一）・ overflow 0 ・ 顔の切れなし（上寄せ crop） |
 | Hero Copy contrast（Visual 実装後） | 写真の上から外れ、gradient 上になった。Desktop Eyebrow 5.38 / Title 12.26 / Lead 6.56 / Cue 10.96 ・ Mobile 5.61 / 12.73 / 6.82 / 10.87 — **すべて AA 以上** |
 | Performance | Master PNG（約 2MB）は配信しない。AVIF ／ WebP の responsive variant（Hero AVIF 16〜44KB ・ Section AVIF 12〜48KB）・ `width` / `height` 指定で CLS なし ・ Hero のみ `fetchpriority="high"` ・ 他は `loading="lazy"` |
 | Copy | Visual 実装の前後で可視テキスト 113 行が完全一致（Copy 無変更） |
