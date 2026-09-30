@@ -2,7 +2,7 @@
 
 **Status:** Implemented（Preview・Architect Review 待ち）
 **Date:** 2026-10-01
-**Scope:** `dreamin-spiral/community/index.html` のみ（`style.css` の変更なし。A21 の Reality Hero ・ Continue Cue ・ Offer Lead と、既存の `.ds-service-relation` を再利用）
+**Scope:** `dreamin-spiral/community/index.html`, `assets/dreamin-spiral/community/hero-*`（`style.css` の変更なし。A21 ／ A21-b の Reality Hero ・ Scene Hero ・ Continue Cue ・ Offer Lead と、既存の `.ds-service-relation` を再利用）
 **AI Creation Request:** ACR-20261001-003
 
 ## Core Principle
@@ -38,29 +38,20 @@
 - Hero の見出し ・ Lead には既存の `.ds-phrase` を使い、狭い画面で語の途中や 1〜2 文字で折り返さないようにした（文言は不変）
 - Stripe の Payment Link に付いていた注記コメントは Final CTA の上へ移した
 
-## Visual（DS-COMMUNITY-01）の評価と Architect への返却
+## Hero Visual（AD-1 決着 ・ 2026-10-01）
 
-既存 `DS-COMMUNITY-01`（1672×941 ・ Connection）は **Hero に再利用しない**。Hero は Text のみで実装した（Visual 不足は Copy ／ Structure を block しない）。
+**Architect Decision：** 既存 `DS-COMMUNITY-01` は LP Hero に使わない（夕日の海辺テラスで非日常 ／ Facilitator 中心 ／ 全員の笑顔が強い ／ Networking 広告に寄る ／ Home の Community Card と同一）。新規 **`DS-COMMUNITY-HERO-01`** を採用。
 
-| 観点 | 評価 |
+| 項目 | 内容 |
 |---|---|
-| Hero Reality に自然か | ✗ 夕日の海と山を望むテラス。「日々の中で」ではなく非日常（retreat）の場面 |
-| 「楽しい仲間」広告に見えないか | △〜✗ 全員が大きく笑顔で、中央の男性へ向いている |
-| Connection として静かか | ✗ 中央の男性が身振りで話し、周囲が聞く構図 → Facilitator ／ Seminar に見える |
-| Home → Community の連続 | ✗ Dreamin' Spiral 🌱 Home の Family Card ですでに使用。同じ画像が続く |
-| 16:9 | ○（1672×941） |
-
-→ Stop Condition「Existing Visual が今回の Role に合わず、新規 Asset が必要」。以下を提案として返す（画像は生成していない）。
-
-- **Page:** `/dreamin-spiral/community/`
-- **Section:** 01 Hero（My Life と同じ A21-b：Desktop は Visual ｜ Copy の 2 列、880px 未満は縦積みで max-width 560px）
-- **Asset ID 案:** `DS-COMMUNITY-HERO-01`
-- **Visual Role:** Connection（複数人の場）— Reality
-- **Meaning:** それぞれの人生を持った人たちが、少しの時間だけ同じ場にいる。
-- **Direction:** 3〜4 人 ・ ふつうの室内（窓からの自然光 ・ 平日の午後） ・ 簡素なテーブルをゆるく囲む ・ 一人が静かに話し、他は聞いている（カメラは見ない） ・ それぞれ自分のカップ ／ ノートを持ち、姿勢も服装もばらばら ・ 穏やかな表情で大きな笑顔なし ・ 中央に立つ人 ／ ホワイトボード ／ 絶景 ／ リゾートなし ・ 16:9 で人物は中くらい、周囲に余白
-- **使用箇所:** Community LP Hero のみ（DS Home の Family Card は `DS-COMMUNITY-01` のまま）
-- **Prompt 案:**
-  > A quiet, documentary-style photograph of three or four Japanese adults of different ages sitting loosely around a simple wooden table in an ordinary, softly lit room on a weekday afternoon. Natural window light, muted warm palette. One person is speaking calmly while the others listen, each in their own posture, holding their own mug or notebook; no one looks at the camera. Calm, natural expressions, no big smiles. Everyday clothing. No facilitator standing, no whiteboard, no scenic view, no party, no seminar, no team-building, no networking mood. Wide 16:9 composition, people at medium size with space around them, subjects slightly below center so a top-anchored crop keeps faces.
+| Asset ID | `DS-COMMUNITY-HERO-01`（Owner の正式 PNG 名 `DS-COMMUNITY-HERO-01_dreamin-spiral-community-hero.png` ・ 1672×941 ・ byte 一致を確認） |
+| Visual Role | Connection ＋ Daily Life ＋ Human |
+| Meaning | それぞれの人生を持った人たちが、少しの時間だけ同じ場にいる |
+| Master | OS repo `assets/png/b8e-public-visual/ds/DS-COMMUNITY-HERO-01.png`（Inventory ・ Implementation Map 更新） |
+| 公開版 | `assets/dreamin-spiral/community/hero-{640,960,1280,1672}.{avif,webp}`（WebP q72 ・ AVIF q52 ・ 16〜65 KB）。Master PNG は public に置かない |
+| Layout | My Life と同じ A21-b：Desktop（≥ 880px）は Visual ｜ Copy の 2 列、それ未満は Visual → Copy の縦積みで **max-width 560px**。画像と Copy は別面（Copy の背後に敷かない） |
+| Markup | `<picture>`（AVIF ／ WebP ・ srcset 4 幅 ・ `sizes="(max-width: 879px) min(560px, calc(100vw - 48px)), 500px"`）・ `width="1672" height="941"`（CLS 0）・ `fetchpriority="high"` ・ `decoding="async"` |
+| Role separation | Home の 6 Service Card は `DS-COMMUNITY-01` のまま（KEEP） |
 
 ## Known Issue（External Exposure Layer へ）
 
@@ -73,5 +64,6 @@
 | Section 順 | Hero → Recognition → Meaning → Togetherness → Rhythm → 内容・料金 → Final Action |
 | CTA | Hero の Stripe CTA 0 ・ Stripe CTA は Final の 1 件のみ（URL 不変）・ Continue Cue → `#recognition` |
 | KEEP | 「日常そのものを、一緒に見ていく。」・「それぞれの人生を生きながら、共にいる。」・「誰かの正解に合わせる…」・「また日常へ戻っていく。」・ Offer 一覧 ・ 20,000円（税込）／月 ・ Final CTA ・ Meta ／ OGP ・ Header ／ Footer |
-| Responsive | 320 ・ 375 ・ 390 ・ 430 ・ 768 ・ 820 ・ 879 ・ 1024 ・ 1280 ・ 1440 で overflow 0 ・ 孤立行（1〜2 文字の行）0 ・ 画像 0 のため Visual 巨大化なし |
+| Responsive | 320 ・ 375 ・ 390 ・ 430 ・ 768 ・ 820 ・ 879 ・ 1024 ・ 1280 ・ 1440 で overflow 0 ・ 孤立行（1〜2 文字の行）0 |
+| Hero Visual 実寸 | 320：272×153 ・ 375：327×184 ・ 390：342×192 ・ 430：382×215 ・ **768 ／ 820 ／ 879：560×315（上限で停止）**・ 1024：444×250 ・ 1280 ／ 1440：512×288（2 列）。全幅で 16:9（1.778）・ 顔の切れなし |
 | Regression | `style.css` ・ complete page ・ Dreamin' Spiral 🌱 Home ・ 他 Service Page の差分 0 |

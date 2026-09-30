@@ -47,8 +47,20 @@
          思想を弱めるのではない。思想が届く順番を変える。
          正本：docs/community-entry-architecture-vnext.md -->
 
-    <!-- 01 Hero — Reality / Relevance。Stripe CTA は置かない（Level 1 Continue のみ） -->
-    <section class="ds-service-hero ds-service-hero--reality">
+    <!-- 01 Hero — Reality / Relevance。Stripe CTA は置かない（Level 1 Continue のみ）
+         Visual｜DS-COMMUNITY-HERO-01（Connection ＋ Daily Life ＋ Human ／「それぞれの人生を持った人たちが、少しの時間だけ同じ場にいる」・ 16:9）。
+         My Life と同じ A21-b：Desktop（≥ 880px）は Visual ｜ Copy の 2 列、それ未満は Visual → Copy の縦積み（画像は max-width 560px）。
+         Home の Community Card は DS-COMMUNITY-01 のまま（Role separation）。 -->
+    <section class="ds-service-hero ds-service-hero--reality ds-service-hero--scene">
+      <div class="ds-service-hero-inner">
+      <figure class="ds-service-hero-figure">
+        <picture>
+          <source type="image/avif" srcset="/assets/dreamin-spiral/community/hero-640.avif 640w, /assets/dreamin-spiral/community/hero-960.avif 960w, /assets/dreamin-spiral/community/hero-1280.avif 1280w, /assets/dreamin-spiral/community/hero-1672.avif 1672w" sizes="(max-width: 879px) min(560px, calc(100vw - 48px)), 500px">
+          <source type="image/webp" srcset="/assets/dreamin-spiral/community/hero-640.webp 640w, /assets/dreamin-spiral/community/hero-960.webp 960w, /assets/dreamin-spiral/community/hero-1280.webp 1280w, /assets/dreamin-spiral/community/hero-1672.webp 1672w" sizes="(max-width: 879px) min(560px, calc(100vw - 48px)), 500px">
+          <img src="/assets/dreamin-spiral/community/hero-960.webp" width="1672" height="941" fetchpriority="high" decoding="async" alt="日中の明るい部屋で木のテーブルを囲み、一人が話し、ほかの人たちが静かに聞いている">
+        </picture>
+      </figure>
+      <div class="ds-service-hero-copy">
       <span class="ds-service-eyebrow">Community</span>
       <h1 class="ds-service-title">
         日々の中で、<br>
@@ -68,6 +80,8 @@
         <span>Communityについて見てみる</span>
         <span class="ds-service-cue-arrow" aria-hidden="true">↓</span>
       </a>
+      </div>
+      </div>
     </section>
 
     <div class="page-content">
