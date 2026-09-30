@@ -47,8 +47,19 @@
          思想を弱めるのではない。思想が届く順番を変える。
          正本：docs/mylife-entry-architecture-vnext.md -->
 
-    <!-- 01 Hero — Reality / Relevance。Application CTA は置かない（Level 1 Continue のみ） -->
-    <section class="ds-service-hero ds-service-hero--reality">
+    <!-- 01 Hero — Reality / Relevance。Application CTA は置かない（Level 1 Continue のみ）
+         Visual｜DS-MYLIFE-HERO-01（Human ＋ Daily Life ＋ Life as a Whole ／「今の人生を生きている」・ 16:9）。
+         Desktop（≥ 880px）は Visual ｜ Copy の 2 列、それ未満は Visual → Copy の縦積み（画像は max-width 560px）。 -->
+    <section class="ds-service-hero ds-service-hero--reality ds-service-hero--scene">
+      <div class="ds-service-hero-inner">
+      <figure class="ds-service-hero-figure">
+        <picture>
+          <source type="image/avif" srcset="/assets/dreamin-spiral/my-life/hero-640.avif 640w, /assets/dreamin-spiral/my-life/hero-960.avif 960w, /assets/dreamin-spiral/my-life/hero-1280.avif 1280w, /assets/dreamin-spiral/my-life/hero-1672.avif 1672w" sizes="(max-width: 879px) min(560px, calc(100vw - 48px)), 500px">
+          <source type="image/webp" srcset="/assets/dreamin-spiral/my-life/hero-640.webp 640w, /assets/dreamin-spiral/my-life/hero-960.webp 960w, /assets/dreamin-spiral/my-life/hero-1280.webp 1280w, /assets/dreamin-spiral/my-life/hero-1672.webp 1672w" sizes="(max-width: 879px) min(560px, calc(100vw - 48px)), 500px">
+          <img src="/assets/dreamin-spiral/my-life/hero-960.webp" width="1672" height="941" fetchpriority="high" decoding="async" alt="朝の光が入る部屋で、カップを手に机に向かい、窓の外を見ている人">
+        </picture>
+      </figure>
+      <div class="ds-service-hero-copy">
       <span class="ds-service-eyebrow">My Life, My Way</span>
       <h1 class="ds-service-title">
         <span class="ds-phrase">仕事も、家族も、</span><span class="ds-phrase">日々は続いている。</span><br>
@@ -67,6 +78,8 @@
         <span>この6か月について見てみる</span>
         <span class="ds-service-cue-arrow" aria-hidden="true">↓</span>
       </a>
+      </div>
+      </div>
     </section>
 
     <div class="page-content">

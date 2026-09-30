@@ -2,7 +2,7 @@
 
 **Status:** Implemented（Preview・Architect Review 待ち）
 **Date:** 2026-10-01
-**Scope:** `dreamin-spiral/my-life/index.html`, `style.css`（A21 追加）
+**Scope:** `dreamin-spiral/my-life/index.html`, `style.css`（A21 ・ A21-b 追加）, `assets/dreamin-spiral/my-life/`
 **AI Creation Request:** ACR-20261001-001
 
 ## Core Principle
@@ -38,11 +38,17 @@ Open Future 本文 ・ Values ・ Offer の一覧（期間 ・ Zoom 60分 × 月
 - **Open Future** は Current の本文をそのまま KEEP した。Architect が示した意味（「こうなりたい」がはっきりしていても、していなくても大丈夫 ／ この6か月をどんな時間として過ごしてみたいか ／ そこから一緒に始める）は Current の本文にすでにすべて含まれているため
 - **Offer** の旧 note「…6か月全体を通した伴走として提供します。」は、一覧の前の Lead「…6か月全体を通した伴走です。」へ MOVE ・ REFRAME した（同じ意味を 2 回言わない）
 
-## Visual
+## Visual（Round 2 ・ 2026-10-01 ・ AD-1 決着）
 
-LP には現在も写真がない（Before も After も Text のみ）。Home の `DS-MYLIFE-01`（山頂から朝日の景色を見るバックパッカー）は、Home の Card では「人生全体」として機能するが、
-今回の LP Direction（日常 ・ 家 ・ 街 ・ 生活の途中）に対して「未来へ向かう演出 ・ Heroic」の NG に寄るため **LP には再利用していない**。
-新規 Asset は生成せず、Role と Prompt 案を Architect へ返した（ACR-20261001-001 architect-report）。
+| Asset ID | Section | Visual Role | Meaning | 公開版 |
+|---|---|---|---|---|
+| `DS-MYLIFE-HERO-01` | 01 Hero | Human ＋ Daily Life ＋ Life as a Whole | 今の人生を生きている | `assets/dreamin-spiral/my-life/hero-{640,960,1280,1672}.{avif,webp}` |
+
+- **Recognition には Visual を置かない**（Architect Decision — Hero で Reality を Visual として受け取り、Recognition は言葉と余白に集中させる）
+- Master（PNG 1672×941 ・ 16:9）は dreamin-spiral-os `assets/png/b8e-public-visual/ds/`（README に Inventory）。b8e-lab には最適化済みの公開版だけ（AVIF 17〜48KB）
+- **Layout:** Desktop（≥ 880px）は Visual ｜ Copy の 2 列（Home Hero と同じ考え方 ・ Deep Indigo Hero はそのまま）。880px 未満は Visual → Copy の縦積みで、**画像に max-width 560px** を持たせ Tablet ／ 中間幅で巨大化させない
+- 実測：1440 ・ 1280 → 512×288 ／ 1024 → 444×250 ／ 879 ・ 820 ・ 768 → 560×315（上限で停止）／ 430 〜 320 → 382〜272 幅（全幅）。すべて 16:9
+- Home の `DS-MYLIFE-01`（山頂の風景）は LP では使わない
 
 ## Verification（Preview・Chromium）
 

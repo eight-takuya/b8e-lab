@@ -3503,3 +3503,68 @@ body:not(.ds-page) .resonance-questions p + p {
     text-wrap: balance;
   }
 }
+
+/* A21-b｜My Life, My Way Hero Visual（DS-MYLIFE-HERO-01 ・ 16:9 ・ 2026-10-01）
+   Desktop（≥ 880px）は Visual ｜ Copy の 2 列（Dreamin' Spiral 🌱 Home Hero と同じ考え方）。
+   それ未満は Visual → Copy の縦積み。**画像に max-width 560px を持たせ、Tablet ／ 中間幅で container いっぱいに巨大化させない**。
+   Deep Indigo の Hero ・ Typography scale は既存のまま */
+.ds-service-hero--scene {
+  padding: 88px 40px 104px;
+}
+
+.ds-service-hero--scene .ds-service-hero-inner {
+  max-width: 1080px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 56px;
+  align-items: center;
+}
+
+.ds-service-hero--scene .ds-service-hero-copy {
+  text-align: left;
+}
+
+.ds-service-hero--scene .ds-service-title,
+.ds-service-hero--scene .ds-service-lead {
+  margin-left: 0;
+  margin-right: 0;
+  max-width: none;
+}
+
+.ds-service-hero-figure {
+  margin: 0;
+  width: 100%;
+  max-width: 560px;
+  justify-self: center;
+  border-radius: 18px;
+  overflow: hidden;
+  background: #16244a;
+}
+
+.ds-service-hero-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+@media (max-width: 879px) {
+  .ds-service-hero--scene {
+    padding: 48px 24px 72px;
+  }
+  .ds-service-hero--scene .ds-service-hero-inner {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 36px;
+    max-width: 600px;
+  }
+  .ds-service-hero--scene .ds-service-hero-copy {
+    text-align: center;
+  }
+  .ds-service-hero--scene .ds-service-title,
+  .ds-service-hero--scene .ds-service-lead {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

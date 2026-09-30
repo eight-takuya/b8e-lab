@@ -6,6 +6,16 @@
 ---
 
 ---
+## [2026-10-01] — My Life, My Way｜Hero Visual（DS-MYLIFE-HERO-01）（**Architect Review 待ち**・Preview のみ）
+
+**Scope:** `dreamin-spiral/my-life/index.html`（Hero の figure のみ）, `style.css`（A21-b）, `assets/dreamin-spiral/my-life/hero-*`
+**Triggered by:** ACR-20261001-001 AD-1 決着（Hero Visual 1 枚のみ ・ Recognition は Text のみ）
+
+- Hero に `DS-MYLIFE-HERO-01`（16:9）。Desktop は Visual ｜ Copy の 2 列、880px 未満は縦積みで **max-width 560px**（中間幅での巨大化を防止）
+- Copy ・ Hero の Continue Cue ・ Offer ・ 料金 ・ Final CTA ・ Apply URL ・ Meta / OGP は無変更（可視テキストが前回と完全一致）
+- QA：320 〜 1440 の 10 幅で 16:9 維持 ・ 画像サイズ（最大 560px）・ overflow 0 ・ 孤立行 0
+
+---
 ## [2026-10-01] — My Life, My Way Entry Architecture vNext（**Architect Review 待ち**・Preview のみ）
 
 **Scope:** `dreamin-spiral/my-life/index.html`, `style.css`（A21）, `docs/mylife-entry-architecture-vnext.md`（新規）
