@@ -1,6 +1,6 @@
 # Project Creation Public Reality Reset + Entry Architecture vNext
 
-**Status:** Round 3 Implemented（Preview・Architect Review 待ち）
+**Status:** Round 4 Implemented（Preview・Architect Review 待ち）
 **Date:** 2026-10-01
 **Scope:** `dreamin-spiral/project-creation/index.html`, `dreamin-spiral/project-creation/apply/index.html`, `style.css`（A22 ・ 2 rules）／ Round 2：`dreamin-spiral/project-creation/{thanks,complete}/index.html`, `legal/index.html`, `assets/dreamin-spiral/project-creation/` ／ Round 3：同じ files ＋ `terms/index.html`
 **AI Creation Request:** ACR-20261001-012
@@ -200,3 +200,13 @@ Round 1 ／ 2 の「現在、Project Creationの募集は行っていません�
 ### Stripe（旧 Payment Link）— LIVE AUTH REQUIRED
 
 Round 2 と同じ。Stripe CLI は Sandbox だけが認証済みで、Live の `plink_1UIxv88tXYwNlHqEJkFOfNPw` を確認 ・ 停止できない。この Link は Project Creation の Current Pricing ではなく旧募集専用の決済のため、停止の方針は KEEP（Project Creation の販売停止ではない）。Public からの導線は 0。
+
+## Round 4（2026-10-01 ・ Canonical 同期 ＋ Legal ／ Terms の語）
+
+Round 3 の Public Experience ・ Dialogue ・ Legal ／ Terms の意味 ・ Hero は Architect PASS のため変更なし。
+
+- **/legal/ ・ /terms/ 第9条の2：** 旧 Cohort 由来の「開講」を「サービス開始」へ（「開講日（個別に合意した開始日）」→「サービス開始日（個別に合意した開始日）」・「開講前のキャンセル」→「サービス開始前のキャンセル」・「開講後の中途解約」→「サービス開始後の中途解約」）。Cancellation Policy の意味は変更なし。両ページの「開講」0
+- **LP の HTML コメント：** Hero の注記にあった「Founding Cohort」を「旧募集の情報」へ（表示テキストは変更なし）
+- **Canonical（dreamin-spiral-os #476）：** Offer Definition §6 を §6-0 Current（Offer v2 Client Timing）／ §6-H Historical（Offer v1 Founding Cohort）へ分離し、Program Architecture ・ Brand Architecture §2.6 ・ Launch v1 の Status を同期
+- **Stripe：** LIVE AUTH REQUIRED（Stripe CLI の Live 認証は Owner の承認待ち。Public からの導線は 0）
+- **Smoke（375 ・ 768 ・ 820 ・ 879 ・ 1280）：** LP ・ /apply/ ・ /legal/ ・ /terms/ で overflow 0 ・ Hero 寸法は Round 2 と同じ ・ Dialogue Form と送信ボタンは viewport 内

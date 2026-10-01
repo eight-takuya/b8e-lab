@@ -6,6 +6,16 @@
 ---
 
 ---
+## [2026-10-01] — Project Creation Round 4：Legal ／ Terms の「開講」を「サービス開始」へ（**Architect Review 待ち**・Preview のみ）
+
+**Scope:** `legal/index.html`, `terms/index.html`（Project Creation の 3 箇所ずつ）, `dreamin-spiral/project-creation/index.html`（HTML コメントのみ）, `docs/project-creation-public-reality-reset-vnext.md`
+**Triggered by:** Architect Decision（ACR-20261001-012 Round 4）
+
+- 旧 Cohort 由来の「開講日 ／ 開講前 ／ 開講後」を「サービス開始日 ／ サービス開始前 ／ サービス開始後」へ（Cancellation Policy の意味は変更なし）
+- Canonical の同期は dreamin-spiral-os 側（Offer Definition §6-0 ／ §6-H ほか）
+
+---
+
 ## [2026-10-01] — Project Creation Round 3：「いつでも相談できる」Current Reality へ（**Architect Review 待ち**・Preview のみ）
 
 **Scope:** `dreamin-spiral/project-creation/index.html`（12 ・ 13 ・ FAQ ・ Weekly Session）, `dreamin-spiral/project-creation/{apply,thanks,complete}/index.html`, `legal/index.html`, `terms/index.html`, `docs/project-creation-public-reality-reset-vnext.md`
