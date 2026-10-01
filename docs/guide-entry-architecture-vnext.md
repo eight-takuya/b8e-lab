@@ -2,7 +2,7 @@
 
 **Status:** Implemented（Preview・Architect Review 待ち）
 **Date:** 2026-10-01
-**Scope:** `dreamin-spiral/guide/index.html` のみ（`style.css` ・ `gas-transition.js` ・ Booking の URL ／ 属性は変更なし。A21 の Reality Hero ・ Continue Cue を再利用）
+**Scope:** `dreamin-spiral/guide/index.html`, `assets/dreamin-spiral/guide/hero-*`（`style.css` ・ `gas-transition.js` ・ Booking の URL ／ 属性は変更なし。A21 ／ A21-b の Reality Hero ・ Scene Hero ・ Continue Cue を再利用）
 **AI Creation Request:** ACR-20261001-006
 
 ## Core Principle
@@ -34,32 +34,20 @@
 - この Request では GAS ・ `gas-transition.js` に触れていない。b8e-lab 側の Booking link（href ・ `data-gas-transition` ・ 3 つの `data-transition-*`）は Final に 1 件、元と byte 一致で残した
 - Final の説明文は「空いている枠から選ぶか、ご都合のよい候補日時をお知らせいただけます。」として、公開枠あり ／ なしの両方を含めた
 
-## Visual（DS-GUIDE-01）の評価と Architect への返却
+## Hero Visual（AD-1 決着 ・ 2026-10-01）
 
-既存 `DS-GUIDE-01`（1672×941 ・ Dialogue）は **Hero に再利用しない**。Hero は Text のみで実装した。
+**Architect Decision：** 既存 `DS-GUIDE-01` は LP Hero に使わない（聴く側が正面 ・ 話す側が後ろ姿で上下関係 ／ Coach ・ Consultant 広告寄り ／ Laptop ／ 湖 ・ 山の屋外テラス ／ stock photo smile ／ Home ・ TOP Card と同一）。新規 **`DS-GUIDE-HERO-01`** を採用。
 
-| 観点 | 評価 |
+| 項目 | 内容 |
 |---|---|
-| 1 対 1 の Dialogue | ○ 1 対 1 の会話ではある |
-| 上下関係 | ✗ 手前の人は後ろ姿で話し、奥の男性が正面で頬杖をつき笑顔で聴く → **聴く専門家 ／ 相談者**の構図に見える |
-| Advisor ／ Coach 広告 | ✗ 奥の男性の手元に Laptop。笑顔の「傾聴するプロ」で Coaching ／ Consultation 広告に寄る |
-| 過剰な笑顔 | △ stock photo smile |
-| 日常の延長 | ✗ 湖と山を望む屋外テラス（非日常） |
-| Home Card との重複 | ✗ Home ／ TOP の Guide Card で使用中。奥の人物は `DS-COMMUNITY-01` の中央人物と同じに見える |
-| 16:9 ・ 質 | ○ |
-
-→ Stop Condition「Existing DS-GUIDE-01 が Hero に不適合で新規 Asset が必要」。以下を提案として返す（画像は生成していない）。
-
-- **Page:** `/dreamin-spiral/guide/`
-- **Section:** 01 Hero（My Life ／ Community ／ 3 Weeks と同じ A21-b にすれば：Desktop は Visual ｜ Copy、880px 未満は縦積みで max-width 560px）
-- **Asset ID 案:** `DS-GUIDE-HERO-01`
-- **Formal Filename 案:** `DS-GUIDE-HERO-01_dreamin-spiral-guide-hero.png`
-- **Visual Role:** Dialogue ＋ Daily Life ＋ Human
-- **Meaning:** ちゃんと相談内容を整理してから来るのではなく、今あることを、そのまま誰かと話してみる
-- **Direction:** 1 対 1 ・ **斜め向かい ／ 横並びに近い対等な位置**（向かい合わせの面談配置にしない）・ ふつうの部屋の小さなテーブル ・ 平日の日中の自然光 ・ 一人が言葉を探しながら話し、もう一人は静かに聴いている（どちらもカメラを見ない）・ 二人とも同じ高さ ・ 同じくらいの存在感 ・ 40〜50 代を含む ・ 表情は穏やか（大きな笑顔なし）・ 手元はカップ程度で Laptop ・ 書類 ・ メモを主役にしない ・ therapist couch ・ 診察 ・ 商談 ・ 握手 ・ 高級オフィス ・ セミナー ・ スピリチュアル ・ 絶景なし ・ 16:9 で人物は中くらい、余白あり ・ 2 人とも顔が上半分に入る
-- **使用箇所:** Guide LP の Hero のみ（Home ／ TOP の Guide Card は `DS-GUIDE-01` のまま）
-- **Prompt 案:**
-  > A quiet, documentary-style photograph of two Japanese adults (one in their late 40s) sitting at a small wooden table in an ordinary, softly lit room on a weekday afternoon, angled toward each other rather than face to face, at the same eye level. One is speaking slowly, as if searching for words; the other listens calmly. Neither looks at the camera. Calm, natural expressions, no big smiles. Only two mugs on the table; no laptop, no documents, no notes. Everyday clothing, plain lived-in room, muted warm palette, natural window light. No therapist couch, no clinic, no business meeting, no handshake, no luxury office, no seminar, no scenic view. Wide 16:9 composition, people at medium size with space around them, both faces in the upper half of the frame.
+| Asset ID | `DS-GUIDE-HERO-01`（Owner の正式 PNG 名 `DS-GUIDE-HERO-01_dreamin-spiral-guide-hero.png` ・ 1672×941 ・ byte 一致を確認） |
+| Visual Role | Dialogue ＋ Daily Life ＋ Human |
+| Meaning | ちゃんと相談内容を整理してから来るのではなく、今あることを、そのまま誰かと話してみる |
+| Master | OS repo `assets/png/b8e-public-visual/ds/DS-GUIDE-HERO-01.png`（Inventory ・ Implementation Map 更新） |
+| 公開版 | `assets/dreamin-spiral/guide/hero-{640,960,1280,1672}.{avif,webp}`（WebP q72 ・ AVIF q52 ・ 13〜61 KB）。Master PNG は public に置かない |
+| Layout | My Life ・ Community ・ 3 Weeks と同じ A21-b：Desktop（≥ 880px）は Visual ｜ Copy の 2 列、それ未満は Visual → Copy の縦積みで **max-width 560px**。画像と Copy は別面 |
+| Markup | `<picture>`（AVIF ／ WebP ・ srcset 4 幅 ・ `sizes="(max-width: 879px) min(560px, calc(100vw - 48px)), 500px"`）・ `width="1672" height="941"`（CLS 0）・ `fetchpriority="high"` ・ `decoding="async"` |
+| Role separation | Home ／ TOP の Guide Card は `DS-GUIDE-01` のまま（KEEP） |
 
 ## Known Issue（External Exposure Layer へ）
 
@@ -74,5 +62,6 @@
 | CTA | Hero の Booking link 0 ・ `data-gas-transition` link は Final の 1 件のみ ・ Continue Cue → `#permission`（375px で Permission の見出しが上端付近に着地） |
 | GAS Transition | Final CTA の click で Transition View（「Guide（無料）の予約ページを開いています。」）が表示される（遷移の timer だけを止めて検証。GAS へは移動していない） |
 | KEEP（byte） | `<head>`（Meta ／ OGP）・ `</main>` 以降（`gas-transition.js` の読み込みを含む）・ Permission list ・ Meaning の見出しと 2 段落 ・ Offer（`dl` ＋ Statement）・ Final の Booking link |
-| Responsive | 320 ・ 375 ・ 390 ・ 430 ・ 768 ・ 820 ・ 879 ・ 1024 ・ 1280 ・ 1440 で overflow 0 ・ 1〜2 文字の孤立行 0（Offer の「無料」は値そのもの）・ 画像 0 のため Visual 巨大化なし |
+| Responsive | 320 ・ 375 ・ 390 ・ 430 ・ 768 ・ 820 ・ 879 ・ 1024 ・ 1280 ・ 1440 で overflow 0 ・ 1〜2 文字の孤立行 0（Offer の「無料」は値そのもの） |
+| Hero Visual 実寸 | 320：272×153 ・ 375：327×184 ・ 390：342×192 ・ 430：382×215 ・ **768 ／ 820 ／ 879：560×315（上限で停止）**・ 1024：444×250 ・ 1280 ／ 1440：512×288（2 列）。全幅で 16:9（1.778）・ 二人とも顔の切れなし ・ Headline は全幅で First View 内 |
 | Regression | `style.css` ・ `gas-transition.js` ・ Dreamin' Spiral 🌱 Home ・ 他 Service Page の差分 0 |
