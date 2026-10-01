@@ -71,3 +71,7 @@ Business Creation を知らない人が、最初から「Creation System」を�
 | Responsive | 320 ・ 375 ・ 390 ・ 430 ・ 768 ・ 820 ・ 879 ・ 1024 ・ 1280 ・ 1440 で overflow 0 ・ 1〜2 文字の孤立行 0 |
 | Hero Visual 実寸 | 320：272×153 ・ 375：327×184 ・ 390：342×192 ・ 430：382×215 ・ **768 ／ 820 ／ 879：560×315（上限で停止）**・ 1024：444×250 ・ 1280 ／ 1440：512×288（2 列）。全幅で 16:9（1.778）・ 顔の切れなし ・ 手元と付箋が見える |
 | Regression | `style.css` ・ `gas-transition.js` ・ Dreamin' Spiral 🌱 Home ・ TOP ・ 他 Service Page の差分 0 |
+
+## Entry Alignment Tuning v1（2026-10-02 ・ ACR-20261002-007 ・ Architect Review 待ち）
+
+Final の Optional Secondary を「まずGuide（無料）で話してみる」→「**Guide（無料）について見る**」へ（Web Entry Standard v1 §11 ・ §13 ・ Audit ACR-20261002-005 の Future TUNE）。「まず」が Guide を先に通る Progression に読めるため外し、Project Creation ・ About と同じ Copy に揃えた（行き先は Guide LP なので「見る」が正確 ・ Primary「Business Creationについて話してみる」と「話してみる」が並ばない）。Primary ・ href ・ class ・ 本文は不変。上の表 ・ 箇条書きの旧 Copy は vNext 時点の記録

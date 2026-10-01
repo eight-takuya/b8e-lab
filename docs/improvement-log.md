@@ -6,6 +6,17 @@
 ---
 
 ---
+## [2026-10-02] — Entry Alignment Tuning v1（**Architect Review 待ち**・Preview のみ）
+
+**Scope:** `dreamin-spiral/index.html`（Library の link 1 行）, `dreamin-spiral/business-creation/index.html`（Optional Guide の Copy 1 行）, docs
+**Triggered by:** Architect Request（ACR-20261002-007）
+
+- Home「Libraryを見る」：`.ds-service-cta`（Action 表現）→ 既存の `.ds-service-secondary`（Secondary Text Link）。Copy ・ href は不変
+- Business Creation：「まずGuide（無料）で話してみる」→「Guide（無料）について見る」（Project Creation ・ About と同じ）
+- CSS の変更なし ・ 他ページの変更なし
+
+---
+
 ## [2026-10-02] — Web Entry Standard v1 への参照（docs のみ ・ **Architect Review 待ち**）
 
 **Scope:** `docs/*-entry-architecture-vnext.md`（8）, `docs/project-creation-public-reality-reset-vnext.md`, `docs/search-content-layer-v1.md`
