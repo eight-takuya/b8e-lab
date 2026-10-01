@@ -3568,3 +3568,24 @@ body:not(.ds-page) .resonance-questions p + p {
     margin-right: auto;
   }
 }
+
+/* ------------------------------------------------------------
+   A22. Project Creation｜Public Reality Reset（2026-10-01 ・ ACR-20261001-012）
+   19 Section を 13 Section に統合したため、同じ Section 内の小見出し（3 Roles ・ 12 Outputs ・ 一緒にProjectを見る人）を
+   h3 で置く。ds-page の汎用 .section-block h3（小さな大文字ラベル）ではなく、h2 より一段小さい本文見出しにする。
+   正本：docs/project-creation-public-reality-reset-vnext.md
+   ------------------------------------------------------------ */
+.ds-service-section h3.pc-subhead {
+  font-size: 0.98rem;
+  font-weight: 500;
+  color: #2a2a2a;
+  letter-spacing: 0.03em;
+  line-height: 1.9;
+  text-transform: none;
+  margin: 44px 0 20px;
+}
+
+/* 3 Roles（dl）の直後に置く「Lens であって選ぶコースではない」の一文を、一覧から少し離す */
+.ds-service-section .pc-roles + p {
+  margin-top: 28px;
+}

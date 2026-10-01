@@ -6,6 +6,53 @@
 ---
 
 ---
+## [2026-10-01] — Project Creation Round 4：Legal ／ Terms の「開講」を「サービス開始」へ（**Architect Review 待ち**・Preview のみ）
+
+**Scope:** `legal/index.html`, `terms/index.html`（Project Creation の 3 箇所ずつ）, `dreamin-spiral/project-creation/index.html`（HTML コメントのみ）, `docs/project-creation-public-reality-reset-vnext.md`
+**Triggered by:** Architect Decision（ACR-20261001-012 Round 4）
+
+- 旧 Cohort 由来の「開講日 ／ 開講前 ／ 開講後」を「サービス開始日 ／ サービス開始前 ／ サービス開始後」へ（Cancellation Policy の意味は変更なし）
+- Canonical の同期は dreamin-spiral-os 側（Offer Definition §6-0 ／ §6-H ほか）
+
+---
+
+## [2026-10-01] — Project Creation Round 3：「いつでも相談できる」Current Reality へ（**Architect Review 待ち**・Preview のみ）
+
+**Scope:** `dreamin-spiral/project-creation/index.html`（12 ・ 13 ・ FAQ ・ Weekly Session）, `dreamin-spiral/project-creation/{apply,thanks,complete}/index.html`, `legal/index.html`, `terms/index.html`, `docs/project-creation-public-reality-reset-vnext.md`
+**Triggered by:** Architect Decision（ACR-20261001-012 Round 3 ・ Owner Reality Review）
+
+- 「現在、募集は行っていません」を撤回し、「Project Creationは、いつでもご相談いただけます。ご希望を伺いながら、実施時期や進め方を一緒に決めていきます。」へ
+- Final Action に Primary「Project Creationについて話してみる」→ /apply/（Project Creation 専用の対話 Form ・ Formspree `maenjvpj` ・ 申込 ・ 契約 ・ 決済ではない）。Guide は Optional
+- /thanks/ ・ /complete/ は個別のご案内へ寄せた neutral state、/legal/ は Project Creation を Current Service として復元（金額は作らない）、/terms/ は旧募集固有の定員記述を外した
+- 旧 Stripe Payment Link の停止は LIVE AUTH REQUIRED のまま
+
+---
+
+## [2026-10-01] — Project Creation Round 2：Hero Visual ＋ 残存 Sales Reality の解消（**Architect Review 待ち**・Preview のみ）
+
+**Scope:** `dreamin-spiral/project-creation/index.html`（Hero を A21-b に）, `dreamin-spiral/project-creation/{thanks,complete}/index.html`, `legal/index.html`, `assets/dreamin-spiral/project-creation/hero-*`（新規）, `docs/project-creation-public-reality-reset-vnext.md`
+**Triggered by:** Architect Decision（ACR-20261001-012 Round 2 ・ AD-1 ／ AD-2）
+
+- Hero に `DS-PROJECT-HERO-01`（3 人が座って話し・聴き・図を書く）を A21-b で実装。Copy は変更なし
+- /thanks/ ・ /complete/ を「現在、Project Creationの募集は行っていません。」の閉じた状態に（支払い導線 ・ 金額 ・ 振込案内 ・ 開始日時を DOM から除去）
+- /legal/ の Project Creation の Current Sales Terms を外し、Current Note 1 か所に統一（他 Service は変更なし）
+- Stripe の旧 Payment Link の停止は External Action Pending（CLI が Sandbox のみ認証済み）
+
+---
+
+## [2026-10-01] — Project Creation Public Reality Reset + Entry Architecture vNext（**Architect Review 待ち**・Preview のみ）
+
+**Scope:** `dreamin-spiral/project-creation/index.html`, `dreamin-spiral/project-creation/apply/index.html`, `style.css`（A22）, `docs/project-creation-public-reality-reset-vnext.md`（新規）
+**Triggered by:** Architect Decision（ACR-20261001-012）
+
+- Founding Cohort（2026-10-01 開始予定）は実施しないため、Public を「現在、Project Creationの募集は行っていません。」の **Evergreen Page** にした
+- 19 Section → 13 Section（Reality → Recognition → Meaning → Shift → How It Works → AI → 12 Weeks → Real Work → Support & Outputs → Who / Partner → FAQ → Current Availability → Open Action）
+- **Public から外したもの**：FOUNDING COHORT ・ 第1期限定 ・ 148,000円 ・ 198,000円 ・ 最大6名 ・ 10/1 開始 ・ 9/30 締切 ・ 受付終了の表示 ・ 申込 CTA ・ Capacity ／ Price ／ Founding Cohort Section ・ 返金 FAQ ・ My Page（将来的に提供）・ Community 特典
+- `/apply/` を閉じた状態に（Form ・ 送信 ・ cohort.js なし）。cohort.js は削除せず、どこからも読み込まない
+- Offer Definition ・ Legal ・ thanks ・ complete は無変更（/thanks/ の Stripe LIVE Link と Legal の販売中表記は Architect へ報告）
+- Visual は生成していない（既存 `DS-PROJECT-01` は Hero の Direction に合わないため再利用せず、Asset 案を Architect へ）
+- QA：LP 10 幅で overflow 0 ・ 孤立行 0 ・ Sales 表示 0 件
+
 ## [2026-10-01] — Business Creation｜Hero Visual（DS-BUSINESS-HERO-01）（**Architect Review 待ち**・Preview のみ）
 
 **Scope:** `dreamin-spiral/business-creation/index.html`（Hero の figure のみ）, `assets/dreamin-spiral/business-creation/hero-*`, `docs/business-creation-entry-architecture-vnext.md`
