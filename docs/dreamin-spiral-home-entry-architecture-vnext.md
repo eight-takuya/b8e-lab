@@ -235,3 +235,7 @@ SEO keyword strategy ・ SNS ・ YouTube ・ External Exposure strategy ・ OGP 
 
 Architect Request §28 の 22 項目のうち **1〜15 ・ 21 ・ 22 は実装で満たしている**（engineer-report.md `## Self-check`）。
 **16〜20 は Owner / Architect Reality Review が必要**で、Engineer は PASS 判定をしない。
+
+## Entry Alignment Tuning v1（2026-10-02 ・ ACR-20261002-007 ・ Architect Review 待ち）
+
+Library の link「Libraryを見る」を Action 表現の `.ds-service-cta` から、既存の Secondary Text Link `.ds-service-secondary`（「問いから読む」と同じ）へ（Web Entry Standard v1 §7 ・ Audit ACR-20261002-005 の Future TUNE）。Library は Related ／ Navigation で Action ではない。Copy ・ href ・ Library Section は不変、新しい style は追加していない。上の「`.ds-service-cta` は変更していない」は vNext 時点の記録
