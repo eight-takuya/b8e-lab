@@ -2,7 +2,7 @@
 
 **Status:** Implemented（Preview・Architect Review 待ち）
 **Date:** 2026-10-01
-**Scope:** `dreamin-spiral/3-weeks/index.html` のみ（`style.css` の変更なし。A21 の Reality Hero ・ Continue Cue を再利用）
+**Scope:** `dreamin-spiral/3-weeks/index.html`, `assets/dreamin-spiral/3-weeks/hero-*`（`style.css` の変更なし。A21 ／ A21-b の Reality Hero ・ Scene Hero ・ Continue Cue を再利用）
 **AI Creation Request:** ACR-20261001-005
 
 ## Core Principle
@@ -35,33 +35,20 @@
 - Hero と Meaning の長い行には既存の `.ds-phrase` を付けた（語の途中や 1〜2 文字だけで折り返さないため。文言は不変）
 - My Life ／ Community と同じ Entry の型（Reality Hero ＋ Continue Cue）だが、Rhythm の `セッション ⇄ 日常のリアリティ` など 3 Weeks 固有の表現はそのまま
 
-## Visual（DS-3WEEKS-01）の評価と Architect への返却
+## Hero Visual（AD-1 決着 ・ 2026-10-01）
 
-既存 `DS-3WEEKS-01`（1672×941 ・ Process / Time）は **Hero に再利用しない**。Hero は Text のみで実装した。
+**Architect Decision：** 既存 `DS-3WEEKS-01` は LP Hero に使わない（非日常の湖 ・ 山 ・ リゾート感 ／ Process ・ Time が見えない ／ 遠くを見る構図が自己啓発 ・ Healing 寄り ／ Home ・ TOP Card と同一）。新規 **`DS-3WEEKS-HERO-01`** を採用。
 
-| 観点 | 評価 |
+| 項目 | 内容 |
 |---|---|
-| Hero Reality に自然か | ✗ 朝日の湖と山を望むテラス。「日常の延長」ではなく**非日常のリゾート**（Direction の避けるもの） |
-| Process ／ Time | ✗ 一人の一瞬の場面。時間の経過 ・ 日常と対話の往復は写っていない（Asset Requirements v1 でも「Process が無い」と記録済み） |
-| 講座 ・ 研修 ・ ワークショップ | ○ そうは見えない |
-| Success Visual | △ 遠くを見て微笑む姿勢が「前向きな未来」寄り |
-| Healing ／ Spiritual 広告 | △ 絶景 ・ 柔らかい逆光で Healing retreat に寄る |
-| 自己啓発感 | △ ノートとペンを手に考える構図（Direction の「notebook の過剰な自己啓発感」） |
-| Home Card との重複 | ✗ Dreamin' Spiral 🌱 Home と TOP の 3 Weeks Card で使用中 |
-| 16:9 ・ 質 | ○ |
-
-→ Stop Condition「Existing Visual 不適合で新規 Asset が必要」。以下を提案として返す（画像は生成していない）。
-
-- **Page:** `/dreamin-spiral/3-weeks/`
-- **Section:** 01 Hero（My Life ／ Community と同じ A21-b にすれば：Desktop は Visual ｜ Copy、880px 未満は縦積みで max-width 560px）
-- **Asset ID 案:** `DS-3WEEKS-HERO-01`
-- **Formal Filename 案:** `DS-3WEEKS-HERO-01_dreamin-spiral-3-weeks-hero.png`
-- **Visual Role:** Process ／ Time ＋ Daily Life ＋ Human
-- **Meaning:** 何かを解決した瞬間ではなく、日常を生きながら、少しずつ自分を見ていく時間
-- **Direction:** 40〜50 代の人物が一人 ・ ふつうの自宅 ／ 仕事場の一角 ・ 平日の午後の自然光 ・ 手を止めて少し考えている（窓の外 ／ 手元のカップ）・ 机の上に日常の物（鍵 ・ 郵便 ・ 飲みかけのカップ ・ 閉じたノート PC）・ 時間の経過を感じる光や影 ・ 表情は穏やかで、笑顔でも深刻でもない ・ 絶景 ・ リゾート ・ 瞑想 ・ セミナー ・ ノートに書き込む自己啓発の構図なし ・ 16:9 で人物は中くらい、余白あり
-- **使用箇所:** 3 Weeks Tuning LP の Hero のみ（Home ／ TOP の 3 Weeks Card は `DS-3WEEKS-01` のまま）
-- **Prompt 案:**
-  > A quiet, documentary-style photograph of a Japanese person in their late 40s at home on an ordinary weekday afternoon, sitting at a simple wooden table near a window. Soft natural light with long, gentle shadows suggesting time passing. They have paused mid-day, holding a half-finished mug, looking slightly away in calm thought; not smiling broadly, not troubled. Everyday objects nearby: keys, a few letters, a closed laptop. Plain, lived-in room, muted warm palette. No scenic view, no resort, no meditation pose, no seminar, no notebook journaling, no success pose. Wide 16:9 composition, person at medium size with space around them, face in the upper-middle area so a top-anchored crop keeps it.
+| Asset ID | `DS-3WEEKS-HERO-01`（Owner の正式 PNG 名 `DS-3WEEKS-HERO-01_dreamin-spiral-3-weeks-hero.png` ・ 1672×941 ・ byte 一致を確認） |
+| Visual Role | Process / Time ＋ Daily Life ＋ Human |
+| Meaning | 何かを解決した瞬間ではなく、日常を生きながら、少しずつ自分を見ていく時間 |
+| Master | OS repo `assets/png/b8e-public-visual/ds/DS-3WEEKS-HERO-01.png`（Inventory ・ Implementation Map 更新） |
+| 公開版 | `assets/dreamin-spiral/3-weeks/hero-{640,960,1280,1672}.{avif,webp}`（WebP q72 ・ AVIF q52 ・ 12〜56 KB）。Master PNG は public に置かない |
+| Layout | My Life ・ Community と同じ A21-b：Desktop（≥ 880px）は Visual ｜ Copy の 2 列、それ未満は Visual → Copy の縦積みで **max-width 560px**。画像と Copy は別面 |
+| Markup | `<picture>`（AVIF ／ WebP ・ srcset 4 幅 ・ `sizes="(max-width: 879px) min(560px, calc(100vw - 48px)), 500px"`）・ `width="1672" height="941"`（CLS 0）・ `fetchpriority="high"` ・ `decoding="async"` |
+| Role separation | Home ／ TOP の 3 Weeks Card は `DS-3WEEKS-01` のまま（KEEP） |
 
 ## Known Issue（External Exposure Layer へ）
 
@@ -74,5 +61,6 @@
 | Section 順 | Hero → 今、こんなことが気になっているなら → 「気になる」や「悩み」から自分に気づく3週間 → 日常を生きながら、3週間を一緒に見ていく。→ この時間で大切にしていること → 内容 → 今、話してみたいことがあれば。 |
 | CTA | Hero の申込 CTA 0 ・ 申込 CTA は Final の 1 件のみ（`/dreamin-spiral/3-weeks/apply/`）・ Continue Cue → `#recognition` |
 | KEEP（byte） | `<head>`（Meta ／ OGP）・ Footer 以降 ・ Recognition list ・ Rhythm ・ What We Hold ・ Offer（Note 含む）・ Final の各 block が origin/main と一致 |
-| Responsive | 320 ・ 375 ・ 390 ・ 430 ・ 768 ・ 820 ・ 879 ・ 1024 ・ 1280 ・ 1440 で overflow 0 ・ 1〜2 文字の孤立行 0 ・ 画像 0 のため Visual 巨大化なし |
+| Responsive | 320 ・ 375 ・ 390 ・ 430 ・ 768 ・ 820 ・ 879 ・ 1024 ・ 1280 ・ 1440 で overflow 0 ・ 1〜2 文字の孤立行 0 |
+| Hero Visual 実寸 | 320：272×153 ・ 375：327×184 ・ 390：342×192 ・ 430：382×215 ・ **768 ／ 820 ／ 879：560×315（上限で停止）**・ 1024：444×250 ・ 1280 ／ 1440：512×288（2 列）。全幅で 16:9（1.778）・ 顔の切れなし |
 | Regression | `style.css` ・ apply ・ thanks ・ complete ・ Dreamin' Spiral 🌱 Home ・ 他 Service Page の差分 0 |

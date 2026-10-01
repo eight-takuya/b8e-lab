@@ -46,8 +46,20 @@
          「3週間のサービスです」から始めず、まだ言葉になっていない“気になり”から始める。
          正本：docs/3weeks-entry-architecture-vnext.md -->
 
-    <!-- 01 Hero — Reality。Apply CTA は置かない（Level 1 Continue のみ） -->
-    <section class="ds-service-hero ds-service-hero--reality">
+    <!-- 01 Hero — Reality。Apply CTA は置かない（Level 1 Continue のみ）
+         Visual｜DS-3WEEKS-HERO-01（Process / Time ＋ Daily Life ＋ Human ／「何かを解決した瞬間ではなく、日常を生きながら、少しずつ自分を見ていく時間」・ 16:9）。
+         My Life ・ Community と同じ A21-b：Desktop（≥ 880px）は Visual ｜ Copy の 2 列、それ未満は Visual → Copy の縦積み（画像は max-width 560px）。
+         Home ／ TOP の 3 Weeks Card は DS-3WEEKS-01 のまま（Role separation）。 -->
+    <section class="ds-service-hero ds-service-hero--reality ds-service-hero--scene">
+      <div class="ds-service-hero-inner">
+      <figure class="ds-service-hero-figure">
+        <picture>
+          <source type="image/avif" srcset="/assets/dreamin-spiral/3-weeks/hero-640.avif 640w, /assets/dreamin-spiral/3-weeks/hero-960.avif 960w, /assets/dreamin-spiral/3-weeks/hero-1280.avif 1280w, /assets/dreamin-spiral/3-weeks/hero-1672.avif 1672w" sizes="(max-width: 879px) min(560px, calc(100vw - 48px)), 500px">
+          <source type="image/webp" srcset="/assets/dreamin-spiral/3-weeks/hero-640.webp 640w, /assets/dreamin-spiral/3-weeks/hero-960.webp 960w, /assets/dreamin-spiral/3-weeks/hero-1280.webp 1280w, /assets/dreamin-spiral/3-weeks/hero-1672.webp 1672w" sizes="(max-width: 879px) min(560px, calc(100vw - 48px)), 500px">
+          <img src="/assets/dreamin-spiral/3-weeks/hero-960.webp" width="1672" height="941" fetchpriority="high" decoding="async" alt="午後の光が入る部屋で、カップを前に机で手を止め、窓の外を見ている人">
+        </picture>
+      </figure>
+      <div class="ds-service-hero-copy">
       <span class="ds-service-eyebrow">3 Weeks Tuning</span>
       <h1 class="ds-service-title">
         なんとなく気になる。<br>
@@ -68,6 +80,8 @@
         <span>3週間について見てみる</span>
         <span class="ds-service-cue-arrow" aria-hidden="true">↓</span>
       </a>
+      </div>
+      </div>
     </section>
 
     <div class="page-content">
