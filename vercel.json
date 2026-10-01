@@ -12,6 +12,12 @@
     { "source": "/academy/pdf/prescription-release-should.pdf", "destination": "/dreamin-spiral/library/pdf/prescription-release-should.pdf", "permanent": true },
     { "source": "/academy/pdf/prescription-paradox-words.pdf", "destination": "/dreamin-spiral/library/pdf/prescription-paradox-words.pdf", "permanent": true },
     { "source": "/academy/pdf/inner-weather-reality.pdf", "destination": "/dreamin-spiral/library/pdf/inner-weather-reality.pdf", "permanent": true },
-    { "source": "/academy/pdf/night-letter.pdf", "destination": "/dreamin-spiral/library/pdf/night-letter.pdf", "permanent": true }
+    { "source": "/academy/pdf/night-letter.pdf", "destination": "/dreamin-spiral/library/pdf/night-letter.pdf", "permanent": true },
+    { "source": "/academy", "destination": "/dreamin-spiral/", "permanent": true },
+    { "source": "/academy/", "destination": "/dreamin-spiral/", "permanent": true },
+    { "source": "/scta", "destination": "/legal/", "permanent": true },
+    { "source": "/about", "destination": "/about.html", "permanent": true },
+    { "source": "/about/", "destination": "/about.html", "permanent": true },
+    { "source": "/about/mission/", "destination": "/about.html", "permanent": true }
   ]
 }

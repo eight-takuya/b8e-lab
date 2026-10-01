@@ -6,6 +6,18 @@
 ---
 
 ---
+## [2026-10-01] — Search & External Exposure Layer vNext（**Architect Review 待ち**・Preview のみ）
+
+**Scope:** 9 target pages の head（title ・ description ・ OGP ・ Twitter ・ JSON-LD）, PC ・ BC の About link, `assets/ogp/`（About のみ）, `sitemap.xml`, `vercel.json`, `docs/search-external-exposure-vnext.md`
+**Triggered by:** Architect Request（ACR-20261001-017）
+
+- Search Intent = Page Meaning で 9 ページの SEO Title ／ Meta を設計（`ページ名｜意味 | B8E`）。Social は各ページの H1 ／ Hero の文
+- Structured Data：TOP に Organization ＋ WebSite、About に ProfilePage ＋ Person、Home と 6 Service に BreadcrumbList
+- About の OGP 画像を現行 Hero に合わせて再生成 ・ sitemap の lastmod を実際の更新日へ ・ 旧サイトの 404 URL のうち対応ページが明確なものを 308
+- 本文 ・ H1 ・ Offer ・ 価格は変更なし
+
+---
+
 ## [2026-10-01] — About Entry Architecture vNext（**Architect Review 待ち**・Preview のみ）
 
 **Scope:** `about.html`, `docs/about-entry-architecture-vnext.md`（新規）
