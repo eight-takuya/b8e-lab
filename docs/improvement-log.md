@@ -6,6 +6,16 @@
 ---
 
 ---
+## [2026-10-01] — B8E TOP ・ 問いから読む Quiet Entry（**Architect Review 待ち**・Preview のみ）
+
+**Scope:** `index.html`（Dreamin' Spiral 🌱 Section の Ending の直後）, `style.css`（A24）, `docs/b8e-top-entry-architecture-vnext.md`
+**Triggered by:** Architect Request（ACR-20261001-021）
+
+- TOP に「問いから読む」の Quiet Entry（h3 ・ Lead ・ 代表 Question Q-0001 ・ Hub への text link）。Service ／ Card ／ Button にしない
+- Search Content Layer（Hub ・ 5 Question ・ Dreamin' Spiral 🌱 Home）は変更なし
+
+---
+
 ## [2026-10-01] — Search Content Layer v1 ＋ Pilot 5 Questions（**Architect Review 待ち**・Preview のみ）
 
 **Scope:** `dreamin-spiral/questions/`（Hub ＋ 5 Question）, `tools/search-content/`, `assets/ogp/questions/`, `style.css`（A23）, `dreamin-spiral/index.html`（小さな「問いから読む」）, `sitemap.xml`, `docs/search-content-layer-v1.md`

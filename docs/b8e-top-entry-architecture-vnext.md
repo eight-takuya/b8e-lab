@@ -288,3 +288,11 @@ External Exposure（検索 ・ SNS ・ OGP 等）は次の Layer で扱う。今
 > **B8E が何者かを先に説明するのではなく、訪れた人が自分の今に気づき、その先で B8E の意味と出会える TOP にする。**
 >
 > **思想を弱くするのではない。思想が届く順番を変える。**
+
+## 問いから読む Quiet Entry（2026-10-01 ・ ACR-20261001-021）
+
+- **位置：** Dreamin' Spiral 🌱 Section（`#dreamin-spiral`）の中、Section Ending（「Dreamin' Spiral 🌱について」）の直後。次は従来どおり「B8Eとして在るということ」
+- **意味：** Dreamin' Spiral 🌱 の Service Entry とは別に、自分の中にある問いからその世界へ入る **Quiet Entry**。Service でも Funnel でもない（7 つ目の Service にしない）
+- **形：** h3「問いから読む」（Section の h2 より小さい）・ Lead 2 段 ・「たとえば、こんな問いから。」・ 代表 Question（Q-0001 固定 ・ text link ＋ 小さな →）・「ほかの問いも読んでみる →」（Secondary text link）。細い線と余白だけで区切り、Card ／ Button ／ 画像は使わない
+- **役割分担：** TOP ＝ 1 Question ＋ Hub（存在を知る）／ Dreamin' Spiral 🌱 Home ＝ 3 Questions ＋ Hub（少し覗いてみる）／ Hub（問いから選ぶ）／ Question Page（ひとつの問いを見る）
+- 正本：dreamin-spiral-os `docs/repository-architecture/search-content-standard-v1.md` §15
