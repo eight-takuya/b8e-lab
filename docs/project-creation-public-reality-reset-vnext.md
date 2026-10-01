@@ -1,8 +1,8 @@
 # Project Creation Public Reality Reset + Entry Architecture vNext
 
-**Status:** Implemented（Preview・Architect Review 待ち）
+**Status:** Round 2 Implemented（Preview・Architect Review 待ち）
 **Date:** 2026-10-01
-**Scope:** `dreamin-spiral/project-creation/index.html`, `dreamin-spiral/project-creation/apply/index.html`, `style.css`（A22 ・ 2 rules）
+**Scope:** `dreamin-spiral/project-creation/index.html`, `dreamin-spiral/project-creation/apply/index.html`, `style.css`（A22 ・ 2 rules）／ Round 2：`dreamin-spiral/project-creation/{thanks,complete}/index.html`, `legal/index.html`, `assets/dreamin-spiral/project-creation/`
 **AI Creation Request:** ACR-20261001-012
 
 ## Public Current Reality
@@ -79,7 +79,7 @@
 - **Prompt 案:**
   > A quiet, documentary-style 16:9 photograph of three Japanese colleagues (one in their late 40s) seated around a plain table in the corner of an ordinary small office on a weekday afternoon, soft natural window light. Everyone is seated at the same level. One person is explaining a situation, one is listening, and one is sketching a simple structure diagram on paper to organize it. A laptop, a notebook and a few sticky notes are on the table but secondary. Calm, focused expressions, no big smiles. Work in progress, not a finished presentation. No one standing, no whiteboard presentation, no handshake, no luxury office, no scrum ceremony, no project-management software screen, no floating UI, no AI robot, no neon, no celebration, no scenic view. Wide 16:9 composition (1672×941), people at medium size with space around them, faces in the upper half of the frame.
 
-## Known Issues ／ Architect への返却（この Request では変更していない）
+## Known Issues ／ Architect への返却（Round 1 時点 ・ 1〜3 と 5 は Round 2 で解決）
 
 1. **/thanks/ に Stripe LIVE Payment Link（148,000円 ・ `plink_1UIxv88tXYwNlHqEJkFOfNPw`）と銀行振込の案内が残っている**（noindex ・ 直接アクセスで表示される）。/apply/ を閉じたので正規の導線からは到達しないが、Stripe 側の Payment Link 自体は有効のまま。Payment Link の停止は Owner の Stripe 操作で、/thanks/ ・ /complete/ をどう扱うかは Architect の判断が要る
 2. **/complete/ に「Project Creationは、2026年10月1日（木）20:00に始まります。」が残っている**（noindex ・ 決済後の到達ページ）
@@ -98,3 +98,41 @@
 | /apply/ | `<form>` 0 ・ input ／ textarea ／ button 0 ・ inline script なし ・ Sales 表示 0 ・ LP ／ Guide への link のみ ・ 320 ／ 375 ／ 1280 で overflow 0 |
 | Responsive（LP） | 320 ・ 375 ・ 390 ・ 430 ・ 768 ・ 820 ・ 879 ・ 1024 ・ 1280 ・ 1440 で overflow 0 ・ 1〜2 文字の孤立行 0 ・ 画像なし |
 | Regression | thanks ・ complete ・ cohort.js ・ legal ・ TOP ・ Home ・ gas-transition.js の差分 0。`style.css` は末尾に A22（2 rules）を足しただけ |
+
+## Round 2（2026-10-01 ・ AD-1 Hero Visual ＋ AD-2 残存 Sales Reality）
+
+### AD-1 — Hero Visual
+
+| Asset ID | Section | Visual Role | Meaning | 公開版 |
+|---|---|---|---|---|
+| `DS-PROJECT-HERO-01` | 01 Hero | Project ＋ Human ＋ Collaboration ＋ Structure ＋ Reality | Project を管理している人ではなく、人 ・ Business ・ Technology をつなぎながら、Project を創っている人 | `assets/dreamin-spiral/project-creation/hero-{640,960,1280,1672}.{avif,webp}`（AVIF 22〜61KB）|
+
+- Owner の正式 PNG（`DS-PROJECT-HERO-01_dreamin-spiral-project-creation-hero.png` ・ 1672×941 ・ 16:9）をそのまま使った（crop なし）。Master は dreamin-spiral-os `assets/png/b8e-public-visual/ds/DS-PROJECT-HERO-01.png`（byte 一致）
+- Layout は A21-b（`.ds-service-hero--scene`）：≥ 880px は Visual ｜ Copy、880px 未満は Visual → Copy の縦積みで画像は max-width 560px。`fetchpriority="high"` ・ `width`/`height` 指定（CLS なし）
+- Hero の Copy ・ Positioning ・ Continue Cue は byte で変更なし（`<div>` で包んだだけ）。Home ／ TOP の Card は `DS-PROJECT-01` のまま
+
+### AD-2 — /thanks/ ・ /complete/ ・ /legal/
+
+- **/thanks/ ・ /complete/**：/apply/ と同じ閉じた状態にした（h1「現在、Project Creationの募集は行っていません。」＋ Architect 指定の Body ＋「Project Creationについて見る」＋ 任意の Guide）。支払いへの導線 ・ 金額 ・ 振込の案内 ・ 開始日時 ・ 受付完了 ・ 参加方法の案内は **DOM から除去**（CSS で隠していない）。旧版は git history（bf33b85 以前）に残る
+- 両ページの `<title>` ／ og:title ／ meta description ／ og:description は「お申し込みを受け付けました」「お支払いを受け付けました」という現在と矛盾する表示だったため、/apply/ と同じ考え方で最小限だけ直した（title は LP の Section 名「現在の募集について」を流用）。`noindex` はそのまま
+- **/legal/**：Project Creation の Current Sales Terms（料金一覧の行 ・ Founding Cohort の説明 ・ 支払方法 ・ 支払時期 ・ 役務の提供時期 ・ キャンセル／返金）を外し、「販売価格・役務の対価」に Current Note を 1 か所だけ置いた（重複を避けるため、他の見出しには置いていない）。他 Service の記述は byte で変更なし。最終更新日を 2026年10月1日 に更新
+- **/terms/**（利用規約 第9条の2）は KEEP 指定のため変更していない（「定員は各期ごとに定めます（Founding Cohortは6名）」は現在の販売表示ではない）→ Known Issue
+- LP の HTML コメントにあった内部の事情（旧募集を「実施しない」）を、表示と同じ「現在は募集を行っていない」に揃えた（表示テキストの変更なし）
+
+### Stripe（旧 Founding Cohort の Payment Link）
+
+- Engineer 環境の Stripe CLI は **Sandbox の context だけが認証済み**で、Live の Payment Link を操作できない（`--live` は sandbox context のため実行されない）。Live を操作するには Stripe CLI の再認証（Owner の承認）が要る
+- そのため Prompt §33 に従い：Public HTML から Payment Link を完全に除去 ・ /apply/ ・ /thanks/ ・ /complete/ を閉じた状態 ・ 直接の Public 導線 0 を確認し、Payment Link の停止だけを **External Action Pending** とした
+- Product ／ Price ／ 履歴には触れていない
+
+### Verification（Round 2 ・ ローカル静的配信で実測）
+
+| 項目 | 結果 |
+|---|---|
+| Hero（10 幅） | 320 ・ 375 ・ 390 ・ 430 ・ 768 ・ 820 ・ 879 ・ 1024 ・ 1280 ・ 1440 で overflow 0 ・ 孤立行 0 ・ 画像は全幅 16:9。320〜430 → 272〜382 幅（全幅）／ 768 ・ 820 ・ 879 → 560×315（上限で停止）／ 1024 → 444×250 ／ 1280 ・ 1440 → 512×288。Hero の CTA 0 ・ Continue → `#recognition` |
+| /thanks/ | form ・ input ・ button 0 ・ Stripe ／ Payment Link ID ／ 金額 ／ 銀行 ／ 口座 ／ 振込 ／ Founding ／ Welcome の文字列が HTML source に 0 ・ link は LP と Guide だけ ・ overflow 0 |
+| /complete/ | Founding ／ 10月1日 ／ 20:00 ／ Zoom ／ 1on1 ／ Start ／ Welcome ／ 受け付けました ／ 全12回 が HTML source に 0 ・ link は LP と Guide だけ ・ overflow 0 |
+| /apply/ | form 系 0 ・ Formspree 0 ・ cohort.js の読み込みなし（Round 1 のまま）|
+| /legal/ | Project Creation の記述は Current Note 1 か所だけ ・ Founding ／ 148,000 ／ 198,000 ／ 定員6名 ／ 9月30日 ／ 開講日 0 ・ 他 Service の料金表示はすべて残っている ・ overflow 0 |
+| 公開 source 全体 | Payment Link ID ・ `buy.stripe.com` の Project Creation 分 0（3 Weeks ・ My Life の thanks の Stripe link はそのまま）|
+| cohort.js | 削除なし ・ どのページからも読み込みなし |

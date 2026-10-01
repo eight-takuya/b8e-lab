@@ -6,6 +6,18 @@
 ---
 
 ---
+## [2026-10-01] — Project Creation Round 2：Hero Visual ＋ 残存 Sales Reality の解消（**Architect Review 待ち**・Preview のみ）
+
+**Scope:** `dreamin-spiral/project-creation/index.html`（Hero を A21-b に）, `dreamin-spiral/project-creation/{thanks,complete}/index.html`, `legal/index.html`, `assets/dreamin-spiral/project-creation/hero-*`（新規）, `docs/project-creation-public-reality-reset-vnext.md`
+**Triggered by:** Architect Decision（ACR-20261001-012 Round 2 ・ AD-1 ／ AD-2）
+
+- Hero に `DS-PROJECT-HERO-01`（3 人が座って話し・聴き・図を書く）を A21-b で実装。Copy は変更なし
+- /thanks/ ・ /complete/ を「現在、Project Creationの募集は行っていません。」の閉じた状態に（支払い導線 ・ 金額 ・ 振込案内 ・ 開始日時を DOM から除去）
+- /legal/ の Project Creation の Current Sales Terms を外し、Current Note 1 か所に統一（他 Service は変更なし）
+- Stripe の旧 Payment Link の停止は External Action Pending（CLI が Sandbox のみ認証済み）
+
+---
+
 ## [2026-10-01] — Project Creation Public Reality Reset + Entry Architecture vNext（**Architect Review 待ち**・Preview のみ）
 
 **Scope:** `dreamin-spiral/project-creation/index.html`, `dreamin-spiral/project-creation/apply/index.html`, `style.css`（A22）, `docs/project-creation-public-reality-reset-vnext.md`（新規）
