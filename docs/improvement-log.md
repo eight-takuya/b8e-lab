@@ -6,6 +6,29 @@
 ---
 
 ---
+## [2026-10-01] — Guide｜Hero Visual（DS-GUIDE-HERO-01）（**Architect Review 待ち**・Preview のみ）
+
+**Scope:** `dreamin-spiral/guide/index.html`（Hero の figure のみ）, `assets/dreamin-spiral/guide/hero-*`, `docs/guide-entry-architecture-vnext.md`
+**Triggered by:** ACR-20261001-006 AD-1 決着（新規 `DS-GUIDE-HERO-01` を Hero に採用）
+
+- Hero に `DS-GUIDE-HERO-01`（16:9）。My Life ・ Community ・ 3 Weeks と同じ A21-b：Desktop は Visual ｜ Copy の 2 列、880px 未満は縦積みで **max-width 560px**（中間幅での巨大化を防止）
+- Home ／ TOP の Guide Card は `DS-GUIDE-01` のまま（Role separation）
+- Copy ・ Continue Cue ・ Section 順 ・ Offer ・ Final ・ Booking URL ・ GAS Transition ・ Meta / OGP ・ `style.css` ・ `gas-transition.js` は無変更（可視テキストが前回と完全一致）
+- QA：320 〜 1440 の 10 幅で 16:9 維持 ・ 画像サイズ（最大 560px）・ overflow 0 ・ 孤立行 0 ・ Transition View 正常
+
+## [2026-10-01] — Guide Entry Architecture vNext（**Architect Review 待ち**・Preview のみ）
+
+**Scope:** `dreamin-spiral/guide/index.html`, `docs/guide-entry-architecture-vnext.md`（新規）
+**Triggered by:** Architect Decision（ACR-20261001-006）
+
+- Experience を **Reality → Permission → Meaning → What Happens → Offer → Action** に
+- Hero の Headline ・ Lead は文言そのまま。**Hero の Booking CTA を REMOVE** し、Continue Cue「Guideについて見てみる ↓」
+- What Happens「話しながら、今の自分を一緒に見ていく。」を Offer の前に ADD（旧 Meaning の最後の段落を MOVE）
+- Final の説明文を Current Booking UX（公開枠あり ／ なし）に合わせて REFRAME
+- **Permission list ・ Meaning ・ Offer（45分 ・ 無料 ・ 営業面談ではありません。）・ Final CTA ・ Booking URL ・ GAS Transition ・ Meta / OGP は無変更**。`style.css` ・ `gas-transition.js` も無変更
+- Visual は生成していない（既存 `DS-GUIDE-01` は Hero の Direction に合わないため再利用せず、Asset 案を Architect へ）
+- QA：10 幅で overflow 0 ・ 孤立行 0 ・ Final CTA の Transition View を確認
+
 ## [2026-10-01] — 3 Weeks Tuning｜Hero Visual（DS-3WEEKS-HERO-01）（**Architect Review 待ち**・Preview のみ）
 
 **Scope:** `dreamin-spiral/3-weeks/index.html`（Hero の figure のみ）, `assets/dreamin-spiral/3-weeks/hero-*`, `docs/3weeks-entry-architecture-vnext.md`

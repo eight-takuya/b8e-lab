@@ -41,28 +41,53 @@
 
   <main>
 
-    <!-- Section 1｜Hero -->
-    <section class="ds-service-hero">
+    <!-- Guide Entry Architecture vNext（2026-10-01 ・ ACR-20261001-006）
+         Experience：Reality → Permission → Meaning → What Happens → Offer → Action。
+         「話す内容が整理できてから来る場所」ではなく、「まだ整理できていないところから、話してみてもよい場所」。
+         正本：docs/guide-entry-architecture-vnext.md -->
+
+    <!-- 01 Hero — Reality（Headline KEEP）。Booking CTA は置かない（Level 1 Continue のみ）
+         Visual｜DS-GUIDE-HERO-01（Dialogue ＋ Daily Life ＋ Human ／「ちゃんと相談内容を整理してから来るのではなく、今あることを、そのまま誰かと話してみる」・ 16:9）。
+         My Life ・ Community ・ 3 Weeks と同じ A21-b：Desktop（≥ 880px）は Visual ｜ Copy の 2 列、それ未満は Visual → Copy の縦積み（画像は max-width 560px）。
+         Home ／ TOP の Guide Card は DS-GUIDE-01 のまま（Role separation）。 -->
+    <section class="ds-service-hero ds-service-hero--reality ds-service-hero--scene">
+      <div class="ds-service-hero-inner">
+      <figure class="ds-service-hero-figure">
+        <picture>
+          <source type="image/avif" srcset="/assets/dreamin-spiral/guide/hero-640.avif 640w, /assets/dreamin-spiral/guide/hero-960.avif 960w, /assets/dreamin-spiral/guide/hero-1280.avif 1280w, /assets/dreamin-spiral/guide/hero-1672.avif 1672w" sizes="(max-width: 879px) min(560px, calc(100vw - 48px)), 500px">
+          <source type="image/webp" srcset="/assets/dreamin-spiral/guide/hero-640.webp 640w, /assets/dreamin-spiral/guide/hero-960.webp 960w, /assets/dreamin-spiral/guide/hero-1280.webp 1280w, /assets/dreamin-spiral/guide/hero-1672.webp 1672w" sizes="(max-width: 879px) min(560px, calc(100vw - 48px)), 500px">
+          <img src="/assets/dreamin-spiral/guide/hero-960.webp" width="1672" height="941" fetchpriority="high" decoding="async" alt="日中の明るい部屋で、木のテーブルを挟んで二人が座り、一人が話し、もう一人が静かに聴いている">
+        </picture>
+      </figure>
+      <div class="ds-service-hero-copy">
       <span class="ds-service-eyebrow">Guide</span>
       <h1 class="ds-service-title">
         今、気になっていることから<br>
         話してみる。
       </h1>
       <p class="ds-service-lead">
-        <span class="ds-phrase">はっきりした悩みや目的がなくても</span><span class="ds-phrase">大丈夫です。</span><br>
-        今、少し気になっていること。<br>
-        なぜか心に残っていること。<br>
-        <span class="ds-phrase">そんなところから、</span><span class="ds-phrase">一緒に話してみる時間です。</span>
+        <span class="ds-phrase">はっきりした悩みや目的がなくても</span><span class="ds-phrase">大丈夫です。</span>
       </p>
-      <!-- 既存 Booking System（Google Apps Script Web App・日時選択）。URL は /academy/session.html と同じ deployment
-           押した瞬間の Transition View: /gas-transition.js（Vercel → GAS Transition Standard v1） -->
-      <a class="ds-service-cta" href="https://script.google.com/macros/s/AKfycbwhwbdcfjjDJ__Cv-J7veUDJerr26FxK1E1OSFXZNdDyBQ4Ty6knD9CkWXyV6-Fqj3zcA/exec?page=booking" data-gas-transition data-transition-eyebrow="Guide" data-transition-heading="Guide（無料）の予約ページを開いています。" data-transition-text="今の自分に少し意識を向けながら、そのままお待ちください。">Guide（無料）に申し込む</a>
+      <p class="ds-service-lead">
+        今、少し気になっていること。<br>
+        なぜか心に残っていること。
+      </p>
+      <p class="ds-service-lead">
+        そんなところから、<br>
+        一緒に話してみる時間です。
+      </p>
+      <a class="ds-service-cue" href="#permission">
+        <span>Guideについて見てみる</span>
+        <span class="ds-service-cue-arrow" aria-hidden="true">↓</span>
+      </a>
+      </div>
+      </div>
     </section>
 
     <div class="page-content">
 
-      <!-- Section 2｜こんな時に -->
-      <div class="section-block ds-service-section">
+      <!-- 02 Permission — KEEP（list は不変）。Booking CTA ・ 料金 ・ 日時はまだ出さない -->
+      <div class="section-block ds-service-section" id="permission">
         <h2>まとまっていなくても大丈夫です。</h2>
         <ul class="ds-service-list">
           <li>最近、何となく気になっていることがある</li>
@@ -73,7 +98,7 @@
         </ul>
       </div>
 
-      <!-- Section 3｜Guideで大切にすること -->
+      <!-- 03 Meaning — KEEP（どんな関わり方をする時間か） -->
       <div class="section-block ds-service-section">
         <h2>答えを出すための時間ではありません。</h2>
         <p>
@@ -84,6 +109,17 @@
           今そこにある感覚や、<br>
           その奥にある自分を一緒に見ていきます。
         </p>
+      </div>
+
+      <!-- 04 What Happens — 旧 Section 3 の最後の段落を MOVE して独立させる。解決を約束しない（話す → 感じる → 気づく） -->
+      <div class="section-block ds-service-section">
+        <h2>
+          話しながら、<br>
+          今の自分を一緒に見ていく。
+        </h2>
+        <p>
+          何かを決める必要はありません。
+        </p>
         <p>
           話しているうちに、<br>
           自分でも気づいていなかったことが<br>
@@ -91,7 +127,7 @@
         </p>
       </div>
 
-      <!-- Section 4｜内容 -->
+      <!-- 05 Offer — KEEP（「無料」は Offer の事実として置くだけ） -->
       <div class="section-block ds-service-section">
         <h2>内容</h2>
         <dl class="ds-offer-summary">
@@ -107,14 +143,21 @@
         <p class="ds-service-statement">営業面談ではありません。</p>
       </div>
 
-      <!-- Section 5｜Final CTA -->
+      <!-- 06 Final Action — ここで初めて Booking CTA（Level 3）。
+           説明文は Current Booking UX（公開枠あり＝その場で予約 ／ 公開枠なし＝同じ予約画面で第1〜第3希望を送信）に合わせて REFRAME -->
       <div class="section-block ds-service-section">
         <h2>今、少し話してみたいことがあれば。</h2>
         <p>
-          まとまっていなくても大丈夫です。<br>
-          空いている日時から、<br>
-          ご都合のよい時間をお選びください。
+          まとまっていなくても大丈夫です。
         </p>
+        <p>
+          日時は、<br>
+          空いている枠から選ぶか、<br>
+          ご都合のよい候補日時を<br>
+          お知らせいただけます。
+        </p>
+        <!-- 既存 Booking System（Google Apps Script Web App・日時選択）。URL は /academy/session.html と同じ deployment
+             押した瞬間の Transition View: /gas-transition.js（Vercel → GAS Transition Standard v1） -->
         <a class="ds-service-cta" href="https://script.google.com/macros/s/AKfycbwhwbdcfjjDJ__Cv-J7veUDJerr26FxK1E1OSFXZNdDyBQ4Ty6knD9CkWXyV6-Fqj3zcA/exec?page=booking" data-gas-transition data-transition-eyebrow="Guide" data-transition-heading="Guide（無料）の予約ページを開いています。" data-transition-text="今の自分に少し意識を向けながら、そのままお待ちください。">Guide（無料）に申し込む</a>
       </div>
 
