@@ -6,6 +6,16 @@
 ---
 
 ---
+## [2026-10-02] — Web Entry Standard v1 への参照（docs のみ ・ **Architect Review 待ち**）
+
+**Scope:** `docs/*-entry-architecture-vnext.md`（8）, `docs/project-creation-public-reality-reset-vnext.md`, `docs/search-content-layer-v1.md`
+**Triggered by:** Architect Request（ACR-20261002-005）
+
+- 各ページの Entry Architecture の冒頭に、上位 Standard（dreamin-spiral-os `web-entry-standard-v1.md`）への参照を 1 行追加
+- Public HTML ／ CSS ／ Copy の変更なし（Current Web Entry Audit は dreamin-spiral-os 側に記録）
+
+---
+
 ## [2026-10-01] — B8E TOP ・ 問いから読む Quiet Entry（**Architect Review 待ち**・Preview のみ）
 
 **Scope:** `index.html`（Dreamin' Spiral 🌱 Section の Ending の直後）, `style.css`（A24）, `docs/b8e-top-entry-architecture-vnext.md`

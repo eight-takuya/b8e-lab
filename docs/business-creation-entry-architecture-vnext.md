@@ -1,5 +1,7 @@
 # Business Creation Entry Architecture vNext
 
+> **上位 Standard：** Web Entry Standard v1（dreamin-spiral-os `docs/repository-architecture/web-entry-standard-v1.md`）— 入口の Type ・ Strength ・ 表現の横断基準。本書はそのページ単位の具体。
+
 **Status:** Implemented（Preview・Architect Review 待ち）
 **Date:** 2026-10-01
 **Scope:** `dreamin-spiral/business-creation/index.html`, `assets/dreamin-spiral/business-creation/hero-*`（`style.css` ・ `gas-transition.js` ・ Dialogue Form の URL ／ 属性は変更なし。A21 ／ A21-b の Reality Hero ・ Scene Hero ・ Continue Cue を再利用）

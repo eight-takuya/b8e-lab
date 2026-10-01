@@ -1,5 +1,7 @@
 # Project Creation Public Reality Reset + Entry Architecture vNext
 
+> **上位 Standard：** Web Entry Standard v1（dreamin-spiral-os `docs/repository-architecture/web-entry-standard-v1.md`）— 入口の Type ・ Strength ・ 表現の横断基準。本書はそのページ単位の具体。
+
 **Status:** Round 4 Implemented（Preview・Architect Review 待ち）
 **Date:** 2026-10-01
 **Scope:** `dreamin-spiral/project-creation/index.html`, `dreamin-spiral/project-creation/apply/index.html`, `style.css`（A22 ・ 2 rules）／ Round 2：`dreamin-spiral/project-creation/{thanks,complete}/index.html`, `legal/index.html`, `assets/dreamin-spiral/project-creation/` ／ Round 3：同じ files ＋ `terms/index.html`

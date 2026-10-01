@@ -1,5 +1,7 @@
 # Dreamin' Spiral 🌱 Home Entry Architecture vNext
 
+> **上位 Standard：** Web Entry Standard v1（dreamin-spiral-os `docs/repository-architecture/web-entry-standard-v1.md`）— 入口の Type ・ Strength ・ 表現の横断基準。本書はそのページ単位の具体。
+
 **Status:** Implemented ・ Visual 4 Asset 実装済み（Preview・Architect Review 待ち）
 **Date:** 2026-09-30
 **Scope:** `dreamin-spiral/index.html`, `style.css`（A20 ・ A20-b 追加 ・ `.ds-home-empathy` → `.ds-home-recognition`）, `assets/dreamin-spiral/`（Visual 4 Asset の公開版）

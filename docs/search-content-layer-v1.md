@@ -1,5 +1,7 @@
 # Search Content Layer v1 ＋ Pilot Questions（問いから読む）
 
+> **上位 Standard：** Web Entry Standard v1（dreamin-spiral-os `docs/repository-architecture/web-entry-standard-v1.md`）— 入口の Type ・ Strength ・ 表現の横断基準。本書はそのページ単位の具体。
+
 **Status:** Implemented（Preview・Architect Review 待ち）
 **Date:** 2026-10-01
 **AI Creation Request:** ACR-20261001-019
