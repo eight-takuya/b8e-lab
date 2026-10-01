@@ -14,14 +14,33 @@
   <link rel="stylesheet" href="style.css">
   <script defer src="/_vercel/insights/script.js"></script>
   <style>
-    /* About-specific */
+    /* ------------------------------------------------------------
+       About Entry Architecture vNext（2026-10-01 ・ ACR-20261001-016）
+       Person Page：Reality → Person → Story → Way of Seeing → Way of Being With People → Trust → Action。
+       Real Photo First（本人の実写真は ABOUT-HERO-OWNER-01 のみ。AI で本人の代替人物を作らない）。
+       正本：docs/about-entry-architecture-vnext.md
+       ------------------------------------------------------------ */
+
+    /* 01 Hero — Person。Copy と本人の実写真が並ぶ。Corporate Profile のように大きくしない */
     .about-hero {
       background:
         radial-gradient(ellipse at 50% 40%, rgba(255,235,200,0.055) 0%, transparent 58%),
         linear-gradient(180deg, #1c1a17 0%, #111010 100%);
       color: #f7f6f4;
-      padding: 120px 40px;
-      text-align: center;
+      padding: 104px 40px 112px;
+    }
+
+    .about-hero-inner {
+      max-width: 880px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 64px;
+    }
+
+    .about-hero-text {
+      flex: 1 1 auto;
+      min-width: 0;
     }
 
     .about-hero .hero-label {
@@ -34,47 +53,36 @@
     }
 
     .about-hero .hero-copy {
-      font-size: 1.25rem;
+      font-size: 1.3rem;
       font-weight: 300;
-      line-height: 2.1;
+      line-height: 2.0;
       color: #e8e5e1;
       letter-spacing: 0.04em;
-      max-width: 480px;
-      margin: 0 auto;
     }
 
-    @media (max-width: 768px) {
-      .about-hero {
-        padding: 72px 24px;
-      }
-      .about-hero .hero-copy {
-        font-size: 1.1rem;
-      }
+    .about-hero-lead {
+      margin-top: 32px;
+      font-size: 0.92rem;
+      line-height: 2.1;
+      color: #c9c4bd;
+      letter-spacing: 0.03em;
     }
 
-    /* ------------------------------------------------------------
-       About Visual Experience v1（2026-09）
-       正本：dreamin'-spiral-os docs/design-systems/b8e-public-visual-experience-v1.md
-       Copy ・ Section 順 ・ Navigation ・ CTA ・ URL ・ Typography Standard は変更しない。
-       ------------------------------------------------------------ */
-
-    /* Hero｜ABOUT-HERO-OWNER-01（Owner Presence）
-       本人写真を Corporate Profile のように大きく出さない。Copy ・ 余白 ・ Typography を主役のまま保ち、
-       その隣に静かに在る大きさに留める */
-    .about-hero {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 56px;
+    .about-hero-lead + .about-hero-lead {
+      margin-top: 20px;
     }
 
-    .about-hero-text {
-      flex: 0 1 auto;
+    .about-hero-name {
+      margin-top: 36px;
+      font-size: 0.8rem;
+      line-height: 1.9;
+      color: #a9a49d;
+      letter-spacing: 0.08em;
     }
 
     .about-portrait {
       flex: 0 0 auto;
-      width: 184px;
+      width: 260px;
       margin: 0;
     }
 
@@ -83,173 +91,110 @@
       width: 100%;
       height: auto;
       border-radius: 14px;
-      /* 下端を暗い Hero へ溶かし、額装した Profile 写真に見せない */
-      -webkit-mask-image: linear-gradient(180deg, #000 0%, #000 58%, rgba(0, 0, 0, 0) 100%);
-      mask-image: linear-gradient(180deg, #000 0%, #000 58%, rgba(0, 0, 0, 0) 100%);
+      /* 下端を暗い Hero へ溶かし、額装した Profile 写真に見せない（Visual Experience v1 を継承） */
+      -webkit-mask-image: linear-gradient(180deg, #000 0%, #000 62%, rgba(0, 0, 0, 0) 100%);
+      mask-image: linear-gradient(180deg, #000 0%, #000 62%, rgba(0, 0, 0, 0) 100%);
     }
 
-    /* 本文中の補助 Visual（枠 ・ 影 ・ 装飾を付けない。Crop しないため元の比率のまま表示する） */
-    .about-visual {
-      margin: 32px 0 0;
+    /* 本文：問いの列 ・ 今の活動 ・ Profile ・ 6 つの入口 */
+    .about-questions {
+      margin: 8px 0 0;
+      padding: 4px 0 4px 20px;
+      border-left: 1px solid #d9cbb8;
+      list-style: none;
     }
 
-    .about-visual picture {
-      display: block;
-      border-radius: 14px;
-      overflow: hidden;
-      background: #eceae7;
+    .about-questions li {
+      font-size: 0.97rem;
+      color: #555;
+      line-height: 2.1;
     }
 
-    .about-visual img {
-      display: block;
-      width: 100%;
-      height: auto;
+    .about-list {
+      list-style: none;
+      margin: 8px 0 0;
+      padding: 0;
     }
 
-    /* 積み重ねてきたもの｜長い仕事の蓄積。実績アピールにしない */
-    .about-visual--career { max-width: 560px; }
-
-    /* 転換｜Section を静かに閉じる Atmosphere */
-    .about-visual--turning { max-width: 560px; margin-top: 40px; }
-
-    /* 今も続いている問い｜Technology ＋ Human。本文が主役 */
-    .about-visual--question { max-width: 460px; }
-
-    /* BEAT EIGHT EMOTION｜象徴 Visual。写真のように扱わず、広い余白で B8E の Tone へ馴染ませる */
-    .about-visual--beat {
-      max-width: 480px;
-      margin: 48px auto 4px;
+    .about-list li {
       position: relative;
+      padding-left: 18px;
+      font-size: 0.95rem;
+      color: #555;
+      line-height: 1.9;
     }
 
-    .about-visual--beat picture::after {
+    .about-list li + li {
+      margin-top: 10px;
+    }
+
+    .about-list li::before {
       content: "";
       position: absolute;
-      inset: 0;
-      background: rgba(247, 246, 244, 0.14);
-      pointer-events: none;
-    }
-
-    /* B8Eとして在るということ｜About の余韻 */
-    .about-visual--closing { max-width: 560px; margin-top: 44px; }
-
-    /* ABOUT-THREE-01｜なぜ、この三つが一つの場所にあるのか（Structure）
-       3 つの Product ・ 営業導線 ・ Hierarchy に見せない。ひとつの問いから静かに広がる形 */
-    .about-three {
-      margin: 40px 0 0;
-    }
-
-    .about-three-body {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 32px 10px 30px;
-      background: #fbfaf8;
-      border-radius: 14px;
-    }
-
-    .a3-origin {
-      flex: 0 0 auto;
-      display: block;
-      text-align: center;
-      padding: 22px 24px;
-      border: 1px solid #b7c7c0;
-      border-radius: 999px;
-      background: #fff;
-      font-size: 0.95rem;
-      color: #3f5a52;
-      line-height: 1.6;
-      letter-spacing: 0.06em;
-    }
-
-    .a3-fan {
-      flex: 0 0 auto;
-      display: block;
-      width: 96px;
-      height: 168px;
-    }
-
-    .a3-branches {
-      flex: 0 1 auto;
-      display: flex;
-      flex-direction: column;
-      gap: 30px;
-    }
-
-    .a3-branch {
-      display: block;
-      font-size: 0.88rem;
-      color: #6f6a64;
-      line-height: 1.7;
-      letter-spacing: 0.04em;
-    }
-
-    .a3-branch::before {
-      content: "";
-      display: inline-block;
+      left: 0;
+      top: 0.85em;
       width: 5px;
       height: 5px;
       border-radius: 50%;
       background: #c9a882;
-      margin-right: 10px;
-      vertical-align: middle;
     }
 
-    .about-three-caption {
-      margin-top: 18px;
+    .about-section h3.about-subhead {
+      margin: 44px 0 16px;
+      font-size: 0.78rem;
+      font-weight: 400;
+      color: #888;
+      letter-spacing: 0.1em;
+      text-transform: none;
+    }
+
+    /* 10 Dreamin' Spiral 🌱 — 6 つの入口は同列（順序は Canonical Order ・ Funnel ／ Step に見せない） */
+    .about-entrances {
+      list-style: none;
+      margin: 28px 0 0;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 12px;
+    }
+
+    .about-entrances a {
+      display: inline-block;
+      padding: 7px 16px;
+      border: 1px solid #e0d6c8;
+      border-radius: 999px;
       font-size: 0.85rem;
-      color: #8b857e;
-      line-height: 2.0;
+      color: #6f6a64;
+      letter-spacing: 0.03em;
+      text-decoration: none;
+      transition: border-color 0.2s ease, color 0.2s ease;
+    }
+
+    .about-entrances a:hover {
+      border-color: #c9a882;
+      color: #9b7b5c;
+    }
+
+    .about-section .ds-service-secondary {
+      display: table;
+      margin: 18px 0 0;
     }
 
     @media (max-width: 768px) {
-      /* Hero — Text → Portrait の順で縦に置く。顔が Crop されないよう元の比率のまま */
       .about-hero {
-        flex-direction: column;
+        padding: 64px 24px 80px;
+      }
+      /* Portrait → Copy の順で縦に置く。顔が Crop されないよう元の比率のまま */
+      .about-hero-inner {
+        flex-direction: column-reverse;
+        align-items: flex-start;
         gap: 36px;
       }
       .about-portrait {
-        width: 168px;
+        width: 200px;
       }
-
-      .about-visual {
-        margin-top: 24px;
-      }
-      .about-visual--career,
-      .about-visual--turning,
-      .about-visual--question,
-      .about-visual--closing {
-        max-width: 100%;
-      }
-      .about-visual--turning { margin-top: 30px; }
-      .about-visual--closing { margin-top: 32px; }
-      .about-visual--beat {
-        max-width: 100%;
-        margin-top: 38px;
-      }
-
-      /* Structure — 単純縮小せず、縦方向へ自然に置き直す。文字サイズは保つ */
-      .about-three-body {
-        flex-direction: column;
-        padding: 30px 20px 28px;
-      }
-      .a3-fan {
-        display: none;
-      }
-      .a3-branches {
-        position: relative;
-        margin-top: 48px;
-        gap: 22px;
-        align-self: center;
-      }
-      .a3-branches::before {
-        content: "";
-        position: absolute;
-        left: 50%;
-        top: -36px;
-        width: 1px;
-        height: 26px;
-        background: #cfd8d4;
+      .about-hero .hero-copy {
+        font-size: 1.15rem;
       }
     }
   </style>
@@ -279,305 +224,295 @@
 
   <main>
 
-    <!-- 1. Hero -->
-    <!-- Hero｜ABOUT-HERO-OWNER-01（Owner Presence）：Copy と余白が主役。Profile 写真として大きく出さない -->
+    <!-- About Entry Architecture vNext（2026-10-01 ・ ACR-20261001-016）
+         Person Page — 経歴や肩書きを説明するページではなく、中村琢八という人と関わる時間を想像できるページ。
+         Experience：Reality → Person → Story → Way of Seeing → Way of Being With People → Trust → Action。
+         Formal Profile は後半（09）、Dreamin' Spiral 🌱 は Person の Story の後（10）。
+         正本：docs/about-entry-architecture-vnext.md -->
+
+    <!-- 01 Hero — Person（資格 ・ 実績 ・ 権威付け ・ Service CTA は置かない）。ABOUT-HERO-OWNER-01（本人の実写真） -->
     <section class="about-hero">
-      <div class="about-hero-text">
-        <span class="hero-label">About</span>
-        <h1 class="hero-copy">
-          一人の問いが、<br>
-          場所になった。
-        </h1>
+      <div class="about-hero-inner">
+        <div class="about-hero-text">
+          <span class="hero-label">About</span>
+          <h1 class="hero-copy">
+            <span class="ds-phrase">テクノロジーも、</span><br>
+            <span class="ds-phrase">身体も、心も。</span><br>
+            <br>
+            <span class="ds-phrase">結局、</span><br>
+            <span class="ds-phrase">同じ人の中で起きている。</span>
+          </h1>
+          <p class="about-hero-lead">
+            <span class="ds-phrase">仕事のことを話していたはずなのに、</span><br>
+            <span class="ds-phrase">いつの間にか</span><span class="ds-phrase">生き方の話になっている。</span>
+          </p>
+          <p class="about-hero-lead">
+            <span class="ds-phrase">AIやProjectの話を</span><span class="ds-phrase">していたはずなのに、</span><br>
+            <span class="ds-phrase">呼吸や身体の感覚の話に</span><span class="ds-phrase">つながっている。</span>
+          </p>
+          <p class="about-hero-lead">
+            <span class="ds-phrase">私自身、ずっとそうやって、</span><br>
+            <span class="ds-phrase">目の前のRealityから</span><br>
+            <span class="ds-phrase">人を見てきました。</span>
+          </p>
+          <p class="about-hero-name">
+            BEAT EIGHT EMOTION株式会社<br>
+            代表取締役　中村 琢八
+          </p>
+        </div>
+        <figure class="about-portrait">
+          <picture>
+            <source type="image/avif" srcset="/assets/about/owner-240.avif 240w, /assets/about/owner-480.avif 480w, /assets/about/owner-720.avif 720w" sizes="(max-width: 768px) 200px, 260px">
+            <source type="image/webp" srcset="/assets/about/owner-240.webp 240w, /assets/about/owner-480.webp 480w, /assets/about/owner-720.webp 720w" sizes="(max-width: 768px) 200px, 260px">
+            <img src="/assets/about/owner-480.webp" width="2970" height="3960" fetchpriority="high" decoding="async" alt="中村琢八">
+          </picture>
+        </figure>
       </div>
-      <figure class="about-portrait">
-        <picture>
-          <source type="image/avif" srcset="/assets/about/owner-240.avif 240w, /assets/about/owner-480.avif 480w, /assets/about/owner-720.avif 720w" sizes="(max-width: 768px) 168px, 184px">
-          <source type="image/webp" srcset="/assets/about/owner-240.webp 240w, /assets/about/owner-480.webp 480w, /assets/about/owner-720.webp 720w" sizes="(max-width: 768px) 168px, 184px">
-          <img src="/assets/about/owner-480.webp" width="2970" height="3960" fetchpriority="high" decoding="async" alt="BEAT EIGHT EMOTION 中村琢八">
-        </picture>
-      </figure>
     </section>
 
     <div class="page-content">
 
-      <!-- 2. The Question — ひとつの問い -->
-      <div class="page-intro">
+
+      <!-- 02 Reality — Technology（Resume にしない。年数 ・ 件数 ・ 実績を強調しない） -->
+      <div class="section-block ds-service-section about-section">
+        <h2>
+          <span class="ds-phrase">もともとは、</span><br>
+          <span class="ds-phrase">ずっとテクノロジーの</span><span class="ds-phrase">世界にいました。</span>
+        </h2>
         <p>
-          IT業界歴25年以上の経験の中で、<br>
-          ずっとひとつの問いがありました。
+          <span class="ds-phrase">論理や構造を考えることが</span><span class="ds-phrase">好きでした。</span><br>
+          <span class="ds-phrase">技術で何かを創ることも、</span><span class="ds-phrase">好きでした。</span>
         </p>
         <p>
-          外側を変えることはできる。<br>
-          プロセスを整え、ツールを入れ、仕組みをつくる。<br>
-          でも、なぜ人は、変わったはずなのに、<br>
-          また同じ場所に戻ってしまうのか。
+          <span class="ds-phrase">大きなシステムのProjectを</span><span class="ds-phrase">動かす仕事から始まり、</span><br>
+          <span class="ds-phrase">やがて小さな会社の現場で、</span><br>
+          <span class="ds-phrase">業務やIT、採用や経営にも</span><span class="ds-phrase">関わるようになりました。</span>
+        </p>
+        <p>
+          <span class="ds-phrase">でも、Projectに関わるほど、</span><br>
+          <span class="ds-phrase">そこには結局「人」がいることに、</span><br>
+          <span class="ds-phrase">気づいていきました。</span>
         </p>
       </div>
 
-      <!-- 3. The Journey — 積み重ねてきたもの -->
-      <div class="section-block">
-        <h3>積み重ねてきたもの</h3>
+      <!-- 03 Turning Point — Human Interior（心理 ・ 脳 ・ 量子論を権威付けとして並べない） -->
+      <div class="section-block ds-service-section about-section">
+        <h2>
+          <span class="ds-phrase">気づけば、</span><br>
+          <span class="ds-phrase">人の内側のことばかり</span><br>
+          <span class="ds-phrase">考えるようになっていました。</span>
+        </h2>
         <p>
-          NTTデータにて、<br>
-          超大規模システムのPJ推進・PM・運用保守に関わりました。<br>
-          そこで身についたのは「開発する力」よりも、<br>
-          多人数を巻き込む推進力と、QA的な視点でした。
+          <span class="ds-phrase">外側を変えることはできる。</span><br>
+          <span class="ds-phrase">プロセスを整え、</span><span class="ds-phrase">ツールを入れ、</span><span class="ds-phrase">仕組みをつくる。</span><br>
+          <span class="ds-phrase">でも、なぜ人は、</span><span class="ds-phrase">変わったはずなのに、</span><br>
+          <span class="ds-phrase">また同じ場所に</span><span class="ds-phrase">戻ってしまうのか。</span>
+        </p>
+        <ul class="about-questions">
+          <li><span class="ds-phrase">人は、なぜ</span><span class="ds-phrase">同じことを繰り返すのか。</span></li>
+          <li><span class="ds-phrase">頭では分かっているのに、</span><span class="ds-phrase">なぜ動けないことがあるのか。</span></li>
+          <li><span class="ds-phrase">身体が緩むと、</span><span class="ds-phrase">なぜ考え方まで</span><span class="ds-phrase">変わることがあるのか。</span></li>
+        </ul>
+        <p>
+          <span class="ds-phrase">そうした問いから、</span><br>
+          <span class="ds-phrase">心理や脳、身体、呼吸、意識へと</span><span class="ds-phrase">関心が広がり、</span><br>
+          <span class="ds-phrase">自分自身でも</span><span class="ds-phrase">試すようになりました。</span>
         </p>
         <p>
-          その後、中小企業4社で現場の内側を経験しました。<br>
-          業務改善・IT化・DX化・採用・経営感覚。<br>
-          大企業と中小企業、両方の地図を持てたことが、<br>
-          現在の支援の土台になっています。
+          <span class="ds-phrase">意識や現実について</span><span class="ds-phrase">考える中で、</span><br>
+          <span class="ds-phrase">量子論にも関心を持ちました。</span>
         </p>
-        <p>
-          2015年の創業以来、技術と人をつなぐ支援を続けています。
-        </p>
-        <!-- ABOUT-CAREER-01（Artifact ＋ Reality）：実績アピールではなく、長い仕事の蓄積 -->
-        <figure class="about-visual about-visual--career">
-          <picture>
-            <source type="image/avif" srcset="/assets/about/career-560.avif 560w, /assets/about/career-1120.avif 1120w" sizes="(max-width: 768px) calc(100vw - 48px), 560px">
-            <source type="image/webp" srcset="/assets/about/career-560.webp 560w, /assets/about/career-1120.webp 1120w" sizes="(max-width: 768px) calc(100vw - 48px), 560px">
-            <img src="/assets/about/career-560.webp" width="1997" height="788" loading="lazy" decoding="async" alt="資料と本とノートパソコンが並ぶ机、窓の外に街と山並みが見えている">
-          </picture>
-        </figure>
       </div>
 
-      <!-- 4. The Turning Point — 転換 -->
-      <div class="section-block">
-        <h3>転換</h3>
+      <!-- 04 Way of Seeing — Not Separate（既存の「デジタルも、身体も、心も」を尊重） -->
+      <div class="section-block ds-service-section about-section">
+        <h2>
+          <span class="ds-phrase">今は、</span><br>
+          <span class="ds-phrase">あまり分けて考えていません。</span>
+        </h2>
         <p>
-          その問いへの答えを探す中で、<br>
-          心理学・量子力学・脳科学への関心が広がり、<br>
-          やがて、呼吸や身体の感覚にも意識が向いていきました。
+          <span class="ds-phrase">仕事がうまくいかないとき、</span><br>
+          <span class="ds-phrase">Project Managementだけが</span><span class="ds-phrase">原因とは限りません。</span>
         </p>
         <p>
-          深く息をすること。<br>
-          身体の巡りを整えること。<br>
-          リンパケアを通じて、自分の身体にやさしく触れること。
+          <span class="ds-phrase">身体が固まっていたり、</span><br>
+          <span class="ds-phrase">人にどう見られるかを</span><span class="ds-phrase">気にしていたり、</span><br>
+          <span class="ds-phrase">本当は望んでいないことを</span><span class="ds-phrase">続けていたりすることもあります。</span>
         </p>
         <p>
-          それは、年齢を重ねながらも、<br>
-          心と身体が本来の流れを取り戻していくための、<br>
-          大切な入り口でした。
+          <span class="ds-phrase">逆に、身体が少し緩んだだけで、</span><br>
+          <span class="ds-phrase">仕事の見え方が</span><span class="ds-phrase">変わることもあります。</span>
         </p>
         <p>
-          若さを追いかけるのではなく、<br>
-          内側から整い、自然な生命力が表に現れていく。
+          <span class="ds-phrase">デジタルも、身体も、心も、</span><br>
+          <span class="ds-phrase">本当は別々ではありません。</span><br>
+          <span class="ds-phrase">ひとりの人の中で、</span><span class="ds-phrase">つながっています。</span>
         </p>
-        <p>
-          その実感が深まるほど、<br>
-          ひとつの確信になっていきました。
-        </p>
-        <p>
-          変容は、外側と内側が同時に動くときに、初めて起きる。
-        </p>
-        <p>
-          組織を支援していると、<br>
-          外側だけでは変わらないことがある。<br>
-          一人ひとりを支援していると、<br>
-          内側だけでも変わらないことがある。
-        </p>
-        <p>
-          その両方を、同じ場所から支援することになったのは、<br>
-          この確信があったからです。
-        </p>
-        <p>
-          デジタルも、身体も、心も、<br>
-          本当は別々ではありません。<br>
-          人が安心して、自分本来の流れを取り戻していくための、<br>
-          ひとつながりの入口だと考えています。
-        </p>
-        <!-- ABOUT-TURNING-01（Atmosphere）：説明図ではなく、空間と光で Section を静かに閉じる -->
-        <figure class="about-visual about-visual--turning">
-          <picture>
-            <source type="image/avif" srcset="/assets/about/turning-560.avif 560w, /assets/about/turning-1120.avif 1120w" sizes="(max-width: 768px) calc(100vw - 48px), 560px">
-            <source type="image/webp" srcset="/assets/about/turning-560.webp 560w, /assets/about/turning-1120.webp 1120w" sizes="(max-width: 768px) calc(100vw - 48px), 560px">
-            <img src="/assets/about/turning-560.webp" width="1997" height="788" loading="lazy" decoding="async" alt="" aria-hidden="true">
-          </picture>
-        </figure>
       </div>
 
-      <!-- 5. Why Three — なぜ、この三つが一つの場所にあるのか -->
-      <div class="section-block">
-        <h3>なぜ、この三つが一つの場所にあるのか</h3>
+      <!-- 05 With People — Together（答えを持つ先生として見せない。6 つの入口に共通する関わり方） -->
+      <div class="section-block ds-service-section about-section">
+        <h2>
+          <span class="ds-phrase">答えを渡すより、</span><br>
+          <span class="ds-phrase">一緒に見ていることの方が</span><span class="ds-phrase">多いです。</span>
+        </h2>
         <p>
-          組織の外側を整えること。<br>
-          人が安心して生きる基盤を整えること。<br>
-          一人ひとりの内側を深めること。
+          <span class="ds-phrase">「こうすればいいですよ」と</span><span class="ds-phrase">答えるより、</span><br>
+          <span class="ds-phrase">「今、何が起きているんだろう」と、</span><br>
+          <span class="ds-phrase">一緒に見ています。</span>
         </p>
         <p>
-          これらは、別々の仕事ではありませんでした。
+          <span class="ds-phrase">話しているうちに、</span><br>
+          <span class="ds-phrase">「あ、そういうことか」と、</span><br>
+          <span class="ds-phrase">ご本人が気づく瞬間があります。</span><br>
+          <span class="ds-phrase">その瞬間を、</span><span class="ds-phrase">大切にしています。</span>
         </p>
         <p>
-          デジタルが苦手だと思っていた人が、<br>
-          少しずつ仕組みを味方にできるようになる。
+          <span class="ds-phrase">仕事の相談でも、</span><span class="ds-phrase">Businessを創る時間でも、</span><br>
+          <span class="ds-phrase">自分自身と向き合う時間でも、</span><br>
+          <span class="ds-phrase">関わり方の根っこは</span><span class="ds-phrase">同じです。</span>
         </p>
-        <p>
-          身体や呼吸に意識を向けることで、<br>
-          心が少し軽くなり、日々の選択が変わっていく。
-        </p>
-        <p>
-          自分の内側が整うことで、<br>
-          人との関わり方や、仕事の進め方まで自然に変わっていく。
-        </p>
-        <p>
-          人と組織が、本来あるべき流れの中に在るためには何が必要か。<br>
-          その問いを持ち続けていたら、<br>
-          自然と、三つが同じ場所にありました。
-        </p>
-        <p>
-          その結果として生まれたのが、<br>
-          DX支援、企業型DC、<span class="ds-phrase">Dreamin' Spiral 🌱です。</span>
-        </p>
-        <p>
-          その根っこにあるのは、<br>
-          心と身体と社会の調和という、ひとつの願いです。
-        </p>
-        <!-- ABOUT-THREE-01（Structure）：画像ではなく HTML ＋ CSS ＋ 装飾 SVG -->
-        <figure class="about-three">
-          <div class="about-three-body">
-            <span class="a3-origin">ひとつの問い</span>
-            <svg class="a3-fan" viewBox="0 0 96 168" fill="none" aria-hidden="true" focusable="false">
-              <defs>
-                <linearGradient id="a3fade" x1="0" y1="0" x2="1" y2="0">
-                  <stop offset="0" stop-color="#cfd8d4" stop-opacity="1"/>
-                  <stop offset="1" stop-color="#cfd8d4" stop-opacity="0.35"/>
-                </linearGradient>
-              </defs>
-              <path d="M0,84 C34,84 44,30 96,26" stroke="url(#a3fade)" stroke-width="1"/>
-              <path d="M0,84 C34,84 52,84 96,84" stroke="url(#a3fade)" stroke-width="1"/>
-              <path d="M0,84 C34,84 44,138 96,142" stroke="url(#a3fade)" stroke-width="1"/>
-            </svg>
-            <div class="a3-branches">
-              <span class="a3-branch">DX支援</span>
-              <span class="a3-branch">企業型DC</span>
-              <span class="a3-branch"><span class="ds-phrase">Dreamin' Spiral 🌱</span></span>
-            </div>
-          </div>
-          <figcaption class="about-three-caption">
-            三つは別々の事業ではなく、ひとつの問いから広がった入口です。
-          </figcaption>
-        </figure>
       </div>
 
-      <!-- 6. Now — 今も続いている問い -->
-      <div class="section-block">
-        <h3>今も続いている問い</h3>
+      <!-- 06 Technology — Natural Digital（AI ／ Digital を Hero にしない ・ 勉強するものとして見せない） -->
+      <div class="section-block ds-service-section about-section">
+        <h2>
+          <span class="ds-phrase">デジタルも、</span><br>
+          <span class="ds-phrase">もっと自然でいいと</span><span class="ds-phrase">思っています。</span>
+        </h2>
         <p>
-          AIが日常に入ってくる今、<br>
-          組織にも、一人ひとりにも、<br>
-          「自分にできることは何か」という問いが現れています。
+          <span class="ds-phrase">話していたら、</span><br>
+          <span class="ds-phrase">いつの間にかAIを使っていた。</span>
         </p>
         <p>
-          技術が進化するほど、<br>
-          人が人である意味もまた、問われていきます。
+          <span class="ds-phrase">Businessを創っていたら、</span><br>
+          <span class="ds-phrase">NotionやWebも、</span><span class="ds-phrase">自然に使うようになっていた。</span>
         </p>
         <p>
-          その問いは、<br>
-          創業当初から続いている問いの延長線上にあります。
+          <span class="ds-phrase">デジタルが苦手だと</span><span class="ds-phrase">思っていた人が、</span><br>
+          <span class="ds-phrase">少しずつ仕組みを</span><span class="ds-phrase">味方にできるようになる。</span>
         </p>
-        <!-- ABOUT-QUESTION-01（Technology ＋ Human）：人が考える余白と、Technology のある現実 -->
-        <figure class="about-visual about-visual--question">
-          <picture>
-            <source type="image/avif" srcset="/assets/about/question-520.avif 520w, /assets/about/question-1040.avif 1040w" sizes="(max-width: 768px) calc(100vw - 48px), 520px">
-            <source type="image/webp" srcset="/assets/about/question-520.webp 520w, /assets/about/question-1040.webp 1040w" sizes="(max-width: 768px) calc(100vw - 48px), 520px">
-            <img src="/assets/about/question-520.webp" width="1997" height="788" loading="lazy" decoding="async" alt="窓辺の静かな部屋。椅子と机の向こうに、街と山並みと朝の光が広がっている">
-          </picture>
-        </figure>
+        <p>
+          <span class="ds-phrase">テクノロジーは、</span><span class="ds-phrase">人を置き去りにするものではなく、</span><br>
+          <span class="ds-phrase">現実を一緒に創るための</span><span class="ds-phrase">道具だと思っています。</span>
+        </p>
       </div>
 
-      <!-- 7. The Name — BEAT EIGHT EMOTION -->
-      <div class="section-block">
-        <h3>BEAT EIGHT EMOTION</h3>
+      <!-- 07 Body & Daily Life（既存 Public の呼吸 ・ 身体 ・ リンパケアだけを使う。家族 ・ Private な詳細は書かない） -->
+      <div class="section-block ds-service-section about-section">
+        <h2>
+          <span class="ds-phrase">結局、</span><br>
+          <span class="ds-phrase">戻るのは日常です。</span>
+        </h2>
         <p>
-          「BEAT」は、鼓動です。生きていること。動き続けること。
+          <span class="ds-phrase">深く息をすること。</span><br>
+          <span class="ds-phrase">身体の巡りを整えること。</span><br>
+          <span class="ds-phrase">リンパケアを通じて、</span><span class="ds-phrase">自分の身体に</span><span class="ds-phrase">やさしく触れること。</span>
         </p>
         <p>
-          「EIGHT」は、∞——無限の記号を横に倒した形です。<br>
-          完結ではなく、循環。終わりではなく、深まり続けること。
+          <span class="ds-phrase">日々の仕事をしながら、</span><br>
+          <span class="ds-phrase">呼吸や身体に戻り、</span><br>
+          <span class="ds-phrase">そのたびに、</span><span class="ds-phrase">小さく気づき直しています。</span><br>
+          <span class="ds-phrase">私自身も、</span><span class="ds-phrase">まだその途中にいます。</span>
         </p>
         <p>
-          「EMOTION」は、感情ではなく、動かされること。<br>
-          e-motion、外へ動く力。内側が揺れ、外側へ表れる状態。
+          <span class="ds-phrase">苦手だと思っていたことが、</span><span class="ds-phrase">少し楽しくなる。</span><br>
+          <span class="ds-phrase">無理をしていた身体が、</span><span class="ds-phrase">少しゆるむ。</span><br>
+          <span class="ds-phrase">自分の内側に戻る時間が、</span><span class="ds-phrase">少し増えていく。</span>
         </p>
-        <p>
-          BEAT EIGHT EMOTION——<br>
-          無限に循環しながら、鼓動し、動かされ続けること。<br>
-          それが、この場所の在り方です。
-        </p>
-        <!-- ABOUT-BEAT-01（Structure ＋ Atmosphere）：説明図ではなく象徴。広い余白で Tone へ馴染ませる -->
-        <figure class="about-visual about-visual--beat">
-          <picture>
-            <source type="image/avif" srcset="/assets/about/beat-480.avif 480w, /assets/about/beat-960.avif 960w" sizes="(max-width: 768px) calc(100vw - 48px), 480px">
-            <source type="image/webp" srcset="/assets/about/beat-480.webp 480w, /assets/about/beat-960.webp 960w" sizes="(max-width: 768px) calc(100vw - 48px), 480px">
-            <img src="/assets/about/beat-480.webp" width="1997" height="787" loading="lazy" decoding="async" alt="" aria-hidden="true">
-          </picture>
-        </figure>
       </div>
 
-      <!-- 8. Presence — B8Eとして在るということ -->
-      <div class="section-block">
-        <h3>B8Eとして在るということ</h3>
-        <p>
-          答えを持って来ることが、私たちの仕事ではありません。
-        </p>
-        <p>
-          問いを共に持ち続けること。<br>
-          変容の隣に、静かに在ること。<br>
-          テクノロジーと人間の内側が交わる場所で、<br>
-          その両方を同時に見続けること。
-        </p>
-        <p>
-          苦手だと思っていたことが、少し楽しくなる。<br>
-          無理をしていた身体が、少しゆるむ。<br>
-          自分の内側に戻る時間が、少し増えていく。
-        </p>
-        <p>
-          その小さな変化が積み重なって、<br>
-          人も、仕事も、暮らしも、自然に変わっていきます。
-        </p>
-        <p>
-          それが、B8Eの在り方です。
-        </p>
-        <!-- ABOUT-CLOSING-ATMOSPHERE-01（Atmosphere）：About の余韻。Hero のように強くしない -->
-        <figure class="about-visual about-visual--closing">
-          <picture>
-            <source type="image/avif" srcset="/assets/about/closing-560.avif 560w, /assets/about/closing-1120.avif 1120w" sizes="(max-width: 768px) calc(100vw - 48px), 560px">
-            <source type="image/webp" srcset="/assets/about/closing-560.webp 560w, /assets/about/closing-1120.webp 1120w" sizes="(max-width: 768px) calc(100vw - 48px), 560px">
-            <img src="/assets/about/closing-560.webp" width="1997" height="787" loading="lazy" decoding="async" alt="" aria-hidden="true">
-          </picture>
-        </figure>
+      <!-- 08 What I Do（権威の証明ではなく、今の活動。Public として正しいものだけ） -->
+      <div class="section-block ds-service-section about-section">
+        <h2>
+          <span class="ds-phrase">今は、</span><br>
+          <span class="ds-phrase">こんなことをしています。</span>
+        </h2>
+        <ul class="about-list">
+          <li>BEAT EIGHT EMOTION株式会社 代表取締役</li>
+          <li><a href="/dreamin-spiral/">Dreamin' Spiral 🌱</a><span class="ds-phrase">の運営</span></li>
+          <li><span class="ds-phrase">AI・DX・Projectの支援</span><span class="ds-phrase">（</span><a href="dx.html">DX支援</a><span class="ds-phrase">・PJ推進支援）</span></li>
+          <li><a href="dc.html">企業型DC</a><span class="ds-phrase">の導入支援</span></li>
+          <li><span class="ds-phrase">YouTubeでの発信</span></li>
+          <li><span class="ds-phrase">地域での活動</span></li>
+        </ul>
       </div>
 
-      <!-- 8.5. Quiet bridge + form -->
-      <div class="section-block">
+      <!-- 09 Background — Profile（ここで初めて Formal Background。既存 Public ／ Canonical で確認できる事実だけ） -->
+      <div class="section-block ds-service-section about-section">
+        <h2>
+          Profile
+        </h2>
+        <ul class="about-list">
+          <li><span class="ds-phrase">大学・大学院で</span><span class="ds-phrase">情報工学（Computer Science）を学ぶ</span></li>
+          <li><span class="ds-phrase">NTTデータにて、</span><span class="ds-phrase">超大規模システムの</span><span class="ds-phrase">PJ推進・PM・運用保守に関わる</span></li>
+          <li><span class="ds-phrase">その後、中小企業4社で、</span><span class="ds-phrase">業務改善・IT化・DX化・</span><span class="ds-phrase">採用・経営に関わる</span></li>
+          <li><span class="ds-phrase">2015年、</span><span class="ds-phrase">BEAT EIGHT EMOTION株式会社を創業</span></li>
+          <li><span class="ds-phrase">IT業界歴25年以上</span></li>
+        </ul>
+        <h3 class="about-subhead">BEAT EIGHT EMOTION</h3>
         <p>
-          言葉になっていなくても、大丈夫です。<br>
-          必要なときに、声をかけてください。
+          <span class="ds-phrase">「BEAT」は、鼓動です。</span><span class="ds-phrase">生きていること。</span><span class="ds-phrase">動き続けること。</span><br>
+          <span class="ds-phrase">「EIGHT」は、∞——</span><span class="ds-phrase">無限の記号を</span><span class="ds-phrase">横に倒した形です。</span><br>
+          <span class="ds-phrase">「EMOTION」は、</span><span class="ds-phrase">感情ではなく、</span><span class="ds-phrase">動かされること。</span>
         </p>
-        <form class="contact-form" action="https://formspree.io/f/mykleakb" method="post" style="margin-top: 36px;">
-          <input type="hidden" name="_next" value="https://b8e.co.jp/thanks.html">
-          <input type="text" name="name" placeholder="お名前（任意）">
-          <input type="email" name="email" placeholder="メールアドレス" required>
-          <textarea name="message" placeholder="今、浮かんでいること"></textarea>
-          <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
-          <button type="submit">少し話してみる</button>
-        </form>
-      </div>
-
-      <!-- 9. Company Info -->
-      <div class="section-block">
-        <h3>会社情報</h3>
+        <h3 class="about-subhead">会社情報</h3>
         <p>
-          BEAT EIGHT EMOTION株式会社
-        </p>
-        <p>
-          DX支援 / PJ推進支援 / 企業型DC導入支援 / <span class="ds-phrase">Dreamin' Spiral 🌱</span>
-        </p>
-        <p>
+          BEAT EIGHT EMOTION株式会社<br>
+          <span class="ds-phrase">DX支援 / PJ推進支援 /</span> <span class="ds-phrase">企業型DC導入支援 /</span> <span class="ds-phrase">Dreamin' Spiral 🌱</span><br>
           <a href="mailto:contact@b8e.co.jp" style="color: #888; font-size: 0.9rem;">contact@b8e.co.jp</a>
         </p>
       </div>
+
+      <!-- 10 Dreamin' Spiral 🌱 — Person と Brand Philosophy をつなぐ。6 つの入口は同列（Canonical Order ・ Funnel ／ Level ／ Step にしない） -->
+      <div class="section-block ds-service-section about-section">
+        <h2>
+          <span class="ds-phrase">Dreamin' Spiral 🌱も、</span><br>
+          <span class="ds-phrase">そこから生まれました。</span>
+        </h2>
+        <p>
+          <span class="ds-phrase">人は、</span><span class="ds-phrase">誰かに変えてもらうのではなく、</span><br>
+          <span class="ds-phrase">日常のRealityの中で、</span><br>
+          <span class="ds-phrase">自分自身に気づいていく。</span>
+        </p>
+        <p>
+          <span class="ds-phrase">その気づきから、</span><br>
+          <span class="ds-phrase">次の行動が</span><span class="ds-phrase">自然に生まれていく。</span>
+        </p>
+        <p>
+          <span class="ds-phrase">だからDreamin' Spiral 🌱には、</span><br>
+          <span class="ds-phrase">心だけでも、</span><span class="ds-phrase">Businessだけでも、</span><span class="ds-phrase">Technologyだけでもない、</span><br>
+          <span class="ds-phrase">いくつもの入口があります。</span>
+        </p>
+        <ul class="about-entrances">
+          <li><a href="/dreamin-spiral/guide/">Guide</a></li>
+          <li><a href="/dreamin-spiral/3-weeks/">3 Weeks Tuning</a></li>
+          <li><a href="/dreamin-spiral/community/">Community</a></li>
+          <li><a href="/dreamin-spiral/my-life/">My Life, My Way</a></li>
+          <li><a href="/dreamin-spiral/project-creation/">Project Creation</a></li>
+          <li><a href="/dreamin-spiral/business-creation/">Business Creation</a></li>
+        </ul>
+      </div>
+
+      <!-- 11 Open Action — Primary は Guide（About 上だけの自然な Action ・ 全 Service の必須入口にしない）・ Secondary は Dreamin' Spiral 🌱 -->
+      <div class="section-block ds-service-section about-section">
+        <h2>
+          <span class="ds-phrase">何か、</span><br>
+          <span class="ds-phrase">少し気になったら。</span>
+        </h2>
+        <p>
+          今、<br>
+          <span class="ds-phrase">気になっていることがあれば、</span><br>
+          <span class="ds-phrase">そのまま話してみてください。</span>
+        </p>
+        <p>
+          <span class="ds-phrase">仕事のことでも、</span><span class="ds-phrase">Businessのことでも、</span><br>
+          <span class="ds-phrase">自分自身のことでも</span><span class="ds-phrase">大丈夫です。</span>
+        </p>
+        <a class="ds-service-cta" href="/dreamin-spiral/guide/">Guide（無料）について見る</a>
+        <a class="ds-service-secondary" href="/dreamin-spiral/">Dreamin' Spiral 🌱を見る</a>
+      </div>
+
 
       <a href="index.html" class="back-link">← TOP</a>
 

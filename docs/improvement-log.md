@@ -6,6 +6,18 @@
 ---
 
 ---
+## [2026-10-01] — About Entry Architecture vNext（**Architect Review 待ち**・Preview のみ）
+
+**Scope:** `about.html`, `docs/about-entry-architecture-vnext.md`（新規）
+**Triggered by:** Architect Request（ACR-20261001-016）
+
+- About を Person Page へ再構成（11 Section：Hero — Person → Technology → Turning Point → Way of Seeing → With People → Technology → Body & Daily Life → What I Do → Profile → Dreamin' Spiral 🌱 → Open Action）
+- 本人の実写真（ABOUT-HERO-OWNER-01）だけを使い、AI 生成の雰囲気画像と三つの事業の図は本文から外した（asset は残す）
+- Open Action は Guide（無料）を Primary、Dreamin' Spiral 🌱 を Secondary。末尾の general contact form は外した（連絡先は会社情報に残す）
+- meta ／ OGP ・ Header ・ Footer は変更なし
+
+---
+
 ## [2026-10-01] — Project Creation Round 4：Legal ／ Terms の「開講」を「サービス開始」へ（**Architect Review 待ち**・Preview のみ）
 
 **Scope:** `legal/index.html`, `terms/index.html`（Project Creation の 3 箇所ずつ）, `dreamin-spiral/project-creation/index.html`（HTML コメントのみ）, `docs/project-creation-public-reality-reset-vnext.md`
