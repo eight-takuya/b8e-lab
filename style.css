@@ -3738,3 +3738,67 @@ body:not(.ds-page) .resonance-questions p + p {
     padding: 20px 20px;
   }
 }
+
+/* ------------------------------------------------------------
+   A24. B8E TOP ・ 問いから読む Quiet Entry（2026-10-01 ・ ACR-20261001-021）
+   Dreamin' Spiral 🌱 Section の延長として 1 段弱く置く。Text First ・ Card ／ Button にしない。
+   ------------------------------------------------------------ */
+.ds-top-questions {
+  max-width: 560px;
+  margin-top: 64px;
+  padding-top: 40px;
+  border-top: 1px solid #e6e2db;
+}
+.ds-top-questions-heading {
+  margin: 0 0 16px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #2a2a2a;
+  letter-spacing: 0.04em;
+}
+.ds-top-questions-lead {
+  font-size: 0.9rem;
+  color: #5f5b53;
+  line-height: 1.95;
+}
+.ds-top-questions-lead + .ds-top-questions-lead {
+  margin-top: 14px;
+}
+.ds-top-questions-label {
+  margin-top: 28px;
+  font-size: 0.78rem;
+  color: #8c8680;
+  letter-spacing: 0.06em;
+}
+.ds-top-questions-q {
+  display: inline-block;
+  margin-top: 10px;
+  font-size: 1rem;
+  color: #2a2a2a;
+  line-height: 1.9;
+}
+.ds-top-questions-q:hover {
+  color: #6f5239;
+  text-decoration: none;
+}
+.ds-top-questions-arrow {
+  display: inline-block;
+  margin-left: 8px;
+  color: #b08f6e;
+  transition: transform 0.2s ease;
+}
+.ds-top-questions-q:hover .ds-top-questions-arrow {
+  transform: translateX(3px);
+}
+.ds-top-questions-more {
+  display: table;
+  margin-top: 22px;
+  font-size: 0.85rem;
+  color: #777;
+}
+@media (max-width: 768px) {
+  .ds-top-questions {
+    margin-top: 52px;
+    padding-top: 36px;
+  }
+}
