@@ -6,6 +6,13 @@
 
 ## Version History
 
+### Phase G — About の Slide 03 を現行 Hero へ
+2026-10-01（ACR-20261001-017 ・ Search & External Exposure Layer vNext）
+
+- **Slide 03（About）のサブコピーだけを更新** — `一人の問いが、場所になった。` → `テクノロジーも、身体も、心も。`（About Entry Architecture vNext の Hero に合わせた）。背景 ・ ロゴ ・ 配色 ・ 余白 ・ フォント ・ ブランドライン ・ タイトル ・ 他の Slide は変更していない
+- `generated/about.png` を再生成（1200 × 630）。書き出し方法は従来どおり LibreOffice（PDF → PNG）で、変更していない Slide 02 を同じ方法で書き出すと既存の `top.png` と画素単位で一致（差 0）することを先に確認した
+- 他の `generated/` 画像は、各ページの現行の Copy と一致しているため変更していない
+
 ### Phase F — Dreamin' Spiral 🌱 Home と 6 Service を追加
 2026-09-26
 
