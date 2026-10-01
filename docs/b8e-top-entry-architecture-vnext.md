@@ -1,5 +1,7 @@
 # B8E TOP Entry Architecture vNext
 
+> **上位 Standard：** Web Entry Standard v1（dreamin-spiral-os `docs/repository-architecture/web-entry-standard-v1.md`）— 入口の Type ・ Strength ・ 表現の横断基準。本書はそのページ単位の具体。
+
 **Status:** Implemented（Preview・Owner Review 待ち）
 **Date:** 2026-09-30
 **Scope:** `index.html`（TOP のみ）, `style.css`（A19 追加・不要になった rule を撤去）, `scroll.js`

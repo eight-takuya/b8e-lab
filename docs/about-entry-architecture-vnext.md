@@ -1,5 +1,7 @@
 # About Entry Architecture vNext
 
+> **上位 Standard：** Web Entry Standard v1（dreamin-spiral-os `docs/repository-architecture/web-entry-standard-v1.md`）— 入口の Type ・ Strength ・ 表現の横断基準。本書はそのページ単位の具体。
+
 **Status:** Implemented（Preview・Architect Review 待ち）
 **Date:** 2026-10-01
 **Scope:** `about.html`（本文 ・ About 専用の inline style）

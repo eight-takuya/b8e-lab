@@ -1,5 +1,7 @@
 # My Life, My Way Entry Architecture vNext
 
+> **上位 Standard：** Web Entry Standard v1（dreamin-spiral-os `docs/repository-architecture/web-entry-standard-v1.md`）— 入口の Type ・ Strength ・ 表現の横断基準。本書はそのページ単位の具体。
+
 **Status:** Implemented（Preview・Architect Review 待ち）
 **Date:** 2026-10-01
 **Scope:** `dreamin-spiral/my-life/index.html`, `style.css`（A21 ・ A21-b 追加）, `assets/dreamin-spiral/my-life/`
