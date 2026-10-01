@@ -41,36 +41,48 @@
 
   <main>
 
-    <!-- 01｜First View
-         Copy の正本: dreamin-spiral-os docs/repository-architecture/project-creation-launch-v1.md §4（Owner ／ Architect Approved）。
-         Primary → /apply/（受付終了時は cohort.js が停止し、受付終了の表示に切り替える）。Secondary → 既存の Guide 導線 -->
-    <section class="ds-service-hero">
-      <span class="ds-service-eyebrow">PROJECT CREATION ｜ FOUNDING COHORT</span>
-      <h1 class="ds-service-title pc-hero-title">Project Creation</h1>
-      <p class="ds-service-lead pc-hero-copy">
-        <span class="ds-phrase">エンジニアから、</span><br>
-        <span class="ds-phrase">プロジェクトを創る人へ。</span>
-      </p>
-      <p class="pc-hero-positioning">PM / PdM / PMO × AI × 実践</p>
+    <!-- Project Creation Public Reality Reset + Entry Architecture vNext（2026-10-01 ・ ACR-20261001-012）
+         Founding Cohort（2026-10-01 開始予定）は実施しないため、Public は「現在、募集は行っていません」の Evergreen Page にした。
+         Experience：Reality → Recognition → Meaning → Shift → How It Works → AI → 12 Weeks → Real Work → Support & Outputs → Who / Partner → FAQ → Current Availability → Open Action。
+         次回募集が決まったら、12 Current Availability ・ 13 Open Action（＋ 必要なら Offer ／ Price ／ Apply）だけを更新すればよい構造。
+         Founding Cohort の Offer ・ 料金 ・ 日程 ・ 申込 Flow は OS repo の Canonical ／ Legal ／ git history に残っている（Public から外しただけ）。
+         正本：docs/project-creation-public-reality-reset-vnext.md -->
+
+    <!-- 01 Hero — Reality。Founding Cohort ・ 期間 ・ 料金 ・ 開始日 ・ 定員 ・ 申込 CTA は置かない（Level 1 Continue のみ） -->
+    <section class="ds-service-hero ds-service-hero--reality">
+      <span class="ds-service-eyebrow">Project Creation</span>
+      <h1 class="ds-service-title">
+        技術のことは分かる。<br>
+        <span class="ds-phrase">でも、Project全体を</span><span class="ds-phrase">見ようとすると、</span><br>
+        急に難しくなる。
+      </h1>
       <p class="ds-service-lead">
-        <span class="ds-phrase">技術を知っている自分を</span><span class="ds-phrase">そのまま活かしながら、</span><br>
-        <span class="ds-phrase">人・Business・Projectへ</span><span class="ds-phrase">視野を広げる。</span>
+        <span class="ds-phrase">顧客が本当に</span><span class="ds-phrase">求めていること。</span><br>
+        <span class="ds-phrase">Businessとして</span><span class="ds-phrase">何を目指しているのか。</span><br>
+        <span class="ds-phrase">チームで何を決め、</span><span class="ds-phrase">どう前へ進めるのか。</span>
       </p>
       <p class="ds-service-lead">
-        <span class="ds-phrase">3ヶ月間、</span><span class="ds-phrase">実際のProjectを題材に、</span><br>
-        <span class="ds-phrase">Projectが前に進む状態を</span><span class="ds-phrase">創れる人になるための</span><br>
-        <span class="ds-phrase">実践プログラムです。</span>
+        <span class="ds-phrase">エンジニアとして</span><span class="ds-phrase">積み重ねてきたものを土台に、</span><br>
+        <span class="ds-phrase">人・Business・Projectへ、</span><br>
+        <span class="ds-phrase">少しずつ視野を広げていきます。</span>
       </p>
-      <a class="ds-service-cta" href="/dreamin-spiral/project-creation/apply/" data-pc-apply>Project Creationに申し込む</a>
-      <p class="pc-closed-note" data-pc-closed hidden>Founding Cohortの受付は終了しました。</p>
-      <a class="ds-service-secondary" href="/dreamin-spiral/guide/">ガイド（無料）で話してみる</a>
+      <p class="pc-hero-positioning">
+        <span class="ds-phrase">エンジニアから、</span><span class="ds-phrase">プロジェクトを創る人へ。</span>
+      </p>
+      <a class="ds-service-cue" href="#recognition">
+        <span>Project Creationについて見てみる</span>
+        <span class="ds-service-cue-arrow" aria-hidden="true">↓</span>
+      </a>
     </section>
 
     <div class="page-content">
 
-      <!-- 02｜Resonance -->
-      <div class="section-block ds-service-section">
-        <h2>こんな感覚はありませんか？</h2>
+      <!-- 02 Recognition — 旧 02 Resonance を KEEP。PM を目指す人だけに狭めない。旧 18 Final Message の「管理職らしく」を MOVE -->
+      <div class="section-block ds-service-section" id="recognition">
+        <h2>
+          こんなことを、<br>
+          感じることはありませんか。
+        </h2>
         <p>エンジニアとして仕事をしてきた。</p>
         <p>
           技術について考え、<br>
@@ -92,13 +104,17 @@
           <span class="ds-phrase">PMになって</span><span class="ds-phrase">進捗管理ばかりするのも、</span><br>
           <span class="ds-phrase">自分がやりたいこととは</span><span class="ds-phrase">違う気がする。</span>
         </p>
+        <p>
+          <span class="ds-phrase">無理に「管理職らしく」</span><span class="ds-phrase">なる必要はありません。</span><br>
+          <span class="ds-phrase">誰かのPM像に、</span><span class="ds-phrase">自分を合わせる必要もありません。</span>
+        </p>
         <p class="ds-service-statement">
           もし、そんな感覚があるなら、<br>
           <span class="ds-phrase">Project Creationは、</span><span class="ds-phrase">ひとつの次の可能性かもしれません。</span>
         </p>
       </div>
 
-      <!-- 03｜Reframe -->
+      <!-- 03 Meaning — 旧 03 Reframe を KEEP ／ REFRAME（役職名より、Projectが動ける状態を創ること） -->
       <div class="section-block ds-service-section">
         <h2>
           <span class="ds-phrase">PMになることと、</span><br>
@@ -116,22 +132,34 @@
         <ul class="ds-service-list">
           <li>何が起きているのかを観ること。</li>
           <li>人の言葉を受け取ること。</li>
-          <li>その奥にあるIntentを捉えること。</li>
+          <li>Intentを捉えること。</li>
           <li>複雑な状況を構造化すること。</li>
           <li>必要な問いを置くこと。</li>
-          <li><span class="ds-phrase">そして、人と一緒に</span><span class="ds-phrase">意思決定を生み出していくこと。</span></li>
+          <li>意思決定を生み出すこと。</li>
+          <li>次の行動へつなげること。</li>
         </ul>
-        <p>Project Creationでは、</p>
-        <p class="ds-service-statement">
-          <span class="ds-phrase">「管理する人」になるのではなく、</span><br>
-          <span class="ds-phrase">Projectが動ける状態を</span><span class="ds-phrase">創る人になる</span>
+        <p>
+          <span class="ds-phrase">Project Creationは、</span><br>
+          <span class="ds-phrase">役職としてPMになるためだけの</span><span class="ds-phrase">講座ではありません。</span>
         </p>
-        <p>ことを目指します。</p>
+        <p class="ds-service-statement">
+          <span class="ds-phrase">役職名よりも、</span><br>
+          <span class="ds-phrase">Projectが動ける状態を創ること</span><span class="ds-phrase">を扱います。</span>
+        </p>
       </div>
 
-      <!-- 04｜Transformation -->
+      <!-- 04 Shift — 旧 04「3ヶ月後に目指す変化」を REFRAME。成果保証にしない。旧 18 の「次の土台」を MOVE -->
       <div class="section-block ds-service-section">
-        <h2>3ヶ月後に目指す変化</h2>
+        <h2>
+          Projectの見方が、<br>
+          少しずつ変わっていく。
+        </h2>
+        <p>
+          <span class="ds-phrase">今まで身につけてきた技術も、</span><br>
+          <span class="ds-phrase">考える力も、</span><br>
+          <span class="ds-phrase">問題を解いてきた経験も、</span><br>
+          <span class="ds-phrase">そのまま次の土台になります。</span>
+        </p>
         <div class="pc-shift">
           <div class="pc-shift-col">
             <p class="pc-shift-label">Before</p>
@@ -142,7 +170,7 @@
             </p>
           </div>
           <div class="pc-shift-col pc-shift-after">
-            <p class="pc-shift-label">After</p>
+            <p class="pc-shift-label">Shift</p>
             <p>
               状況を観る。<br>
               人の言葉を受け取る。<br>
@@ -161,7 +189,7 @@
         </p>
       </div>
 
-      <!-- 05｜Project Creation OS -->
+      <!-- 05 How It Works — 旧 05 Project Creation OS ＋ 旧 06 3 Roles。3 Roles は Career ／ Track ではなく、Project を見る Lens -->
       <div class="section-block ds-service-section">
         <h2>
           <span class="ds-phrase">Projectを動かすための、</span><span class="ds-phrase">新しい仕事のOS</span>
@@ -175,14 +203,10 @@
           <li><span class="pc-flow-term">Decide</span><span class="pc-flow-desc">意思決定を生み出す</span></li>
           <li><span class="pc-flow-term">Natural Doing</span><span class="pc-flow-desc">次の行動へつなげる</span></li>
         </ol>
-      </div>
-
-      <!-- 06｜3 Roles -->
-      <div class="section-block ds-service-section">
-        <h2>
+        <h3 class="pc-subhead">
           <span class="ds-phrase">PM / PdM / PMOを、</span><br>
           <span class="ds-phrase">ひとつのProjectから見る</span>
-        </h2>
+        </h3>
         <dl class="ds-offer-summary pc-roles">
           <dt>PM</dt>
           <dd>Projectを成立させ、前へ進める。</dd>
@@ -191,9 +215,13 @@
           <dt>PMO</dt>
           <dd>Projectが動きやすい環境を創る。</dd>
         </dl>
+        <p>
+          <span class="ds-phrase">3つは、選ぶコースではなく、</span><span class="ds-phrase">ひとつのProjectを見るための視点です。</span><br>
+          <span class="ds-phrase">最初からどれか一つを</span><span class="ds-phrase">選ぶ必要はありません。</span>
+        </p>
       </div>
 
-      <!-- 07｜AI × Project Creation -->
+      <!-- 06 AI — 旧 07 を KEEP（AI 講座にしない） -->
       <div class="section-block ds-service-section">
         <h2>
           <span class="ds-phrase">AIを学ぶのではなく、</span><span class="ds-phrase">AIとProjectを創る。</span>
@@ -218,9 +246,12 @@
         </p>
       </div>
 
-      <!-- 08｜12 Weeks -->
+      <!-- 07 12 Weeks — 旧 08 を KEEP。日付つきの Schedule ではなく、Project Creation の基本 Program Design -->
       <div class="section-block ds-service-section">
         <h2>12 Weeks</h2>
+        <p>
+          <span class="ds-phrase">Project Creationは、</span><span class="ds-phrase">この12 Weeksを</span><span class="ds-phrase">基本構造として設計しています。</span>
+        </p>
         <div class="pc-months">
           <div class="pc-month">
             <p class="pc-month-label">Month 1</p>
@@ -255,7 +286,7 @@
         </div>
       </div>
 
-      <!-- 09｜How You Learn -->
+      <!-- 08 Real Work — 旧 09 How You Learn を KEEP -->
       <div class="section-block ds-service-section">
         <h2>今の仕事そのものが、教材になる。</h2>
         <ol class="pc-flow pc-flow-simple">
@@ -266,11 +297,18 @@
           <li><span class="pc-flow-term">仲間と話す</span></li>
           <li><span class="pc-flow-term">もう一度仕事へ戻る</span></li>
         </ol>
+        <p>
+          <span class="ds-phrase">架空の教材だけで終わらず、</span><span class="ds-phrase">現実の仕事と行き来します。</span>
+        </p>
       </div>
 
-      <!-- 10｜Support -->
+      <!-- 09 Support & Outputs — 旧 10 Support ＋ 旧 11 Portfolio。
+           「Project Creation My Page（将来的に提供）」と「決済確認後からの Community 参加」は Current Offer ではないため Public から外した -->
       <div class="section-block ds-service-section">
-        <h2>Support</h2>
+        <h2>
+          学びながら、<br>
+          実際のProjectへ戻っていく。
+        </h2>
         <dl class="ds-offer-summary">
           <dt>Weekly Group Session</dt>
           <dd>Zoom 90分 × 12回</dd>
@@ -279,16 +317,12 @@
             45分 × 3回（月1回）<br>
             Start ／ Middle ／ Integration
           </dd>
-          <dt>Project Creation My Page</dt>
-          <dd>将来的に提供</dd>
-          <dt>Community</dt>
-          <dd><span class="ds-phrase">決済確認後から</span><span class="ds-phrase">Dreamin' Spiral 🌱 Community参加可能</span></dd>
+          <dt>AIとの実践</dt>
+          <dd><span class="ds-phrase">Projectの中で、</span><span class="ds-phrase">AIと一緒に考える</span></dd>
+          <dt>Real Workと振り返り</dt>
+          <dd><span class="ds-phrase">今の仕事で試し、</span><span class="ds-phrase">振り返る</span></dd>
         </dl>
-      </div>
-
-      <!-- 11｜Portfolio -->
-      <div class="section-block ds-service-section">
-        <h2>3ヶ月後に残る12 Outputs</h2>
+        <h3 class="pc-subhead">12 Weeksで取り組む12 Outputs</h3>
         <ol class="ds-service-list pc-outputs">
           <li>My Project Map</li>
           <li>Situation Map</li>
@@ -310,7 +344,7 @@
         </p>
       </div>
 
-      <!-- 12｜Who -->
+      <!-- 10 Who / Partner — 旧 12 Who ＋ 旧 13 講師。旧 18 Final Message の結びを MOVE。経歴を追加しない -->
       <div class="section-block ds-service-section">
         <h2>こんな方へ</h2>
         <ul class="ds-service-list">
@@ -323,11 +357,14 @@
           <li>人を管理することには違和感がある</li>
           <li>自分らしいProject Leadershipを見つけたい</li>
         </ul>
-      </div>
-
-      <!-- 13｜Instructor（経歴の羅列にしない・経歴を追加しない。肩書きは特商法表記と同じ事実のみ） -->
-      <div class="section-block ds-service-section">
-        <h2>講師</h2>
+        <p class="ds-service-statement">
+          <span class="ds-phrase">技術を理解している自分のまま、</span><br>
+          <span class="ds-phrase">人の話を受け取り、</span><br>
+          <span class="ds-phrase">Businessを見る視点を持ち、</span><br>
+          <span class="ds-phrase">AIとも一緒に考えながら、</span><br>
+          <span class="ds-phrase">Projectを創れる人になる。</span>
+        </p>
+        <h3 class="pc-subhead">一緒にProjectを見る人</h3>
         <p>
           <span class="ds-phrase">エンジニアとして</span><span class="ds-phrase">システムを創り、</span><br>
           <span class="ds-phrase">Project Management、</span><span class="ds-phrase">Product、</span><span class="ds-phrase">Businessに関わる中で、</span>
@@ -356,52 +393,7 @@
         </div>
       </div>
 
-      <!-- 14｜Capacity -->
-      <div class="section-block ds-service-section">
-        <h2>定員</h2>
-        <dl class="ds-offer-summary">
-          <dt>Founding Cohort</dt>
-          <dd>最大6名</dd>
-        </dl>
-        <p class="ds-service-statement">少人数制。</p>
-      </div>
-
-      <!-- 15｜Price（通常価格は第2期以降の予定。今回は販売しない — OS Offer Definition §6-1） -->
-      <div class="section-block ds-service-section">
-        <h2>料金</h2>
-        <dl class="ds-offer-summary">
-          <dt>通常価格（予定）</dt>
-          <dd>198,000円（税込）</dd>
-        </dl>
-      </div>
-
-      <!-- 16｜Founding Cohort -->
-      <div class="section-block ds-service-section">
-        <h2>Founding Cohort</h2>
-        <dl class="ds-offer-summary pc-summary">
-          <dt>第1期限定</dt>
-          <dd><span class="pc-price">148,000円（税込）</span></dd>
-          <dt>定員</dt>
-          <dd>最大6名</dd>
-          <dt>開始</dt>
-          <dd>2026年10月1日（木）20:00</dd>
-          <dt>申込締切</dt>
-          <dd><span class="ds-phrase">2026年9月30日（水）18:00</span><span class="ds-phrase">または満席時</span></dd>
-        </dl>
-        <p>
-          <span class="ds-phrase">完成された講座を</span><span class="ds-phrase">一方的に受け取るのではなく、</span>
-        </p>
-        <p>
-          <span class="ds-phrase">実際のProjectで試し、</span><br>
-          <span class="ds-phrase">感じたことを持ち寄りながら、</span>
-        </p>
-        <p class="ds-service-statement">
-          <span class="ds-phrase">Project Creationそのものを</span><br>
-          <span class="ds-phrase">一緒に創っていく最初のMember</span>
-        </p>
-      </div>
-
-      <!-- 17｜FAQ -->
+      <!-- 11 FAQ — 旧 17 を整理（キャンセル・返金は現在販売していないため Public から外した ・ Legal は無変更）。「現在、参加できますか？」を追加 -->
       <div class="section-block ds-service-section">
         <h2>よくあるご質問</h2>
         <dl class="pc-faq">
@@ -445,66 +437,51 @@
             <span class="ds-phrase">Group Sessionは</span><span class="ds-phrase">原則録画しません。</span><br>
             <span class="ds-phrase">実案件やDialogueを</span><span class="ds-phrase">安心して扱えることを</span><span class="ds-phrase">優先します。</span>
           </dd>
-          <dt>キャンセル・返金はできますか？</dt>
+          <dt>現在、参加できますか？</dt>
           <dd>
-            <span class="ds-phrase">開講前であれば、</span><span class="ds-phrase">全額返金します。</span><br>
-            <span class="ds-phrase">開講後は、</span><span class="ds-phrase">原則として返金はありません。</span><span class="ds-phrase">やむを得ない事情がある場合は、</span><span class="ds-phrase">個別にご相談ください。</span><br>
-            <span class="ds-phrase">詳しくは</span><span class="ds-phrase"><a href="/legal/">特定商取引法に基づく表記</a>をご確認ください。</span>
+            <span class="ds-phrase">現在、</span><span class="ds-phrase">Project Creationの募集は</span><span class="ds-phrase">行っていません。</span><br>
+            <span class="ds-phrase">次回の募集時期や内容が</span><span class="ds-phrase">決まりましたら、</span><span class="ds-phrase">このページでお知らせします。</span>
           </dd>
         </dl>
       </div>
 
-      <!-- 18｜Final Message -->
-      <div class="section-block ds-service-section">
-        <h2>
-          <span class="ds-phrase">エンジニアとして歩いてきた、</span><span class="ds-phrase">その先へ。</span>
-        </h2>
+      <!-- 12 Current Availability — 現在は募集していない。未決定の次回情報（時期 ・ 期 ・ 予定）は書かない。
+           次回募集が決まったら、この Section を更新する -->
+      <div class="section-block ds-service-section" id="availability">
+        <h2>現在の募集について</h2>
         <p>
-          <span class="ds-phrase">今まで身につけてきた技術も、</span><br>
-          <span class="ds-phrase">考える力も、</span><br>
-          <span class="ds-phrase">問題を解いてきた経験も、</span>
-        </p>
-        <p>そのまま次の土台になります。</p>
-        <p>
-          <span class="ds-phrase">無理に「管理職らしく」</span><span class="ds-phrase">なる必要はありません。</span>
+          現在、<br>
+          <span class="ds-phrase">Project Creationの募集は</span><span class="ds-phrase">行っていません。</span>
         </p>
         <p>
-          <span class="ds-phrase">誰かのPM像に、</span><br>
-          <span class="ds-phrase">自分を合わせる必要もありません。</span>
-        </p>
-        <p>
-          <span class="ds-phrase">技術を理解している自分のまま、</span><br>
-          <span class="ds-phrase">人の話を受け取り、</span><br>
-          <span class="ds-phrase">Businessを見る視点を持ち、</span><br>
-          <span class="ds-phrase">AIとも一緒に考えながら、</span>
-        </p>
-        <p class="ds-service-statement">Projectを創れる人になる。</p>
-        <p>
-          <span class="ds-phrase">その3ヶ月を、</span><br>
-          <span class="ds-phrase">Project Creationで</span><span class="ds-phrase">一緒に始めます。</span>
+          次回の募集時期、<br>
+          開始日、<br>
+          定員、<br>
+          料金などは、<br>
+          <span class="ds-phrase">内容が決まり次第、</span><span class="ds-phrase">このページでお知らせします。</span>
         </p>
       </div>
 
-      <!-- 19｜Final CTA -->
+      <!-- 13 Open Action — 申込 CTA は置かない。Guide は Optional（必須入口 ・ Step 1 にしない） -->
       <div class="section-block ds-service-section">
-        <h2>Project Creation｜Founding Cohort</h2>
-        <dl class="ds-offer-summary">
-          <dt>期間</dt>
-          <dd>3ヶ月</dd>
-          <dt>定員</dt>
-          <dd>最大6名</dd>
-          <dt>料金</dt>
-          <dd><span class="pc-price">148,000円（税込）</span></dd>
-        </dl>
-        <a class="ds-service-cta" href="/dreamin-spiral/project-creation/apply/" data-pc-apply>Project Creationに申し込む</a>
-        <p class="pc-closed-note" data-pc-closed hidden>Founding Cohortの受付は終了しました。</p>
-        <a class="ds-service-secondary" href="/dreamin-spiral/guide/">ガイド（無料）で話してみる</a>
-        <p class="ds-service-note">
-          営業面談ではありません。<br>
-          <span class="ds-phrase">現在の仕事やCareerについて</span><span class="ds-phrase">お話を伺いながら、</span><br>
-          <span class="ds-phrase">Project Creationが</span><span class="ds-phrase">今の自分に合っているかを</span><br>
-          <span class="ds-phrase">一緒に見ていきます。</span>
+        <h2>
+          Project Creationが、<br>
+          少し気になったら。
+        </h2>
+        <p>今は募集期間ではありません。</p>
+        <p>
+          このページでは、<br>
+          <span class="ds-phrase">Project Creationが</span><span class="ds-phrase">どんな仕事の見方や実践なのかを、</span><br>
+          <span class="ds-phrase">これからもお伝えしていきます。</span>
         </p>
+        <p>
+          <span class="ds-phrase">次回の募集が決まりましたら、</span><span class="ds-phrase">このページでお知らせします。</span>
+        </p>
+        <p class="ds-service-note">
+          <span class="ds-phrase">今の仕事やCareerについて、</span><span class="ds-phrase">まず誰かと話してみたい方には、</span><br>
+          <span class="ds-phrase">Guide（無料）もあります。</span>
+        </p>
+        <a class="ds-service-secondary" href="/dreamin-spiral/guide/">Guide（無料）について見る</a>
       </div>
 
     </div>
@@ -541,6 +518,5 @@
     </div>
   </footer>
 
-  <script src="/dreamin-spiral/project-creation/cohort.js"></script>
 </body>
 </html>

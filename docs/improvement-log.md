@@ -6,6 +6,19 @@
 ---
 
 ---
+## [2026-10-01] — Project Creation Public Reality Reset + Entry Architecture vNext（**Architect Review 待ち**・Preview のみ）
+
+**Scope:** `dreamin-spiral/project-creation/index.html`, `dreamin-spiral/project-creation/apply/index.html`, `style.css`（A22）, `docs/project-creation-public-reality-reset-vnext.md`（新規）
+**Triggered by:** Architect Decision（ACR-20261001-012）
+
+- Founding Cohort（2026-10-01 開始予定）は実施しないため、Public を「現在、Project Creationの募集は行っていません。」の **Evergreen Page** にした
+- 19 Section → 13 Section（Reality → Recognition → Meaning → Shift → How It Works → AI → 12 Weeks → Real Work → Support & Outputs → Who / Partner → FAQ → Current Availability → Open Action）
+- **Public から外したもの**：FOUNDING COHORT ・ 第1期限定 ・ 148,000円 ・ 198,000円 ・ 最大6名 ・ 10/1 開始 ・ 9/30 締切 ・ 受付終了の表示 ・ 申込 CTA ・ Capacity ／ Price ／ Founding Cohort Section ・ 返金 FAQ ・ My Page（将来的に提供）・ Community 特典
+- `/apply/` を閉じた状態に（Form ・ 送信 ・ cohort.js なし）。cohort.js は削除せず、どこからも読み込まない
+- Offer Definition ・ Legal ・ thanks ・ complete は無変更（/thanks/ の Stripe LIVE Link と Legal の販売中表記は Architect へ報告）
+- Visual は生成していない（既存 `DS-PROJECT-01` は Hero の Direction に合わないため再利用せず、Asset 案を Architect へ）
+- QA：LP 10 幅で overflow 0 ・ 孤立行 0 ・ Sales 表示 0 件
+
 ## [2026-10-01] — Business Creation｜Hero Visual（DS-BUSINESS-HERO-01）（**Architect Review 待ち**・Preview のみ）
 
 **Scope:** `dreamin-spiral/business-creation/index.html`（Hero の figure のみ）, `assets/dreamin-spiral/business-creation/hero-*`, `docs/business-creation-entry-architecture-vnext.md`
