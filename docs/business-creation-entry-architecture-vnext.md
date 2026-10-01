@@ -2,7 +2,7 @@
 
 **Status:** Implemented（Preview・Architect Review 待ち）
 **Date:** 2026-10-01
-**Scope:** `dreamin-spiral/business-creation/index.html` のみ（`style.css` ・ `gas-transition.js` ・ Dialogue Form の URL ／ 属性は変更なし。A21 の Reality Hero ・ Continue Cue を再利用）
+**Scope:** `dreamin-spiral/business-creation/index.html`, `assets/dreamin-spiral/business-creation/hero-*`（`style.css` ・ `gas-transition.js` ・ Dialogue Form の URL ／ 属性は変更なし。A21 ／ A21-b の Reality Hero ・ Scene Hero ・ Continue Cue を再利用）
 **AI Creation Request:** ACR-20261001-009
 
 ## Core Principle
@@ -36,37 +36,26 @@ Business Creation を知らない人が、最初から「Creation System」を�
 - Final の Primary は Business Creation 専用の Dialogue Form（GAS ・ `type=business_creation_initial`）。Reality → 90分の対話日時 → 予約。general contact form ・ Guide ・ 直接決済には接続しない
 - この Request では GAS ・ `gas-transition.js` に触れていない。Final の CTA 2 本は元と byte 一致
 
-## Visual（DS-BUSINESS-01）の評価と Architect への返却
+## Hero Visual（AD-1 決着 ・ 2026-10-01）
 
-既存 `DS-BUSINESS-01`（1672×941 ・ Artifact ＋ Creation）は **Hero に再利用しない**。Hero は Text のみで実装した。
+**Architect Decision：** 既存 `DS-BUSINESS-01` は LP Hero に使わない（完成した Website ／ Dashboard を眺める構図 ・ 売上グラフ ／ ¥ ・ 複数 Device ・ 満足げな笑顔 ・ 湖と山のテラス ・ Home ／ TOP Card と同一）。新規 **`DS-BUSINESS-HERO-01`** を採用。
 
-| 観点 | 評価 |
+| 項目 | 内容 |
 |---|---|
-| Hero Reality ／ Business の途中 | ✗ 完成した Website（Monitor ・ Phone）と Dashboard が並び、「創っている途中」ではなく「完成品を眺める」構図 |
-| Revenue ／ Money | ✗ Laptop に **売上グラフと ¥ の数値**（Direction の避けるもの：revenue graph ・ money） |
-| Startup ／ Laptop 広告 | ✗ 3 台の Device と満足げな笑顔。Laptop ／ Startup success 広告に寄る |
-| Daily Reality | ✗ 湖と山を望むテラスの仕事場（非日常） |
-| 人が創っている | △ 人はいるが、眺めているだけで手は動いていない |
-| Home Card との重複 | ✗ Home ／ TOP の Business Creation Card で使用中 |
-| 16:9 ・ 質 | ○ |
-
-→ Stop Condition「Existing DS-BUSINESS-01 が Hero に不適合で新規 Asset が必要」。以下を提案として返す（画像は生成していない）。
-
-- **Page:** `/dreamin-spiral/business-creation/`
-- **Section:** 01 Hero（My Life ・ Community ・ 3 Weeks ・ Guide と同じ A21-b にすれば：Desktop は Visual ｜ Copy、880px 未満は縦積みで max-width 560px）
-- **Asset ID 案:** `DS-BUSINESS-HERO-01`
-- **Formal Filename 案:** `DS-BUSINESS-HERO-01_dreamin-spiral-business-creation-hero.png`
-- **Visual Role:** Reality ＋ Creation ＋ Work ＋ Human ＋ Technology
-- **Meaning:** Business が完成したのではなく、今の現実から、実際に Business を創っている途中
-- **Direction:** 40〜50 代の人物が一人（または二人で並んで作業）・ 自宅の一角 ／ 小さな Studio ・ 平日の日中の自然光 ・ 机の上に手書きのメモ ／ 付箋 ／ サービス案のスケッチ ・ ノート PC は開いているが脇役（画面は簡素な作りかけのページか白い画面で、数字 ・ グラフは映さない）・ 人は手を動かしている（書く ／ 付箋を並べ替える）・ 表情は集中して穏やか ・ 未完成で散らかりすぎない机 ・ 窓の外は普通の街並み ・ 成功ポーズ ・ 握手 ・ プレゼン ・ 会議 ・ 高級オフィス ・ コワーキングの華やかさ ・ AI ロボット ・ 浮遊 UI ・ ネオン ・ 売上グラフ ・ お金 ・ 絶景なし ・ 16:9 で人物は中くらい、余白あり
-- **使用箇所:** Business Creation LP の Hero のみ（Home ／ TOP の Card は `DS-BUSINESS-01` のまま）
-- **Prompt 案:**
-  > A quiet, documentary-style photograph of a Japanese person in their late 40s working at a wooden desk in a corner of an ordinary home studio on a weekday afternoon, soft natural window light. They are mid-task, writing on sticky notes and rearranging hand-drawn sketches of a service idea; an open laptop sits to the side showing a simple, unfinished web page (no numbers, no charts). Coffee mug, notebook, a few papers, a small plant. Calm, focused expression. The desk is in progress but not messy. Plain everyday room, ordinary city view outside. No success pose, no handshake, no presentation, no meeting, no luxury office, no coworking glamour, no AI robot, no floating UI, no neon, no revenue graph, no money, no scenic resort view. Wide 16:9 composition, person at medium size with space around them, face in the upper half of the frame.
+| Asset ID | `DS-BUSINESS-HERO-01`（Owner の正式 PNG 名 `DS-BUSINESS-HERO-01_dreamin-spiral-business-creation-hero.png` ・ byte 一致を確認） |
+| 原寸 | **1536×1024（3:2）** — 他の Service Page Hero（1672×941 ・ 16:9）と異なる |
+| Visual Role | Reality ＋ Creation ＋ Work ＋ Human ＋ Technology |
+| Meaning | Businessが完成したのではなく、今の現実から、実際にBusinessを創っている途中 |
+| Master | OS repo `assets/png/b8e-public-visual/ds/DS-BUSINESS-HERO-01.png`（原寸のまま ・ Inventory ・ Implementation Map 更新） |
+| 公開版 | **上端基準で 16:9（1536×864）にトリミング**して `assets/dreamin-spiral/business-creation/hero-{640,960,1280,1536}.{avif,webp}`（WebP q72 ・ AVIF q52 ・ 22〜88 KB）。下端の机上 160px（付箋の一部）だけを除き、顔 ・ 手元 ・ 付箋 ・ Laptop は残る。最大幅は原寸の 1536（拡大しない）。Master PNG は public に置かない |
+| Layout | My Life ・ Community ・ 3 Weeks ・ Guide と同じ A21-b：Desktop（≥ 880px）は Visual ｜ Copy の 2 列、それ未満は Visual → Copy の縦積みで **max-width 560px**。画像と Copy は別面 |
+| Markup | `<picture>`（AVIF ／ WebP ・ srcset 4 幅 ・ `sizes="(max-width: 879px) min(560px, calc(100vw - 48px)), 500px"`）・ `width="1536" height="864"`（公開版の 16:9 ・ CLS 0）・ `fetchpriority="high"` ・ `decoding="async"` |
+| Role separation | Home ／ TOP の Business Creation Card は `DS-BUSINESS-01` のまま（KEEP） |
 
 ## Known Issue（External Exposure Layer ほか）
 
 - Meta description ／ `og:description` は従来のまま（変更していない）。Hero の Copy と揃えるかは External Exposure Layer で判断
-- Hero の Lead は Architect 指定の 4 段落（商品やサービス… ／ 最初から全部を… ／ 今あるもの… ／ 一緒にBusinessを…）。Desktop（1024〜1440 ・ 画面高 768〜900）では Continue Cue が First View の少し下（Cue 下端 888px）に来る。Headline と Lead の前半は First View 内。Copy の判断のため変えていない
+- Hero の Lead は Architect 指定の 4 段落。Round 2（Visual ｜ Copy の 2 列）で Desktop の Cue 下端は 856px（1280 ／ 1440）・ 899px（1024）。1440×900 では First View 内、1280×800 ・ 1024×768 では少し下（Headline ・ Lead ・ Visual は First View 内）。Copy の判断のため変えていない
 - Recognition の 4 つ目の見出し「AIを使いたいけれど、何にどう使えばいいか分からない」は Current の markup（`.ds-phrase` なし）を byte で KEEP したため、Mobile では「何にどう使えば ／ いいか分からない」で折り返す（1〜2 文字の孤立ではない）
 
 ## Verification（ローカル静的配信で実測 ・ 2026-10-01）
@@ -77,5 +66,6 @@ Business Creation を知らない人が、最初から「Creation System」を�
 | Hero | Creation System の語なし ・ Dialogue Form ／ Guide の link 0 ・ Continue Cue → `#recognition`（375px で Recognition の見出しが上端から 65px） |
 | CTA | `main a[data-gas-transition]` 1（Final）・ Guide Secondary 1（Final）・ Final CTA の click で Transition View（「Business Creationの対話ページを開いています。」）を表示（遷移の timer だけを止めて検証。GAS へは移動していない） |
 | KEEP（byte） | `<head>`（Meta ／ OGP）・ `</main>` 以降 ・ Recognition の list と Closing ・ Statement ・ 旧 Section 4〜7（Creation ・ Technology ・ Partnership ・ Profile ・ Offer ・ 880,000円 ・ 1,600,000円 ・ Notes）・ Final の本文 ／ CTA ／ Note |
-| Responsive | 320 ・ 375 ・ 390 ・ 430 ・ 768 ・ 820 ・ 879 ・ 1024 ・ 1280 ・ 1440 で overflow 0 ・ 1〜2 文字の孤立行 0 ・ 画像 0 のため Visual 巨大化なし |
+| Responsive | 320 ・ 375 ・ 390 ・ 430 ・ 768 ・ 820 ・ 879 ・ 1024 ・ 1280 ・ 1440 で overflow 0 ・ 1〜2 文字の孤立行 0 |
+| Hero Visual 実寸 | 320：272×153 ・ 375：327×184 ・ 390：342×192 ・ 430：382×215 ・ **768 ／ 820 ／ 879：560×315（上限で停止）**・ 1024：444×250 ・ 1280 ／ 1440：512×288（2 列）。全幅で 16:9（1.778）・ 顔の切れなし ・ 手元と付箋が見える |
 | Regression | `style.css` ・ `gas-transition.js` ・ Dreamin' Spiral 🌱 Home ・ TOP ・ 他 Service Page の差分 0 |

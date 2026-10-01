@@ -46,8 +46,21 @@
          Creation System は Hero で説明せず、Recognition と What We Create を通った後で Meaning として出す。
          正本：docs/business-creation-entry-architecture-vnext.md -->
 
-    <!-- 01 Hero — Reality。Conversion CTA ・ Guide は置かない（Level 1 Continue のみ） -->
-    <section class="ds-service-hero ds-service-hero--reality">
+    <!-- 01 Hero — Reality。Conversion CTA ・ Guide は置かない（Level 1 Continue のみ）
+         Visual｜DS-BUSINESS-HERO-01（Reality ＋ Creation ＋ Work ＋ Human ＋ Technology ／「Businessが完成したのではなく、今の現実から、実際にBusinessを創っている途中」）。
+         原寸 1536×1024（3:2）を、公開版では上端基準で 16:9（1536×864）にトリミング。
+         My Life ・ Community ・ 3 Weeks ・ Guide と同じ A21-b：Desktop（≥ 880px）は Visual ｜ Copy の 2 列、それ未満は Visual → Copy の縦積み（画像は max-width 560px）。
+         Home ／ TOP の Business Creation Card は DS-BUSINESS-01 のまま（Role separation）。 -->
+    <section class="ds-service-hero ds-service-hero--reality ds-service-hero--scene">
+      <div class="ds-service-hero-inner">
+      <figure class="ds-service-hero-figure">
+        <picture>
+          <source type="image/avif" srcset="/assets/dreamin-spiral/business-creation/hero-640.avif 640w, /assets/dreamin-spiral/business-creation/hero-960.avif 960w, /assets/dreamin-spiral/business-creation/hero-1280.avif 1280w, /assets/dreamin-spiral/business-creation/hero-1536.avif 1536w" sizes="(max-width: 879px) min(560px, calc(100vw - 48px)), 500px">
+          <source type="image/webp" srcset="/assets/dreamin-spiral/business-creation/hero-640.webp 640w, /assets/dreamin-spiral/business-creation/hero-960.webp 960w, /assets/dreamin-spiral/business-creation/hero-1280.webp 1280w, /assets/dreamin-spiral/business-creation/hero-1536.webp 1536w" sizes="(max-width: 879px) min(560px, calc(100vw - 48px)), 500px">
+          <img src="/assets/dreamin-spiral/business-creation/hero-960.webp" width="1536" height="864" fetchpriority="high" decoding="async" alt="日中の自宅の仕事机で、付箋やスケッチを並べながら、ペンを手に考えている人">
+        </picture>
+      </figure>
+      <div class="ds-service-hero-copy">
       <span class="ds-service-eyebrow">Business Creation</span>
       <h1 class="ds-service-title">
         <span class="ds-phrase">やりたいことを、</span><span class="ds-phrase">Businessにしたい。</span><br>
@@ -73,6 +86,8 @@
         <span>Business Creationについて見てみる</span>
         <span class="ds-service-cue-arrow" aria-hidden="true">↓</span>
       </a>
+      </div>
+      </div>
     </section>
 
     <div class="page-content">
