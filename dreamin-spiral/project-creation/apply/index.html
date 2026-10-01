@@ -3,16 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Project Creation のお申し込みページです。現在、Project Creationの募集は行っていません。">
-  <title>お申し込み | Project Creation | B8E</title>
+  <meta name="description" content="Project Creationについて話してみるページです。Project Creationは、いつでもご相談いただけます。">
+  <title>Project Creationについて話してみる | Project Creation | B8E</title>
   <link rel="canonical" href="https://www.b8e.co.jp/dreamin-spiral/project-creation/apply/">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="お申し込み | Project Creation | B8E">
+  <meta property="og:title" content="Project Creationについて話してみる | Project Creation | B8E">
   <meta property="og:url" content="https://www.b8e.co.jp/dreamin-spiral/project-creation/apply/">
   <meta property="og:image" content="https://www.b8e.co.jp/assets/ogp/generated/dreamin-spiral-project-creation.png">
   <meta property="og:site_name" content="B8E">
   <meta name="twitter:card" content="summary_large_image">
-  <meta property="og:description" content="Project Creation のお申し込みページです。現在、Project Creationの募集は行っていません。">
+  <meta property="og:description" content="Project Creationについて話してみるページです。Project Creationは、いつでもご相談いただけます。">
   <link rel="stylesheet" href="/style.css">
   <script defer src="/_vercel/insights/script.js"></script>
 </head>
@@ -41,32 +41,105 @@
 
   <main>
 
-    <!-- Project Creation Public Reality Reset（2026-10-01 ・ ACR-20261001-012）
-         現在は募集していないため、/apply/ は閉じた状態（Form ・ 送信 ・ 支払いへの導線なし）。
-         旧 Founding Cohort の申込 Form（Formspree maenjvpj ・ 入力 → 確認 → /thanks/）と cohort.js の受付制御は、
-         この commit の直前（b8e-lab e55ce23）の版と OS repo docs/repository-architecture/project-creation-launch-v1.md に残っている。
-         次回募集で再利用するときは、そこから戻す。正本：docs/project-creation-public-reality-reset-vnext.md -->
+    <!-- Project Creation Dialogue 入口（Round 3 ・ 2026-10-01 ・ ACR-20261001-012）
+         「Project Creationについて話してみる」＝ Interest ／ Dialogue ／ Consultation。購入 ・ 申込確定 ・ 契約 ・ 決済ではない。
+         送信先は Project Creation 専用の Formspree Form（maenjvpj ・ 自動返信なし ・ Owner が受け取りメールで返信）。Guide ・ general contact へは送らない。
+         旧申込 Form（Offer 表示 ・ 確認ステップ ・ /thanks/ への遷移 ・ 受付制御 script）は戻していない（b8e-lab e55ce23 の版と OS Canonical に残る）。
+         正本：docs/project-creation-public-reality-reset-vnext.md -->
 
     <section class="thanks-hero">
       <span class="hero-label">Project Creation</span>
       <h1 class="hero-copy">
-        現在、<br>
-        <span class="keep-together">Project Creationの</span>募集は<br>
-        行っていません。
+        <span class="keep-together">Project Creationについて</span><br>
+        話してみる
       </h1>
     </section>
 
     <div class="page-content">
 
-      <div class="section-block">
+      <div class="section-block" id="pc-dialogue">
         <p>
-          次回の募集時期や内容が決まりましたら、<br>
-          <span class="keep-together">Project Creationの</span>ページでお知らせします。
+          Project Creationは、<br>
+          <span class="keep-together">いつでもご相談いただけます。</span>
+        </p>
+        <p>
+          今の仕事や、<br>
+          <span class="keep-together">気になっていることを</span><span class="keep-together">伺いながら、</span>
+        </p>
+        <p>
+          <span class="keep-together">実施時期や進め方を</span><br>
+          <span class="keep-together">一緒に考えていきます。</span>
+        </p>
+        <p class="ds-service-note">
+          <span class="keep-together">このページからの送信は、</span><span class="keep-together">お申し込み・ご契約・</span><span class="keep-together">お支払いではありません。</span>
+        </p>
+
+        <form class="apply-form ds-apply-form" id="pc-dialogue-form" action="https://formspree.io/f/maenjvpj" method="post" novalidate>
+
+          <input type="hidden" name="form_type" value="project_creation">
+          <input type="hidden" name="inquiry_type" value="dialogue">
+          <input type="hidden" name="_subject" value="Project Creation｜話してみたい（対話のご希望）">
+          <input type="hidden" name="site_version" value="project-creation-dialogue-v1">
+          <input type="hidden" name="source_page" id="source_page" value="direct">
+          <input type="hidden" name="submitted_at" id="submitted_at" value="">
+
+          <div class="ds-field">
+            <label for="name">お名前<span class="ds-required">必須</span></label>
+            <input type="text" id="name" name="name" placeholder="例）山田　太郎" required autocomplete="name">
+          </div>
+
+          <div class="ds-field">
+            <label for="email">メールアドレス<span class="ds-required">必須</span></label>
+            <input type="email" id="email" name="email" required autocomplete="email"
+                   pattern="[^\s@]+@[^\s@]+\.[^\s@]+">
+            <p class="ds-field-note">ご連絡はこのアドレスへお送りします。</p>
+          </div>
+
+          <div class="ds-field">
+            <label for="current_work">今のお仕事</label>
+            <input type="text" id="current_work" name="current_work" autocomplete="organization-title">
+          </div>
+
+          <div class="ds-field">
+            <label for="interest">Project Creationで気になっていること</label>
+            <textarea id="interest" name="interest"></textarea>
+          </div>
+
+          <div class="ds-field">
+            <label for="preferred_timing">始めたい時期のご希望</label>
+            <input type="text" id="preferred_timing" name="preferred_timing">
+            <p class="ds-field-note">決まっていなければ、空欄で大丈夫です。</p>
+          </div>
+
+          <div class="ds-field">
+            <label for="format_preference">実施形態のご希望</label>
+            <input type="text" id="format_preference" name="format_preference" placeholder="例）個別で、少人数で など">
+          </div>
+
+          <div class="ds-consent">
+            <label for="terms_privacy_consent">
+              <input type="checkbox" id="terms_privacy_consent" name="terms_privacy_consent" value="agreed" required>
+              <span><a href="/terms/" target="_blank" rel="noopener">利用規約</a>および<a href="/privacy-policy/" target="_blank" rel="noopener">プライバシーポリシー</a>を確認し、同意します。</span>
+            </label>
+          </div>
+
+          <p class="ds-form-error" id="pc-form-error" role="alert" hidden></p>
+
+          <button type="submit" id="pc-submit">この内容で送る</button>
+        </form>
+
+        <p class="ds-service-note">
+          <a href="/dreamin-spiral/project-creation/">Project Creationについて見る</a>
+        </p>
+      </div>
+
+      <!-- 送信後（成功時のみ表示） -->
+      <div class="section-block" id="pc-dialogue-sent" hidden>
+        <p>送信しました。</p>
+        <p>
+          <span class="keep-together">内容を拝見し、</span><span class="keep-together">メールでご連絡します。</span>
         </p>
         <p><a class="cta-link" href="/dreamin-spiral/project-creation/">Project Creationについて見る</a></p>
-        <p class="ds-service-note">
-          <a href="/dreamin-spiral/guide/">Guide（無料）について見る</a>
-        </p>
       </div>
 
     </div>
@@ -102,6 +175,66 @@
       © 2026 BEAT EIGHT EMOTION株式会社
     </div>
   </footer>
+
+  <script>
+    (function () {
+      var form    = document.getElementById('pc-dialogue-form');
+      var intro   = document.getElementById('pc-dialogue');
+      var sent    = document.getElementById('pc-dialogue-sent');
+      var button  = document.getElementById('pc-submit');
+      var errorBox= document.getElementById('pc-form-error');
+      // Owner Approved Error Copy（3 Weeks と同一）
+      var ERROR_TEXT = '送信できませんでした。お手数ですが、もう一度お試しください。';
+      var FIELDS = ['name', 'email', 'current_work', 'interest', 'preferred_timing', 'format_preference'];
+
+      if (!form) { return; }
+
+      var ref = document.referrer || '';
+      var src = document.getElementById('source_page');
+      if (src && ref) {
+        try { src.value = new URL(ref).pathname || 'direct'; } catch (e) { src.value = 'direct'; }
+      }
+
+      form.addEventListener('submit', function (event) {
+        event.preventDefault();
+        if (button.disabled) { return; }   // 二重送信防止
+        FIELDS.forEach(function (id) {
+          var el = document.getElementById(id);
+          if (el) { el.value = el.value.trim(); }
+        });
+        if (!form.reportValidity()) { return; }
+
+        button.disabled = true;
+        errorBox.hidden = true;
+        errorBox.textContent = '';
+        document.getElementById('submitted_at').value = new Date().toISOString();
+
+        fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { 'Accept': 'application/json' }
+        })
+          .then(function (response) {
+            return response.json().catch(function () { return {}; })
+              .then(function (data) { return { ok: response.ok, data: data }; });
+          })
+          .then(function (result) {
+            if (result.ok && result.data && result.data.ok !== false) {
+              intro.hidden = true;
+              sent.hidden = false;
+              sent.scrollIntoView({ behavior: 'smooth', block: 'start' });
+              return;
+            }
+            throw new Error('submission failed');
+          })
+          .catch(function () {
+            button.disabled = false;
+            errorBox.textContent = ERROR_TEXT;
+            errorBox.hidden = false;
+          });
+      });
+    })();
+  </script>
 
 </body>
 </html>

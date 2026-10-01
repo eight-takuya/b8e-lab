@@ -1,8 +1,8 @@
 # Project Creation Public Reality Reset + Entry Architecture vNext
 
-**Status:** Round 2 Implemented（Preview・Architect Review 待ち）
+**Status:** Round 3 Implemented（Preview・Architect Review 待ち）
 **Date:** 2026-10-01
-**Scope:** `dreamin-spiral/project-creation/index.html`, `dreamin-spiral/project-creation/apply/index.html`, `style.css`（A22 ・ 2 rules）／ Round 2：`dreamin-spiral/project-creation/{thanks,complete}/index.html`, `legal/index.html`, `assets/dreamin-spiral/project-creation/`
+**Scope:** `dreamin-spiral/project-creation/index.html`, `dreamin-spiral/project-creation/apply/index.html`, `style.css`（A22 ・ 2 rules）／ Round 2：`dreamin-spiral/project-creation/{thanks,complete}/index.html`, `legal/index.html`, `assets/dreamin-spiral/project-creation/` ／ Round 3：同じ files ＋ `terms/index.html`
 **AI Creation Request:** ACR-20261001-012
 
 ## Public Current Reality
@@ -136,3 +136,67 @@
 | /legal/ | Project Creation の記述は Current Note 1 か所だけ ・ Founding ／ 148,000 ／ 198,000 ／ 定員6名 ／ 9月30日 ／ 開講日 0 ・ 他 Service の料金表示はすべて残っている ・ overflow 0 |
 | 公開 source 全体 | Payment Link ID ・ `buy.stripe.com` の Project Creation 分 0（3 Weeks ・ My Life の thanks の Stripe link はそのまま）|
 | cohort.js | 削除なし ・ どのページからも読み込みなし |
+
+## Round 3（2026-10-01 ・ Owner Reality Review による Meaning Correction）
+
+**Current Reality（正本）：** 10/1 固定開始の旧募集は実施しない。ただし Project Creation という Service は今も提供でき、一人からでも実施する。固定の募集期間へ参加する Service ではなく、Client が始めたいタイミングから相談でき、実施時期や進め方は Client の希望を伺いながら一緒に決める（Calendar-first ではなく Reality-first）。
+Round 1 ／ 2 の「現在、Project Creationの募集は行っていません。」は意味を閉じすぎていたため、すべて置き換えた。
+
+**正式 Copy（Current Availability の正本）：** 「Project Creationは、いつでもご相談いただけます。」「ご希望を伺いながら、実施時期や進め方を一緒に決めていきます。」
+
+### LP
+
+| 箇所 | Round 3 |
+|---|---|
+| 12 Current Availability | h2「現在のご案内」＋ 正式 Copy 2 文（旧「現在の募集について」を REMOVE）|
+| 13 Open Action | Headline KEEP ＋ Architect 指定の Body ＋ **Primary「Project Creationについて話してみる」→ `/dreamin-spiral/project-creation/apply/`** ＋ Secondary「Guide（無料）について見る」（Optional）。Guide を話す入口として案内していた note は外した（Primary と競合するため）|
+| 11 FAQ | 「現在、参加できますか？」を REMOVE →「いつから始められますか？」（正式 Copy）＋「一人でも参加できますか？」（はい。＋ §21 の「実施形態は、ご希望や状況を伺いながら一緒に決めます。」）。「固定のCohort…」は §47（Cohort を避ける）と重なるため使わず、§21 の文で答えた |
+| 09 Support | 「Weekly Group Session」→「**Weekly Session**」＋「個別または少人数」（一人参加と矛盾するため ・ Zoom 90分 × 12回は KEEP）。FAQ の「Weekly Group Sessionが90分」「Group Sessionは原則録画しません」も Weekly Session に揃えた。1on1 45分 × 3回は KEEP |
+| Hero ・ 02〜10 の本文 | 変更なし（DS-PROJECT-HERO-01 ・ Copy ・ Continue Cue）|
+
+### Dialogue 入口（/apply/）
+
+- 調査した既存の仕組み：
+  - **Formspree `maenjvpj`**：Project Creation 専用 Form ・ 自動返信なし（Owner がメールで返信）。決済 ・ Calendar に依存しない → **採用**
+  - **GAS 予約 `project_creation_initial`**：Canonical（Program Architecture §4 ・ Launch v1 §8）で「**Month 1 の Start 1on1 専用**（決済後 ・ 45分）」と定義されている。購入前の対話に使うと Canonical の意味が変わるため使わない（Architect 判断事項）
+  - **Business Creation の `business_creation_initial`**：Business Creation 専用（統合しない）
+  - Guide ・ general contact（`mykleakb`）：Prompt により送らない
+- /apply/ は「Project Creationについて話してみる」の入口：h1 ＋ Architect 指定の Lead ＋「このページからの送信は、お申し込み・ご契約・お支払いではありません。」＋ 軽い Form（お名前 ・ メール ・ 同意だけ必須 ／ 今のお仕事 ・ 気になっていること ・ 始めたい時期のご希望 ・ 実施形態のご希望は任意）。確認ステップなし ・ 送信成功時は同じページで「送信しました。内容を拝見し、メールでご連絡します。」を表示（/thanks/ へは遷移しない）
+- 受信の識別：`form_type=project_creation`（不変の key を維持）＋ `inquiry_type=dialogue` ＋ `_subject`「Project Creation｜話してみたい（対話のご希望）」＋ `site_version=project-creation-dialogue-v1`
+- 旧申込 Form（Offer 表示 ・ 料金 ・ 日程 ・ 定員 ・ Stripe 前提 ・ cohort.js）は戻していない
+
+### /thanks/ ・ /complete/（旧 Payment Flow の URL ・ 閉じた状態は KEEP）
+
+- /thanks/：h1「Project Creationのお申し込み・お支払いについて」＋「…事前の対話とご案内のあとに、個別にご案内します。」
+- /complete/：h1「Project Creationのお手続きについて」＋「…個別のご案内に沿って進めます。」
+- どちらも LP ＋ Guide（Optional）への link だけ。「募集」の表示 0 ・ 旧 Stripe ／ 振込 ／ 日付の案内 0。title ／ description は本文と同じ意味へ最小修正
+
+### /legal/（Project Creation を Current Service として復元）
+
+| 見出し | Project Creation |
+|---|---|
+| 販売価格 | 一覧に「お申し込み・ご契約の前に、サービスページまたは個別のご案内で明示します」（金額は作らない）|
+| 支払方法 | 個別のご案内でお示しする方法（Stripe によるオンライン決済、または銀行振込）|
+| 支払時期 | 実施内容・料金・開始時期等をご案内し、ご合意いただいた後、指定する期日までに |
+| 役務の提供時期 | ご希望を伺いながら実施時期・実施形態を決定し、お支払い等の必要な手続きの完了後に開始 |
+| キャンセル・返金 | 開講日（個別に合意した開始日）の前は全額返金 ／ 開講後は原則返金なし ／ やむを得ない事情は個別相談（/terms/ 第9条の2 と同じ規定。旧「定員超過 ・ 締切後」の返金は削除）|
+
+### /terms/ 第9条の2
+
+- 「グループセッション」→「セッション」（定義 ・ 録画 ・ 情報の取扱い）。「定員は各期ごとに定めます（Founding Cohortは6名）。」→「実施時期、実施形態および参加人数は、ご希望や状況を踏まえて個別にご案内します。」（最低人数なし）。「開講日」→「開講日（個別に合意した開始日）」。最終改定日 2026年10月1日
+- **Community は KEEP**：Program Architecture §9（Canonical）が Project Creation 全体のルールとして「決済確認後から受講期間終了まで利用可 ・ 任意」と定めており、旧募集だけの条件ではないため（LP には Round 1 判断で出していない）
+
+### Verification（Round 3 ・ ローカル静的配信）
+
+| 項目 | 結果 |
+|---|---|
+| LP 10 幅 | 320〜1440 で overflow 0 ・ 孤立行 0 ・ Hero は Round 2 と同じ寸法 ・ Primary CTA は全幅で viewport 内 |
+| LP の表示 | 募集 ／ 次回 ／ Founding ／ Cohort ／ 148,000 ／ 198,000 ／ 最大6名 ／ 10月1日 ／ 9月30日 ／ 受付終了 ／ 満席 ／ Group Session 0 ・ 正式 Copy あり ・ h2 12 個（13 Section）・ Hero の link は #recognition のみ ・ Stripe 0 |
+| /apply/ | 空送信はブラウザ検証で止まる ・ 送信（fetch を差し替え ・ 実送信なし）は `maenjvpj` へ dialogue の項目だけ ・ 成功で同じページに完了表示 ・ 失敗で既存のエラー文 ＋ 再送可 ・ 旧募集の語 ・ cohort.js ・ Stripe 0 ・ overflow 0 |
+| /thanks/ ・ /complete/ | 募集 ／ Payment Link ／ Stripe ／ 金額 ／ 銀行 ／ 口座 ／ 振込 ／ 日付 ／ Zoom ／ 1on1 ／ Welcome 0 ・ overflow 0 |
+| /legal/ | Project Creation が 5 見出しに Current Service として記載 ・ Founding ／ 148,000 ／ 198,000 ／ 6名 ／ 9月30日 ／ 10月1日（木）／ 募集 ／ 定員超過 0 ・ 他 Service の料金表示はすべて残る |
+| /terms/ | 第9条の2 に Founding ／ 6名 ／ 各期 ／ グループセッション 0（第11条の Community 等一般の禁止事項の「グループセッション」は対象外で KEEP）|
+
+### Stripe（旧 Payment Link）— LIVE AUTH REQUIRED
+
+Round 2 と同じ。Stripe CLI は Sandbox だけが認証済みで、Live の `plink_1UIxv88tXYwNlHqEJkFOfNPw` を確認 ・ 停止できない。この Link は Project Creation の Current Pricing ではなく旧募集専用の決済のため、停止の方針は KEEP（Project Creation の販売停止ではない）。Public からの導線は 0。

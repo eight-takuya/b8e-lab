@@ -6,6 +6,18 @@
 ---
 
 ---
+## [2026-10-01] — Project Creation Round 3：「いつでも相談できる」Current Reality へ（**Architect Review 待ち**・Preview のみ）
+
+**Scope:** `dreamin-spiral/project-creation/index.html`（12 ・ 13 ・ FAQ ・ Weekly Session）, `dreamin-spiral/project-creation/{apply,thanks,complete}/index.html`, `legal/index.html`, `terms/index.html`, `docs/project-creation-public-reality-reset-vnext.md`
+**Triggered by:** Architect Decision（ACR-20261001-012 Round 3 ・ Owner Reality Review）
+
+- 「現在、募集は行っていません」を撤回し、「Project Creationは、いつでもご相談いただけます。ご希望を伺いながら、実施時期や進め方を一緒に決めていきます。」へ
+- Final Action に Primary「Project Creationについて話してみる」→ /apply/（Project Creation 専用の対話 Form ・ Formspree `maenjvpj` ・ 申込 ・ 契約 ・ 決済ではない）。Guide は Optional
+- /thanks/ ・ /complete/ は個別のご案内へ寄せた neutral state、/legal/ は Project Creation を Current Service として復元（金額は作らない）、/terms/ は旧募集固有の定員記述を外した
+- 旧 Stripe Payment Link の停止は LIVE AUTH REQUIRED のまま
+
+---
+
 ## [2026-10-01] — Project Creation Round 2：Hero Visual ＋ 残存 Sales Reality の解消（**Architect Review 待ち**・Preview のみ）
 
 **Scope:** `dreamin-spiral/project-creation/index.html`（Hero を A21-b に）, `dreamin-spiral/project-creation/{thanks,complete}/index.html`, `legal/index.html`, `assets/dreamin-spiral/project-creation/hero-*`（新規）, `docs/project-creation-public-reality-reset-vnext.md`
