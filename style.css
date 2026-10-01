@@ -3589,3 +3589,152 @@ body:not(.ds-page) .resonance-questions p + p {
 .ds-service-section .pc-roles + p {
   margin-top: 28px;
 }
+
+/* ------------------------------------------------------------
+   A23. Search Content Layer v1 ・ 問いから読む（2026-10-01 ・ ACR-20261001-019）
+   Text First。Question そのものを Hero にし、Video は中盤の静かな Visual として置く。
+   正本：dreamin-spiral-os docs/repository-architecture/search-content-standard-v1.md
+   ------------------------------------------------------------ */
+.q-hero .q-eyebrow {
+  text-decoration: none;
+}
+.q-hero .q-eyebrow:hover {
+  text-decoration: underline;
+}
+.q-page .q-recognition {
+  border-top: none;
+  padding-top: 8px;
+}
+.q-page .q-recognition p {
+  font-size: 1.02rem;
+  color: #444;
+}
+.q-page .q-observe {
+  border-top: none;
+  margin-top: 56px;
+  padding: 36px 32px 34px;
+  background: #f8f6f1;
+  border-radius: 16px;
+}
+.q-page .q-note {
+  margin-top: 28px;
+  font-size: 0.85rem;
+  color: #888;
+  line-height: 1.9;
+}
+.q-video {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #eceae7;
+}
+.q-video iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+.q-page .q-video-caption {
+  margin-top: 14px;
+  font-size: 0.82rem;
+  color: #888;
+  line-height: 1.8;
+}
+.q-page .q-video-caption a {
+  color: #777;
+}
+.q-related {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.q-related li + li {
+  margin-top: 14px;
+}
+.q-related a {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.8;
+  border-bottom: 1px solid #e6dccd;
+  padding-bottom: 2px;
+}
+.q-related a:hover {
+  color: #9b7b5c;
+  text-decoration: none;
+  border-bottom-color: #c9a882;
+}
+.q-page .q-next p {
+  font-size: 0.95rem;
+  color: #666;
+}
+.q-page h2.q-hub-label {
+  font-size: 0.78rem;
+  font-weight: 400;
+  color: #888;
+  letter-spacing: 0.1em;
+}
+.q-cards {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.q-cards li + li {
+  margin-top: 16px;
+}
+.q-card {
+  display: block;
+  padding: 24px 26px;
+  border: 1px solid #ece8e1;
+  border-radius: 14px;
+  background: #fff;
+  transition: border-color 0.2s ease;
+}
+.q-card:hover {
+  border-color: #d9c7ad;
+  text-decoration: none;
+}
+.q-card-theme {
+  display: block;
+  font-size: 0.7rem;
+  color: #9b8f80;
+  letter-spacing: 0.08em;
+}
+.q-card-q {
+  display: block;
+  margin-top: 8px;
+  font-size: 1rem;
+  color: #2a2a2a;
+  line-height: 1.8;
+}
+.q-card-line {
+  display: block;
+  margin-top: 8px;
+  font-size: 0.86rem;
+  color: #777;
+  line-height: 1.8;
+}
+/* Dreamin' Spiral 🌱 Home の「問いから読む」— Library ・ Service より弱い、小さな導線 */
+.ds-home-questions .ds-home-questions-list {
+  list-style: none;
+  margin: 18px 0 0;
+  padding: 0;
+}
+.ds-home-questions .ds-home-questions-list li + li {
+  margin-top: 10px;
+}
+.ds-home-questions .ds-home-questions-list a {
+  font-size: 0.92rem;
+  color: #555;
+  line-height: 1.8;
+}
+@media (max-width: 768px) {
+  .q-page .q-observe {
+    padding: 28px 22px 26px;
+  }
+  .q-card {
+    padding: 20px 20px;
+  }
+}
