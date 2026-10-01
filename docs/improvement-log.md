@@ -6,6 +6,28 @@
 ---
 
 ---
+## [2026-10-01] — 3 Weeks Tuning｜Hero Visual（DS-3WEEKS-HERO-01）（**Architect Review 待ち**・Preview のみ）
+
+**Scope:** `dreamin-spiral/3-weeks/index.html`（Hero の figure のみ）, `assets/dreamin-spiral/3-weeks/hero-*`, `docs/3weeks-entry-architecture-vnext.md`
+**Triggered by:** ACR-20261001-005 AD-1 決着（新規 `DS-3WEEKS-HERO-01` を Hero に採用）
+
+- Hero に `DS-3WEEKS-HERO-01`（16:9）。My Life ・ Community と同じ A21-b：Desktop は Visual ｜ Copy の 2 列、880px 未満は縦積みで **max-width 560px**（中間幅での巨大化を防止）
+- Home ／ TOP の 3 Weeks Card は `DS-3WEEKS-01` のまま（Role separation）
+- Copy ・ Continue Cue ・ Section 順 ・ Offer ・ 料金 ・ Final CTA ・ Apply URL ・ Meta / OGP ・ `style.css` は無変更（可視テキストが前回と完全一致）
+- QA：320 〜 1440 の 10 幅で 16:9 維持 ・ 画像サイズ（最大 560px）・ overflow 0 ・ 孤立行 0
+
+## [2026-10-01] — 3 Weeks Tuning Entry Architecture vNext（**Architect Review 待ち**・Preview のみ）
+
+**Scope:** `dreamin-spiral/3-weeks/index.html`, `docs/3weeks-entry-architecture-vnext.md`（新規）
+**Triggered by:** Architect Decision（ACR-20261001-005）
+
+- Experience を **Reality → Recognition → Meaning → Three Weeks Rhythm → What We Hold → Offer → Action** に
+- **Hero を Reality-first に REFRAME し、Hero の申込 CTA を REMOVE**。代わりに Continue Cue「3週間について見てみる ↓」
+- 「「気になる」や「悩み」から自分に気づく3週間」は削除せず Meaning Section へ MOVE。「この時間で大切にしていること」を Offer の前へ MOVE
+- **Recognition list ・ Rhythm（セッション ⇄ 日常のリアリティ）・ Offer ・ 60,000円（税込）・ Note ・ Final CTA ・ Apply URL ・ Meta / OGP は無変更**（block ごと byte 一致）。`style.css` も無変更
+- Visual は生成していない（既存 `DS-3WEEKS-01` は Hero の Direction に合わないため再利用せず、Asset 案を Architect へ）
+- QA：10 幅で overflow 0 ・ 孤立行 0
+
 ## [2026-10-01] — Community｜Hero Visual（DS-COMMUNITY-HERO-01）（**Architect Review 待ち**・Preview のみ）
 
 **Scope:** `dreamin-spiral/community/index.html`（Hero の figure のみ）, `assets/dreamin-spiral/community/hero-*`, `docs/community-entry-architecture-vnext.md`
