@@ -41,34 +41,59 @@
 
   <main>
 
-    <!-- Section 1｜Hero
-         Primary CTA「Business Creationについて話してみる」→ Business Creation Dialogue Form（GAS。Reality → 90分の対話日時 → 予約）。
-         href は Production の Dialogue Form（2026-09-19 公開・docs/business-creation-public-page-v1.md §3）。
-         押した瞬間の Transition View: /gas-transition.js（Vercel → GAS Transition Standard v1・docs/vercel-gas-transition-v1.md）。
-         general contact form ・ Guide へは接続しない。Guide は Optional の Secondary path（Primary にしない） -->
-    <section class="ds-service-hero">
+    <!-- Business Creation Entry Architecture vNext（2026-10-01 ・ ACR-20261001-009）
+         Experience：Reality → Recognition → What We Create → Meaning → Creation → Technology → Partnership → Offer → Action。
+         Creation System は Hero で説明せず、Recognition と What We Create を通った後で Meaning として出す。
+         正本：docs/business-creation-entry-architecture-vnext.md -->
+
+    <!-- 01 Hero — Reality。Conversion CTA ・ Guide は置かない（Level 1 Continue のみ）
+         Visual｜DS-BUSINESS-HERO-01（Reality ＋ Creation ＋ Work ＋ Human ＋ Technology ／「Businessが完成したのではなく、今の現実から、実際にBusinessを創っている途中」）。
+         原寸 1536×1024（3:2）を、公開版では上端基準で 16:9（1536×864）にトリミング。
+         My Life ・ Community ・ 3 Weeks ・ Guide と同じ A21-b：Desktop（≥ 880px）は Visual ｜ Copy の 2 列、それ未満は Visual → Copy の縦積み（画像は max-width 560px）。
+         Home ／ TOP の Business Creation Card は DS-BUSINESS-01 のまま（Role separation）。 -->
+    <section class="ds-service-hero ds-service-hero--reality ds-service-hero--scene">
+      <div class="ds-service-hero-inner">
+      <figure class="ds-service-hero-figure">
+        <picture>
+          <source type="image/avif" srcset="/assets/dreamin-spiral/business-creation/hero-640.avif 640w, /assets/dreamin-spiral/business-creation/hero-960.avif 960w, /assets/dreamin-spiral/business-creation/hero-1280.avif 1280w, /assets/dreamin-spiral/business-creation/hero-1536.avif 1536w" sizes="(max-width: 879px) min(560px, calc(100vw - 48px)), 500px">
+          <source type="image/webp" srcset="/assets/dreamin-spiral/business-creation/hero-640.webp 640w, /assets/dreamin-spiral/business-creation/hero-960.webp 960w, /assets/dreamin-spiral/business-creation/hero-1280.webp 1280w, /assets/dreamin-spiral/business-creation/hero-1536.webp 1536w" sizes="(max-width: 879px) min(560px, calc(100vw - 48px)), 500px">
+          <img src="/assets/dreamin-spiral/business-creation/hero-960.webp" width="1536" height="864" fetchpriority="high" decoding="async" alt="日中の自宅の仕事机で、付箋やスケッチを並べながら、ペンを手に考えている人">
+        </picture>
+      </figure>
+      <div class="ds-service-hero-copy">
       <span class="ds-service-eyebrow">Business Creation</span>
       <h1 class="ds-service-title">
-        <span class="ds-phrase">あなたのBusinessを、</span><span class="ds-phrase">一緒に創る。</span>
+        <span class="ds-phrase">やりたいことを、</span><span class="ds-phrase">Businessにしたい。</span><br>
+        <span class="ds-phrase">今あるBusinessを、</span><span class="ds-phrase">もっと自分らしく</span><span class="ds-phrase">育てたい。</span>
       </h1>
       <p class="ds-service-lead">
-        <span class="ds-phrase">そして、その後も</span><span class="ds-phrase">自分でBusinessを創り続け、</span><br>
-        <span class="ds-phrase">ビジネスオーナーとして</span><span class="ds-phrase">育て続けられる</span><br>
-        <span class="ds-phrase">Creation Systemを手にする。</span>
+        商品やサービス。<br>
+        Webサイトや発信。<br>
+        <span class="ds-phrase">AIや、</span><span class="ds-phrase">日々の運営の仕組み。</span>
       </p>
       <p class="ds-service-lead">
-        <span class="ds-phrase">Dreamin' Spiral 🌱 の Business Creationは、</span><br>
-        <span class="ds-phrase">今ここにあるビジネスの</span><span class="ds-phrase">現実（リアリティ）から、</span><br>
-        <span class="ds-phrase">自分そのもののBusinessを</span><span class="ds-phrase">一緒に創り、</span><span class="ds-phrase">育てていく伴走です。</span>
+        <span class="ds-phrase">最初から全部を</span><span class="ds-phrase">決める必要はありません。</span>
       </p>
-      <a class="ds-service-cta" href="https://script.google.com/macros/s/AKfycbwhwbdcfjjDJ__Cv-J7veUDJerr26FxK1E1OSFXZNdDyBQ4Ty6knD9CkWXyV6-Fqj3zcA/exec?page=booking&amp;type=business_creation_initial" data-gas-transition data-transition-eyebrow="Business Creation" data-transition-heading="Business Creationの対話ページを開いています。" data-transition-text="今、気になっていることを、そのまま聞かせてください。">Business Creationについて話してみる</a>
-      <a class="ds-service-secondary" href="/dreamin-spiral/guide/">Guide（無料）について見る</a>
+      <p class="ds-service-lead">
+        今あるもの、<br>
+        <span class="ds-phrase">まだ形になっていないもの、</span><br>
+        <span class="ds-phrase">すでに動いている現実から、</span>
+      </p>
+      <p class="ds-service-lead">
+        <span class="ds-phrase">一緒にBusinessを</span><span class="ds-phrase">創っていきます。</span>
+      </p>
+      <a class="ds-service-cue" href="#recognition">
+        <span>Business Creationについて見てみる</span>
+        <span class="ds-service-cue-arrow" aria-hidden="true">↓</span>
+      </a>
+      </div>
+      </div>
     </section>
 
     <div class="page-content">
 
-      <!-- Section 2｜Starting Reality（問題の診断 ・ 不足の一覧にしない。card にせず既存の list で示す） -->
-      <div class="section-block ds-service-section">
+      <!-- 02 Recognition — KEEP（旧 Section 2 ・ 問題の診断 ・ 不足の一覧にしない。card にせず既存の list） -->
+      <div class="section-block ds-service-section" id="recognition">
         <h2>
           今、どこにいても。<br>
           そこから始められます。
@@ -105,29 +130,55 @@
         </p>
       </div>
 
-      <!-- Section 3｜Business ＋ Creation System -->
+      <!-- 03 What We Create — 旧 Section 3 の具体（Artifact）を Meaning より前に。制作代行 ・ 受託 ・「何でも作る」にしない -->
       <div class="section-block ds-service-section">
-        <h2>創るのは、Businessだけではありません。</h2>
+        <h2>
+          必要なものを、<br>
+          実際に一緒に創る。
+        </h2>
         <p>
-          <span class="ds-phrase">商品・サービス、</span><span class="ds-phrase">Webサイト、</span><span class="ds-phrase">申込、決済、</span><br>
-          <span class="ds-phrase">クライアント専用ページ、</span><span class="ds-phrase">発信コンテンツ、</span><br>
-          <span class="ds-phrase">ビジネスの運営や</span><span class="ds-phrase">サービスの運用、</span><span class="ds-phrase">AI活用。</span><br>
+          商品・サービス。<br>
+          Webサイト。<br>
+          申込や決済。<br>
+          クライアント専用ページ。<br>
+          発信コンテンツ。<br>
+          Businessの運営。<br>
+          AIを使った仕組み。
+        </p>
+        <p>
           <span class="ds-phrase">必要になるものは、</span><span class="ds-phrase">Businessによって違います。</span>
         </p>
         <p>
           最初から全部を作るのではなく、<br>
-          <span class="ds-phrase">今、そのBusinessに本当に必要なものを</span><span class="ds-phrase">一緒に見極め、</span><span class="ds-phrase">必要な分だけ創っていきます。</span>
+          <span class="ds-phrase">今、そのBusinessに本当に必要なものを</span><span class="ds-phrase">一緒に見極め、</span><br>
+          <span class="ds-phrase">必要な分だけ創っていきます。</span>
+        </p>
+      </div>
+
+      <!-- 04 Meaning — 創るのは、Businessだけではありません。Creation System はここで初めて出す -->
+      <div class="section-block ds-service-section">
+        <h2>
+          創るのは、<br>
+          Businessだけではありません。
+        </h2>
+        <p>
+          <span class="ds-phrase">商品・サービス、</span><span class="ds-phrase">Webサイト、</span><span class="ds-phrase">申込、決済、</span><br>
+          <span class="ds-phrase">クライアント専用ページ、</span><span class="ds-phrase">発信コンテンツ、</span><br>
+          <span class="ds-phrase">Businessの運営、</span><span class="ds-phrase">AI活用。</span>
         </p>
         <p>
-          そして同時に、<br>
+          <span class="ds-phrase">これらを創るだけではありません。</span>
+        </p>
+        <p>
           <span class="ds-phrase">そのBusinessをこれからも</span><span class="ds-phrase">自分で創り、育て続けられる</span><br>
-          Creation Systemそのものを整えていきます。
+          <span class="ds-phrase">Creation Systemそのものを</span><span class="ds-phrase">整えていきます。</span>
         </p>
         <p class="ds-service-statement">
           <span class="ds-phrase">自分で決めて、自分で創り、</span><span class="ds-phrase">自分で育てられる状態へ。</span>
         </p>
       </div>
 
+      <!-- 05 Creation ・ 06 Technology ・ 07 Partnership ・ 08 Offer — KEEP（旧 Section 4〜7 を byte のまま） -->
       <!-- Section 4｜Reality-driven Creation（process chart ・ 段階的な Flow にしない） -->
       <div class="section-block ds-service-section">
         <h2><span class="ds-phrase">現実（リアリティ）から</span><span class="ds-phrase">始まるCreation。</span></h2>
@@ -246,6 +297,7 @@
         </p>
       </div>
 
+      <!-- 09 Final Action — KEEP。Primary は Dialogue Form、Guide は Optional の Secondary（必須入口にしない） -->
       <!-- Section 8｜Final CTA（Conversation-first。直接購入 ・ 申込 → 決済にしない。Guide は Optional の Secondary path） -->
       <div class="section-block ds-service-section">
         <h2>
@@ -264,6 +316,10 @@
         <p>
           まずは、そのまま聞かせてください。
         </p>
+        <!-- Primary CTA「Business Creationについて話してみる」→ Business Creation Dialogue Form（GAS。Reality → 90分の対話日時 → 予約）。
+             href は Production の Dialogue Form（2026-09-19 公開・docs/business-creation-public-page-v1.md §3）。
+             押した瞬間の Transition View: /gas-transition.js（Vercel → GAS Transition Standard v1・docs/vercel-gas-transition-v1.md）。
+             general contact form ・ Guide へは接続しない。Guide は Optional の Secondary path（Primary にしない） -->
         <a class="ds-service-cta" href="https://script.google.com/macros/s/AKfycbwhwbdcfjjDJ__Cv-J7veUDJerr26FxK1E1OSFXZNdDyBQ4Ty6knD9CkWXyV6-Fqj3zcA/exec?page=booking&amp;type=business_creation_initial" data-gas-transition data-transition-eyebrow="Business Creation" data-transition-heading="Business Creationの対話ページを開いています。" data-transition-text="今、気になっていることを、そのまま聞かせてください。">Business Creationについて話してみる</a>
         <a class="ds-service-secondary" href="/dreamin-spiral/guide/">まずGuide（無料）で話してみる</a>
         <p class="ds-service-note">

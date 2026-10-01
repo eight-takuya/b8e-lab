@@ -6,6 +6,29 @@
 ---
 
 ---
+## [2026-10-01] — Business Creation｜Hero Visual（DS-BUSINESS-HERO-01）（**Architect Review 待ち**・Preview のみ）
+
+**Scope:** `dreamin-spiral/business-creation/index.html`（Hero の figure のみ）, `assets/dreamin-spiral/business-creation/hero-*`, `docs/business-creation-entry-architecture-vnext.md`
+**Triggered by:** ACR-20261001-009 AD-1 決着（新規 `DS-BUSINESS-HERO-01` を Hero に採用）
+
+- Hero に `DS-BUSINESS-HERO-01`。原寸 1536×1024（3:2）を、公開版では上端基準で 16:9（1536×864）にトリミング
+- My Life ・ Community ・ 3 Weeks ・ Guide と同じ A21-b：Desktop は Visual ｜ Copy の 2 列、880px 未満は縦積みで **max-width 560px**（中間幅での巨大化を防止）
+- Home ／ TOP の Business Creation Card は `DS-BUSINESS-01` のまま（Role separation）
+- Copy ・ Continue Cue ・ Section 順 ・ Offer ・ 価格 ・ Final ・ Dialogue Form ・ GAS Transition ・ Meta / OGP ・ `style.css` ・ `gas-transition.js` は無変更（可視テキストが前回と完全一致）
+- QA：320 〜 1440 の 10 幅で 16:9 維持 ・ 画像サイズ（最大 560px）・ overflow 0 ・ 孤立行 0 ・ Transition View 正常
+
+## [2026-10-01] — Business Creation Entry Architecture vNext（**Architect Review 待ち**・Preview のみ）
+
+**Scope:** `dreamin-spiral/business-creation/index.html`, `docs/business-creation-entry-architecture-vnext.md`（新規）
+**Triggered by:** Architect Decision（ACR-20261001-009）
+
+- Experience を **Reality → Recognition → What We Create → Meaning → Creation → Technology → Partnership → Offer → Action** に
+- **Hero を Reality-first に REFRAME し、Hero の Dialogue CTA と Guide link を REMOVE**。代わりに Continue Cue「Business Creationについて見てみる ↓」。Creation System は Hero に出さない
+- 旧 Section 3 を What We Create（具体 ・ Meaning より前）と Meaning（Creation System）に分けた
+- **Recognition ・ Creation ・ Technology ・ Partnership ・ Profile ・ Offer ・ 880,000円 ・ 1,600,000円 ・ Final（Dialogue Form ・ Guide Optional）・ Meta / OGP は無変更**（byte 一致）。`style.css` ・ `gas-transition.js` も無変更
+- Visual は生成していない（既存 `DS-BUSINESS-01` は Hero の Direction に合わないため再利用せず、Asset 案を Architect へ）
+- QA：10 幅で overflow 0 ・ 孤立行 0 ・ Final CTA の Transition View を確認
+
 ## [2026-10-01] — Guide｜Hero Visual（DS-GUIDE-HERO-01）（**Architect Review 待ち**・Preview のみ）
 
 **Scope:** `dreamin-spiral/guide/index.html`（Hero の figure のみ）, `assets/dreamin-spiral/guide/hero-*`, `docs/guide-entry-architecture-vnext.md`
