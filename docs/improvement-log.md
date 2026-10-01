@@ -6,6 +6,17 @@
 ---
 
 ---
+## [2026-10-01] — Search Content Layer v1 ＋ Pilot 5 Questions（**Architect Review 待ち**・Preview のみ）
+
+**Scope:** `dreamin-spiral/questions/`（Hub ＋ 5 Question）, `tools/search-content/`, `assets/ogp/questions/`, `style.css`（A23）, `dreamin-spiral/index.html`（小さな「問いから読む」）, `sitemap.xml`, `docs/search-content-layer-v1.md`
+**Triggered by:** Architect Request（ACR-20261001-019）
+
+- 「問いから読む」Hub と Pilot 5 Question Page（Question を Hero に ・ 断定しない ・ Observation は小さく ・ 動画は中盤 ・ 近くにある問い ・ 1 つだけの静かな Next Action）
+- Article ／ BreadcrumbList ／ VideoObject、Search Question 用 OGP、sitemap に 6 URL
+- Home には Library の後に小さな導線だけ。6 Service LP ・ About ・ TOP の本文は変更なし
+
+---
+
 ## [2026-10-01] — Search & External Exposure Layer vNext（**Architect Review 待ち**・Preview のみ）
 
 **Scope:** 9 target pages の head（title ・ description ・ OGP ・ Twitter ・ JSON-LD）, PC ・ BC の About link, `assets/ogp/`（About のみ）, `sitemap.xml`, `vercel.json`, `docs/search-external-exposure-vnext.md`

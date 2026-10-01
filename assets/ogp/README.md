@@ -6,6 +6,12 @@
 
 ## Version History
 
+### Phase H — Search Question 用 OGP（`assets/ogp/questions/`）
+2026-10-01（ACR-20261001-019 ・ Search Content Layer v1）
+
+- Master の Slide 14（Dreamin' Spiral 🌱 Home）を土台に、ブランドライン `DREAMIN' SPIRAL 🌱` ／ タイトル = Theme ／ サブコピー = Question（2 行まで）で書き出す。背景 ・ ロゴ ・ 配色 ・ 余白 ・ フォントは変えない。Master file は変更していない
+- 生成：`tools/search-content/question_ogp.py`（LibreOffice PDF → 1200 × 630 PNG ・ 従来と同じ書き出し）。Hub は タイトル「問いから読む」
+
 ### Phase G — About の Slide 03 を現行 Hero へ
 2026-10-01（ACR-20261001-017 ・ Search & External Exposure Layer vNext）
 
