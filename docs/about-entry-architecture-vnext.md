@@ -61,3 +61,16 @@ Experience：Reality → Person → Story → Way of Seeing → Way of Being Wit
 - h1 1 ・ h2 10（＋ h3 2）・ Hero の link 0 ・ main の画像 1（本人の実写真）
 - 320 ・ 375 ・ 390 ・ 430 ・ 768 ・ 820 ・ 879 ・ 1024 ・ 1280 ・ 1440 で overflow 0 ・ CTA と 6 つの入口は viewport 内。1〜2 文字の行は Section 11 の指定 Copy「今、」（意図した改行）だけ
 - Portrait：320〜768 → 200×267（Portrait → Copy の縦積み）／ 820 以上 → 260×347（Copy ｜ Portrait）。比率は元のまま（Crop なし）
+
+## About Refinement v1（2026-10-02 ・ ACR-20261002-010 ・ Architect Review 待ち）
+
+Must Not Break（Hero ・ Story ・ 6 つの入口 ・ Open Action ・ Visual ・ OGP ・ Title ・ Structured Data）は不変。`about.html` の 08 What I Do ・ 09 Profile の list と BEAT EIGHT EMOTION の段落だけを変更。CSS 追加なし。
+
+| 面 | 変更 |
+|---|---|
+| 今は、こんなことをしています。 | 「YouTubeでの発信」→「YouTube「人生覚醒チャンネル」の発信」（「人生覚醒チャンネル」だけ https://www.youtube.com/@DreaminSpiral への Text Link ・ 既存の list 内 link と同じ表現 ・ 外部 link は Question Page と同じ `target="_blank" rel="noopener"`）・「地域での活動」→「地域の子どもたちの見守り活動」|
+| Profile | 先頭に「小学5年でコンピュータと出会う」、創業の後に「高校の探究学習（情報工学）で、高校生と「AIと人間の違い」を探究する」を追加（全 7 項目 ・ 装飾なし）|
+| BEAT EIGHT EMOTION | BEAT ＝ 鼓動 ・ 脈打っていること ・ 自然と動くこと ／ EIGHT ＝ 8 ・ 横に倒すと ∞ ／ EMOTION ＝ 自分を動かす源泉の情動 |
+
+**Mobile の改行：** 既存の `.ds-phrase`（inline-block ・ 意味のまとまり）だけで行う。`<br>` ・ nowrap ・ CSS の追加なし。「大学・大学院で情報工学｜（Computer Science）を学ぶ」・「高校の探究学習（情報工学）で、｜高校生と｜「AIと人間の違い」を探究する」・「2015年、｜BEAT EIGHT EMOTION｜株式会社を創業」・「（DX支援・PJ推進支援）」を 1 phrase に（旧版は「（」だけの phrase があり行末に残り得た）。320 ／ 375 ／ 390 ／ 430 ／ 768 ／ 1024 ／ 1280 で「（」「「」の行末孤立 0 ・ 閉じ括弧 ／ 句読点の行頭 0 ・ 1〜2 文字の行 0 ・ Computer Science ／「AIと人間の違い」／ BEAT EIGHT EMOTION の分断 0 ・ overflow 0。768px 以上では各項目 1 行
+

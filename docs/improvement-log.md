@@ -6,6 +6,17 @@
 ---
 
 ---
+## [2026-10-02] — About Refinement v1（**Architect Review 待ち**・Preview のみ）
+
+**Scope:** `about.html`（08 What I Do ・ 09 Profile ・ BEAT EIGHT EMOTION）, `docs/about-entry-architecture-vnext.md`
+**Triggered by:** Architect Request（ACR-20261002-010）
+
+- 今の活動：YouTube「人生覚醒チャンネル」の発信（チャンネル名だけ静かな Text Link）・ 地域の子どもたちの見守り活動
+- Profile：小学5年 → 大学・大学院 → NTTデータ → 中小企業4社 → 創業 → 高校の探究学習 → IT業界歴（7 項目）
+- BEAT EIGHT EMOTION の説明を更新。Mobile の改行は既存 `.ds-phrase` の区切り直しだけ（CSS 追加なし）
+
+---
+
 ## [2026-10-02] — Entry Alignment Tuning v1（**Architect Review 待ち**・Preview のみ）
 
 **Scope:** `dreamin-spiral/index.html`（Library の link 1 行）, `dreamin-spiral/business-creation/index.html`（Optional Guide の Copy 1 行）, docs
