@@ -70,6 +70,7 @@
 |---|---|---|
 | `<title>` | …｜エンジニアから、プロジェクトを創る人へ（PM・PdM・PMO × AI） | …｜プロジェクトを推進できる人になる（PM・PdM・PMO × AI） |
 | meta description | ITエンジニアが PM・PdM・PMO の視点と… | Engineer・PM・PdM・PMOなど、仕事でProjectに関わる人が PM・PdM・PMO の視点と… |
+| meta description（Round 3）| …実際の仕事を題材に Project を創る力を育てる12週間のプログラムです。 | …実際の仕事を題材に、Projectを前に進める力を育てる12週間のプログラムです。 |
 | og ／ twitter description | 技術のことは分かる。でも、Project全体を見ようとすると、急に難しくなる。 | プロジェクトを推進できる人になる。チームで進めるProjectに関わるEngineer・PM・PdM・PMO・Project Memberへ。 |
 | Hero h1 | 技術のことは分かる。でも、Project全体を見ようとすると、急に難しくなる。 | プロジェクトを推進できる人になる。 |
 | Hero Lead（追加）| — | Service開発やSystem開発など、チームで進めるProjectに関わる Engineer・PM・PdM・PMO・Project Memberへ。 |
