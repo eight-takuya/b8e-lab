@@ -3802,3 +3802,230 @@ body:not(.ds-page) .resonance-questions p + p {
     padding-top: 36px;
   }
 }
+
+/* ------------------------------------------------------------
+   A25. Dreamin' Spiral 🌱 Entry Clarity v1（2026-10-15 ・ ACR-20261015-002）
+   入口は一般的に、分かりやすく、具体的に。中に入るほど Dreamin' Spiral 🌱 の質感へ。
+   TOP（.ds-top-spiral）と Dreamin' Spiral 🌱 Home（.ds-home）だけに適用。Service Page は変更しない。
+   ------------------------------------------------------------ */
+
+/* Service Card｜日本語の主見出し（h3）＋ Service 名（副題） */
+.ds-family-en {
+  margin: 0 0 10px;
+  font-size: 0.74rem;
+  color: #9b7b5c;
+  letter-spacing: 0.08em;
+  line-height: 1.6;
+}
+
+/* 意味の Group（階段ではない）。Label は小さく静かに */
+.ds-family-group + .ds-family-group {
+  margin-top: 36px;
+}
+.ds-family-group-label {
+  margin: 0 0 14px;
+  font-size: 0.78rem;
+  color: #7a756c;
+  letter-spacing: 0.1em;
+}
+.ds-home-family-lead + .ds-family-group {
+  margin-top: 32px;
+}
+.ds-top-spiral-bridge + .ds-family-group {
+  margin-top: 32px;
+}
+.ds-top-spiral .ds-family-group .ds-family-list,
+.ds-home-family .ds-family-group .ds-family-list {
+  margin-top: 0;
+}
+.ds-top-spiral .ds-family-group .ds-family-list {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+/* Guide ・ Community｜横長の Card（Desktop）。Mobile は他の Card と同じ縦積み */
+.ds-family-list--feature {
+  grid-template-columns: minmax(0, 1fr) !important;
+}
+@media (min-width: 769px) {
+  .ds-home-family .ds-family-item--feature,
+  .ds-home-family .ds-family-item--feature:first-child {
+    display: grid;
+    grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+    grid-template-rows: 1fr auto;
+    column-gap: 26px;
+    row-gap: 14px;
+    align-items: start;
+  }
+  .ds-home-family .ds-family-item--feature .ds-family-visual {
+    grid-column: 1;
+    grid-row: 1 / span 2;
+    margin: -28px 0 -28px -26px;
+    border-radius: 17px 0 0 17px;
+    align-self: stretch;
+  }
+  .ds-home-family .ds-family-item--feature .ds-family-visual img {
+    height: 100%;
+  }
+  .ds-top-spiral .ds-family-item--feature,
+  .ds-top-spiral .ds-family-item--feature:first-child,
+  .ds-top-spiral .ds-family-item--feature:last-child {
+    display: grid;
+    grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+    grid-template-rows: 1fr auto;
+  }
+  .ds-top-spiral .ds-family-item--feature .ds-family-visual {
+    grid-column: 1;
+    grid-row: 1 / span 2;
+  }
+  .ds-top-spiral .ds-family-item--feature .ds-family-visual img {
+    height: 100%;
+  }
+}
+
+/* Home｜今のテーマ（行き先が一読で分かる Text Link の list） */
+.ds-home-themes .ds-theme-list {
+  list-style: none;
+  margin: 22px 0 0;
+  padding: 0;
+  border-top: 1px solid var(--ds-line);
+}
+.ds-home-themes .ds-theme-list li {
+  border-bottom: 1px solid var(--ds-line);
+}
+.ds-home-themes .ds-theme-list a {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px 2px;
+  color: #2a2a2a;
+  text-decoration: none;
+}
+.ds-home-themes .ds-theme-text {
+  font-size: 0.97rem;
+  line-height: 1.8;
+}
+.ds-home-themes .ds-theme-service {
+  flex-shrink: 0;
+  font-size: 0.82rem;
+  color: #8a6a4e;
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+}
+.ds-home-themes .ds-theme-list a:hover .ds-theme-service {
+  color: #6f5239;
+}
+
+/* Home｜中村琢八の経験（数値は TOP Track Record と同じ表現を再利用） */
+.ds-home-trust-person {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 26px;
+}
+.ds-home-trust-photo {
+  flex-shrink: 0;
+  width: 84px;
+  margin: 0;
+}
+.ds-home-trust-photo img {
+  display: block;
+  width: 84px;
+  height: 84px;
+  object-fit: cover;
+  object-position: 50% 22%;
+  border-radius: 50%;
+}
+.ds-home-trust-name {
+  font-size: 1rem;
+  color: #26251f;
+  letter-spacing: 0.06em;
+  line-height: 1.6;
+}
+.ds-home-trust-role {
+  display: block;
+  font-size: 0.74rem;
+  color: #888;
+  letter-spacing: 0.1em;
+}
+.ds-home-trust .ds-home-trust-stats {
+  margin-top: 32px;
+}
+.ds-home-trust .track-stat__num {
+  font-size: 1.2rem;
+}
+.ds-home-trust .ds-service-note {
+  margin-top: 22px;
+}
+
+/* Home｜Guide（まず無料で話せる入口）。Library と同じ静かな面 */
+.ds-home-guide {
+  padding: 40px 44px;
+  border: 1px solid #e9e1d4;
+  border-radius: 18px;
+  background: #fbf8f2;
+}
+.ds-home-guide .ds-home-guide-facts {
+  font-size: 0.86rem;
+  color: #6b665d;
+}
+
+/* Home｜最終 CTA（Closing の中央揃えのまま、Return の上に置く）。
+   Primary は Guide（無料）の予約。入口へ戻る Return は一段静かな Secondary にする */
+.ds-home-closing .ds-service-cta {
+  display: table;
+  margin: 26px auto 0;
+  font-size: 1rem;
+}
+.ds-home-closing .ds-home-return {
+  margin-top: 22px;
+  font-size: 0.82rem;
+  color: #6b665d;
+  border-bottom-color: rgba(201, 168, 130, 0.4);
+  padding-bottom: 4px;
+}
+
+/* TOP｜今のテーマ（短い list） */
+.ds-top-spiral-themes {
+  list-style: none;
+  margin: 18px 0 0;
+  padding: 0;
+}
+.ds-top-spiral-themes li {
+  position: relative;
+  padding-left: 16px;
+  font-size: 0.93rem;
+  color: #4a4740;
+  line-height: 2.0;
+}
+.ds-top-spiral-themes li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.9em;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #c9a882;
+}
+.ds-top-spiral-themes + .ds-family-core {
+  margin-top: 18px;
+}
+
+@media (max-width: 768px) {
+  .ds-top-spiral .ds-family-group .ds-family-list {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .ds-home-themes .ds-theme-list a {
+    flex-direction: column;
+    gap: 2px;
+    padding: 14px 2px;
+  }
+  .ds-home-guide {
+    padding: 32px 24px;
+  }
+  .ds-home-trust .track-stat__num {
+    font-size: 1.1rem;
+    min-width: 7.5em;
+  }
+}
