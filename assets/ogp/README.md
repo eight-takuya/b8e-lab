@@ -6,6 +6,12 @@
 
 ## Version History
 
+### Phase I — Project Creation のサブコピー
+2026-10-15（ACR-20261015-002 ・ Dreamin' Spiral 🌱 Entry Clarity v1 Round 2）
+
+- **Slide 19（Project Creation）のサブコピーだけを更新** — `エンジニアから、プロジェクトを創る人へ。` → `プロジェクトを推進できる人になる。`（公開サイトの Service 一覧 ・ Project Creation Page の主見出しに合わせた）。背景 ・ ロゴ ・ 配色 ・ 余白 ・ フォント ・ ブランドライン ・ タイトル ・ 他の Slide は変更していない（Master の差分は slide19.xml の文字列 1 つ）
+- `generated/dreamin-spiral-project-creation.png` を再生成（1200 × 630 ・ LibreOffice PDF → PNG）。変更前の Slide 19 を同じ方法で書き出すと既存の PNG と画素単位で一致（差 0）することを先に確認した
+
 ### Phase H — Search Question 用 OGP（`assets/ogp/questions/`）
 2026-10-01（ACR-20261001-019 ・ Search Content Layer v1）
 

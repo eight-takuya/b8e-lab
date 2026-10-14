@@ -8,6 +8,8 @@
 ---
 ## [2026-10-15] — Dreamin' Spiral 🌱 Entry Clarity v1（**Architect Review 待ち**・Preview のみ）
 
+**Round 2（Architect Handback）：** 表示順を Business Creation → Project Creation へ。Project Creation Page を「プロジェクトを推進できる人になる」へ意味整合（title ・ description ・ Hero ・ 対象の表現 ・ OGP Slide 19）。Offer ・ 価格 ・ CTA は不変
+
 **Scope:** `index.html`（#dreamin-spiral）, `dreamin-spiral/index.html`, `style.css`（A25）, `docs/dreamin-spiral-entry-clarity-v1.md`
 **Triggered by:** Architect Request（ACR-20261015-002）
 
