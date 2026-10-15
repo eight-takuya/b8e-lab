@@ -6,6 +6,19 @@
 ---
 
 ---
+## [2026-10-15] — Dreamin' Spiral 🌱 Entry Clarity v1（**Architect Review 待ち**・Preview のみ）
+
+**Round 2（Architect Handback）：** 表示順を Business Creation → Project Creation へ。Project Creation Page を「プロジェクトを推進できる人になる」へ意味整合（title ・ description ・ Hero ・ 対象の表現 ・ OGP Slide 19）。Offer ・ 価格 ・ CTA は不変
+
+**Scope:** `index.html`（#dreamin-spiral）, `dreamin-spiral/index.html`, `style.css`（A25）, `docs/dreamin-spiral-entry-clarity-v1.md`
+**Triggered by:** Architect Request（ACR-20261015-002）
+
+- 6 Service を日本語の主見出し ＋ Service 名（副題）へ。Group（まず話してみる ／ テーマに合わせて伴走する ／ 継続的につながる）・ Guide と Community は横長 Card
+- LP：今のテーマ → Service、中村琢八の経験（25年以上 ・ 50社以上 ・ 50Project以上 ・ 延べ300名以上）、Guide（無料）の入口と「無料で話してみる」、YouTube を追加。既存の思想 ・ Library ・ 問いから読むは KEEP
+- TOP：人生 ・ 仕事 ・ キャリア ・ ビジネスの入口とテーマ 4 行。Hero ・ Three Paths ・ Track Record は不変
+
+---
+
 ## [2026-10-02] — About Refinement v1（**Architect Review 待ち**・Preview のみ）
 
 **Scope:** `about.html`（08 What I Do ・ 09 Profile ・ BEAT EIGHT EMOTION）, `docs/about-entry-architecture-vnext.md`
