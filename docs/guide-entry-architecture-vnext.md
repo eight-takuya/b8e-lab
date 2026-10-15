@@ -67,3 +67,16 @@
 | Responsive | 320 ・ 375 ・ 390 ・ 430 ・ 768 ・ 820 ・ 879 ・ 1024 ・ 1280 ・ 1440 で overflow 0 ・ 1〜2 文字の孤立行 0（Offer の「無料」は値そのもの） |
 | Hero Visual 実寸 | 320：272×153 ・ 375：327×184 ・ 390：342×192 ・ 430：382×215 ・ **768 ／ 820 ／ 879：560×315（上限で停止）**・ 1024：444×250 ・ 1280 ／ 1440：512×288（2 列）。全幅で 16:9（1.778）・ 二人とも顔の切れなし ・ Headline は全幅で First View 内 |
 | Regression | `style.css` ・ `gas-transition.js` ・ Dreamin' Spiral 🌱 Home ・ 他 Service Page の差分 0 |
+
+## Guide Conversion v1（2026-10-15 ・ ACR-20261015-011 ・ Architect Review 待ち）
+
+正本：dreamin-spiral-os `docs/repository-architecture/guide-current-entrance-v1.md` §16（Runbook ・ Possible Path ・ Follow-up ・ Record ・ KPI）。構造 ・ Visual ・ CTA ・ Booking URL は不変。「答えを押しつけない」と「何かを持ち帰れる」の両立のため 3 か所だけ：
+
+| Section | 変更 |
+|---|---|
+| What Happens | 「そして、ここから何をしてみたいのかが、少し見えてくることもあります。」を追加 |
+| Offer「内容」| 「今、気になっていることを話しながら、自分の中で何が起きているのか、ここから何をしてみたいのかを一緒に見ていきます。」|
+| Offer | 「営業面談ではありません。」の下に小さな注記（ほかの関わり方を選択肢として伝えることがある ・ 決めるのは本人 ・ その場で決めなくてよい）|
+
+Verification：320 〜 1440 の 10 幅で overflow 0 ・ 孤立行 0 ・ 括弧の行末 0 ・ 句読点の行頭 0。Booking CTA ・ GAS URL ・ Transition は不変。内部 link ／ 画像の切れ 0。
+
