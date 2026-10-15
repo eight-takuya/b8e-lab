@@ -6,6 +6,17 @@
 ---
 
 ---
+## [2026-10-15] — Guide Conversion v1（**Architect Review 待ち**・Preview のみ）
+
+**Scope:** `dreamin-spiral/guide/index.html`（What Happens ・ Offer の 3 か所）, `docs/guide-entry-architecture-vnext.md`
+**Triggered by:** Architect Request（ACR-20261015-011）
+
+- 「ここから何をしてみたいのかが、少し見えてくることもあります。」・ Offer「内容」を「…自分の中で何が起きているのか、ここから何をしてみたいのかを一緒に見ていきます。」へ
+- 「営業面談ではありません。」の下に、選択肢を伝えることがある ・ 決めるのは本人という小さな注記
+- Booking URL ・ CTA ・ Transition ・ 他ページは不変（Runbook ・ KPI 等は OS Canonical）
+
+---
+
 ## [2026-10-15] — Dreamin' Spiral 🌱 Entry Clarity v1（**Architect Review 待ち**・Preview のみ）
 
 **Round 2（Architect Handback）：** 表示順を Business Creation → Project Creation へ。Project Creation Page を「プロジェクトを推進できる人になる」へ意味整合（title ・ description ・ Hero ・ 対象の表現 ・ OGP Slide 19）。Offer ・ 価格 ・ CTA は不変
