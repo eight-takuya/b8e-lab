@@ -11,7 +11,7 @@
 **Scope:** `dreamin-spiral/index.html`（Trust Section の `.ds-service-note` の 1 文のみ）, `docs/dreamin-spiral-entry-clarity-v1.md`
 **Triggered by:** Architect Request（ACR-20261017-001 ・ Owner Gate NONE）
 
-- 注記を「延べ人数は、企業支援とProject推進の中で関わってきた方の合計です。」へ（「（同じ方を重ねて数えている場合があります）。」「Dreamin' Spiral 🌱の利用者数ではありません。」を削除）
+- 注記を Owner 確定文言「延べ人数は、企業支援・Project推進・Dreamin' Spiral 🌱 の活動を通じて関わってきた方の合計です。」へ（「（同じ方を重ねて数えている場合があります）。」「Dreamin' Spiral 🌱の利用者数ではありません。」を削除 ・ Round 2 で Owner 確認の集計対象を反映）
 - 数値（25年以上 ・ 50社以上 ・ 50Project以上 ・ 延べ300名以上）・ 見出し ・ 写真 ・ link ・ CSS は不変
 
 ---
