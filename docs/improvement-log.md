@@ -6,6 +6,15 @@
 ---
 
 ---
+## [2026-10-17] — HP Trust Section 注記の簡素化（**Architect Review 待ち**・Preview のみ）
+
+**Scope:** `dreamin-spiral/index.html`（Trust Section の `.ds-service-note` の 1 文のみ）, `docs/dreamin-spiral-entry-clarity-v1.md`
+**Triggered by:** Architect Request（ACR-20261017-001 ・ Owner Gate NONE）
+
+- 注記を Owner 確定文言「延べ人数は、企業支援・Project推進・Dreamin' Spiral 🌱 の活動を通じて関わってきた方の合計です。」へ（「（同じ方を重ねて数えている場合があります）。」「Dreamin' Spiral 🌱の利用者数ではありません。」を削除 ・ Round 2 で Owner 確認の集計対象を反映）
+- 数値（25年以上 ・ 50社以上 ・ 50Project以上 ・ 延べ300名以上）・ 見出し ・ 写真 ・ link ・ CSS は不変
+
+---
 ## [2026-10-16] — Value Communication v2（**Architect Review 待ち**・Preview のみ）
 
 **Scope:** `dreamin-spiral/index.html`（Hero ・ Recognition の結び ・ Philosophy ・ Spiral の Label ／ Lead ・ og／twitter description）, `dreamin-spiral/guide/index.html`（Hero ・ What Happens ・ Offer「内容」・ Final Action の見出し ・ og／twitter description）, `style.css`（Hero の After ・ Recognition の Before → After list）, `docs/dreamin-spiral-home-entry-architecture-vnext.md`, `docs/guide-entry-architecture-vnext.md`
