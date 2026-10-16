@@ -2177,6 +2177,47 @@ a:hover {
   display: none;
 }
 
+/* Value Communication v2（ACR-20261016-012）｜Recognition の結び：Before の 4 場面 → 目指せる変化（5 組）。
+   旧結び（p:last-child）と同じ扱いの Lead に、From（Before ・ 淡く）→ To（After ・ はっきり）を縦に重ねた list を続ける。
+   新しい Visual ・ CTA は足さない */
+.ds-home-recognition .ds-home-shift-lead {
+  margin-top: 32px;
+  padding-left: 0;
+  color: var(--ds-ink);
+}
+
+.ds-home-recognition .ds-home-shift-lead::before {
+  display: none;
+}
+
+.ds-home-shift-list {
+  list-style: none;
+  margin: 20px 0 0;
+  padding: 0;
+}
+
+.ds-home-shift-list li {
+  padding: 6px 0 6px 16px;
+  border-left: 2px solid #c9a882;
+  line-height: 1.85;
+}
+
+.ds-home-shift-list li + li {
+  margin-top: 14px;
+}
+
+.ds-home-shift-from {
+  display: block;
+  color: #6f695e;
+  font-size: 0.92em;
+}
+
+.ds-home-shift-to {
+  display: block;
+  color: var(--ds-ink);
+  font-weight: 500;
+}
+
 /* 6 Entrances — 6 つは対等（面積 ・ 装飾 ・ 文字の重さをすべて同じにする。番号を付けない）
    Service 名より「○○な方へ」を上位に置く（§12） */
 .ds-home-family .ds-family-list {
@@ -3355,6 +3396,15 @@ body:not(.ds-page) .resonance-questions p + p {
 
 .ds-home-hero--scene .ds-service-lead {
   max-width: none;
+}
+
+/* Value Communication v2（ACR-20261016-012）｜Hero の After（目指せる方向）。
+   H1（Before）の直後に置き、Lead より一段はっきり読ませる。色は Guide の .ds-service-statement と同じ #2f2b27 */
+.ds-home-hero--scene .ds-home-hero-after {
+  color: #2f2b27;
+  font-size: 1.12em;
+  font-weight: 500;
+  letter-spacing: 0.04em;
 }
 
 /* 02 Recognition ・ 06 Creation ・ 08 Closing｜Section の面の先頭に置く Visual。

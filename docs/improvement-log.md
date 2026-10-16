@@ -6,6 +6,16 @@
 ---
 
 ---
+## [2026-10-16] — Value Communication v2（**Architect Review 待ち**・Preview のみ）
+
+**Scope:** `dreamin-spiral/index.html`（Hero ・ Recognition の結び ・ Philosophy ・ Spiral の Label ／ Lead ・ og／twitter description）, `dreamin-spiral/guide/index.html`（Hero ・ What Happens ・ Offer「内容」・ Final Action の見出し ・ og／twitter description）, `style.css`（Hero の After ・ Recognition の Before → After list）, `docs/dreamin-spiral-home-entry-architecture-vnext.md`, `docs/guide-entry-architecture-vnext.md`
+**Triggered by:** Architect Request（ACR-20261016-012）・ 正本：dreamin-spiral-os `docs/repository-architecture/value-communication-architecture-v2.md`
+
+- HP：Hero を Before「頑張っているのに、なぜか満たされない。」→ After「自分の人生を、もっと自由に。もっと豊かに。」→ Mechanism「自分の気持ちが分かると、選び方が変わる。」へ。Recognition は 4 場面を KEEP し、結びを 5 組の Before → After（Architect §4.2）へ。Philosophy ・ Spiral を循環（感じる → 気づく → 選ぶ → 行動する → 現実からまた気づく）の Mechanism に
+- Guide：Hero を「考えても答えが出ないこと、ありませんか？」へ。What Happens に「45分で一緒に見ていくこと」（3 項目）と開かれ得る気づき ・ 選択肢。Offer「内容」は重複を解いて短く。Final Action の見出しを「その悩み、一人で考え続けなくてもいい。」へ
+- 新しい Section ・ CTA なし。link ・ CTA ・ Booking URL ・ Transition は byte 不変。title ・ meta description ・ OGP 画像 ・ 他ページは不変
+
+---
 ## [2026-10-15] — Guide Conversion v1（**Architect Review 待ち**・Preview のみ）
 
 **Scope:** `dreamin-spiral/guide/index.html`（What Happens ・ Offer の 3 か所）, `docs/guide-entry-architecture-vnext.md`

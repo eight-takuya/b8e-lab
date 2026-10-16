@@ -239,3 +239,17 @@ Architect Request §28 の 22 項目のうち **1〜15 ・ 21 ・ 22 は実装�
 ## Entry Alignment Tuning v1（2026-10-02 ・ ACR-20261002-007 ・ Architect Review 待ち）
 
 Library の link「Libraryを見る」を Action 表現の `.ds-service-cta` から、既存の Secondary Text Link `.ds-service-secondary`（「問いから読む」と同じ）へ（Web Entry Standard v1 §7 ・ Audit ACR-20261002-005 の Future TUNE）。Library は Related ／ Navigation で Action ではない。Copy ・ href ・ Library Section は不変、新しい style は追加していない。上の「`.ds-service-cta` は変更していない」は vNext 時点の記録
+
+## Value Communication v2（2026-10-16 ・ ACR-20261016-012 ・ Architect Review 待ち）
+
+正本：dreamin-spiral-os `docs/repository-architecture/value-communication-architecture-v2.md`（訴求力は最大。誠実さは絶対。）。新しい Section ・ CTA は足さず、既存 Section の Copy だけを変えた。
+
+| Section | 変更前 | 変更後 |
+|---|---|---|
+| 01 Hero | H1「仕事も、暮らしも、それなりに進んでいる。でも、ふと「このままでいいのかな」と思うことがある。」＋ Lead 3 | H1（Before）「頑張っているのに、なぜか満たされない。」→ After「自分の人生を、もっと自由に。もっと豊かに。」（`.ds-home-hero-after`）→「自分の気持ちが分かると、選び方が変わる。」→ 場の役割 |
+| 02 Recognition | 4 場面 ＋ 結び「…今の自分を知る入口なのかもしれません。」 | 4 場面 KEEP ＋ 結び「その「気になる」から、こんな変化を目指していけます。」＋ Before → After 5 組（`.ds-home-shift-list`） |
+| 03 Philosophy | 4 段落（感じてみる → 気づきながら生きていく → 場の役割） | 前半 2 段落 KEEP ＋ 循環（気づく → 選ぶ → 行動に移す）＋「ひとりでもできる。ただ、一緒に見る相手がいると、見え方が変わることがある。」＋ 場の役割 |
+| 04 Spiral | Label：気になる ／ 感じる ／ 気づく ／ やってみる ／ また感じる。Lead「…小さくやってみて、また感じていく。」 | Label：感じる ／ 気づく ／ 選ぶ ／ 行動する ／ また気づく（Architect §4.3）。Lead「…行動した現実から、また気づいていく。」。線 ・ figcaption は KEEP |
+| head | og ／ twitter description ＝ 旧 H1 | 新 H1（Search & External Exposure v1 §4：Home の og:description は H1）|
+
+Verification：320 ・ 360 ・ 375 ・ 390 ・ 414 ・ 768 ・ 1024 ・ 1280 ・ 1440 で overflow 0 ・ 孤立行 0 ・ 括弧の行末 0 ・ 句読点の行頭 0。link ・ CTA は byte 不変。Mobile（375）のページ長は 15.5 → 16.1 スクリーン。
