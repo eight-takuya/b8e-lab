@@ -80,3 +80,16 @@
 
 Verification：320 〜 1440 の 10 幅で overflow 0 ・ 孤立行 0 ・ 括弧の行末 0 ・ 句読点の行頭 0。Booking CTA ・ GAS URL ・ Transition は不変。内部 link ／ 画像の切れ 0。
 
+## Value Communication v2（2026-10-16 ・ ACR-20261016-012 ・ Architect Review 待ち）
+
+正本：dreamin-spiral-os `docs/repository-architecture/value-communication-architecture-v2.md` §5。構造（Reality → Permission → Meaning → What Happens → Offer → Action）・ Visual ・ CTA ・ Booking URL ・ Transition は不変。
+
+| Section | 変更前 | 変更後 |
+|---|---|---|
+| Hero | H1「今、気になっていることから話してみる。」＋ Lead 3 | H1「考えても答えが出ないこと、ありませんか？」＋「そんなとき、自分の中で何が起きているのかを、一緒に見てみませんか。」＋「はっきりした悩みや目的がなくても大丈夫です。今、気になっていることから話してみる45分です。」|
+| What Happens | 「話しながら、今の自分を一緒に見ていく。」＋ 3 段落 | 「45分で、一緒に見ていくこと。」＋ 3 項目（気になっていること ・ 自分の中の気持ちや感覚 ・ 本当はどうしたいのか）＋「何かを決める必要はありません。」（KEEP）＋ 開かれ得る気づき ・ 選択肢（「ことがあります」「こともあります」）|
+| Offer「内容」| 「今、気になっていることを話しながら、…一緒に見ていきます。」| 「今、気になっていることから始める対話です。」（What Happens との重複を解消）|
+| Final Action | 「今、少し話してみたいことがあれば。」| 「その悩み、一人で考え続けなくてもいい。」（本文 ・ CTA は KEEP）|
+| head | og ／ twitter description ＝ 旧 H1 ＋ Lead | 新 H1 ＋ Lead 1 |
+
+KEEP：無料 ・ Zoom ・ 45分 ・「営業面談ではありません。」・ Possible Path の注記 ・ Permission ・ Meaning。Verification は Home と同じ 9 幅で 0 件。
