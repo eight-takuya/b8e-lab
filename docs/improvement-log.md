@@ -2350,3 +2350,12 @@ About は「会社紹介」ではなく、創業者が30年かけてたどり着
 [x] No — local
 
 ---
+
+
+## 2026-10-16 — VideoObject uploadDate の日時・タイムゾーン修正
+
+- Search Consoleの日時値・タイムゾーン警告に対応。videos_data.pyの4動画を、YouTube公開ページのdatePublishedとanalyticsのpublished_atを照合した日本時間の完全な日時へ修正。
+- Question Page 4件を再生成。画面内容の変更なし。
+- 生成時に完全な日時・タイムゾーン・実在する日付を検証し、不正な値を拒否する。
+- 検証: 4件のJSON-LDと元データの一致、日付のみ・タイムゾーンなし・不正日付の拒否を確認。
+- 本番反映およびSearch Consoleでの再検証は未実施。

@@ -2,9 +2,18 @@
 正本：dreamin-spiral-os docs/repository-architecture/search-content-standard-v1.md（Question Page Template）。
 使い方：python3 tools/search-content/build_questions.py（b8e-lab の root で実行）"""
 import json, os, re, html, sys
+from datetime import datetime
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from questions_data import Q
 from videos_data import V
+def validate_video_dates(videos):
+    for video_id, video in videos.items():
+        value = video['uploadDate']
+        if not re.fullmatch(r'\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:Z|[+-]\d{2}:\d{2})', value):
+            raise ValueError(f'{video_id}: uploadDate requires a full datetime with timezone')
+        datetime.fromisoformat(value.replace('Z', '+00:00'))
+
+validate_video_dates(V)
 B = 'https://www.b8e.co.jp'
 DS = "Dreamin' Spiral 🌱"
 HUB = '/dreamin-spiral/questions/'
