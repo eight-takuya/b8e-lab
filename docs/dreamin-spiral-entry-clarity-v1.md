@@ -50,7 +50,7 @@
 | 7 | YouTube「人生覚醒チャンネル」・ Library ・ 問いから読む | YouTube を ADD（https://www.youtube.com/@DreaminSpiral）・ 他は KEEP |
 | 8 | Closing（Copy ・ Visual KEEP）＋「無料で話してみる」＋ Return | REFRAME |
 
-- **延べ300名以上：** 50社以上 × 平均2名程度 ＋ 50Project以上 × 平均4名程度の延べ人数（Owner 提示）。注記で「同じ方を重ねて数えている場合がある」「Dreamin' Spiral 🌱の利用者数ではない」と明記。他の数値は既存の Public 事実（TOP Track Record ・ DX支援 ・ About）
+- **延べ300名以上：** 50社以上 × 平均2名程度 ＋ 50Project以上 × 平均4名程度の延べ人数（Owner 提示）。注記で「同じ方を重ねて数えている場合がある」「Dreamin' Spiral 🌱の利用者数ではない」と明記。（2026-10-17 ・ ACR-20261017-001：Owner Decision により、注記は「延べ人数は、企業支援とProject推進の中で関わってきた方の合計です。」の 1 文へ簡素化。数値 ・ 算定の考え方は不変。利用者数として扱わない原則も不変）他の数値は既存の Public 事実（TOP Track Record ・ DX支援 ・ About）
 - **Guide CTA：** Guide Page と同じ正式な Booking（GAS `?page=booking` ・ `data-gas-transition` ・ `/gas-transition.js`）。表現は Text Action（`.ds-service-cta`）。LP の Guide 節と Closing の 2 か所
 - 人物の写真は About の `owner-240/480`（既存 Asset）を再利用。新しい Visual なし
 
